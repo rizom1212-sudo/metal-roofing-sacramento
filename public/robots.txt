@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prc13roofing.com/sitemap.xml
