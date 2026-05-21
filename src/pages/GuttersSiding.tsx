@@ -393,7 +393,7 @@ export default function GuttersSiding() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
-      <section id="exterior-quote" className="bg-charcoal-dark py-16">
+      <section id="exterior-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-5 sm:px-7">
           <div className="grid md:grid-cols-2 gap-10 items-start">
 

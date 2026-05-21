@@ -54,18 +54,17 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 right-0 z-[60]">
         <SeasonalBanner dismissed={bannerDismissed} onDismiss={() => setBannerDismissed(true)} />
-      </div>
 
-      <header
-        className={`fixed ${bannerDismissed ? 'top-4' : 'top-[34px]'} left-0 right-0 z-50 border-b border-white/10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-sm ${
-          scrolled
-            ? 'bg-charcoal/95 shadow-[0_12px_32px_rgba(0,0,0,0.22)]'
-            : 'bg-charcoal/95 shadow-[0_4px_18px_rgba(0,0,0,0.12)]'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-5 sm:px-7">
+        <header
+          className={`border-b border-white/10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-sm ${
+            scrolled
+              ? 'bg-charcoal/95 shadow-[0_12px_32px_rgba(0,0,0,0.22)]'
+              : 'bg-charcoal/95 shadow-[0_4px_18px_rgba(0,0,0,0.12)]'
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-5 sm:px-7">
           <div className={`flex items-center justify-between transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            scrolled ? 'h-[70px] md:h-[74px]' : 'h-[76px] md:h-[82px]'
+            scrolled ? 'h-[64px] md:h-[74px]' : 'h-[68px] md:h-[82px]'
           }`}>
 
             <Link to="/" onClick={handleLogoClick} className="flex items-center flex-shrink-0" style={{ minWidth: 0 }}>
@@ -73,7 +72,7 @@ export default function Navbar() {
                 src="/assets/brand/prc13-logo-gold.png"
                 alt="PRC 13 Roofing"
                 className={`w-auto max-w-[240px] object-contain object-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.015] ${
-                  scrolled ? 'h-[52px] md:h-[58px]' : 'h-[58px] md:h-[64px]'
+                  scrolled ? 'h-[48px] md:h-[58px]' : 'h-[52px] md:h-[64px]'
                 }`}
               />
             </Link>
@@ -206,7 +205,8 @@ export default function Navbar() {
             </nav>
           </div>
         )}
-      </header>
+        </header>
+      </div>
 
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-charcoal-dark border-t border-white/20 safe-area-bottom">
         <div className="flex">

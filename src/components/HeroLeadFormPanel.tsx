@@ -27,9 +27,9 @@ export default function HeroLeadFormPanel({
         boxShadow: '0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,151,0,0.08)',
       }}
     >
-      <div className="px-6 pt-6 pb-6 md:pb-5 rounded-brand">
-        <p className="text-white font-bold text-lg leading-snug mb-1">{title}</p>
-        <p className="text-gray-400 text-sm mb-5 leading-relaxed">{subtitle}</p>
+      <div className="px-5 pt-5 pb-5 md:px-6 md:pt-6 md:pb-5 rounded-brand">
+        <p className="text-white font-bold text-base md:text-lg leading-snug mb-1">{title}</p>
+        <p className="text-gray-400 text-sm mb-4 md:mb-5 leading-relaxed">{subtitle}</p>
               <LeadForm sourcePage={sourcePage} variant="hero" submitLabel={submitLabel} />
               <TrustResponseLine className="mt-3 text-gray-500" />
             </div>

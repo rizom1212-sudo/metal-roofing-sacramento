@@ -9,15 +9,20 @@ import { PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
 export default function ServiceAreas() {
   const location = useLocation();
   const [activeSlug, setActiveSlug] = useState('');
+  const [highlightSlug, setHighlightSlug] = useState('');
 
   useEffect(() => {
     const slug = decodeURIComponent(location.hash.replace('#', ''));
     if (!slug) return;
 
     setActiveSlug(slug);
+    setHighlightSlug(slug);
     window.setTimeout(() => {
       document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 80);
+
+    const timer = window.setTimeout(() => setHighlightSlug(''), 2800);
+    return () => window.clearTimeout(timer);
   }, [location.hash]);
 
   return (
@@ -37,21 +42,29 @@ export default function ServiceAreas() {
         </div>
       </section>
 
-      <section className="bg-cream py-14">
+      <section id="service-area-list" className="bg-cream py-10 md:py-14 scroll-mt-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 gap-5">
             {serviceAreas.map(area => (
               <article
                 key={area.slug}
                 id={area.slug}
-                className={`card-brand bg-white border p-6 scroll-mt-36 transition-all duration-300 ${
+                className={`card-brand bg-white border p-6 scroll-mt-32 md:scroll-mt-36 transition-all duration-300 ${
                   activeSlug === area.slug
                     ? 'border-gold/80 shadow-[0_12px_34px_rgba(201,151,0,0.22)] scale-[1.015] -translate-y-1'
                     : 'border-gray-100'
-                }`}
+                } ${highlightSlug === area.slug ? 'animate-[service-area-pulse_1.4s_ease-out_2]' : ''}`}
               >
                 <h2 className="text-xl font-bold text-headline mb-2">{area.name}</h2>
                 <p className="text-body text-sm leading-relaxed mb-4">{area.blurb}</p>
+                {activeSlug === area.slug && (
+                  <Link
+                    to="/#service-areas"
+                    className="mb-4 inline-flex items-center text-xs font-semibold uppercase tracking-widest text-gold hover:text-gold-dark transition-colors"
+                  >
+                    Back to Service Areas
+                  </Link>
+                )}
                 <div className="flex flex-wrap gap-3 text-sm">
                   <Link to="/roof-inspection" className="text-gold font-semibold hover:underline">
                     Free inspection

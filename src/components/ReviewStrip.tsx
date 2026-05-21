@@ -31,18 +31,18 @@ export default function ReviewStrip({ count = 3, variant = 'light', indices }: R
   const textSub = variant === 'dark' ? 'text-gray-400' : 'text-body';
 
   return (
-    <div className="grid md:grid-cols-3 gap-5">
+    <div className="grid gap-3 md:grid-cols-3 md:gap-5">
       {shown.map(review => (
         <div
           key={review.name}
           data-stagger-item
-          className={`group card-brand relative border p-6 h-full flex flex-col transition-all duration-300 ease-out ${cardBg}`}
+          className={`group card-brand relative border p-4 md:p-6 h-full flex flex-col transition-all duration-300 ease-out ${cardBg}`}
         >
-          <div className="absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-full border border-gray-200 bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-1 ring-gold/0 transition-all duration-300 group-hover:ring-gold/20" aria-label="Google review">
-            <GoogleIcon className="h-4 w-4" />
+          <div className="absolute right-3 top-3 md:right-4 md:top-4 flex h-6 w-6 md:h-7 md:w-7 items-center justify-center rounded-full border border-gray-200 bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] ring-1 ring-gold/0 transition-all duration-300 group-hover:ring-gold/20" aria-label="Google review">
+            <GoogleIcon className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </div>
           <StarRow count={review.rating} />
-          <p className={`text-sm leading-relaxed mt-3.5 mb-5 italic ${textSub}`}>"{review.text}"</p>
+          <p className={`text-[13px] md:text-sm leading-6 md:leading-relaxed mt-2.5 md:mt-3.5 mb-3 md:mb-5 italic ${textSub}`}>"{review.text}"</p>
           <p className={`font-semibold text-sm mt-auto ${textMain}`}>{review.name}</p>
         </div>
       ))}

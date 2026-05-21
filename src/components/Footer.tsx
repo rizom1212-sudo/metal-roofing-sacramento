@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-b from-charcoal to-charcoal-dark text-gray-400 shadow-[0_-18px_44px_rgba(15,20,28,0.10)]">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" aria-hidden />
-      <div className="max-w-7xl mx-auto px-5 sm:px-7 py-14">
+      <div className="max-w-7xl mx-auto px-5 sm:px-7 pt-12 footer-mobile-bottom md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
 
           {/* Brand */}

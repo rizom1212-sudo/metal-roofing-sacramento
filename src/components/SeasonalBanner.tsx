@@ -30,22 +30,22 @@ export default function SeasonalBanner({ dismissed = false, onDismiss }: Seasona
   }, []);
 
   if (dismissed || !visible) {
-    return <div className="h-4 bg-charcoal-dark border-b border-charcoal-dark transition-all duration-200" aria-hidden />;
+    return <div className="h-3 md:h-4 bg-charcoal-dark border-b border-charcoal-dark transition-all duration-200" aria-hidden />;
   }
 
   const isRain = season === 'rain';
 
   return (
     <div
-      className={`border-b px-4 py-2.5 text-sm ${
+      className={`border-b px-3 py-1.5 text-xs sm:px-4 sm:py-2.5 sm:text-sm ${
         isRain ? 'bg-charcoal-dark/95 border-gold/25 text-gray-200' : 'bg-gold/15 border-gold/40 text-headline'
       }`}
       role="region"
       aria-label="Seasonal roofing reminder"
     >
-      <div className="relative max-w-7xl mx-auto flex items-center justify-center gap-2 pr-10 text-center">
-        {isRain ? <CloudRain size={16} className="text-gold flex-shrink-0" /> : <Sun size={16} className="text-gold flex-shrink-0" />}
-        <span>
+      <div className="relative max-w-7xl mx-auto flex items-center justify-center gap-1.5 sm:gap-2 pr-8 sm:pr-10 text-center leading-snug">
+        {isRain ? <CloudRain size={15} className="text-gold flex-shrink-0" /> : <Sun size={15} className="text-gold flex-shrink-0" />}
+        <span className="max-w-[19rem] sm:max-w-none">
           {isRain ? (
             <>
               Storm season?{' '}

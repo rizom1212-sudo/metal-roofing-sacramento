@@ -6,10 +6,20 @@ import PageMeta from './PageMeta';
 import SkipLink from './SkipLink';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      window.setTimeout(() => {
+        document.getElementById(decodeURIComponent(hash.replace('#', '')))?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 80);
+      return;
+    }
+
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -83,7 +93,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <ScrollReveal />
       <main
         id="main-content"
-        className={`flex-1 mobile-page-bottom md:pb-0 ${
+        className={`flex-1 ${
           isHome ? 'pt-0' : 'pt-[126px] md:pt-[132px]'
         }`}
       >

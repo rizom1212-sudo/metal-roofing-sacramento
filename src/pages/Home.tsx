@@ -101,7 +101,7 @@ export default function Home() {
       <JsonLd faqs={homeFaqs} pageName="PRC 13 Roofing Sacramento" />
       <FloatingInspectionCta />
       {/* HERO */}
-      <section className="relative bg-charcoal-dark overflow-hidden min-h-screen">
+      <section className="relative bg-charcoal-dark overflow-hidden md:min-h-screen">
         <HeroBackground priority imageClassName="object-center md:object-[58%_center] contrast-[1.04] saturate-[1.04]" />
         {/* Layered overlay system */}
         {/* Layer 1: base horizontal gradient with dark left and open right. */}
@@ -120,25 +120,25 @@ export default function Home() {
           style={{ background: 'linear-gradient(to top, rgba(10,14,20,0.62) 0%, rgba(10,14,20,0.16) 18%, rgba(10,14,20,0.0) 36%)' }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-[158px] pb-16 sm:pt-[164px] sm:pb-20 md:pt-[176px] md:pb-24 lg:pt-[180px] lg:pb-28 w-full min-h-screen flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-[122px] pb-10 sm:pt-[140px] sm:pb-14 md:pt-[176px] md:pb-24 lg:pt-[180px] lg:pb-28 w-full md:min-h-screen flex items-center">
           <div className="flex flex-col lg:block">
             <div className="max-w-2xl">
               {/* Trust badge */}
-              <div className="inline-flex items-center gap-2.5 bg-gold/18 border border-gold/40 px-5 py-2.5 mb-6 shadow-[0_8px_24px_rgba(201,151,0,0.12)]">
+              <div className="inline-flex items-center gap-2 bg-gold/18 border border-gold/40 px-4 py-2 mb-4 md:gap-2.5 md:px-5 md:py-2.5 md:mb-6 shadow-[0_8px_24px_rgba(201,151,0,0.12)]">
                 <StarRating />
-                <span className="text-gold text-base md:text-[17px] font-bold">5.0 Google Rating · {GOOGLE_REVIEW_COUNT} Reviews</span>
+                <span className="text-gold text-sm sm:text-base md:text-[17px] font-bold">5.0 Google Rating · {GOOGLE_REVIEW_COUNT} Reviews</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 md:mb-5">
                 Protect Your Home With Sacramento&apos;s Trusted Roofers
               </h1>
 
-              <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
+              <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed mb-5 md:mb-8 max-w-xl">
                 Same day inspections for Sacramento homeowners. You&apos;ll know exactly what your roof needs before spending a dime.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 mb-4 md:mb-8">
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold shadow-[0_14px_34px_rgba(201,151,0,0.26)]">
                   {PRIMARY_CTA}
                   <ArrowRight size={18} />
@@ -148,12 +148,12 @@ export default function Home() {
                   Call 916-761-3866
                 </a>
               </div>
-              <p className="mb-8 max-w-xl text-sm leading-relaxed text-gray-300">
+              <p className="mb-4 md:mb-8 max-w-xl text-sm leading-relaxed text-gray-300">
                 You&apos;ll know exactly what your roof needs before making a decision.
               </p>
 
               {/* Trust strip */}
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-200">
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 md:gap-x-6 md:gap-y-2 text-sm text-gray-200">
                 <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold" /> Licensed &amp; Insured</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-gold" /> Insurance Claims Welcome</span>
                 <span className="flex items-center gap-1.5"><Award size={14} className="text-gold" /> Financing Available</span>
@@ -164,6 +164,7 @@ export default function Home() {
               sourcePage="home-hero"
               title="Schedule Your Free Roof Inspection"
               subtitle="Most Sacramento homeowners get a same-day or next-business-day assessment."
+              className="mt-5 lg:mt-0"
             />
           </div>
         </div>
@@ -217,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-cream py-16">
+      <section className="bg-cream py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-sm font-semibold text-gold uppercase tracking-widest mb-3">What We Do</p>
           <h2 className="section-heading mb-2">Our Roofing Services</h2>
@@ -279,7 +280,7 @@ export default function Home() {
       </section>
 
       {/* TRUST SECTION */}
-      <section className="bg-[#F3F1EE] py-16">
+      <section className="bg-[#F3F1EE] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
 
@@ -352,7 +353,7 @@ export default function Home() {
       </section>
 
       {/* REVIEWS */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Badge */}
           <div className="flex flex-col items-center mb-10">
@@ -388,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* Local to Sacramento areas and map */}
-      <section className="relative bg-[#ECEAE6] py-10 md:py-12 overflow-hidden">
+      <section id="service-areas" className="relative bg-[#ECEAE6] py-10 md:py-12 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-6">
             <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-2">Local to Sacramento</p>
@@ -478,7 +479,7 @@ export default function Home() {
       <FinancingSection />
 
       {/* FAQ */}
-      <section className="bg-[#F3F1EE] py-12 mobile-section-bottom md:pb-12">
+      <section className="bg-[#F3F1EE] py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Common Questions</p>

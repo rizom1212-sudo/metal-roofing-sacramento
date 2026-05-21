@@ -217,7 +217,7 @@ export default function ServicePageTemplate({
       </section>
 
       {/* CTA */}
-      <section id={`${sourcePage}-cta`} className="bg-charcoal-dark py-16">
+      <section id={`${sourcePage}-cta`} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
