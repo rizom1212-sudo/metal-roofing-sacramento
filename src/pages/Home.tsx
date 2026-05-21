@@ -120,7 +120,7 @@ export default function Home() {
           style={{ background: 'linear-gradient(to top, rgba(10,14,20,0.62) 0%, rgba(10,14,20,0.16) 18%, rgba(10,14,20,0.0) 36%)' }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-[122px] pb-10 sm:pt-[140px] sm:pb-14 md:pt-[176px] md:pb-24 lg:pt-[180px] lg:pb-28 w-full md:min-h-screen flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-[calc(var(--prc13-header-offset,104px)+1rem)] pb-10 sm:pb-14 md:pt-[176px] md:pb-24 lg:pt-[180px] lg:pb-28 w-full md:min-h-screen flex items-center">
           <div className="flex flex-col lg:block">
             <div className="max-w-2xl">
               {/* Trust badge */}

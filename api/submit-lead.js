@@ -29,6 +29,9 @@ function getAirtablePayload({ name, phone, pageUrl, inquiry }) {
 async function notifyLeadWebhook(webhookUrl, lead) {
   if (!webhookUrl) return;
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 3500);
+
   try {
     const webhookResponse = await fetch(webhookUrl, {
       method: 'POST',
@@ -36,6 +39,7 @@ async function notifyLeadWebhook(webhookUrl, lead) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(lead),
+      signal: controller.signal,
     });
 
     const responseText = await webhookResponse.text();
@@ -51,6 +55,8 @@ async function notifyLeadWebhook(webhookUrl, lead) {
     console.info('[airtable:webhook] Lead webhook notified');
   } catch (error) {
     console.error('[airtable:webhook] Lead webhook request failed', error);
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

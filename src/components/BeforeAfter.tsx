@@ -3,6 +3,8 @@ import { beforeAfterPairs, type BeforeAfterPair } from '../data/beforeAfter';
 
 function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
   const [position, setPosition] = useState(50);
+  const showBeforeLabel = position > 2;
+  const showAfterLabel = position < 98;
 
   return (
     <article className="group" data-stagger-item>
@@ -36,10 +38,20 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
             </span>
           </div>
 
-          <span className="absolute left-4 top-4 rounded-brand bg-charcoal-dark/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm backdrop-blur-sm">
+          <span
+            className={`absolute left-4 top-4 rounded-brand bg-charcoal-dark/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm backdrop-blur-sm transition-opacity duration-150 ${
+              showBeforeLabel ? 'opacity-100' : 'opacity-0'
+            }`}
+            aria-hidden={!showBeforeLabel}
+          >
             Before
           </span>
-          <span className="absolute right-4 top-4 rounded-brand bg-gold/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm backdrop-blur-sm">
+          <span
+            className={`absolute right-4 top-4 rounded-brand bg-gold/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm backdrop-blur-sm transition-opacity duration-150 ${
+              showAfterLabel ? 'opacity-100' : 'opacity-0'
+            }`}
+            aria-hidden={!showAfterLabel}
+          >
             After
           </span>
 

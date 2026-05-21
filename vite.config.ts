@@ -6,6 +6,9 @@ const AIRTABLE_API_BASE = 'https://api.airtable.com/v0';
 async function notifyLeadWebhook(webhookUrl: string | undefined, lead: Record<string, unknown>) {
   if (!webhookUrl) return;
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 3500);
+
   try {
     const webhookResponse = await fetch(webhookUrl, {
       method: 'POST',
@@ -13,6 +16,7 @@ async function notifyLeadWebhook(webhookUrl: string | undefined, lead: Record<st
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(lead),
+      signal: controller.signal,
     });
     const responseText = await webhookResponse.text();
 
@@ -28,6 +32,8 @@ async function notifyLeadWebhook(webhookUrl: string | undefined, lead: Record<st
     console.info('[airtable:dev:webhook] Lead webhook notified');
   } catch (error) {
     console.error('[airtable:dev:webhook] Lead webhook request failed', error);
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

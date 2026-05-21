@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { PRIMARY_CTA } from '../data/cta';
@@ -22,6 +22,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
+  const headerStackRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   const isActive = (href: string) =>
@@ -46,13 +47,34 @@ export default function Navbar() {
     setServicesOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    const updateHeaderOffset = () => {
+      const height = headerStackRef.current?.getBoundingClientRect().height ?? 0;
+      if (height > 0) {
+        document.documentElement.style.setProperty('--prc13-header-offset', `${Math.ceil(height)}px`);
+      }
+    };
+
+    updateHeaderOffset();
+    const observer = typeof ResizeObserver !== 'undefined' && headerStackRef.current
+      ? new ResizeObserver(updateHeaderOffset)
+      : null;
+    if (headerStackRef.current) observer?.observe(headerStackRef.current);
+    window.addEventListener('resize', updateHeaderOffset);
+
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', updateHeaderOffset);
+    };
+  }, [bannerDismissed, mobileOpen, scrolled]);
+
   const handleLogoClick = () => {
     window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
   };
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-[60]">
+      <div ref={headerStackRef} className="fixed top-0 left-0 right-0 z-[60]">
         <SeasonalBanner dismissed={bannerDismissed} onDismiss={() => setBannerDismissed(true)} />
 
         <header

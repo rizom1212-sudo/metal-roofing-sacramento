@@ -93,9 +93,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       <ScrollReveal />
       <main
         id="main-content"
-        className={`flex-1 ${
-          isHome ? 'pt-0' : 'pt-[126px] md:pt-[132px]'
-        }`}
+        className="flex-1"
+        style={isHome ? undefined : { paddingTop: 'var(--prc13-header-offset, 126px)' }}
       >
         {children}
       </main>
