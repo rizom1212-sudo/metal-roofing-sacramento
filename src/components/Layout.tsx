@@ -5,24 +5,6 @@ import Footer from './Footer';
 import PageMeta from './PageMeta';
 import SkipLink from './SkipLink';
 
-function ScrollToTop() {
-  const { pathname, hash } = useLocation();
-  useEffect(() => {
-    if (hash) {
-      window.setTimeout(() => {
-        document.getElementById(decodeURIComponent(hash.replace('#', '')))?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 80);
-      return;
-    }
-
-    window.scrollTo(0, 0);
-  }, [pathname, hash]);
-  return null;
-}
-
 function ScrollReveal() {
   const { pathname } = useLocation();
 
@@ -36,11 +18,7 @@ function ScrollReveal() {
     if (!targets.length) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    sectionTargets.forEach(target => target.classList.add('reveal-on-scroll'));
-    staggerTargets.forEach((target, index) => {
-      target.classList.add('stagger-reveal');
-      target.style.transitionDelay = `${Math.min(index % 6, 5) * 55}ms`;
-    });
+    const viewportBottom = window.innerHeight;
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
       targets.forEach(target => target.classList.add('is-visible'));
@@ -58,18 +36,30 @@ function ScrollReveal() {
       { rootMargin: '0px 0px -12% 0px', threshold: 0.12 },
     );
 
-    targets.forEach(target => {
-      if (target.getBoundingClientRect().top < window.innerHeight * 0.75) {
+    sectionTargets.forEach(target => {
+      if (target.getBoundingClientRect().top < viewportBottom) {
         target.classList.add('is-visible');
         return;
       }
+      target.classList.add('reveal-on-scroll');
+      observer.observe(target);
+    });
 
+    staggerTargets.forEach((target, index) => {
+      if (target.getBoundingClientRect().top < viewportBottom) {
+        target.classList.add('is-visible');
+        return;
+      }
+      target.classList.add('stagger-reveal');
+      target.style.transitionDelay = `${Math.min(index % 6, 5) * 55}ms`;
       observer.observe(target);
     });
 
     return () => {
       observer.disconnect();
-      sectionTargets.forEach(target => target.classList.remove('reveal-on-scroll', 'is-visible'));
+      sectionTargets.forEach(target => {
+        target.classList.remove('reveal-on-scroll', 'is-visible');
+      });
       staggerTargets.forEach(target => {
         target.classList.remove('stagger-reveal', 'is-visible');
         target.style.transitionDelay = '';
@@ -86,7 +76,6 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <ScrollToTop />
       <SkipLink />
       <PageMeta />
       <Navbar />

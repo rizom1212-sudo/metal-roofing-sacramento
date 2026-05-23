@@ -102,21 +102,34 @@ export default function Home() {
       <FloatingInspectionCta />
       {/* HERO */}
       <section className="relative bg-charcoal-dark overflow-hidden md:min-h-screen">
-        <HeroBackground priority imageClassName="object-center md:object-[58%_center] contrast-[1.04] saturate-[1.04]" />
+        <HeroBackground priority imageClassName="hero-mobile-roof-focus object-[58%_40%] md:object-[58%_center] contrast-[1.06] saturate-[1.06]" />
         {/* Layered overlay system */}
-        {/* Layer 1: base horizontal gradient with dark left and open right. */}
+        {/* Mobile overlay: strong behind copy, clearer toward image detail. */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 md:hidden"
+          style={{ background: 'linear-gradient(112deg, rgba(5,14,26,0.82) 0%, rgba(5,14,26,0.72) 40%, rgba(5,14,26,0.28) 72%, rgba(5,14,26,0.10) 100%)' }}
+        />
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{ background: 'linear-gradient(to bottom, rgba(5,14,26,0.16) 0%, rgba(5,14,26,0.04) 42%, rgba(5,14,26,0.0) 72%)' }}
+        />
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{ background: 'linear-gradient(to top, rgba(5,14,26,0.28) 0%, rgba(5,14,26,0.06) 24%, rgba(5,14,26,0.0) 54%)' }}
+        />
+        {/* Desktop layer 1: base horizontal gradient with dark left and open right. */}
+        <div
+          className="absolute inset-0 hidden md:block"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.88) 0%, rgba(15,20,28,0.70) 38%, rgba(15,20,28,0.20) 65%, rgba(15,20,28,0.05) 100%)' }}
         />
-        {/* Layer 2: top vignette dims sky and restores depth without flattening house. */}
+        {/* Desktop layer 2: top vignette dims sky and restores depth without flattening house. */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{ background: 'linear-gradient(to bottom, rgba(10,14,20,0.42) 0%, rgba(10,14,20,0.10) 30%, rgba(10,14,20,0.0) 60%)' }}
         />
-        {/* Layer 3: bottom fade improves trust strip readability. */}
+        {/* Desktop layer 3: bottom fade improves trust strip readability. */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{ background: 'linear-gradient(to top, rgba(10,14,20,0.62) 0%, rgba(10,14,20,0.16) 18%, rgba(10,14,20,0.0) 36%)' }}
         />
 

@@ -25,6 +25,7 @@ export interface GalleryImage {
   category: Exclude<GalleryCategory, 'All'>;
   city?: string;
   tall?: boolean;
+  impact?: boolean;
 }
 
 export const galleryImages: GalleryImage[] = [
@@ -35,6 +36,16 @@ export const galleryImages: GalleryImage[] = [
     caption: 'Completed shingle roof replacement',
     category: 'Roof Replacement',
     city: 'Sacramento, CA',
+  },
+  {
+    id: 'hillside-residential-roof',
+    src: ASSETS.gallery('masonry-roof-project-01.png'),
+    alt: 'Completed residential roof on a hillside Sacramento area home',
+    caption: 'Completed hillside roof replacement',
+    category: 'Roof Replacement',
+    city: 'Sacramento, CA',
+    tall: true,
+    impact: true,
   },
   {
     id: 'flat-roof-restoration',
@@ -54,6 +65,14 @@ export const galleryImages: GalleryImage[] = [
     tall: true,
   },
   {
+    id: 'new-construction-metal-roof',
+    src: ASSETS.gallery('masonry-roof-project-02.png'),
+    alt: 'Metal roof installation on a new residential structure',
+    caption: 'Residential metal roof installation',
+    category: 'Metal Roofing',
+    city: 'Sacramento, CA',
+  },
+  {
     id: 'roof-vent-detail',
     src: ASSETS.gallery('Screenshot_2026-05-20_at_08.50.18.png'),
     alt: 'Residential roof with vents and skylights',
@@ -71,11 +90,30 @@ export const galleryImages: GalleryImage[] = [
     city: 'Sacramento, CA',
   },
   {
+    id: 'standing-seam-roof-detail',
+    src: ASSETS.gallery('masonry-roof-project-03.png'),
+    alt: 'Close view of standing seam metal roof panels',
+    caption: 'Standing seam metal roofing detail',
+    category: 'Metal Roofing',
+    city: 'Sacramento, CA',
+    tall: true,
+    impact: true,
+  },
+  {
     id: 'flat-membrane-detail',
     src: ASSETS.gallery('Screenshot_2026-05-20_at_08.51.08.png'),
     alt: 'Flat roof membrane installation detail',
     caption: 'Flat roof installation detail work',
     category: 'Roof Replacement',
+    city: 'Sacramento, CA',
+    tall: true,
+  },
+  {
+    id: 'two-story-repair-access',
+    src: ASSETS.gallery('masonry-roof-project-04.png'),
+    alt: 'Roofing crew accessing a two-story home for roof work',
+    caption: 'Two-story roof repair access',
+    category: 'Roof Repairs',
     city: 'Sacramento, CA',
     tall: true,
   },
@@ -96,12 +134,48 @@ export const galleryImages: GalleryImage[] = [
     city: 'Sacramento, CA',
   },
   {
+    id: 'shingle-roof-valley-detail',
+    src: ASSETS.gallery('masonry-roof-project-05.png'),
+    alt: 'Completed shingle roof with clean valley detail',
+    caption: 'Finished shingle roof detail',
+    category: 'Roof Replacement',
+    city: 'Sacramento, CA',
+  },
+  {
     id: 'a-frame-cabin-roof',
     src: ASSETS.gallery('Screenshot_2026-05-20_at_08.52.30.png'),
     alt: 'A-frame cabin roof replacement project',
     caption: 'Cabin roof replacement project',
     category: 'Metal Roofing',
     city: 'Sacramento, CA',
+    tall: true,
+    impact: true,
+  },
+  {
+    id: 'residential-gutter-install',
+    src: ASSETS.gallery('masonry-roof-project-06.png'),
+    alt: 'Crew installing gutter and exterior roofline components',
+    caption: 'Exterior roofline and gutter work',
+    category: 'Exterior Work',
+    city: 'Sacramento, CA',
+    tall: true,
+  },
+  {
+    id: 'historic-home-exterior-roof-work',
+    src: ASSETS.gallery('masonry-roof-project-07.png'),
+    alt: 'Roofing crew working on a historic style residential home',
+    caption: 'Residential roof and exterior work',
+    category: 'Roof Repairs',
+    city: 'Sacramento, CA',
+  },
+  {
+    id: 'finished-metal-roof-elevation',
+    src: ASSETS.gallery('masonry-roof-project-08.png'),
+    alt: 'Completed dark metal roof on residential building',
+    caption: 'Completed metal roof installation',
+    category: 'Metal Roofing',
+    city: 'Sacramento, CA',
+    tall: true,
   },
   {
     id: 'turret-roof-detail',

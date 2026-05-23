@@ -7,6 +7,32 @@ import { galleryImages, type GalleryImage } from '../data/gallery';
 import { PRIMARY_CTA } from '../data/cta';
 import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
 
+const featuredProjectImages = [
+  {
+    src: '/assets/featured-project/sacramento-roof-replacement-showcase-01.png',
+    alt: 'Sacramento home roof tear off before replacement',
+  },
+  {
+    src: '/assets/featured-project/sacramento-roof-replacement-showcase-02.png',
+    alt: 'Sacramento roof replacement in progress with materials staged',
+  },
+  {
+    src: '/assets/featured-project/sacramento-roof-replacement-showcase-03.png',
+    alt: 'Residential roof replacement installation in progress',
+  },
+  {
+    src: '/assets/featured-project/sacramento-roof-replacement-showcase-04.png',
+    alt: 'Completed Sacramento residential roof replacement',
+  },
+];
+
+const featuredProjectStats = [
+  'Full Tear-Off',
+  'Architectural Shingles',
+  'Residential Roof Replacement',
+  'Sacramento, CA',
+];
+
 function Lightbox({
   images,
   index,
@@ -40,7 +66,7 @@ function Lightbox({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      className="fixed inset-x-0 bottom-0 top-[var(--prc13-header-offset,126px)] z-50 flex items-center justify-center bg-black/90 p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -49,10 +75,10 @@ function Lightbox({
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors z-10"
+        className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white text-charcoal shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-colors hover:bg-gold hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         aria-label="Close"
       >
-        <X size={26} />
+        <X size={24} />
       </button>
 
       {hasPrev && (
@@ -84,10 +110,14 @@ function Lightbox({
       )}
 
       <div
-        className="max-w-4xl w-full flex flex-col items-center gap-3"
+        className="flex w-full max-w-5xl flex-col items-center gap-3"
         onClick={e => e.stopPropagation()}
       >
-        <img src={img.src} alt={img.alt} className="max-h-[72vh] w-full object-contain rounded-brand" />
+        <img
+          src={img.src}
+          alt={img.alt}
+          className="max-h-[calc(100vh-var(--prc13-header-offset,126px)-5rem)] w-full object-contain rounded-brand"
+        />
         <p className="text-gray-500 text-xs">
           {index + 1} / {images.length} · Use arrow keys to navigate
         </p>
@@ -98,8 +128,10 @@ function Lightbox({
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const mainGalleryImages = galleryImages.slice(0, -2);
-  const centeredGalleryImages = galleryImages.slice(-2);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const mainGalleryImages = galleryImages.slice(0, -1);
+  const centeredGalleryImages = galleryImages.slice(-1);
+  const featuredImage = featuredProjectImages[featuredIndex];
 
   const openLightbox = useCallback((idx: number) => setLightboxIndex(idx), []);
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
@@ -114,6 +146,14 @@ export default function Gallery() {
       ),
     [],
   );
+  const showPreviousFeaturedImage = useCallback(
+    () => setFeaturedIndex(i => (i === 0 ? featuredProjectImages.length - 1 : i - 1)),
+    [],
+  );
+  const showNextFeaturedImage = useCallback(
+    () => setFeaturedIndex(i => (i === featuredProjectImages.length - 1 ? 0 : i + 1)),
+    [],
+  );
 
   return (
     <>
@@ -123,6 +163,77 @@ export default function Gallery() {
       <section className="bg-cream py-12 md:py-14 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-5 sm:px-7">
           <BeforeAfter limit={3} />
+        </div>
+      </section>
+
+      {/* FEATURED PROJECT SHOWCASE */}
+      <section className="bg-[#F3F1EE] py-12 md:py-16 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-5 sm:px-7">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <div className="relative overflow-hidden rounded-brand bg-white shadow-[0_20px_54px_rgba(15,20,28,0.16)] ring-1 ring-black/5">
+                <div className="relative bg-charcoal-dark/5">
+                  <img
+                    src={featuredImage.src}
+                    alt={featuredImage.alt}
+                    className="h-[300px] w-full object-contain sm:h-[420px] lg:h-[520px]"
+                    loading="lazy"
+                  />
+                  <button
+                    type="button"
+                    onClick={showPreviousFeaturedImage}
+                    className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-charcoal-dark/85 text-white shadow-[0_8px_24px_rgba(0,0,0,0.24)] transition-colors hover:bg-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    aria-label="Show previous featured project photo"
+                  >
+                    <ChevronLeft size={22} />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showNextFeaturedImage}
+                    className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-charcoal-dark/85 text-white shadow-[0_8px_24px_rgba(0,0,0,0.24)] transition-colors hover:bg-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    aria-label="Show next featured project photo"
+                  >
+                    <ChevronRight size={22} />
+                  </button>
+                </div>
+                <div className="flex items-center justify-center gap-2 border-t border-gray-100 bg-white px-4 py-3">
+                  {featuredProjectImages.map((image, index) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      onClick={() => setFeaturedIndex(index)}
+                      className={`h-2.5 rounded-full transition-all ${
+                        featuredIndex === index ? 'w-8 bg-gold' : 'w-2.5 bg-gray-300 hover:bg-gold/60'
+                      }`}
+                      aria-label={`Show featured project photo ${index + 1}`}
+                      aria-current={featuredIndex === index}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center lg:text-left">
+              <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Featured Project</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-4">
+                Featured Sacramento Roof Replacement
+              </h2>
+              <p className="text-body text-base leading-relaxed mb-6">
+                See how PRC 13 Roofing completed a full residential roof replacement from tear off to final installation with clean workmanship and durable roofing materials.
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+                {featuredProjectStats.map(stat => (
+                  <span
+                    key={stat}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-gold/25 bg-white px-3.5 py-2 text-xs font-semibold text-headline shadow-sm"
+                  >
+                    <CheckCircle size={13} className="text-gold" />
+                    {stat}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -151,12 +262,12 @@ export default function Gallery() {
             </div>
           </div>
 
-          <div className="[column-count:1] sm:[column-count:2] lg:[column-count:3]" style={{ columnGap: '12px' }}>
+          <div className="[column-count:1] sm:[column-count:2] lg:[column-count:3]" style={{ columnGap: '8px' }}>
             {mainGalleryImages.map((img, idx) => (
               <button
                 key={img.id}
                 type="button"
-                className="break-inside-avoid mb-3 w-full group overflow-hidden bg-gray-200 cursor-pointer rounded-brand shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="break-inside-avoid mb-2 w-full group overflow-hidden bg-gray-200 cursor-pointer rounded-brand shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 onClick={() => openLightbox(idx)}
                 aria-label={`Open project photo ${idx + 1}`}
               >
@@ -165,14 +276,14 @@ export default function Gallery() {
                   alt={img.alt}
                   loading="lazy"
                   className={`w-full object-cover block transition-transform duration-500 motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.02] ${
-                    img.tall ? 'h-72 md:h-[340px]' : 'h-52 md:h-60'
+                    img.impact ? 'h-64 md:h-[320px]' : 'h-44 md:h-52'
                   }`}
                 />
               </button>
             ))}
           </div>
 
-          <div className="mt-0 grid gap-3 sm:grid-cols-2 lg:mx-auto lg:w-2/3">
+          <div className="mx-auto mt-2 grid w-full max-w-md gap-2">
             {centeredGalleryImages.map((img, idx) => {
               const imageIndex = mainGalleryImages.length + idx;
 
@@ -189,7 +300,7 @@ export default function Gallery() {
                     alt={img.alt}
                     loading="lazy"
                     className={`w-full object-cover block transition-transform duration-500 motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.02] ${
-                      img.tall ? 'h-72 md:h-[340px]' : 'h-52 md:h-60'
+                      img.impact ? 'h-64 md:h-[320px]' : 'h-44 md:h-52'
                     }`}
                   />
                 </button>

@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Droplets, Home, Wind, Layers, Hammer } from 'lucide-react';
+import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import ReviewStrip from '../components/ReviewStrip';
 import HeroBackground from '../components/HeroBackground';
@@ -81,6 +82,7 @@ export default function GuttersSiding() {
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a
                 href="#exterior-quote"
+                onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
                 className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"
               >
                 Free Inspection <ArrowRight size={17} />
@@ -176,7 +178,11 @@ export default function GuttersSiding() {
                   <p className="text-body text-xs leading-relaxed mb-4">
                     Custom-formed aluminum gutters with no seams reduce the most common failure point and provide lasting protection.
                   </p>
-                  <a href="#exterior-quote" className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline">
+                  <a
+                    href="#exterior-quote"
+                    onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
+                    className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline"
+                  >
                     Get estimate <ArrowRight size={12} />
                   </a>
                 </div>
@@ -188,7 +194,11 @@ export default function GuttersSiding() {
                   <p className="text-body text-xs leading-relaxed mb-4">
                     Leaf and debris guards reduce cleaning frequency and prevent blockages that cause overflow and fascia damage.
                   </p>
-                  <a href="#exterior-quote" className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline">
+                  <a
+                    href="#exterior-quote"
+                    onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
+                    className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline"
+                  >
                     Get estimate <ArrowRight size={12} />
                   </a>
                 </div>
@@ -247,7 +257,11 @@ export default function GuttersSiding() {
                   <p className="text-body text-xs leading-relaxed mb-4">
                     Low-maintenance, weather-resistant vinyl in a wide range of styles. Cost-effective and durable for Sacramento's climate.
                   </p>
-                  <a href="#exterior-quote" className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline">
+                  <a
+                    href="#exterior-quote"
+                    onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
+                    className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline"
+                  >
                     Get estimate <ArrowRight size={12} />
                   </a>
                 </div>
@@ -259,7 +273,11 @@ export default function GuttersSiding() {
                   <p className="text-body text-xs leading-relaxed mb-4">
                     Hardie Board and fiber cement panels handle heat, resist moisture, hold paint, and deliver premium curb appeal.
                   </p>
-                  <a href="#exterior-quote" className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline">
+                  <a
+                    href="#exterior-quote"
+                    onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
+                    className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:underline"
+                  >
                     Get estimate <ArrowRight size={12} />
                   </a>
                 </div>

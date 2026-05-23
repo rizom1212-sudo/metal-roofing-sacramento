@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { PRIMARY_CTA } from '../data/cta';
 import { PHONE_SMS } from '../data/site';
+import { scrollToTopInstant } from '../lib/scroll';
 import SeasonalBanner, { SEASONAL_BANNER_SESSION_KEY } from './SeasonalBanner';
 
 const allServices = [
@@ -20,7 +21,6 @@ function linkClass(active: boolean) {
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
   const headerStackRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
@@ -28,11 +28,23 @@ export default function Navbar() {
   const isActive = (href: string) =>
     href === '/' ? location.pathname === '/' : location.pathname.startsWith(href);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleHomeLogoClick = () => {
+    if (location.pathname === '/') {
+      scrollToTopInstant();
+    }
+  };
+
+  const handleNavLinkClick = (href: string) => {
+    setServicesOpen(false);
+    if (location.pathname === href) {
+      scrollToTopInstant();
+    }
+  };
+
+  const handleMobileNavLinkClick = (href: string) => {
+    setMobileOpen(false);
+    handleNavLinkClick(href);
+  };
 
   useEffect(() => {
     try {
@@ -66,48 +78,34 @@ export default function Navbar() {
       observer?.disconnect();
       window.removeEventListener('resize', updateHeaderOffset);
     };
-  }, [bannerDismissed, mobileOpen, scrolled]);
-
-  const handleLogoClick = () => {
-    window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
-  };
+  }, [bannerDismissed, mobileOpen]);
 
   return (
     <>
       <div ref={headerStackRef} className="fixed top-0 left-0 right-0 z-[60]">
         <SeasonalBanner dismissed={bannerDismissed} onDismiss={() => setBannerDismissed(true)} />
 
-        <header
-          className={`border-b border-white/10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-sm ${
-            scrolled
-              ? 'bg-charcoal/95 shadow-[0_12px_32px_rgba(0,0,0,0.22)]'
-              : 'bg-charcoal/95 shadow-[0_4px_18px_rgba(0,0,0,0.12)]'
-          }`}
-        >
+        <header className="bg-[#071323] border-b border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-7">
-          <div className={`flex items-center justify-between transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            scrolled ? 'h-[64px] md:h-[74px]' : 'h-[68px] md:h-[82px]'
-          }`}>
+          <div className="flex h-[68px] md:h-[82px] items-center justify-between">
 
-            <Link to="/" onClick={handleLogoClick} className="flex items-center flex-shrink-0" style={{ minWidth: 0 }}>
+            <Link to="/" onClick={handleHomeLogoClick} className="flex items-center flex-shrink-0" style={{ minWidth: 0 }}>
               <img
                 src="/assets/brand/prc13-logo-gold.png"
                 alt="PRC 13 Roofing"
-                className={`w-auto max-w-[240px] object-contain object-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.015] ${
-                  scrolled ? 'h-[48px] md:h-[58px]' : 'h-[52px] md:h-[64px]'
-                }`}
+                className="h-[52px] md:h-[64px] w-auto max-w-[240px] object-contain object-left transition-transform duration-200 ease-out hover:scale-[1.015]"
               />
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
-              <Link to="/" className={linkClass(isActive('/'))}>
+              <Link to="/" onClick={() => handleNavLinkClick('/')} className={linkClass(isActive('/'))}>
                 Home
               </Link>
-              <Link to="/roof-replacement" className={linkClass(isActive('/roof-replacement'))}>
+              <Link to="/roof-replacement" onClick={() => handleNavLinkClick('/roof-replacement')} className={linkClass(isActive('/roof-replacement'))}>
                 Replacement
               </Link>
-              <Link to="/emergency-roof-repair" className={linkClass(isActive('/emergency-roof-repair'))}>
+              <Link to="/emergency-roof-repair" onClick={() => handleNavLinkClick('/emergency-roof-repair')} className={linkClass(isActive('/emergency-roof-repair'))}>
                 Emergency
               </Link>
 
@@ -125,11 +123,12 @@ export default function Navbar() {
                 </button>
                 {servicesOpen && (
                   <div className="absolute top-full left-0 -mt-1 pt-2 w-56 z-50">
-                    <div className="bg-charcoal-dark/95 border border-white/10 shadow-[0_18px_44px_rgba(0,0,0,0.28)] py-2 rounded-brand max-h-[70vh] overflow-y-auto backdrop-blur-sm">
+                    <div className="bg-[#071323] border border-white/10 shadow-[0_18px_44px_rgba(0,0,0,0.28)] py-2 rounded-brand max-h-[70vh] overflow-y-auto">
                       {allServices.map(s => (
                         <Link
                           key={s.href}
                           to={s.href}
+                          onClick={() => handleNavLinkClick(s.href)}
                           className={`block px-4 py-2.5 text-sm transition-all duration-200 ease-out hover:bg-gold/15 hover:text-gold hover:pl-5 ${
                             isActive(s.href)
                               ? 'text-gold font-semibold bg-gold/10'
@@ -144,13 +143,13 @@ export default function Navbar() {
                 )}
               </div>
 
-              <Link to="/gallery" className={linkClass(isActive('/gallery'))}>
+              <Link to="/gallery" onClick={() => handleNavLinkClick('/gallery')} className={linkClass(isActive('/gallery'))}>
                 Gallery
               </Link>
-              <Link to="/about" className={linkClass(isActive('/about'))}>
+              <Link to="/about" onClick={() => handleNavLinkClick('/about')} className={linkClass(isActive('/about'))}>
                 About
               </Link>
-              <Link to="/contact" className={linkClass(isActive('/contact'))}>
+              <Link to="/contact" onClick={() => handleNavLinkClick('/contact')} className={linkClass(isActive('/contact'))}>
                 Contact
               </Link>
             </nav>
@@ -163,7 +162,7 @@ export default function Navbar() {
                 <Phone size={15} />
                 916-761-3866
               </a>
-              <Link to="/contact" className="btn-gold text-sm px-5 py-3 font-semibold tracking-wide">
+              <Link to="/contact" onClick={() => handleNavLinkClick('/contact')} className="btn-gold text-sm px-5 py-3 font-semibold tracking-wide">
                 {PRIMARY_CTA}
               </Link>
             </div>
@@ -180,15 +179,15 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="lg:hidden bg-charcoal-dark/95 border-t border-white/10 max-h-[75vh] overflow-y-auto shadow-[0_18px_44px_rgba(0,0,0,0.25)] backdrop-blur-sm">
+          <div className="lg:hidden bg-[#071323] border-t border-white/10 max-h-[75vh] overflow-y-auto shadow-[0_18px_44px_rgba(0,0,0,0.25)]">
             <nav className="px-4 py-4 space-y-1">
-              <Link to="/" className={`block px-3 py-2.5 text-sm ${isActive('/') ? 'text-gold font-semibold' : 'text-white hover:text-gold'}`}>
+              <Link to="/" onClick={() => handleMobileNavLinkClick('/')} className={`block px-3 py-2.5 text-sm ${isActive('/') ? 'text-gold font-semibold' : 'text-white hover:text-gold'}`}>
                 Home
               </Link>
-              <Link to="/roof-replacement" className={`block px-3 py-2.5 text-sm ${isActive('/roof-replacement') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-gold'}`}>
+              <Link to="/roof-replacement" onClick={() => handleMobileNavLinkClick('/roof-replacement')} className={`block px-3 py-2.5 text-sm ${isActive('/roof-replacement') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-gold'}`}>
                 Replacement
               </Link>
-              <Link to="/emergency-roof-repair" className={`block px-3 py-2.5 text-sm ${isActive('/emergency-roof-repair') ? 'text-gold font-semibold' : 'text-gold hover:text-gold-light'}`}>
+              <Link to="/emergency-roof-repair" onClick={() => handleMobileNavLinkClick('/emergency-roof-repair')} className={`block px-3 py-2.5 text-sm ${isActive('/emergency-roof-repair') ? 'text-gold font-semibold' : 'text-gold hover:text-gold-light'}`}>
                 Emergency
               </Link>
 
@@ -197,6 +196,7 @@ export default function Navbar() {
                 <Link
                   key={s.href}
                   to={s.href}
+                  onClick={() => handleMobileNavLinkClick(s.href)}
                   className={`block px-3 py-2.5 text-sm hover:text-gold transition-colors ${
                     isActive(s.href) ? 'text-gold font-semibold' : 'text-gray-400'
                   }`}
@@ -206,13 +206,13 @@ export default function Navbar() {
               ))}
 
               <div className="border-t border-white/10 mt-2 pt-2" />
-              <Link to="/gallery" className={`block px-3 py-2.5 text-sm ${isActive('/gallery') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}>
+              <Link to="/gallery" onClick={() => handleMobileNavLinkClick('/gallery')} className={`block px-3 py-2.5 text-sm ${isActive('/gallery') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}>
                 Gallery
               </Link>
-              <Link to="/about" className={`block px-3 py-2.5 text-sm ${isActive('/about') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}>
+              <Link to="/about" onClick={() => handleMobileNavLinkClick('/about')} className={`block px-3 py-2.5 text-sm ${isActive('/about') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}>
                 About
               </Link>
-              <Link to="/contact" className={`block px-3 py-2.5 text-sm ${isActive('/contact') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}>
+              <Link to="/contact" onClick={() => handleMobileNavLinkClick('/contact')} className={`block px-3 py-2.5 text-sm ${isActive('/contact') ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}>
                 Contact
               </Link>
 
@@ -241,7 +241,8 @@ export default function Navbar() {
           </a>
           <Link
             to="/contact"
-            className="flex-1 flex items-center justify-center gap-2 bg-charcoal text-white font-semibold py-4 text-sm hover:bg-charcoal-light transition-colors border-l border-white/10"
+            onClick={() => handleNavLinkClick('/contact')}
+            className="flex-1 flex items-center justify-center gap-2 bg-[#071323] text-white font-semibold py-4 text-sm hover:bg-charcoal-light transition-colors border-l border-white/10"
           >
             {PRIMARY_CTA}
           </Link>

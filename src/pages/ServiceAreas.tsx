@@ -17,9 +17,6 @@ export default function ServiceAreas() {
 
     setActiveSlug(slug);
     setHighlightSlug(slug);
-    window.setTimeout(() => {
-      document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 80);
 
     const timer = window.setTimeout(() => setHighlightSlug(''), 2800);
     return () => window.clearTimeout(timer);

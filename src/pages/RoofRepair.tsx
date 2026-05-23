@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { handleSamePageAnchorClick } from '../lib/scroll';
 import { Phone, CheckCircle, ArrowRight, AlertTriangle, Clock, Star, Shield, MapPin, CreditCard } from 'lucide-react';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
@@ -186,7 +187,11 @@ export default function RoofRepair() {
                 <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
                   <Phone size={18} /> Call 916-761-3866
                 </a>
-                <a href="#repair-quote" className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
+                <a
+                  href="#repair-quote"
+                  onClick={e => handleSamePageAnchorClick(e, 'repair-quote')}
+                  className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+                >
                   Request Roof Repair Assessment <ArrowRight size={18} />
                 </a>
               </div>

@@ -27,18 +27,18 @@ export const beforeAfterPairs: BeforeAfterPair[] = [
     description: 'Completed with upgraded tile installation and waterproof underlayment.',
   },
   {
-    id: 'historic-home-restoration',
+    id: 'complete-roof-replacement',
     before: {
-      src: ASSETS.beforeAfter('historic-home-before.png'),
-      alt: 'Historic home roof before restoration',
+      src: ASSETS.beforeAfter('complete-roof-replacement-before.png'),
+      alt: 'Sacramento home before complete roof replacement',
     },
     after: {
-      src: ASSETS.beforeAfter('historic-home-after.png'),
-      alt: 'Historic home roof after restoration',
+      src: ASSETS.beforeAfter('complete-roof-replacement-after.png'),
+      alt: 'Sacramento home after complete roof replacement',
     },
-    title: 'Historic Home Roof Restoration',
+    title: 'Complete Roof Replacement',
     location: 'Sacramento, CA',
-    category: 'Roof Restoration',
-    description: 'Carefully restored while preserving the home’s original architecture.',
+    category: 'Roof Replacement',
+    description: 'From tear off to final installation, this Sacramento home received a complete roofing upgrade.',
   },
 ];

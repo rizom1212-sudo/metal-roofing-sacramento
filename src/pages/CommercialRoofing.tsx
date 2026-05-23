@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Building2, Clock, Wrench, FileText } from 'lucide-react';
+import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
@@ -91,7 +92,11 @@ export default function CommercialRoofing() {
               <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
                 <Phone size={18} /> Call 916-761-3866
               </a>
-              <a href="#commercial-quote" className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
+              <a
+                href="#commercial-quote"
+                onClick={e => handleSamePageAnchorClick(e, 'commercial-quote')}
+                className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+              >
                 Request Commercial Assessment <ArrowRight size={18} />
               </a>
             </div>

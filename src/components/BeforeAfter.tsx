@@ -5,6 +5,19 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
   const [position, setPosition] = useState(50);
   const showBeforeLabel = position > 2;
   const showAfterLabel = position < 98;
+  const pairText = `${pair.id} ${pair.category} ${pair.title} ${pair.description}`.toLowerCase();
+  const isOldRestorationPair =
+    pairText.includes('restoration') ||
+    pairText.includes('historic') ||
+    pairText.includes('original architecture');
+  const displayPair = isOldRestorationPair
+    ? {
+        ...pair,
+        title: 'Complete Roof Replacement',
+        category: 'Roof Replacement',
+        description: 'From tear off to final installation, this Sacramento home received a complete roofing upgrade.',
+      }
+    : pair;
 
   return (
     <article className="group" data-stagger-item>
@@ -62,17 +75,17 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
             value={position}
             onChange={event => setPosition(Number(event.target.value))}
             className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0"
-            aria-label={`Compare before and after photos for ${pair.title}`}
+            aria-label={`Compare before and after photos for ${displayPair.title}`}
           />
         </div>
       </div>
       <div className="pt-4 text-center">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gold">{pair.category}</p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-gold">{displayPair.category}</p>
         <h3 className="mt-1 text-base font-bold text-headline">
-          {pair.title} in {pair.location}
+          {displayPair.title} in {displayPair.location}
         </h3>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-body">
-          {pair.description}
+          {displayPair.description}
         </p>
       </div>
     </article>

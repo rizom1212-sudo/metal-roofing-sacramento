@@ -8,6 +8,7 @@ import HeroBackground from './HeroBackground';
 import JsonLd from './JsonLd';
 import OptimizedImage from './OptimizedImage';
 import { PRIMARY_CTA } from '../data/cta';
+import { handleSamePageAnchorClick } from '../lib/scroll';
 import { type GalleryCategory } from '../data/gallery';
 
 export interface ServiceFeature {
@@ -121,7 +122,11 @@ export default function ServicePageTemplate({
                 <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
                   <Phone size={18} /> Call 916-761-3866
                 </a>
-                <a href={`#${sourcePage}-cta`} className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
+                <a
+                  href={`#${sourcePage}-cta`}
+                  onClick={e => handleSamePageAnchorClick(e, `${sourcePage}-cta`)}
+                  className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+                >
                   {PRIMARY_CTA} <ArrowRight size={18} />
                 </a>
               </div>

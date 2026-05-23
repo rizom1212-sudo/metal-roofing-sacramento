@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import RoofReplacement from './pages/RoofReplacement';
 import RoofRepair from './pages/RoofRepair';
@@ -19,6 +20,7 @@ import EmergencyRoofRepair from './pages/EmergencyRoofRepair';
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <AppRoutes />
       </Layout>

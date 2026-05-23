@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -14,6 +14,7 @@
     }
   }
   body {
+    scroll-behavior: auto;
     font-family: 'Inter', system-ui, sans-serif;
     color: #4B5563;
     background-color: #F8F8F6;
@@ -74,6 +75,10 @@
     animation: hero-cinematic-zoom 25s ease-in-out infinite alternate;
     transform-origin: center;
     will-change: transform;
+  }
+  .hero-mobile-roof-focus {
+    filter: brightness(1.06) contrast(1.08) saturate(1.06);
+    transform-origin: 58% 62%;
   }
   .btn-gold {
     @apply relative overflow-hidden bg-gold text-white font-semibold px-6 py-3 rounded-brand transition-all duration-300 ease-out hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(201,151,0,0.24)] active:translate-y-0 active:bg-gold-dark active:shadow-[0_4px_12px_rgba(201,151,0,0.18)];
@@ -174,6 +179,22 @@
   }
   to {
     transform: scale(1.06);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-mobile-roof-focus {
+    animation: hero-mobile-roof-zoom 25s ease-in-out infinite alternate;
+    transform-origin: 58% 62%;
+  }
+}
+
+@keyframes hero-mobile-roof-zoom {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1.15);
   }
 }
 

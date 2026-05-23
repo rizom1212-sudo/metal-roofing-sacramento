@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Zap, Sun, Wrench, Timer } from 'lucide-react';
+import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -112,7 +113,11 @@ export default function MetalRoofing() {
                 <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
                   <Phone size={18} /> Call 916-761-3866
                 </a>
-                <a href="#metal-quote" className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
+                <a
+                  href="#metal-quote"
+                  onClick={e => handleSamePageAnchorClick(e, 'metal-quote')}
+                  className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+                >
                   {PRIMARY_CTA} <ArrowRight size={18} />
                 </a>
               </div>

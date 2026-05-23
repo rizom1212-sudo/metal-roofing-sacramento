@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { scrollToTopInstant } from '../lib/scroll';
 import { Phone, Shield } from 'lucide-react';
 import GoogleReviewsLink from './GoogleReviewsLink';
 import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
@@ -13,6 +14,14 @@ const tier1Links = [
 ];
 
 export default function Footer() {
+  const location = useLocation();
+
+  const handleHomeLogoClick = () => {
+    if (location.pathname === '/') {
+      scrollToTopInstant();
+    }
+  };
+
   return (
     <footer className="relative bg-gradient-to-b from-charcoal to-charcoal-dark text-gray-400 shadow-[0_-18px_44px_rgba(15,20,28,0.10)]">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" aria-hidden />
@@ -21,7 +30,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-2 lg:col-span-1">
-            <Link to="/" onClick={() => window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0)}>
+            <Link to="/" onClick={handleHomeLogoClick}>
               <img
                 src="/assets/brand/prc13-logo-gold.png"
                 alt="PRC 13 Roofing"
