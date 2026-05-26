@@ -15,21 +15,28 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function headTags({ title, description, canonical, image, type = 'website' }) {
-  return [
+function headTags({ title, description, canonical, image, type = 'website', publishedTime, modifiedTime }) {
+  const tags = [
     `<title>${escapeHtml(title)}</title>`,
     `<link rel="canonical" href="${canonical}" />`,
     `<meta name="description" content="${escapeHtml(description)}" />`,
+    `<meta name="robots" content="index,follow" />`,
     `<meta property="og:title" content="${escapeHtml(title)}" />`,
     `<meta property="og:description" content="${escapeHtml(description)}" />`,
     `<meta property="og:url" content="${canonical}" />`,
     `<meta property="og:image" content="${image}" />`,
     `<meta property="og:type" content="${type}" />`,
+    `<meta property="og:site_name" content="PRC 13 Roofing" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `<meta name="twitter:image" content="${image}" />`,
-  ].join('\n    ');
+  ];
+
+  if (type === 'article' && publishedTime) tags.push(`<meta property="article:published_time" content="${publishedTime}" />`);
+  if (type === 'article' && modifiedTime) tags.push(`<meta property="article:modified_time" content="${modifiedTime}" />`);
+
+  return tags.join('\n    ');
 }
 
 function injectHead(template, tags) {
@@ -51,6 +58,8 @@ function routeMeta(route, api) {
         description: post.excerpt,
         image: api.absoluteAssetUrl(post.coverImage),
         type: 'article',
+        publishedTime: new Date(post.date).toISOString(),
+        modifiedTime: new Date(post.updatedDate ?? post.date).toISOString(),
       }
     : {
         ...api.getPageMeta(route.path),

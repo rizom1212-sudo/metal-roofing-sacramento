@@ -30,6 +30,7 @@ export default function PageMeta() {
 
   useEffect(() => {
     let meta = getPageMeta(pathname);
+    let ogType = 'website';
 
     if (pathname.startsWith('/blog/') && pathname !== '/blog') {
       const slug = pathname.replace('/blog/', '');
@@ -40,6 +41,7 @@ export default function PageMeta() {
           description: post.excerpt,
           path: pathname,
         };
+        ogType = 'article';
       }
     }
 
@@ -53,7 +55,9 @@ export default function PageMeta() {
     upsertMeta('property', 'og:description', meta.description);
     upsertMeta('property', 'og:url', url);
     upsertMeta('property', 'og:image', image);
-    upsertMeta('property', 'og:type', 'website');
+    upsertMeta('property', 'og:type', ogType);
+    upsertMeta('property', 'og:site_name', 'PRC 13 Roofing');
+    upsertMeta('name', 'robots', 'index,follow');
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', meta.title);
     upsertMeta('name', 'twitter:description', meta.description);

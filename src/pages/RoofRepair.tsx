@@ -9,6 +9,8 @@ import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
 import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
+import AnswerSummary from '../components/AnswerSummary';
+import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
 
 const repairSigns = [
@@ -220,6 +222,17 @@ export default function RoofRepair() {
       {/* WHAT WE REPAIR */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnswerSummary
+            title="Sacramento roof repair: quick answer"
+            points={[
+              'Leaks, flashing, shingles, storm damage, and flat roofs',
+              'Most inspections scheduled within 24 hours',
+              'Repair vs replacement guidance included',
+              'Insurance documentation available for storm damage',
+            ]}
+          >
+            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home.
+          </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Common Repairs</p>
@@ -375,6 +388,8 @@ export default function RoofRepair() {
           <FaqAccordion items={repairFaqs} variant="light" />
         </div>
       </section>
+
+      <LocalSeoLinks />
 
       {/* FORM CTA */}
       <section id="repair-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

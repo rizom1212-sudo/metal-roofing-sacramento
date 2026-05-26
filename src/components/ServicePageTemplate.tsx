@@ -7,6 +7,8 @@ import HeroLeadFormPanel from './HeroLeadFormPanel';
 import HeroBackground from './HeroBackground';
 import JsonLd from './JsonLd';
 import OptimizedImage from './OptimizedImage';
+import AnswerSummary from './AnswerSummary';
+import LocalSeoLinks from './LocalSeoLinks';
 import { PRIMARY_CTA } from '../data/cta';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import { type GalleryCategory } from '../data/gallery';
@@ -34,6 +36,8 @@ export interface ServiceTemplateProps {
   trustBarItems: string[];
 
   /** Intro section */
+  answerSummary?: string;
+  answerPoints?: string[];
   introHeading: string;
   introParagraphs: string[];
   introChecklist: string[];
@@ -58,6 +62,7 @@ export interface ServiceTemplateProps {
   ctaSubtext: string;
   ctaChecklist: string[];
   sourcePage: string;
+  showLocalSeoLinks?: boolean;
 }
 
 export default function ServicePageTemplate({
@@ -69,6 +74,8 @@ export default function ServicePageTemplate({
   heroImage,
   heroWebp,
   trustBarItems,
+  answerSummary,
+  answerPoints = [],
   introHeading,
   introParagraphs,
   introChecklist,
@@ -85,6 +92,7 @@ export default function ServicePageTemplate({
   ctaSubtext,
   ctaChecklist,
   sourcePage,
+  showLocalSeoLinks = true,
 }: ServiceTemplateProps) {
   const crumbLabel = breadcrumbLabel ?? headline;
 
@@ -160,6 +168,11 @@ export default function ServicePageTemplate({
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Overview</p>
+              {answerSummary && (
+                <AnswerSummary title={`${pageTitle}: quick answer`} points={answerPoints}>
+                  {answerSummary}
+                </AnswerSummary>
+              )}
               <h2 className="section-heading mb-5">{introHeading}</h2>
               {introParagraphs.map((p, i) => (
                 <p key={i} className="text-body text-sm leading-relaxed mb-4">{p}</p>
@@ -220,6 +233,8 @@ export default function ServicePageTemplate({
           <FaqAccordion items={faqs} variant="light" />
         </div>
       </section>
+
+      {showLocalSeoLinks && <LocalSeoLinks />}
 
       {/* CTA */}
       <section id={`${sourcePage}-cta`} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

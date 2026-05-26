@@ -6,6 +6,8 @@ import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
 import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
+import AnswerSummary from '../components/AnswerSummary';
+import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
 
 const checkItems = [
@@ -130,6 +132,17 @@ export default function RoofInspection() {
       {/* WHAT WE CHECK */}
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnswerSummary
+            title="Sacramento roof inspection: quick answer"
+            points={[
+              'Free inspection with no obligation',
+              'Checks shingles, flashing, drainage, and attic ventilation',
+              'Written findings and honest next steps',
+              'Helpful before repairs, replacement, buying, or selling',
+            ]}
+          >
+            A roof inspection tells you whether your Sacramento roof needs repair, replacement, maintenance, or no action. PRC 13 Roofing checks the roof system and explains the findings without pressure.
+          </AnswerSummary>
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Comprehensive</p>
           <h2 className="section-heading mb-4">What We Check During Your Roof Inspection</h2>
           <p className="section-subheading mb-10 max-w-2xl">
@@ -257,6 +270,8 @@ export default function RoofInspection() {
           <FaqAccordion items={faqs} variant="light" />
         </div>
       </section>
+
+      <LocalSeoLinks />
 
       {/* FINAL CTA */}
       <section id="inspection-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

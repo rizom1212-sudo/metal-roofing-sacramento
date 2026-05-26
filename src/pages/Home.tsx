@@ -39,9 +39,19 @@ const MAP_EMBED_URL =
 
 const homeFaqs: FaqItem[] = [
   {
+    question: 'What does PRC 13 Roofing do?',
+    answer:
+      'PRC 13 Roofing is a Sacramento roofing contractor for roof replacement, roof repair, emergency roof repair, metal roofing, commercial roofing, inspections, gutters, and siding. We start with a free inspection and give clear written recommendations.',
+  },
+  {
     question: 'How long does a roof replacement take?',
     answer:
       'Most Sacramento residential roof replacements are completed in one to two days. Larger or more complex roofs may take a third day. We give you a firm schedule before the project starts and stick to it.',
+  },
+  {
+    question: 'How much does roof replacement cost in Sacramento?',
+    answer:
+      'Roof replacement cost depends on roof size, pitch, material, access, and whether decking repairs are needed. We inspect first, explain shingle, tile, and metal options, and provide a written quote before any work begins.',
   },
   {
     question: 'Do you offer free inspections?',
@@ -66,7 +76,12 @@ const homeFaqs: FaqItem[] = [
   {
     question: 'Do you serve areas outside Sacramento?',
     answer:
-      'Yes. We serve the greater Sacramento area including Roseville, Rocklin, Folsom, Rancho Cordova, Elk Grove, Granite Bay, El Dorado Hills, Orangevale, Lincoln, Woodland, Davis, and Florin.',
+      'Yes. We serve the greater Sacramento area including Roseville, Rocklin, Folsom, Rancho Cordova, Elk Grove, Granite Bay, El Dorado Hills, Orangevale, Lincoln, Woodland, Davis, and Florin. Each service-area page includes local roofing guidance.',
+  },
+  {
+    question: 'What should I do if my roof is leaking right now?',
+    answer:
+      'If water is actively entering your home, move valuables, place a bucket under the leak, avoid climbing on the roof, and call PRC 13 Roofing. We prioritize active leaks and can assess emergency roof repair options quickly.',
   },
 ];
 

@@ -3,6 +3,7 @@ import { scrollToTopInstant } from '../lib/scroll';
 import { Phone, Shield } from 'lucide-react';
 import GoogleReviewsLink from './GoogleReviewsLink';
 import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { serviceAreas } from '../data/serviceAreas';
 
 const tier1Links = [
   { label: 'Roof Replacement', href: '/roof-replacement' },
@@ -12,6 +13,8 @@ const tier1Links = [
   { label: 'Metal Roofing', href: '/metal-roofing' },
   { label: 'Gutters & Siding', href: '/gutters-siding' },
 ];
+
+const footerServiceAreas = serviceAreas.slice(0, 6);
 
 export default function Footer() {
   const location = useLocation();
@@ -83,6 +86,13 @@ export default function Footer() {
                 Serving Sacramento, Roseville, Folsom, Elk Grove, Rocklin, and surrounding areas.
               </p>
               <div className="space-y-2 text-sm">
+                <div className="grid grid-cols-2 gap-1.5">
+                  {footerServiceAreas.map(area => (
+                    <Link key={area.slug} to={`/service-areas/${area.slug}`} className="text-gray-400 hover:text-gold transition-colors">
+                      {area.name}
+                    </Link>
+                  ))}
+                </div>
                 <p className="flex items-center gap-2 text-gray-400">
                   <Shield size={14} className="text-gold flex-shrink-0" />
                   Licensed &amp; Insured
@@ -101,6 +111,9 @@ export default function Footer() {
           <p className="text-xs text-gray-600">
             Lic. #1087153 &nbsp;·&nbsp; Serving Greater Sacramento
           </p>
+          <a href="/llms.txt" className="text-xs text-gray-600 hover:text-gold transition-colors">
+            AI site facts
+          </a>
         </div>
       </div>
     </footer>

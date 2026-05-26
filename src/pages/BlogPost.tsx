@@ -58,7 +58,9 @@ export default function BlogPost() {
                 <Clock size={11} /> {post.readTime}
               </span>
               <span className="text-white/30">·</span>
-              <span className="text-xs text-gray-300">{post.date}</span>
+              <span className="text-xs text-gray-300">
+                {post.updatedDate ? `Updated ${post.updatedDate}` : post.date}
+              </span>
             </div>
             <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight max-w-3xl">
               {post.title}

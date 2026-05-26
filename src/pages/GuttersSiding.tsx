@@ -5,6 +5,8 @@ import ReviewStrip from '../components/ReviewStrip';
 import HeroBackground from '../components/HeroBackground';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import JsonLd from '../components/JsonLd';
+import AnswerSummary from '../components/AnswerSummary';
+import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
 
 // ─── FAQ data split by group ────────────────────────────────────────────────
@@ -109,6 +111,17 @@ export default function GuttersSiding() {
       {/* ── WHY EXTERIOR PROTECTION MATTERS ─────────────────────────────── */}
       <section className="bg-white border-b border-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-5 sm:px-7">
+          <AnswerSummary
+            title="Gutters and siding in Sacramento: quick answer"
+            points={[
+              'Gutters protect fascia, roof edges, and foundations',
+              'Siding helps prevent exterior moisture damage',
+              'Fascia and soffit repairs can stop roofline rot',
+              'Exterior issues can contribute to roof leaks',
+            ]}
+          >
+            Gutters, siding, fascia, and soffit protect the parts of your Sacramento home that keep water away from the roofline and structure. Fixing exterior failures early can prevent larger roofing and interior damage.
+          </AnswerSummary>
           <div className="grid sm:grid-cols-3 gap-8">
             {[
               {
@@ -409,6 +422,8 @@ export default function GuttersSiding() {
           <FaqAccordion items={exteriorFaqs} variant="light" />
         </div>
       </section>
+
+      <LocalSeoLinks />
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
       <section id="exterior-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

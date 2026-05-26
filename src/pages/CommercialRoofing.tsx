@@ -6,6 +6,8 @@ import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
 import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
+import AnswerSummary from '../components/AnswerSummary';
+import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
 
 const problems = [
@@ -112,6 +114,17 @@ export default function CommercialRoofing() {
       {/* PROBLEMS SECTION */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnswerSummary
+            title="Commercial roofing in Sacramento: quick answer"
+            points={[
+              'Flat and low-slope roof inspections',
+              'Repair or replacement recommendations',
+              'Scheduling around business operations',
+              'Insurance documentation for storm damage',
+            ]}
+          >
+            Commercial roofing problems should be inspected when you see ponding water, membrane damage, failed seams, or interior leaks. PRC 13 Roofing documents the roof condition and explains whether repair or replacement is the right next step.
+          </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Warning Signs</p>
@@ -209,6 +222,8 @@ export default function CommercialRoofing() {
           <FaqAccordion items={faqs} variant="light" />
         </div>
       </section>
+
+      <LocalSeoLinks />
 
       {/* FINAL CTA */}
       <section id="commercial-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

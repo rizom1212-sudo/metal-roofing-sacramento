@@ -52,7 +52,11 @@ export default function ServiceAreas() {
                     : 'border-gray-100'
                 } ${highlightSlug === area.slug ? 'animate-[service-area-pulse_1.4s_ease-out_2]' : ''}`}
               >
-                <h2 className="text-xl font-bold text-headline mb-2">{area.name}</h2>
+                <h2 className="text-xl font-bold text-headline mb-2">
+                  <Link to={`/service-areas/${area.slug}`} className="hover:text-gold transition-colors">
+                    {area.name} Roofing Services
+                  </Link>
+                </h2>
                 <p className="text-body text-sm leading-relaxed mb-4">{area.blurb}</p>
                 {activeSlug === area.slug && (
                   <Link
@@ -71,6 +75,9 @@ export default function ServiceAreas() {
                   </Link>
                   <Link to="/roof-repair" className="text-body hover:text-gold transition-colors">
                     Repair
+                  </Link>
+                  <Link to={`/service-areas/${area.slug}`} className="text-gold font-semibold hover:underline">
+                    Local guide
                   </Link>
                 </div>
               </article>

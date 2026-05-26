@@ -1,4 +1,5 @@
 import { DEFAULT_OG_IMAGE } from './assets';
+import { serviceAreas } from './serviceAreas';
 
 export interface PageMetaConfig {
   title: string;
@@ -7,6 +8,17 @@ export interface PageMetaConfig {
 }
 
 const SITE_NAME = 'PRC 13 Roofing';
+
+const serviceAreaMeta = Object.fromEntries(
+  serviceAreas.map(area => [
+    `/service-areas/${area.slug}`,
+    {
+      title: `${area.name} Roofing Services | ${SITE_NAME}`,
+      description: `Roof repair, replacement, inspections, emergency leak help, and metal roofing in ${area.name}, CA. Free roof inspections from PRC 13 Roofing.`,
+      path: `/service-areas/${area.slug}`,
+    },
+  ]),
+) as Record<string, PageMetaConfig>;
 
 export const DEFAULT_SITE_META: PageMetaConfig = {
   title: `${SITE_NAME} | Sacramento Roof Replacement & Repair`,
@@ -89,6 +101,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
       'PRC 13 Roofing serves Sacramento, Roseville, Rocklin, Folsom, Elk Grove, and surrounding communities. Free roof inspections.',
     path: '/service-areas',
   },
+  ...serviceAreaMeta,
 };
 
 export function getPageMeta(pathname: string): PageMetaConfig {

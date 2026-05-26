@@ -18,6 +18,16 @@ const BUSINESS_ID = 'https://prc13roofing.com/#business';
 
 const tel = `+1-${PHONE_TEL.slice(0, 3)}-${PHONE_TEL.slice(3, 6)}-${PHONE_TEL.slice(6)}`;
 
+const roofingServiceNames = [
+  'Roof replacement',
+  'Roof repair',
+  'Emergency roof repair',
+  'Metal roofing',
+  'Commercial roofing',
+  'Roof inspection',
+  'Gutters and siding',
+];
+
 function serviceAreaSchema() {
   return serviceAreaNames.map(name => ({
     '@type': 'City',
@@ -58,6 +68,18 @@ function localBusinessSchema() {
       '@type': 'AggregateRating',
       ratingValue: GOOGLE_RATING_VALUE,
       reviewCount: GOOGLE_REVIEW_COUNT,
+    },
+    knowsAbout: roofingServiceNames,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Sacramento roofing services',
+      itemListElement: roofingServiceNames.map(serviceName => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: serviceName,
+        },
+      })),
     },
     sameAs: SAME_AS_URLS,
   };
@@ -116,6 +138,7 @@ export default function JsonLd({
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
     name: pageName,
+    inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
@@ -123,6 +146,7 @@ export default function JsonLd({
       name: BUSINESS_DISPLAY_NAME,
     },
     about: { '@id': BUSINESS_ID },
+    keywords: ['Sacramento roofing', 'roof repair', 'roof replacement', 'metal roofing', 'roof inspection'],
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: absoluteAssetUrl(DEFAULT_OG_IMAGE),
@@ -151,7 +175,7 @@ export default function JsonLd({
       description: blogPost.excerpt,
       image: absoluteAssetUrl(blogPost.coverImage),
       datePublished: isoDate(blogPost.date),
-      dateModified: isoDate(blogPost.date),
+      dateModified: isoDate(blogPost.updatedDate ?? blogPost.date),
       author: {
         '@type': 'Organization',
         '@id': BUSINESS_ID,

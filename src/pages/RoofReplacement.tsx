@@ -9,6 +9,8 @@ import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
 import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
+import AnswerSummary from '../components/AnswerSummary';
+import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
 
 const steps = [
@@ -122,6 +124,17 @@ export default function RoofReplacement() {
       {/* WHY REPLACE */}
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnswerSummary
+            title="Sacramento roof replacement: quick answer"
+            points={[
+              'Most residential replacements take 1 to 2 days',
+              'Free inspection before any quote',
+              'Shingle, tile, and metal options available',
+              'Financing available on qualifying projects',
+            ]}
+          >
+            Roof replacement usually makes sense when a Sacramento roof is near the end of its life, has repeated leaks, widespread shingle damage, or decking concerns that make another repair a short-term fix.
+          </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Is It Time?</p>
@@ -226,6 +239,8 @@ export default function RoofReplacement() {
           <FaqAccordion items={replacementFaqs} variant="light" />
         </div>
       </section>
+
+      <LocalSeoLinks />
 
       {/* FINAL CTA WITH FORM */}
       <section id="get-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

@@ -15,6 +15,13 @@ export default function EmergencyRoofRepair() {
         'Storm Damage Documentation',
         'Licensed & Insured',
       ]}
+      answerSummary="If your Sacramento-area roof is actively leaking, call first, contain the water indoors, and avoid climbing onto the roof. PRC 13 Roofing can assess urgent leaks, provide temporary stabilization when appropriate, and document storm damage for repair planning or insurance."
+      answerPoints={[
+        'Active leaks and storm damage prioritized',
+        'Temporary weatherproofing available when needed',
+        'Repair scope explained before work starts',
+        'Sacramento-area emergency roof help',
+      ]}
       introHeading="Fast Response When It Matters Most"
       introParagraphs={[
         "A roof leak that isn't addressed immediately can cause water damage to spread rapidly through your insulation, drywall, and even structural framing. When your roof is failing, speed matters.",

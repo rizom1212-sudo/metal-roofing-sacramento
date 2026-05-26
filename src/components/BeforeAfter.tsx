@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useRef, useState, type CSSProperties, type PointerEvent } from 'react';
 import { beforeAfterPairs, type BeforeAfterPair } from '../data/beforeAfter';
 
 function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
   const [position, setPosition] = useState(50);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const showBeforeLabel = position > 2;
   const showAfterLabel = position < 98;
+  const sliderPositionStyle = {
+    '--before-after-position': `${position}%`,
+  } as CSSProperties;
   const pairText = `${pair.id} ${pair.category} ${pair.title} ${pair.description}`.toLowerCase();
   const isOldRestorationPair =
     pairText.includes('restoration') ||
@@ -18,11 +22,30 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
         description: 'From tear off to final installation, this Sacramento home received a complete roofing upgrade.',
       }
     : pair;
+  const updatePositionFromPointer = (event: PointerEvent<HTMLDivElement>) => {
+    const rect = sliderRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    const nextPosition = ((event.clientX - rect.left) / rect.width) * 100;
+    setPosition(Math.min(100, Math.max(0, nextPosition)));
+  };
 
   return (
     <article className="group" data-stagger-item>
       <div className="relative overflow-hidden rounded-brand bg-charcoal-dark shadow-[0_18px_44px_rgba(15,20,28,0.16)] ring-1 ring-black/5 transition-all duration-300 ease-out group-hover:shadow-[0_22px_54px_rgba(15,20,28,0.22)] group-hover:ring-gold/20">
-        <div className="relative aspect-[4/3] md:aspect-[5/4]">
+        <div
+          ref={sliderRef}
+          className="relative aspect-[4/3] touch-none select-none md:aspect-[5/4]"
+          style={sliderPositionStyle}
+          onPointerDown={event => {
+            event.currentTarget.setPointerCapture(event.pointerId);
+            updatePositionFromPointer(event);
+          }}
+          onPointerMove={event => {
+            if (event.buttons !== 1) return;
+            updatePositionFromPointer(event);
+          }}
+        >
           <img
             src={pair.after.src}
             alt={pair.after.alt}
@@ -31,7 +54,7 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
           />
           <div
             className="absolute inset-0 overflow-hidden"
-            style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+            style={{ width: 'var(--before-after-position)' }}
           >
             <img
               src={pair.before.src}
@@ -42,8 +65,8 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
           </div>
 
           <div
-            className="absolute inset-y-0 z-10 w-0.5 bg-white/95 shadow-[0_0_18px_rgba(0,0,0,0.35)] transition-[left] duration-75 ease-out"
-            style={{ left: `${position}%` }}
+            className="absolute inset-y-0 z-10 w-0.5 bg-white/95 shadow-[0_0_18px_rgba(0,0,0,0.35)]"
+            style={{ left: 'var(--before-after-position)' }}
             aria-hidden
           >
             <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-gold text-[10px] font-bold uppercase tracking-wide text-white shadow-[0_10px_26px_rgba(0,0,0,0.28)] transition-transform duration-200 ease-out group-hover:scale-105 group-[.is-visible]:animate-[handle-pulse_1.4s_ease-out_1]">
@@ -72,9 +95,11 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
             type="range"
             min="0"
             max="100"
+            step="0.1"
             value={position}
+            onInput={event => setPosition(Number(event.currentTarget.value))}
             onChange={event => setPosition(Number(event.target.value))}
-            className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0"
+            className="absolute inset-0 z-20 h-full w-full cursor-ew-resize touch-none opacity-0"
             aria-label={`Compare before and after photos for ${displayPair.title}`}
           />
         </div>

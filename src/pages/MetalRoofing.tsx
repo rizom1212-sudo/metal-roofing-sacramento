@@ -11,6 +11,8 @@ import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
 import MetalComparisonTable from '../components/MetalComparisonTable';
 import OptimizedImage from '../components/OptimizedImage';
+import AnswerSummary from '../components/AnswerSummary';
+import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
 
 const benefits = [
@@ -147,6 +149,17 @@ export default function MetalRoofing() {
       {/* INTRO */}
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnswerSummary
+            title="Metal roofing in Sacramento: quick answer"
+            points={[
+              '50+ year lifespan when installed correctly',
+              'Strong performance in Sacramento heat',
+              'Standing seam and corrugated options',
+              'Higher upfront cost, lower lifetime maintenance',
+            ]}
+          >
+            Metal roofing is a strong fit for Sacramento homeowners who plan to stay long-term and want a durable, low-maintenance roof that handles heat, rain, and wind better than many aging shingle systems.
+          </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Why Metal?</p>
@@ -267,6 +280,8 @@ export default function MetalRoofing() {
           <FaqAccordion items={faqs} variant="light" />
         </div>
       </section>
+
+      <LocalSeoLinks />
 
       {/* FINAL CTA */}
       <section id="metal-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">

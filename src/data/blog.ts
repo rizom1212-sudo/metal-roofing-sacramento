@@ -10,6 +10,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  updatedDate?: string;
   readTime: string;
   category: string;
   coverImage: string;
@@ -24,6 +25,130 @@ export interface BlogSection {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'what-to-do-roof-leak-sacramento-storm',
+    title: 'What to Do When Your Roof Leaks During a Sacramento Storm',
+    excerpt:
+      'If your roof starts leaking during heavy Sacramento rain, contain the water, avoid going on the roof, document the damage, and schedule an inspection as soon as it is safe.',
+    date: 'May 26, 2026',
+    readTime: '5 min read',
+    category: 'Roof Repair',
+    coverImage: ASSETS.blog('Screenshot_2026-05-20_at_10.49.35.png'),
+    relatedServices: [
+      { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
+      { label: 'Roof Repair', href: '/roof-repair' },
+      { label: 'Roof Inspection', href: '/roof-inspection' },
+      { label: 'Sacramento Service Areas', href: '/service-areas' },
+    ],
+    body: [
+      {
+        type: 'paragraph',
+        content:
+          'Short answer: protect the inside of your home first. Put a bucket under active dripping, move furniture and valuables away from the area, take photos, and call a roofer once the situation is safe. Do not climb onto a wet roof.',
+      },
+      {
+        type: 'heading',
+        content: '1. Contain the Water Inside',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Place buckets, towels, or plastic sheeting where water is entering. If the ceiling is bulging, that can mean water is pooling above the drywall. Avoid standing under the bulge and call for help quickly.',
+      },
+      {
+        type: 'heading',
+        content: '2. Document the Leak for Insurance',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Take photos of ceiling stains, active dripping, damaged shingles visible from the ground, and any affected belongings. Documentation helps if the damage came from wind, falling debris, or another covered storm event.',
+      },
+      {
+        type: 'heading',
+        content: '3. Avoid Temporary Roof Work During Rain',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Wet roofs are dangerous, especially on tile, metal, or steep shingle roofs. A professional roofer can assess whether temporary weatherproofing is safe and useful after conditions improve.',
+      },
+      {
+        type: 'heading',
+        content: '4. Schedule a Roof Inspection',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The visible leak is not always directly below the roof failure. Water can travel along rafters, decking, underlayment, or flashing before showing up indoors. A roof inspection helps identify the actual source.',
+      },
+    ],
+  },
+  {
+    slug: 'sacramento-roof-maintenance-checklist',
+    title: 'Sacramento Roof Maintenance Checklist: What to Check Each Season',
+    excerpt:
+      'A simple seasonal roof maintenance checklist for Sacramento homeowners: gutters, flashing, shingles, attic ventilation, and storm-readiness before winter rain.',
+    date: 'May 18, 2026',
+    updatedDate: 'May 26, 2026',
+    readTime: '6 min read',
+    category: 'Maintenance',
+    coverImage: ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp'),
+    relatedServices: [
+      { label: 'Roof Inspection', href: '/roof-inspection' },
+      { label: 'Roof Repair', href: '/roof-repair' },
+      { label: 'Gutters & Siding', href: '/gutters-siding' },
+      { label: 'Roof Replacement', href: '/roof-replacement' },
+    ],
+    body: [
+      {
+        type: 'paragraph',
+        content:
+          'Short answer: Sacramento homeowners should check their roof before winter rain, after wind events, and after long hot summers. Look for missing shingles, clogged gutters, cracked sealant, loose flashing, attic moisture, and signs of sagging or soft decking.',
+      },
+      {
+        type: 'heading',
+        content: 'Before Winter Rain',
+      },
+      {
+        type: 'list',
+        content: '',
+        items: [
+          'Clean gutters and downspouts so water can drain away from fascia and roof edges',
+          'Check valleys for leaves, branches, and debris that can trap water',
+          'Look for cracked roof sealant around vents, skylights, chimneys, and pipe boots',
+          'Schedule a roof inspection if you see stains, soft spots, or prior leak areas',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'After Wind or Storm Events',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Walk the property from the ground and look for lifted shingles, missing ridge caps, debris impact areas, and metal flashing that appears bent or loose. If you see damage, document it with photos before cleanup.',
+      },
+      {
+        type: 'heading',
+        content: 'After Sacramento Heat Waves',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Long stretches of heat can accelerate shingle aging, granule loss, and attic ventilation problems. If your roof is older or your energy bills have climbed, a maintenance inspection can help you plan before leaks appear.',
+      },
+      {
+        type: 'heading',
+        content: 'When Maintenance Is Not Enough',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Repeated leaks, widespread curling shingles, soft decking, and a roof near the end of its expected lifespan may point toward replacement instead of another repair. PRC 13 Roofing explains both options clearly before you decide.',
+      },
+    ],
+  },
   {
     slug: 'how-long-does-roof-replacement-take',
     title: 'How Long Does a Roof Replacement Take in Sacramento?',

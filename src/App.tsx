@@ -7,6 +7,7 @@ import RoofRepair from './pages/RoofRepair';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ServiceAreas from './pages/ServiceAreas';
+import ServiceAreaCity from './pages/ServiceAreaCity';
 import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -42,6 +43,7 @@ export function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/service-areas" element={<ServiceAreas />} />
+      <Route path="/service-areas/:slug" element={<ServiceAreaCity />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
