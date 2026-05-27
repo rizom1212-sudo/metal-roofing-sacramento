@@ -19,6 +19,11 @@
     color: #4B5563;
     background-color: #F8F8F6;
   }
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
   h1,
   h2 {
     @apply tracking-tight;
@@ -67,14 +72,9 @@
 }
 
 @layer components {
-  .hero-parallax-frame {
-    transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
-  }
   .hero-cinematic-image {
-    animation: hero-cinematic-zoom 25s ease-in-out infinite alternate;
     transform-origin: center;
-    will-change: transform;
+    transform: none;
   }
   .hero-mobile-roof-focus {
     filter: brightness(1.06) contrast(1.08) saturate(1.06);
@@ -149,6 +149,28 @@
   .safe-area-bottom {
     padding-bottom: max(0px, env(safe-area-inset-bottom, 0px));
   }
+  .mobile-bottom-cta {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 80;
+    background: #071323;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.28);
+  }
+  .mobile-bottom-cta::after {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: calc(env(safe-area-inset-bottom, 0px) + 2px);
+    background: #071323;
+    pointer-events: none;
+  }
   .mobile-page-bottom {
     padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
   }
@@ -173,28 +195,10 @@
   }
 }
 
-@keyframes hero-cinematic-zoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.06);
-  }
-}
-
 @media (max-width: 767px) {
   .hero-mobile-roof-focus {
-    animation: hero-mobile-roof-zoom 25s ease-in-out infinite alternate;
     transform-origin: 58% 62%;
-  }
-}
-
-@keyframes hero-mobile-roof-zoom {
-  from {
-    transform: scale(1.1);
-  }
-  to {
-    transform: scale(1.15);
+    transform: none;
   }
 }
 
@@ -257,7 +261,6 @@
   .btn-gold:hover,
   .btn-outline:hover,
   .card-brand:not(.no-card-hover):hover,
-  .hero-parallax-frame,
   .hero-cinematic-image,
   .stagger-reveal,
   .reveal-on-scroll {

@@ -230,7 +230,7 @@ export default function Navbar() {
         </header>
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-charcoal-dark border-t border-white/20 safe-area-bottom">
+      <div className="mobile-bottom-cta md:hidden">
         <div className="flex">
           <a
             href="tel:9167613866"

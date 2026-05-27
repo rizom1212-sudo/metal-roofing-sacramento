@@ -108,7 +108,7 @@ export default function LeadForm({
         </div>
         <p className="text-white font-semibold text-lg">Request received!</p>
         <p className="text-gray-300 text-sm mt-2 leading-relaxed">
-          We&apos;ll call you within <strong className="text-white">24 hours</strong> to schedule your inspection.
+          We&apos;ll contact you shortly to schedule your inspection.
         </p>
         <a
           href={`tel:${PHONE_TEL}`}
