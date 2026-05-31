@@ -74,6 +74,7 @@ export default function RoofReplacement() {
       <section className="relative bg-charcoal-dark text-white overflow-hidden lg:min-h-[75vh]">
         <HeroBackground
           image={ASSETS.roofReplacement('roof-replacement-hero-installation.png')}
+          alt="Roof replacement installation on a Sacramento home"
         />
         <div
           className="absolute inset-0"

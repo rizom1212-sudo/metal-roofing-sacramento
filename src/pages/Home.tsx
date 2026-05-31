@@ -117,7 +117,11 @@ export default function Home() {
       <FloatingInspectionCta />
       {/* HERO */}
       <section className="relative bg-charcoal-dark overflow-hidden md:min-h-screen">
-        <HeroBackground priority imageClassName="hero-mobile-roof-focus object-[58%_40%] md:object-[58%_center] contrast-[1.06] saturate-[1.06]" />
+        <HeroBackground
+          priority
+          alt="PRC 13 Roofing crew working on a Sacramento area roof"
+          imageClassName="hero-mobile-roof-focus object-[58%_40%] md:object-[58%_center] contrast-[1.06] saturate-[1.06]"
+        />
         {/* Layered overlay system */}
         {/* Mobile overlay: strong behind copy, clearer toward image detail. */}
         <div
@@ -535,7 +539,7 @@ export default function Home() {
       <section data-final-cta className="relative overflow-hidden bg-charcoal-dark py-14 md:py-16 mobile-section-bottom">
         <img
           src={HOME_FINAL_CTA_IMAGE}
-          alt=""
+          alt="Sacramento roofing project, decorative background for free inspection section"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
           aria-hidden

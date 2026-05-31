@@ -160,6 +160,7 @@ export default function RoofRepair() {
       <section className="relative bg-charcoal-dark text-white overflow-hidden lg:min-h-[75vh]">
         <HeroBackground
           image={ASSETS.roofRepair('roof-repair-flat-roof-work.webp')}
+          alt="Flat roof repair work on a Sacramento residential building"
         />
         <div
           className="absolute inset-0"

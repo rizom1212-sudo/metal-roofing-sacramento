@@ -54,7 +54,10 @@ export default function About() {
 
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Our Story</p>
-              <h2 className="section-heading mb-5">Built on the Belief That Homeowners Deserve Better</h2>
+              <h1 className="section-heading mb-5">About PRC 13 Roofing</h1>
+              <p className="text-body text-lg font-semibold leading-relaxed mb-4">
+                Built on the belief that Sacramento homeowners deserve better roofing advice, clearer communication, and work done right the first time.
+              </p>
               <div className="space-y-3.5 text-body text-sm leading-relaxed">
                 <p>
                   PRC 13 Roofing was built around a simple standard: homeowners deserve clear answers, quality materials, and roofing work that is done right the first time.

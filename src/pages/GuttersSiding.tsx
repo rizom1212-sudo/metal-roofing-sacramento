@@ -51,7 +51,10 @@ export default function GuttersSiding() {
       />
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden">
-        <HeroBackground image={ASSETS.guttersSiding('1e8ea3b0-e1a4-4e74-97d2-2209fbeeeb89.webp')} />
+        <HeroBackground
+          image={ASSETS.guttersSiding('1e8ea3b0-e1a4-4e74-97d2-2209fbeeeb89.webp')}
+          alt="Gutter and exterior work on a Sacramento area home"
+        />
         {/* Dark overlay with stronger contrast on the left. */}
         <div
           className="absolute inset-0"

@@ -15,6 +15,21 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   el.setAttribute('content', content);
 }
 
+function upsertMetaDescription(content: string) {
+  const elements = Array.from(document.querySelectorAll<HTMLMetaElement>('meta[name="description"]'));
+  let el = elements[0];
+
+  elements.slice(1).forEach(duplicate => duplicate.remove());
+
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute('name', 'description');
+    document.head.appendChild(el);
+  }
+
+  el.setAttribute('content', content);
+}
+
 function upsertLink(rel: string, href: string) {
   let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
   if (!el) {
@@ -37,7 +52,7 @@ export default function PageMeta() {
       const post = blogPosts.find(p => p.slug === slug);
       if (post) {
         meta = {
-          title: `${post.title} | PRC 13 Roofing`,
+          title: post.seoTitle ?? `${post.title} | PRC 13 Roofing`,
           description: post.excerpt,
           path: pathname,
         };
@@ -50,7 +65,7 @@ export default function PageMeta() {
 
     document.title = meta.title;
     upsertLink('canonical', url);
-    upsertMeta('name', 'description', meta.description);
+    upsertMetaDescription(meta.description);
     upsertMeta('property', 'og:title', meta.title);
     upsertMeta('property', 'og:description', meta.description);
     upsertMeta('property', 'og:url', url);

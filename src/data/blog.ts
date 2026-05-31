@@ -8,6 +8,7 @@ export interface BlogRelatedService {
 export interface BlogPost {
   slug: string;
   title: string;
+  seoTitle?: string;
   excerpt: string;
   date: string;
   updatedDate?: string;
@@ -28,6 +29,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'what-to-do-roof-leak-sacramento-storm',
     title: 'What to Do When Your Roof Leaks During a Sacramento Storm',
+    seoTitle: 'Roof Leak During a Sacramento Storm? What to Do',
     excerpt:
       'If your roof starts leaking during heavy Sacramento rain, contain the water, avoid going on the roof, document the damage, and schedule an inspection as soon as it is safe.',
     date: 'May 26, 2026',
@@ -87,6 +89,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'sacramento-roof-maintenance-checklist',
     title: 'Sacramento Roof Maintenance Checklist: What to Check Each Season',
+    seoTitle: 'Sacramento Roof Maintenance Checklist',
     excerpt:
       'A simple seasonal roof maintenance checklist for Sacramento homeowners: gutters, flashing, shingles, attic ventilation, and storm-readiness before winter rain.',
     date: 'May 18, 2026',
@@ -211,6 +214,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'signs-you-need-roof-replacement-sacramento',
     title: '7 Signs Your Sacramento Roof Needs Replacement (Not Just a Repair)',
+    seoTitle: '7 Signs Your Sacramento Roof Needs Replacement',
     excerpt:
       'Sacramento\'s hot summers and occasional winter storms take a real toll on roofing systems. Here are the warning signs that repair alone won\'t cut it.',
     date: 'April 28, 2026',
@@ -255,6 +259,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'how-insurance-claims-work-for-roof-damage',
     title: 'How Insurance Claims Work for Roof Damage in Sacramento',
+    seoTitle: 'Roof Damage Insurance Claims in Sacramento',
     excerpt:
       'Filing a roof damage claim can feel overwhelming. Here\'s how the process actually works and how PRC 13 helps Sacramento homeowners every step of the way.',
     date: 'April 10, 2026',
@@ -313,6 +318,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'metal-roofing-vs-shingles-sacramento',
     title: 'Metal Roofing vs. Shingles: Which Is Right for Your Sacramento Home?',
+    seoTitle: 'Metal Roofing vs. Shingles in Sacramento',
     excerpt:
       'Both options have real advantages. The right choice depends on your budget, how long you plan to stay, and your home\'s style. Here\'s an honest comparison.',
     date: 'March 22, 2026',

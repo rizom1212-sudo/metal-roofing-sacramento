@@ -31,6 +31,8 @@ export interface ServiceTemplateProps {
   heroImage: string;
   /** Optional WebP hero (smaller LCP when present under /assets/) */
   heroWebp?: string;
+  /** Descriptive alt text for the hero image */
+  heroAlt?: string;
 
   /** Trust bar items (max 4) */
   trustBarItems: string[];
@@ -73,6 +75,7 @@ export default function ServicePageTemplate({
   breadcrumbLabel,
   heroImage,
   heroWebp,
+  heroAlt,
   trustBarItems,
   answerSummary,
   answerPoints = [],
@@ -109,7 +112,7 @@ export default function ServicePageTemplate({
       />
       {/* HERO */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden lg:min-h-[75vh]">
-        <HeroBackground image={heroImage} webpImage={heroWebp} />
+        <HeroBackground image={heroImage} webpImage={heroWebp} alt={heroAlt} />
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.93) 0%, rgba(15,20,28,0.75) 50%, rgba(15,20,28,0.35) 100%)' }}

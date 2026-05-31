@@ -94,7 +94,10 @@ export default function MetalRoofing() {
       />
       {/* HERO */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden lg:min-h-[75vh]">
-        <HeroBackground image={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')} />
+        <HeroBackground
+          image={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')}
+          alt="Metal roof installation on a Sacramento area home"
+        />
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.93) 0%, rgba(15,20,28,0.75) 50%, rgba(15,20,28,0.35) 100%)' }}

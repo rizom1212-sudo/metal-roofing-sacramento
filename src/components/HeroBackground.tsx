@@ -3,6 +3,7 @@ import { ASSETS } from '../data/assets';
 interface HeroBackgroundProps {
   image?: string;
   webpImage?: string;
+  alt?: string;
   /** LCP hero preloads and uses fetchpriority */
   priority?: boolean;
   className?: string;
@@ -15,6 +16,7 @@ interface HeroBackgroundProps {
 export default function HeroBackground({
   image = ASSETS.brand.hero,
   webpImage,
+  alt = '',
   priority = false,
   className = 'absolute inset-0',
   imageClassName = '',
@@ -29,7 +31,7 @@ export default function HeroBackground({
           {webp && <source srcSet={webp} type="image/webp" />}
           <img
             src={image}
-            alt=""
+            alt={alt}
             className={`hero-cinematic-image w-full h-full object-cover ${imageClassName}`}
             width={1920}
             height={1080}

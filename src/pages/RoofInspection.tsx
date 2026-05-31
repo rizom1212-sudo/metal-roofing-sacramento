@@ -81,7 +81,10 @@ export default function RoofInspection() {
       />
       {/* HERO */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden">
-        <HeroBackground image={ASSETS.roofInspection('Screenshot_2026-05-20_at_09.37.55.png')} />
+        <HeroBackground
+          image={ASSETS.roofInspection('Screenshot_2026-05-20_at_09.37.55.png')}
+          alt="Roofer inspecting roof damage on a Sacramento home"
+        />
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.96) 0%, rgba(15,20,28,0.82) 50%, rgba(15,20,28,0.40) 100%)' }}

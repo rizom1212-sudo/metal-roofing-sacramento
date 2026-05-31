@@ -9,6 +9,7 @@ export default function EmergencyRoofRepair() {
       headlineAccent="We'll Get There Fast"
       subheadline="Active leak? Storm damage? Don't wait. PRC 13 Roofing responds quickly to Sacramento area roofing emergencies, with same-day assessment available for urgent situations."
       heroImage={ASSETS.emergencyRepair('emergency-roof-hero.webp')}
+      heroAlt="Emergency roof repair response after storm damage in Sacramento"
       trustBarItems={[
         'Fast Response, Call Now',
         'Same-Day Assessment Available',

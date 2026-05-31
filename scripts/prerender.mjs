@@ -6,6 +6,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const templatePath = path.join(dist, 'index.html');
 const serverEntry = path.join(root, 'dist-ssr', 'entry-server.js');
+const metaDescriptionTagPattern = /<meta\b(?=[^>]*\bname\s*=\s*(['"])description\1)[^>]*>\s*/gi;
 
 function escapeHtml(value) {
   return String(value)
@@ -43,7 +44,7 @@ function injectHead(template, tags) {
   return template
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<link rel="canonical"[\s\S]*?>\n?/, '')
-    .replace(/<meta name="description"[\s\S]*?>\n?/, '')
+    .replace(metaDescriptionTagPattern, '')
     .replace(/<meta property="og:[\s\S]*?>\n?/g, '')
     .replace(/<meta name="twitter:[\s\S]*?>\n?/g, '')
     .replace('</head>', `    ${tags}\n  </head>`);
@@ -54,7 +55,7 @@ function routeMeta(route, api) {
   const post = blogSlug ? api.blogPosts.find(item => item.slug === blogSlug) : null;
   const meta = post
     ? {
-        title: `${post.title} | PRC 13 Roofing`,
+        title: post.seoTitle ?? `${post.title} | PRC 13 Roofing`,
         description: post.excerpt,
         image: api.absoluteAssetUrl(post.coverImage),
         type: 'article',
