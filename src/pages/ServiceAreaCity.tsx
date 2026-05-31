@@ -80,6 +80,7 @@ export default function ServiceAreaCity() {
         pageName={pageName}
         schemaType="Service"
         serviceName={`Roofing Services in ${area.name}, CA`}
+        servedAreas={[area.name]}
         breadcrumbs={[
           { label: 'Service Areas', href: '/service-areas' },
           { label: area.name },

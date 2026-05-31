@@ -1,0 +1,41 @@
+{
+  "redirects": [
+    { "source": "/Sacramento", "destination": "/service-areas/sacramento", "permanent": true },
+    { "source": "/sacramento", "destination": "/service-areas/sacramento", "permanent": true },
+    { "source": "/Woodland", "destination": "/service-areas/woodland", "permanent": true },
+    { "source": "/woodland", "destination": "/service-areas/woodland", "permanent": true },
+    { "source": "/Rancho-Cordova", "destination": "/service-areas/rancho-cordova", "permanent": true },
+    { "source": "/rancho-cordova", "destination": "/service-areas/rancho-cordova", "permanent": true },
+    { "source": "/Orangevale", "destination": "/service-areas/orangevale", "permanent": true },
+    { "source": "/orangevale", "destination": "/service-areas/orangevale", "permanent": true },
+    { "source": "/Granite-Bay", "destination": "/service-areas/granite-bay", "permanent": true },
+    { "source": "/granite-bay", "destination": "/service-areas/granite-bay", "permanent": true },
+    { "source": "/El-Dorado-Hill", "destination": "/service-areas/el-dorado-hills", "permanent": true },
+    { "source": "/el-dorado-hill", "destination": "/service-areas/el-dorado-hills", "permanent": true },
+    { "source": "/Davis", "destination": "/service-areas/davis", "permanent": true },
+    { "source": "/davis", "destination": "/service-areas/davis", "permanent": true },
+    { "source": "/Grass-Valley", "destination": "/service-areas", "permanent": true },
+    { "source": "/grass-valley", "destination": "/service-areas", "permanent": true },
+    { "source": "/Roofing-Contractor", "destination": "/", "permanent": true },
+    { "source": "/roofing-contractor", "destination": "/", "permanent": true },
+    { "source": "/Roofing-Contractor/Emergency-Roof-Repair", "destination": "/emergency-roof-repair", "permanent": true },
+    { "source": "/roofing-contractor/emergency-roof-repair", "destination": "/emergency-roof-repair", "permanent": true },
+    { "source": "/Roofing-Contractor/Roof-Inspection-Assessment", "destination": "/roof-inspection", "permanent": true },
+    { "source": "/roofing-contractor/roof-inspection-assessment", "destination": "/roof-inspection", "permanent": true },
+    { "source": "/Roofing-Contractor/Flat-Roof-Installation", "destination": "/commercial-roofing", "permanent": true },
+    { "source": "/roofing-contractor/flat-roof-installation", "destination": "/commercial-roofing", "permanent": true },
+    { "source": "/roofing-contractor/asphalt-shingle-roof-replacement", "destination": "/roof-replacement", "permanent": true },
+    { "source": "/Roofing-Contractor/Roof-Maintenance", "destination": "/roof-inspection", "permanent": true },
+    { "source": "/roofing-contractor/roof-maintenance", "destination": "/roof-inspection", "permanent": true },
+    { "source": "/Siding-Contractor", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/siding-contractor", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/Siding-Contractor/Fiber-Cement-Siding-Installation", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/Siding-Contractor/Vinyl-Siding-Repair", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/Siding-Contractor/Wood-Siding-Installation", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/Siding-Contractor/Siding-Inspection-Assessment", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/siding-contractor/vinyl-siding-installation", "destination": "/gutters-siding", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/((?!assets/|favicon|robots\\.txt|sitemap\\.xml|.*\\.html$).*)", "destination": "/index.html" }
+  ]
+}

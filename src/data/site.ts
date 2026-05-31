@@ -3,7 +3,7 @@ import { ASSETS } from './assets';
 export const BUSINESS_ENTITY_NAME = 'PRC 13 Roofing Inc.';
 export const BUSINESS_DISPLAY_NAME = 'PRC 13 Roofing';
 export const LICENSE_TEXT = 'Lic. No. 1087153 · Fully Licensed & Insured';
-export const GOOGLE_RATING_VALUE = '5.0';
+export const GOOGLE_RATING_VALUE = 5;
 export const GOOGLE_REVIEW_COUNT = 81;
 
 /** Google Business Profile opens reviews on Maps in a new tab. */

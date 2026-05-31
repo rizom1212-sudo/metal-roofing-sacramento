@@ -6,7 +6,7 @@ import { PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
 export default function Contact() {
   return (
     <>
-      <JsonLd pageName="Contact PRC 13 Roofing" schemaType="WebPage" />
+      <JsonLd pageName="Contact PRC 13 Roofing" schemaType="ContactPage" />
       {/* MAIN */}
       <section className="bg-cream py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
