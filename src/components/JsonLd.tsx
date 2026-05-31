@@ -107,6 +107,19 @@ function isoDate(date: string): string {
   return Number.isNaN(parsed.getTime()) ? date : parsed.toISOString().slice(0, 10);
 }
 
+function resolveBreadcrumbItemUrl(href: string | undefined, pageUrl: string): string {
+  const trimmedHref = href?.trim();
+  if (!trimmedHref) return pageUrl;
+
+  try {
+    const resolved = new URL(trimmedHref, SITE_URL);
+    if (resolved.protocol !== 'http:' && resolved.protocol !== 'https:') return pageUrl;
+    return resolved.href;
+  } catch {
+    return pageUrl;
+  }
+}
+
 interface JsonLdProps {
   faqs?: FaqItem[];
   pageName?: string;
@@ -196,7 +209,7 @@ export default function JsonLd({
           '@type': 'ListItem',
           position: index + 2,
           name: item.label,
-          item: absoluteUrl(item.href ?? pathname),
+          item: resolveBreadcrumbItemUrl(item.href, pageUrl),
         })),
       ],
     });
