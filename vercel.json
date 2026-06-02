@@ -33,7 +33,10 @@
     { "source": "/Siding-Contractor/Vinyl-Siding-Repair", "destination": "/gutters-siding", "permanent": true },
     { "source": "/Siding-Contractor/Wood-Siding-Installation", "destination": "/gutters-siding", "permanent": true },
     { "source": "/Siding-Contractor/Siding-Inspection-Assessment", "destination": "/gutters-siding", "permanent": true },
-    { "source": "/siding-contractor/vinyl-siding-installation", "destination": "/gutters-siding", "permanent": true }
+    { "source": "/siding-contractor/vinyl-siding-installation", "destination": "/gutters-siding", "permanent": true },
+    { "source": "/services/servicecategory/category3-service5", "destination": "/service-areas", "permanent": true },
+    { "source": "/services/servicecategory/category2-service7", "destination": "/service-areas", "permanent": true },
+    { "source": "/service-areas/service-abcd", "destination": "/service-areas", "permanent": true }
   ],
   "rewrites": [
     { "source": "/((?!assets/|favicon|robots\\.txt|sitemap\\.xml|.*\\.html$).*)", "destination": "/index.html" }
