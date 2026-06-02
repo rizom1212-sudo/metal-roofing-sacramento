@@ -33,6 +33,45 @@ const featuredProjectStats = [
   'Sacramento, CA',
 ];
 
+const metalFeaturedProjectImages = [
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-01.png',
+    alt: 'Close view of standing seam metal roof panels on a Sacramento new construction home',
+  },
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-02.png',
+    alt: 'New construction Sacramento home with standing seam metal roof installation',
+  },
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-03.png',
+    alt: 'Standing seam metal roofing installed above James Hardie siding',
+  },
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-04.png',
+    alt: 'James Hardie siding installation on new construction Sacramento residence',
+  },
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-05.png',
+    alt: 'New construction home exterior with standing seam metal roof and siding work',
+  },
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-06.png',
+    alt: 'Garage elevation during James Hardie siding installation on Sacramento project',
+  },
+  {
+    src: '/assets/featured-project/standing-seam-metal-roof-07.png',
+    alt: 'Completed James Hardie siding on new construction Sacramento home',
+  },
+];
+
+const metalFeaturedProjectStats = [
+  'Standing Seam Metal Roofing',
+  'James Hardie Siding',
+  'Residential Roofing',
+  'Sacramento, CA',
+  'New Construction',
+];
+
 function Lightbox({
   images,
   index,
@@ -129,9 +168,11 @@ function Lightbox({
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [featuredIndex, setFeaturedIndex] = useState(0);
+  const [metalFeaturedIndex, setMetalFeaturedIndex] = useState(0);
   const mainGalleryImages = galleryImages.slice(0, -1);
   const centeredGalleryImages = galleryImages.slice(-1);
   const featuredImage = featuredProjectImages[featuredIndex];
+  const metalFeaturedImage = metalFeaturedProjectImages[metalFeaturedIndex];
 
   const openLightbox = useCallback((idx: number) => setLightboxIndex(idx), []);
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
@@ -152,6 +193,14 @@ export default function Gallery() {
   );
   const showNextFeaturedImage = useCallback(
     () => setFeaturedIndex(i => (i === featuredProjectImages.length - 1 ? 0 : i + 1)),
+    [],
+  );
+  const showPreviousMetalFeaturedImage = useCallback(
+    () => setMetalFeaturedIndex(i => (i === 0 ? metalFeaturedProjectImages.length - 1 : i - 1)),
+    [],
+  );
+  const showNextMetalFeaturedImage = useCallback(
+    () => setMetalFeaturedIndex(i => (i === metalFeaturedProjectImages.length - 1 ? 0 : i + 1)),
     [],
   );
 
@@ -223,6 +272,77 @@ export default function Gallery() {
               </p>
               <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
                 {featuredProjectStats.map(stat => (
+                  <span
+                    key={stat}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-gold/25 bg-white px-3.5 py-2 text-xs font-semibold text-headline shadow-sm"
+                  >
+                    <CheckCircle size={13} className="text-gold" />
+                    {stat}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED METAL PROJECT SHOWCASE */}
+      <section className="bg-[#F3F1EE] py-12 md:py-16 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-5 sm:px-7">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <div className="relative overflow-hidden rounded-brand bg-white shadow-[0_20px_54px_rgba(15,20,28,0.16)] ring-1 ring-black/5">
+                <div className="relative bg-charcoal-dark/5">
+                  <img
+                    src={metalFeaturedImage.src}
+                    alt={metalFeaturedImage.alt}
+                    className="h-[300px] w-full object-contain sm:h-[420px] lg:h-[520px]"
+                    loading="lazy"
+                  />
+                  <button
+                    type="button"
+                    onClick={showPreviousMetalFeaturedImage}
+                    className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-charcoal-dark/85 text-white shadow-[0_8px_24px_rgba(0,0,0,0.24)] transition-colors hover:bg-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    aria-label="Show previous standing seam metal roof project photo"
+                  >
+                    <ChevronLeft size={22} />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showNextMetalFeaturedImage}
+                    className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-charcoal-dark/85 text-white shadow-[0_8px_24px_rgba(0,0,0,0.24)] transition-colors hover:bg-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    aria-label="Show next standing seam metal roof project photo"
+                  >
+                    <ChevronRight size={22} />
+                  </button>
+                </div>
+                <div className="flex items-center justify-center gap-2 border-t border-gray-100 bg-white px-4 py-3">
+                  {metalFeaturedProjectImages.map((image, index) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      onClick={() => setMetalFeaturedIndex(index)}
+                      className={`h-2.5 rounded-full transition-all ${
+                        metalFeaturedIndex === index ? 'w-8 bg-gold' : 'w-2.5 bg-gray-300 hover:bg-gold/60'
+                      }`}
+                      aria-label={`Show standing seam metal roof project photo ${index + 1}`}
+                      aria-current={metalFeaturedIndex === index}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center lg:text-left">
+              <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Featured Project</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-4">
+                Standing Seam Metal Roof Installation – Sacramento, CA
+              </h2>
+              <p className="text-body text-base leading-relaxed mb-6">
+                New construction residential project featuring a premium standing seam metal roofing system and James Hardie siding installation. This project highlights modern design, weather protection, energy efficiency, and long-term durability.
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+                {metalFeaturedProjectStats.map(stat => (
                   <span
                     key={stat}
                     className="inline-flex items-center gap-1.5 rounded-full border border-gold/25 bg-white px-3.5 py-2 text-xs font-semibold text-headline shadow-sm"
