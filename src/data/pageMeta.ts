@@ -38,61 +38,61 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
   '/roof-repair': {
     title: `Roof Repair Sacramento | ${SITE_NAME}`,
     description:
-      'Fast roof leak repair and storm damage fixes in Sacramento. Honest assessments. Written estimates before work starts.',
+      'Roof repair in Sacramento for leaks, storm damage, flashing issues, and missing shingles. Get an honest assessment and written estimate before work starts.',
     path: '/roof-repair',
   },
   '/metal-roofing': {
     title: `Metal Roofing Sacramento | ${SITE_NAME}`,
     description:
-      'Standing seam and metal roof installation in Sacramento. 50+ year lifespan. Free consultation and inspection.',
+      'Metal roofing in Sacramento, including standing seam and durable metal roof systems built for heat, energy efficiency, long lifespan, and low maintenance.',
     path: '/metal-roofing',
   },
   '/commercial-roofing': {
     title: `Commercial Roofing Sacramento | ${SITE_NAME}`,
     description:
-      'Commercial roof repair and replacement for Sacramento businesses. TPO, EPDM, modified bitumen. Licensed & insured.',
+      'Commercial roofing in Sacramento for repairs, replacements, inspections, TPO, EPDM, and modified bitumen systems from a licensed local roofing team.',
     path: '/commercial-roofing',
   },
   '/roof-inspection': {
     title: `Free Roof Inspection Sacramento | ${SITE_NAME}`,
     description:
-      'Free, no-obligation roof inspections in Sacramento from a licensed roofing team. Written findings provided.',
+      'Free roof inspections in Sacramento from PRC 13 Roofing. Get written findings, leak checks, repair guidance, and clear next steps with no obligation.',
     path: '/roof-inspection',
   },
   '/gutters-siding': {
     title: `Gutters & Siding Sacramento | ${SITE_NAME}`,
     description:
-      'Gutter installation, siding repair, and exterior protection for Sacramento homes. Free exterior inspection.',
+      'Gutter installation, siding repair, and exterior protection for Sacramento homes. PRC 13 Roofing provides free inspections and clear recommendations.',
     path: '/gutters-siding',
   },
   '/emergency-roof-repair': {
     title: `Emergency Roof Repair Sacramento | ${SITE_NAME}`,
     description:
-      '24-hour emergency roof repair in Sacramento. Active leaks and storm damage. Same-day assessment available.',
+      'Emergency roof repair in Sacramento for active leaks, storm damage, and urgent roof problems. Call PRC 13 Roofing for fast assessment and clear help.',
     path: '/emergency-roof-repair',
   },
   '/about': {
     title: `About Us | ${SITE_NAME} Sacramento`,
     description:
-      'Meet the PRC 13 team. Sacramento roofing built on honest inspections, licensed service, and quality work.',
+      'Meet PRC 13 Roofing, a Sacramento roofing company built on honest inspections, licensed service, quality workmanship, and clear communication on every project.',
     path: '/about',
   },
   '/contact': {
     title: `Contact | ${SITE_NAME} Sacramento`,
     description:
-      'Schedule your free roof inspection. Call 916-761-3866 or send a message. Most homes inspected within 24 hours.',
+      'Schedule a free roof inspection in Sacramento with PRC 13 Roofing. Call 916-761-3866 or send a message for fast roofing help within 24 hours.',
     path: '/contact',
   },
   '/gallery': {
     title: `Project Gallery | ${SITE_NAME}`,
     description:
-      'Recent roof replacements, repairs, and metal roofing projects across Sacramento and surrounding communities.',
+      'View Sacramento roof replacement, roof repair, metal roofing, and exterior projects completed by PRC 13 Roofing across local homes and neighborhoods.',
     path: '/gallery',
   },
   '/blog': {
     title: `Roofing Blog | ${SITE_NAME}`,
     description:
-      'Roofing tips and advice for Sacramento homeowners, including repairs, replacements, insurance claims, and maintenance.',
+      'Read Sacramento roofing tips from PRC 13 Roofing, including roof repair, replacement, insurance claims, maintenance, storm leaks, and material choices.',
     path: '/blog',
   },
   '/service-areas': {
