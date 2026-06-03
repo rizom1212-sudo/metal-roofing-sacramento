@@ -45,10 +45,6 @@ export default function ServiceAreaCity() {
 
       <section className="bg-charcoal-dark text-white py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <Link to="/service-areas" className="inline-flex items-center gap-1.5 text-gold text-sm font-semibold mb-6 hover:text-gold-light transition-colors">
-            <ArrowRight size={14} className="rotate-180" />
-            All service areas
-          </Link>
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">
             <span className="inline-flex items-center gap-1.5"><MapPin size={14} /> Service Area</span>
           </p>
