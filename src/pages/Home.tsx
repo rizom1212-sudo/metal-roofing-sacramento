@@ -459,7 +459,7 @@ export default function Home() {
               {serviceAreas.map(area => (
                 <Link
                   key={area.slug}
-                  to={`/service-areas#${area.slug}`}
+                  to={`/service-areas/${area.slug}`}
                   className={`group card-brand inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-sm ${
                     area.name === 'Sacramento'
                       ? 'bg-charcoal-dark text-white border border-charcoal-dark shadow-sm hover:bg-charcoal hover:text-gold'

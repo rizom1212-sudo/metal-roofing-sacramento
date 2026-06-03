@@ -13,8 +13,8 @@ const serviceAreaMeta = Object.fromEntries(
   serviceAreas.map(area => [
     `/service-areas/${area.slug}`,
     {
-      title: `${area.name} Roofing Services | ${SITE_NAME}`,
-      description: `Roof repair, replacement, inspections, emergency leak help, and metal roofing in ${area.name}, CA. Free roof inspections from PRC 13 Roofing.`,
+      title: area.metaTitle,
+      description: area.metaDescription,
       path: `/service-areas/${area.slug}`,
     },
   ]),
