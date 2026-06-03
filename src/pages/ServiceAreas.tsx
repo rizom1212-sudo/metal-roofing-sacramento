@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import { serviceAreas } from '../data/serviceAreas';
@@ -7,21 +6,6 @@ import { PRIMARY_CTA } from '../data/cta';
 import { PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
 
 export default function ServiceAreas() {
-  const location = useLocation();
-  const [activeSlug, setActiveSlug] = useState('');
-  const [highlightSlug, setHighlightSlug] = useState('');
-
-  useEffect(() => {
-    const slug = decodeURIComponent(location.hash.replace('#', ''));
-    if (!slug) return;
-
-    setActiveSlug(slug);
-    setHighlightSlug(slug);
-
-    const timer = window.setTimeout(() => setHighlightSlug(''), 2800);
-    return () => window.clearTimeout(timer);
-  }, [location.hash]);
-
   return (
     <>
       <JsonLd pageName="Areas We Serve" schemaType="WebPage" />
@@ -43,44 +27,22 @@ export default function ServiceAreas() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 gap-5">
             {serviceAreas.map(area => (
-              <article
+              <Link
                 key={area.slug}
+                to={`/service-areas/${area.slug}`}
                 id={area.slug}
-                className={`card-brand bg-white border p-6 scroll-mt-32 md:scroll-mt-36 transition-all duration-300 ${
-                  activeSlug === area.slug
-                    ? 'border-gold/80 shadow-[0_12px_34px_rgba(201,151,0,0.22)] scale-[1.015] -translate-y-1'
-                    : 'border-gray-100'
-                } ${highlightSlug === area.slug ? 'animate-[service-area-pulse_1.4s_ease-out_2]' : ''}`}
+                className="group card-brand bg-white border border-gray-100 p-6 scroll-mt-32 md:scroll-mt-36 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
-                <h2 className="text-xl font-bold text-headline mb-2">
-                  <Link to={`/service-areas/${area.slug}`} className="hover:text-gold transition-colors">
+                <article>
+                  <h2 className="text-xl font-bold text-headline mb-2 group-hover:text-gold transition-colors">
                     {area.name} Roofing Services
-                  </Link>
-                </h2>
-                <p className="text-body text-sm leading-relaxed mb-4">{area.blurb}</p>
-                {activeSlug === area.slug && (
-                  <Link
-                    to="/#service-areas"
-                    className="mb-4 inline-flex items-center text-xs font-semibold uppercase tracking-widest text-gold hover:text-gold-dark transition-colors"
-                  >
-                    Back to Service Areas
-                  </Link>
-                )}
-                <div className="flex flex-wrap gap-3 text-sm">
-                  <Link to="/roof-inspection" className="text-gold font-semibold hover:underline">
-                    Free inspection
-                  </Link>
-                  <Link to="/roof-replacement" className="text-body hover:text-gold transition-colors">
-                    Replacement
-                  </Link>
-                  <Link to="/roof-repair" className="text-body hover:text-gold transition-colors">
-                    Repair
-                  </Link>
-                  <Link to={`/service-areas/${area.slug}`} className="text-gold font-semibold hover:underline">
-                    Local guide
-                  </Link>
-                </div>
-              </article>
+                  </h2>
+                  <p className="text-body text-sm leading-relaxed mb-4">{area.blurb}</p>
+                  <span className="inline-flex items-center gap-1.5 text-gold font-semibold text-sm">
+                    View {area.name} roofing guide <ArrowRight size={14} />
+                  </span>
+                </article>
+              </Link>
             ))}
           </div>
 
