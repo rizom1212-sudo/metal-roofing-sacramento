@@ -470,12 +470,6 @@ export default function Home() {
                   <ArrowRight size={12} className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
                 </Link>
               ))}
-              <Link
-                to="/service-areas"
-                className="inline-flex items-center gap-1 text-gold text-sm font-semibold mt-3 hover:underline"
-              >
-                View all service areas <ArrowRight size={14} />
-              </Link>
             </div>
           ) : (
             <div className="max-w-5xl mx-auto overflow-hidden rounded-brand shadow-md">
