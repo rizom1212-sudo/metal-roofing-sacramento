@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import GoogleAnalytics from './components/GoogleAnalytics';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import RoofReplacement from './pages/RoofReplacement';
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <GoogleAnalytics />
       <Layout>
         <AppRoutes />
       </Layout>
