@@ -121,6 +121,55 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
+      <section className="bg-cream py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Insurance Claims</p>
+          <h2 className="section-heading mb-5">Insurance Claims Assistance in {area.name}</h2>
+          <p className="text-body text-sm leading-relaxed mb-5">{area.insuranceClaimsIntro}</p>
+          <ul className="space-y-2.5 mb-5">
+            {area.insuranceClaimsBullets.map(item => (
+              <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-body text-sm leading-relaxed">{area.insuranceClaimsClosing}</p>
+        </div>
+      </section>
+
+      <section className="bg-white py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Roofing Guidance</p>
+          <h2 className="section-heading mb-8">Should You Repair or Replace Your Roof?</h2>
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="p-6 border-2 border-green-200 bg-green-50">
+              <h3 className="font-bold text-base mb-4 text-green-800">Repair may make sense when</h3>
+              <ul className="space-y-2">
+                {area.repairWhenPoints.map(point => (
+                  <li key={point} className="flex items-start gap-2 text-sm text-body">
+                    <CheckCircle size={14} className="mt-0.5 flex-shrink-0 text-green-600" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="p-6 border-2 border-gold/30 bg-gold/5">
+              <h3 className="font-bold text-base mb-4 text-gold-dark">Replacement may make sense when</h3>
+              <ul className="space-y-2">
+                {area.replaceWhenPoints.map(point => (
+                  <li key={point} className="flex items-start gap-2 text-sm text-body">
+                    <CheckCircle size={14} className="mt-0.5 flex-shrink-0 text-gold" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-body text-sm leading-relaxed">{area.repairReplaceClosing}</p>
+        </div>
+      </section>
+
       <LocalSeoLinks
         title={`Roofing services near ${area.name}`}
         description={`Compare PRC 13 Roofing services for ${area.name} and nearby Sacramento communities, including repair, replacement, emergency leak response, inspections, metal roofing, and recent project examples.`}

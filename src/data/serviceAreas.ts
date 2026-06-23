@@ -1,6 +1,7 @@
 import { serviceAreaDetails } from './serviceAreaDetails.ts';
+import { serviceAreaExtraSections, type ServiceAreaExtraSections } from './serviceAreaExtraSections.ts';
 
-export interface ServiceArea {
+interface ServiceAreaBase {
   name: string;
   slug: string;
   blurb: string;
@@ -24,7 +25,9 @@ export interface ServiceArea {
   cta: string;
 }
 
-const rawServiceAreas: ServiceArea[] = [
+export type ServiceArea = ServiceAreaBase & ServiceAreaExtraSections;
+
+const rawServiceAreas: ServiceAreaBase[] = [
   {
     name: 'Sacramento',
     slug: 'sacramento',
@@ -381,6 +384,7 @@ const rawServiceAreas: ServiceArea[] = [
 export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => ({
   ...area,
   ...serviceAreaDetails[area.slug],
+  ...serviceAreaExtraSections[area.slug],
 }));
 
 export const serviceAreaNames = serviceAreas.map(a => a.name);
