@@ -1,3 +1,5 @@
+import { serviceAreaDetails } from './serviceAreaDetails.ts';
+
 export interface ServiceArea {
   name: string;
   slug: string;
@@ -22,7 +24,7 @@ export interface ServiceArea {
   cta: string;
 }
 
-export const serviceAreas: ServiceArea[] = [
+const rawServiceAreas: ServiceArea[] = [
   {
     name: 'Sacramento',
     slug: 'sacramento',
@@ -375,5 +377,10 @@ export const serviceAreas: ServiceArea[] = [
     cta: 'Schedule a free roof inspection in Florin, CA.',
   },
 ];
+
+export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => ({
+  ...area,
+  ...serviceAreaDetails[area.slug],
+}));
 
 export const serviceAreaNames = serviceAreas.map(a => a.name);
