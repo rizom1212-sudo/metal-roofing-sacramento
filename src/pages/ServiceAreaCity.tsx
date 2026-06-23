@@ -98,27 +98,31 @@ export default function ServiceAreaCity() {
 
       <section className="bg-white py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
-            <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Local Roofing Guidance</p>
-              <h2 className="section-heading mb-5">{area.localHeading}</h2>
-              <p className="text-body text-sm leading-relaxed mb-4">
-                {area.localContent}
-              </p>
-              <ul className="space-y-2.5">
-                {area.localSignals.map(item => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-body">
-                    <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="card-brand bg-cream border border-gray-100 p-6 md:p-7">
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Common Questions</p>
-              <h2 className="text-2xl font-bold text-headline mb-6">{area.name} Roofing FAQs</h2>
-              <FaqAccordion items={faqs} variant="light" />
-            </div>
+          <div className="max-w-3xl mb-8 md:mb-10">
+            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Local Roofing Guidance</p>
+            <h2 className="section-heading mb-5">{area.localHeading}</h2>
+            <p className="text-body text-sm leading-relaxed mb-4">
+              {area.localContent}
+            </p>
+            <ul className="space-y-2.5">
+              {area.localSignals.map(item => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                  <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="card-brand bg-cream border border-gray-100 p-5 md:p-7">
+            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Common Questions</p>
+            <h2 className="text-2xl font-bold text-headline mb-4 md:mb-5">{area.name} Roofing FAQs</h2>
+            <FaqAccordion
+              items={faqs}
+              variant="light"
+              compact
+              columns={2}
+              defaultVisibleCount={6}
+            />
           </div>
         </div>
       </section>
