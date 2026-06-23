@@ -11,6 +11,7 @@ import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
+import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import { ASSETS } from '../data/assets';
 
 const repairSigns = [
@@ -389,6 +390,11 @@ export default function RoofRepair() {
           <FaqAccordion items={repairFaqs} variant="light" />
         </div>
       </section>
+
+      <SacramentoGuideCallout
+        href="/roof-repair-sacramento"
+        label="View our Sacramento roof repair page"
+      />
 
       <LocalSeoLinks />
 

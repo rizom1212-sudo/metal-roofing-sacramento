@@ -1,5 +1,6 @@
 import { DEFAULT_OG_IMAGE } from './assets';
 import { serviceAreas } from './serviceAreas';
+import { sacramentoLandingPages } from './sacramentoLandingPages';
 
 export interface PageMetaConfig {
   title: string;
@@ -16,6 +17,17 @@ const serviceAreaMeta = Object.fromEntries(
       title: area.metaTitle,
       description: area.metaDescription,
       path: `/service-areas/${area.slug}`,
+    },
+  ]),
+) as Record<string, PageMetaConfig>;
+
+const sacramentoLandingMeta = Object.fromEntries(
+  Object.values(sacramentoLandingPages).map(page => [
+    page.path,
+    {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      path: page.path,
     },
   ]),
 ) as Record<string, PageMetaConfig>;
@@ -102,6 +114,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/service-areas',
   },
   ...serviceAreaMeta,
+  ...sacramentoLandingMeta,
 };
 
 export function getPageMeta(pathname: string): PageMetaConfig {

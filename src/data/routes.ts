@@ -1,6 +1,7 @@
 import { blogPosts } from './blog';
 import { PAGE_META } from './pageMeta';
 import { serviceAreas } from './serviceAreas';
+import { SACRAMENTO_LANDING_PATHS } from './sacramentoLandingPages';
 
 const SERVICE_ROUTES = [
   '/roof-replacement',
@@ -57,7 +58,20 @@ export const serviceAreaRoutes = serviceAreas.map(area => ({
   priority: area.slug === 'sacramento' ? 0.8 : 0.7,
 }));
 
-export const publicRoutes: PublicRoute[] = [...generalRoutes, ...serviceRoutes, ...serviceAreaRoutes, ...blogRoutes];
+export const sacramentoLandingRoutes = SACRAMENTO_LANDING_PATHS.map(path => ({
+  path,
+  lastmod: STATIC_LASTMOD,
+  changefreq: 'monthly' as const,
+  priority: 0.85,
+}));
+
+export const publicRoutes: PublicRoute[] = [
+  ...generalRoutes,
+  ...serviceRoutes,
+  ...sacramentoLandingRoutes,
+  ...serviceAreaRoutes,
+  ...blogRoutes,
+];
 
 export function isServiceRoute(path: string): boolean {
   return SERVICE_ROUTES.includes(path as (typeof SERVICE_ROUTES)[number]);

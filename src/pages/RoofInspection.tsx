@@ -8,6 +8,7 @@ import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
+import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import { ASSETS } from '../data/assets';
 
 const checkItems = [
@@ -273,6 +274,11 @@ export default function RoofInspection() {
           <FaqAccordion items={faqs} variant="light" />
         </div>
       </section>
+
+      <SacramentoGuideCallout
+        href="/roof-inspection-sacramento"
+        label="View our Sacramento roof inspection page"
+      />
 
       <LocalSeoLinks />
 

@@ -9,6 +9,7 @@ import JsonLd from './JsonLd';
 import OptimizedImage from './OptimizedImage';
 import AnswerSummary from './AnswerSummary';
 import LocalSeoLinks from './LocalSeoLinks';
+import SacramentoGuideCallout from './SacramentoGuideCallout';
 import { PRIMARY_CTA } from '../data/cta';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import { type GalleryCategory } from '../data/gallery';
@@ -65,6 +66,7 @@ export interface ServiceTemplateProps {
   ctaChecklist: string[];
   sourcePage: string;
   showLocalSeoLinks?: boolean;
+  sacramentoGuide?: { href: string; label: string };
 }
 
 export default function ServicePageTemplate({
@@ -96,6 +98,7 @@ export default function ServicePageTemplate({
   ctaChecklist,
   sourcePage,
   showLocalSeoLinks = true,
+  sacramentoGuide,
 }: ServiceTemplateProps) {
   const crumbLabel = breadcrumbLabel ?? headline;
 
@@ -236,6 +239,8 @@ export default function ServicePageTemplate({
           <FaqAccordion items={faqs} variant="light" />
         </div>
       </section>
+
+      {sacramentoGuide && <SacramentoGuideCallout href={sacramentoGuide.href} label={sacramentoGuide.label} />}
 
       {showLocalSeoLinks && <LocalSeoLinks />}
 

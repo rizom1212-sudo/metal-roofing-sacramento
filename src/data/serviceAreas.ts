@@ -43,10 +43,10 @@ const rawServiceAreas: ServiceAreaBase[] = [
     localContent: 'Sacramento homes often show roof wear first around valleys, vents, gutters, and shaded roof sections under mature trees. Summer heat can dry out shingles and sealants, while winter storms test flashing, underlayment, and attic ventilation.',
     localSignals: ['Ceiling stains after the first heavy rain', 'Granules collecting near downspouts', 'Lifted shingles after windy weather', 'Soft decking around vents or valleys', 'Repeated repairs on roofs near the end of service life'],
     services: [
-      { title: 'Roof Repair in Sacramento', href: '/roof-repair', desc: 'Targeted leak repairs, shingle replacement, flashing work, and repair-vs-replacement guidance for Sacramento homes with storm or age-related damage.' },
+      { title: 'Roof Repair in Sacramento', href: '/roof-repair-sacramento', desc: 'Dedicated Sacramento roof repair guide for leaks, shingles, flashing, storm damage, and repair-vs-replacement decisions.' },
       { title: 'Roof Replacement in Sacramento', href: '/roof-replacement', desc: 'Full tear-off and replacement for aging roofs, including decking review, material options, ventilation checks, and a clean final walkthrough.' },
-      { title: 'Roof Inspections in Sacramento', href: '/roof-inspection', desc: 'Free roof inspections that document visible wear, leak risks, attic concerns, drainage issues, and next steps before you commit to work.' },
-      { title: 'Emergency Roof Repair in Sacramento', href: '/emergency-roof-repair', desc: 'Urgent help for active leaks, storm damage, temporary stabilization, and documentation when water is entering the home.' },
+      { title: 'Roof Inspections in Sacramento', href: '/roof-inspection-sacramento', desc: 'Free Sacramento roof inspections with written findings for leaks, storm wear, aging materials, and replacement planning.' },
+      { title: 'Emergency Roof Repair in Sacramento', href: '/emergency-roof-repair-sacramento', desc: 'Urgent Sacramento roof help for active leaks, storm damage, temporary stabilization, and documentation when water is entering the home.' },
       { title: 'Metal Roofing in Sacramento', href: '/metal-roofing', desc: 'Standing seam and other metal roofing options for homeowners who want long life, heat performance, and lower maintenance.' },
     ],
     faqs: [

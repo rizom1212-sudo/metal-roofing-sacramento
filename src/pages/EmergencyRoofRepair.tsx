@@ -80,6 +80,10 @@ export default function EmergencyRoofRepair() {
         'Insurance claim support available',
       ]}
       sourcePage="emergency-roof-repair"
+      sacramentoGuide={{
+        href: '/emergency-roof-repair-sacramento',
+        label: 'View our Sacramento emergency roof repair page',
+      }}
     />
   );
 }

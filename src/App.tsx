@@ -18,6 +18,9 @@ import CommercialRoofing from './pages/CommercialRoofing';
 import RoofInspection from './pages/RoofInspection';
 import GuttersSiding from './pages/GuttersSiding';
 import EmergencyRoofRepair from './pages/EmergencyRoofRepair';
+import RoofRepairSacramento from './pages/RoofRepairSacramento';
+import EmergencyRoofRepairSacramento from './pages/EmergencyRoofRepairSacramento';
+import RoofInspectionSacramento from './pages/RoofInspectionSacramento';
 
 export default function App() {
   return (
@@ -42,6 +45,9 @@ export function AppRoutes() {
       <Route path="/roof-inspection" element={<RoofInspection />} />
       <Route path="/gutters-siding" element={<GuttersSiding />} />
       <Route path="/emergency-roof-repair" element={<EmergencyRoofRepair />} />
+      <Route path="/roof-repair-sacramento" element={<RoofRepairSacramento />} />
+      <Route path="/emergency-roof-repair-sacramento" element={<EmergencyRoofRepairSacramento />} />
+      <Route path="/roof-inspection-sacramento" element={<RoofInspectionSacramento />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/service-areas" element={<ServiceAreas />} />
