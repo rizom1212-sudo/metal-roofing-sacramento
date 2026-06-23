@@ -5,7 +5,9 @@ import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import LeadForm from '../components/LeadForm';
+import ServiceAreaConversionSections from '../components/ServiceAreaConversionSections';
 import { PRIMARY_CTA } from '../data/cta';
+import { SERVICE_AREA_FORM_SECTION_ID } from '../data/serviceAreaConversion';
 import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
 import { serviceAreas } from '../data/serviceAreas';
 
@@ -170,12 +172,52 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
+      <section className="bg-cream py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Nearby Communities</p>
+          <h2 className="section-heading mb-5">Areas We Serve Around {area.name}</h2>
+          <p className="text-body text-sm leading-relaxed mb-6">{area.nearbyAreasIntro}</p>
+          <div className="flex flex-wrap gap-2">
+            {area.nearbyAreas.map(item => (
+              <span
+                key={item}
+                className="inline-flex items-center rounded-full border border-gold/25 bg-white px-3.5 py-2 text-xs font-semibold text-headline shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Local Landmarks</p>
+          <h2 className="section-heading mb-5">Roofing Services Near Local Landmarks</h2>
+          <ul className="space-y-2.5 mb-5">
+            {area.landmarks.map(item => (
+              <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                <MapPin size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-body text-sm leading-relaxed">{area.landmarksIntro}</p>
+        </div>
+      </section>
+
       <LocalSeoLinks
         title={`Roofing services near ${area.name}`}
         description={`Compare PRC 13 Roofing services for ${area.name} and nearby Sacramento communities, including repair, replacement, emergency leak response, inspections, metal roofing, and recent project examples.`}
       />
 
-      <section className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <ServiceAreaConversionSections
+        cityName={area.name}
+        inspectionIntro={area.inspectionIntro}
+        trustIntro={area.trustIntro}
+      />
+
+      <section id={SERVICE_AREA_FORM_SECTION_ID} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16 scroll-mt-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
