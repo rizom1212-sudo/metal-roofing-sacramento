@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { blogPosts } from '../data/blog';
 import { getOgImage, getPageMeta } from '../data/pageMeta';
 import { ASSETS } from '../data/assets';
 import { absoluteAssetUrl, absoluteUrl } from '../data/domain';
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
-  let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+  const selector = `meta[${attr}="${key}"]`;
+  const elements = Array.from(document.querySelectorAll<HTMLMetaElement>(selector));
+  let el = elements[0];
+
+  elements.slice(1).forEach(duplicate => duplicate.remove());
+
   if (!el) {
     el = document.createElement('meta');
     el.setAttribute(attr, key);
@@ -44,21 +48,8 @@ export default function PageMeta() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    let meta = getPageMeta(pathname);
-    let ogType = 'website';
-
-    if (pathname.startsWith('/blog/') && pathname !== '/blog') {
-      const slug = pathname.replace('/blog/', '');
-      const post = blogPosts.find(p => p.slug === slug);
-      if (post) {
-        meta = {
-          title: post.seoTitle ?? `${post.title} | PRC 13 Roofing`,
-          description: post.excerpt,
-          path: pathname,
-        };
-        ogType = 'article';
-      }
-    }
+    const meta = getPageMeta(pathname);
+    const ogType = pathname.startsWith('/blog/') && pathname !== '/blog' ? 'article' : 'website';
 
     const url = absoluteUrl(meta.path);
     const image = absoluteAssetUrl(getOgImage());

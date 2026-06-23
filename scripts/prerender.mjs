@@ -6,7 +6,10 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const templatePath = path.join(dist, 'index.html');
 const serverEntry = path.join(root, 'dist-ssr', 'entry-server.js');
-const metaDescriptionTagPattern = /<meta\b(?=[^>]*\bname\s*=\s*(['"])description\1)[^>]*>\s*/gi;
+const metaDescriptionTagPattern = /<meta\b[\s\S]*?\bname\s*=\s*(['"])description\1[\s\S]*?>\s*/gi;
+const metaRobotsTagPattern = /<meta\b[\s\S]*?\bname\s*=\s*(['"])robots\1[\s\S]*?>\s*/gi;
+const ogMetaTagPattern = /<meta\b[\s\S]*?\bproperty\s*=\s*(['"])og:[^'"]*\1[\s\S]*?>\s*/gi;
+const twitterMetaTagPattern = /<meta\b[\s\S]*?\bname\s*=\s*(['"])twitter:[^'"]*\1[\s\S]*?>\s*/gi;
 
 function escapeHtml(value) {
   return String(value)
@@ -42,11 +45,12 @@ function headTags({ title, description, canonical, image, type = 'website', publ
 
 function injectHead(template, tags) {
   return template
-    .replace(/<title>[\s\S]*?<\/title>/, '')
-    .replace(/<link rel="canonical"[\s\S]*?>\n?/, '')
+    .replace(/<title>[\s\S]*?<\/title>\s*/gi, '')
+    .replace(/<link\b[\s\S]*?\brel\s*=\s*(['"])canonical\1[\s\S]*?>\s*/gi, '')
     .replace(metaDescriptionTagPattern, '')
-    .replace(/<meta property="og:[\s\S]*?>\n?/g, '')
-    .replace(/<meta name="twitter:[\s\S]*?>\n?/g, '')
+    .replace(metaRobotsTagPattern, '')
+    .replace(ogMetaTagPattern, '')
+    .replace(twitterMetaTagPattern, '')
     .replace('</head>', `    ${tags}\n  </head>`);
 }
 
