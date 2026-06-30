@@ -220,7 +220,7 @@ export default function CommercialRoofing() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">5.0 Google Rating · 81 Reviews</p>
-          <h2 className="section-heading mb-8">What Sacramento Homeowners Say</h2>
+          <h2 className="section-heading mb-8">What Sacramento Business Owners Say</h2>
           <ReviewStrip count={3} variant="light" indices={[0, 1, 4]} />
         </div>
       </section>

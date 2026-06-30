@@ -27,7 +27,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Metal Roofing Cost in Sacramento: What Homeowners Should Expect',
     seoTitle: 'Metal Roofing Cost Sacramento | PRC 13 Roofing',
     excerpt:
-      'Metal roofing in Sacramento typically costs more upfront than shingles but lasts decades longer. PRC 13 Roofing inspects your roof and provides a clear written quote before installation.',
+      'Sacramento metal roofing costs more upfront than shingles but lasts longer. PRC 13 inspects your roof and provides a clear written quote before installation.',
     date: 'July 5, 2026',
     readTime: '6 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -125,7 +125,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Standing Seam Metal Roofing in Sacramento: What Homeowners Should Know',
     seoTitle: 'Standing Seam Metal Roofing Sacramento | PRC 13',
     excerpt:
-      'Standing seam metal roofing uses concealed fasteners and clean vertical lines for Sacramento homes that want premium durability and low maintenance. PRC 13 installs standing seam systems across the region.',
+      'Standing seam metal uses concealed fasteners and clean lines for Sacramento homes wanting premium durability. PRC 13 installs systems across the region.',
     date: 'July 5, 2026',
     readTime: '6 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -222,7 +222,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Is Metal Roofing Good for Sacramento\'s Climate?',
     seoTitle: 'Metal Roofing for Sacramento Climate | PRC 13 Roofing',
     excerpt:
-      'Sacramento summers punish asphalt shingles with heat and granule loss. Metal roofing reflects solar energy and performs well through hot summers and winter rain. PRC 13 helps homeowners decide if metal fits their home.',
+      'Sacramento heat punishes asphalt shingles. Metal reflects solar energy and handles summer and winter rain well. PRC 13 helps you decide if metal fits your home.',
     date: 'July 5, 2026',
     readTime: '5 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -319,7 +319,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Can You Install a Metal Roof Over Shingles in Sacramento?',
     seoTitle: 'Metal Roof Over Shingles Sacramento | PRC 13 Roofing',
     excerpt:
-      'Installing metal over existing shingles can avoid tear-off in some cases, but full removal lets PRC 13 inspect and repair decking. Here is how Sacramento homeowners should decide.',
+      'Metal-over-shingle installs can avoid tear-off in some cases, but removal lets PRC 13 inspect decking. Here is how Sacramento homeowners should decide.',
     date: 'July 5, 2026',
     readTime: '5 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -415,7 +415,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Metal Roof Installation Process: What Sacramento Homeowners Should Expect',
     seoTitle: 'Metal Roof Installation Process Sacramento | PRC 13',
     excerpt:
-      'From free inspection to final walkthrough, here is how PRC 13 Roofing installs standing seam and metal panel systems on Sacramento homes—typically in 2 to 3 days.',
+      'From free inspection to final walkthrough, here is how PRC 13 installs standing seam and metal panel systems on Sacramento homes—typically in 2 to 3 days.',
     date: 'July 5, 2026',
     readTime: '6 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -525,7 +525,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Metal Roofing vs. Shingles: Which Is Right for Your Sacramento Home?',
     seoTitle: 'Metal Roofing vs Shingles Sacramento | PRC 13 Roofing',
     excerpt:
-      'Metal and architectural shingles both work in Sacramento—but the right choice depends on budget, how long you plan to stay, and your home\'s style. PRC 13 Roofing gives honest comparisons during free inspections.',
+      'Metal and shingles both work in Sacramento. The right choice depends on budget, timeline, and style. PRC 13 compares options during free inspections.',
     date: 'March 22, 2026',
     updatedDate: 'July 5, 2026',
     readTime: '6 min read',

@@ -29,7 +29,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Roof Repair El Dorado Hills CA: Wind, Heat, and Hillside Leak Fixes',
     seoTitle: 'Roof Repair El Dorado Hills CA | PRC 13 Roofing',
     excerpt:
-      'Roof repair in El Dorado Hills for wind-lifted shingles, tile underlayment failures, ridge cap damage, and flashing leaks on exposed hillside homes. PRC 13 provides written scopes before work begins.',
+      'El Dorado Hills roof repair for wind-lifted shingles, tile underlayment failure, and flashing leaks. PRC 13 provides written scopes before work begins.',
     date: 'June 28, 2026',
     readTime: '6 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -117,7 +117,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Roof Replacement El Dorado Hills CA: Materials for Exposed Foothill Homes',
     seoTitle: 'Roof Replacement El Dorado Hills CA | PRC 13',
     excerpt:
-      'Planning roof replacement in El Dorado Hills? PRC 13 helps homeowners choose shingle, tile, or metal systems built for foothill wind, summer heat, and winter rain on open lots.',
+      'Planning roof replacement in El Dorado Hills? PRC 13 helps homeowners choose shingle, tile, or metal systems built for foothill wind, heat, and winter rain.',
     date: 'June 28, 2026',
     readTime: '6 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -198,7 +198,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Roof Inspection El Dorado Hills CA: Free Assessments for Foothill Properties',
     seoTitle: 'Roof Inspection El Dorado Hills CA | Free Inspections',
     excerpt:
-      'Free roof inspections in El Dorado Hills focused on wind exposure, heat wear, tile underlayment, and leak risks on hillside and multi-level homes. PRC 13 provides honest written findings.',
+      'Free El Dorado Hills roof inspections focused on wind exposure, heat wear, tile underlayment, and leak risks. PRC 13 provides honest written findings.',
     date: 'June 29, 2026',
     readTime: '5 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -277,7 +277,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Tile Roofing El Dorado Hills CA: Underlayment, Repair, and Replacement',
     seoTitle: 'Tile Roofing El Dorado Hills CA | PRC 13 Roofing',
     excerpt:
-      'Tile roofing in El Dorado Hills is common on custom and planned-community homes. PRC 13 repairs and replaces tile systems with attention to underlayment, flashing, and foothill wind exposure.',
+      'Tile roofing in El Dorado Hills is common on custom homes. PRC 13 repairs and replaces tile with attention to underlayment and flashing.',
     date: 'June 29, 2026',
     readTime: '6 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -359,7 +359,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Fascia Repair El Dorado Hills CA: Eaves, Rot, and Storm Damage',
     seoTitle: 'Fascia Repair El Dorado Hills CA | PRC 13 Roofing',
     excerpt:
-      'Fascia repair in El Dorado Hills fixes rotted eaves, storm-damaged boards, and gutter-related water intrusion on hillside homes. PRC 13 addresses fascia as part of complete roof edge protection.',
+      'El Dorado Hills fascia repair for rotted eaves and gutter-related water intrusion. PRC 13 addresses fascia as part of roof edge protection.',
     date: 'June 30, 2026',
     readTime: '5 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -437,7 +437,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Emergency Roof Repair El Dorado Hills CA: Active Leaks and Storm Openings',
     seoTitle: 'Emergency Roof Repair El Dorado Hills | PRC 13',
     excerpt:
-      'Emergency roof repair in El Dorado Hills for active leaks, wind-opened ridges, and storm damage on hillside homes. PRC 13 prioritizes urgent calls and documents damage for repair planning.',
+      'Emergency roof repair in El Dorado Hills for active leaks and storm damage. PRC 13 prioritizes urgent calls and documents damage for planning.',
     date: 'June 30, 2026',
     readTime: '5 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -510,7 +510,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Metal Roofing El Dorado Hills CA: Durability on Exposed Foothill Lots',
     seoTitle: 'Metal Roofing El Dorado Hills CA | PRC 13',
     excerpt:
-      'Metal roofing in El Dorado Hills offers wind resistance and heat reflection for exposed properties. PRC 13 installs standing seam and metal systems for long-term foothill performance.',
+      'Metal roofing in El Dorado Hills offers wind resistance and heat reflection. PRC 13 installs standing seam systems for long-term performance.',
     date: 'July 1, 2026',
     readTime: '6 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -583,7 +583,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Roof Insurance Claims El Dorado Hills: Storm Damage Documentation',
     seoTitle: 'Roof Insurance Claims El Dorado Hills | PRC 13',
     excerpt:
-      'Filing a roof insurance claim in El Dorado Hills after wind or storm damage? PRC 13 documents hillside roof damage, supports adjuster visits, and aligns repairs with approved scope.',
+      'Filing a roof insurance claim in El Dorado Hills after storm damage? PRC 13 documents damage, supports adjuster visits, and aligns repairs with scope.',
     date: 'July 1, 2026',
     readTime: '6 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,

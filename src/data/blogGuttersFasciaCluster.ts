@@ -28,7 +28,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Gutter Installation Sacramento: Seamless Systems for Local Homes',
     seoTitle: 'Gutter Installation Sacramento | PRC 13 Roofing',
     excerpt:
-      'PRC 13 Roofing installs seamless aluminum gutters on Sacramento homes—custom-formed on site with fewer failure points. Most installations finish in one day after a free exterior evaluation.',
+      'PRC 13 installs seamless aluminum gutters on Sacramento homes, custom-formed on site. Most installations finish in one day after a free evaluation.',
     date: 'July 6, 2026',
     readTime: '5 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -125,7 +125,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Gutter Replacement Cost in Sacramento: What Affects Your Quote',
     seoTitle: 'Gutter Replacement Cost Sacramento | PRC 13 Roofing',
     excerpt:
-      'Gutter replacement cost in Sacramento depends on linear footage, stories, fascia condition, and guard options. PRC 13 inspects first and provides a written estimate before work begins.',
+      'Sacramento gutter replacement cost depends on footage, stories, fascia condition, and guards. PRC 13 inspects first and provides a written estimate.',
     date: 'July 6, 2026',
     readTime: '5 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -223,7 +223,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Gutter Guards Sacramento: Less Debris, Fewer Overflow Problems',
     seoTitle: 'Gutter Guards Sacramento | PRC 13 Roofing',
     excerpt:
-      'Gutter guards on Sacramento homes reduce leaf buildup, cut cleaning frequency, and help prevent overflow that damages fascia. PRC 13 installs guards with new gutters or on existing systems.',
+      'Gutter guards on Sacramento homes reduce leaf buildup and overflow that damages fascia. PRC 13 installs guards with new gutters or existing systems.',
     date: 'July 6, 2026',
     readTime: '5 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -319,7 +319,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Fascia Repair Sacramento: Fix Rotted Eaves Before Damage Spreads',
     seoTitle: 'Fascia Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Fascia repair in Sacramento fixes rotted eaves, storm-soaked boards, and gutter-related water intrusion. PRC 13 replaces damaged fascia and corrects roof edge drainage that caused the rot.',
+      'Sacramento fascia repair fixes rotted eaves and gutter-related water intrusion. PRC 13 replaces damaged fascia and corrects roof edge drainage.',
     date: 'July 6, 2026',
     readTime: '6 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -420,7 +420,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'How Gutters Prevent Roof Leaks in Sacramento Homes',
     seoTitle: 'Gutters and Roof Leaks Sacramento | PRC 13 Roofing',
     excerpt:
-      'Failed gutters, rotted fascia, and poor drainage push water into roof edges and cause leaks. PRC 13 helps Sacramento homeowners trace gutter-related leak paths during free inspections.',
+      'Failed gutters, rotted fascia, and poor drainage push water into roof edges and cause leaks. PRC 13 helps Sacramento homeowners trace gutter-related leak paths.',
     date: 'July 6, 2026',
     readTime: '6 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,

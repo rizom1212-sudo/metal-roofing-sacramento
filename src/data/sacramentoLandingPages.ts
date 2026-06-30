@@ -87,7 +87,7 @@ export const SACRAMENTO_LANDING_PATHS = [
 export const sacramentoLandingPages: Record<string, SacramentoLandingPageConfig> = {
   'roof-repair-sacramento': {
     path: '/roof-repair-sacramento',
-    metaTitle: 'Roof Repair Sacramento, CA | Leak Repair & Free Inspections',
+    metaTitle: 'Roof Repair Sacramento | Leak Help & Inspections | PRC 13',
     metaDescription:
       'Need roof repair in Sacramento? PRC 13 Roofing helps with roof leaks, missing shingles, flashing issues, storm damage, and free roof inspections.',
     pageName: 'Roof Repair Sacramento',
@@ -300,7 +300,7 @@ export const sacramentoLandingPages: Record<string, SacramentoLandingPageConfig>
   },
   'emergency-roof-repair-sacramento': {
     path: '/emergency-roof-repair-sacramento',
-    metaTitle: 'Emergency Roof Repair Sacramento | Roof Leak Help & Free Inspection',
+    metaTitle: 'Emergency Roof Repair Sacramento | Leak Help | PRC 13',
     metaDescription:
       'Emergency roof repair in Sacramento for active leaks, storm damage, missing shingles, flashing failures, and urgent roof inspections from PRC 13 Roofing.',
     pageName: 'Emergency Roof Repair Sacramento',
@@ -497,9 +497,9 @@ export const sacramentoLandingPages: Record<string, SacramentoLandingPageConfig>
   },
   'roof-inspection-sacramento': {
     path: '/roof-inspection-sacramento',
-    metaTitle: 'Roof Inspection Sacramento | Free Roof Inspections & Written Findings',
+    metaTitle: 'Sacramento Roof Inspection | Free Findings | PRC 13',
     metaDescription:
-      'Schedule a free roof inspection in Sacramento with PRC 13 Roofing. Get written findings for leaks, storm damage, aging shingles, flashing issues, and roof replacement planning.',
+      'Free roof inspections in Sacramento from PRC 13 Roofing. Written findings for leaks, storm wear, aging shingles, and replacement planning.',
     pageName: 'Roof Inspection Sacramento',
     serviceName: 'Roof Inspection in Sacramento, CA',
     sourcePage: 'roof-inspection-sacramento',
@@ -689,9 +689,9 @@ export const sacramentoLandingPages: Record<string, SacramentoLandingPageConfig>
   },
   'roof-replacement-sacramento': {
     path: '/roof-replacement-sacramento',
-    metaTitle: 'Roof Replacement Sacramento, CA | Shingle, Tile & Metal | PRC 13',
+    metaTitle: 'Roof Replacement Sacramento | Shingle & Tile | PRC 13',
     metaDescription:
-      'Roof replacement in Sacramento from PRC 13 Roofing. Free inspections, written quotes, shingle tile and metal options, and most homes completed in one to two days.',
+      'Sacramento roof replacement from PRC 13 Roofing. Free inspections, written quotes, shingle and tile options, and most homes done in one to two days.',
     pageName: 'Roof Replacement Sacramento',
     serviceName: 'Roof Replacement in Sacramento, CA',
     sourcePage: 'roof-replacement-sacramento',

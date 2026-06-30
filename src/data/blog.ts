@@ -45,7 +45,7 @@ const rawBlogPosts: BlogPost[] = [
     title: 'What to Do When Your Roof Leaks During a Sacramento Storm',
     seoTitle: 'Roof Leak During a Sacramento Storm? What to Do',
     excerpt:
-      'If your roof starts leaking during heavy Sacramento rain, contain the water, avoid going on the roof, document the damage, and schedule an inspection as soon as it is safe.',
+      'If your roof leaks during heavy Sacramento rain, contain water indoors, avoid climbing on the roof, document damage, and schedule an inspection when safe.',
     date: 'May 26, 2026',
     readTime: '5 min read',
     category: 'Roof Repair',

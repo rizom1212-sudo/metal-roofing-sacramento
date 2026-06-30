@@ -80,6 +80,23 @@ export default function About() {
         </div>
       </section>
 
+      {/* TRUST */}
+      <section className="bg-white py-8 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <div className="flex items-center gap-3">
+              <Shield size={22} className="text-gold flex-shrink-0" aria-hidden />
+              <p className="text-headline font-semibold text-sm sm:text-base">
+                California Contractor License #1087153
+              </p>
+            </div>
+            <p className="text-body text-sm leading-relaxed max-w-2xl">
+              PRC 13 Roofing is a licensed and insured Sacramento-area roofing contractor. Every project is handled with clear communication and work we stand behind.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* VALUES */}
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

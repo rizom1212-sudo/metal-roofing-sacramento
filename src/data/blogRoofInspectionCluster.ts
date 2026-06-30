@@ -23,9 +23,9 @@ export const roofInspectionClusterPosts: BlogPost[] = [
   {
     slug: 'free-roof-inspection-sacramento',
     title: 'Free Roof Inspection Sacramento: What Homeowners Should Know',
-    seoTitle: 'What to Expect From a Free Sacramento Roof Inspection | PRC 13 Roofing',
+    seoTitle: 'Sacramento Free Roof Inspection Guide | PRC 13 Roofing',
     excerpt:
-      'PRC 13 Roofing offers free roof inspections in Sacramento with no obligation. Learn what is included, how fast you can get scheduled, and when a free inspection makes sense.',
+      'Free Sacramento roof inspections from PRC 13 with no obligation. Learn what is included, how fast you can schedule, and when an inspection makes sense.',
     date: 'June 10, 2026',
     readTime: '6 min read',
     category: CATEGORY,
@@ -122,7 +122,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Roof Inspection Cost in Sacramento: Free vs. Paid Options',
     seoTitle: 'Roof Inspection Cost Sacramento | What to Expect',
     excerpt:
-      'How much does a roof inspection cost in Sacramento? Learn typical price ranges for residential, insurance, real estate, and commercial inspections—and when PRC 13 offers them free.',
+      'What does a roof inspection cost in Sacramento? Learn typical ranges for residential, insurance, and real estate inspections—and when PRC 13 offers them free.',
     date: 'June 10, 2026',
     readTime: '5 min read',
     category: CATEGORY,
@@ -219,7 +219,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Roof Inspection Checklist for Sacramento Homeowners',
     seoTitle: 'Roof Inspection Checklist for Homeowners | Sacramento',
     excerpt:
-      'Use this practical roof inspection checklist for Sacramento homes: what to look for from the ground, in the attic, and after storms—plus when to call PRC 13 for a professional inspection.',
+      'Practical roof inspection checklist for Sacramento homes: what to check from the ground, in the attic, and after storms—plus when to call PRC 13.',
     date: 'June 11, 2026',
     readTime: '7 min read',
     category: CATEGORY,
@@ -317,7 +317,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'How Often Should You Inspect Your Roof in Sacramento?',
     seoTitle: 'How Often Should You Inspect Your Roof? | Sacramento',
     excerpt:
-      'Sacramento heat, winter rain, and wind all wear on roofs. Learn how often to schedule roof inspections, what changes with roof age, and when PRC 13 recommends an extra look.',
+      'Sacramento heat, rain, and wind wear on roofs. Learn how often to schedule inspections and when PRC 13 recommends a closer look.',
     date: 'June 11, 2026',
     readTime: '5 min read',
     category: CATEGORY,
@@ -405,7 +405,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'What Happens During a Roof Inspection?',
     seoTitle: 'What Happens During a Roof Inspection? | PRC 13',
     excerpt:
-      'Wondering what happens during a professional roof inspection? PRC 13 explains each step—from scheduling and on-roof assessment to your written findings—for Sacramento homeowners.',
+      'What happens during a professional roof inspection? PRC 13 explains scheduling, on-roof assessment, and written findings for Sacramento homeowners.',
     date: 'June 12, 2026',
     readTime: '6 min read',
     category: CATEGORY,
@@ -496,7 +496,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Insurance Roof Inspections in Sacramento: What Homeowners Need to Know',
     seoTitle: 'Insurance Roof Inspection Sacramento | Storm Damage',
     excerpt:
-      'Filing a roof damage claim in Sacramento? Learn how insurance roof inspections work, how PRC 13 documents storm damage, and how to prepare for the adjuster visit.',
+      'Filing a roof damage claim in Sacramento? Learn how insurance inspections work and how PRC 13 documents storm damage for your adjuster visit.',
     date: 'June 12, 2026',
     readTime: '6 min read',
     category: CATEGORY,
@@ -586,7 +586,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Commercial Roof Inspection Sacramento: Flat Roofs and Small Buildings',
     seoTitle: 'Commercial Roof Inspection Sacramento | PRC 13',
     excerpt:
-      'PRC 13 Roofing provides commercial roof inspections in Sacramento for small commercial buildings, flat roofs, and mixed-use properties. Learn what we check and when to schedule.',
+      'Commercial roof inspections in Sacramento for small buildings, flat roofs, and mixed-use properties. Learn what PRC 13 checks and when to schedule.',
     date: 'June 13, 2026',
     readTime: '5 min read',
     category: CATEGORY,
@@ -678,7 +678,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Roof Inspection After a Storm in Sacramento',
     seoTitle: 'Roof Inspection After a Storm | Sacramento',
     excerpt:
-      'After Sacramento wind or heavy rain, a roof inspection can catch hidden damage early. Learn what to check, when to call PRC 13, and how storm inspections tie into insurance claims.',
+      'After Sacramento wind or heavy rain, a roof inspection can catch hidden damage early. Learn what to check and when to call PRC 13.',
     date: 'June 13, 2026',
     readTime: '6 min read',
     category: CATEGORY,
@@ -768,7 +768,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Signs You Need a Roof Inspection in Sacramento',
     seoTitle: 'Signs You Need a Roof Inspection | Sacramento',
     excerpt:
-      'Ceiling stains, granules in gutters, or an aging roof? These are clear signs you need a roof inspection. PRC 13 explains when Sacramento homeowners should schedule a free look.',
+      'Ceiling stains, granules in gutters, or an aging roof? PRC 13 explains when Sacramento homeowners should schedule a free roof inspection.',
     date: 'June 14, 2026',
     readTime: '5 min read',
     category: CATEGORY,
@@ -860,7 +860,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Roof Inspection Before Buying a Home in Sacramento',
     seoTitle: 'Roof Inspection Before Buying a Home | Sacramento',
     excerpt:
-      'Buying a home in Sacramento? A dedicated roof inspection before closing can reveal age, leaks, and replacement costs home inspections sometimes miss. PRC 13 explains what buyers should ask for.',
+      'Buying in Sacramento? A roof inspection before closing can reveal age, leaks, and replacement costs. PRC 13 explains what buyers should ask for.',
     date: 'June 14, 2026',
     readTime: '6 min read',
     category: CATEGORY,

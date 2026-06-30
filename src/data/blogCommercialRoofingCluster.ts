@@ -28,7 +28,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
     title: 'Commercial Roof Replacement Sacramento: When Flat Roofs Need a New System',
     seoTitle: 'Commercial Roof Replacement Sacramento | PRC 13 Roofing',
     excerpt:
-      'Sacramento commercial roof replacement depends on membrane age, drainage, and seam condition. PRC 13 inspects flat and low-slope roofs and provides written scopes before work begins.',
+      'Sacramento commercial roof replacement depends on membrane age, drainage, and seams. PRC 13 inspects flat roofs and provides written scopes before work begins.',
     date: 'July 7, 2026',
     readTime: '6 min read',
     category: COMMERCIAL_CLUSTER_CATEGORY,
@@ -126,7 +126,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
     title: 'Commercial Roof Repair Sacramento: Fix Membrane and Seam Issues Early',
     seoTitle: 'Commercial Roof Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Commercial roof repair in Sacramento can stop leaks at seams, penetrations, and localized membrane damage before they become full replacements. PRC 13 documents scope in writing before work starts.',
+      'Sacramento commercial roof repair can stop leaks at seams and penetrations before full replacement. PRC 13 documents scope in writing before work starts.',
     date: 'July 7, 2026',
     readTime: '6 min read',
     category: COMMERCIAL_CLUSTER_CATEGORY,
@@ -224,7 +224,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
     title: 'TPO vs EPDM Commercial Roofing: Which Fits Sacramento Buildings?',
     seoTitle: 'TPO vs EPDM Commercial Roofing | PRC 13 Sacramento',
     excerpt:
-      'TPO and EPDM are both common on Sacramento flat roofs—but they install and age differently. PRC 13 helps property owners compare options during commercial roof inspections.',
+      'TPO and EPDM are both common on Sacramento flat roofs but age differently. PRC 13 helps property owners compare options during commercial inspections.',
     date: 'July 7, 2026',
     readTime: '6 min read',
     category: COMMERCIAL_CLUSTER_CATEGORY,
@@ -325,7 +325,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
     title: 'Commercial Roof Maintenance Sacramento: Prevent Leaks Before They Start',
     seoTitle: 'Commercial Roof Maintenance Sacramento | PRC 13 Roofing',
     excerpt:
-      'Regular commercial roof maintenance in Sacramento catches ponding, clogged drains, and seam wear before interior damage starts. PRC 13 inspects flat roofs and documents practical next steps.',
+      'Commercial roof maintenance in Sacramento catches ponding, clogged drains, and seam wear. PRC 13 inspects flat roofs and documents next steps.',
     date: 'July 7, 2026',
     readTime: '5 min read',
     category: COMMERCIAL_CLUSTER_CATEGORY,
@@ -423,7 +423,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
     title: 'Commercial Roof Leak Repair Sacramento: Stop Active Water Intrusion',
     seoTitle: 'Commercial Roof Leak Repair Sacramento | PRC 13',
     excerpt:
-      'Active commercial roof leaks in Sacramento can damage inventory and equipment fast. PRC 13 traces leak paths on flat roofs, documents findings, and repairs membrane and seam failures.',
+      'Active commercial roof leaks in Sacramento can damage inventory fast. PRC 13 traces leak paths on flat roofs, documents findings, and repairs membrane failures.',
     date: 'July 7, 2026',
     readTime: '6 min read',
     category: COMMERCIAL_CLUSTER_CATEGORY,

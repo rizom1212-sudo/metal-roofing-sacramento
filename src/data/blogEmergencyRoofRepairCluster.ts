@@ -111,7 +111,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'Roof Leak Repair Sacramento: Find the Source and Fix It Right',
     seoTitle: 'Roof Leak Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Roof leak repair in Sacramento starts with finding the real entry point—not just the ceiling stain. PRC 13 explains common causes and how we fix leaks permanently.',
+      'Sacramento roof leak repair starts with finding the real entry point—not just the ceiling stain. PRC 13 explains common causes and how we fix leaks properly.',
     date: 'June 18, 2026',
     readTime: '5 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -194,7 +194,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'Emergency Roof Tarp Guide for Sacramento Homeowners',
     seoTitle: 'Emergency Roof Tarp Guide | Sacramento Storm Damage',
     excerpt:
-      'Should you tarp your roof after storm damage? Learn when emergency roof tarping helps, when it is unsafe DIY, and how PRC 13 handles temporary weatherproofing in Sacramento.',
+      'Should you tarp your roof after storm damage? Learn when tarping helps, when DIY is unsafe, and how PRC 13 handles temporary weatherproofing in Sacramento.',
     date: 'June 19, 2026',
     readTime: '5 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -355,7 +355,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'Storm Damage Roof Repair Sacramento: After Wind and Heavy Rain',
     seoTitle: 'Storm Damage Roof Repair Sacramento | PRC 13',
     excerpt:
-      'Sacramento storm damage roof repair starts with safety, documentation, and a professional assessment. PRC 13 helps homeowners repair wind and rain damage the right way.',
+      'Sacramento storm damage repair starts with safety, documentation, and assessment. PRC 13 helps homeowners repair wind and rain damage correctly.',
     date: 'June 20, 2026',
     readTime: '6 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -437,7 +437,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'Hail Damage Roof Repair: What Sacramento Homeowners Should Know',
     seoTitle: 'Hail Damage Roof Repair | Sacramento Area',
     excerpt:
-      'Hail is less common than wind in Sacramento, but when it hits, bruised shingles and tile cracks need prompt hail damage roof repair. PRC 13 explains what to look for.',
+      'Hail is less common than wind in Sacramento, but bruised shingles and tile cracks need prompt repair. PRC 13 explains what to look for after hail.',
     date: 'June 20, 2026',
     readTime: '5 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -672,7 +672,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'Roof Insurance Claims After Storm Damage in Sacramento',
     seoTitle: 'Roof Insurance Claims After Storm Damage | Sacramento',
     excerpt:
-      'Filing a roof insurance claim after storm damage in Sacramento? PRC 13 explains documentation, adjuster visits, and how emergency repairs fit the claims process.',
+      'Filing a roof insurance claim after storm damage in Sacramento? PRC 13 explains documentation, adjuster visits, and how emergency repairs fit the process.',
     date: 'June 22, 2026',
     readTime: '6 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,

@@ -35,7 +35,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
     title: 'Roof Repair Cost in Sacramento: What Homeowners Should Expect',
     seoTitle: 'Roof Repair Cost Sacramento | PRC 13 Roofing',
     excerpt:
-      'Sacramento roof repair cost depends on leak source, materials, and roof access. PRC 13 inspects first and provides a written estimate before any work begins—no surprise pricing.',
+      'Sacramento roof repair cost depends on leak source, materials, and roof access. PRC 13 inspects first and provides a written estimate before work begins.',
     date: 'July 8, 2026',
     readTime: '6 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -143,7 +143,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
     title: 'Missing Shingle Repair in Sacramento: When a Small Fix Is Enough',
     seoTitle: 'Missing Shingle Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'One missing shingle in Sacramento can expose underlayment to sun and rain. PRC 13 replaces damaged tabs, checks surrounding seal strips, and confirms whether a localized repair is still sound.',
+      'One missing shingle in Sacramento can expose underlayment to sun and rain. PRC 13 replaces damaged tabs and confirms whether a localized repair is still sound.',
     date: 'July 8, 2026',
     readTime: '5 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -234,7 +234,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
     title: 'Roof Flashing Repair in Sacramento: Stopping Leaks at Transitions',
     seoTitle: 'Roof Flashing Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Failed roof flashing causes many Sacramento leaks at walls, valleys, and penetrations. PRC 13 repairs step flashing, counter-flashing, and valley metal with materials matched to your roof system.',
+      'Failed flashing causes many Sacramento leaks at walls, valleys, and penetrations. PRC 13 repairs step flashing, counter-flashing, and valley metal.',
     date: 'July 9, 2026',
     readTime: '6 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -331,7 +331,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
     title: 'Chimney Flashing Repair in Sacramento: Fixing Leaks at the Stack',
     seoTitle: 'Chimney Flashing Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Chimney flashing leaks are common on Sacramento homes with aging mortar and heat-cycled sealant. PRC 13 repairs base flashing, counter-flashing, and cricket details with a written scope before work starts.',
+      'Chimney flashing leaks are common on Sacramento homes with aging mortar and dried sealant. PRC 13 repairs flashing with a written scope before work starts.',
     date: 'July 9, 2026',
     readTime: '5 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -423,7 +423,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
     title: 'Skylight Leak Repair in Sacramento: Curb, Flashing, and Seal Fixes',
     seoTitle: 'Skylight Leak Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Skylight leaks in Sacramento often come from curb flashing or dried sealant—not the glass itself. PRC 13 inspects the curb, underlayment, and surrounding shingles or tile before recommending repair.',
+      'Sacramento skylight leaks often come from curb flashing or dried sealant. PRC 13 inspects the curb and surrounding roofing before recommending repair.',
     date: 'July 10, 2026',
     readTime: '5 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -515,7 +515,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
     title: 'Tile Roof Repair in Sacramento: Underlayment, Flashing, and Broken Tile',
     seoTitle: 'Tile Roof Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Tile roof repair in Sacramento often means fixing underlayment and flashing while tiles still look fine from the street. PRC 13 replaces broken tile, repairs pans, and documents when replacement is the better path.',
+      'Sacramento tile roof repair often fixes underlayment and flashing while tiles look fine. PRC 13 replaces broken tile and explains when replacement fits.',
     date: 'July 10, 2026',
     readTime: '6 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,

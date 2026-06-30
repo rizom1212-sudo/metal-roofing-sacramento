@@ -27,7 +27,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: 'Roof Replacement Cost in Sacramento: What Homeowners Should Expect',
     seoTitle: 'Roof Replacement Cost Sacramento | PRC 13 Roofing',
     excerpt:
-      'Roof replacement cost in Sacramento depends on size, pitch, materials, and deck condition. PRC 13 Roofing inspects first and provides a clear written quote before work begins.',
+      'Sacramento roof replacement cost depends on size, pitch, materials, and deck condition. PRC 13 inspects first and provides a written quote before work begins.',
     date: 'July 2, 2026',
     readTime: '6 min read',
     category: REPLACEMENT_CLUSTER_CATEGORY,
@@ -125,7 +125,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: 'Shingle vs Tile vs Metal Roof Replacement in Sacramento',
     seoTitle: 'Shingle vs Tile vs Metal Roof Replacement Sacramento',
     excerpt:
-      'Choosing materials for a Sacramento roof replacement? Compare architectural shingles, tile, and metal for cost, heat performance, lifespan, and what fits your home.',
+      'Choosing materials for a Sacramento roof replacement? Compare shingles, tile, and metal for cost, heat performance, lifespan, and what fits your home.',
     date: 'July 2, 2026',
     readTime: '7 min read',
     category: REPLACEMENT_CLUSTER_CATEGORY,
@@ -220,7 +220,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: 'Roof Replacement and Insurance Claims in Sacramento',
     seoTitle: 'Roof Replacement Insurance Claims Sacramento | PRC 13',
     excerpt:
-      'Storm damage may qualify for insurance-covered roof replacement in Sacramento. PRC 13 Roofing documents damage, provides insurance claim assistance, and helps homeowners work with adjusters.',
+      'Storm damage may qualify for insurance-covered roof replacement in Sacramento. PRC 13 documents damage and helps homeowners work with adjusters.',
     date: 'July 3, 2026',
     readTime: '6 min read',
     category: REPLACEMENT_CLUSTER_CATEGORY,
@@ -404,7 +404,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: 'Roof Replacement Financing in Sacramento',
     seoTitle: 'Roof Replacement Financing Sacramento | PRC 13 Roofing',
     excerpt:
-      'Roof replacement is a major investment. PRC 13 Roofing offers financing on qualifying Sacramento projects so homeowners can move forward when the roof needs attention.',
+      'Roof replacement is a major investment. PRC 13 offers financing on qualifying Sacramento projects so homeowners can move forward when the roof needs attention.',
     date: 'July 4, 2026',
     readTime: '5 min read',
     category: REPLACEMENT_CLUSTER_CATEGORY,
@@ -582,7 +582,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: '7 Signs Your Sacramento Roof Needs Replacement (Not Just a Repair)',
     seoTitle: '7 Signs Your Sacramento Roof Needs Replacement',
     excerpt:
-      'Sacramento heat and winter storms wear roofs down over time. Here are seven signs that repair alone may no longer be enough—and when to schedule a free inspection.',
+      'Sacramento heat and winter storms wear roofs down over time. Seven signs repair may no longer be enough—and when to schedule a free inspection with PRC 13.',
     date: 'April 28, 2026',
     updatedDate: 'July 4, 2026',
     readTime: '6 min read',
