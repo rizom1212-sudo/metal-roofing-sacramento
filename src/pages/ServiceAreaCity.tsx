@@ -10,8 +10,8 @@ import { PRIMARY_CTA } from '../data/cta';
 import { SERVICE_AREA_FORM_SECTION_ID } from '../data/serviceAreaConversion';
 import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
 import { serviceAreas } from '../data/serviceAreas';
-import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { blogPosts } from '../data/blog';
+import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
 
 export default function ServiceAreaCity() {
   const { slug } = useParams<{ slug: string }>();
@@ -32,10 +32,10 @@ export default function ServiceAreaCity() {
 
   const faqs: FaqItem[] = area.faqs;
   const pageName = `${area.name} Roofing Services`;
-  const folsomResources =
-    area.slug === 'folsom'
-      ? blogPosts.filter(post => post.category === FOLSOM_CLUSTER_CATEGORY)
-      : [];
+  const localHub = LOCAL_ROOFING_HUBS[area.slug];
+  const localResources = localHub
+    ? blogPosts.filter(post => post.category === localHub.category)
+    : [];
 
   return (
     <>
@@ -216,21 +216,19 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
-      {folsomResources.length > 0 && (
+      {localHub && localResources.length > 0 && (
         <section className="bg-cream py-14 md:py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="flex items-start gap-3 mb-6">
               <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
               <div>
-                <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Folsom Roofing Resources</p>
-                <h2 className="section-heading mb-3">Guides for Folsom Homeowners</h2>
-                <p className="text-body text-sm leading-relaxed max-w-3xl">
-                  Learn about roof repair, roof replacement, inspections, roof leaks, storm damage, roofing costs, and roofing materials in Folsom—before you schedule service with PRC 13 Roofing.
-                </p>
+                <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">{localHub.label}</p>
+                <h2 className="section-heading mb-3">{localHub.heading}</h2>
+                <p className="text-body text-sm leading-relaxed max-w-3xl">{localHub.intro}</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {folsomResources.map(resource => (
+              {localResources.map(resource => (
                 <Link
                   key={resource.slug}
                   to={`/blog/${resource.slug}`}

@@ -105,7 +105,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
   '/blog': {
     title: `Roofing Blog | ${SITE_NAME}`,
     description:
-      'Sacramento roofing tips, roof inspection guides, emergency roof repair resources, and Folsom roofing guides from PRC 13 Roofing.',
+      'Sacramento roofing tips, inspection guides, emergency repair resources, and local guides for Folsom and El Dorado Hills from PRC 13 Roofing.',
     path: '/blog',
   },
   '/service-areas': {

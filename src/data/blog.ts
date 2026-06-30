@@ -3,6 +3,7 @@ import { ASSETS } from './assets';
 import { roofInspectionClusterPosts } from './blogRoofInspectionCluster';
 import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluster';
 import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
+import { elDoradoHillsRoofingClusterPosts } from './blogElDoradoHillsRoofingCluster';
 
 export interface BlogRelatedService {
   label: string;
@@ -383,8 +384,10 @@ export const blogPosts: BlogPost[] = [
   ...roofInspectionClusterPosts,
   ...emergencyRoofRepairClusterPosts,
   ...folsomRoofingClusterPosts,
+  ...elDoradoHillsRoofingClusterPosts,
 ];
 
 export const ROOF_INSPECTION_CLUSTER_SLUGS = roofInspectionClusterPosts.map(post => post.slug);
 export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPosts.map(post => post.slug);
 export const FOLSOM_ROOFING_CLUSTER_SLUGS = folsomRoofingClusterPosts.map(post => post.slug);
+export const EL_DORADO_HILLS_ROOFING_CLUSTER_SLUGS = elDoradoHillsRoofingClusterPosts.map(post => post.slug);

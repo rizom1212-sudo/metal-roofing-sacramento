@@ -8,6 +8,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
 import { PRIMARY_CTA } from '../data/cta';
 import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
+import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -34,6 +35,7 @@ export default function BlogPost() {
 
   const isEmergencyGuide = post.category === EMERGENCY_CLUSTER_CATEGORY;
   const isFolsomGuide = post.category === FOLSOM_CLUSTER_CATEGORY;
+  const isElDoradoHillsGuide = post.category === EL_DORADO_HILLS_CLUSTER_CATEGORY;
 
   return (
     <>
@@ -179,21 +181,31 @@ export default function BlogPost() {
 
               <div className="mt-12 card-brand bg-charcoal-dark border border-gold/20 p-6 md:p-8">
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
-                  {isEmergencyGuide ? 'Emergency Help' : isFolsomGuide ? 'Folsom Roofing' : 'Free Inspection'}
+                  {isEmergencyGuide
+                    ? 'Emergency Help'
+                    : isElDoradoHillsGuide
+                      ? 'El Dorado Hills Roofing'
+                      : isFolsomGuide
+                        ? 'Folsom Roofing'
+                        : 'Free Inspection'}
                 </p>
                 <h2 className="text-xl font-bold text-white mb-3">
                   {isEmergencyGuide
                     ? 'Need Emergency Roof Repair in Sacramento?'
-                    : isFolsomGuide
-                      ? 'Schedule Roofing Service in Folsom'
-                      : 'Schedule Your Free Roof Inspection'}
+                    : isElDoradoHillsGuide
+                      ? 'Schedule Roofing Service in El Dorado Hills'
+                      : isFolsomGuide
+                        ? 'Schedule Roofing Service in Folsom'
+                        : 'Schedule Your Free Roof Inspection'}
                 </h2>
                 <p className="text-gray-400 text-sm leading-relaxed mb-5">
                   {isEmergencyGuide
                     ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
-                    : isFolsomGuide
-                      ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
-                      : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
+                    : isElDoradoHillsGuide
+                      ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, fascia repair, inspections, and emergency leak help on exposed foothill properties.'
+                      : isFolsomGuide
+                        ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
+                        : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {isEmergencyGuide ? (
@@ -212,17 +224,21 @@ export default function BlogPost() {
                     to={
                       isEmergencyGuide
                         ? '/emergency-roof-repair'
-                        : isFolsomGuide
-                          ? '/service-areas/folsom'
-                          : '/roof-inspection'
+                        : isElDoradoHillsGuide
+                          ? '/service-areas/el-dorado-hills'
+                          : isFolsomGuide
+                            ? '/service-areas/folsom'
+                            : '/roof-inspection'
                     }
                     className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                   >
                     {isEmergencyGuide
                       ? 'Emergency roof repair page'
-                      : isFolsomGuide
-                        ? 'Folsom roofing services'
-                        : 'Roof inspection service page'}
+                      : isElDoradoHillsGuide
+                        ? 'El Dorado Hills roofing services'
+                        : isFolsomGuide
+                          ? 'Folsom roofing services'
+                          : 'Roof inspection service page'}
                   </Link>
                   {isEmergencyGuide && (
                     <Link
