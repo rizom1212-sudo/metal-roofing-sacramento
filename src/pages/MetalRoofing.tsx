@@ -1,4 +1,4 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award, Zap, Sun, Wrench, Timer } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Shield, Award, Zap, Sun, Wrench, Timer, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
@@ -15,6 +15,8 @@ import OptimizedImage from '../components/OptimizedImage';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
+import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
 
 const benefits = [
   { icon: Timer, title: '50+ Year Lifespan', desc: 'Outlasts asphalt shingles by 2 to 3 times. Many Sacramento homeowners install metal as their last roof ever.' },
@@ -82,6 +84,8 @@ const faqs: FaqItem[] = [
     answer: 'In some cases, yes. Installing over existing shingles can avoid full removal. However, we typically recommend full removal so we can inspect and repair the decking. We advise based on your specific roof.',
   },
 ];
+
+const metalResources = blogPosts.filter(post => post.category === METAL_CLUSTER_CATEGORY);
 
 export default function MetalRoofing() {
   return (
@@ -291,6 +295,47 @@ export default function MetalRoofing() {
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">5.0 Google Rating · 81 Reviews</p>
           <h2 className="section-heading mb-8">What Sacramento Homeowners Say</h2>
           <ReviewStrip count={3} variant="light" />
+        </div>
+      </section>
+
+      {/* METAL ROOFING RESOURCES */}
+      <section className="bg-white py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-start gap-3 mb-6">
+            <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+            <div>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Metal Roofing Resources</p>
+              <h2 className="section-heading mb-3">Plan Your Sacramento Metal Roof</h2>
+              <p className="text-body text-sm leading-relaxed max-w-3xl">
+                Homeowners across{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
+                use these guides for metal cost, standing seam options, climate fit, installation steps, and shingle comparisons. Schedule a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+                or{' '}
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a metal roofing consultation</Link>.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {metalResources.map(resource => (
+              <Link
+                key={resource.slug}
+                to={`/blog/${resource.slug}`}
+                className="card-brand bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+              >
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
+                <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                  Read article <ArrowRight size={12} />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

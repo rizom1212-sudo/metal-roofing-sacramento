@@ -6,6 +6,7 @@ import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluste
 import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
 import { elDoradoHillsRoofingClusterPosts } from './blogElDoradoHillsRoofingCluster';
 import { roofReplacementClusterPosts } from './blogRoofReplacementCluster';
+import { metalRoofingClusterPosts } from './blogMetalRoofingCluster';
 
 export interface BlogRelatedService {
   label: string;
@@ -221,69 +222,12 @@ const rawBlogPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: 'metal-roofing-vs-shingles-sacramento',
-    title: 'Metal Roofing vs. Shingles: Which Is Right for Your Sacramento Home?',
-    seoTitle: 'Metal Roofing vs. Shingles in Sacramento',
-    excerpt:
-      'Both options have real advantages. The right choice depends on your budget, how long you plan to stay, and your home\'s style. Here\'s an honest comparison.',
-    date: 'March 22, 2026',
-    readTime: '5 min read',
-    category: 'Roofing Materials',
-    coverImage: ASSETS.blog('035dfafc-8416-46bd-b5ab-f8c6b6b4eff9.webp'),
-    relatedServices: [
-      { label: 'Metal Roofing', href: '/metal-roofing' },
-      { label: 'Roof Replacement', href: '/roof-replacement' },
-      { label: 'Free Roof Inspection', href: '/roof-inspection' },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'When Sacramento homeowners ask us about metal roofing, they usually have one of two reactions: either they love the look, or they\'re worried about cost. Both reactions are understandable. Here\'s what you actually need to know.',
-      },
-      {
-        type: 'heading',
-        content: 'Architectural Shingles: The Proven Choice',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Lower upfront cost, typically 40 to 60% less than metal',
-          '20 to 30 year lifespan in Sacramento\'s climate',
-          'Wide variety of styles and colors',
-          'Easier to repair if individual sections are damaged',
-          'The most common choice among Sacramento homeowners',
-        ],
-      },
-      {
-        type: 'heading',
-        content: 'Metal Roofing: The Long-Term Investment',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          '50+ year lifespan that may be the last roof you ever install',
-          'Excellent performance in Sacramento\'s heat because it reflects solar energy',
-          'Very low maintenance once installed',
-          'Higher upfront cost, but lower lifetime cost',
-          'Adds resale value and curb appeal',
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Our honest recommendation: if you\'re planning to stay in your home long-term and want the lowest lifetime cost, metal is worth the investment. If you\'re on a tighter budget or planning to sell within 10 years, architectural shingles are a great, reliable choice.',
-      },
-    ],
-  },
   ...roofInspectionClusterPosts,
   ...emergencyRoofRepairClusterPosts,
   ...folsomRoofingClusterPosts,
   ...elDoradoHillsRoofingClusterPosts,
   ...roofReplacementClusterPosts,
+  ...metalRoofingClusterPosts,
 ];
 
 export const blogPosts = applyClusterLinkEnrichmentsToPosts(rawBlogPosts);
@@ -293,3 +237,4 @@ export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPos
 export const FOLSOM_ROOFING_CLUSTER_SLUGS = folsomRoofingClusterPosts.map(post => post.slug);
 export const EL_DORADO_HILLS_ROOFING_CLUSTER_SLUGS = elDoradoHillsRoofingClusterPosts.map(post => post.slug);
 export const ROOF_REPLACEMENT_CLUSTER_SLUGS = roofReplacementClusterPosts.map(post => post.slug);
+export const METAL_ROOFING_CLUSTER_SLUGS = metalRoofingClusterPosts.map(post => post.slug);

@@ -33,7 +33,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'metal-roofing-vs-shingles-sacramento': {
     appendParagraphs: [
-      'Ready to compare in person? Visit [metal roofing](/metal-roofing) and [roof replacement](/roof-replacement). [El Dorado Hills metal guide](/blog/metal-roofing-el-dorado-hills-ca) · [Folsom materials](/blog/best-roofing-materials-folsom) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Ready to compare in person? Visit [metal roofing](/metal-roofing) and [roof replacement](/roof-replacement). [Metal cost guide](/blog/metal-roofing-cost-sacramento) · [Sacramento climate fit](/blog/metal-roofing-sacramento-climate) · [standing seam](/blog/standing-seam-metal-roofing-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
 
@@ -259,6 +259,33 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   'roof-replacement-financing-sacramento': {
     appendParagraphs: [
       'Understand scope with a [free roof inspection](/roof-inspection). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [material options](/blog/roofing-materials-replacement-sacramento). [Roof replacement](/roof-replacement) · [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+
+  // —— Metal Roofing cluster ——
+  'metal-roofing-cost-sacramento': {
+    appendParagraphs: [
+      'Compare systems on [metal vs shingles](/blog/metal-roofing-vs-shingles-sacramento) and [standing seam](/blog/standing-seam-metal-roofing-sacramento). Schedule via [metal roofing](/metal-roofing) or [roof inspection](/roof-inspection). [Replacement materials](/blog/roofing-materials-replacement-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'standing-seam-metal-roofing-sacramento': {
+    appendParagraphs: [
+      'See [installation process](/blog/metal-roof-installation-process-sacramento) and [metal roofing cost](/blog/metal-roofing-cost-sacramento). Start on [metal roofing](/metal-roofing) or [roof replacement](/roof-replacement). [Climate guide](/blog/metal-roofing-sacramento-climate) · [Folsom](/service-areas/folsom) · [Contact](/contact).',
+    ],
+  },
+  'metal-roofing-sacramento-climate': {
+    appendParagraphs: [
+      'Weigh options with [metal vs shingles](/blog/metal-roofing-vs-shingles-sacramento). [Metal roofing services](/metal-roofing) · [roof inspection](/roof-inspection) · [metal over shingles](/blog/metal-roof-over-shingles-sacramento). [El Dorado Hills](/service-areas/el-dorado-hills) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'metal-roof-over-shingles-sacramento': {
+    appendParagraphs: [
+      'Full scope: [metal installation process](/blog/metal-roof-installation-process-sacramento). Plan via [metal roofing](/metal-roofing) and [roof replacement](/roof-replacement). [Metal cost](/blog/metal-roofing-cost-sacramento) · [Inspection](/roof-inspection) · [Contact](/contact).',
+    ],
+  },
+  'metal-roof-installation-process-sacramento': {
+    appendParagraphs: [
+      'Timeline and prep: [standing seam guide](/blog/standing-seam-metal-roofing-sacramento) · [overlay vs tear-off](/blog/metal-roof-over-shingles-sacramento). [Metal roofing](/metal-roofing) · [roof inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
 };
