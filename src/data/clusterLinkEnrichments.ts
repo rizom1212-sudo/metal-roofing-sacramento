@@ -288,4 +288,31 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
       'Timeline and prep: [standing seam guide](/blog/standing-seam-metal-roofing-sacramento) · [overlay vs tear-off](/blog/metal-roof-over-shingles-sacramento). [Metal roofing](/metal-roofing) · [roof inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
+
+  // —— Gutters & Fascia cluster ——
+  'gutter-installation-sacramento': {
+    appendParagraphs: [
+      'Add protection with [gutter guards](/blog/gutter-guards-sacramento). Plan via [gutters & siding](/gutters-siding) and [roof inspection](/roof-inspection). [Replacement cost](/blog/gutter-replacement-cost-sacramento) · [Sacramento](/service-areas/sacramento) · [Folsom](/service-areas/folsom) · [Contact](/contact).',
+    ],
+  },
+  'gutter-replacement-cost-sacramento': {
+    appendParagraphs: [
+      'Scope your project with [gutter installation](/blog/gutter-installation-sacramento). [Gutters & siding](/gutters-siding) · [fascia repair](/blog/fascia-repair-sacramento) · [roof repair](/roof-repair). [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'gutter-guards-sacramento': {
+    appendParagraphs: [
+      'Start on [gutters & siding](/gutters-siding). Pair with [gutter installation](/blog/gutter-installation-sacramento) or [gutters and roof leaks](/blog/gutters-and-roof-leaks-sacramento). [Roof inspection](/roof-inspection) · [El Dorado Hills](/service-areas/el-dorado-hills) · [Contact](/contact).',
+    ],
+  },
+  'fascia-repair-sacramento': {
+    appendParagraphs: [
+      'Active leak? See [emergency roof repair](/emergency-roof-repair). [Roof repair](/roof-repair) · [gutters and leaks](/blog/gutters-and-roof-leaks-sacramento) · [gutters & siding](/gutters-siding). [EDH fascia guide](/blog/fascia-repair-el-dorado-hills-ca) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'gutters-and-roof-leaks-sacramento': {
+    appendParagraphs: [
+      'Trace the full path with a [roof inspection](/roof-inspection) and [roof repair](/roof-repair). [Fascia repair](/blog/fascia-repair-sacramento) · [gutter installation](/blog/gutter-installation-sacramento) · [gutters & siding](/gutters-siding). [Roof replacement](/roof-replacement) when edges fail with aging shingles · [Contact](/contact).',
+    ],
+  },
 };

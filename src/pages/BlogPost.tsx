@@ -11,6 +11,7 @@ import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
 import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
+import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export default function BlogPost() {
@@ -41,6 +42,7 @@ export default function BlogPost() {
   const isElDoradoHillsGuide = post.category === EL_DORADO_HILLS_CLUSTER_CATEGORY;
   const isReplacementGuide = post.category === REPLACEMENT_CLUSTER_CATEGORY;
   const isMetalGuide = post.category === METAL_CLUSTER_CATEGORY;
+  const isGuttersFasciaGuide = post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY;
 
   return (
     <>
@@ -188,41 +190,47 @@ export default function BlogPost() {
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
                   {isEmergencyGuide
                     ? 'Emergency Help'
-                    : isMetalGuide
-                      ? 'Metal Roofing'
-                      : isReplacementGuide
-                        ? 'Roof Replacement'
-                        : isElDoradoHillsGuide
-                          ? 'El Dorado Hills Roofing'
-                          : isFolsomGuide
-                            ? 'Folsom Roofing'
-                            : 'Free Inspection'}
+                    : isGuttersFasciaGuide
+                      ? 'Gutters & Fascia'
+                      : isMetalGuide
+                        ? 'Metal Roofing'
+                        : isReplacementGuide
+                          ? 'Roof Replacement'
+                          : isElDoradoHillsGuide
+                            ? 'El Dorado Hills Roofing'
+                            : isFolsomGuide
+                              ? 'Folsom Roofing'
+                              : 'Free Inspection'}
                 </p>
                 <h2 className="text-xl font-bold text-white mb-3">
                   {isEmergencyGuide
                     ? 'Need Emergency Roof Repair in Sacramento?'
-                    : isMetalGuide
-                      ? 'Considering Metal Roofing in Sacramento?'
-                      : isReplacementGuide
-                        ? 'Planning a Roof Replacement in Sacramento?'
-                        : isElDoradoHillsGuide
-                          ? 'Schedule Roofing Service in El Dorado Hills'
-                          : isFolsomGuide
-                            ? 'Schedule Roofing Service in Folsom'
-                            : 'Schedule Your Free Roof Inspection'}
+                    : isGuttersFasciaGuide
+                      ? 'Need Gutter or Fascia Help in Sacramento?'
+                      : isMetalGuide
+                        ? 'Considering Metal Roofing in Sacramento?'
+                        : isReplacementGuide
+                          ? 'Planning a Roof Replacement in Sacramento?'
+                          : isElDoradoHillsGuide
+                            ? 'Schedule Roofing Service in El Dorado Hills'
+                            : isFolsomGuide
+                              ? 'Schedule Roofing Service in Folsom'
+                              : 'Schedule Your Free Roof Inspection'}
                 </h2>
                 <p className="text-gray-400 text-sm leading-relaxed mb-5">
                   {isEmergencyGuide
                     ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
-                    : isMetalGuide
-                      ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a free inspection and panel-style consultation.'
-                      : isReplacementGuide
-                        ? 'PRC 13 Roofing helps Sacramento homeowners compare shingle, tile, and metal replacement options with free inspections and written quotes before any work begins.'
-                        : isElDoradoHillsGuide
-                          ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, fascia repair, inspections, and emergency leak help on exposed foothill properties.'
-                          : isFolsomGuide
-                            ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
-                            : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
+                    : isGuttersFasciaGuide
+                      ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and fascia repairs for Sacramento homeowners. Start with a free roof inspection or gutter evaluation.'
+                      : isMetalGuide
+                        ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a free inspection and panel-style consultation.'
+                        : isReplacementGuide
+                          ? 'PRC 13 Roofing helps Sacramento homeowners compare shingle, tile, and metal replacement options with free inspections and written quotes before any work begins.'
+                          : isElDoradoHillsGuide
+                            ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, fascia repair, inspections, and emergency leak help on exposed foothill properties.'
+                            : isFolsomGuide
+                              ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
+                              : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {isEmergencyGuide ? (
@@ -236,9 +244,11 @@ export default function BlogPost() {
                     <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
                       {isMetalGuide
                         ? 'Request Metal Roofing Consultation'
-                        : isReplacementGuide
-                          ? 'Request Replacement Quote'
-                          : PRIMARY_CTA}{' '}
+                        : isGuttersFasciaGuide
+                          ? 'Request Gutter Evaluation'
+                          : isReplacementGuide
+                            ? 'Request Replacement Quote'
+                            : PRIMARY_CTA}{' '}
                       <ArrowRight size={15} />
                     </Link>
                   )}
@@ -246,30 +256,42 @@ export default function BlogPost() {
                     to={
                       isEmergencyGuide
                         ? '/emergency-roof-repair'
-                        : isMetalGuide
-                          ? '/metal-roofing'
-                          : isReplacementGuide
-                            ? '/roof-replacement'
-                            : isElDoradoHillsGuide
-                              ? '/service-areas/el-dorado-hills'
-                              : isFolsomGuide
-                                ? '/service-areas/folsom'
-                                : '/roof-inspection'
+                        : isGuttersFasciaGuide
+                          ? '/gutters-siding'
+                          : isMetalGuide
+                            ? '/metal-roofing'
+                            : isReplacementGuide
+                              ? '/roof-replacement'
+                              : isElDoradoHillsGuide
+                                ? '/service-areas/el-dorado-hills'
+                                : isFolsomGuide
+                                  ? '/service-areas/folsom'
+                                  : '/roof-inspection'
                     }
                     className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                   >
                     {isEmergencyGuide
                       ? 'Emergency roof repair page'
-                      : isMetalGuide
-                        ? 'Metal roofing services'
-                        : isReplacementGuide
-                          ? 'Roof replacement services'
-                          : isElDoradoHillsGuide
-                            ? 'El Dorado Hills roofing services'
-                            : isFolsomGuide
-                              ? 'Folsom roofing services'
-                              : 'Roof inspection service page'}
+                      : isGuttersFasciaGuide
+                        ? 'Gutters & siding services'
+                        : isMetalGuide
+                          ? 'Metal roofing services'
+                          : isReplacementGuide
+                            ? 'Roof replacement services'
+                            : isElDoradoHillsGuide
+                              ? 'El Dorado Hills roofing services'
+                              : isFolsomGuide
+                                ? 'Folsom roofing services'
+                                : 'Roof inspection service page'}
                   </Link>
+                  {isGuttersFasciaGuide && (
+                    <Link
+                      to="/roof-inspection"
+                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
+                    >
+                      Free roof inspection <ArrowRight size={15} />
+                    </Link>
+                  )}
                   {isMetalGuide && (
                     <Link
                       to="/roof-inspection"

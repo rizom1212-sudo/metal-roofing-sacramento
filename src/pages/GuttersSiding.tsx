@@ -1,4 +1,5 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award, Droplets, Home, Wind, Layers, Hammer } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Shield, Award, Droplets, Home, Wind, Layers, Hammer, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import ReviewStrip from '../components/ReviewStrip';
@@ -8,6 +9,8 @@ import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
+import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
 
 // ─── FAQ data split by group ────────────────────────────────────────────────
 
@@ -37,6 +40,8 @@ const exteriorFaqs: FaqItem[] = [
     answer: 'Yes. Failed gutters, rotted fascia, and poor drainage can push water into the roof edge and lead to leaks. Fixing exterior protection helps prevent future roofline damage.',
   },
 ];
+
+const gutterFasciaResources = blogPosts.filter(post => post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY);
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
@@ -181,7 +186,10 @@ export default function GuttersSiding() {
                 Gutter Installation &amp; Protection
               </h2>
               <p className="text-body text-base leading-relaxed mb-8 max-w-lg">
-                Gutters are the first line of defense for your foundation, fascia, and landscaping. Failing gutters can cause damage that costs far more than replacement. We install seamless systems built to last.
+                Gutters are the first line of defense for your foundation, fascia, and landscaping. Failing gutters can cause damage that costs far more than replacement. We install seamless systems built to last. Read our{' '}
+                <Link to="/blog/gutter-installation-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento gutter installation guide</Link>{' '}
+                and{' '}
+                <Link to="/blog/gutters-and-roof-leaks-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">how gutters prevent roof leaks</Link>.
               </p>
 
               {/* 2 service cards */}
@@ -221,7 +229,10 @@ export default function GuttersSiding() {
               </div>
 
               <p className="text-body text-xs leading-relaxed mb-6 border-l-2 border-gold/40 pl-3 max-w-lg">
-                Also offering gutter repair, gutter replacement, fascia repair, soffit repair, and drainage solutions.
+                Also offering gutter repair, gutter replacement, fascia repair, soffit repair, and drainage solutions. See our{' '}
+                <Link to="/blog/fascia-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">fascia repair guide</Link>{' '}
+                and{' '}
+                <Link to="/blog/gutter-guards-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">gutter guards overview</Link>.
               </p>
 
               {/* Signs list */}
@@ -414,6 +425,47 @@ export default function GuttersSiding() {
           <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">5.0 Google Rating · 81 Reviews</p>
           <h2 className="section-heading mb-8">What Sacramento Homeowners Say</h2>
           <ReviewStrip count={3} variant="light" indices={[0, 3, 5]} />
+        </div>
+      </section>
+
+      {/* ── GUTTERS & FASCIA RESOURCES ───────────────────────────────────── */}
+      <section className="bg-white py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-7">
+          <div className="flex items-start gap-3 mb-6">
+            <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+            <div>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Gutters &amp; Fascia Resources</p>
+              <h2 className="section-heading mb-3">Protect Your Sacramento Roofline</h2>
+              <p className="text-body text-sm leading-relaxed max-w-3xl">
+                Homeowners across{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
+                use these guides for gutter installation, replacement cost, guards, fascia repair, and leak prevention. Schedule a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+                or{' '}
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a gutter evaluation</Link>.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {gutterFasciaResources.map(resource => (
+              <Link
+                key={resource.slug}
+                to={`/blog/${resource.slug}`}
+                className="card-brand bg-[#F3F1EE] border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+              >
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
+                <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                  Read article <ArrowRight size={12} />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
