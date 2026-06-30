@@ -6,7 +6,7 @@ import {
   Shield,
   CheckCircle,
   ArrowRight,
-  Award,
+  FileText,
   Droplets,
   CloudRain,
   Home as HomeIcon,
@@ -54,14 +54,29 @@ const homeFaqs: FaqItem[] = [
       'Roof replacement cost depends on roof size, pitch, material, access, and whether decking repairs are needed. We inspect first, explain shingle, tile, and metal options, and provide a written quote before any work begins.',
   },
   {
+    question: 'Are you licensed in California?',
+    answer:
+      'Yes. PRC 13 Roofing is a California Licensed Contractor (Lic. No. 1087153) and is fully insured.',
+  },
+  {
     question: 'Do you offer free inspections?',
     answer:
-      'Yes, all inspections are free with no obligation. Our roofing team reviews your roof, explains what we find, and gives you an honest recommendation. If a repair is all you need, we\'ll tell you that.',
+      'Yes. Free roof inspections come with no obligation. We review your roof on site and explain what we find before any work is discussed.',
+  },
+  {
+    question: "What's included in a free roof inspection?",
+    answer:
+      'We inspect shingles, flashing, penetrations, and drainage, then walk you through the findings. You receive a written inspection report documenting roof condition. There is no obligation.',
+  },
+  {
+    question: 'Do inspections include written reports?',
+    answer:
+      'Yes. Our inspections include written inspection reports that document roof condition and explain whether repair or replacement makes the most sense.',
   },
   {
     question: 'Do you help with insurance claims?',
     answer:
-      'Absolutely. We work alongside your insurance adjuster, document all storm damage thoroughly, and make sure nothing gets missed. We\'ve helped many Sacramento homeowners get the full coverage they\'re owed.',
+      'Yes. We provide insurance claim assistance for storm-related roof damage. We document damage, work with your adjuster, and help ensure needed repairs are not overlooked.',
   },
   {
     question: 'What roofing materials do you install?',
@@ -103,7 +118,7 @@ const problemCards: {
   highlight: boolean;
 }[] = [
   { Icon: Droplets, label: 'I Have a Leak', sub: 'Stop the damage before it spreads', href: '/roof-repair', highlight: false },
-  { Icon: CloudRain, label: 'Storm Damage', sub: 'Insurance claim help available', href: '/emergency-roof-repair', highlight: false },
+  { Icon: CloudRain, label: 'Storm Damage', sub: 'Insurance claim assistance', href: '/emergency-roof-repair', highlight: false },
   { Icon: HomeIcon, label: 'My Roof Is Old', sub: 'Time for a full replacement', href: '/roof-replacement', highlight: true },
   { Icon: Layers, label: 'I Want Metal Roofing', sub: 'Durable, long-lasting option', href: '/metal-roofing', highlight: false },
 ];
@@ -166,11 +181,11 @@ export default function Home() {
               </h1>
 
               <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed mb-5 md:mb-8 max-w-xl">
-                Same day inspections for Sacramento homeowners. You&apos;ll know exactly what your roof needs before spending a dime.
+                Free roof inspections for Sacramento homeowners, with a written inspection report so you know what your roof needs before any work starts.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-4 md:mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 mb-5 md:mb-6">
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold shadow-[0_14px_34px_rgba(201,151,0,0.26)]">
                   {PRIMARY_CTA}
                   <ArrowRight size={18} />
@@ -180,22 +195,20 @@ export default function Home() {
                   Call 916-761-3866
                 </a>
               </div>
-              <p className="mb-4 md:mb-8 max-w-xl text-sm leading-relaxed text-gray-300">
-                You&apos;ll know exactly what your roof needs before making a decision.
-              </p>
 
               {/* Trust strip */}
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5 md:gap-x-6 md:gap-y-2 text-sm text-gray-200">
-                <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold" /> Licensed &amp; Insured</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-gold" /> Insurance Claims Welcome</span>
-                <span className="flex items-center gap-1.5"><Award size={14} className="text-gold" /> Financing Available</span>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 md:gap-x-5 text-xs sm:text-sm text-gray-200">
+                <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold flex-shrink-0" /> California Licensed Contractor (#1087153)</span>
+                <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold flex-shrink-0" /> Fully Insured</span>
+                <span className="flex items-center gap-1.5"><FileText size={14} className="text-gold flex-shrink-0" /> Written Inspection Reports</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-gold flex-shrink-0" /> Insurance Claim Assistance</span>
               </div>
             </div>
 
             <HeroLeadFormPanel
               sourcePage="home-hero"
               title="Schedule Your Free Roof Inspection"
-              subtitle="Most Sacramento homeowners get a same-day or next-business-day assessment."
+              subtitle="Includes a written inspection report. Most Sacramento homeowners are scheduled same or next business day."
               className="mt-5 lg:mt-0"
             />
           </div>
@@ -319,22 +332,24 @@ export default function Home() {
             {/* Left copy */}
             <div>
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
-                Locally Owned &nbsp;·&nbsp; Sacramento &nbsp;·&nbsp; Licensed &amp; Insured
+                Local Sacramento Roofing Company
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-5">
                 Roofing Recommendations<br className="hidden sm:block" /> You Can Actually Trust
               </h2>
               <p className="text-body text-base leading-relaxed mb-7">
-                We help Sacramento homeowners make confident roofing decisions without pressure or confusing sales tactics. Whether you need a repair, inspection, or full replacement, our team focuses on honest recommendations, quality workmanship, and clear communication from start to finish.
+                PRC 13 Roofing is a local Sacramento roofing company. We start with a free roof inspection, provide a written inspection report, and explain whether repair or replacement makes the most sense for your home.
               </p>
 
               <ul className="space-y-2.5 mb-8">
                 {[
-                  'Honest inspections that explain whether repair or replacement makes more sense.',
-                  'Most estimates scheduled within 24 hours.',
-                  'Help with storm damage and insurance claims.',
-                  'Licensed, insured, and financing available.',
-                  'Residential roofing specialists serving Sacramento homeowners.',
+                  'California Licensed Contractor (#1087153)',
+                  'Fully Insured',
+                  'Free Roof Inspections',
+                  'Written Inspection Reports',
+                  'Insurance Claim Assistance',
+                  'Emergency Roof Repair',
+                  'Local Sacramento Roofing Company',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-body">
                     <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
@@ -356,17 +371,6 @@ export default function Home() {
                   916-761-3866
                 </a>
               </p>
-
-              {/* Review snippet */}
-              <div className="mt-8 border-l-2 border-gold pl-5">
-                <div className="flex gap-0.5 mb-1.5">
-                  {[1,2,3,4,5].map(i => <Star key={i} size={13} className="fill-gold text-gold" />)}
-                </div>
-                <p className="text-body text-sm italic leading-relaxed mb-2">
-                  "Very informative and very honest. Very efficient and detail oriented. He goes above and beyond what is asked of him."
-                </p>
-                <p className="text-xs text-gray-400 font-medium">Ruby M.</p>
-              </div>
             </div>
 
             {/* Right image */}
@@ -565,9 +569,16 @@ export default function Home() {
           >
             Prefer a message? Contact page <ArrowRight size={14} />
           </Link>
-          <p className="text-gray-600 text-xs mt-6 flex items-center justify-center gap-1.5">
-            <CheckCircle size={12} className="text-gold" />
-            Financing available on qualifying projects
+          <p className="text-gray-500 text-xs mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <span className="flex items-center gap-1.5">
+              <Shield size={12} className="text-gold" />
+              California Licensed Contractor (#1087153)
+            </span>
+            <span className="hidden sm:inline text-gray-600" aria-hidden>·</span>
+            <span className="flex items-center gap-1.5">
+              <Shield size={12} className="text-gold" />
+              Fully Insured
+            </span>
           </p>
         </div>
       </section>

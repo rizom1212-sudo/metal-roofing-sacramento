@@ -5,13 +5,13 @@ const steps = [
     icon: ClipboardCheck,
     title: 'Inspect',
     timeline: 'Day 1',
-    desc: 'Our roofing team inspects your roof, walks you through findings, and gives an honest recommendation with no pressure.',
+    desc: 'Free roof inspection on site. You receive a written inspection report documenting roof condition and whether repair or replacement makes the most sense.',
   },
   {
     icon: FileText,
     title: 'Quote',
     timeline: 'Within 24 hrs',
-    desc: 'Clear written quote with line items. Insurance documentation available for storm damage.',
+    desc: 'Clear written quote with line items. Insurance claim assistance available for storm-related damage.',
   },
   {
     icon: Hammer,
@@ -29,7 +29,7 @@ export default function ProcessStrip() {
           <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-2">How It Works</p>
           <h2 className="section-heading mb-2">Simple Process. Clear Timeline.</h2>
           <p className="section-subheading max-w-xl mx-auto">
-            From first call to completed roof, the steps stay straightforward with no surprises.
+            Every project starts with a free inspection and a written inspection report, so you know where your roof stands before any work begins.
           </p>
         </div>
         <div className="relative grid md:grid-cols-3 gap-4">
