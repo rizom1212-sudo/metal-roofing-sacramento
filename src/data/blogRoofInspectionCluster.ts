@@ -9,8 +9,9 @@ const COVER_D = ASSETS.blog('035dfafc-8416-46bd-b5ab-f8c6b6b4eff9.webp');
 
 const coreServices = (): BlogRelatedService[] => [
   { label: 'Roof Inspection', href: '/roof-inspection' },
+  { label: 'Roof Inspection Sacramento', href: '/roof-inspection-sacramento' },
+  { label: 'Sacramento Service Area', href: '/service-areas/sacramento' },
   { label: 'Schedule a Free Inspection', href: '/contact' },
-  { label: 'Sacramento Roofing', href: '/service-areas/sacramento' },
 ];
 
 const article = (slug: string, label: string): BlogRelatedService => ({

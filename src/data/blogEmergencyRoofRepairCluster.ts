@@ -10,9 +10,10 @@ const COVER_D = ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp');
 
 const coreServices = (): BlogRelatedService[] => [
   { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
+  { label: 'Emergency Repair Sacramento', href: '/emergency-roof-repair-sacramento' },
   { label: 'Roof Repair', href: '/roof-repair' },
-  { label: 'Contact PRC 13', href: '/contact' },
   { label: 'Sacramento Service Area', href: '/service-areas/sacramento' },
+  { label: 'Contact PRC 13', href: '/contact' },
 ];
 
 const article = (slug: string, label: string): BlogRelatedService => ({

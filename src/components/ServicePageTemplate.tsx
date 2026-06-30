@@ -13,6 +13,7 @@ import LocalSeoLinks from './LocalSeoLinks';
 import SacramentoGuideCallout from './SacramentoGuideCallout';
 import { PRIMARY_CTA } from '../data/cta';
 import { handleSamePageAnchorClick } from '../lib/scroll';
+import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 import { type GalleryCategory } from '../data/gallery';
 
 export interface ServiceFeature {
@@ -71,6 +72,8 @@ export interface ServiceTemplateProps {
   resourceGuides?: Array<{ slug: string; title: string; excerpt: string; readTime: string }>;
   resourceSectionHeading?: string;
   resourceSectionIntro?: string;
+  /** Markdown-style internal links: [label](/path) */
+  contextualLinkParagraphs?: string[];
 }
 
 export default function ServicePageTemplate({
@@ -106,6 +109,7 @@ export default function ServicePageTemplate({
   resourceGuides,
   resourceSectionHeading = 'Resources',
   resourceSectionIntro,
+  contextualLinkParagraphs,
 }: ServiceTemplateProps) {
   const crumbLabel = breadcrumbLabel ?? headline;
 
@@ -198,6 +202,11 @@ export default function ServicePageTemplate({
                   </li>
                 ))}
               </ul>
+              {contextualLinkParagraphs?.map((p, i) => (
+                <p key={i} className="text-body text-sm leading-relaxed mt-5">
+                  {renderBlogInlineLinks(p)}
+                </p>
+              ))}
             </div>
             <div className="rounded-brand overflow-hidden">
               <OptimizedImage

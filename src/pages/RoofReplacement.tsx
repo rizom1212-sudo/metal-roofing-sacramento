@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
@@ -209,7 +210,23 @@ export default function RoofReplacement() {
             ))}
           </div>
           <p className="text-body text-sm mt-6">
-            Not sure which material is right for your home? We'll walk you through it during your free inspection.
+            Not sure which material is right for your home? We will walk you through it during your{' '}
+            <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>.
+            Compare{' '}
+            <Link to="/metal-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing</Link>{' '}
+            with shingles in our{' '}
+            <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento materials guide</Link>.
+            We serve{' '}
+            <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+            <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+            <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+            See also{' '}
+            <Link to="/blog/roof-replacement-folsom-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom replacement planning</Link>,{' '}
+            <Link to="/blog/roof-replacement-el-dorado-hills-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills replacement</Link>, and{' '}
+            <Link to="/blog/signs-you-need-roof-replacement-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">when replacement makes sense</Link>.
+            {' '}
+            <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">Contact us</Link>{' '}
+            for a quote.
           </p>
         </div>
       </section>

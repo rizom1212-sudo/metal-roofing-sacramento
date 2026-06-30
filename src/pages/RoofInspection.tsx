@@ -186,7 +186,21 @@ export default function RoofInspection() {
                 Most roof failures don't happen overnight. They often start as minor issues like a cracked shingle, failed flashing, or a small membrane split that goes undetected for years. By the time water appears inside your home, the damage may have already spread to the decking, insulation, or structure below.
               </p>
               <p className="text-body text-sm leading-relaxed mb-6">
-                A free inspection by a licensed contractor costs you nothing and can prevent thousands of dollars in damage. We recommend Sacramento homeowners inspect their roofs every 2 to 3 years, or after any significant storm.
+                A free inspection by a licensed contractor costs you nothing and can prevent thousands of dollars in damage. We recommend Sacramento homeowners inspect their roofs every 2 to 3 years, or after any significant storm. When damage is active, see our{' '}
+                <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>{' '}
+                page or read about{' '}
+                <Link to="/blog/roof-inspection-after-storm" className="text-gold font-semibold hover:text-gold-dark transition-colors">inspections after storms</Link>.
+              </p>
+              <p className="text-body text-sm leading-relaxed mb-6">
+                We serve homeowners across{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+                Need repair instead of inspection? Visit{' '}
+                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>{' '}
+                or{' '}
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">contact us</Link>{' '}
+                to schedule.
               </p>
               <ul className="space-y-2.5">
                 {[
@@ -279,7 +293,15 @@ export default function RoofInspection() {
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Roof Inspection Resources</p>
               <h2 className="section-heading mb-3">Learn Before You Schedule</h2>
               <p className="text-body text-sm leading-relaxed max-w-3xl">
-                Homeowners across Sacramento, El Dorado Hills, Roseville, and nearby communities ask us about inspection costs, insurance visits, storm checks, and commercial roofs. These guides answer common questions while our main roof inspection page covers how PRC 13 inspects your home.
+                Homeowners across{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and nearby communities ask us about inspection costs, insurance visits, storm checks, and commercial roofs. Start with our{' '}
+                <Link to="/roof-inspection-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento inspection page</Link>{' '}
+                or browse guides like{' '}
+                <Link to="/blog/free-roof-inspection-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">free inspections</Link>{' '}
+                and{' '}
+                <Link to="/blog/roof-inspection-checklist" className="text-gold font-semibold hover:text-gold-dark transition-colors">the homeowner checklist</Link>.
               </p>
             </div>
           </div>

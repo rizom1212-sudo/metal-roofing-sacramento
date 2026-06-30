@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Zap, Sun, Wrench, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
@@ -171,7 +172,25 @@ export default function MetalRoofing() {
                 Sacramento summers are brutal on asphalt shingles. High heat accelerates granule loss, dries out sealants, and causes shingles to curl years ahead of schedule. Metal roofing reflects solar energy instead of absorbing it, which keeps your attic cooler and your cooling bills lower.
               </p>
               <p className="text-body text-sm leading-relaxed mb-6">
-                Beyond energy efficiency, metal roofing simply lasts. Most Sacramento homeowners who install metal today will never replace their roof again. That's a fundamentally different value proposition than a 25-year shingle replacement cycle.
+                Beyond energy efficiency, metal roofing simply lasts. Most Sacramento homeowners who install metal today will never replace their roof again. That is a fundamentally different value proposition than a 25-year shingle replacement cycle. Learn more in our{' '}
+                <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal vs shingles comparison</Link>{' '}
+                or explore{' '}
+                <Link to="/blog/metal-roofing-el-dorado-hills-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing in El Dorado Hills</Link>.
+              </p>
+              <p className="text-body text-sm leading-relaxed mb-6">
+                Metal installs often pair with{' '}
+                <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof replacement</Link>{' '}
+                and start with a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof inspection</Link>.
+                We serve{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>.
+                Folsom homeowners comparing materials should read{' '}
+                <Link to="/blog/best-roofing-materials-folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">best roofing materials for Folsom</Link>.
+                {' '}
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">Contact PRC 13</Link>{' '}
+                for a consultation.
               </p>
               <ul className="space-y-2.5">
                 {[

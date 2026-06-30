@@ -9,6 +9,7 @@ import { PRIMARY_CTA } from '../data/cta';
 import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
+import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -133,7 +134,7 @@ export default function BlogPost() {
                         {section.items.map((item, j) => (
                           <li key={j} className="flex items-start gap-3 text-sm text-body leading-relaxed">
                             <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
-                            {item}
+                            {renderBlogInlineLinks(item)}
                           </li>
                         ))}
                       </ul>
@@ -164,7 +165,7 @@ export default function BlogPost() {
                   }
                   return (
                     <p key={i} className="text-body text-sm leading-relaxed md:text-base">
-                      {section.content}
+                      {renderBlogInlineLinks(section.content)}
                     </p>
                   );
                 })}

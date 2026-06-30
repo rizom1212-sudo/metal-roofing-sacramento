@@ -1,5 +1,6 @@
 import type { FaqItem } from '../components/FaqAccordion';
 import { ASSETS } from './assets';
+import { applyClusterLinkEnrichmentsToPosts } from './applyClusterLinkEnrichments';
 import { roofInspectionClusterPosts } from './blogRoofInspectionCluster';
 import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluster';
 import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
@@ -33,7 +34,7 @@ export interface BlogSection {
   links?: BlogRelatedService[];
 }
 
-export const blogPosts: BlogPost[] = [
+const rawBlogPosts: BlogPost[] = [
   {
     slug: 'what-to-do-roof-leak-sacramento-storm',
     title: 'What to Do When Your Roof Leaks During a Sacramento Storm',
@@ -386,6 +387,8 @@ export const blogPosts: BlogPost[] = [
   ...folsomRoofingClusterPosts,
   ...elDoradoHillsRoofingClusterPosts,
 ];
+
+export const blogPosts = applyClusterLinkEnrichmentsToPosts(rawBlogPosts);
 
 export const ROOF_INSPECTION_CLUSTER_SLUGS = roofInspectionClusterPosts.map(post => post.slug);
 export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPosts.map(post => post.slug);

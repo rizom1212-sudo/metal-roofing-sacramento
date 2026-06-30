@@ -382,6 +382,30 @@ export default function RoofRepair() {
         </div>
       </section>
 
+      {/* RELATED GUIDES */}
+      <section className="bg-cream py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <p className="text-body text-sm leading-relaxed">
+            Active leak right now? See{' '}
+            <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>{' '}
+            or our{' '}
+            <Link to="/emergency-roof-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento emergency page</Link>.
+            We also serve{' '}
+            <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>{' '}
+            and{' '}
+            <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+            Helpful reads:{' '}
+            <Link to="/blog/roof-leak-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof leak repair</Link>,{' '}
+            <Link to="/blog/storm-damage-roof-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">storm damage repair</Link>, and{' '}
+            <Link to="/blog/roof-insurance-claims-storm-damage" className="text-gold font-semibold hover:text-gold-dark transition-colors">insurance claims after storms</Link>.
+            Start with a{' '}
+            <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+            or{' '}
+            <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">contact PRC 13</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
