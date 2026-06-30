@@ -17,27 +17,48 @@ import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluste
 const exteriorFaqs: FaqItem[] = [
   {
     question: 'How much do new gutters or siding cost in Sacramento?',
-    answer: 'Cost depends on the home size, material, access, and whether fascia or soffit repairs are needed. We inspect the exterior first and provide a clear written estimate before work starts.',
+    answer:
+      'Cost depends on the home size, material, access, and whether fascia or soffit repairs are needed. PRC 13 inspects the exterior first and provides a clear written estimate before work starts.',
   },
   {
     question: 'How long does gutter or siding work usually take?',
-    answer: 'Most gutter installations are completed in one day. Siding timelines vary by project size and material, and we give you the schedule before installation begins.',
+    answer:
+      'Most gutter installations are completed in one day. Siding timelines vary by project size and material, and we give you the schedule before installation begins.',
+  },
+  {
+    question: 'What siding materials does PRC 13 install?',
+    answer:
+      'We install vinyl siding and fiber cement siding, including Hardie Board panels. Fiber cement handles Sacramento heat well and holds paint; vinyl is lower cost and low maintenance.',
+  },
+  {
+    question: 'Do you repair siding or only install new siding?',
+    answer:
+      'Both. We offer siding repair, siding replacement, wood siding, moisture barrier upgrades, and exterior trim work—not just full installations.',
   },
   {
     question: 'Do you replace damaged fascia and soffit boards?',
-    answer: 'Yes. Fascia and soffit damage often appears when gutters fail or water reaches the roofline. We assess and replace damaged boards as part of the exterior scope when needed.',
+    answer:
+      'Yes. Fascia and soffit damage often appears when gutters fail or water reaches the roofline. We assess and replace damaged boards as part of the exterior scope when needed.',
   },
   {
     question: 'How do I know if my gutters need to be replaced vs. repaired?',
-    answer: 'Small leaks may be repairable, but gutters pulling from fascia, sagging, rusting through, or overflowing during rain often need replacement. We tell you which option makes sense after inspection.',
+    answer:
+      'Small leaks may be repairable, but gutters pulling from fascia, sagging, rusting through, or overflowing during rain often need replacement. We tell you which option makes sense after inspection.',
   },
   {
     question: 'What siding materials work best in Sacramento heat?',
-    answer: 'Fiber cement and quality vinyl are both practical Sacramento options. Fiber cement handles heat well, resists moisture, and holds paint; vinyl is lower cost and low maintenance.',
+    answer:
+      'Fiber cement and quality vinyl are both practical Sacramento options. Fiber cement handles heat well, resists moisture, and holds paint; vinyl is lower cost and low maintenance.',
   },
   {
-    question: 'Can exterior water damage affect my roof?',
-    answer: 'Yes. Failed gutters, rotted fascia, and poor drainage can push water into the roof edge and lead to leaks. Fixing exterior protection helps prevent future roofline damage.',
+    question: 'Can siding or gutter problems affect my roof?',
+    answer:
+      'Yes. Failed gutters, rotted fascia, and poor drainage can push water into the roof edge and lead to leaks. Gaps at siding-to-roof transitions can also let moisture in. Fixing exterior protection helps prevent future roofline damage.',
+  },
+  {
+    question: 'Should I schedule a roof inspection with exterior work?',
+    answer:
+      'Often yes. A roof inspection helps catch roof edge, flashing, and drainage issues before you invest in siding or gutters. PRC 13 can review the full exterior during a free assessment.',
   },
 ];
 
@@ -86,8 +107,31 @@ export default function GuttersSiding() {
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              Protect your Sacramento home with professional gutter, siding, and exterior protection services built to prevent costly damage.
+              Protect your Sacramento home with professional gutter, siding, fascia, and exterior services built to keep water away from your roofline, walls, and foundation.
             </p>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              <a
+                href="#gutters-section"
+                onClick={e => handleSamePageAnchorClick(e, 'gutters-section')}
+                className="text-xs font-semibold text-gray-300 hover:text-gold border border-white/20 px-3 py-1.5 transition-colors"
+              >
+                Gutters
+              </a>
+              <a
+                href="#siding-section"
+                onClick={e => handleSamePageAnchorClick(e, 'siding-section')}
+                className="text-xs font-semibold text-gray-300 hover:text-gold border border-white/20 px-3 py-1.5 transition-colors"
+              >
+                Siding
+              </a>
+              <Link
+                to="/roof-inspection"
+                className="text-xs font-semibold text-gray-300 hover:text-gold border border-white/20 px-3 py-1.5 transition-colors"
+              >
+                Roof inspection
+              </Link>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a
@@ -128,7 +172,11 @@ export default function GuttersSiding() {
               'Exterior issues can contribute to roof leaks',
             ]}
           >
-            Gutters, siding, fascia, and soffit protect the parts of your Sacramento home that keep water away from the roofline and structure. Fixing exterior failures early can prevent larger roofing and interior damage.
+            Gutters, siding, fascia, and soffit protect the parts of your Sacramento home that keep water away from the roofline and structure. Fixing exterior failures early can prevent larger{' '}
+            <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>{' '}
+            and interior damage. Start with a{' '}
+            <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+            when you are unsure where water is entering.
           </AnswerSummary>
           <div className="grid sm:grid-cols-3 gap-8">
             {[
@@ -236,7 +284,7 @@ export default function GuttersSiding() {
               </p>
 
               {/* Signs list */}
-              <div>
+              <div className="mb-6">
                 <p className="font-semibold text-headline text-sm mb-3">Signs Your Gutters Need Attention</p>
                 <ul className="grid sm:grid-cols-2 gap-y-2 gap-x-4">
                   {[
@@ -254,7 +302,78 @@ export default function GuttersSiding() {
                   ))}
                 </ul>
               </div>
+
+              <p className="text-body text-xs leading-relaxed max-w-lg">
+                Overflowing gutters often damage fascia first—then water can reach the{' '}
+                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof edge</Link>.
+                {' '}
+                <a
+                  href="#siding-section"
+                  onClick={e => handleSamePageAnchorClick(e, 'siding-section')}
+                  className="text-gold font-semibold hover:text-gold-dark transition-colors"
+                >
+                  Jump to siding services ↓
+                </a>
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROOFLINE TRANSITION ──────────────────────────────────────────── */}
+      <section className="bg-charcoal-dark py-10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-7">
+          <div className="grid md:grid-cols-4 gap-6 text-center md:text-left">
+            {[
+              {
+                step: 'Roof edge',
+                desc: 'Shingles, flashing, and fascia where rain first hits',
+                href: '/roof-inspection',
+                label: 'Roof inspection',
+              },
+              {
+                step: 'Gutters & fascia',
+                desc: 'Drainage and boards that carry water away from walls',
+                href: '#gutters-section',
+                label: 'Gutter services',
+                anchor: true,
+              },
+              {
+                step: 'Siding & trim',
+                desc: 'Exterior walls and transitions that block moisture',
+                href: '#siding-section',
+                label: 'Siding services',
+                anchor: true,
+              },
+              {
+                step: 'Foundation',
+                desc: 'Where poor drainage causes long-term structural issues',
+                href: '/blog/gutters-and-roof-leaks-sacramento',
+                label: 'Gutters and roof leaks',
+              },
+            ].map(item => (
+              <div key={item.step} className="border border-white/10 bg-white/[0.04] p-5 rounded-brand">
+                <p className="text-gold text-xs font-semibold uppercase tracking-wider mb-2">{item.step}</p>
+                <p className="text-gray-400 text-xs leading-relaxed mb-3">{item.desc}</p>
+                {item.anchor ? (
+                  <a
+                    href={item.href}
+                    onClick={e => handleSamePageAnchorClick(e, item.href.replace('#', ''))}
+                    className="text-gold text-xs font-semibold hover:underline"
+                  >
+                    {item.label} <ArrowRight size={11} className="inline" />
+                  </a>
+                ) : item.href.startsWith('/blog') ? (
+                  <Link to={item.href} className="text-gold text-xs font-semibold hover:underline">
+                    {item.label} <ArrowRight size={11} className="inline" />
+                  </Link>
+                ) : (
+                  <Link to={item.href} className="text-gold text-xs font-semibold hover:underline">
+                    {item.label} <ArrowRight size={11} className="inline" />
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -270,8 +389,15 @@ export default function GuttersSiding() {
               <h2 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-4">
                 Siding Installation &amp; Replacement
               </h2>
-              <p className="text-body text-base leading-relaxed mb-8 max-w-lg">
-                New siding transforms your home's curb appeal while providing a critical moisture barrier. Sacramento homes need materials that handle heat, resist moisture, and hold up year after year.
+              <p className="text-body text-base leading-relaxed mb-4 max-w-lg">
+                New siding transforms your home&apos;s curb appeal while providing a critical moisture barrier. Sacramento homes need materials that handle heat, resist moisture, and hold up year after year.
+              </p>
+              <p className="text-body text-sm leading-relaxed mb-8 max-w-lg">
+                Siding meets your roof at the fascia and soffit. When those transitions fail, water can show up as exterior rot or{' '}
+                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof leaks</Link>{' '}
+                indoors. PRC 13 reviews the full exterior—not just the visible wall panels. See our{' '}
+                <Link to="/gallery" className="text-gold font-semibold hover:text-gold-dark transition-colors">project gallery</Link>{' '}
+                for James Hardie siding paired with metal roofing on Sacramento-area homes.
               </p>
 
               {/* 2 service cards */}
@@ -311,11 +437,15 @@ export default function GuttersSiding() {
               </div>
 
               <p className="text-body text-xs leading-relaxed mb-6 border-l-2 border-gold/40 pl-3 max-w-lg">
-                Also offering siding repair, siding replacement, wood siding, moisture barrier upgrades, and exterior trim work.
+                Also offering siding repair, siding replacement, wood siding, moisture barrier upgrades, and exterior trim work. Planning a full exterior update? Pair siding with{' '}
+                <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof replacement</Link>{' '}
+                or{' '}
+                <Link to="/metal-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing</Link>{' '}
+                when both are due.
               </p>
 
               {/* Signs list */}
-              <div>
+              <div className="mb-8">
                 <p className="font-semibold text-headline text-sm mb-3">Signs Your Siding Needs Replacement</p>
                 <ul className="grid sm:grid-cols-2 gap-y-2 gap-x-4">
                   {[
@@ -333,6 +463,37 @@ export default function GuttersSiding() {
                   ))}
                 </ul>
               </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#exterior-quote"
+                  onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
+                  className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold"
+                >
+                  Request Siding Estimate <ArrowRight size={15} />
+                </a>
+                <Link
+                  to="/roof-inspection"
+                  className="inline-flex items-center justify-center gap-2 border border-gray-200 text-headline font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
+                >
+                  Free roof inspection
+                </Link>
+              </div>
+
+              <p className="text-body text-xs leading-relaxed mt-6 max-w-lg">
+                Worried about water at the roofline? Read{' '}
+                <Link to="/blog/fascia-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">fascia repair in Sacramento</Link>{' '}
+                and{' '}
+                <Link to="/blog/gutters-and-roof-leaks-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">how gutters prevent roof leaks</Link>.
+                {' '}
+                <a
+                  href="#gutters-section"
+                  onClick={e => handleSamePageAnchorClick(e, 'gutters-section')}
+                  className="text-gold font-semibold hover:text-gold-dark transition-colors"
+                >
+                  Back to gutter services ↑
+                </a>
+              </p>
             </div>
 
             {/* Image on the right. */}
@@ -355,8 +516,13 @@ export default function GuttersSiding() {
         <div className="max-w-7xl mx-auto px-5 sm:px-7">
           <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Recent Work</p>
           <h2 className="section-heading mb-2">Recent Exterior Projects</h2>
-          <p className="section-subheading max-w-xl mb-10">
-            Gutter, siding, and exterior protection work completed across Sacramento.
+          <p className="section-subheading max-w-2xl mb-6">
+            Gutter, siding, fascia, and exterior protection work completed across Sacramento—including James Hardie siding and roofline projects.
+          </p>
+          <p className="text-body text-sm mb-10">
+            <Link to="/gallery" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              View the full project gallery <ArrowRight size={13} className="inline" />
+            </Link>
           </p>
 
           {/* Masonry grid using CSS columns */}
@@ -434,17 +600,17 @@ export default function GuttersSiding() {
           <div className="flex items-start gap-3 mb-6">
             <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
             <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Gutters &amp; Fascia Resources</p>
-              <h2 className="section-heading mb-3">Protect Your Sacramento Roofline</h2>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Gutters, Fascia &amp; Exterior Resources</p>
+              <h2 className="section-heading mb-3">Protect Your Sacramento Roofline &amp; Walls</h2>
               <p className="text-body text-sm leading-relaxed max-w-3xl">
                 Homeowners across{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
-                use these guides for gutter installation, replacement cost, guards, fascia repair, and leak prevention. Schedule a{' '}
+                use these guides for gutter installation, replacement cost, guards, fascia repair, and leak prevention. Pair exterior work with a{' '}
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
                 or{' '}
-                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a gutter evaluation</Link>.
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a gutter or siding estimate</Link>.
               </p>
             </div>
           </div>
@@ -492,7 +658,7 @@ export default function GuttersSiding() {
                 Get Your Free<br />Exterior Inspection
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                We'll inspect your gutters, siding, and exterior problem areas and provide honest recommendations with no pressure.
+                We&apos;ll inspect your gutters, siding, fascia, and roof edge transitions—then provide honest recommendations with no pressure. Exterior problems and roof leaks often share the same source.
               </p>
               <ul className="space-y-2.5 mb-7">
                 {[
@@ -507,6 +673,20 @@ export default function GuttersSiding() {
                   </li>
                 ))}
               </ul>
+              <div className="flex flex-wrap gap-4 mb-6">
+                <Link
+                  to="/roof-inspection"
+                  className="inline-flex items-center gap-1.5 text-gold hover:text-gold-light font-semibold text-sm transition-colors"
+                >
+                  Schedule roof inspection <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to="/roof-repair"
+                  className="inline-flex items-center gap-1.5 text-gold hover:text-gold-light font-semibold text-sm transition-colors"
+                >
+                  Roof repair services <ArrowRight size={14} />
+                </Link>
+              </div>
               <a
                 href="tel:9167613866"
                 className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors"
