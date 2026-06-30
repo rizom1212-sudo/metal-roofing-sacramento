@@ -1,4 +1,5 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award, Building2, Clock, Wrench, FileText } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Shield, Award, Building2, Clock, Wrench, FileText, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -9,6 +10,8 @@ import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
+import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
 
 const problems = [
   'Standing water or ponding after rain',
@@ -62,6 +65,8 @@ const faqs: FaqItem[] = [
     answer: 'Yes. We serve commercial properties throughout Sacramento, Rancho Cordova, Roseville, Folsom, Elk Grove, and surrounding communities.',
   },
 ];
+
+const commercialResources = blogPosts.filter(post => post.category === COMMERCIAL_CLUSTER_CATEGORY);
 
 export default function CommercialRoofing() {
   return (
@@ -126,7 +131,10 @@ export default function CommercialRoofing() {
               'Insurance documentation for storm damage',
             ]}
           >
-            Commercial roofing problems should be inspected when you see ponding water, membrane damage, failed seams, or interior leaks. PRC 13 Roofing documents the roof condition and explains whether repair or replacement is the right next step.
+            Commercial roofing problems should be inspected when you see ponding water, membrane damage, failed seams, or interior leaks. PRC 13 Roofing documents the roof condition and explains whether repair or replacement is the right next step. Read our{' '}
+            <Link to="/blog/commercial-roof-leak-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">commercial leak repair guide</Link>{' '}
+            and{' '}
+            <Link to="/blog/tpo-vs-epdm-commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">TPO vs EPDM comparison</Link>.
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -214,6 +222,45 @@ export default function CommercialRoofing() {
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">5.0 Google Rating · 81 Reviews</p>
           <h2 className="section-heading mb-8">What Sacramento Homeowners Say</h2>
           <ReviewStrip count={3} variant="light" indices={[0, 1, 4]} />
+        </div>
+      </section>
+
+      {/* COMMERCIAL ROOFING RESOURCES */}
+      <section className="bg-white py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-start gap-3 mb-6">
+            <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+            <div>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Commercial Roofing Resources</p>
+              <h2 className="section-heading mb-3">Plan Your Sacramento Commercial Roof</h2>
+              <p className="text-body text-sm leading-relaxed max-w-3xl">
+                Property owners across{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>{' '}
+                and nearby communities use these guides for replacement, repair, TPO vs EPDM, maintenance, and leak response. Schedule a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof inspection</Link>{' '}
+                or{' '}
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a commercial roofing estimate</Link>.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {commercialResources.map(resource => (
+              <Link
+                key={resource.slug}
+                to={`/blog/${resource.slug}`}
+                className="card-brand bg-cream border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+              >
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
+                <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                  Read article <ArrowRight size={12} />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

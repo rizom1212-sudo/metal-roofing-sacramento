@@ -12,6 +12,7 @@ import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofi
 import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
 import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
+import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export default function BlogPost() {
@@ -43,6 +44,7 @@ export default function BlogPost() {
   const isReplacementGuide = post.category === REPLACEMENT_CLUSTER_CATEGORY;
   const isMetalGuide = post.category === METAL_CLUSTER_CATEGORY;
   const isGuttersFasciaGuide = post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY;
+  const isCommercialGuide = post.category === COMMERCIAL_CLUSTER_CATEGORY;
 
   return (
     <>
@@ -190,9 +192,11 @@ export default function BlogPost() {
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
                   {isEmergencyGuide
                     ? 'Emergency Help'
-                    : isGuttersFasciaGuide
-                      ? 'Gutters & Fascia'
-                      : isMetalGuide
+                    : isCommercialGuide
+                      ? 'Commercial Roofing'
+                      : isGuttersFasciaGuide
+                        ? 'Gutters & Fascia'
+                        : isMetalGuide
                         ? 'Metal Roofing'
                         : isReplacementGuide
                           ? 'Roof Replacement'
@@ -205,9 +209,11 @@ export default function BlogPost() {
                 <h2 className="text-xl font-bold text-white mb-3">
                   {isEmergencyGuide
                     ? 'Need Emergency Roof Repair in Sacramento?'
-                    : isGuttersFasciaGuide
-                      ? 'Need Gutter or Fascia Help in Sacramento?'
-                      : isMetalGuide
+                    : isCommercialGuide
+                      ? 'Need Commercial Roofing Help in Sacramento?'
+                      : isGuttersFasciaGuide
+                        ? 'Need Gutter or Fascia Help in Sacramento?'
+                        : isMetalGuide
                         ? 'Considering Metal Roofing in Sacramento?'
                         : isReplacementGuide
                           ? 'Planning a Roof Replacement in Sacramento?'
@@ -220,9 +226,11 @@ export default function BlogPost() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-5">
                   {isEmergencyGuide
                     ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
-                    : isGuttersFasciaGuide
-                      ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and fascia repairs for Sacramento homeowners. Start with a free roof inspection or gutter evaluation.'
-                      : isMetalGuide
+                    : isCommercialGuide
+                      ? 'PRC 13 Roofing serves small to mid-size commercial properties in Sacramento with flat roof repair, replacement, maintenance, and leak response. Start with a commercial roof inspection or written estimate.'
+                      : isGuttersFasciaGuide
+                        ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and fascia repairs for Sacramento homeowners. Start with a free roof inspection or gutter evaluation.'
+                        : isMetalGuide
                         ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a free inspection and panel-style consultation.'
                         : isReplacementGuide
                           ? 'PRC 13 Roofing helps Sacramento homeowners compare shingle, tile, and metal replacement options with free inspections and written quotes before any work begins.'
@@ -242,7 +250,9 @@ export default function BlogPost() {
                     </a>
                   ) : (
                     <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
-                      {isMetalGuide
+                      {isCommercialGuide
+                        ? 'Request Commercial Estimate'
+                        : isMetalGuide
                         ? 'Request Metal Roofing Consultation'
                         : isGuttersFasciaGuide
                           ? 'Request Gutter Evaluation'
@@ -256,9 +266,11 @@ export default function BlogPost() {
                     to={
                       isEmergencyGuide
                         ? '/emergency-roof-repair'
-                        : isGuttersFasciaGuide
-                          ? '/gutters-siding'
-                          : isMetalGuide
+                        : isCommercialGuide
+                          ? '/commercial-roofing'
+                          : isGuttersFasciaGuide
+                            ? '/gutters-siding'
+                            : isMetalGuide
                             ? '/metal-roofing'
                             : isReplacementGuide
                               ? '/roof-replacement'
@@ -272,9 +284,11 @@ export default function BlogPost() {
                   >
                     {isEmergencyGuide
                       ? 'Emergency roof repair page'
-                      : isGuttersFasciaGuide
-                        ? 'Gutters & siding services'
-                        : isMetalGuide
+                      : isCommercialGuide
+                        ? 'Commercial roofing services'
+                        : isGuttersFasciaGuide
+                          ? 'Gutters & siding services'
+                          : isMetalGuide
                           ? 'Metal roofing services'
                           : isReplacementGuide
                             ? 'Roof replacement services'
@@ -284,6 +298,14 @@ export default function BlogPost() {
                                 ? 'Folsom roofing services'
                                 : 'Roof inspection service page'}
                   </Link>
+                  {isCommercialGuide && (
+                    <Link
+                      to="/roof-inspection"
+                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
+                    >
+                      Commercial roof inspection <ArrowRight size={15} />
+                    </Link>
+                  )}
                   {isGuttersFasciaGuide && (
                     <Link
                       to="/roof-inspection"

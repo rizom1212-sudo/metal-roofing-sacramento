@@ -72,7 +72,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'commercial-roof-inspection-sacramento': {
     appendParagraphs: [
-      'Residential owners can use the same honest approach on [roof inspection](/roof-inspection). For homes in [Sacramento](/service-areas/sacramento), see [residential inspection scheduling](/roof-inspection-sacramento). Related: [inspection costs](/blog/roof-inspection-cost-sacramento) · [Commercial roofing](/commercial-roofing) · [Contact](/contact).',
+      'Residential owners can use the same honest approach on [roof inspection](/roof-inspection). For homes in [Sacramento](/service-areas/sacramento), see [residential inspection scheduling](/roof-inspection-sacramento). Related: [commercial repair](/blog/commercial-roof-repair-sacramento) · [TPO vs EPDM](/blog/tpo-vs-epdm-commercial-roofing) · [Commercial roofing](/commercial-roofing) · [Contact](/contact).',
     ],
   },
   'roof-inspection-after-storm': {
@@ -313,6 +313,33 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   'gutters-and-roof-leaks-sacramento': {
     appendParagraphs: [
       'Trace the full path with a [roof inspection](/roof-inspection) and [roof repair](/roof-repair). [Fascia repair](/blog/fascia-repair-sacramento) · [gutter installation](/blog/gutter-installation-sacramento) · [gutters & siding](/gutters-siding). [Roof replacement](/roof-replacement) when edges fail with aging shingles · [Contact](/contact).',
+    ],
+  },
+
+  // —— Commercial Roofing cluster ——
+  'commercial-roof-replacement-sacramento': {
+    appendParagraphs: [
+      'Compare membranes on [TPO vs EPDM](/blog/tpo-vs-epdm-commercial-roofing). Plan via [commercial roofing](/commercial-roofing) and [commercial inspection](/blog/commercial-roof-inspection-sacramento). [Maintenance](/blog/commercial-roof-maintenance-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'commercial-roof-repair-sacramento': {
+    appendParagraphs: [
+      'Active leak? See [commercial leak repair](/blog/commercial-roof-leak-repair-sacramento). [Commercial roofing](/commercial-roofing) · [roof inspection](/roof-inspection) · [roof repair](/roof-repair). [Replacement guide](/blog/commercial-roof-replacement-sacramento) · [Contact](/contact).',
+    ],
+  },
+  'tpo-vs-epdm-commercial-roofing': {
+    appendParagraphs: [
+      'Install through [commercial roofing](/commercial-roofing). [Replacement](/blog/commercial-roof-replacement-sacramento) · [repair](/blog/commercial-roof-repair-sacramento) · [maintenance](/blog/commercial-roof-maintenance-sacramento). [Commercial inspection](/blog/commercial-roof-inspection-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'commercial-roof-maintenance-sacramento': {
+    appendParagraphs: [
+      'Catch issues early with [commercial repair](/blog/commercial-roof-repair-sacramento). [Commercial roofing](/commercial-roofing) · [roof inspection](/roof-inspection). [Leak repair](/blog/commercial-roof-leak-repair-sacramento) · [TPO vs EPDM](/blog/tpo-vs-epdm-commercial-roofing) · [Contact](/contact).',
+    ],
+  },
+  'commercial-roof-leak-repair-sacramento': {
+    appendParagraphs: [
+      'Prevent repeat leaks with [commercial maintenance](/blog/commercial-roof-maintenance-sacramento). [Commercial roofing](/commercial-roofing) · [roof repair](/roof-repair) · [commercial repair guide](/blog/commercial-roof-repair-sacramento). [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
 };
