@@ -3,7 +3,11 @@ import { ArrowLeft, Clock, Tag, Phone, ArrowRight, Wrench } from 'lucide-react';
 import { blogPosts } from '../data/blog';
 import JsonLd from '../components/JsonLd';
 import OptimizedImage from '../components/OptimizedImage';
+import FaqAccordion from '../components/FaqAccordion';
 import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { PRIMARY_CTA } from '../data/cta';
+import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
+import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -22,7 +26,14 @@ export default function BlogPost() {
     );
   }
 
-  const related = blogPosts.filter(p => p.slug !== post.slug).slice(0, 2);
+  const relatedPosts = post.relatedArticles
+    ? post.relatedArticles
+        .map(link => blogPosts.find(p => `/blog/${p.slug}` === link.href))
+        .filter((p): p is (typeof blogPosts)[number] => Boolean(p))
+    : blogPosts.filter(p => p.slug !== post.slug).slice(0, 2);
+
+  const isEmergencyGuide = post.category === EMERGENCY_CLUSTER_CATEGORY;
+  const isFolsomGuide = post.category === FOLSOM_CLUSTER_CATEGORY;
 
   return (
     <>
@@ -30,6 +41,7 @@ export default function BlogPost() {
         pageName={post.title}
         schemaType="BlogPosting"
         blogPost={post}
+        faqs={post.faqs}
         breadcrumbs={[
           { label: 'Blog', href: '/blog' },
           { label: post.title },
@@ -125,12 +137,102 @@ export default function BlogPost() {
                       </ul>
                     );
                   }
+                  if (section.type === 'links' && section.links) {
+                    return (
+                      <div key={i} className="rounded-brand border border-gray-100 bg-white px-4 py-3">
+                        {section.content && (
+                          <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-2">
+                            {section.content}
+                          </p>
+                        )}
+                        <ul className="space-y-1.5">
+                          {section.links.map(link => (
+                            <li key={link.href}>
+                              <Link
+                                to={link.href}
+                                className="text-sm font-semibold text-headline hover:text-gold transition-colors"
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  }
                   return (
                     <p key={i} className="text-body text-sm leading-relaxed md:text-base">
                       {section.content}
                     </p>
                   );
                 })}
+              </div>
+
+              {post.faqs && post.faqs.length > 0 && (
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
+                    Frequently Asked Questions
+                  </p>
+                  <FaqAccordion items={post.faqs} variant="light" compact />
+                </div>
+              )}
+
+              <div className="mt-12 card-brand bg-charcoal-dark border border-gold/20 p-6 md:p-8">
+                <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
+                  {isEmergencyGuide ? 'Emergency Help' : isFolsomGuide ? 'Folsom Roofing' : 'Free Inspection'}
+                </p>
+                <h2 className="text-xl font-bold text-white mb-3">
+                  {isEmergencyGuide
+                    ? 'Need Emergency Roof Repair in Sacramento?'
+                    : isFolsomGuide
+                      ? 'Schedule Roofing Service in Folsom'
+                      : 'Schedule Your Free Roof Inspection'}
+                </h2>
+                <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                  {isEmergencyGuide
+                    ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
+                    : isFolsomGuide
+                      ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
+                      : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {isEmergencyGuide ? (
+                    <a
+                      href={`tel:${PHONE_TEL}`}
+                      className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold"
+                    >
+                      Call {PHONE_DISPLAY}
+                    </a>
+                  ) : (
+                    <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
+                      {PRIMARY_CTA} <ArrowRight size={15} />
+                    </Link>
+                  )}
+                  <Link
+                    to={
+                      isEmergencyGuide
+                        ? '/emergency-roof-repair'
+                        : isFolsomGuide
+                          ? '/service-areas/folsom'
+                          : '/roof-inspection'
+                    }
+                    className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
+                  >
+                    {isEmergencyGuide
+                      ? 'Emergency roof repair page'
+                      : isFolsomGuide
+                        ? 'Folsom roofing services'
+                        : 'Roof inspection service page'}
+                  </Link>
+                  {isEmergencyGuide && (
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand sm:col-span-2"
+                    >
+                      Request help online <ArrowRight size={15} />
+                    </Link>
+                  )}
+                </div>
               </div>
 
               {post.relatedServices.length > 0 && (
@@ -191,11 +293,11 @@ export default function BlogPost() {
                 </Link>
               </div>
 
-              {related.length > 0 && (
+              {relatedPosts.length > 0 && (
                 <div>
                   <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">Related Articles</p>
                   <div className="space-y-4">
-                    {related.map(r => (
+                    {relatedPosts.map(r => (
                       <Link
                         key={r.slug}
                         to={`/blog/${r.slug}`}

@@ -1,4 +1,8 @@
+import type { FaqItem } from '../components/FaqAccordion';
 import { ASSETS } from './assets';
+import { roofInspectionClusterPosts } from './blogRoofInspectionCluster';
+import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluster';
+import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
 
 export interface BlogRelatedService {
   label: string;
@@ -17,12 +21,15 @@ export interface BlogPost {
   coverImage: string;
   body: BlogSection[];
   relatedServices: BlogRelatedService[];
+  relatedArticles?: BlogRelatedService[];
+  faqs?: FaqItem[];
 }
 
 export interface BlogSection {
-  type: 'paragraph' | 'heading' | 'list';
+  type: 'paragraph' | 'heading' | 'list' | 'links';
   content: string;
   items?: string[];
+  links?: BlogRelatedService[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -373,4 +380,11 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  ...roofInspectionClusterPosts,
+  ...emergencyRoofRepairClusterPosts,
+  ...folsomRoofingClusterPosts,
 ];
+
+export const ROOF_INSPECTION_CLUSTER_SLUGS = roofInspectionClusterPosts.map(post => post.slug);
+export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPosts.map(post => post.slug);
+export const FOLSOM_ROOFING_CLUSTER_SLUGS = folsomRoofingClusterPosts.map(post => post.slug);

@@ -2,9 +2,18 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, Tag } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import { blogPosts } from '../data/blog';
+import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
+import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
+
+const INSPECTION_CATEGORY = 'Roof Inspection';
+const CLUSTER_CATEGORIES = new Set([INSPECTION_CATEGORY, EMERGENCY_CLUSTER_CATEGORY, FOLSOM_CLUSTER_CATEGORY]);
 
 export default function Blog() {
-  const [featured, ...rest] = blogPosts;
+  const inspectionGuides = blogPosts.filter(post => post.category === INSPECTION_CATEGORY);
+  const emergencyGuides = blogPosts.filter(post => post.category === EMERGENCY_CLUSTER_CATEGORY);
+  const folsomGuides = blogPosts.filter(post => post.category === FOLSOM_CLUSTER_CATEGORY);
+  const generalArticles = blogPosts.filter(post => !CLUSTER_CATEGORIES.has(post.category));
+  const [featured, ...rest] = generalArticles;
 
   return (
     <>
@@ -63,6 +72,105 @@ export default function Blog() {
               </div>
             </Link>
           </div>
+
+          {/* Roof inspection topical cluster */}
+          {inspectionGuides.length > 0 && (
+            <div className="mb-12">
+              <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Roof Inspection Guides</p>
+              <h2 className="text-2xl font-bold text-headline mb-2">Sacramento Roof Inspection Resources</h2>
+              <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
+                Free inspections, costs, checklists, insurance visits, storm assessments, and more—written for Sacramento-area homeowners.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {inspectionGuides.map(post => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 flex flex-col"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs text-gold font-semibold uppercase tracking-wider">{post.category}</span>
+                      <span className="text-gray-200">·</span>
+                      <span className="text-xs text-gray-400">{post.readTime}</span>
+                    </div>
+                    <h3 className="font-bold text-headline text-base leading-snug mb-2 group-hover:text-gold transition-colors flex-1">
+                      {post.title}
+                    </h3>
+                    <p className="text-body text-xs leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+                    <div className="flex items-center gap-1 text-gold text-sm font-semibold mt-auto">
+                      Read Guide <ArrowRight size={13} />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Emergency roof repair topical cluster */}
+          {emergencyGuides.length > 0 && (
+            <div className="mb-12">
+              <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Emergency Roof Repair Guides</p>
+              <h2 className="text-2xl font-bold text-headline mb-2">Sacramento Emergency Roof Repair Resources</h2>
+              <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
+                Roof leaks, storm damage, tarping, hail and wind repair, insurance claims, and when to call an emergency roofer—practical guides for Sacramento-area homeowners.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {emergencyGuides.map(post => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 flex flex-col"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs text-gold font-semibold uppercase tracking-wider">{post.category}</span>
+                      <span className="text-gray-200">·</span>
+                      <span className="text-xs text-gray-400">{post.readTime}</span>
+                    </div>
+                    <h3 className="font-bold text-headline text-base leading-snug mb-2 group-hover:text-gold transition-colors flex-1">
+                      {post.title}
+                    </h3>
+                    <p className="text-body text-xs leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+                    <div className="flex items-center gap-1 text-gold text-sm font-semibold mt-auto">
+                      Read Guide <ArrowRight size={13} />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Folsom roofing topical cluster */}
+          {folsomGuides.length > 0 && (
+            <div className="mb-12">
+              <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Folsom Roofing Guides</p>
+              <h2 className="text-2xl font-bold text-headline mb-2">Folsom Roofing Resources</h2>
+              <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
+                Roof repair, replacement, inspections, leak fixes, storm damage, material choices, and roofing costs—written for Folsom homeowners and lake-area properties.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {folsomGuides.map(post => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 flex flex-col"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs text-gold font-semibold uppercase tracking-wider">{post.category}</span>
+                      <span className="text-gray-200">·</span>
+                      <span className="text-xs text-gray-400">{post.readTime}</span>
+                    </div>
+                    <h3 className="font-bold text-headline text-base leading-snug mb-2 group-hover:text-gold transition-colors flex-1">
+                      {post.title}
+                    </h3>
+                    <p className="text-body text-xs leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+                    <div className="flex items-center gap-1 text-gold text-sm font-semibold mt-auto">
+                      Read Guide <ArrowRight size={13} />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Rest of posts grid */}
           <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-5">More Articles</p>

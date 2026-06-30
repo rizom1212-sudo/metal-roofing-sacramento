@@ -1,4 +1,5 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award, Eye, FileText, AlertTriangle, Clock, Wind } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, CheckCircle, ArrowRight, Shield, Award, Eye, FileText, AlertTriangle, Clock, Wind, BookOpen } from 'lucide-react';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -10,6 +11,7 @@ import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
 
 const checkItems = [
   { icon: Eye, title: 'Shingle Condition', desc: 'We check for granule loss, curling edges, cracks, blistering, and missing sections across the full roof surface.' },
@@ -69,6 +71,8 @@ const faqs: FaqItem[] = [
     answer: 'Yes. We can provide written documentation and photos of storm damage, which is often critical when filing an insurance claim. We can also be present during the adjuster\'s visit.',
   },
 ];
+
+const inspectionResources = blogPosts.filter(post => post.category === 'Roof Inspection');
 
 export default function RoofInspection() {
   return (
@@ -263,6 +267,40 @@ export default function RoofInspection() {
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">5.0 Google Rating · 81 Reviews</p>
           <h2 className="section-heading mb-8">What Sacramento Homeowners Say</h2>
           <ReviewStrip count={3} variant="light" indices={[1, 2, 5]} />
+        </div>
+      </section>
+
+      {/* ROOF INSPECTION RESOURCES */}
+      <section className="bg-cream py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-start gap-3 mb-6">
+            <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+            <div>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Roof Inspection Resources</p>
+              <h2 className="section-heading mb-3">Learn Before You Schedule</h2>
+              <p className="text-body text-sm leading-relaxed max-w-3xl">
+                Homeowners across Sacramento, El Dorado Hills, Roseville, and nearby communities ask us about inspection costs, insurance visits, storm checks, and commercial roofs. These guides answer common questions while our main roof inspection page covers how PRC 13 inspects your home.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {inspectionResources.map(resource => (
+              <Link
+                key={resource.slug}
+                to={`/blog/${resource.slug}`}
+                className="card-brand bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+              >
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
+                <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                  Read article <ArrowRight size={12} />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

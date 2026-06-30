@@ -1,4 +1,5 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Shield, Award, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import LeadForm from './LeadForm';
 import FaqAccordion, { type FaqItem } from './FaqAccordion';
 import GalleryStrip from './GalleryStrip';
@@ -67,6 +68,9 @@ export interface ServiceTemplateProps {
   sourcePage: string;
   showLocalSeoLinks?: boolean;
   sacramentoGuide?: { href: string; label: string };
+  resourceGuides?: Array<{ slug: string; title: string; excerpt: string; readTime: string }>;
+  resourceSectionHeading?: string;
+  resourceSectionIntro?: string;
 }
 
 export default function ServicePageTemplate({
@@ -99,6 +103,9 @@ export default function ServicePageTemplate({
   sourcePage,
   showLocalSeoLinks = true,
   sacramentoGuide,
+  resourceGuides,
+  resourceSectionHeading = 'Resources',
+  resourceSectionIntro,
 }: ServiceTemplateProps) {
   const crumbLabel = breadcrumbLabel ?? headline;
 
@@ -230,6 +237,41 @@ export default function ServicePageTemplate({
           <GalleryStrip category={galleryCategory} limit={4} showLink />
         </div>
       </section>
+
+      {resourceGuides && resourceGuides.length > 0 && (
+        <section className="bg-cream py-14 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex items-start gap-3 mb-6">
+              <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+              <div>
+                <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">{resourceSectionHeading}</p>
+                <h2 className="section-heading mb-3">Learn Before You Call</h2>
+                {resourceSectionIntro && (
+                  <p className="text-body text-sm leading-relaxed max-w-3xl">{resourceSectionIntro}</p>
+                )}
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {resourceGuides.map(resource => (
+                <Link
+                  key={resource.slug}
+                  to={`/blog/${resource.slug}`}
+                  className="card-brand bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+                >
+                  <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                  <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                    {resource.title}
+                  </h3>
+                  <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
+                  <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                    Read article <ArrowRight size={12} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="bg-white py-16">

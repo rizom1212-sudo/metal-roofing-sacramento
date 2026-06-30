@@ -1,5 +1,9 @@
 import ServicePageTemplate from '../components/ServicePageTemplate';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
+import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
+
+const emergencyResources = blogPosts.filter(post => post.category === EMERGENCY_CLUSTER_CATEGORY);
 
 export default function EmergencyRoofRepair() {
   return (
@@ -84,6 +88,9 @@ export default function EmergencyRoofRepair() {
         href: '/emergency-roof-repair-sacramento',
         label: 'View our Sacramento emergency roof repair page',
       }}
+      resourceSectionHeading="Emergency Roof Repair Resources"
+      resourceSectionIntro="Homeowners across Sacramento use these guides to understand roof leaks, storm and wind damage, emergency tarping, repair costs, insurance claims after storms, and when to call an emergency roofer—before reaching out for help."
+      resourceGuides={emergencyResources}
     />
   );
 }
