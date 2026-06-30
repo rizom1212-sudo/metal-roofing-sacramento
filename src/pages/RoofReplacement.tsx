@@ -1,4 +1,4 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award, Clock } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Shield, Award, Clock, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
@@ -12,7 +12,10 @@ import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
+import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
+import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 
 const steps = [
   { num: '01', title: 'Free Inspection', desc: 'Our roofing team comes to your home, evaluates your roof, and gives you an honest assessment with no pressure.' },
@@ -60,6 +63,8 @@ const materials = [
   { name: 'Metal Roofing', desc: '50+ year lifespan. Energy-efficient, low maintenance, excellent for California weather.', badge: 'Long-Term Value' },
   { name: 'Tile Roofing', desc: 'Classic Sacramento look. Extremely durable with excellent insulation properties.', badge: 'Premium Option' },
 ];
+
+const replacementResources = blogPosts.filter(post => post.category === REPLACEMENT_CLUSTER_CATEGORY);
 
 export default function RoofReplacement() {
   return (
@@ -249,6 +254,47 @@ export default function RoofReplacement() {
         </div>
       </section>
 
+      {/* ROOF REPLACEMENT RESOURCES */}
+      <section className="bg-cream py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-start gap-3 mb-6">
+            <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+            <div>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Roof Replacement Resources</p>
+              <h2 className="section-heading mb-3">Plan Your Sacramento Replacement</h2>
+              <p className="text-body text-sm leading-relaxed max-w-3xl">
+                Homeowners across{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
+                use these guides for replacement cost, materials, insurance, financing, and timelines. Start with our{' '}
+                <Link to="/roof-replacement-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento roof replacement page</Link>{' '}
+                or schedule a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {replacementResources.map(resource => (
+              <Link
+                key={resource.slug}
+                to={`/blog/${resource.slug}`}
+                className="card-brand bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+              >
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
+                <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                  Read article <ArrowRight size={12} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-cream py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -257,6 +303,11 @@ export default function RoofReplacement() {
           <FaqAccordion items={replacementFaqs} variant="light" />
         </div>
       </section>
+
+      <SacramentoGuideCallout
+        href="/roof-replacement-sacramento"
+        label="View our Sacramento roof replacement page"
+      />
 
       <LocalSeoLinks />
 

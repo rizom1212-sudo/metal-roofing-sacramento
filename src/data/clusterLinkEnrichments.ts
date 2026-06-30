@@ -18,12 +18,12 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'how-long-does-roof-replacement-take': {
     appendParagraphs: [
-      'Planning a project? Start on [roof replacement](/roof-replacement) and [signs you need replacement](/blog/signs-you-need-roof-replacement-sacramento). [Sacramento](/service-areas/sacramento) homeowners also compare [metal vs shingles](/blog/metal-roofing-vs-shingles-sacramento). [Roof inspection](/roof-inspection) · [Contact](/contact).',
+      'Planning a project? Start on [roof replacement](/roof-replacement) and [roof replacement Sacramento](/roof-replacement-sacramento). Read [replacement process](/blog/roof-replacement-process-sacramento) and [signs you need replacement](/blog/signs-you-need-roof-replacement-sacramento). [Sacramento](/service-areas/sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
   'signs-you-need-roof-replacement-sacramento': {
     appendParagraphs: [
-      'Not sure yet? Schedule a [free roof inspection](/roof-inspection). Compare [roof repair](/roof-repair) vs [roof replacement](/roof-replacement) and read [how long replacement takes](/blog/how-long-does-roof-replacement-take). [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Schedule a [free roof inspection](/roof-inspection) or [Sacramento replacement page](/roof-replacement-sacramento). Compare [replacement cost](/blog/roof-replacement-cost-sacramento) and [how long replacement takes](/blog/how-long-does-roof-replacement-take). [Roof replacement](/roof-replacement) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'how-insurance-claims-work-for-roof-damage': {
@@ -232,6 +232,33 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   'roof-insurance-claims-el-dorado-hills': {
     appendParagraphs: [
       'Pair claims with [emergency roof repair](/emergency-roof-repair) when needed. [EDH repair guide](/blog/roof-repair-el-dorado-hills-ca) · [inspection documentation](/blog/roof-inspection-el-dorado-hills-ca). [Sacramento-region storm claims article](/blog/roof-insurance-claims-storm-damage) · [EDH](/service-areas/el-dorado-hills) · [Contact](/contact).',
+    ],
+  },
+
+  // —— Sacramento Roof Replacement cluster ——
+  'roof-replacement-cost-sacramento': {
+    appendParagraphs: [
+      'Compare materials on [shingle vs tile vs metal](/blog/roofing-materials-replacement-sacramento). Schedule via [roof replacement](/roof-replacement) or [Sacramento replacement page](/roof-replacement-sacramento). [Free inspection](/roof-inspection) · [Folsom](/service-areas/folsom) · [El Dorado Hills](/service-areas/el-dorado-hills) · [Contact](/contact).',
+    ],
+  },
+  'roofing-materials-replacement-sacramento': {
+    appendParagraphs: [
+      'Install through [roof replacement](/roof-replacement) or [metal roofing](/metal-roofing). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Sacramento replacement page](/roof-replacement-sacramento) · [EDH replacement](/blog/roof-replacement-el-dorado-hills-ca) · [Folsom replacement](/blog/roof-replacement-folsom-ca) · [Contact](/contact).',
+    ],
+  },
+  'roof-replacement-insurance-sacramento': {
+    appendParagraphs: [
+      'Active leak? See [emergency roof repair](/emergency-roof-repair). [Storm claims guide](/blog/roof-insurance-claims-storm-damage) · [insurance inspections](/blog/insurance-roof-inspection-sacramento). [Roof replacement](/roof-replacement) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+    ],
+  },
+  'roof-replacement-process-sacramento': {
+    appendParagraphs: [
+      'Timeline: [how long replacement takes](/blog/how-long-does-roof-replacement-take). Plan via [roof replacement Sacramento](/roof-replacement-sacramento) and [main replacement page](/roof-replacement). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Inspection](/roof-inspection) · [Contact](/contact).',
+    ],
+  },
+  'roof-replacement-financing-sacramento': {
+    appendParagraphs: [
+      'Understand scope with a [free roof inspection](/roof-inspection). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [material options](/blog/roofing-materials-replacement-sacramento). [Roof replacement](/roof-replacement) · [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
 };

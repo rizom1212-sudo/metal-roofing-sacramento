@@ -44,7 +44,7 @@ const rawServiceAreas: ServiceAreaBase[] = [
     localSignals: ['Ceiling stains after the first heavy rain', 'Granules collecting near downspouts', 'Lifted shingles after windy weather', 'Soft decking around vents or valleys', 'Repeated repairs on roofs near the end of service life'],
     services: [
       { title: 'Roof Repair in Sacramento', href: '/roof-repair-sacramento', desc: 'Dedicated Sacramento roof repair guide for leaks, shingles, flashing, storm damage, and repair-vs-replacement decisions.' },
-      { title: 'Roof Replacement in Sacramento', href: '/roof-replacement', desc: 'Full tear-off and replacement for aging roofs, including decking review, material options, ventilation checks, and a clean final walkthrough.' },
+      { title: 'Roof Replacement in Sacramento', href: '/roof-replacement-sacramento', desc: 'Full tear-off and replacement for aging roofs, including decking review, material options, ventilation checks, and a clean final walkthrough.' },
       { title: 'Roof Inspections in Sacramento', href: '/roof-inspection-sacramento', desc: 'Free Sacramento roof inspections with written findings for leaks, storm wear, aging materials, and replacement planning.' },
       { title: 'Emergency Roof Repair in Sacramento', href: '/emergency-roof-repair-sacramento', desc: 'Urgent Sacramento roof help for active leaks, storm damage, temporary stabilization, and documentation when water is entering the home.' },
       { title: 'Metal Roofing in Sacramento', href: '/metal-roofing', desc: 'Standing seam and other metal roofing options for homeowners who want long life, heat performance, and lower maintenance.' },

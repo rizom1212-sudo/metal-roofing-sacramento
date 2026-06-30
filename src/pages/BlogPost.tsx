@@ -9,6 +9,7 @@ import { PRIMARY_CTA } from '../data/cta';
 import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
+import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export default function BlogPost() {
@@ -37,6 +38,7 @@ export default function BlogPost() {
   const isEmergencyGuide = post.category === EMERGENCY_CLUSTER_CATEGORY;
   const isFolsomGuide = post.category === FOLSOM_CLUSTER_CATEGORY;
   const isElDoradoHillsGuide = post.category === EL_DORADO_HILLS_CLUSTER_CATEGORY;
+  const isReplacementGuide = post.category === REPLACEMENT_CLUSTER_CATEGORY;
 
   return (
     <>
@@ -184,29 +186,35 @@ export default function BlogPost() {
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
                   {isEmergencyGuide
                     ? 'Emergency Help'
-                    : isElDoradoHillsGuide
-                      ? 'El Dorado Hills Roofing'
-                      : isFolsomGuide
-                        ? 'Folsom Roofing'
-                        : 'Free Inspection'}
+                    : isReplacementGuide
+                      ? 'Roof Replacement'
+                      : isElDoradoHillsGuide
+                        ? 'El Dorado Hills Roofing'
+                        : isFolsomGuide
+                          ? 'Folsom Roofing'
+                          : 'Free Inspection'}
                 </p>
                 <h2 className="text-xl font-bold text-white mb-3">
                   {isEmergencyGuide
                     ? 'Need Emergency Roof Repair in Sacramento?'
-                    : isElDoradoHillsGuide
-                      ? 'Schedule Roofing Service in El Dorado Hills'
-                      : isFolsomGuide
-                        ? 'Schedule Roofing Service in Folsom'
-                        : 'Schedule Your Free Roof Inspection'}
+                    : isReplacementGuide
+                      ? 'Planning a Roof Replacement in Sacramento?'
+                      : isElDoradoHillsGuide
+                        ? 'Schedule Roofing Service in El Dorado Hills'
+                        : isFolsomGuide
+                          ? 'Schedule Roofing Service in Folsom'
+                          : 'Schedule Your Free Roof Inspection'}
                 </h2>
                 <p className="text-gray-400 text-sm leading-relaxed mb-5">
                   {isEmergencyGuide
                     ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
-                    : isElDoradoHillsGuide
-                      ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, fascia repair, inspections, and emergency leak help on exposed foothill properties.'
-                      : isFolsomGuide
-                        ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
-                        : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
+                    : isReplacementGuide
+                      ? 'PRC 13 Roofing helps Sacramento homeowners compare shingle, tile, and metal replacement options with free inspections and written quotes before any work begins.'
+                      : isElDoradoHillsGuide
+                        ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, fascia repair, inspections, and emergency leak help on exposed foothill properties.'
+                        : isFolsomGuide
+                          ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
+                          : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {isEmergencyGuide ? (
@@ -218,29 +226,41 @@ export default function BlogPost() {
                     </a>
                   ) : (
                     <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
-                      {PRIMARY_CTA} <ArrowRight size={15} />
+                      {isReplacementGuide ? 'Request Replacement Quote' : PRIMARY_CTA} <ArrowRight size={15} />
                     </Link>
                   )}
                   <Link
                     to={
                       isEmergencyGuide
                         ? '/emergency-roof-repair'
-                        : isElDoradoHillsGuide
-                          ? '/service-areas/el-dorado-hills'
-                          : isFolsomGuide
-                            ? '/service-areas/folsom'
-                            : '/roof-inspection'
+                        : isReplacementGuide
+                          ? '/roof-replacement'
+                          : isElDoradoHillsGuide
+                            ? '/service-areas/el-dorado-hills'
+                            : isFolsomGuide
+                              ? '/service-areas/folsom'
+                              : '/roof-inspection'
                     }
                     className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                   >
                     {isEmergencyGuide
                       ? 'Emergency roof repair page'
-                      : isElDoradoHillsGuide
-                        ? 'El Dorado Hills roofing services'
-                        : isFolsomGuide
-                          ? 'Folsom roofing services'
-                          : 'Roof inspection service page'}
+                      : isReplacementGuide
+                        ? 'Roof replacement services'
+                        : isElDoradoHillsGuide
+                          ? 'El Dorado Hills roofing services'
+                          : isFolsomGuide
+                            ? 'Folsom roofing services'
+                            : 'Roof inspection service page'}
                   </Link>
+                  {isReplacementGuide && (
+                    <Link
+                      to="/roof-replacement-sacramento"
+                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
+                    >
+                      Sacramento replacement page <ArrowRight size={15} />
+                    </Link>
+                  )}
                   {isEmergencyGuide && (
                     <Link
                       to="/contact"

@@ -18,6 +18,7 @@ const relatedLinks = [
   { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
   { label: 'Roof Inspection', href: '/roof-inspection' },
   { label: 'Roof Replacement', href: '/roof-replacement' },
+  { label: 'Roof Replacement Sacramento', href: '/roof-replacement-sacramento' },
   { label: 'Contact PRC 13', href: '/contact' },
 ];
 
@@ -214,6 +215,42 @@ export default function SacramentoServiceLandingPage({ config }: SacramentoServi
       {config.sections.map(section => (
         <SectionBlock key={`${section.kind}-${section.heading}`} section={section} />
       ))}
+
+      {config.clusterGuides && config.clusterGuides.length > 0 && (
+        <section className="bg-cream py-12 md:py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Roof Replacement Guides</p>
+            <h2 className="section-heading mb-6">Learn Before You Replace</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {config.clusterGuides.map(guide => (
+                <Link
+                  key={guide.slug}
+                  to={`/blog/${guide.slug}`}
+                  className="card-brand bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+                >
+                  <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                    {guide.title}
+                  </h3>
+                  <p className="text-body text-xs leading-relaxed">{guide.excerpt}</p>
+                  <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
+                    Read article <ArrowRight size={12} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <p className="text-body text-sm mt-6">
+              See also our main{' '}
+              <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+                roof replacement services
+              </Link>{' '}
+              page and{' '}
+              <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+                free roof inspections
+              </Link>.
+            </p>
+          </div>
+        </section>
+      )}
 
       <section className="bg-white py-14 md:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">

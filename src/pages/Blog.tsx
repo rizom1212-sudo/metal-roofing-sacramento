@@ -5,6 +5,7 @@ import { blogPosts } from '../data/blog';
 import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
+import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 
 const INSPECTION_CATEGORY = 'Roof Inspection';
 const CLUSTER_CATEGORIES = new Set([
@@ -12,6 +13,7 @@ const CLUSTER_CATEGORIES = new Set([
   EMERGENCY_CLUSTER_CATEGORY,
   FOLSOM_CLUSTER_CATEGORY,
   EL_DORADO_HILLS_CLUSTER_CATEGORY,
+  REPLACEMENT_CLUSTER_CATEGORY,
 ]);
 
 export default function Blog() {
@@ -19,6 +21,7 @@ export default function Blog() {
   const emergencyGuides = blogPosts.filter(post => post.category === EMERGENCY_CLUSTER_CATEGORY);
   const folsomGuides = blogPosts.filter(post => post.category === FOLSOM_CLUSTER_CATEGORY);
   const elDoradoHillsGuides = blogPosts.filter(post => post.category === EL_DORADO_HILLS_CLUSTER_CATEGORY);
+  const replacementGuides = blogPosts.filter(post => post.category === REPLACEMENT_CLUSTER_CATEGORY);
   const generalArticles = blogPosts.filter(post => !CLUSTER_CATEGORIES.has(post.category));
   const [featured, ...rest] = generalArticles;
 
@@ -123,6 +126,39 @@ export default function Blog() {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {emergencyGuides.map(post => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="group bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 flex flex-col"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs text-gold font-semibold uppercase tracking-wider">{post.category}</span>
+                      <span className="text-gray-200">·</span>
+                      <span className="text-xs text-gray-400">{post.readTime}</span>
+                    </div>
+                    <h3 className="font-bold text-headline text-base leading-snug mb-2 group-hover:text-gold transition-colors flex-1">
+                      {post.title}
+                    </h3>
+                    <p className="text-body text-xs leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+                    <div className="flex items-center gap-1 text-gold text-sm font-semibold mt-auto">
+                      Read Guide <ArrowRight size={13} />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Sacramento roof replacement topical cluster */}
+          {replacementGuides.length > 0 && (
+            <div className="mb-12">
+              <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Sacramento Roof Replacement Guides</p>
+              <h2 className="text-2xl font-bold text-headline mb-2">Roof Replacement Resources</h2>
+              <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
+                Replacement cost, materials, insurance, financing, timelines, and what to expect—written for Sacramento homeowners planning a new roof.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {replacementGuides.map(post => (
                   <Link
                     key={post.slug}
                     to={`/blog/${post.slug}`}

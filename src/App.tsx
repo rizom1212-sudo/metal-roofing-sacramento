@@ -21,6 +21,7 @@ import EmergencyRoofRepair from './pages/EmergencyRoofRepair';
 import RoofRepairSacramento from './pages/RoofRepairSacramento';
 import EmergencyRoofRepairSacramento from './pages/EmergencyRoofRepairSacramento';
 import RoofInspectionSacramento from './pages/RoofInspectionSacramento';
+import RoofReplacementSacramento from './pages/RoofReplacementSacramento';
 
 export default function App() {
   return (
@@ -48,6 +49,7 @@ export function AppRoutes() {
       <Route path="/roof-repair-sacramento" element={<RoofRepairSacramento />} />
       <Route path="/emergency-roof-repair-sacramento" element={<EmergencyRoofRepairSacramento />} />
       <Route path="/roof-inspection-sacramento" element={<RoofInspectionSacramento />} />
+      <Route path="/roof-replacement-sacramento" element={<RoofReplacementSacramento />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/service-areas" element={<ServiceAreas />} />

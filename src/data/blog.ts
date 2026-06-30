@@ -5,6 +5,7 @@ import { roofInspectionClusterPosts } from './blogRoofInspectionCluster';
 import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluster';
 import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
 import { elDoradoHillsRoofingClusterPosts } from './blogElDoradoHillsRoofingCluster';
+import { roofReplacementClusterPosts } from './blogRoofReplacementCluster';
 
 export interface BlogRelatedService {
   label: string;
@@ -162,110 +163,6 @@ const rawBlogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'how-long-does-roof-replacement-take',
-    title: 'How Long Does a Roof Replacement Take in Sacramento?',
-    excerpt:
-      'Most Sacramento homeowners are surprised at how quickly a full roof replacement can be completed. Here\'s what to expect from start to finish.',
-    date: 'May 12, 2026',
-    readTime: '4 min read',
-    category: 'Roof Replacement',
-    coverImage: ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp'),
-    relatedServices: [
-      { label: 'Roof Replacement', href: '/roof-replacement' },
-      { label: 'Free Roof Inspection', href: '/roof-inspection' },
-      { label: 'Project Gallery', href: '/gallery' },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'One of the most common questions we get at PRC 13 Roofing is: "How long is this going to take?" The good news is that most residential roof replacements in Sacramento are completed in one to two days.',
-      },
-      {
-        type: 'heading',
-        content: 'Day 1: Tear-Off and Decking Inspection',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Our crew arrives early and begins removing your old shingles, underlayment, and any damaged decking. Once the roof is stripped, we inspect the plywood decking for rot or soft spots and replace any compromised sections.',
-      },
-      {
-        type: 'heading',
-        content: 'Day 1 to 2: New Roof Installation',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'After the decking is verified, we install new underlayment, ice and water shield at the eaves, and then the new shingles or metal roofing panels. Ridge cap, flashing around chimneys and vents, and all finishing details are completed before the crew leaves.',
-      },
-      {
-        type: 'heading',
-        content: 'Factors That Can Extend the Timeline',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Large or steeply pitched roofs require more time and safety rigging',
-          'Significant decking damage requires replacement before installation continues',
-          'Multiple roofing layers, since some older Sacramento homes have 2 to 3 layers',
-          'Weather delays because we do not install in rain',
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Once your job is done, we walk the completed project with you before we consider the job finished. Every project ends with a full cleanup, including magnets for nails, debris removal, and a final inspection.',
-      },
-    ],
-  },
-  {
-    slug: 'signs-you-need-roof-replacement-sacramento',
-    title: '7 Signs Your Sacramento Roof Needs Replacement (Not Just a Repair)',
-    seoTitle: '7 Signs Your Sacramento Roof Needs Replacement',
-    excerpt:
-      'Sacramento\'s hot summers and occasional winter storms take a real toll on roofing systems. Here are the warning signs that repair alone won\'t cut it.',
-    date: 'April 28, 2026',
-    readTime: '5 min read',
-    category: 'Roof Replacement',
-    coverImage: ASSETS.blog('6998f81b8713f61878709b43.jpg'),
-    relatedServices: [
-      { label: 'Roof Replacement', href: '/roof-replacement' },
-      { label: 'Roof Repair', href: '/roof-repair' },
-      { label: 'Roof Inspection', href: '/roof-inspection' },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Not every roofing problem calls for a full replacement, but some do. The challenge is knowing the difference. At PRC 13 Roofing, we give Sacramento homeowners honest answers, even when a repair is all they actually need.',
-      },
-      {
-        type: 'heading',
-        content: 'The 7 Signs',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Your roof is 20+ years old, since most asphalt shingles have a 20 to 25 year lifespan in Sacramento\'s climate',
-          'You\'ve repaired the same area more than once, which can signal underlying structural issues',
-          'You can see granule loss in your gutters, a sign your shingles may be near the end of their life',
-          'Multiple shingles are curling, cracking, or missing, making spot repairs less practical',
-          'Your energy bills have climbed unexpectedly, which can point to roof ventilation or insulation issues',
-          'You see sagging sections, which can indicate decking or structural damage',
-          'Your neighbor has already replaced their roof, since homes in subdivisions tend to age together',
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'If you\'re seeing two or more of these signs, it\'s worth scheduling a free inspection. We\'ll tell you honestly whether a repair can extend the life of your roof or whether replacement is the smarter investment.',
-      },
-    ],
-  },
-  {
     slug: 'how-insurance-claims-work-for-roof-damage',
     title: 'How Insurance Claims Work for Roof Damage in Sacramento',
     seoTitle: 'Roof Damage Insurance Claims in Sacramento',
@@ -386,6 +283,7 @@ const rawBlogPosts: BlogPost[] = [
   ...emergencyRoofRepairClusterPosts,
   ...folsomRoofingClusterPosts,
   ...elDoradoHillsRoofingClusterPosts,
+  ...roofReplacementClusterPosts,
 ];
 
 export const blogPosts = applyClusterLinkEnrichmentsToPosts(rawBlogPosts);
@@ -394,3 +292,4 @@ export const ROOF_INSPECTION_CLUSTER_SLUGS = roofInspectionClusterPosts.map(post
 export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPosts.map(post => post.slug);
 export const FOLSOM_ROOFING_CLUSTER_SLUGS = folsomRoofingClusterPosts.map(post => post.slug);
 export const EL_DORADO_HILLS_ROOFING_CLUSTER_SLUGS = elDoradoHillsRoofingClusterPosts.map(post => post.slug);
+export const ROOF_REPLACEMENT_CLUSTER_SLUGS = roofReplacementClusterPosts.map(post => post.slug);

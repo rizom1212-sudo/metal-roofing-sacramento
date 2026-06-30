@@ -73,12 +73,15 @@ export interface SacramentoLandingPageConfig {
     checklist: string[];
     submitLabel: string;
   };
+  /** Optional blog guides shown on Sacramento service landings */
+  clusterGuides?: Array<{ slug: string; title: string; excerpt: string }>;
 }
 
 export const SACRAMENTO_LANDING_PATHS = [
   '/roof-repair-sacramento',
   '/emergency-roof-repair-sacramento',
   '/roof-inspection-sacramento',
+  '/roof-replacement-sacramento',
 ] as const;
 
 export const sacramentoLandingPages: Record<string, SacramentoLandingPageConfig> = {
@@ -683,6 +686,197 @@ export const sacramentoLandingPages: Record<string, SacramentoLandingPageConfig>
       checklist: ['Free with no obligation', 'Written findings provided', 'Licensed roofing team', 'Most visits within 24 hours'],
       submitLabel: 'Schedule Your Free Roof Inspection',
     },
+  },
+  'roof-replacement-sacramento': {
+    path: '/roof-replacement-sacramento',
+    metaTitle: 'Roof Replacement Sacramento, CA | Shingle, Tile & Metal | PRC 13',
+    metaDescription:
+      'Roof replacement in Sacramento from PRC 13 Roofing. Free inspections, written quotes, shingle tile and metal options, and most homes completed in one to two days.',
+    pageName: 'Roof Replacement Sacramento',
+    serviceName: 'Roof Replacement in Sacramento, CA',
+    sourcePage: 'roof-replacement-sacramento',
+    formSectionId: 'roof-replacement-sacramento-quote',
+    breadcrumbParent: { label: 'Roof Replacement', href: '/roof-replacement' },
+    hero: {
+      badge: 'Sacramento Roof Replacement',
+      h1: 'Roof Replacement in Sacramento, CA',
+      subheadline:
+        'PRC 13 Roofing replaces aging Sacramento roofs with architectural shingles, tile, and metal systems. Free inspections, written quotes, and most residential projects completed in one to two days.',
+      heroImage: ASSETS.roofReplacement('roof-replacement-hero-installation.png'),
+      heroAlt: 'Roof replacement installation on a Sacramento home',
+      primaryCta: 'call-and-inspection',
+      trustItems: ['Licensed & Insured', 'Free Inspections', 'Written Quotes', 'Most Jobs in 1–2 Days'],
+    },
+    quickAnswer: {
+      title: 'Sacramento roof replacement: quick answer',
+      points: [
+        'Shingle, tile, and metal replacement options',
+        'Free inspection with written quote',
+        'Most homes completed in one to two days',
+        'Insurance claim assistance when storm damage applies',
+      ],
+      body:
+        'Sacramento roof replacement makes sense when repairs repeat, materials are near end of life, or storm damage is widespread. PRC 13 Roofing inspects first and explains material choices before any tear-off begins.',
+    },
+    sections: [
+      {
+        kind: 'cards',
+        bg: 'white',
+        eyebrow: 'Materials',
+        heading: 'Roofing Materials for Sacramento Replacements',
+        intro:
+          'PRC 13 installs the three systems Sacramento homeowners request most often. Material choice affects cost, lifespan, and how your home handles summer heat.',
+        cards: [
+          { title: 'Architectural Shingles', desc: 'Most popular for Sacramento subdivisions. Cost-effective with broad style options and typical one- to two-day installs.' },
+          { title: 'Tile Roofing', desc: 'Common in established neighborhoods. Replacement includes underlayment and flashing upgrades, not just surface tile.' },
+          { title: 'Metal Roofing', desc: 'Long life and strong heat performance. Standing seam and corrugated profiles for homeowners planning to stay long-term.' },
+        ],
+      },
+      {
+        kind: 'content',
+        bg: 'cream',
+        eyebrow: 'When to Replace',
+        heading: 'Signs a Sacramento Roof Needs Replacement',
+        paragraphs: [
+          'Sacramento heat dries shingles while winter rain tests underlayment and flashing. When wear is widespread, patching the same areas each season stops making sense.',
+        ],
+        bullets: [
+          'Roof age past 20 years on original builder-grade shingles',
+          'Granule loss visible in gutters after routine cleaning',
+          'Multiple leak locations after one storm season',
+          'Curling, cracking, or missing shingles across several roof planes',
+          'Soft decking or sagging noticed from the attic',
+          'Repeated repairs on the same valley or penetration',
+        ],
+      },
+      {
+        kind: 'content',
+        bg: 'white',
+        eyebrow: 'Our Process',
+        heading: 'What Happens During a Sacramento Roof Replacement',
+        paragraphs: [
+          'Every project starts with a free inspection and written quote. Crews tear off to the deck, replace damaged plywood, install underlayment and new materials, then complete flashing, ventilation details, and cleanup.',
+          'PRC 13 walks the finished roof with you before signing off. Magnet passes and debris haul-away are part of completion.',
+        ],
+        bullets: [
+          'Free inspection and material consultation',
+          'Written quote with line items explained',
+          'Tear-off, decking review, and installation',
+          'Final walkthrough with the homeowner',
+        ],
+      },
+      {
+        kind: 'insurance',
+        eyebrow: 'Storm Damage',
+        heading: 'Replacement and Insurance Claims',
+        body:
+          'When wind, hail, or falling debris damages a Sacramento roof, insurance may cover replacement or major repairs. PRC 13 Roofing documents damage, provides insurance claim assistance, and can meet adjusters on site when needed.',
+      },
+      {
+        kind: 'split',
+        bg: 'cream',
+        eyebrow: 'Repair vs Replace',
+        heading: 'Should You Repair or Replace Your Sacramento Roof?',
+        intro:
+          'Not every worn roof needs full replacement. PRC 13 inspects and explains the practical choice before you commit to tear-off.',
+        leftTitle: 'Replacement often makes sense when',
+        leftItems: [
+          'Leaks return in different areas after storms',
+          'Shingles are brittle with widespread granule loss',
+          'Tile underlayment is failing on multiple slopes',
+          'Insurance approves storm-related replacement scope',
+        ],
+        rightTitle: 'Repair may be enough when',
+        rightItems: [
+          'Damage is isolated to one penetration or valley',
+          'The roof is under 15 years with sound decking',
+          'Only a few shingles lifted after wind',
+          'Flashing or vent boots are the clear failure point',
+        ],
+        closing:
+          'Unsure? Schedule a free inspection. PRC 13 provides written findings and honest repair vs replacement guidance.',
+      },
+      {
+        kind: 'content',
+        bg: 'white',
+        eyebrow: 'Sacramento Conditions',
+        heading: 'Local Factors That Affect Replacement Planning',
+        paragraphs: [
+          'Mature street trees, original bungalow rooflines, and multi-layer tear-offs are common in Sacramento. Heat exposure on south-facing slopes and Delta breeze uplift along open ridgelines also influence material and ventilation choices.',
+        ],
+        bullets: [
+          'Valley debris and shade-related moisture under oaks',
+          'Heat-aged shingles on sun-exposed roof planes',
+          'Older homes with multiple roofing layers to remove',
+          'Ventilation upgrades that extend shingle life',
+        ],
+      },
+    ],
+    faqHeading: 'Sacramento Roof Replacement FAQs',
+    faqs: [
+      {
+        question: 'How much does roof replacement cost in Sacramento?',
+        answer:
+          'Cost depends on roof size, pitch, materials, and decking condition. PRC 13 provides a written quote after a free inspection with every line item explained.',
+      },
+      {
+        question: 'How long does roof replacement take in Sacramento?',
+        answer:
+          'Most residential replacements finish in one to two days. Larger tile projects or extensive decking repairs may take longer.',
+      },
+      {
+        question: 'Does PRC 13 offer free inspections before replacement?',
+        answer:
+          'Yes. Free roof inspections include written findings and no obligation to proceed.',
+      },
+      {
+        question: 'What materials does PRC 13 install?',
+        answer:
+          'We install architectural shingles, tile roofing, and metal roof systems for Sacramento replacements.',
+      },
+      {
+        question: 'Can PRC 13 help with insurance claims?',
+        answer:
+          'Yes. We provide insurance claim assistance for storm-related damage, including documentation and adjuster site visits when appropriate.',
+      },
+      {
+        question: 'Is financing available?',
+        answer:
+          'Financing may be available on qualifying projects. Ask during your free inspection.',
+      },
+      {
+        question: 'Do I need to leave home during replacement?',
+        answer:
+          'No. Work is exterior. You may hear tear-off during the day but do not need to vacate.',
+      },
+      {
+        question: 'Will you remove old roofing materials?',
+        answer:
+          'Yes. Tear-off, disposal, and jobsite cleanup are included in replacement quotes.',
+      },
+    ],
+    cta: {
+      eyebrow: 'Free Quote',
+      heading: 'Get Your Sacramento Roof Replacement Quote',
+      subtext:
+        'Tell us about your roof and schedule a free inspection. PRC 13 provides written quotes and clear material options for Sacramento homeowners.',
+      checklist: [
+        'Free inspection with written findings',
+        'Shingle, tile, and metal options',
+        'Most projects in one to two days',
+        'Insurance claim assistance available',
+      ],
+      submitLabel: 'Request Roof Replacement Quote',
+    },
+    clusterGuides: [
+      { slug: 'roof-replacement-cost-sacramento', title: 'Roof replacement cost in Sacramento', excerpt: 'What drives pricing and how quotes are built.' },
+      { slug: 'roofing-materials-replacement-sacramento', title: 'Shingle vs tile vs metal', excerpt: 'Compare materials for Sacramento replacements.' },
+      { slug: 'signs-you-need-roof-replacement-sacramento', title: '7 signs you need replacement', excerpt: 'When repair alone is no longer enough.' },
+      { slug: 'how-long-does-roof-replacement-take', title: 'How long replacement takes', excerpt: 'Typical timelines for Sacramento homes.' },
+      { slug: 'roof-replacement-process-sacramento', title: 'What happens during replacement', excerpt: 'Inspection through final walkthrough.' },
+      { slug: 'roof-replacement-insurance-sacramento', title: 'Replacement and insurance claims', excerpt: 'Documentation and adjuster support.' },
+      { slug: 'roof-replacement-financing-sacramento', title: 'Replacement financing', excerpt: 'Payment options on qualifying projects.' },
+    ],
   },
 };
 
