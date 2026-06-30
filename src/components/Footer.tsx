@@ -112,9 +112,6 @@ export default function Footer() {
           <p className="text-xs text-gray-600">
             Lic. #1087153 &nbsp;·&nbsp; Serving Greater Sacramento
           </p>
-          <a href="/llms.txt" className="text-xs text-gray-600 hover:text-gold transition-colors">
-            AI site facts
-          </a>
         </div>
       </div>
     </footer>
