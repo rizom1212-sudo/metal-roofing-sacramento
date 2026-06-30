@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
-import { Phone, CheckCircle, ArrowRight, AlertTriangle, Clock, Star, Shield, MapPin, CreditCard } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, AlertTriangle, Clock, Star, Shield, MapPin, CreditCard, BookOpen } from 'lucide-react';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -13,6 +13,12 @@ import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import { ASSETS } from '../data/assets';
+import { blogPosts } from '../data/blog';
+import { ROOF_REPAIR_HUB_RESOURCE_SLUGS } from '../data/blogRoofRepairCluster';
+
+const repairResources = ROOF_REPAIR_HUB_RESOURCE_SLUGS.map(slug => blogPosts.find(post => post.slug === slug)).filter(
+  (post): post is (typeof blogPosts)[number] => Boolean(post),
+);
 
 const repairSigns = [
   'Active leak or water stains on your ceiling',
@@ -382,27 +388,45 @@ export default function RoofRepair() {
         </div>
       </section>
 
-      {/* RELATED GUIDES */}
-      <section className="bg-cream py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <p className="text-body text-sm leading-relaxed">
-            Active leak right now? See{' '}
-            <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>{' '}
-            or our{' '}
-            <Link to="/emergency-roof-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento emergency page</Link>.
-            We also serve{' '}
-            <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>{' '}
-            and{' '}
-            <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
-            Helpful reads:{' '}
-            <Link to="/blog/roof-leak-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof leak repair</Link>,{' '}
-            <Link to="/blog/storm-damage-roof-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">storm damage repair</Link>, and{' '}
-            <Link to="/blog/roof-insurance-claims-storm-damage" className="text-gold font-semibold hover:text-gold-dark transition-colors">insurance claims after storms</Link>.
-            Start with a{' '}
-            <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
-            or{' '}
-            <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">contact PRC 13</Link>.
-          </p>
+      {/* ROOF REPAIR RESOURCES */}
+      <section className="bg-cream py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-start gap-3 mb-6">
+            <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
+            <div>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Roof Repair Resources</p>
+              <h2 className="section-heading mb-3">Sacramento Roof Repair Guides</h2>
+              <p className="text-body text-sm leading-relaxed max-w-3xl">
+                Planning a repair—not an emergency? These guides cover cost, shingles, flashing, chimneys, skylights, and tile systems for{' '}
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+                Active leak right now? See{' '}
+                <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>{' '}
+                or our{' '}
+                <Link to="/roof-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento repair page</Link>.
+                Start with a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+                or{' '}
+                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a repair estimate</Link>.
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {repairResources.map(resource => (
+              <Link
+                key={resource.slug}
+                to={`/blog/${resource.slug}`}
+                className="card-brand bg-white border border-gray-100 p-5 hover:border-gold/30 hover:shadow-sm transition-all duration-200 group"
+              >
+                <p className="text-xs text-gold font-semibold uppercase tracking-wider mb-2">{resource.readTime}</p>
+                <h3 className="font-bold text-headline text-sm leading-snug mb-2 group-hover:text-gold transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-body text-xs leading-relaxed line-clamp-3">{resource.excerpt}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

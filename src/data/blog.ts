@@ -9,6 +9,7 @@ import { roofReplacementClusterPosts } from './blogRoofReplacementCluster';
 import { metalRoofingClusterPosts } from './blogMetalRoofingCluster';
 import { guttersFasciaClusterPosts } from './blogGuttersFasciaCluster';
 import { commercialRoofingClusterPosts } from './blogCommercialRoofingCluster';
+import { roofRepairClusterPosts } from './blogRoofRepairCluster';
 
 export interface BlogRelatedService {
   label: string;
@@ -232,6 +233,7 @@ const rawBlogPosts: BlogPost[] = [
   ...metalRoofingClusterPosts,
   ...guttersFasciaClusterPosts,
   ...commercialRoofingClusterPosts,
+  ...roofRepairClusterPosts,
 ];
 
 export const blogPosts = applyClusterLinkEnrichmentsToPosts(rawBlogPosts);
@@ -244,3 +246,4 @@ export const ROOF_REPLACEMENT_CLUSTER_SLUGS = roofReplacementClusterPosts.map(po
 export const METAL_ROOFING_CLUSTER_SLUGS = metalRoofingClusterPosts.map(post => post.slug);
 export const GUTTERS_FASCIA_CLUSTER_SLUGS = guttersFasciaClusterPosts.map(post => post.slug);
 export const COMMERCIAL_ROOFING_CLUSTER_SLUGS = commercialRoofingClusterPosts.map(post => post.slug);
+export const ROOF_REPAIR_CLUSTER_SLUGS = roofRepairClusterPosts.map(post => post.slug);

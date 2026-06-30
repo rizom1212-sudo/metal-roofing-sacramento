@@ -13,6 +13,7 @@ import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
 import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
 import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
+import { ROOF_REPAIR_CLUSTER_CATEGORY } from '../data/blogRoofRepairCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export default function BlogPost() {
@@ -45,6 +46,7 @@ export default function BlogPost() {
   const isMetalGuide = post.category === METAL_CLUSTER_CATEGORY;
   const isGuttersFasciaGuide = post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY;
   const isCommercialGuide = post.category === COMMERCIAL_CLUSTER_CATEGORY;
+  const isRepairGuide = post.category === ROOF_REPAIR_CLUSTER_CATEGORY;
 
   return (
     <>
@@ -194,7 +196,9 @@ export default function BlogPost() {
                     ? 'Emergency Help'
                     : isCommercialGuide
                       ? 'Commercial Roofing'
-                      : isGuttersFasciaGuide
+                      : isRepairGuide
+                        ? 'Roof Repair'
+                        : isGuttersFasciaGuide
                         ? 'Gutters & Fascia'
                         : isMetalGuide
                         ? 'Metal Roofing'
@@ -211,7 +215,9 @@ export default function BlogPost() {
                     ? 'Need Emergency Roof Repair in Sacramento?'
                     : isCommercialGuide
                       ? 'Need Commercial Roofing Help in Sacramento?'
-                      : isGuttersFasciaGuide
+                      : isRepairGuide
+                        ? 'Need Roof Repair in Sacramento?'
+                        : isGuttersFasciaGuide
                         ? 'Need Gutter or Fascia Help in Sacramento?'
                         : isMetalGuide
                         ? 'Considering Metal Roofing in Sacramento?'
@@ -228,7 +234,9 @@ export default function BlogPost() {
                     ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
                     : isCommercialGuide
                       ? 'PRC 13 Roofing serves small to mid-size commercial properties in Sacramento with flat roof repair, replacement, maintenance, and leak response. Start with a commercial roof inspection or written estimate.'
-                      : isGuttersFasciaGuide
+                      : isRepairGuide
+                        ? 'PRC 13 Roofing helps Sacramento homeowners fix shingles, flashing, chimneys, skylights, and tile with honest inspections and written repair estimates before work begins.'
+                        : isGuttersFasciaGuide
                         ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and fascia repairs for Sacramento homeowners. Start with a free roof inspection or gutter evaluation.'
                         : isMetalGuide
                         ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a free inspection and panel-style consultation.'
@@ -252,7 +260,9 @@ export default function BlogPost() {
                     <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
                       {isCommercialGuide
                         ? 'Request Commercial Estimate'
-                        : isMetalGuide
+                        : isRepairGuide
+                          ? 'Get Roof Repair Estimate'
+                          : isMetalGuide
                         ? 'Request Metal Roofing Consultation'
                         : isGuttersFasciaGuide
                           ? 'Request Gutter Evaluation'
@@ -268,7 +278,9 @@ export default function BlogPost() {
                         ? '/emergency-roof-repair'
                         : isCommercialGuide
                           ? '/commercial-roofing'
-                          : isGuttersFasciaGuide
+                          : isRepairGuide
+                            ? '/roof-repair'
+                            : isGuttersFasciaGuide
                             ? '/gutters-siding'
                             : isMetalGuide
                             ? '/metal-roofing'
@@ -286,7 +298,9 @@ export default function BlogPost() {
                       ? 'Emergency roof repair page'
                       : isCommercialGuide
                         ? 'Commercial roofing services'
-                        : isGuttersFasciaGuide
+                        : isRepairGuide
+                          ? 'Roof repair services'
+                          : isGuttersFasciaGuide
                           ? 'Gutters & siding services'
                           : isMetalGuide
                           ? 'Metal roofing services'
@@ -298,6 +312,14 @@ export default function BlogPost() {
                                 ? 'Folsom roofing services'
                                 : 'Roof inspection service page'}
                   </Link>
+                  {isRepairGuide && (
+                    <Link
+                      to="/roof-repair-sacramento"
+                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
+                    >
+                      Sacramento repair page <ArrowRight size={15} />
+                    </Link>
+                  )}
                   {isCommercialGuide && (
                     <Link
                       to="/roof-inspection"

@@ -119,8 +119,8 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     relatedServices: coreServices(),
     relatedArticles: [
       article('roof-leak-at-night', 'What to do if your roof leaks at night'),
-      article('emergency-roof-repair-sacramento-guide', 'Emergency roof repair Sacramento'),
-      article('emergency-roof-repair-cost', 'Emergency roof repair cost'),
+      article('roof-flashing-repair-sacramento', 'Roof flashing repair'),
+      article('skylight-leak-repair-sacramento', 'Skylight leak repair'),
     ],
     faqs: [
       {
@@ -363,8 +363,8 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     relatedServices: coreServices(),
     relatedArticles: [
       article('wind-damage-roof-repair', 'Wind damage roof repair'),
-      article('hail-damage-roof-repair', 'Hail damage roof repair'),
-      article('roof-insurance-claims-storm-damage', 'Roof insurance claims after storms'),
+      article('missing-shingle-repair-sacramento', 'Missing shingle repair'),
+      article('roof-repair-cost-sacramento', 'Roof repair cost Sacramento'),
     ],
     faqs: [
       {
@@ -445,8 +445,8 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     relatedServices: coreServices(),
     relatedArticles: [
       article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair'),
-      article('roof-insurance-claims-storm-damage', 'Insurance claims after storm damage'),
-      article('when-to-call-emergency-roofer', 'When to call an emergency roofer'),
+      article('missing-shingle-repair-sacramento', 'Missing shingle repair'),
+      article('roof-repair-cost-sacramento', 'Roof repair cost Sacramento'),
     ],
     faqs: [
       {
@@ -522,8 +522,8 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     relatedServices: coreServices(),
     relatedArticles: [
       article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair'),
+      article('missing-shingle-repair-sacramento', 'Missing shingle repair'),
       article('emergency-roof-tarp-guide', 'Emergency roof tarp guide'),
-      article('emergency-roof-repair-sacramento-guide', 'Emergency roof repair Sacramento'),
     ],
     faqs: [
       {
