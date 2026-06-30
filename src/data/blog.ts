@@ -56,6 +56,38 @@ const rawBlogPosts: BlogPost[] = [
       { label: 'Roof Inspection', href: '/roof-inspection' },
       { label: 'Sacramento Service Areas', href: '/service-areas' },
     ],
+    faqs: [
+      {
+        question: 'What should I do first if my roof leaks during a Sacramento storm?',
+        answer:
+          'Protect the inside of your home first. Place a bucket or towels under active dripping, move furniture away from the area, and avoid standing under a bulging ceiling. Do not climb onto a wet roof.',
+      },
+      {
+        question: 'Should I go on the roof during rain to stop a leak?',
+        answer:
+          'No. Wet tile, metal, and steep shingle roofs are dangerous during storms. A professional roofer can assess whether temporary weatherproofing is safe after conditions improve.',
+      },
+      {
+        question: 'Should I document storm roof damage for insurance?',
+        answer:
+          'Yes. Take photos of ceiling stains, active dripping, damaged shingles visible from the ground, and affected belongings. Documentation helps if wind, debris, or another covered event caused the damage.',
+      },
+      {
+        question: 'Why is the ceiling stain not always below the roof leak?',
+        answer:
+          'Water can travel along rafters, decking, underlayment, or flashing before it shows up indoors. A roof inspection helps identify the actual entry point on the roof.',
+      },
+      {
+        question: 'When should I call PRC 13 after a storm leak?',
+        answer:
+          'Call as soon as it is safe—especially if water is actively entering the home. PRC 13 can help with emergency response and schedule a full inspection to find the source.',
+      },
+      {
+        question: 'Can PRC 13 inspect my roof after the storm passes?',
+        answer:
+          'Yes. Once conditions are safe, schedule a roof inspection so the failure can be traced on the roof and documented with clear next steps.',
+      },
+    ],
     body: [
       {
         type: 'paragraph',
@@ -116,6 +148,38 @@ const rawBlogPosts: BlogPost[] = [
       { label: 'Roof Repair', href: '/roof-repair' },
       { label: 'Gutters & Siding', href: '/gutters-siding' },
       { label: 'Roof Replacement', href: '/roof-replacement' },
+    ],
+    faqs: [
+      {
+        question: 'How often should Sacramento homeowners check their roof?',
+        answer:
+          'Check before winter rain, after wind events, and after long hot summers. Seasonal checks help catch missing shingles, clogged gutters, and cracked sealant before leaks appear indoors.',
+      },
+      {
+        question: 'What should I check before Sacramento winter rain?',
+        answer:
+          'Clean gutters and downspouts, clear debris from valleys, inspect sealant around vents and skylights, and schedule a roof inspection if you see stains or soft spots.',
+      },
+      {
+        question: 'What roof damage should I look for after wind?',
+        answer:
+          'From the ground, look for lifted shingles, missing ridge caps, debris impact areas, and flashing that appears bent or loose. Document damage with photos before cleanup.',
+      },
+      {
+        question: 'How does Sacramento heat affect roof maintenance?',
+        answer:
+          'Long heat stretches can accelerate shingle aging, granule loss, and attic ventilation problems. A maintenance inspection helps you plan before leaks develop.',
+      },
+      {
+        question: 'When is maintenance not enough?',
+        answer:
+          'Repeated leaks, widespread curling shingles, soft decking, or a roof near the end of its expected lifespan may point toward replacement instead of another repair.',
+      },
+      {
+        question: 'Does PRC 13 offer maintenance inspections in Sacramento?',
+        answer:
+          'Yes. PRC 13 provides free roof inspections with written findings so homeowners understand whether repair, maintenance, or replacement makes sense.',
+      },
     ],
     body: [
       {
@@ -180,6 +244,38 @@ const rawBlogPosts: BlogPost[] = [
       { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
       { label: 'Roof Repair', href: '/roof-repair' },
       { label: 'Roof Replacement', href: '/roof-replacement' },
+    ],
+    faqs: [
+      {
+        question: 'Should I get a roof inspection before filing an insurance claim?',
+        answer:
+          'Yes. A professional inspection with photos, notes, and a written assessment strengthens your claim before you contact your insurance company.',
+      },
+      {
+        question: 'How do I start a roof damage insurance claim in Sacramento?',
+        answer:
+          'Contact your homeowner\'s insurance provider and report the storm damage. They will assign an adjuster to assess the roof. Having a written inspection report in hand helps at this stage.',
+      },
+      {
+        question: 'Can PRC 13 meet with the insurance adjuster?',
+        answer:
+          'Yes. PRC 13 can be present during the adjuster visit to walk through documented damage and help ensure the scope is accurately represented.',
+      },
+      {
+        question: 'What happens after my roof claim is approved?',
+        answer:
+          'You receive a settlement amount. PRC 13 works within that budget to complete your roof repair or replacement. In many cases, out-of-pocket cost is limited to your deductible.',
+      },
+      {
+        question: 'Does PRC 13 help with both repair and replacement claims?',
+        answer:
+          'Yes. PRC 13 helps Sacramento homeowners with storm-related roof repair and full replacement depending on the documented damage and approved scope.',
+      },
+      {
+        question: 'What documentation does PRC 13 provide for claims?',
+        answer:
+          'PRC 13 documents issues with photos, notes, and a written assessment—information homeowners can use when filing a claim and meeting with an adjuster.',
+      },
     ],
     body: [
       {

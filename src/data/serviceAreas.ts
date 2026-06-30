@@ -48,6 +48,8 @@ const rawServiceAreas: ServiceAreaBase[] = [
       { title: 'Roof Inspections in Sacramento', href: '/roof-inspection-sacramento', desc: 'Free Sacramento roof inspections with written findings for leaks, storm wear, aging materials, and replacement planning.' },
       { title: 'Emergency Roof Repair in Sacramento', href: '/emergency-roof-repair-sacramento', desc: 'Urgent Sacramento roof help for active leaks, storm damage, temporary stabilization, and documentation when water is entering the home.' },
       { title: 'Metal Roofing in Sacramento', href: '/metal-roofing', desc: 'Standing seam and other metal roofing options for homeowners who want long life, heat performance, and lower maintenance.' },
+      { title: 'Gutters & Siding in Sacramento', href: '/gutters-siding', desc: 'Gutter installation, siding repair, and exterior protection for Sacramento homes with free inspections and clear recommendations.' },
+      { title: 'Commercial Roofing in Sacramento', href: '/commercial-roofing', desc: 'Flat roof repair, replacement, and maintenance for Sacramento-area commercial properties, including TPO, EPDM, and modified bitumen systems.' },
     ],
     faqs: [
       { question: 'What roof issues are common in Sacramento?', answer: 'Heat aging, granule loss, cracked pipe boots, clogged valleys, and leaks after the first strong winter rain are common Sacramento roof issues.' },

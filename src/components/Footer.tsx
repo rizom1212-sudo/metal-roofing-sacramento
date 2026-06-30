@@ -11,6 +11,7 @@ const tier1Links = [
   { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
   { label: 'Roof Inspection', href: '/roof-inspection' },
   { label: 'Metal Roofing', href: '/metal-roofing' },
+  { label: 'Commercial Roofing', href: '/commercial-roofing' },
   { label: 'Gutters & Siding', href: '/gutters-siding' },
 ];
 

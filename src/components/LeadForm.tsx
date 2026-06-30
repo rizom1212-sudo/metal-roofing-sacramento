@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Phone } from 'lucide-react';
 import { submitLead } from '../lib/airtable';
 import { PRIMARY_CTA } from '../data/cta';
@@ -15,6 +15,14 @@ const REASON_OPTIONS = [
 ] as const;
 
 const PRIVACY_COPY = 'We won\'t share your info. A PRC 13 team member will contact you about your roof.';
+
+function FieldLabel({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
+  return (
+    <label htmlFor={htmlFor} className="sr-only">
+      {children}
+    </label>
+  );
+}
 
 function normalizePhone(value: string): string {
   return value.replace(/\D/g, '');
@@ -46,6 +54,14 @@ export default function LeadForm({
   compactSpacing = false,
   submitLabel,
 }: LeadFormProps) {
+  const fieldId = useId();
+  const ids = {
+    name: `${fieldId}-name`,
+    phone: `${fieldId}-phone`,
+    email: `${fieldId}-email`,
+    reason: `${fieldId}-reason`,
+    message: `${fieldId}-message`,
+  };
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -146,13 +162,16 @@ export default function LeadForm({
     return (
       <form onSubmit={handleSubmit} className={`${compact || compactSpacing ? 'space-y-2.5' : 'space-y-3'} ${className}`} noValidate>
         <div>
+          <FieldLabel htmlFor={ids.name}>Your name (required)</FieldLabel>
           <input
+            id={ids.name}
             name="name"
             value={form.name}
             onChange={handleChange}
             onBlur={() => setTouched(t => ({ ...t, name: true }))}
             placeholder="Your Name *"
             required
+            autoComplete="name"
             aria-invalid={touched.name && !form.name.trim()}
             className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline placeholder-gray-400 focus:outline-none focus:border-gold transition-colors ${touched.name && !form.name.trim() ? 'border-red-400' : ''}`}
           />
@@ -161,7 +180,9 @@ export default function LeadForm({
           )}
         </div>
         <div>
+          <FieldLabel htmlFor={ids.phone}>Phone number (required)</FieldLabel>
           <input
+            id={ids.phone}
             name="phone"
             value={form.phone}
             onChange={handleChange}
@@ -179,42 +200,54 @@ export default function LeadForm({
           )}
         </div>
         {!compact && !hideEmail && (
-          <input
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Email (optional)"
-            type="email"
-            autoComplete="email"
-            className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline placeholder-gray-400 focus:outline-none focus:border-gold transition-colors`}
-          />
+          <>
+            <FieldLabel htmlFor={ids.email}>Email (optional)</FieldLabel>
+            <input
+              id={ids.email}
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Email (optional)"
+              type="email"
+              autoComplete="email"
+              className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline placeholder-gray-400 focus:outline-none focus:border-gold transition-colors`}
+            />
+          </>
         )}
         {!hideReason && (
-          <select
-            name="reason"
-            value={form.reason}
-            onChange={handleChange}
-            onBlur={() => setTouched(t => ({ ...t, reason: true }))}
-            className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 focus:outline-none focus:border-gold transition-colors ${
-              compact && !form.reason ? 'text-sm text-gray-400' : 'text-headline'
-            }`}
-          >
-            {reasonOptions.map(opt => (
-              <option key={opt.value || 'default'} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+          <>
+            <FieldLabel htmlFor={ids.reason}>What do you need help with?</FieldLabel>
+            <select
+              id={ids.reason}
+              name="reason"
+              value={form.reason}
+              onChange={handleChange}
+              onBlur={() => setTouched(t => ({ ...t, reason: true }))}
+              className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 focus:outline-none focus:border-gold transition-colors ${
+                compact && !form.reason ? 'text-sm text-gray-400' : 'text-headline'
+              }`}
+            >
+              {reasonOptions.map(opt => (
+                <option key={opt.value || 'default'} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </>
         )}
         {!compact && (
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="What's going on with your roof? (optional)"
-            rows={messageRows}
-            className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline placeholder-gray-400 focus:outline-none focus:border-gold transition-colors resize-none`}
-          />
+          <>
+            <FieldLabel htmlFor={ids.message}>Message about your roof (optional)</FieldLabel>
+            <textarea
+              id={ids.message}
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder="What's going on with your roof? (optional)"
+              rows={messageRows}
+              className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline placeholder-gray-400 focus:outline-none focus:border-gold transition-colors resize-none`}
+            />
+          </>
         )}
         <button
           type="submit"
@@ -240,19 +273,24 @@ export default function LeadForm({
     <form onSubmit={handleSubmit} className={className} noValidate>
       <div className="flex flex-col gap-2.5">
         <div>
+          <FieldLabel htmlFor={ids.name}>Your name (required)</FieldLabel>
           <input
+            id={ids.name}
             name="name"
             value={form.name}
             onChange={handleChange}
             onBlur={() => setTouched(t => ({ ...t, name: true }))}
             placeholder="Your Name *"
             required
+            autoComplete="name"
             aria-invalid={touched.name && !form.name.trim()}
             className={`input-brand w-full px-4 py-3 bg-white/10 border border-white/25 text-white placeholder-white/55 focus:outline-none focus:border-gold focus:bg-white/15 transition-colors text-sm ${touched.name && !form.name.trim() ? 'border-red-400' : ''}`}
           />
         </div>
         <div>
+          <FieldLabel htmlFor={ids.phone}>Phone number (required)</FieldLabel>
           <input
+            id={ids.phone}
             name="phone"
             value={form.phone}
             onChange={handleChange}
@@ -269,7 +307,9 @@ export default function LeadForm({
         </div>
         {isHero && (
           <div>
+            <FieldLabel htmlFor={ids.reason}>What do you need help with?</FieldLabel>
             <select
+              id={ids.reason}
               name="reason"
               value={form.reason}
               onChange={handleChange}
