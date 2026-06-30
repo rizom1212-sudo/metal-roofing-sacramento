@@ -25,7 +25,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
   {
     slug: 'emergency-roof-repair-sacramento-guide',
     title: 'Emergency Roof Repair Sacramento: What to Do When You Need Help Fast',
-    seoTitle: 'Emergency Roof Repair Sacramento | PRC 13 Roofing',
+    seoTitle: 'What to Do for Emergency Roof Repair in Sacramento | PRC 13',
     excerpt:
       'Active leak or storm damage in Sacramento? Learn how emergency roof repair works, how fast PRC 13 responds, and what to do before the crew arrives.',
     date: 'June 18, 2026',

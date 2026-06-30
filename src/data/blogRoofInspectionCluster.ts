@@ -23,7 +23,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
   {
     slug: 'free-roof-inspection-sacramento',
     title: 'Free Roof Inspection Sacramento: What Homeowners Should Know',
-    seoTitle: 'Free Roof Inspection Sacramento | PRC 13 Roofing',
+    seoTitle: 'What to Expect From a Free Sacramento Roof Inspection | PRC 13 Roofing',
     excerpt:
       'PRC 13 Roofing offers free roof inspections in Sacramento with no obligation. Learn what is included, how fast you can get scheduled, and when a free inspection makes sense.',
     date: 'June 10, 2026',
