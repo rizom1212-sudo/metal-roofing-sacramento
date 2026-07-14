@@ -38,13 +38,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
 
   // —— Roof Inspection cluster ——
-  'free-roof-inspection-sacramento': {
-    patchFirstParagraph:
-      'Short answer: a [free roof inspection](/roof-inspection) in Sacramento should give you a clear picture of roof condition without a sales pitch. PRC 13 Roofing inspects your roof, walks you through findings on our main [roof inspection service page](/roof-inspection), and explains whether repair, maintenance, or replacement makes sense.',
-    appendParagraphs: [
-      'Many homeowners in [Sacramento](/service-areas/sacramento) compare our visit with our [homeowner inspection checklist](/blog/roof-inspection-checklist) and [typical inspection costs](/blog/roof-inspection-cost-sacramento). If storm damage is involved, read about [insurance roof inspections](/blog/insurance-roof-inspection-sacramento) before you [contact us](/contact) to schedule.',
-    ],
-  },
   'roof-inspection-cost-sacramento': {
     appendParagraphs: [
       'Standard inspections with PRC 13 are free on our [roof inspection](/roof-inspection) page. For Sacramento scheduling, see the [Sacramento service area](/service-areas/sacramento). Related reading: [what happens during an inspection](/blog/what-happens-during-roof-inspection) and [signs you need one](/blog/signs-you-need-roof-inspection). [Request a visit](/contact) when ready.',
@@ -92,20 +85,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
 
   // —— Emergency Roof Repair cluster ——
-  'emergency-roof-repair-sacramento-guide': {
-    patchFirstParagraph:
-      'Short answer: if water is entering your home, call first, contain the leak indoors, and do not climb on the roof. PRC 13 Roofing provides [emergency roof repair](/emergency-roof-repair) across Sacramento with fast assessment.',
-    appendParagraphs: [
-      'For active leaks, read [roof leak repair in Sacramento](/blog/roof-leak-repair-sacramento) and [when to call an emergency roofer](/blog/when-to-call-emergency-roofer). [Sacramento service area](/service-areas/sacramento) · standard [roof repair](/roof-repair) · [contact PRC 13](/contact).',
-    ],
-  },
-  'roof-leak-repair-sacramento': {
-    patchFirstParagraph:
-      'Short answer: [roof leak repair in Sacramento](/roof-repair) requires tracing the water path on the roof—not just patching the ceiling. PRC 13 inspects penetrations, valleys, and flashing before recommending a targeted fix or [emergency response](/emergency-roof-repair).',
-    appendParagraphs: [
-      'Leaks after hours? See [what to do at night](/blog/roof-leak-at-night). Storm-related? Review [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [tarp guidance](/blog/emergency-roof-tarp-guide). Planned repairs: [flashing repair](/blog/roof-flashing-repair-sacramento) · [skylight leaks](/blog/skylight-leak-repair-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
-    ],
-  },
   'emergency-roof-tarp-guide': {
     appendParagraphs: [
       'After tarping, plan permanent work through [roof repair](/roof-repair) or [emergency roof repair](/emergency-roof-repair). [Sacramento homeowners](/service-areas/sacramento) should review [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [wind damage fixes](/blog/wind-damage-roof-repair). [Sacramento emergency page](/emergency-roof-repair) · [Contact](/contact).',
@@ -134,11 +113,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   'emergency-roof-repair-cost': {
     appendParagraphs: [
       'Compare routine pricing on [roof repair](/roof-repair) and [leak repair in Sacramento](/blog/roof-leak-repair-sacramento). Insurance may apply—read [storm damage claims](/blog/roof-insurance-claims-storm-damage). [Emergency services](/emergency-roof-repair) · [Contact](/contact).',
-    ],
-  },
-  'roof-insurance-claims-storm-damage': {
-    appendParagraphs: [
-      'Start with [emergency roof repair](/emergency-roof-repair) when water is active. [Sacramento](/service-areas/sacramento) homeowners pair claims with [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [insurance inspections](/blog/insurance-roof-inspection-sacramento). [Roof repair](/roof-repair) · [Contact](/contact).',
     ],
   },
   'when-to-call-emergency-roofer': {
@@ -349,11 +323,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
       'Short answer: Sacramento [roof repair](/roof-repair) cost depends on what failed on the roof—not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix.',
     appendParagraphs: [
       'Compare scope with [missing shingle repair](/blog/missing-shingle-repair-sacramento) and [flashing repair](/blog/roof-flashing-repair-sacramento). When repair no longer makes sense, review [roof replacement](/roof-replacement). [Free inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
-    ],
-  },
-  'missing-shingle-repair-sacramento': {
-    appendParagraphs: [
-      'Schedule through [roof repair](/roof-repair) or [Sacramento roof repair](/roof-repair). Storm-related uplift? See [wind damage repair](/blog/wind-damage-roof-repair). [Repair cost guide](/blog/roof-repair-cost-sacramento) · [Roof inspection](/roof-inspection) · [Replacement planning](/roof-replacement) · [Contact](/contact).',
     ],
   },
   'roof-flashing-repair-sacramento': {

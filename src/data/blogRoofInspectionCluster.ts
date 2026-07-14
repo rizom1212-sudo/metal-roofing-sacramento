@@ -1,5 +1,6 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import { upgradedFreeRoofInspectionSacramento } from './blogContentUpgrades';
 
 const CATEGORY = 'Roof Inspection';
 const COVER_A = ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp');
@@ -19,103 +20,7 @@ const article = (slug: string, label: string): BlogRelatedService => ({
 });
 
 export const roofInspectionClusterPosts: BlogPost[] = [
-  {
-    slug: 'free-roof-inspection-sacramento',
-    title: 'Free Roof Inspection Sacramento: What Homeowners Should Know',
-    seoTitle: 'Sacramento Free Roof Inspection Guide | PRC 13 Roofing',
-    excerpt:
-      'Free Sacramento roof inspections from PRC 13 with no obligation. Learn what is included, how fast you can schedule, and when an inspection makes sense.',
-    date: 'June 10, 2026',
-    readTime: '6 min read',
-    category: CATEGORY,
-    coverImage: COVER_A,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('roof-inspection-cost-sacramento', 'Roof inspection cost in Sacramento'),
-      article('what-happens-during-roof-inspection', 'What happens during a roof inspection'),
-      article('signs-you-need-roof-inspection', 'Signs you need a roof inspection'),
-    ],
-    faqs: [
-      {
-        question: 'Is a roof inspection really free with PRC 13 Roofing?',
-        answer:
-          'Yes. Our residential roof inspections in Sacramento are free with no obligation. We inspect the roof, explain what we find, and let you decide next steps without pressure.',
-      },
-      {
-        question: 'How fast can I get a free roof inspection in Sacramento?',
-        answer:
-          'Most Sacramento homeowners are scheduled within 24 hours, often same day or next business day depending on weather and crew availability.',
-      },
-      {
-        question: 'What does a free roof inspection include?',
-        answer:
-          'We review shingles or tile, flashing, penetrations, gutters, attic ventilation clues, and visible decking concerns. You receive an honest walkthrough and written summary.',
-      },
-      {
-        question: 'Do I need a free inspection if I only see one missing shingle?',
-        answer:
-          'Often yes. A single missing shingle can expose underlayment, and nearby shingles may be brittle or poorly sealed. A quick inspection confirms whether a small repair is enough.',
-      },
-      {
-        question: 'Does PRC 13 serve areas outside Sacramento for free inspections?',
-        answer:
-          'Yes. We serve Roseville, Rocklin, Folsom, Elk Grove, El Dorado Hills, Rancho Cordova, and nearby communities. See our Sacramento service area page for the full list.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: a free roof inspection in Sacramento should give you a clear picture of roof condition without a sales pitch. PRC 13 Roofing inspects your roof, walks you through findings, and explains whether repair, maintenance, or replacement makes sense.',
-      },
-      {
-        type: 'heading',
-        content: 'Why Sacramento Homeowners Search for a Free Roof Inspection',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Roof problems are not always obvious from the ground. Sacramento heat dries shingles while underlayment and flashing can fail underneath. After winter rain or wind, homeowners often notice ceiling stains, granules in gutters, or lifted shingles and want answers before costs grow.',
-      },
-      {
-        type: 'heading',
-        content: 'What PRC 13 Checks During a Free Inspection',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Shingle, tile, or metal surface condition and age-related wear',
-          'Flashing at chimneys, vents, skylights, and wall intersections',
-          'Gutters, drainage, and fascia for water routing problems',
-          'Attic-side clues such as moisture, ventilation issues, or soft decking',
-          'Storm or leak damage that may need repair or insurance documentation',
-        ],
-      },
-      {
-        type: 'links',
-        content: 'Related guides:',
-        links: [
-          article('what-happens-during-roof-inspection', 'What happens during a roof inspection'),
-          article('roof-inspection-checklist', 'Roof inspection checklist for homeowners'),
-        ],
-      },
-      {
-        type: 'heading',
-        content: 'Free Inspection vs. Paid Third-Party Reports',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Some real estate or insurance situations call for a paid independent report. For most homeowners deciding whether to repair or replace, a professional roof inspection from a licensed Sacramento roofer is the practical first step. PRC 13 does not charge for standard residential inspections.',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Ready to move forward? Schedule a free roof inspection through our contact page or call PRC 13 Roofing. We serve Sacramento and surrounding communities with honest assessments and clear written findings.',
-      },
-    ],
-  },
+  upgradedFreeRoofInspectionSacramento,
   {
     slug: 'roof-inspection-cost-sacramento',
     title: 'Roof Inspection Cost in Sacramento: Free vs. Paid Options',

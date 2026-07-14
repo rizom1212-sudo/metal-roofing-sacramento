@@ -37,6 +37,8 @@ export interface BlogSection {
   content: string;
   items?: string[];
   links?: BlogRelatedService[];
+  /** Heading level; defaults to 2 when type is heading */
+  level?: 2 | 3;
 }
 
 const rawBlogPosts: BlogPost[] = [

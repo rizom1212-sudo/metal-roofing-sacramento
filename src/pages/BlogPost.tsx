@@ -132,10 +132,15 @@ export default function BlogPost() {
               <div className="space-y-6">
                 {post.body.map((section, i) => {
                   if (section.type === 'heading') {
+                    const HeadingTag = section.level === 3 ? 'h3' : 'h2';
+                    const headingClass =
+                      section.level === 3
+                        ? 'text-lg font-bold text-headline mt-8 mb-2'
+                        : 'text-xl font-bold text-headline mt-10 mb-2';
                     return (
-                      <h2 key={i} className="text-xl font-bold text-headline mt-10 mb-2">
+                      <HeadingTag key={i} className={headingClass}>
                         {section.content}
-                      </h2>
+                      </HeadingTag>
                     );
                   }
                   if (section.type === 'list' && section.items) {

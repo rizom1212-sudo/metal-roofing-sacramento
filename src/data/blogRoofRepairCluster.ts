@@ -1,5 +1,6 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import { upgradedMissingShingleRepairSacramento } from './blogContentUpgrades';
 
 export const ROOF_REPAIR_CLUSTER_CATEGORY = 'Sacramento Roof Repair';
 
@@ -137,97 +138,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: 'missing-shingle-repair-sacramento',
-    title: 'Missing Shingle Repair in Sacramento: When a Small Fix Is Enough',
-    seoTitle: 'Missing Shingle Repair Sacramento | PRC 13 Roofing',
-    excerpt:
-      'One missing shingle in Sacramento can expose underlayment to sun and rain. PRC 13 replaces damaged tabs and confirms whether a localized repair is still sound.',
-    date: 'July 8, 2026',
-    readTime: '5 min read',
-    category: ROOF_REPAIR_CLUSTER_CATEGORY,
-    coverImage: COVER_B,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('roof-repair-cost-sacramento', 'Roof repair cost Sacramento'),
-      article('roof-flashing-repair-sacramento', 'Roof flashing repair'),
-      article('wind-damage-roof-repair', 'Wind damage roof repair'),
-    ],
-    faqs: [
-      {
-        question: 'Can you repair just one or two missing shingles?',
-        answer:
-          'Yes, when surrounding shingles are flexible and the underlayment is dry. PRC 13 matches style and color as closely as available stock allows.',
-      },
-      {
-        question: 'Why do shingles go missing in Sacramento?',
-        answer:
-          'Wind events lift unsealed tabs, brittle seal strips fail after heat cycles, and foot traffic during prior work can break tabs along ridges.',
-      },
-      {
-        question: 'Is a missing shingle an emergency?',
-        answer:
-          'If decking is exposed and rain is forecast, treat it urgently. Otherwise schedule prompt repair before the next storm—active interior leaks need emergency help.',
-      },
-      {
-        question: 'Will new shingles match my existing roof?',
-        answer:
-          'We source the closest match available. Aged roofs may show slight color variation on new tabs, which we explain before work starts.',
-      },
-      {
-        question: 'Should I repair or replace after wind damage?',
-        answer:
-          'Isolated missing tabs often qualify for repair. Widespread lifting or creasing may point toward replacement—PRC 13 documents both options after inspection.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: missing shingle repair in Sacramento is worthwhile when the roof still has useful life and the underlayment beneath the gap is intact. PRC 13 replaces the tab, reseals adjacent shingles, and checks whether wind or heat aging caused the failure.',
-      },
-      {
-        type: 'heading',
-        content: 'When Missing Shingle Repair Makes Sense',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'One to several tabs missing after a wind event',
-          'Lifted shingles that can be re-adhered if sealant is still viable',
-          'Cracked ridge caps isolated to a short section',
-          'Prior repair area that failed at the edge—not across the whole slope',
-        ],
-      },
-      {
-        type: 'heading',
-        content: 'When Repair Is Not Enough',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Widespread curling, granule loss, brittle shingles that break when handled, or soft decking usually mean replacement is the practical path. PRC 13 flags these signs during inspection so you are not paying for patches on a failing system.',
-      },
-      {
-        type: 'links',
-        content: 'Storm-related damage:',
-        links: [
-          article('wind-damage-roof-repair', 'Wind damage roof repair'),
-          article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair Sacramento'),
-        ],
-      },
-      {
-        type: 'heading',
-        content: 'Schedule a Shingle Repair Assessment',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'A quick ground check cannot confirm underlayment condition. Book a free roof inspection and get a written repair recommendation for your Sacramento home.',
-      },
-    ],
-  },
+  upgradedMissingShingleRepairSacramento,
   {
     slug: 'roof-flashing-repair-sacramento',
     title: 'Roof Flashing Repair in Sacramento: Stopping Leaks at Transitions',

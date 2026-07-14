@@ -1,5 +1,10 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import {
+  upgradedEmergencyRoofRepairGuide,
+  upgradedRoofLeakRepairSacramento,
+  upgradedRoofInsuranceClaimsStormDamage,
+} from './blogContentUpgrades';
 
 export const EMERGENCY_CLUSTER_CATEGORY = 'Emergency Roof Repair';
 
@@ -21,173 +26,8 @@ const article = (slug: string, label: string): BlogRelatedService => ({
 });
 
 export const emergencyRoofRepairClusterPosts: BlogPost[] = [
-  {
-    slug: 'emergency-roof-repair-sacramento-guide',
-    title: 'Emergency Roof Repair Sacramento: What to Do When You Need Help Fast',
-    seoTitle: 'What to Do for Emergency Roof Repair in Sacramento | PRC 13',
-    excerpt:
-      'Active leak or storm damage in Sacramento? Learn how emergency roof repair works, how fast PRC 13 responds, and what to do before the crew arrives.',
-    date: 'June 18, 2026',
-    readTime: '6 min read',
-    category: EMERGENCY_CLUSTER_CATEGORY,
-    coverImage: COVER_A,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('when-to-call-emergency-roofer', 'When to call an emergency roofer'),
-      article('roof-leak-repair-sacramento', 'Roof leak repair Sacramento'),
-      article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair'),
-    ],
-    faqs: [
-      {
-        question: 'How fast can PRC 13 respond to emergency roof repair in Sacramento?',
-        answer:
-          'Call 916-761-3866 for urgent leaks. We prioritize active water intrusion and often provide same-day assessment when conditions are safe.',
-      },
-      {
-        question: 'What counts as a roofing emergency?',
-        answer:
-          'Active interior leaks, large missing shingle sections exposing decking, fallen tree impacts, and wind-lifted edges that will fail in the next rain.',
-      },
-      {
-        question: 'Does PRC 13 charge extra for emergency calls?',
-        answer:
-          'We provide a written scope before work begins. You will know the cost of temporary stabilization and permanent repair upfront.',
-      },
-      {
-        question: 'Do you serve suburbs outside Sacramento city limits?',
-        answer:
-          'Yes—including Roseville, Rocklin, Folsom, Elk Grove, Rancho Cordova, and El Dorado Hills.',
-      },
-      {
-        question: 'Can you help with insurance after storm damage?',
-        answer:
-          'Yes. We document damage with photos and notes and can meet adjusters on site when needed.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: if water is entering your home, call first, contain the leak indoors, and do not climb on the roof. PRC 13 Roofing provides emergency roof repair across Sacramento with fast assessment and clear repair options.',
-      },
-      {
-        type: 'heading',
-        content: 'When Sacramento Homeowners Need Emergency Roof Repair',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Winter atmospheric rivers, summer heat that brittles sealant, and Delta breeze wind events all stress Sacramento roofs. Emergencies usually show up as ceiling stains, dripping during rain, or visible openings after wind—not as slow cosmetic wear.',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Active leaks with water on floors or furniture',
-          'Missing shingle sections or lifted tile after wind',
-          'Tree limb impacts on ridges or valleys',
-          'Flashing pulled away at chimneys or walls',
-          'Commercial flat roofs with new interior ceiling stains',
-        ],
-      },
-      {
-        type: 'links',
-        content: 'Related guides:',
-        links: [
-          article('when-to-call-emergency-roofer', 'When to call an emergency roofer'),
-          { label: 'Emergency roof repair service', href: '/emergency-roof-repair' },
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'PRC 13 stabilizes urgent problems when appropriate, then plans permanent repair. Call now or request help through our contact page if water is active inside your home.',
-      },
-    ],
-  },
-  {
-    slug: 'roof-leak-repair-sacramento',
-    title: 'Roof Leak Repair Sacramento: Find the Source and Fix It Right',
-    seoTitle: 'Roof Leak Repair Sacramento | PRC 13 Roofing',
-    excerpt:
-      'Sacramento roof leak repair starts with finding the real entry point—not just the ceiling stain. PRC 13 explains common causes and how we fix leaks properly.',
-    date: 'June 18, 2026',
-    readTime: '5 min read',
-    category: EMERGENCY_CLUSTER_CATEGORY,
-    coverImage: COVER_B,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('roof-leak-at-night', 'What to do if your roof leaks at night'),
-      article('roof-flashing-repair-sacramento', 'Roof flashing repair'),
-      article('skylight-leak-repair-sacramento', 'Skylight leak repair'),
-    ],
-    faqs: [
-      {
-        question: 'Why does my Sacramento roof leak in one spot but damage another?',
-        answer:
-          'Water travels along decking, rafters, and underlayment before it drips. The stain location is often downhill from the actual roof failure.',
-      },
-      {
-        question: 'Can a small leak wait until summer?',
-        answer:
-          'No. Even slow leaks wet insulation and framing. Sacramento winter rain can turn a minor flashing issue into drywall replacement.',
-      },
-      {
-        question: 'What are the most common leak sources in Sacramento?',
-        answer:
-          'Failed pipe boots, chimney flashing, valley debris, and aged shingle seal strips in heat cycles.',
-      },
-      {
-        question: 'Does PRC 13 repair or only replace?',
-        answer:
-          'We repair when it makes sense. If the roof is near end of life, we explain replacement honestly instead of stacking patches.',
-      },
-      {
-        question: 'How soon can you repair a leak after inspection?',
-        answer:
-          'Many repairs are scheduled within days. Active emergencies are prioritized for assessment and temporary stabilization first.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: roof leak repair in Sacramento requires tracing the water path on the roof, not just patching the ceiling. PRC 13 inspects penetrations, valleys, and flashing before recommending a targeted fix.',
-      },
-      {
-        type: 'heading',
-        content: 'Common Sacramento Leak Patterns',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Pipe boot cracks from UV exposure',
-          'Valley clogging that forces water under shingles',
-          'Skylight curb seal failure',
-          'HVAC platform flashing gaps on older homes',
-          'Tile underlayment failure with intact-looking tile',
-        ],
-      },
-      {
-        type: 'heading',
-        content: 'Repair vs. Emergency Response',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Steady dripping during rain is an emergency—call PRC 13 immediately. Intermittent stains after heavy rain still need prompt roof leak repair before mold develops in attic insulation.',
-      },
-      {
-        type: 'links',
-        content: 'Next steps:',
-        links: [
-          { label: 'Roof repair services', href: '/roof-repair' },
-          article('roof-leak-at-night', 'Roof leak at night guide'),
-        ],
-      },
-    ],
-  },
+  upgradedEmergencyRoofRepairGuide,
+  upgradedRoofLeakRepairSacramento,
   {
     slug: 'emergency-roof-tarp-guide',
     title: 'Emergency Roof Tarp Guide for Sacramento Homeowners',
@@ -666,85 +506,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: 'roof-insurance-claims-storm-damage',
-    title: 'Roof Insurance Claims After Storm Damage in Sacramento',
-    seoTitle: 'Roof Insurance Claims After Storm Damage | Sacramento',
-    excerpt:
-      'Filing a roof insurance claim after storm damage in Sacramento? PRC 13 explains documentation, adjuster visits, and how emergency repairs fit the process.',
-    date: 'June 22, 2026',
-    readTime: '6 min read',
-    category: EMERGENCY_CLUSTER_CATEGORY,
-    coverImage: COVER_A,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair'),
-      article('how-insurance-claims-work-for-roof-damage', 'How insurance claims work for roof damage'),
-      article('emergency-roof-repair-cost', 'Emergency roof repair cost'),
-    ],
-    faqs: [
-      {
-        question: 'Should I call a roofer or insurance first after storm damage?',
-        answer:
-          'Call PRC 13 first for documentation. Then file your claim with photos and our findings. Active leaks still need immediate emergency roof repair.',
-      },
-      {
-        question: 'Will emergency tarping affect my claim?',
-        answer:
-          'Reasonable temporary repairs are often encouraged by insurers to prevent further damage.',
-      },
-      {
-        question: 'Can PRC 13 meet my adjuster on the roof?',
-        answer:
-          'Yes. We walk through documented damage so nothing is missed during the adjuster inspection.',
-      },
-      {
-        question: 'What if my claim is partially denied?',
-        answer:
-          'We explain which damage is functional versus cosmetic and what repair options remain without coverage.',
-      },
-      {
-        question: 'Does age of the roof affect payout?',
-        answer:
-          'Yes. Many policies apply depreciation for older roofs. We still document storm-related damage clearly.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: roof insurance claims after storm damage work best with professional documentation before the adjuster arrives. PRC 13 supports Sacramento homeowners with photos, written findings, and repair estimates aligned to approved scope.',
-      },
-      {
-        type: 'heading',
-        content: 'Steps That Strengthen Your Claim',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Emergency roof repair to stop interior damage',
-          'Date-stamped photos of roof and interior impact',
-          'Written roofer assessment noting wind, hail, or debris cause',
-          'Adjuster walkthrough with your contractor present',
-          'Repair or replacement estimate matching approved line items',
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Insurance covers sudden events—not gradual wear. Sacramento homeowners who wait weeks after a storm risk insurers attributing damage to maintenance neglect instead of the event.',
-      },
-      {
-        type: 'links',
-        content: 'Related reading:',
-        links: [
-          article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair Sacramento'),
-          { label: 'Emergency roof repair', href: '/emergency-roof-repair' },
-        ],
-      },
-    ],
-  },
+  upgradedRoofInsuranceClaimsStormDamage,
   {
     slug: 'when-to-call-emergency-roofer',
     title: 'When To Call An Emergency Roofer in Sacramento',
