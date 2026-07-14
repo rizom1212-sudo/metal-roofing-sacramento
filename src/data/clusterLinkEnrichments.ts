@@ -8,22 +8,22 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   // —— Legacy blog posts ——
   'what-to-do-roof-leak-sacramento-storm': {
     appendParagraphs: [
-      'For urgent help, call for [emergency roof repair](/emergency-roof-repair) or see [Sacramento emergency scheduling](/emergency-roof-repair-sacramento). After the storm, read [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [roof leak repair](/blog/roof-leak-repair-sacramento). [Sacramento](/service-areas/sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
+      'For urgent help, call for [emergency roof repair](/emergency-roof-repair). After the storm, read [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [roof leak repair](/blog/roof-leak-repair-sacramento). [Sacramento](/service-areas/sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
   'sacramento-roof-maintenance-checklist': {
     appendParagraphs: [
-      'Pair seasonal checks with a [professional roof inspection](/roof-inspection) or [Sacramento inspection page](/roof-inspection-sacramento). See [how often to inspect](/blog/how-often-should-you-inspect-your-roof) and [inspection checklist](/blog/roof-inspection-checklist). [Sacramento service area](/service-areas/sacramento) · [Roof repair](/roof-repair) · [Contact](/contact).',
+      'Pair seasonal checks with a [professional roof inspection](/roof-inspection). See [how often to inspect](/blog/how-often-should-you-inspect-your-roof) and [inspection checklist](/blog/roof-inspection-checklist). [Sacramento service area](/service-areas/sacramento) · [Roof repair](/roof-repair) · [Contact](/contact).',
     ],
   },
   'how-long-does-roof-replacement-take': {
     appendParagraphs: [
-      'Planning a project? Start on [roof replacement](/roof-replacement) and [roof replacement Sacramento](/roof-replacement-sacramento). Read [replacement process](/blog/roof-replacement-process-sacramento) and [signs you need replacement](/blog/signs-you-need-roof-replacement-sacramento). [Sacramento](/service-areas/sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
+      'Planning a project? Start on [roof replacement](/roof-replacement). Read [replacement process](/blog/roof-replacement-process-sacramento) and [signs you need replacement](/blog/signs-you-need-roof-replacement-sacramento). [Sacramento](/service-areas/sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
   'signs-you-need-roof-replacement-sacramento': {
     appendParagraphs: [
-      'Schedule a [free roof inspection](/roof-inspection) or [Sacramento replacement page](/roof-replacement-sacramento). Compare [replacement cost](/blog/roof-replacement-cost-sacramento) and [how long replacement takes](/blog/how-long-does-roof-replacement-take). [Roof replacement](/roof-replacement) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Schedule a [free roof inspection](/roof-inspection). Compare [replacement cost](/blog/roof-replacement-cost-sacramento) and [how long replacement takes](/blog/how-long-does-roof-replacement-take). [Roof replacement](/roof-replacement) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'how-insurance-claims-work-for-roof-damage': {
@@ -40,29 +40,29 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   // —— Roof Inspection cluster ——
   'free-roof-inspection-sacramento': {
     patchFirstParagraph:
-      'Short answer: a [free roof inspection in Sacramento](/roof-inspection-sacramento) should give you a clear picture of roof condition without a sales pitch. PRC 13 Roofing inspects your roof, walks you through findings on our main [roof inspection service page](/roof-inspection), and explains whether repair, maintenance, or replacement makes sense.',
+      'Short answer: a [free roof inspection](/roof-inspection) in Sacramento should give you a clear picture of roof condition without a sales pitch. PRC 13 Roofing inspects your roof, walks you through findings on our main [roof inspection service page](/roof-inspection), and explains whether repair, maintenance, or replacement makes sense.',
     appendParagraphs: [
       'Many homeowners in [Sacramento](/service-areas/sacramento) compare our visit with our [homeowner inspection checklist](/blog/roof-inspection-checklist) and [typical inspection costs](/blog/roof-inspection-cost-sacramento). If storm damage is involved, read about [insurance roof inspections](/blog/insurance-roof-inspection-sacramento) before you [contact us](/contact) to schedule.',
     ],
   },
   'roof-inspection-cost-sacramento': {
     appendParagraphs: [
-      'Standard inspections with PRC 13 are free on our [roof inspection](/roof-inspection) page. For Sacramento-specific scheduling, see [roof inspection Sacramento](/roof-inspection-sacramento) and the [Sacramento service area](/service-areas/sacramento). Related reading: [what happens during an inspection](/blog/what-happens-during-roof-inspection) and [signs you need one](/blog/signs-you-need-roof-inspection). [Request a visit](/contact) when ready.',
+      'Standard inspections with PRC 13 are free on our [roof inspection](/roof-inspection) page. For Sacramento scheduling, see the [Sacramento service area](/service-areas/sacramento). Related reading: [what happens during an inspection](/blog/what-happens-during-roof-inspection) and [signs you need one](/blog/signs-you-need-roof-inspection). [Request a visit](/contact) when ready.',
     ],
   },
   'roof-inspection-checklist': {
     appendParagraphs: [
-      'When DIY checks raise questions, schedule a [professional roof inspection](/roof-inspection) or our [Sacramento inspection landing page](/roof-inspection-sacramento). After winter storms, pair this list with [post-storm inspection guidance](/blog/roof-inspection-after-storm). [Sacramento homeowners](/service-areas/sacramento) can [book online](/contact) for a free assessment.',
+      'When DIY checks raise questions, schedule a [professional roof inspection](/roof-inspection). After winter storms, pair this list with [post-storm inspection guidance](/blog/roof-inspection-after-storm). [Sacramento homeowners](/service-areas/sacramento) can [book online](/contact) for a free assessment.',
     ],
   },
   'how-often-should-you-inspect-your-roof': {
     appendParagraphs: [
-      'Homeowners in [Sacramento](/service-areas/sacramento) often combine this schedule with our [maintenance checklist](/blog/sacramento-roof-maintenance-checklist). When it is time for a pro visit, use [roof inspection services](/roof-inspection) or [schedule in Sacramento](/roof-inspection-sacramento). See also [inspection cost expectations](/blog/roof-inspection-cost-sacramento) and [contact PRC 13](/contact).',
+      'Homeowners in [Sacramento](/service-areas/sacramento) often combine this schedule with our [maintenance checklist](/blog/sacramento-roof-maintenance-checklist). When it is time for a pro visit, use [roof inspection services](/roof-inspection). See also [inspection cost expectations](/blog/roof-inspection-cost-sacramento) and [contact PRC 13](/contact).',
     ],
   },
   'what-happens-during-roof-inspection': {
     appendParagraphs: [
-      'Ready to experience this process? Start on our [roof inspection](/roof-inspection) page or the [Sacramento-focused inspection page](/roof-inspection-sacramento). Browse [free inspection details](/blog/free-roof-inspection-sacramento) and [checklist prep](/blog/roof-inspection-checklist). [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
+      'Ready to experience this process? Start on our [roof inspection](/roof-inspection) page. Browse [free inspection details](/blog/free-roof-inspection-sacramento) and [checklist prep](/blog/roof-inspection-checklist). [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'insurance-roof-inspection-sacramento': {
@@ -72,17 +72,17 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'commercial-roof-inspection-sacramento': {
     appendParagraphs: [
-      'Residential owners can use the same honest approach on [roof inspection](/roof-inspection). For homes in [Sacramento](/service-areas/sacramento), see [residential inspection scheduling](/roof-inspection-sacramento). Related: [commercial repair](/blog/commercial-roof-repair-sacramento) · [TPO vs EPDM](/blog/tpo-vs-epdm-commercial-roofing) · [Commercial roofing](/commercial-roofing) · [Contact](/contact).',
+      'Residential owners can use the same honest approach on [roof inspection](/roof-inspection). For homes in [Sacramento](/service-areas/sacramento). Related: [commercial repair](/blog/commercial-roof-repair-sacramento) · [TPO vs EPDM](/blog/tpo-vs-epdm-commercial-roofing) · [Commercial roofing](/commercial-roofing) · [Contact](/contact).',
     ],
   },
   'roof-inspection-after-storm': {
     appendParagraphs: [
-      'If water is entering now, call for [emergency roof repair](/emergency-roof-repair) first. Document damage using [insurance inspection guidance](/blog/insurance-roof-inspection-sacramento). Schedule follow-up on [roof inspection](/roof-inspection) or [Sacramento inspection page](/roof-inspection-sacramento). [Service area](/service-areas/sacramento) · [Contact](/contact).',
+      'If water is entering now, call for [emergency roof repair](/emergency-roof-repair) first. Document damage using [insurance inspection guidance](/blog/insurance-roof-inspection-sacramento). Schedule follow-up on [roof inspection](/roof-inspection). [Service area](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'signs-you-need-roof-inspection': {
     appendParagraphs: [
-      'Noticing several signs? Book a [free roof inspection](/roof-inspection) or [Sacramento scheduling page](/roof-inspection-sacramento). Learn [how often to inspect](/blog/how-often-should-you-inspect-your-roof) and [what the visit includes](/blog/what-happens-during-roof-inspection). [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Noticing several signs? Book a [free roof inspection](/roof-inspection). Learn [how often to inspect](/blog/how-often-should-you-inspect-your-roof) and [what the visit includes](/blog/what-happens-during-roof-inspection). [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'roof-inspection-before-buying-home': {
@@ -94,7 +94,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   // —— Emergency Roof Repair cluster ——
   'emergency-roof-repair-sacramento-guide': {
     patchFirstParagraph:
-      'Short answer: if water is entering your home, call first, contain the leak indoors, and do not climb on the roof. PRC 13 Roofing provides [emergency roof repair](/emergency-roof-repair) across Sacramento with fast assessment—see also our [Sacramento emergency page](/emergency-roof-repair-sacramento).',
+      'Short answer: if water is entering your home, call first, contain the leak indoors, and do not climb on the roof. PRC 13 Roofing provides [emergency roof repair](/emergency-roof-repair) across Sacramento with fast assessment.',
     appendParagraphs: [
       'For active leaks, read [roof leak repair in Sacramento](/blog/roof-leak-repair-sacramento) and [when to call an emergency roofer](/blog/when-to-call-emergency-roofer). [Sacramento service area](/service-areas/sacramento) · standard [roof repair](/roof-repair) · [contact PRC 13](/contact).',
     ],
@@ -103,22 +103,22 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
     patchFirstParagraph:
       'Short answer: [roof leak repair in Sacramento](/roof-repair) requires tracing the water path on the roof—not just patching the ceiling. PRC 13 inspects penetrations, valleys, and flashing before recommending a targeted fix or [emergency response](/emergency-roof-repair).',
     appendParagraphs: [
-      'Leaks after hours? See [what to do at night](/blog/roof-leak-at-night). Storm-related? Review [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [tarp guidance](/blog/emergency-roof-tarp-guide). Planned repairs: [flashing repair](/blog/roof-flashing-repair-sacramento) · [skylight leaks](/blog/skylight-leak-repair-sacramento) · [Sacramento repair page](/roof-repair-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Leaks after hours? See [what to do at night](/blog/roof-leak-at-night). Storm-related? Review [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [tarp guidance](/blog/emergency-roof-tarp-guide). Planned repairs: [flashing repair](/blog/roof-flashing-repair-sacramento) · [skylight leaks](/blog/skylight-leak-repair-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'emergency-roof-tarp-guide': {
     appendParagraphs: [
-      'After tarping, plan permanent work through [roof repair](/roof-repair) or [emergency roof repair](/emergency-roof-repair). [Sacramento homeowners](/service-areas/sacramento) should review [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [wind damage fixes](/blog/wind-damage-roof-repair). [Sacramento emergency page](/emergency-roof-repair-sacramento) · [Contact](/contact).',
+      'After tarping, plan permanent work through [roof repair](/roof-repair) or [emergency roof repair](/emergency-roof-repair). [Sacramento homeowners](/service-areas/sacramento) should review [storm damage repair](/blog/storm-damage-roof-repair-sacramento) and [wind damage fixes](/blog/wind-damage-roof-repair). [Sacramento emergency page](/emergency-roof-repair) · [Contact](/contact).',
     ],
   },
   'roof-leak-at-night': {
     appendParagraphs: [
-      'When morning comes, schedule [roof repair](/roof-repair) or [emergency roof repair](/emergency-roof-repair). Read [leak repair in Sacramento](/blog/roof-leak-repair-sacramento) and [when to call an emergency roofer](/blog/when-to-call-emergency-roofer). [Sacramento service area](/service-areas/sacramento) · [Emergency Sacramento page](/emergency-roof-repair-sacramento) · [Contact](/contact).',
+      'When morning comes, schedule [roof repair](/roof-repair) or [emergency roof repair](/emergency-roof-repair). Read [leak repair in Sacramento](/blog/roof-leak-repair-sacramento) and [when to call an emergency roofer](/blog/when-to-call-emergency-roofer). [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'storm-damage-roof-repair-sacramento': {
     appendParagraphs: [
-      'Document damage for [insurance claims after storms](/blog/roof-insurance-claims-storm-damage). Urgent openings may need [emergency roof repair](/emergency-roof-repair) or [Sacramento emergency scheduling](/emergency-roof-repair-sacramento). Ongoing repairs: [roof repair](/roof-repair) · [missing shingle repair](/blog/missing-shingle-repair-sacramento) · [repair cost guide](/blog/roof-repair-cost-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Document damage for [insurance claims after storms](/blog/roof-insurance-claims-storm-damage). Urgent openings may need [emergency roof repair](/emergency-roof-repair). Ongoing repairs: [roof repair](/roof-repair) · [missing shingle repair](/blog/missing-shingle-repair-sacramento) · [repair cost guide](/blog/roof-repair-cost-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'hail-damage-roof-repair': {
@@ -133,7 +133,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'emergency-roof-repair-cost': {
     appendParagraphs: [
-      'Compare routine pricing on [roof repair](/roof-repair) and [leak repair in Sacramento](/blog/roof-leak-repair-sacramento). Insurance may apply—read [storm damage claims](/blog/roof-insurance-claims-storm-damage). [Emergency services](/emergency-roof-repair) · [Sacramento emergency page](/emergency-roof-repair-sacramento) · [Contact](/contact).',
+      'Compare routine pricing on [roof repair](/roof-repair) and [leak repair in Sacramento](/blog/roof-leak-repair-sacramento). Insurance may apply—read [storm damage claims](/blog/roof-insurance-claims-storm-damage). [Emergency services](/emergency-roof-repair) · [Contact](/contact).',
     ],
   },
   'roof-insurance-claims-storm-damage': {
@@ -143,7 +143,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'when-to-call-emergency-roofer': {
     appendParagraphs: [
-      'For Sacramento-area help, visit [emergency roof repair](/emergency-roof-repair) or [emergency repair Sacramento](/emergency-roof-repair-sacramento). Related: [roof leak at night](/blog/roof-leak-at-night) · [leak repair](/blog/roof-leak-repair-sacramento) · [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
+      'For Sacramento-area help, visit [emergency roof repair](/emergency-roof-repair). Related: [roof leak at night](/blog/roof-leak-at-night) · [leak repair](/blog/roof-leak-repair-sacramento) · [Sacramento service area](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
 
@@ -238,12 +238,12 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   // —— Sacramento Roof Replacement cluster ——
   'roof-replacement-cost-sacramento': {
     appendParagraphs: [
-      'Compare materials on [shingle vs tile vs metal](/blog/roofing-materials-replacement-sacramento). Schedule via [roof replacement](/roof-replacement) or [Sacramento replacement page](/roof-replacement-sacramento). [Free inspection](/roof-inspection) · [Folsom](/service-areas/folsom) · [El Dorado Hills](/service-areas/el-dorado-hills) · [Contact](/contact).',
+      'Compare materials on [shingle vs tile vs metal](/blog/roofing-materials-replacement-sacramento). Schedule via [roof replacement](/roof-replacement). [Free inspection](/roof-inspection) · [Folsom](/service-areas/folsom) · [El Dorado Hills](/service-areas/el-dorado-hills) · [Contact](/contact).',
     ],
   },
   'roofing-materials-replacement-sacramento': {
     appendParagraphs: [
-      'Install through [roof replacement](/roof-replacement) or [metal roofing](/metal-roofing). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Sacramento replacement page](/roof-replacement-sacramento) · [EDH replacement](/blog/roof-replacement-el-dorado-hills-ca) · [Folsom replacement](/blog/roof-replacement-folsom-ca) · [Contact](/contact).',
+      'Install through [roof replacement](/roof-replacement) or [metal roofing](/metal-roofing). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [EDH replacement](/blog/roof-replacement-el-dorado-hills-ca) · [Folsom replacement](/blog/roof-replacement-folsom-ca) · [Contact](/contact).',
     ],
   },
   'roof-replacement-insurance-sacramento': {
@@ -253,7 +253,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'roof-replacement-process-sacramento': {
     appendParagraphs: [
-      'Timeline: [how long replacement takes](/blog/how-long-does-roof-replacement-take). Plan via [roof replacement Sacramento](/roof-replacement-sacramento) and [main replacement page](/roof-replacement). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Inspection](/roof-inspection) · [Contact](/contact).',
+      'Timeline: [how long replacement takes](/blog/how-long-does-roof-replacement-take). Plan via [roof replacement](/roof-replacement). [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
   'roof-replacement-financing-sacramento': {
@@ -346,34 +346,34 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   // —— Sacramento Roof Repair cluster ——
   'roof-repair-cost-sacramento': {
     patchFirstParagraph:
-      'Short answer: Sacramento [roof repair](/roof-repair) cost depends on what failed on the roof—not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix on our [Sacramento repair page](/roof-repair-sacramento).',
+      'Short answer: Sacramento [roof repair](/roof-repair) cost depends on what failed on the roof—not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix.',
     appendParagraphs: [
       'Compare scope with [missing shingle repair](/blog/missing-shingle-repair-sacramento) and [flashing repair](/blog/roof-flashing-repair-sacramento). When repair no longer makes sense, review [roof replacement](/roof-replacement). [Free inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'missing-shingle-repair-sacramento': {
     appendParagraphs: [
-      'Schedule through [roof repair](/roof-repair) or [Sacramento roof repair](/roof-repair-sacramento). Storm-related uplift? See [wind damage repair](/blog/wind-damage-roof-repair). [Repair cost guide](/blog/roof-repair-cost-sacramento) · [Roof inspection](/roof-inspection) · [Replacement planning](/roof-replacement) · [Contact](/contact).',
+      'Schedule through [roof repair](/roof-repair) or [Sacramento roof repair](/roof-repair). Storm-related uplift? See [wind damage repair](/blog/wind-damage-roof-repair). [Repair cost guide](/blog/roof-repair-cost-sacramento) · [Roof inspection](/roof-inspection) · [Replacement planning](/roof-replacement) · [Contact](/contact).',
     ],
   },
   'roof-flashing-repair-sacramento': {
     appendParagraphs: [
-      'Specialized transitions: [chimney flashing](/blog/chimney-flashing-repair-sacramento) · [skylight leaks](/blog/skylight-leak-repair-sacramento). [Roof repair services](/roof-repair) · [Sacramento repair page](/roof-repair-sacramento) · [Free inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+      'Specialized transitions: [chimney flashing](/blog/chimney-flashing-repair-sacramento) · [skylight leaks](/blog/skylight-leak-repair-sacramento). [Roof repair services](/roof-repair) · [Free inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'chimney-flashing-repair-sacramento': {
     appendParagraphs: [
-      'Broader flashing work: [roof flashing repair](/blog/roof-flashing-repair-sacramento). Tile homes: [tile roof repair](/blog/tile-roof-repair-sacramento). [Roof repair](/roof-repair) · [Sacramento repair page](/roof-repair-sacramento) · [Roof inspection](/roof-inspection) · [Replacement](/roof-replacement) · [Contact](/contact).',
+      'Broader flashing work: [roof flashing repair](/blog/roof-flashing-repair-sacramento). Tile homes: [tile roof repair](/blog/tile-roof-repair-sacramento). [Roof repair](/roof-repair) · [Roof inspection](/roof-inspection) · [Replacement](/roof-replacement) · [Contact](/contact).',
     ],
   },
   'skylight-leak-repair-sacramento': {
     appendParagraphs: [
-      'Active dripping during rain? Call for [emergency roof repair](/emergency-roof-repair). Otherwise plan through [roof repair](/roof-repair) and [Sacramento repair scheduling](/roof-repair-sacramento). [Flashing repair](/blog/roof-flashing-repair-sacramento) · [Leak repair guide](/blog/roof-leak-repair-sacramento) · [Inspection](/roof-inspection) · [Contact](/contact).',
+      'Active dripping during rain? Call for [emergency roof repair](/emergency-roof-repair). Otherwise plan through [roof repair](/roof-repair). [Flashing repair](/blog/roof-flashing-repair-sacramento) · [Leak repair guide](/blog/roof-leak-repair-sacramento) · [Inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
   'tile-roof-repair-sacramento': {
     appendParagraphs: [
-      'Flashing at tile transitions: [chimney flashing](/blog/chimney-flashing-repair-sacramento) · [general flashing repair](/blog/roof-flashing-repair-sacramento). [Roof repair](/roof-repair) · [Sacramento repair page](/roof-repair-sacramento) · [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
+      'Flashing at tile transitions: [chimney flashing](/blog/chimney-flashing-repair-sacramento) · [general flashing repair](/blog/roof-flashing-repair-sacramento). [Roof repair](/roof-repair) · [Replacement cost](/blog/roof-replacement-cost-sacramento) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
 };

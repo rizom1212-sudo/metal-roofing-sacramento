@@ -1,7 +1,6 @@
 import { blogPosts } from './blog';
 import { PAGE_META } from './pageMeta';
 import { serviceAreas } from './serviceAreas';
-import { SACRAMENTO_LANDING_PATHS } from './sacramentoLandingPages';
 import { EMERGENCY_CLUSTER_CATEGORY } from './blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from './blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogElDoradoHillsRoofingCluster';
@@ -65,13 +64,6 @@ const SERVICE_ROUTE_LASTMOD: Record<(typeof SERVICE_ROUTES)[number], string> = {
   '/emergency-roof-repair': clusterLastmod(EMERGENCY_CLUSTER_CATEGORY),
 };
 
-const SACRAMENTO_LANDING_LASTMOD: Record<string, string> = {
-  '/roof-repair-sacramento': clusterLastmod(ROOF_REPAIR_CLUSTER_CATEGORY),
-  '/emergency-roof-repair-sacramento': clusterLastmod(EMERGENCY_CLUSTER_CATEGORY),
-  '/roof-inspection-sacramento': clusterLastmod(INSPECTION_CATEGORY),
-  '/roof-replacement-sacramento': clusterLastmod(REPLACEMENT_CLUSTER_CATEGORY),
-};
-
 function serviceAreaLastmod(slug: string): string {
   if (slug === 'folsom') return clusterLastmod(FOLSOM_CLUSTER_CATEGORY);
   if (slug === 'el-dorado-hills') return clusterLastmod(EL_DORADO_HILLS_CLUSTER_CATEGORY);
@@ -106,17 +98,9 @@ export const serviceAreaRoutes = serviceAreas.map(area => ({
   priority: area.slug === 'sacramento' ? 0.8 : 0.7,
 }));
 
-export const sacramentoLandingRoutes = SACRAMENTO_LANDING_PATHS.map(path => ({
-  path,
-  lastmod: SACRAMENTO_LANDING_LASTMOD[path] ?? siteContentLastmod,
-  changefreq: 'monthly' as const,
-  priority: 0.85,
-}));
-
 export const publicRoutes: PublicRoute[] = [
   ...generalRoutes,
   ...serviceRoutes,
-  ...sacramentoLandingRoutes,
   ...serviceAreaRoutes,
   ...blogRoutes,
 ];

@@ -18,7 +18,6 @@ const COVER_D = ASSETS.blog('035dfafc-8416-46bd-b5ab-f8c6b6b4eff9.webp');
 
 const coreServices = (): BlogRelatedService[] => [
   { label: 'Roof Repair', href: '/roof-repair' },
-  { label: 'Sacramento Roof Repair', href: '/roof-repair-sacramento' },
   { label: 'Free Roof Inspection', href: '/roof-inspection' },
   { label: 'Roof Replacement', href: '/roof-replacement' },
   { label: 'Contact PRC 13', href: '/contact' },

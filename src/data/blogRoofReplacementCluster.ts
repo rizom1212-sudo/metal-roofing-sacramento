@@ -10,7 +10,6 @@ const COVER_D = ASSETS.blog('Screenshot_2026-05-20_at_10.49.35.png');
 
 const coreServices = (): BlogRelatedService[] => [
   { label: 'Roof Replacement', href: '/roof-replacement' },
-  { label: 'Roof Replacement Sacramento', href: '/roof-replacement-sacramento' },
   { label: 'Free Roof Inspection', href: '/roof-inspection' },
   { label: 'Sacramento Service Area', href: '/service-areas/sacramento' },
   { label: 'Contact PRC 13', href: '/contact' },
@@ -302,7 +301,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
         links: [
           { label: 'Emergency roof repair', href: '/emergency-roof-repair' },
           article('roof-replacement-cost-sacramento', 'Replacement cost guide'),
-          { label: 'Roof inspection Sacramento', href: '/roof-inspection-sacramento' },
+          { label: 'Roof inspection', href: '/roof-inspection' },
         ],
       },
     ],
@@ -571,7 +570,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
         content: 'Related guides:',
         links: [
           article('roof-replacement-process-sacramento', 'What happens during replacement'),
-          { label: 'Roof replacement Sacramento', href: '/roof-replacement-sacramento' },
+          { label: 'Roof replacement', href: '/roof-replacement' },
           { label: 'Roof replacement services', href: '/roof-replacement' },
         ],
       },
@@ -663,7 +662,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
         content: 'Plan your next step:',
         links: [
           { label: 'Roof replacement services', href: '/roof-replacement' },
-          { label: 'Roof replacement Sacramento', href: '/roof-replacement-sacramento' },
+          { label: 'Roof replacement', href: '/roof-replacement' },
           article('roof-replacement-cost-sacramento', 'Replacement cost guide'),
         ],
       },

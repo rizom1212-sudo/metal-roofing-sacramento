@@ -190,7 +190,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
         links: [
           article('best-roofing-materials-folsom', 'Best roofing materials for Folsom homes'),
           { label: 'Roof replacement services', href: '/roof-replacement' },
-          { label: 'Roof replacement Sacramento', href: '/roof-replacement-sacramento' },
+          { label: 'Roof replacement', href: '/roof-replacement' },
           article('roofing-materials-replacement-sacramento', 'Shingle vs tile vs metal in Sacramento'),
         ],
       },

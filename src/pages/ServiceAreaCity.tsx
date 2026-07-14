@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle, MapPin, Phone, BookOpen } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import AnswerSummary from '../components/AnswerSummary';
+import Breadcrumbs from '../components/Breadcrumbs';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import LeadForm from '../components/LeadForm';
 import ServiceAreaConversionSections from '../components/ServiceAreaConversionSections';
@@ -53,6 +54,12 @@ export default function ServiceAreaCity() {
 
       <section className="bg-charcoal-dark text-white py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <Breadcrumbs
+            items={[
+              { label: 'Service Areas', href: '/service-areas' },
+              { label: area.name },
+            ]}
+          />
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">
             <span className="inline-flex items-center gap-1.5"><MapPin size={14} /> Service Area</span>
           </p>

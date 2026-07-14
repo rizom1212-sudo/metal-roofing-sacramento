@@ -191,7 +191,7 @@ export default function RoofRepair() {
                 <span className="text-gold">We'll Get There Fast.</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-                We inspect the leak, find the actual source of the problem, and explain whether a repair is enough or if larger work is needed. Fast Sacramento response. Honest recommendations. No pressure.
+                Roof repair in Sacramento, California for roof leaks, missing or damaged shingles, flashing issues, and storm damage. We find the source, explain your options, and start with a free inspection—no pressure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
@@ -402,9 +402,7 @@ export default function RoofRepair() {
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
                 Active leak right now? See{' '}
-                <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>{' '}
-                or our{' '}
-                <Link to="/roof-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento repair page</Link>.
+                <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>.
                 Start with a{' '}
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
                 or{' '}
@@ -440,8 +438,8 @@ export default function RoofRepair() {
       </section>
 
       <SacramentoGuideCallout
-        href="/roof-repair-sacramento"
-        label="View our Sacramento roof repair page"
+        href="/service-areas/sacramento"
+        label="View our Sacramento service area page"
       />
 
       <LocalSeoLinks />

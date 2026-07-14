@@ -96,7 +96,7 @@ export default function RoofReplacement() {
                 <span className="text-gold">Done Right, the First Time</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-                Sacramento's trusted residential roof replacement team. Quality materials, expert installation, and a final walkthrough on every completed job.
+                Roof replacement in Sacramento, California for shingle roof replacement, tile roof replacement, and metal roofing options. Free inspection, a clear written estimate, and financing on qualifying projects.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
@@ -267,10 +267,9 @@ export default function RoofReplacement() {
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
-                use these guides for replacement cost, materials, insurance, financing, and timelines. Start with our{' '}
-                <Link to="/roof-replacement-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento roof replacement page</Link>{' '}
-                or schedule a{' '}
-                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>.
+                use these guides for replacement cost, materials, insurance, financing, and timelines. Schedule a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+                when you are ready for next steps.
               </p>
             </div>
           </div>
@@ -305,8 +304,8 @@ export default function RoofReplacement() {
       </section>
 
       <SacramentoGuideCallout
-        href="/roof-replacement-sacramento"
-        label="View our Sacramento roof replacement page"
+        href="/service-areas/sacramento"
+        label="View our Sacramento service area page"
       />
 
       <LocalSeoLinks />

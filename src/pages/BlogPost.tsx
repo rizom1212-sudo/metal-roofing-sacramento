@@ -312,14 +312,6 @@ export default function BlogPost() {
                                 ? 'Folsom roofing services'
                                 : 'Roof inspection service page'}
                   </Link>
-                  {isRepairGuide && (
-                    <Link
-                      to="/roof-repair-sacramento"
-                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
-                    >
-                      Sacramento repair page <ArrowRight size={15} />
-                    </Link>
-                  )}
                   {isCommercialGuide && (
                     <Link
                       to="/roof-inspection"
@@ -342,14 +334,6 @@ export default function BlogPost() {
                       className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                     >
                       Free roof inspection <ArrowRight size={15} />
-                    </Link>
-                  )}
-                  {isReplacementGuide && (
-                    <Link
-                      to="/roof-replacement-sacramento"
-                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
-                    >
-                      Sacramento replacement page <ArrowRight size={15} />
                     </Link>
                   )}
                   {isEmergencyGuide && (

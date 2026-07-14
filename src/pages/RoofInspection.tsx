@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Eye, FileText, AlertTriangle, Clock, Wind, BookOpen } from 'lucide-react';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
+import Breadcrumbs from '../components/Breadcrumbs';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
@@ -95,6 +96,7 @@ export default function RoofInspection() {
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.96) 0%, rgba(15,20,28,0.82) 50%, rgba(15,20,28,0.40) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+          <Breadcrumbs items={[{ label: 'Roof Inspection' }]} />
           <div className="max-w-2xl">
             <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5">Free, No Obligation</span>
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
@@ -102,7 +104,7 @@ export default function RoofInspection() {
               <span className="text-gold">Know Exactly What You're Dealing With</span>
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              A professional inspection from a licensed roofer, not a salesperson. We'll tell you exactly what condition your roof is in and what, if anything, needs attention.
+              Schedule a free roof inspection in Sacramento, California. You get written findings covering leak detection, storm damage, aging materials, flashing problems, and clear repair-versus-replacement guidance—from a licensed roofer, not a salesperson.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
@@ -296,9 +298,7 @@ export default function RoofInspection() {
                 Homeowners across{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>,{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and nearby communities ask us about inspection costs, insurance visits, storm checks, and commercial roofs. Start with our{' '}
-                <Link to="/roof-inspection-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento inspection page</Link>{' '}
-                or browse guides like{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and nearby communities ask us about inspection costs, insurance visits, storm checks, and commercial roofs. Browse guides like{' '}
                 <Link to="/blog/free-roof-inspection-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">free inspections</Link>{' '}
                 and{' '}
                 <Link to="/blog/roof-inspection-checklist" className="text-gold font-semibold hover:text-gold-dark transition-colors">the homeowner checklist</Link>.
@@ -336,8 +336,8 @@ export default function RoofInspection() {
       </section>
 
       <SacramentoGuideCallout
-        href="/roof-inspection-sacramento"
-        label="View our Sacramento roof inspection page"
+        href="/service-areas/sacramento"
+        label="View our Sacramento service area page"
       />
 
       <LocalSeoLinks />

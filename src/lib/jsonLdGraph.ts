@@ -196,7 +196,9 @@ export function buildJsonLdGraph(options: {
   const graph: object[] = [];
 
   if (includeLocalBusiness) {
-    graph.push(localBusinessSchema(servedAreas));
+    // Always emit the same business entity footprint (all service areas).
+    // City/page targeting belongs on Service schema via servedAreas, not on RoofingContractor.
+    graph.push(localBusinessSchema(serviceAreaNames));
   }
 
   const pageType = schemaType === 'ContactPage' ? 'ContactPage' : 'WebPage';

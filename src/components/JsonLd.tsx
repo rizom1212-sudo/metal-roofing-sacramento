@@ -13,7 +13,7 @@ interface JsonLdProps {
   breadcrumbs?: { label: string; href?: string }[];
   /** RoofingContractor schema included by default for local entity consistency */
   includeLocalBusiness?: boolean;
-  /** Cities/regions for areaServed on this page (defaults to all service areas) */
+  /** Cities for page-level Service.areaServed only (RoofingContractor always uses full footprint) */
   servedAreas?: string[];
 }
 

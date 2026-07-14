@@ -183,7 +183,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
           article('metal-roofing-el-dorado-hills-ca', 'Metal roofing El Dorado Hills'),
           article('tile-roofing-el-dorado-hills-ca', 'Tile roofing El Dorado Hills CA'),
           { label: 'Roof replacement services', href: '/roof-replacement' },
-          { label: 'Roof replacement Sacramento', href: '/roof-replacement-sacramento' },
+          { label: 'Roof replacement', href: '/roof-replacement' },
         ],
       },
       {

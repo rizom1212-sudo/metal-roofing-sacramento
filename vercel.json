@@ -1,5 +1,9 @@
 {
   "redirects": [
+    { "source": "/roof-repair-sacramento", "destination": "/roof-repair", "permanent": true },
+    { "source": "/roof-replacement-sacramento", "destination": "/roof-replacement", "permanent": true },
+    { "source": "/roof-inspection-sacramento", "destination": "/roof-inspection", "permanent": true },
+    { "source": "/emergency-roof-repair-sacramento", "destination": "/emergency-roof-repair", "permanent": true },
     { "source": "/Sacramento", "destination": "/service-areas/sacramento", "permanent": true },
     { "source": "/sacramento", "destination": "/service-areas/sacramento", "permanent": true },
     { "source": "/Woodland", "destination": "/service-areas/woodland", "permanent": true },

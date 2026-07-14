@@ -1,7 +1,6 @@
 import { DEFAULT_OG_IMAGE } from './assets';
 import { blogPosts } from './blog';
 import { serviceAreas } from './serviceAreas';
-import { sacramentoLandingPages } from './sacramentoLandingPages';
 
 export interface PageMetaConfig {
   title: string;
@@ -22,17 +21,6 @@ const serviceAreaMeta = Object.fromEntries(
   ]),
 ) as Record<string, PageMetaConfig>;
 
-const sacramentoLandingMeta = Object.fromEntries(
-  Object.values(sacramentoLandingPages).map(page => [
-    page.path,
-    {
-      title: page.metaTitle,
-      description: page.metaDescription,
-      path: page.path,
-    },
-  ]),
-) as Record<string, PageMetaConfig>;
-
 export const DEFAULT_SITE_META: PageMetaConfig = {
   title: `${SITE_NAME} | Sacramento Roof Replacement & Repair`,
   description:
@@ -43,15 +31,15 @@ export const DEFAULT_SITE_META: PageMetaConfig = {
 export const PAGE_META: Record<string, PageMetaConfig> = {
   '/': DEFAULT_SITE_META,
   '/roof-replacement': {
-    title: `Roof Replacement Sacramento | ${SITE_NAME}`,
+    title: 'Roof Replacement Sacramento, CA | Free Inspection | PRC 13',
     description:
-      'Full roof replacement in Sacramento. Quality materials, 1 to 2 day installs, final walkthrough. Free inspection. Financing available.',
+      'Roof replacement in Sacramento for shingle, tile, and metal roofing systems. Get a free inspection, written estimate, financing options, and clear next steps.',
     path: '/roof-replacement',
   },
   '/roof-repair': {
-    title: `Roof Repair Sacramento | ${SITE_NAME}`,
+    title: 'Roof Repair Sacramento, CA | Free Inspection | PRC 13 Roofing',
     description:
-      'Roof repair in Sacramento for leaks, storm damage, flashing issues, and missing shingles. Get an honest assessment and written estimate before work starts.',
+      'Roof repair in Sacramento for leaks, missing shingles, flashing failures, storm damage, and other urgent roofing problems. Schedule a free inspection with PRC 13 Roofing.',
     path: '/roof-repair',
   },
   '/metal-roofing': {
@@ -67,9 +55,9 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/commercial-roofing',
   },
   '/roof-inspection': {
-    title: `Free Roof Inspection Sacramento | ${SITE_NAME}`,
+    title: 'Free Roof Inspection Sacramento, CA | PRC 13 Roofing',
     description:
-      'Free roof inspections in Sacramento from PRC 13 Roofing. Get written findings, leak checks, repair guidance, and clear next steps with no obligation.',
+      'Schedule a free roof inspection in Sacramento. PRC 13 Roofing checks for leaks, storm damage, aging materials, flashing problems, and replacement needs.',
     path: '/roof-inspection',
   },
   '/gutters-siding': {
@@ -79,9 +67,9 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/gutters-siding',
   },
   '/emergency-roof-repair': {
-    title: `Emergency Roof Repair Sacramento | ${SITE_NAME}`,
+    title: 'Emergency Roof Repair Sacramento, CA | Fast Leak Help | PRC 13',
     description:
-      'Emergency roof repair in Sacramento for active leaks, storm damage, and urgent roof problems. Call PRC 13 Roofing for fast assessment and clear help.',
+      'Emergency roof repair in Sacramento for active leaks, storm damage, missing shingles, and urgent water intrusion. Call PRC 13 Roofing for fast assistance.',
     path: '/emergency-roof-repair',
   },
   '/about': {
@@ -115,7 +103,6 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/service-areas',
   },
   ...serviceAreaMeta,
-  ...sacramentoLandingMeta,
 };
 
 export function getPageMeta(pathname: string): PageMetaConfig {

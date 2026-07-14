@@ -11,7 +11,7 @@ export default function EmergencyRoofRepair() {
       badge="Same-Day Response Available"
       headline="Emergency Roof Repair"
       headlineAccent="We'll Get There Fast"
-      subheadline="Active leak? Storm damage? Don't wait. PRC 13 Roofing responds quickly to Sacramento area roofing emergencies, with same-day assessment available for urgent situations."
+      subheadline="Emergency roof repair in Sacramento, California for active roof leaks, water intrusion, storm damage, and missing shingles. Call PRC 13 Roofing for a fast assessment when water is entering the home."
       heroImage={ASSETS.emergencyRepair('emergency-roof-hero.webp')}
       heroAlt="Emergency roof repair response after storm damage in Sacramento"
       trustBarItems={[
@@ -30,7 +30,7 @@ export default function EmergencyRoofRepair() {
       introHeading="Fast Response When It Matters Most"
       introParagraphs={[
         "A roof leak that isn't addressed immediately can cause water damage to spread rapidly through your insulation, drywall, and even structural framing. When your roof is failing, speed matters.",
-        "PRC 13 Roofing serves the Sacramento area with fast response times for urgent roof repairs. We prioritize emergency calls and work to get someone to your home quickly to assess and stabilize the situation.",
+        "PRC 13 Roofing provides emergency roof repair in Sacramento, California for active roof leaks, water intrusion, and storm damage. We prioritize urgent calls and work to get someone there quickly for a fast assessment and clear next steps.",
       ]}
       introChecklist={[
         'Active leaks assessed and stabilized quickly',
@@ -85,8 +85,8 @@ export default function EmergencyRoofRepair() {
       ]}
       sourcePage="emergency-roof-repair"
       sacramentoGuide={{
-        href: '/emergency-roof-repair-sacramento',
-        label: 'View our Sacramento emergency roof repair page',
+        href: '/service-areas/sacramento',
+        label: 'View our Sacramento service area page',
       }}
       resourceSectionHeading="Emergency Roof Repair Resources"
       resourceSectionIntro="Homeowners across Sacramento use these guides to understand roof leaks, storm and wind damage, emergency tarping, repair costs, insurance claims after storms, and when to call an emergency roofer—before reaching out for help."
