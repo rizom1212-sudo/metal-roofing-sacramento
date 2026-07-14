@@ -2,6 +2,10 @@ import { serviceAreaDetails } from './serviceAreaDetails.ts';
 import { serviceAreaExtraSections, type ServiceAreaExtraSections } from './serviceAreaExtraSections.ts';
 import { serviceAreaLocalAuthority, type ServiceAreaLocalAuthority } from './serviceAreaLocalAuthority.ts';
 import { serviceAreaConversion, type ServiceAreaConversion } from './serviceAreaConversion.ts';
+import {
+  serviceAreaEducationalSections,
+  type ServiceAreaEducationalSection,
+} from './serviceAreaEducationalSections.ts';
 
 interface ServiceAreaBase {
   name: string;
@@ -27,7 +31,12 @@ interface ServiceAreaBase {
   cta: string;
 }
 
-export type ServiceArea = ServiceAreaBase & ServiceAreaExtraSections & ServiceAreaLocalAuthority & ServiceAreaConversion;
+export type ServiceArea = ServiceAreaBase &
+  ServiceAreaExtraSections &
+  ServiceAreaLocalAuthority &
+  ServiceAreaConversion & {
+    educationalSection?: ServiceAreaEducationalSection;
+  };
 
 const rawServiceAreas: ServiceAreaBase[] = [
   {
@@ -391,6 +400,9 @@ export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => ({
   ...serviceAreaExtraSections[area.slug],
   ...serviceAreaLocalAuthority[area.slug],
   ...serviceAreaConversion[area.slug],
+  ...(serviceAreaEducationalSections[area.slug]
+    ? { educationalSection: serviceAreaEducationalSections[area.slug] }
+    : {}),
 }));
 
 export const serviceAreaNames = serviceAreas.map(a => a.name);

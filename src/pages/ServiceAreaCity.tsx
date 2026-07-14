@@ -13,6 +13,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
 import { serviceAreas } from '../data/serviceAreas';
 import { blogPosts } from '../data/blog';
 import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
+import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export default function ServiceAreaCity() {
   const { slug } = useParams<{ slug: string }>();
@@ -189,7 +190,27 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
-      <section className="bg-cream py-14 md:py-16">
+      {area.educationalSection && (
+        <section className="bg-cream py-14 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="max-w-3xl">
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">
+                {area.educationalSection.eyebrow}
+              </p>
+              <h2 className="section-heading mb-5">{area.educationalSection.heading}</h2>
+              <div className="space-y-4">
+                {area.educationalSection.paragraphs.map(paragraph => (
+                  <p key={paragraph.slice(0, 48)} className="text-body text-sm leading-relaxed">
+                    {renderBlogInlineLinks(paragraph)}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className={`${area.educationalSection ? 'bg-white' : 'bg-cream'} py-14 md:py-16`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Nearby Communities</p>
           <h2 className="section-heading mb-5">Areas We Serve Around {area.name}</h2>
@@ -207,7 +228,7 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-16">
+      <section className={`${area.educationalSection ? 'bg-cream' : 'bg-white'} py-14 md:py-16`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Local Landmarks</p>
           <h2 className="section-heading mb-5">Roofing Services Near Local Landmarks</h2>
