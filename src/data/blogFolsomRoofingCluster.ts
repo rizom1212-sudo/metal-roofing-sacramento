@@ -1,5 +1,6 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import { upgradedRoofLeakRepairFolsom } from './blogCityExpansionUpgrades';
 
 export const FOLSOM_CLUSTER_CATEGORY = 'Folsom Roofing';
 
@@ -275,84 +276,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: 'roof-leak-repair-folsom-ca',
-    title: 'Roof Leak Repair Folsom CA: Stop Water Damage Fast',
-    seoTitle: 'Roof Leak Repair Folsom CA | PRC 13 Roofing',
-    excerpt:
-      'Roof leak repair in Folsom starts with finding the real source. PRC 13 fixes leaks on shingle, tile, and metal roofs—and prioritizes active water intrusion.',
-    date: 'June 25, 2026',
-    readTime: '5 min read',
-    category: FOLSOM_CLUSTER_CATEGORY,
-    coverImage: COVER_D,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('roof-repair-folsom-ca', 'Roof repair Folsom'),
-      article('storm-damage-roof-repair-folsom', 'Storm damage roof repair Folsom'),
-      article('when-to-call-emergency-roofer', 'When to call an emergency roofer'),
-    ],
-    faqs: [
-      {
-        question: 'Why do Folsom roofs leak away from the stain?',
-        answer:
-          'Water travels along decking and rafters. The ceiling stain is often downhill from the actual roof failure.',
-      },
-      {
-        question: 'Is a small leak an emergency?',
-        answer:
-          'Active dripping during rain is urgent. Slow stains still need prompt repair before mold develops.',
-      },
-      {
-        question: 'What are common leak sources in Folsom?',
-        answer:
-          'Pipe boots, chimney flashing, valleys, and tile underlayment are frequent culprits.',
-      },
-      {
-        question: 'Does PRC 13 offer emergency leak help in Folsom?',
-        answer:
-          'Yes. Call 916-761-3866 for active leaks. See our emergency roof repair page for urgent response.',
-      },
-      {
-        question: 'Can you repair without replacing the whole roof?',
-        answer:
-          'Often yes, when damage is localized and the roof has useful life remaining.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: roof leak repair in Folsom requires roof-level diagnosis—not ceiling patches. PRC 13 Roofing traces intrusion points and fixes flashing, shingles, tile, or underlayment at the source.',
-      },
-      {
-        type: 'heading',
-        content: 'First Steps When You Notice a Leak',
-      },
-      {
-        type: 'list',
-        content: '',
-        items: [
-          'Contain water indoors with buckets and move valuables',
-          'Photograph stains and active drips for insurance if storm-related',
-          'Avoid climbing on wet or steep roofs',
-          'Call PRC 13 for assessment—especially during ongoing rain',
-        ],
-      },
-      {
-        type: 'links',
-        content: 'Urgent help:',
-        links: [
-          { label: 'Emergency roof repair', href: '/emergency-roof-repair' },
-          article('storm-damage-roof-repair-folsom', 'Storm damage roof repair Folsom'),
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Folsom homeowners from Briggs Ranch to Parkway can schedule roof leak repair with PRC 13. We explain costs and timeline before work begins.',
-      },
-    ],
-  },
+  upgradedRoofLeakRepairFolsom,
   {
     slug: 'storm-damage-roof-repair-folsom',
     title: 'Storm Damage Roof Repair Folsom: Wind, Rain, and Fallen Debris',

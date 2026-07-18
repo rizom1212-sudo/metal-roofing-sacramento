@@ -5,6 +5,7 @@ import {
   upgradedRoofLeakRepairSacramento,
   upgradedRoofInsuranceClaimsStormDamage,
 } from './blogContentUpgrades';
+import { upgradedHailDamageRoofRepair } from './blogCityExpansionUpgrades';
 
 export const EMERGENCY_CLUSTER_CATEGORY = 'Emergency Roof Repair';
 
@@ -271,83 +272,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: 'hail-damage-roof-repair',
-    title: 'Hail Damage Roof Repair: What Sacramento Homeowners Should Know',
-    seoTitle: 'Hail Damage Roof Repair | Sacramento Area',
-    excerpt:
-      'Hail is less common than wind in Sacramento, but bruised shingles and tile cracks need prompt repair. PRC 13 explains what to look for after hail.',
-    date: 'June 20, 2026',
-    readTime: '5 min read',
-    category: EMERGENCY_CLUSTER_CATEGORY,
-    coverImage: COVER_B,
-    relatedServices: coreServices(),
-    relatedArticles: [
-      article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair'),
-      article('missing-shingle-repair-sacramento', 'Missing shingle repair'),
-      article('roof-repair-cost-sacramento', 'Roof repair cost Sacramento'),
-    ],
-    faqs: [
-      {
-        question: 'Does Sacramento get enough hail for roof damage?',
-        answer:
-          'Hail events are occasional but real in the greater Sacramento area. When they occur, damage can be significant in narrow paths.',
-      },
-      {
-        question: 'What does hail damage look like on shingles?',
-        answer:
-          'Dark bruises, circular impact marks, granule loss in isolated spots, and cracked mat on older shingles.',
-      },
-      {
-        question: 'Can hail damage tile roofs?',
-        answer:
-          'Yes—cracks or chips that may not leak immediately but allow water intrusion over time.',
-      },
-      {
-        question: 'Should I file an insurance claim for hail?',
-        answer:
-          'If a professional documents widespread functional damage, a claim may be appropriate. We help with photos and reports.',
-      },
-      {
-        question: 'How quickly should hail damage be repaired?',
-        answer:
-          'Schedule inspection soon after the event. Delayed repairs can complicate insurance and allow secondary leaks.',
-      },
-    ],
-    body: [
-      {
-        type: 'paragraph',
-        content:
-          'Short answer: hail damage roof repair starts with a close inspection—not a ground glance. PRC 13 checks for bruised shingles, cracked tile, and compromised vents after Sacramento-area hail storms.',
-      },
-      {
-        type: 'heading',
-        content: 'Why Hail Damage Is Easy to Miss',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Impact marks may be subtle from the street. Functional damage often appears as granule pits or hairline tile cracks that only show on close inspection or under attic moisture weeks later.',
-      },
-      {
-        type: 'heading',
-        content: 'Repair Approach',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Localized hail damage may be repaired in sections. Widespread bruising on an aging roof may justify replacement. PRC 13 documents findings so you can make an informed decision with or without insurance.',
-      },
-      {
-        type: 'links',
-        content: 'Learn more:',
-        links: [
-          { label: 'Emergency roof repair', href: '/emergency-roof-repair' },
-          article('storm-damage-roof-repair-sacramento', 'Storm damage roof repair Sacramento'),
-        ],
-      },
-    ],
-  },
+  upgradedHailDamageRoofRepair,
   {
     slug: 'wind-damage-roof-repair',
     title: 'Wind Damage Roof Repair in Sacramento',

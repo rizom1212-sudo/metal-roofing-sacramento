@@ -92,7 +92,7 @@ export default function EmergencyRoofRepair() {
       resourceSectionIntro="Homeowners across Sacramento use these guides to understand roof leaks, storm and wind damage, emergency tarping, repair costs, insurance claims after storms, and when to call an emergency roofer—before reaching out for help."
       resourceGuides={emergencyResources}
       contextualLinkParagraphs={[
-        'We serve [Sacramento](/service-areas/sacramento), [Folsom](/service-areas/folsom), and [El Dorado Hills](/service-areas/el-dorado-hills). For non-urgent issues, see [roof repair](/roof-repair) or schedule a [roof inspection](/roof-inspection). Popular guides: [roof leak repair](/blog/roof-leak-repair-sacramento), [storm damage repair](/blog/storm-damage-roof-repair-sacramento), and [emergency tarping](/blog/emergency-roof-tarp-guide). [Contact us](/contact) anytime.',
+        'We serve [Sacramento](/service-areas/sacramento), [Folsom](/service-areas/folsom), and [El Dorado Hills](/service-areas/el-dorado-hills). City-specific emergency help: [Granite Bay](/emergency-roof-repair/granite-bay), [Orangevale](/emergency-roof-repair/orangevale), and [Folsom emergency roof repair](/emergency-roof-repair/folsom). For non-urgent issues, see [roof repair](/roof-repair) or schedule a [roof inspection](/roof-inspection). Popular guides: [roof leak repair](/blog/roof-leak-repair-sacramento), [storm damage repair](/blog/storm-damage-roof-repair-sacramento), and [emergency tarping](/blog/emergency-roof-tarp-guide). [Contact us](/contact) anytime.',
       ]}
     />
   );

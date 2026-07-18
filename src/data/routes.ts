@@ -1,6 +1,7 @@
 import { blogPosts } from './blog';
 import { PAGE_META } from './pageMeta';
 import { serviceAreas } from './serviceAreas';
+import { cityServicePages } from './cityServicePages';
 import { EMERGENCY_CLUSTER_CATEGORY } from './blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from './blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogElDoradoHillsRoofingCluster';
@@ -98,9 +99,19 @@ export const serviceAreaRoutes = serviceAreas.map(area => ({
   priority: area.slug === 'sacramento' ? 0.8 : 0.7,
 }));
 
+const CITY_SERVICE_LASTMOD = '2026-07-18';
+
+export const cityServiceRoutes: PublicRoute[] = cityServicePages.map(page => ({
+  path: page.path,
+  lastmod: CITY_SERVICE_LASTMOD,
+  changefreq: 'monthly' as const,
+  priority: 0.75,
+}));
+
 export const publicRoutes: PublicRoute[] = [
   ...generalRoutes,
   ...serviceRoutes,
+  ...cityServiceRoutes,
   ...serviceAreaRoutes,
   ...blogRoutes,
 ];

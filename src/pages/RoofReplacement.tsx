@@ -267,7 +267,9 @@ export default function RoofReplacement() {
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
-                use these guides for replacement cost, materials, insurance, financing, and timelines. Schedule a{' '}
+                use these guides for replacement cost, materials, insurance, financing, and timelines. Ready to hire asphalt replacement in Rocklin? See{' '}
+                <Link to="/roof-replacement/rocklin" className="text-gold font-semibold hover:text-gold-dark transition-colors">shingle roof replacement in Rocklin</Link>.
+                Schedule a{' '}
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
                 when you are ready for next steps.
               </p>

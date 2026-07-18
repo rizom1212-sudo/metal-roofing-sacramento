@@ -1,6 +1,7 @@
 import { DEFAULT_OG_IMAGE } from './assets';
 import { blogPosts } from './blog';
 import { serviceAreas } from './serviceAreas';
+import { getCityServicePage } from './cityServicePages';
 
 export interface PageMetaConfig {
   title: string;
@@ -117,6 +118,16 @@ export function getPageMeta(pathname: string): PageMetaConfig {
       };
     }
   }
+
+  const cityServicePage = getCityServicePage(pathname);
+  if (cityServicePage) {
+    return {
+      title: cityServicePage.metaTitle,
+      description: cityServicePage.metaDescription,
+      path: cityServicePage.path,
+    };
+  }
+
   return PAGE_META[pathname] ?? DEFAULT_SITE_META;
 }
 

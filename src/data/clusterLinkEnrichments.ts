@@ -100,11 +100,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
       'Document damage for [insurance claims after storms](/blog/roof-insurance-claims-storm-damage). Urgent openings may need [emergency roof repair](/emergency-roof-repair). Ongoing repairs: [roof repair](/roof-repair) · [missing shingle repair](/blog/missing-shingle-repair-sacramento) · [repair cost guide](/blog/roof-repair-cost-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
-  'hail-damage-roof-repair': {
-    appendParagraphs: [
-      'Sacramento-area hail paths should be inspected alongside [storm damage repair guidance](/blog/storm-damage-roof-repair-sacramento). File claims with help from [roof insurance claims](/blog/roof-insurance-claims-storm-damage). Planned fixes: [roof repair](/roof-repair) · [repair cost](/blog/roof-repair-cost-sacramento) · [missing shingles](/blog/missing-shingle-repair-sacramento) · [Emergency roof repair](/emergency-roof-repair) · [Contact](/contact).',
-    ],
-  },
   'wind-damage-roof-repair': {
     appendParagraphs: [
       'Folsom and [El Dorado Hills](/service-areas/el-dorado-hills) see similar ridge uplift—see [storm damage in Folsom](/blog/storm-damage-roof-repair-folsom) for foothill context. Temporary protection: [emergency tarp guide](/blog/emergency-roof-tarp-guide). Permanent fixes: [missing shingle repair](/blog/missing-shingle-repair-sacramento) · [roof repair](/roof-repair) · [flashing repair](/blog/roof-flashing-repair-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
@@ -137,11 +132,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   'roof-inspection-folsom-ca': {
     appendParagraphs: [
       'Free inspections are listed on [roof inspection](/roof-inspection). Local context: [Folsom service area](/service-areas/folsom). If leaks appear, see [roof leak repair Folsom](/blog/roof-leak-repair-folsom-ca) and [roof repair](/roof-repair). [Replacement planning](/blog/roof-replacement-folsom-ca) · [Contact](/contact).',
-    ],
-  },
-  'roof-leak-repair-folsom-ca': {
-    appendParagraphs: [
-      'Urgent flow? [Emergency roof repair](/emergency-roof-repair). Broader repair options: [roof repair Folsom](/blog/roof-repair-folsom-ca) and [storm damage](/blog/storm-damage-roof-repair-folsom). [Folsom](/service-areas/folsom) · [Roof replacement](/roof-replacement) · [Contact](/contact).',
     ],
   },
   'storm-damage-roof-repair-folsom': {
@@ -191,21 +181,6 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   'fascia-repair-el-dorado-hills-ca': {
     appendParagraphs: [
       'Fascia work ties to [roof repair](/roof-repair) and [tile roofing](/blog/tile-roofing-el-dorado-hills-ca). [El Dorado Hills](/service-areas/el-dorado-hills) homeowners also review [inspection findings](/blog/roof-inspection-el-dorado-hills-ca). [Emergency repair](/emergency-roof-repair) · [Contact](/contact).',
-    ],
-  },
-  'emergency-roof-repair-el-dorado-hills-ca': {
-    appendParagraphs: [
-      'Main [emergency roof repair](/emergency-roof-repair) page covers response standards. Permanent fixes: [roof repair EDH](/blog/roof-repair-el-dorado-hills-ca). Claims: [insurance guide](/blog/roof-insurance-claims-el-dorado-hills). [EDH service area](/service-areas/el-dorado-hills) · [Contact](/contact).',
-    ],
-  },
-  'metal-roofing-el-dorado-hills-ca': {
-    appendParagraphs: [
-      'Install through [metal roofing](/metal-roofing) services. Compare [tile roofing](/blog/tile-roofing-el-dorado-hills-ca) and [replacement planning](/blog/roof-replacement-el-dorado-hills-ca). [El Dorado Hills](/service-areas/el-dorado-hills) · [Roof inspection](/roof-inspection) · [Roof repair](/roof-repair) · [Contact](/contact).',
-    ],
-  },
-  'roof-insurance-claims-el-dorado-hills': {
-    appendParagraphs: [
-      'Pair claims with [emergency roof repair](/emergency-roof-repair) when needed. [EDH repair guide](/blog/roof-repair-el-dorado-hills-ca) · [inspection documentation](/blog/roof-inspection-el-dorado-hills-ca). [Sacramento-region storm claims article](/blog/roof-insurance-claims-storm-damage) · [EDH](/service-areas/el-dorado-hills) · [Contact](/contact).',
     ],
   },
 

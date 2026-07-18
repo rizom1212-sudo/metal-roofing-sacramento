@@ -401,6 +401,8 @@ export default function RoofRepair() {
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+                Hiring for a specific community? See{' '}
+                <Link to="/roof-repair/granite-bay" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair in Granite Bay</Link>.
                 Active leak right now? See{' '}
                 <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">emergency roof repair</Link>.
                 Start with a{' '}

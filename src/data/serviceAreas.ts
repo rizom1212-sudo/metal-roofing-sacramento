@@ -136,7 +136,7 @@ const rawServiceAreas: ServiceAreaBase[] = [
     localSignals: ['Ridge cap or edge damage after wind', 'Cracked tiles or displaced shingles', 'Leaks near valleys or wall transitions', 'Sun damage on south-facing slopes', 'Older roofs needing repeated patch repairs'],
     services: [
       { title: 'Roof Repair in Rocklin', href: '/roof-repair', desc: 'Repair for roof leaks, wind-lifted materials, cracked tile or shingles, and flashing problems around roof transitions.' },
-      { title: 'Roof Replacement in Rocklin', href: '/roof-replacement', desc: 'Roof replacement planning for Rocklin homes with aging systems, recurring leaks, or materials no longer worth patching.' },
+      { title: 'Roof Replacement in Rocklin', href: '/roof-replacement/rocklin', desc: 'Asphalt shingle roof replacement for Rocklin homes with aging systems, recurring leaks, or materials no longer worth patching.' },
       { title: 'Roof Inspections in Rocklin', href: '/roof-inspection', desc: 'Free inspections focused on roof condition, leak risks, ventilation, valleys, penetrations, and storm-related concerns.' },
       { title: 'Emergency Roof Repair in Rocklin', href: '/emergency-roof-repair', desc: 'Urgent leak assessment and temporary stabilization when rain or wind damage creates an active roof problem.' },
       { title: 'Metal Roofing in Rocklin', href: '/metal-roofing', desc: 'Metal roofing options for Rocklin homeowners who want durability, clean lines, and strong long-term weather resistance.' },
@@ -165,7 +165,7 @@ const rawServiceAreas: ServiceAreaBase[] = [
       { title: 'Roof Repair in Folsom', href: '/roof-repair', desc: 'Focused repairs for leaks, damaged materials, flashing issues, and localized roof wear caused by heat or storms.' },
       { title: 'Roof Replacement in Folsom', href: '/roof-replacement', desc: 'Full replacement guidance for Folsom homeowners comparing shingle, tile, and metal roof options.' },
       { title: 'Roof Inspections in Folsom', href: '/roof-inspection', desc: 'Free inspections with written findings for roof age, leak risks, ventilation, drainage, and material condition.' },
-      { title: 'Emergency Roof Repair in Folsom', href: '/emergency-roof-repair', desc: 'Priority help for active leaks, storm openings, temporary protection, and repair planning.' },
+      { title: 'Emergency Roof Repair in Folsom', href: '/emergency-roof-repair/folsom', desc: 'Priority help for active leaks, storm openings, temporary protection, and repair planning in Folsom, CA.' },
       { title: 'Metal Roofing in Folsom', href: '/metal-roofing', desc: 'Metal roofing systems for Folsom homeowners seeking durability, energy performance, and long service life.' },
     ],
     faqs: [
@@ -273,7 +273,7 @@ const rawServiceAreas: ServiceAreaBase[] = [
       { title: 'Roof Repair in Orangevale', href: '/roof-repair', desc: 'Repair for leaks, damaged shingles, flashing issues, and roof areas affected by debris or gutter problems.' },
       { title: 'Roof Replacement in Orangevale', href: '/roof-replacement', desc: 'Replacement estimates for aging Orangevale roofs, including material guidance and decking review.' },
       { title: 'Roof Inspections in Orangevale', href: '/roof-inspection', desc: 'Free inspections for storm readiness, roof age, drainage, tree debris, and leak warning signs.' },
-      { title: 'Emergency Roof Repair in Orangevale', href: '/emergency-roof-repair', desc: 'Urgent support for active leaks, storm damage, temporary protection, and repair planning.' },
+      { title: 'Emergency Roof Repair in Orangevale', href: '/emergency-roof-repair/orangevale', desc: 'Urgent support for active leaks, storm damage, temporary protection, and repair planning in Orangevale, CA.' },
       { title: 'Metal Roofing in Orangevale', href: '/metal-roofing', desc: 'Metal roofing options for Orangevale homeowners seeking durability and reduced long-term maintenance.' },
     ],
     faqs: [
@@ -297,10 +297,10 @@ const rawServiceAreas: ServiceAreaBase[] = [
     localContent: 'Larger Granite Bay homes can have multiple roof planes, valleys, skylights, and tile sections where small flashing or underlayment issues are easy to miss. Detailed inspection matters before choosing repair or replacement.',
     localSignals: ['Leaks near skylights or valleys', 'Cracked or slipped tile sections', 'Flashing wear on complex roof lines', 'Underlayment concerns on older tile roofs', 'Premium material decisions for replacement'],
     services: [
-      { title: 'Roof Repair in Granite Bay', href: '/roof-repair', desc: 'Careful repair for leaks, tile damage, flashing failures, and complex roof intersections.' },
+      { title: 'Roof Repair in Granite Bay', href: '/roof-repair/granite-bay', desc: 'Careful repair for leaks, tile damage, flashing failures, and complex roof intersections in Granite Bay, CA.' },
       { title: 'Roof Replacement in Granite Bay', href: '/roof-replacement', desc: 'Replacement planning with material options, project sequencing, and walkthroughs for larger or more complex roofs.' },
       { title: 'Roof Inspections in Granite Bay', href: '/roof-inspection', desc: 'Free inspections that review roof complexity, valleys, skylights, visible tile issues, and leak risks.' },
-      { title: 'Emergency Roof Repair in Granite Bay', href: '/emergency-roof-repair', desc: 'Priority leak support when storms expose weak points around roof transitions or damaged materials.' },
+      { title: 'Emergency Roof Repair in Granite Bay', href: '/emergency-roof-repair/granite-bay', desc: 'Priority leak support when storms expose weak points around roof transitions or damaged materials in Granite Bay, CA.' },
       { title: 'Metal Roofing in Granite Bay', href: '/metal-roofing', desc: 'Premium metal roofing options for homeowners considering standing seam or long-life systems.' },
     ],
     faqs: [

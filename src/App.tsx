@@ -18,6 +18,7 @@ import CommercialRoofing from './pages/CommercialRoofing';
 import RoofInspection from './pages/RoofInspection';
 import GuttersSiding from './pages/GuttersSiding';
 import EmergencyRoofRepair from './pages/EmergencyRoofRepair';
+import CityServicePage from './pages/CityServicePage';
 
 export default function App() {
   return (
@@ -36,12 +37,15 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/roof-replacement" element={<RoofReplacement />} />
+      <Route path="/roof-replacement/:citySlug" element={<CityServicePage />} />
       <Route path="/roof-repair" element={<RoofRepair />} />
+      <Route path="/roof-repair/:citySlug" element={<CityServicePage />} />
       <Route path="/metal-roofing" element={<MetalRoofing />} />
       <Route path="/commercial-roofing" element={<CommercialRoofing />} />
       <Route path="/roof-inspection" element={<RoofInspection />} />
       <Route path="/gutters-siding" element={<GuttersSiding />} />
       <Route path="/emergency-roof-repair" element={<EmergencyRoofRepair />} />
+      <Route path="/emergency-roof-repair/:citySlug" element={<CityServicePage />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/service-areas" element={<ServiceAreas />} />
