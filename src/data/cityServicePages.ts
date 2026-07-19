@@ -91,7 +91,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     cityName: 'Granite Bay',
     parentPath: '/emergency-roof-repair',
     parentLabel: 'Emergency Roof Repair',
-    metaTitle: 'Emergency Roof Repair Granite Bay, CA | PRC 13 Roofing',
+    metaTitle: 'Emergency Roof Repair Granite Bay, CA | PRC 13',
     metaDescription:
       'Emergency roof repair in Granite Bay, California for active leaks, storm openings, and impact damage on complex and tile roofs. Call PRC 13 to schedule urgent assessment.',
     badge: 'Granite Bay, CA Emergency Response',
@@ -309,7 +309,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     cityName: 'Orangevale',
     parentPath: '/emergency-roof-repair',
     parentLabel: 'Emergency Roof Repair',
-    metaTitle: 'Emergency Roof Repair Orangevale, CA | PRC 13 Roofing',
+    metaTitle: 'Emergency Roof Repair Orangevale, CA | PRC 13',
     metaDescription:
       'Emergency roof repair in Orangevale, California for storm leaks, tree debris damage, gutter overflow, and aging shingle failures. Call PRC 13 to schedule urgent help.',
     badge: 'Orangevale, CA Emergency Response',
@@ -526,7 +526,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     cityName: 'Folsom',
     parentPath: '/emergency-roof-repair',
     parentLabel: 'Emergency Roof Repair',
-    metaTitle: 'Emergency Roof Repair Folsom, CA | PRC 13 Roofing',
+    metaTitle: 'Emergency Roof Repair Folsom, CA | PRC 13',
     metaDescription:
       'Emergency roof repair in Folsom, California for active leaks, wind openings, and storm exposure on shingle and tile roofs. Call PRC 13 to schedule urgent assessment.',
     badge: 'Folsom, CA Emergency Response',
@@ -737,7 +737,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     cityName: 'Granite Bay',
     parentPath: '/roof-repair',
     parentLabel: 'Roof Repair',
-    metaTitle: 'Roof Repair Granite Bay, CA | PRC 13 Roofing',
+    metaTitle: 'Roof Repair Granite Bay, CA | Free Inspection | PRC 13',
     metaDescription:
       'Roof repair in Granite Bay, California for tile, complex flashings, and valley leaks. Schedule PRC 13 for assessment and a written repair estimate—call for active water emergencies.',
     badge: 'Granite Bay, CA Roof Repair',
@@ -955,7 +955,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     cityName: 'Rocklin',
     parentPath: '/roof-replacement',
     parentLabel: 'Roof Replacement',
-    metaTitle: 'Shingle Roof Replacement Rocklin, CA | PRC 13 Roofing',
+    metaTitle: 'Shingle Roof Replacement Rocklin | Free Inspection | PRC 13',
     metaDescription:
       'Asphalt shingle roof replacement in Rocklin, California. Schedule PRC 13 for assessment, written estimate, and full replacement process for Sacramento County homes.',
     badge: 'Rocklin, CA Roof Replacement',

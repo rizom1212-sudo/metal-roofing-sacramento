@@ -38,19 +38,19 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/roof-replacement',
   },
   '/roof-repair': {
-    title: 'Roof Repair Sacramento, CA | Free Inspection | PRC 13 Roofing',
+    title: 'Roof Repair Sacramento, CA | Free Inspection | PRC 13',
     description:
       'Roof repair in Sacramento for leaks, missing shingles, flashing failures, storm damage, and other urgent roofing problems. Schedule a free inspection with PRC 13 Roofing.',
     path: '/roof-repair',
   },
   '/metal-roofing': {
-    title: `Metal Roofing Sacramento | ${SITE_NAME}`,
+    title: 'Metal Roofing Sacramento, CA | Install & Repair | PRC 13',
     description:
       'Metal roofing in Sacramento, including standing seam and durable metal roof systems built for heat, energy efficiency, long lifespan, and low maintenance.',
     path: '/metal-roofing',
   },
   '/commercial-roofing': {
-    title: `Commercial Roofing Sacramento | ${SITE_NAME}`,
+    title: 'Commercial Roofing Sacramento | Repair & Inspect | PRC 13',
     description:
       'Commercial roofing in Sacramento for repairs, replacements, inspections, TPO, EPDM, and modified bitumen systems from a licensed local roofing team.',
     path: '/commercial-roofing',
@@ -62,7 +62,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/roof-inspection',
   },
   '/gutters-siding': {
-    title: `Gutters & Siding Sacramento | ${SITE_NAME}`,
+    title: 'Gutters & Siding Sacramento, CA | Repair & Replacement | PRC 13',
     description:
       'Gutter installation, siding repair, and exterior protection for Sacramento homes. PRC 13 Roofing provides free inspections and clear recommendations.',
     path: '/gutters-siding',
@@ -98,7 +98,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
     path: '/blog',
   },
   '/service-areas': {
-    title: `Areas We Serve | ${SITE_NAME}`,
+    title: 'Sacramento Roofing Service Areas | PRC 13',
     description:
       'PRC 13 Roofing serves Sacramento, Roseville, Rocklin, Folsom, Elk Grove, and surrounding communities. Free roof inspections.',
     path: '/service-areas',
