@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import PageMeta from './PageMeta';
 import SkipLink from './SkipLink';
+import FloatingInspectionCta from './FloatingInspectionCta';
 
 function ScrollReveal() {
   const { pathname } = useLocation();
@@ -87,6 +88,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       >
         {children}
       </main>
+      <FloatingInspectionCta />
       <Footer />
     </div>
   );

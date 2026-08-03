@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { handleSamePageAnchorClick } from '../lib/scroll';
 import { ArrowRight, CheckCircle, MapPin, Phone, BookOpen } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -8,8 +9,9 @@ import LocalSeoLinks from '../components/LocalSeoLinks';
 import LeadForm from '../components/LeadForm';
 import ServiceAreaConversionSections from '../components/ServiceAreaConversionSections';
 import { PRIMARY_CTA } from '../data/cta';
+import TelLink from '../components/TelLink';
 import { SERVICE_AREA_FORM_SECTION_ID } from '../data/serviceAreaConversion';
-import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { PHONE_DISPLAY } from '../data/site';
 import { serviceAreas } from '../data/serviceAreas';
 import { blogPosts } from '../data/blog';
 import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
@@ -70,15 +72,20 @@ export default function ServiceAreaCity() {
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-8">{area.heroIntro}</p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href={`tel:${PHONE_TEL}`} className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+            <TelLink location={`hero-service-area-${area.slug}`} className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
               <Phone size={18} /> Call {PHONE_DISPLAY}
-            </a>
-            <Link to="/roof-inspection" className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
+            </TelLink>
+            <a
+              href={`#${SERVICE_AREA_FORM_SECTION_ID}`}
+              onClick={e => handleSamePageAnchorClick(e, SERVICE_AREA_FORM_SECTION_ID)}
+              className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+            >
               {PRIMARY_CTA} <ArrowRight size={18} />
-            </Link>
-            <Link to="/gallery" className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
-              View Project Gallery <ArrowRight size={18} />
-            </Link>
+            </a>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300 mt-6">
+            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Lic. No. 1087153 · Licensed &amp; Insured</span>
+            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Free roof inspections</span>
           </div>
         </div>
       </section>
@@ -288,7 +295,7 @@ export default function ServiceAreaCity() {
         trustIntro={area.trustIntro}
       />
 
-      <section id={SERVICE_AREA_FORM_SECTION_ID} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16 scroll-mt-28">
+      <section id={SERVICE_AREA_FORM_SECTION_ID} data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16 scroll-mt-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -297,14 +304,14 @@ export default function ServiceAreaCity() {
               <p className="text-gray-400 leading-relaxed mb-6">
                 {area.cta} Tell us what you are seeing and we will help you schedule an inspection, roof repair assessment, or replacement estimate.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a href={`tel:${PHONE_TEL}`} className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
-                  <Phone size={16} /> Or call: {PHONE_DISPLAY}
-                </a>
+              <div className="flex flex-wrap gap-4 mb-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
                   Contact PRC 13 <ArrowRight size={14} />
                 </Link>
               </div>
+              <TelLink location={`service-area-${area.slug}-final`} className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={15} /> Or call: {PHONE_DISPLAY}
+              </TelLink>
             </div>
             <LeadForm sourcePage={`service-area-${area.slug}`} variant="full" hideEmail hideReason compactSpacing />
           </div>

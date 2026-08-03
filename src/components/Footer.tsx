@@ -2,7 +2,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { scrollToTopInstant } from '../lib/scroll';
 import { Phone, Shield } from 'lucide-react';
 import GoogleReviewsLink from './GoogleReviewsLink';
-import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { PHONE_DISPLAY } from '../data/site';
+import TelLink from './TelLink';
 import { serviceAreas } from '../data/serviceAreas';
 
 const tier1Links = [
@@ -45,10 +46,10 @@ export default function Footer() {
               Sacramento residential roofing specialists focused on honest inspections, quality workmanship, and fast local service.
             </p>
             <div className="flex flex-col gap-3">
-              <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+              <TelLink location="footer" className="flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
                 <Phone size={15} />
                 {PHONE_DISPLAY}
-              </a>
+              </TelLink>
               <GoogleReviewsLink className="text-sm" />
             </div>
           </div>

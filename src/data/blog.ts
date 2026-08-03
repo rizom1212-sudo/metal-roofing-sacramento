@@ -10,6 +10,12 @@ import { metalRoofingClusterPosts } from './blogMetalRoofingCluster';
 import { guttersFasciaClusterPosts } from './blogGuttersFasciaCluster';
 import { commercialRoofingClusterPosts } from './blogCommercialRoofingCluster';
 import { roofRepairClusterPosts } from './blogRoofRepairCluster';
+import {
+  phase4EmergencyPosts,
+  phase4RepairPosts,
+  phase4ReplacementPosts,
+  phase4MetalPosts,
+} from './blogPhase4TopicalAuthority';
 
 export interface BlogRelatedService {
   label: string;
@@ -325,13 +331,17 @@ const rawBlogPosts: BlogPost[] = [
   },
   ...roofInspectionClusterPosts,
   ...emergencyRoofRepairClusterPosts,
+  ...phase4EmergencyPosts,
   ...folsomRoofingClusterPosts,
   ...elDoradoHillsRoofingClusterPosts,
   ...roofReplacementClusterPosts,
+  ...phase4ReplacementPosts,
   ...metalRoofingClusterPosts,
+  ...phase4MetalPosts,
   ...guttersFasciaClusterPosts,
   ...commercialRoofingClusterPosts,
   ...roofRepairClusterPosts,
+  ...phase4RepairPosts,
 ];
 
 export const blogPosts = applyClusterLinkEnrichmentsToPosts(rawBlogPosts);

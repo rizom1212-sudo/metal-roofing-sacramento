@@ -11,7 +11,10 @@ import OptimizedImage from './OptimizedImage';
 import AnswerSummary from './AnswerSummary';
 import LocalSeoLinks from './LocalSeoLinks';
 import SacramentoGuideCallout from './SacramentoGuideCallout';
-import { PRIMARY_CTA } from '../data/cta';
+import { CTA_EMERGENCY_CALL, PRIMARY_CTA } from '../data/cta';
+import { PHONE_DISPLAY } from '../data/site';
+import TelLink from './TelLink';
+import ReviewStrip from './ReviewStrip';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 import { type GalleryCategory } from '../data/gallery';
@@ -144,9 +147,9 @@ export default function ServicePageTemplate({
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">{subheadline}</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-                  <Phone size={18} /> Call 916-761-3866
-                </a>
+                <TelLink location={`hero-${sourcePage}`} className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+                  <Phone size={18} /> {sourcePage.includes('emergency') ? CTA_EMERGENCY_CALL : `Call ${PHONE_DISPLAY}`}
+                </TelLink>
                 <a
                   href={`#${sourcePage}-cta`}
                   onClick={e => handleSamePageAnchorClick(e, `${sourcePage}-cta`)}
@@ -282,6 +285,14 @@ export default function ServicePageTemplate({
         </section>
       )}
 
+      <section className="bg-cream py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3 text-center">Customer Reviews</p>
+          <h2 className="section-heading text-center mb-8">What Sacramento Homeowners Say</h2>
+          <ReviewStrip count={3} variant="light" />
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -296,7 +307,7 @@ export default function ServicePageTemplate({
       {showLocalSeoLinks && <LocalSeoLinks />}
 
       {/* CTA */}
-      <section id={`${sourcePage}-cta`} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section data-final-cta id={`${sourcePage}-cta`} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -310,9 +321,9 @@ export default function ServicePageTemplate({
                   </li>
                 ))}
               </ul>
-              <a href="tel:9167613866" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
-                <Phone size={16} /> Or call: 916-761-3866
-              </a>
+              <TelLink location={`final-${sourcePage}`} className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={16} /> Or call: {PHONE_DISPLAY}
+              </TelLink>
             </div>
             <LeadForm sourcePage={sourcePage} variant="full" hideEmail hideReason compactSpacing />
           </div>

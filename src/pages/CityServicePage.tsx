@@ -14,7 +14,8 @@ import { PRIMARY_CTA } from '../data/cta';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 import { getCityServicePage } from '../data/cityServicePages';
-import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import TelLink from '../components/TelLink';
+import { PHONE_DISPLAY } from '../data/site';
 
 export default function CityServicePage() {
   const { pathname } = useLocation();
@@ -73,12 +74,12 @@ export default function CityServicePage() {
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">{page.subheadline}</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <a
-                  href={`tel:${PHONE_TEL}`}
+                <TelLink
+                  location={`city-${page.sourcePage}`}
                   className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"
                 >
                   <Phone size={18} /> Call {PHONE_DISPLAY}
-                </a>
+                </TelLink>
                 <a
                   href={`#${page.sourcePage}-cta`}
                   onClick={e => handleSamePageAnchorClick(e, `${page.sourcePage}-cta`)}
@@ -338,7 +339,7 @@ export default function CityServicePage() {
         description={`PRC 13 Roofing helps homeowners in ${page.cityName}, California compare repair, replacement, emergency help, and inspection options with clear local guidance.`}
       />
 
-      <section id={`${page.sourcePage}-cta`} className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section id={`${page.sourcePage}-cta`} data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -352,12 +353,12 @@ export default function CityServicePage() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={`tel:${PHONE_TEL}`}
+              <TelLink
+                location={`city-${page.sourcePage}-final`}
                 className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors"
               >
                 <Phone size={16} /> Or call: {PHONE_DISPLAY}
-              </a>
+              </TelLink>
             </div>
             <LeadForm sourcePage={page.sourcePage} variant="full" hideEmail hideReason compactSpacing />
           </div>

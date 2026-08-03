@@ -3,6 +3,8 @@ import { handleSamePageAnchorClick } from '../lib/scroll';
 import { Phone, CheckCircle, ArrowRight, AlertTriangle, Clock, Star, Shield, MapPin, CreditCard, BookOpen } from 'lucide-react';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
+import TelLink from '../components/TelLink';
+import { PHONE_DISPLAY } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
@@ -194,9 +196,7 @@ export default function RoofRepair() {
                 Roof repair in Sacramento, California for roof leaks, missing or damaged shingles, flashing issues, and storm damage. We find the source, explain your options, and start with a free inspection—no pressure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-                  <Phone size={18} /> Call 916-761-3866
-                </a>
+                <TelLink location="roof-repair" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
                 <a
                   href="#repair-quote"
                   onClick={e => handleSamePageAnchorClick(e, 'repair-quote')}
@@ -256,7 +256,7 @@ export default function RoofRepair() {
               <div className="p-4 bg-charcoal-dark/5 border-l-4 border-charcoal">
                 <p className="text-sm text-body">
                   <strong className="text-headline">Seeing water damage inside your home?</strong> That's an emergency. Call us immediately at{' '}
-                  <a href="tel:9167613866" className="text-gold font-semibold hover:underline">916-761-3866</a>.
+                  <TelLink location="roof-repair-inline" className="text-gold font-semibold hover:underline">{PHONE_DISPLAY}</TelLink>.
                 </p>
               </div>
             </div>
@@ -341,9 +341,7 @@ export default function RoofRepair() {
             <p className="text-gray-400 leading-relaxed mb-6">
               If your roof was damaged by wind, hail, or falling debris, we help document the damage clearly for your insurance claim. Our team takes photos, notes visible problem areas, and works directly with homeowners during the adjuster process so important repairs are not overlooked or underpaid.
             </p>
-            <a href="tel:9167613866" className="inline-flex items-center gap-2 btn-gold px-8 py-4 text-base font-semibold">
-              <Phone size={18} /> Call 916-761-3866
-            </a>
+            <TelLink location="roof-repair" className="inline-flex items-center gap-2 btn-gold px-8 py-4 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
           </div>
         </div>
       </section>
@@ -447,7 +445,7 @@ export default function RoofRepair() {
       <LocalSeoLinks />
 
       {/* FORM CTA */}
-      <section id="repair-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section id="repair-quote" data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -456,13 +454,16 @@ export default function RoofRepair() {
               <p className="text-gray-400 leading-relaxed mb-6">
                 Tell us what's going on and we'll get back to you quickly. Most repairs in Sacramento can be assessed and scheduled the same week.
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 {['Fast response', 'Written estimate before any work starts', 'Insurance documentation available', 'No repair too small'].map(item => (
                   <li key={item} className="flex items-center gap-2 text-gray-300 text-sm">
                     <CheckCircle size={14} className="text-gold flex-shrink-0" /> {item}
                   </li>
                 ))}
               </ul>
+              <TelLink location="roof-repair-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={16} /> Or call: {PHONE_DISPLAY}
+              </TelLink>
             </div>
             <LeadForm
               sourcePage="roof-repair"

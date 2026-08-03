@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { PRIMARY_CTA } from '../data/cta';
-import { PHONE_SMS } from '../data/site';
+import { PHONE_DISPLAY, PHONE_SMS } from '../data/site';
+import { trackClickToSms } from '../lib/analytics';
+import TelLink from './TelLink';
 import { scrollToTopInstant } from '../lib/scroll';
 import SeasonalBanner, { SEASONAL_BANNER_SESSION_KEY } from './SeasonalBanner';
 
@@ -155,13 +157,13 @@ export default function Navbar() {
             </nav>
 
             <div className="hidden md:flex items-center gap-4">
-              <a
-                href="tel:9167613866"
+              <TelLink
+                location="nav-desktop"
                 className="flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-all duration-200 ease-out hover:-translate-y-0.5"
               >
                 <Phone size={15} />
-                916-761-3866
-              </a>
+                {PHONE_DISPLAY}
+              </TelLink>
               <Link to="/contact" onClick={() => handleNavLinkClick('/contact')} className="btn-gold text-sm px-5 py-3 font-semibold tracking-wide">
                 {PRIMARY_CTA}
               </Link>
@@ -217,10 +219,14 @@ export default function Navbar() {
               </Link>
 
               <div className="pt-3 space-y-2">
-                <a href="tel:9167613866" className="flex items-center justify-center gap-2 w-full btn-gold py-3 text-sm">
-                  <Phone size={16} /> Call 916-761-3866
-                </a>
-                <a href={PHONE_SMS} className="flex items-center justify-center w-full text-sm text-gray-400 hover:text-gold py-2 transition-colors">
+                <TelLink location="nav-mobile-menu" className="flex items-center justify-center gap-2 w-full btn-gold py-3 text-sm">
+                  <Phone size={16} /> Call {PHONE_DISPLAY}
+                </TelLink>
+                <a
+                  href={PHONE_SMS}
+                  onClick={() => trackClickToSms('nav-mobile-menu')}
+                  className="flex items-center justify-center w-full text-sm text-gray-400 hover:text-gold py-2 transition-colors"
+                >
                   Text us instead
                 </a>
               </div>
@@ -232,13 +238,13 @@ export default function Navbar() {
 
       <div className="mobile-bottom-cta md:hidden">
         <div className="flex">
-          <a
-            href="tel:9167613866"
+          <TelLink
+            location="mobile-sticky-bar"
             className="flex-1 flex items-center justify-center gap-2 bg-gold text-white font-bold py-4 text-sm hover:bg-gold-light transition-colors"
           >
             <Phone size={18} />
             Call Now
-          </a>
+          </TelLink>
           <Link
             to="/contact"
             onClick={() => handleNavLinkClick('/contact')}

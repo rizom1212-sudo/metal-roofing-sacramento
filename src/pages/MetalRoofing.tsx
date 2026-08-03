@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
+import TelLink from '../components/TelLink';
+import { PHONE_DISPLAY } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { PRIMARY_CTA } from '../data/cta';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -120,9 +122,7 @@ export default function MetalRoofing() {
                 Premium standing seam and corrugated metal roofing for Sacramento homes. Built for long term durability, lower maintenance, and reliable performance through Sacramento heat and weather.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-                  <Phone size={18} /> Call 916-761-3866
-                </a>
+                <TelLink location="metal" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
                 <a
                   href="#metal-quote"
                   onClick={e => handleSamePageAnchorClick(e, 'metal-quote')}
@@ -351,7 +351,7 @@ export default function MetalRoofing() {
       <LocalSeoLinks />
 
       {/* FINAL CTA */}
-      <section id="metal-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section id="metal-quote" data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -367,9 +367,9 @@ export default function MetalRoofing() {
                   </li>
                 ))}
               </ul>
-              <a href="tel:9167613866" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
-                <Phone size={16} /> Or call directly: 916-761-3866
-              </a>
+              <TelLink location="metal-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={16} /> Or call directly: {PHONE_DISPLAY}
+              </TelLink>
             </div>
             <LeadForm sourcePage="metal-roofing" variant="full" hideEmail hideReason compactSpacing />
           </div>

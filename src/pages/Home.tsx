@@ -18,9 +18,10 @@ import type { LucideIcon } from 'lucide-react';
 import GoogleReviewsLink from '../components/GoogleReviewsLink';
 import GoogleIcon from '../components/GoogleIcon';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
-import FloatingInspectionCta from '../components/FloatingInspectionCta';
+import TelLink from '../components/TelLink';
 import BeforeAfter from '../components/BeforeAfter';
 import { GOOGLE_REVIEW_COUNT, PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
+import { trackClickToSms } from '../lib/analytics';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import { reviews } from '../data/reviews';
 import { serviceAreas } from '../data/serviceAreas';
@@ -129,7 +130,6 @@ export default function Home() {
   return (
     <>
       <JsonLd faqs={homeFaqs} pageName="PRC 13 Roofing Sacramento" />
-      <FloatingInspectionCta />
       {/* HERO */}
       <section className="relative bg-charcoal-dark overflow-hidden md:min-h-screen">
         <HeroBackground
@@ -190,10 +190,7 @@ export default function Home() {
                   {PRIMARY_CTA}
                   <ArrowRight size={18} />
                 </Link>
-                <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 border border-white/35 bg-white/8 text-white hover:bg-white/14 hover:border-white/55 font-semibold rounded-brand py-4 px-8 text-base transition-all duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0">
-                  <Phone size={18} />
-                  Call 916-761-3866
-                </a>
+                <TelLink location="home" className="inline-flex items-center justify-center gap-2 border border-white/35 bg-white/8 text-white hover:bg-white/14 hover:border-white/55 font-semibold rounded-brand py-4 px-8 text-base transition-all duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
               </div>
 
               {/* Trust strip */}
@@ -367,9 +364,7 @@ export default function Home() {
               <p className="text-sm text-body">
                 <Phone size={13} className="inline mr-1.5 text-gold" />
                 Call us directly:{' '}
-                <a href="tel:9167613866" className="text-gold font-semibold hover:underline">
-                  916-761-3866
-                </a>
+                <TelLink location="home-inline" className="text-gold font-semibold hover:underline">{PHONE_DISPLAY}</TelLink>
               </p>
             </div>
 
@@ -522,9 +517,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <p className="text-body text-sm mb-4">Still have questions? We're easy to reach.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold px-7 py-3 text-sm font-semibold">
-                <Phone size={15} /> Call 916-761-3866
-              </a>
+              <TelLink location="home" className="inline-flex items-center justify-center gap-2 btn-gold px-7 py-3 text-sm font-semibold"><Phone size={15} /> Call {PHONE_DISPLAY}</TelLink>
               <Link to="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-charcoal text-charcoal font-semibold px-7 py-3 text-sm hover:bg-charcoal hover:text-white transition-colors">
                 Send a Message <ArrowRight size={15} />
               </Link>
@@ -553,11 +546,12 @@ export default function Home() {
             Already filled out the form above? Call or text PRC 13 directly. Most Sacramento homes are inspected within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-            <a href={`tel:${PHONE_TEL}`} className="inline-flex items-center justify-center gap-2 btn-gold px-8 py-4 text-base font-semibold">
+            <TelLink location="home-final" className="inline-flex items-center justify-center gap-2 btn-gold px-8 py-4 text-base font-semibold">
               <Phone size={18} /> Call {PHONE_DISPLAY}
-            </a>
+            </TelLink>
             <a
               href={PHONE_SMS}
+              onClick={() => trackClickToSms('home-final')}
               className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 text-base hover:border-gold hover:text-gold transition-colors rounded-brand"
             >
               Text Us

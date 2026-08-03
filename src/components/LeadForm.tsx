@@ -1,8 +1,10 @@
 import { useId, useState } from 'react';
 import { Phone } from 'lucide-react';
 import { submitLead } from '../lib/airtable';
+import { trackGenerateLead } from '../lib/analytics';
 import { PRIMARY_CTA } from '../data/cta';
-import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { PHONE_DISPLAY } from '../data/site';
+import TelLink from './TelLink';
 import TrustResponseLine from './TrustResponseLine';
 
 const REASON_OPTIONS = [
@@ -11,7 +13,15 @@ const REASON_OPTIONS = [
   { value: 'storm', label: 'Storm Damage' },
   { value: 'replacement', label: 'Roof Replacement' },
   { value: 'inspection', label: 'Free Inspection' },
+  { value: 'estimate', label: 'Roofing Estimate' },
   { value: 'other', label: 'Other' },
+] as const;
+
+const CONTACT_METHOD_OPTIONS = [
+  { value: '', label: 'Preferred contact method (optional)' },
+  { value: 'phone', label: 'Phone call' },
+  { value: 'text', label: 'Text message' },
+  { value: 'email', label: 'Email' },
 ] as const;
 
 const PRIVACY_COPY = 'We won\'t share your info. A PRC 13 team member will contact you about your roof.';
@@ -42,6 +52,8 @@ interface LeadFormProps {
   hideReason?: boolean;
   compactSpacing?: boolean;
   submitLabel?: string;
+  /** Optional city + preferred contact (Contact page). */
+  showExtendedFields?: boolean;
 }
 
 export default function LeadForm({
@@ -53,6 +65,7 @@ export default function LeadForm({
   hideReason = false,
   compactSpacing = false,
   submitLabel,
+  showExtendedFields = false,
 }: LeadFormProps) {
   const fieldId = useId();
   const ids = {
@@ -60,6 +73,8 @@ export default function LeadForm({
     phone: `${fieldId}-phone`,
     email: `${fieldId}-email`,
     reason: `${fieldId}-reason`,
+    city: `${fieldId}-city`,
+    contactMethod: `${fieldId}-contact-method`,
     message: `${fieldId}-message`,
   };
   const [form, setForm] = useState({
@@ -67,6 +82,8 @@ export default function LeadForm({
     phone: '',
     email: '',
     reason: '',
+    city: '',
+    contactMethod: '',
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -74,7 +91,7 @@ export default function LeadForm({
 
   const phoneInvalid = touched.phone && form.phone.trim() !== '' && !isValidPhone(form.phone);
   const reasonOptions = compact
-    ? REASON_OPTIONS.map(opt => opt.value === '' ? { ...opt, label: 'What do you need help with? (optional)' } : opt)
+    ? REASON_OPTIONS.map(opt => (opt.value === '' ? { ...opt, label: 'What do you need help with? (optional)' } : opt))
     : REASON_OPTIONS;
 
   const handleChange = (
@@ -85,13 +102,21 @@ export default function LeadForm({
 
   const buildPayload = () => {
     const reasonLabel = form.reason ? REASON_OPTIONS.find(o => o.value === form.reason)?.label : undefined;
-    const prefix = form.reason && reasonLabel ? `[${reasonLabel}] ` : '';
+    const methodLabel = form.contactMethod
+      ? CONTACT_METHOD_OPTIONS.find(o => o.value === form.contactMethod)?.label
+      : undefined;
+    const parts = [
+      reasonLabel ? `[${reasonLabel}]` : '',
+      form.city.trim() ? `City: ${form.city.trim()}` : '',
+      methodLabel ? `Preferred contact: ${methodLabel}` : '',
+      form.message.trim(),
+    ].filter(Boolean);
     return {
       name: form.name.trim(),
       phone: form.phone.trim(),
       email: form.email.trim() || undefined,
       service: form.reason || undefined,
-      message: form.message.trim() ? `${prefix}${form.message.trim()}` : reasonLabel || 'General Inquiry',
+      message: parts.join(' — ') || reasonLabel || 'General Inquiry',
       source_page: sourcePage,
     };
   };
@@ -104,15 +129,20 @@ export default function LeadForm({
 
     setStatus('loading');
     const result = await submitLead(buildPayload());
-    setStatus(result.success ? 'success' : 'error');
+    if (result.success) {
+      trackGenerateLead({
+        sourcePage,
+        formVariant: variant,
+        service: form.reason || undefined,
+      });
+      setStatus('success');
+    } else {
+      setStatus('error');
+    }
   };
 
-  const inputErrorClass = (invalid: boolean, dark?: boolean) =>
-    invalid
-      ? dark
-        ? 'border-red-400 focus:border-red-400'
-        : 'border-red-400 focus:border-red-400'
-      : '';
+  const inputErrorClass = (invalid: boolean) =>
+    invalid ? 'border-red-400 focus:border-red-400' : '';
 
   if (status === 'success') {
     return (
@@ -126,13 +156,13 @@ export default function LeadForm({
         <p className="text-gray-300 text-sm mt-2 leading-relaxed">
           We&apos;ll contact you shortly to schedule your inspection.
         </p>
-        <a
-          href={`tel:${PHONE_TEL}`}
+        <TelLink
+          location={`form-success-${sourcePage}`}
           className="inline-flex items-center justify-center gap-2 mt-4 text-gold font-semibold hover:text-gold-light transition-colors"
         >
           <Phone size={16} />
           Or call now: {PHONE_DISPLAY}
-        </a>
+        </TelLink>
       </div>
     );
   }
@@ -142,9 +172,9 @@ export default function LeadForm({
       <p className="font-medium">Something went wrong.</p>
       <p className="mt-1">
         Please call us directly:{' '}
-        <a href={`tel:${PHONE_TEL}`} className="font-semibold underline hover:no-underline">
+        <TelLink location={`form-error-${sourcePage}`} className="font-semibold underline hover:no-underline">
           {PHONE_DISPLAY}
-        </a>
+        </TelLink>
       </p>
     </div>
   );
@@ -214,6 +244,20 @@ export default function LeadForm({
             />
           </>
         )}
+        {showExtendedFields && (
+          <>
+            <FieldLabel htmlFor={ids.city}>City (optional)</FieldLabel>
+            <input
+              id={ids.city}
+              name="city"
+              value={form.city}
+              onChange={handleChange}
+              placeholder="City (optional)"
+              autoComplete="address-level2"
+              className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline placeholder-gray-400 focus:outline-none focus:border-gold transition-colors`}
+            />
+          </>
+        )}
         {!hideReason && (
           <>
             <FieldLabel htmlFor={ids.reason}>What do you need help with?</FieldLabel>
@@ -228,6 +272,24 @@ export default function LeadForm({
               }`}
             >
               {reasonOptions.map(opt => (
+                <option key={opt.value || 'default'} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
+        {showExtendedFields && (
+          <>
+            <FieldLabel htmlFor={ids.contactMethod}>Preferred contact method</FieldLabel>
+            <select
+              id={ids.contactMethod}
+              name="contactMethod"
+              value={form.contactMethod}
+              onChange={handleChange}
+              className={`input-brand w-full px-4 ${fullFieldPadding} bg-white border border-gray-200 text-headline focus:outline-none focus:border-gold transition-colors`}
+            >
+              {CONTACT_METHOD_OPTIONS.map(opt => (
                 <option key={opt.value || 'default'} value={opt.value}>
                   {opt.label}
                 </option>
@@ -301,7 +363,7 @@ export default function LeadForm({
             inputMode="tel"
             autoComplete="tel"
             aria-invalid={phoneInvalid}
-            className={`input-brand w-full px-4 py-3 bg-white/10 border border-white/25 text-white placeholder-white/55 focus:outline-none focus:border-gold focus:bg-white/15 transition-colors text-sm ${inputErrorClass(phoneInvalid, true)}`}
+            className={`input-brand w-full px-4 py-3 bg-white/10 border border-white/25 text-white placeholder-white/55 focus:outline-none focus:border-gold focus:bg-white/15 transition-colors text-sm ${inputErrorClass(phoneInvalid)}`}
           />
           {phoneInvalid && <p className="text-red-300 text-xs mt-1">Enter a valid 10-digit number.</p>}
         </div>

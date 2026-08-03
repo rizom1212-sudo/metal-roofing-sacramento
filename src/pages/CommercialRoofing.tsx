@@ -2,6 +2,10 @@ import { Phone, CheckCircle, ArrowRight, Shield, Award, Building2, Clock, Wrench
 import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
+import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
+import TelLink from '../components/TelLink';
+import { CTA_COMMERCIAL_ASSESSMENT } from '../data/cta';
+import { PHONE_DISPLAY } from '../data/site';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
@@ -88,33 +92,41 @@ export default function CommercialRoofing() {
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.93) 0%, rgba(15,20,28,0.75) 50%, rgba(15,20,28,0.35) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5">Sacramento Commercial</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-              Commercial Roofing<br />
-              <span className="text-gold">Done Right, On Schedule</span>
-            </h1>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              Flat roof repair, replacement, and maintenance for Sacramento area commercial properties. Licensed, insured, and focused on clear assessments, practical recommendations, and reliable project timelines.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-                <Phone size={18} /> Call 916-761-3866
-              </a>
-              <a
-                href="#commercial-quote"
-                onClick={e => handleSamePageAnchorClick(e, 'commercial-quote')}
-                className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
-              >
-                Request Commercial Assessment <ArrowRight size={18} />
-              </a>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-24 md:pt-24 md:pb-28 lg:py-28 w-full">
+          <div className="flex flex-col lg:block">
+            <div className="max-w-2xl">
+              <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5">Sacramento Commercial</span>
+              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
+                Commercial Roofing<br />
+                <span className="text-gold">Sacramento, CA</span>
+              </h1>
+              <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
+                Flat roof repair, replacement, and maintenance for Sacramento area commercial properties. Licensed, insured, and focused on clear assessments, practical recommendations, and reliable project timelines.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                <TelLink location="hero-commercial" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+                  <Phone size={18} /> Call {PHONE_DISPLAY}
+                </TelLink>
+                <a
+                  href="#commercial-quote"
+                  onClick={e => handleSamePageAnchorClick(e, 'commercial-quote')}
+                  className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+                >
+                  {CTA_COMMERCIAL_ASSESSMENT} <ArrowRight size={18} />
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
+                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
+                <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> COI Available on Request</span>
+                <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Flexible Scheduling</span>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
-              <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> COI Available on Request</span>
-              <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Flexible Scheduling</span>
-            </div>
+            <HeroLeadFormPanel
+              sourcePage="commercial-roofing-hero"
+              title="Request a Commercial Roof Assessment"
+              subtitle="Tell us about your property—we respond quickly on business days."
+              submitLabel={CTA_COMMERCIAL_ASSESSMENT}
+            />
           </div>
         </div>
       </section>
@@ -276,7 +288,7 @@ export default function CommercialRoofing() {
       <LocalSeoLinks />
 
       {/* FINAL CTA */}
-      <section id="commercial-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section id="commercial-quote" data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -292,9 +304,9 @@ export default function CommercialRoofing() {
                   </li>
                 ))}
               </ul>
-              <a href="tel:9167613866" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
-                <Phone size={16} /> Or call: 916-761-3866
-              </a>
+              <TelLink location="commercial-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={16} /> Or call: {PHONE_DISPLAY}
+              </TelLink>
             </div>
             <LeadForm
               sourcePage="commercial-roofing"

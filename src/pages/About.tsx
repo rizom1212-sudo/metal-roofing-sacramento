@@ -1,10 +1,11 @@
 import { Phone, CheckCircle, Shield, Award, Users } from 'lucide-react';
+import TelLink from '../components/TelLink';
 import { Link } from 'react-router-dom';
 import GoogleReviewsLink from '../components/GoogleReviewsLink';
 import JsonLd from '../components/JsonLd';
 import OptimizedImage from '../components/OptimizedImage';
 import { ASSETS } from '../data/assets';
-import { ABOUT_PHOTO_ALT, ABOUT_PHOTO_SRC } from '../data/site';
+import {ABOUT_PHOTO_ALT, ABOUT_PHOTO_SRC, PHONE_DISPLAY} from '../data/site';
 
 const values = [
   {
@@ -63,16 +64,19 @@ export default function About() {
                   PRC 13 Roofing was built around a simple standard: homeowners deserve clear answers, quality materials, and roofing work that is done right the first time.
                 </p>
                 <p>
-                  Since then, PRC 13 has become one of Sacramento's most trusted residential roofing teams through referrals, not marketing. Homeowners call back or send a neighbor because the work was done right and the experience was straightforward.
+                  Since then, PRC 13 has grown through referrals, not marketing. Homeowners call back or send a neighbor because the work was done right and the experience was straightforward.
                 </p>
                 <p>
                   Every project is handled with clear communication, documented recommendations, and a team that stands behind the finished work.
                 </p>
               </div>
               <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
-                <a href="tel:9167613866" className="inline-flex items-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
-                  <Phone size={16} /> Call PRC 13: 916-761-3866
-                </a>
+                <TelLink location="about" className="inline-flex items-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
+                  <Phone size={16} /> Call PRC 13: {PHONE_DISPLAY}
+                </TelLink>
+                <Link to="/contact" className="inline-flex items-center gap-2 border-2 border-charcoal text-charcoal font-semibold px-6 py-3 text-sm hover:bg-charcoal hover:text-white transition-colors">
+                  Request a Roof Inspection
+                </Link>
                 <GoogleReviewsLink variant="button" />
               </div>
             </div>
@@ -117,7 +121,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="bg-cream py-9 md:py-10">
+      <section data-final-cta className="bg-cream py-9 md:py-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-headline mb-3">
             Need Honest Roofing Advice?
@@ -126,11 +130,11 @@ export default function About() {
             Call or message our Sacramento roofing team for clear answers and no-pressure recommendations.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-              <Phone size={18} /> 916-761-3866
-            </a>
+            <TelLink location="about-final" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+              <Phone size={18} /> {PHONE_DISPLAY}
+            </TelLink>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-charcoal text-charcoal font-semibold py-4 px-8 text-base hover:bg-charcoal hover:text-white transition-colors">
-              Send a Message
+              Request a Roof Inspection
             </Link>
           </div>
         </div>

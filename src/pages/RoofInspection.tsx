@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import { Phone, CheckCircle, ArrowRight, Shield, Award, Eye, FileText, AlertTriangle, Clock, Wind, BookOpen } from 'lucide-react';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
+import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
+import TelLink from '../components/TelLink';
+import { PRIMARY_CTA } from '../data/cta';
+import { PHONE_DISPLAY } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
@@ -95,8 +99,9 @@ export default function RoofInspection() {
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.96) 0%, rgba(15,20,28,0.82) 50%, rgba(15,20,28,0.40) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-24 md:pt-24 md:pb-28 lg:py-28 w-full">
           <Breadcrumbs items={[{ label: 'Roof Inspection' }]} />
+          <div className="flex flex-col lg:block">
           <div className="max-w-2xl">
             <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5">Free, No Obligation</span>
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
@@ -107,22 +112,29 @@ export default function RoofInspection() {
               Schedule a free roof inspection in Sacramento, California. You get written findings covering leak detection, storm damage, aging materials, flashing problems, and clear repair-versus-replacement guidance—from a licensed roofer, not a salesperson.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <a href="tel:9167613866" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-                <Phone size={18} /> Call 916-761-3866
-              </a>
+              <TelLink location="hero-inspection" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+                <Phone size={18} /> Call {PHONE_DISPLAY}
+              </TelLink>
               <a
                 href="#inspection-quote"
                 onClick={e => handleSamePageAnchorClick(e, 'inspection-quote')}
                 className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
               >
-                Schedule Inspection <ArrowRight size={18} />
+                {PRIMARY_CTA} <ArrowRight size={18} />
               </a>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> 100% Free</span>
+              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Free Inspection</span>
               <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> No Obligation</span>
               <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Within 24 Hours</span>
             </div>
+          </div>
+            <HeroLeadFormPanel
+              sourcePage="roof-inspection-hero"
+              title="Request a Free Roof Inspection"
+              subtitle="Most Sacramento inspections are scheduled within one business day."
+              submitLabel={PRIMARY_CTA}
+            />
           </div>
         </div>
       </section>
@@ -343,7 +355,7 @@ export default function RoofInspection() {
       <LocalSeoLinks />
 
       {/* FINAL CTA */}
-      <section id="inspection-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section id="inspection-quote" data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
@@ -359,9 +371,9 @@ export default function RoofInspection() {
                   </li>
                 ))}
               </ul>
-              <a href="tel:9167613866" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
-                <Phone size={16} /> Or call: 916-761-3866
-              </a>
+              <TelLink location="inspection-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={16} /> Or call: {PHONE_DISPLAY}
+              </TelLink>
             </div>
             <LeadForm sourcePage="roof-inspection" variant="full" hideEmail hideReason compactSpacing />
           </div>

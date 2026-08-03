@@ -2,6 +2,10 @@ import { Phone, CheckCircle, ArrowRight, Shield, Award, Droplets, Home, Wind, La
 import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
+import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
+import TelLink from '../components/TelLink';
+import { CTA_GUTTER_EVALUATION, PRIMARY_CTA } from '../data/cta';
+import { PHONE_DISPLAY } from '../data/site';
 import ReviewStrip from '../components/ReviewStrip';
 import HeroBackground from '../components/HeroBackground';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -18,7 +22,7 @@ const exteriorFaqs: FaqItem[] = [
   {
     question: 'How much do new gutters or siding cost in Sacramento?',
     answer:
-      'Cost depends on the home size, material, access, and whether fascia or soffit repairs are needed. PRC 13 inspects the exterior first and provides a clear written estimate before work starts.',
+      'Cost depends on the home size, material, and access. PRC 13 inspects the exterior first and provides a clear written estimate before work starts.',
   },
   {
     question: 'How long does gutter or siding work usually take?',
@@ -36,9 +40,9 @@ const exteriorFaqs: FaqItem[] = [
       'Both. We offer siding repair, siding replacement, wood siding, moisture barrier upgrades, and exterior trim work—not just full installations.',
   },
   {
-    question: 'Do you replace damaged fascia and soffit boards?',
+    question: 'Do you offer fascia or soffit repair?',
     answer:
-      'Yes. Fascia and soffit damage often appears when gutters fail or water reaches the roofline. We assess and replace damaged boards as part of the exterior scope when needed.',
+      'No. PRC 13 focuses on gutter services and siding on this page. We do not offer fascia or soffit repair. If roofline boards are damaged, we can still evaluate gutter and roof-edge drainage needs.',
   },
   {
     question: 'How do I know if my gutters need to be replaced vs. repaired?',
@@ -96,9 +100,10 @@ export default function GuttersSiding() {
         />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-7 py-20 md:py-28">
-          <div className="max-w-2xl">
+          <div className="flex flex-col lg:block">
+<div className="max-w-2xl">
             <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5">
-              Gutters &bull; Siding &bull; Fascia &bull; Soffit &bull; Exterior Protection
+              Gutters &bull; Siding &bull; Exterior Protection
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-tight mb-5">
@@ -107,7 +112,7 @@ export default function GuttersSiding() {
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              Protect your Sacramento home with professional gutter, siding, fascia, and exterior services built to keep water away from your roofline, walls, and foundation.
+              Protect your Sacramento home with professional gutter and siding services built to keep water away from your roofline, walls, and foundation. PRC 13 does not offer fascia or soffit repair.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
@@ -134,18 +139,15 @@ export default function GuttersSiding() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <TelLink location="hero-gutters" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+                <Phone size={17} /> Call {PHONE_DISPLAY}
+              </TelLink>
               <a
                 href="#exterior-quote"
                 onClick={e => handleSamePageAnchorClick(e, 'exterior-quote')}
-                className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"
-              >
-                Free Inspection <ArrowRight size={17} />
-              </a>
-              <a
-                href="tel:9167613866"
                 className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
               >
-                <Phone size={17} /> Call Now
+                {CTA_GUTTER_EVALUATION} <ArrowRight size={17} />
               </a>
             </div>
 
@@ -157,6 +159,14 @@ export default function GuttersSiding() {
               <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Free Estimates</span>
             </div>
           </div>
+            <HeroLeadFormPanel
+              sourcePage="gutters-siding-hero"
+              title="Request a Free Gutter Evaluation"
+              subtitle="Tell us what you need—gutters, guards, or a roof drainage check."
+              submitLabel={CTA_GUTTER_EVALUATION}
+              className="lg:right-4"
+            />
+          </div>
         </div>
       </section>
 
@@ -166,13 +176,13 @@ export default function GuttersSiding() {
           <AnswerSummary
             title="Gutters and siding in Sacramento: quick answer"
             points={[
-              'Gutters protect fascia, roof edges, and foundations',
+              'Seamless gutter installation, repair, and replacement',
               'Siding helps prevent exterior moisture damage',
-              'Fascia and soffit repairs can stop roofline rot',
+              'Gutter drainage protects roof edges and foundations',
               'Exterior issues can contribute to roof leaks',
             ]}
           >
-            Gutters, siding, fascia, and soffit protect the parts of your Sacramento home that keep water away from the roofline and structure. Fixing exterior failures early can prevent larger{' '}
+            Gutters and siding protect the parts of your Sacramento home that keep water away from the roofline and structure. PRC 13 does not offer fascia or soffit repair. Fixing exterior failures early can prevent larger{' '}
             <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>{' '}
             and interior damage. Start with a{' '}
             <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
@@ -277,9 +287,9 @@ export default function GuttersSiding() {
               </div>
 
               <p className="text-body text-xs leading-relaxed mb-6 border-l-2 border-gold/40 pl-3 max-w-lg">
-                Also offering gutter repair, gutter replacement, fascia repair, soffit repair, and drainage solutions. See our{' '}
+                Also offering gutter repair, gutter replacement, and drainage solutions. PRC 13 does not offer fascia or soffit repair—see our{' '}
                 <Link to="/blog/fascia-repair-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">fascia repair guide</Link>{' '}
-                and{' '}
+                for educational context, plus our{' '}
                 <Link to="/blog/gutter-guards-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">gutter guards overview</Link>.
               </p>
 
@@ -332,8 +342,8 @@ export default function GuttersSiding() {
                 label: 'Roof inspection',
               },
               {
-                step: 'Gutters & fascia',
-                desc: 'Drainage and boards that carry water away from walls',
+                step: 'Gutters & drainage',
+                desc: 'Gutters and downspouts that carry water away from walls',
                 href: '#gutters-section',
                 label: 'Gutter services',
                 anchor: true,
@@ -517,7 +527,7 @@ export default function GuttersSiding() {
           <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Recent Work</p>
           <h2 className="section-heading mb-2">Recent Exterior Projects</h2>
           <p className="section-subheading max-w-2xl mb-6">
-            Gutter, siding, fascia, and exterior protection work completed across Sacramento—including James Hardie siding and roofline projects.
+            Gutter, siding, and exterior protection work completed across Sacramento—including James Hardie siding and roofline projects.
           </p>
           <p className="text-body text-sm mb-10">
             <Link to="/gallery" className="text-gold font-semibold hover:text-gold-dark transition-colors">
@@ -647,7 +657,7 @@ export default function GuttersSiding() {
       <LocalSeoLinks />
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
-      <section id="exterior-quote" className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
+      <section id="exterior-quote" data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-5 sm:px-7">
           <div className="grid md:grid-cols-2 gap-10 items-start">
 
@@ -658,14 +668,14 @@ export default function GuttersSiding() {
                 Get Your Free<br />Exterior Inspection
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                We&apos;ll inspect your gutters, siding, fascia, and roof edge transitions—then provide honest recommendations with no pressure. Exterior problems and roof leaks often share the same source.
+                We&apos;ll inspect your gutters, siding, and roof edge transitions—then provide honest recommendations with no pressure. Exterior problems and roof leaks often share the same source. PRC 13 does not offer fascia or soffit repair.
               </p>
               <ul className="space-y-2.5 mb-7">
                 {[
                   'Free assessment, no obligation',
                   'Seamless gutter installation available',
                   'Fiber cement and vinyl siding options',
-                  'Fascia and soffit repair available',
+                  'Honest scope—no fascia/soffit upsells',
                   'Financing available on qualifying projects',
                 ].map(item => (
                   <li key={item} className="flex items-center gap-2.5 text-gray-300 text-sm">
@@ -687,12 +697,9 @@ export default function GuttersSiding() {
                   Roof repair services <ArrowRight size={14} />
                 </Link>
               </div>
-              <a
-                href="tel:9167613866"
-                className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors"
-              >
-                <Phone size={15} /> Or call directly: 916-761-3866
-              </a>
+              <TelLink location="gutters-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+                <Phone size={15} /> Or call directly: {PHONE_DISPLAY}
+              </TelLink>
             </div>
 
             {/* Right form */}

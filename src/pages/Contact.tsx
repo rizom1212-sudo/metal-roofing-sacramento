@@ -1,7 +1,9 @@
 import { Phone, Clock, CheckCircle } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import LeadForm from '../components/LeadForm';
-import { PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
+import { LICENSE_TEXT, PHONE_DISPLAY, PHONE_SMS } from '../data/site';
+import { trackClickToSms } from '../lib/analytics';
+import TelLink from '../components/TelLink';
 
 export default function Contact() {
   return (
@@ -15,7 +17,7 @@ export default function Contact() {
             <div className="md:col-span-4 space-y-5">
               <div>
                 <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-2">Call or Text</p>
-                <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-3 group">
+                <TelLink location="contact-sidebar" className="flex items-center gap-3 group">
                   <div className="w-12 h-12 bg-gold flex items-center justify-center flex-shrink-0 rounded-brand">
                     <Phone size={20} className="text-white" />
                   </div>
@@ -23,8 +25,12 @@ export default function Contact() {
                     <p className="text-2xl font-bold text-headline group-hover:text-gold transition-colors">{PHONE_DISPLAY}</p>
                     <p className="text-body text-sm">Call PRC 13 directly</p>
                   </div>
-                </a>
-                <a href={PHONE_SMS} className="inline-block text-sm text-gold font-semibold hover:text-gold-dark transition-colors mt-2">
+                </TelLink>
+                <a
+                  href={PHONE_SMS}
+                  onClick={() => trackClickToSms('contact-sidebar')}
+                  className="inline-block text-sm text-gold font-semibold hover:text-gold-dark transition-colors mt-2"
+                >
                   Or send a text message →
                 </a>
               </div>
@@ -67,9 +73,10 @@ export default function Contact() {
             </div>
 
             <div id="contact-form" className="md:col-span-8 card-brand bg-white border border-gray-100 p-6 md:p-8 lg:min-h-[460px] flex flex-col justify-center">
-              <h1 className="text-2xl md:text-3xl font-bold text-headline mb-2">Request Your Free Roof Inspection</h1>
-              <p className="text-body text-sm mb-5">Most Sacramento homeowners receive a response within 24 hours.</p>
-              <LeadForm sourcePage="contact" variant="full" compact className="max-w-xl" />
+              <h1 className="text-2xl md:text-3xl font-bold text-headline mb-2">Request a Roof Inspection</h1>
+              <p className="text-body text-sm mb-2">Most Sacramento homeowners receive a response within 24 hours.</p>
+              <p className="text-xs text-gray-500 mb-5">{LICENSE_TEXT}</p>
+              <LeadForm sourcePage="contact" variant="full" showExtendedFields className="max-w-xl" />
             </div>
           </div>
         </div>
