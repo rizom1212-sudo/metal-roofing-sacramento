@@ -16,16 +16,19 @@ import MetalComparisonTable from '../components/MetalComparisonTable';
 import OptimizedImage from '../components/OptimizedImage';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
+import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
+import RetrievalAnswers from '../components/RetrievalAnswers';
 import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 
 const benefits = [
   { icon: Timer, title: '50+ Year Lifespan', desc: 'Outlasts asphalt shingles by 2 to 3 times. Many Sacramento homeowners install metal as their last roof ever.' },
   { icon: Sun, title: 'Energy Efficient', desc: "Metal reflects solar heat, which helps during Sacramento's hot summers. Lower cooling bills year round." },
   { icon: Shield, title: 'Wind & Fire Resistant', desc: 'Class A fire rating and rated for high winds. Metal stands up to California weather without buckling.' },
   { icon: Wrench, title: 'Virtually No Maintenance', desc: 'No granule loss, no curling shingles, no rotting. Metal holds up year after year with minimal upkeep.' },
-  { icon: Award, title: 'Manufacturer Warranty', desc: 'Metal roofing products carry strong manufacturer warranties. Our workmanship is also fully warranted.' },
+  { icon: Award, title: 'Manufacturer Warranty', desc: 'Metal roofing products carry manufacturer material warranties. PRC 13 also provides a workmanship warranty on completed metal installations—terms are confirmed in writing with your project.' },
   { icon: Zap, title: 'Increases Home Value', desc: 'Metal roofing adds measurable resale value and boosts curb appeal with a modern or classic profile.' },
 ];
 
@@ -47,47 +50,53 @@ const metalServices = [
 const process = [
   { num: '01', title: 'Free Inspection & Consult', desc: 'Our roofing team evaluates your current roof, discusses metal options, and explains what the installation process looks like for your home.' },
   { num: '02', title: 'Material Selection', desc: "We walk you through panel styles like standing seam, corrugated, and ribbed, then help you choose what fits your home's architecture and budget." },
-  { num: '03', title: 'Written Quote', desc: 'A clear, itemized written quote with no hidden fees. Financing available on qualifying projects.' },
-  { num: '04', title: 'Installation', desc: 'Our crew installs your new metal roof with proper underlayment, flashing, trim, and fasteners. Most jobs are completed in 2 to 3 days.' },
+  { num: '03', title: 'Written Quote', desc: 'A clear, itemized written quote with no hidden fees. Financing may be available on qualifying projects.' },
+  { num: '04', title: 'Installation', desc: 'Our crew installs your new metal roof with proper underlayment, flashing, trim, and fasteners. Many residential jobs take about 2 to 3 days; larger or complex roofs can take longer.' },
   { num: '05', title: 'Final Walkthrough', desc: 'We walk the finished job with you before we leave. You approve the work.' },
 ];
 
 const faqs: FaqItem[] = [
   {
     question: 'Is metal roofing right for Sacramento\'s climate?',
-    answer: 'Yes, metal is an excellent choice for Sacramento. It handles intense summer heat better than asphalt by reflecting solar energy, and it performs well in winter rain without the leak risk of aging shingles.',
+    answer: 'Yes. Metal handles Sacramento summer heat well by reflecting solar energy compared with dark aging shingles, and it performs in winter rain when installed with proper underlayment and flashing.',
   },
   {
     question: 'How much more does metal roofing cost vs. shingles?',
-    answer: 'Metal roofing typically costs 40 to 60% more upfront than architectural shingles. However, the 50+ year lifespan means you may never replace it again, making the lifetime cost competitive or lower.',
+    answer: 'Metal typically costs more upfront than architectural shingles—often roughly 40 to 60% more depending on profile and complexity. Lifetime cost can be competitive because many metal systems are designed for decades of service when installed correctly.',
   },
   {
     question: 'Is metal roofing noisy when it rains?',
-    answer: 'Modern metal roofing installed over solid decking with proper underlayment is not significantly louder than shingles. The decking and insulation absorb most of the sound.',
+    answer: 'Modern metal roofing installed over solid decking with proper underlayment is generally not significantly louder indoors than shingles. Decking and insulation absorb most rain sound.',
+  },
+  {
+    question: 'Does metal roofing need special insulation?',
+    answer: 'Metal itself is not insulation. Attic ventilation, underlayment, and the home’s existing insulation package matter more for comfort. We discuss roof assembly details during consultation so heat and condensation risks are addressed for your home.',
+  },
+  {
+    question: 'How long does metal roofing last?',
+    answer: 'Quality metal systems are commonly marketed for 50+ year service life, but actual lifespan depends on profile, coating, installation quality, and maintenance. PRC 13 explains expected performance for the specific product specified on your quote.',
+  },
+  {
+    question: 'Can solar be mounted on a metal roof?',
+    answer: 'Many metal roofs can accept solar mounting with the correct attachment method for the panel profile. Mounting details should be coordinated so penetrations and warranties are handled properly. We can discuss roof readiness during inspection; solar equipment itself is typically provided by a solar contractor.',
   },
   {
     question: 'What metal roofing styles do you install?',
-    answer: 'We install standing seam, corrugated, and exposed fastener ribbed metal panels in steel and aluminum. We\'ll show you profile options during your free consultation.',
-  },
-  {
-    question: 'Do you install standing seam metal roofing?',
-    answer: 'Yes. Standing seam roofing is our premium metal option. It uses concealed fasteners, clean vertical lines, and strong weather performance for Sacramento homes.',
+    answer: 'We install standing seam, corrugated, and exposed fastener ribbed metal panels in steel and aluminum options. We show profile choices during your free consultation.',
   },
   {
     question: 'Can you replace my shingle roof with metal?',
-    answer: 'Yes. Metal roof replacement includes removal when needed, decking inspection, underlayment, flashing, trim, and panel installation. We explain the cost and lifespan tradeoffs before you decide.',
+    answer: 'Yes. Metal replacement usually includes removal so decking can be inspected, then underlayment, flashing, trim, and panel installation. Overlay over shingles is only considered when conditions allow and is not the default.',
   },
   {
     question: 'How long does metal roof installation take?',
-    answer: 'Most Sacramento residential metal roof installations take 2 to 3 days. Larger or more complex roofs may take an additional day.',
-  },
-  {
-    question: 'Can metal roofing be installed over existing shingles?',
-    answer: 'In some cases, yes. Installing over existing shingles can avoid full removal. However, we typically recommend full removal so we can inspect and repair the decking. We advise based on your specific roof.',
+    answer: 'Many Sacramento residential metal installations take about 2 to 3 days. Larger or more complex roofs may need additional time. Weather and material lead times also affect scheduling.',
   },
 ];
 
-const metalResources = blogPosts.filter(post => post.category === METAL_CLUSTER_CATEGORY);
+const metalResources = blogPosts
+  .filter(post => post.category === METAL_CLUSTER_CATEGORY)
+  .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
 export default function MetalRoofing() {
   return (
@@ -97,6 +106,7 @@ export default function MetalRoofing() {
         pageName="Metal Roofing Built to Last"
         schemaType="Service"
         serviceName="Metal Roofing"
+        primaryImage={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')}
         breadcrumbs={[{ label: 'Metal Roofing' }]}
       />
       {/* HERO */}
@@ -134,7 +144,7 @@ export default function MetalRoofing() {
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
                 <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
                 <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Workmanship Warranty</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Financing Available</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Financing on Qualifying Projects</span>
               </div>
             </div>
             <HeroLeadFormPanel sourcePage="metal-roofing-hero" />
@@ -149,7 +159,7 @@ export default function MetalRoofing() {
             <span className="flex items-center gap-2"><Timer size={15} /> 50+ Year Lifespan</span>
             <span className="flex items-center gap-2"><Sun size={15} /> Energy Efficient and Reflects Sacramento Heat</span>
             <span className="flex items-center gap-2"><Shield size={15} /> Class A Fire Rating</span>
-            <span className="flex items-center gap-2"><CheckCircle size={15} /> Financing Available</span>
+            <span className="flex items-center gap-2"><CheckCircle size={15} /> Financing on Qualifying Projects</span>
           </div>
         </div>
       </div>
@@ -339,6 +349,27 @@ export default function MetalRoofing() {
         </div>
       </section>
 
+      <RetrievalAnswers
+        heading="Metal roofing answers Sacramento homeowners ask"
+        items={[
+          {
+            question: 'Is metal roofing noisy in the rain?',
+            answer:
+              'Installed over solid decking with proper underlayment, modern metal roofs are generally not much louder indoors than shingles—decking and insulation absorb most of the sound.',
+          },
+          {
+            question: 'How long can metal roofing last?',
+            answer:
+              'Quality metal systems are often designed for decades of service (commonly marketed at 50+ years), but real lifespan depends on profile, coating, installation, and maintenance.',
+          },
+          {
+            question: 'Tear-off or install over shingles?',
+            answer:
+              'PRC 13 typically recommends full tear-off so decking can be inspected. Overlay is only considered when conditions and product requirements allow.',
+          },
+        ]}
+      />
+
       {/* FAQ */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -348,6 +379,10 @@ export default function MetalRoofing() {
         </div>
       </section>
 
+      <SacramentoGuideCallout
+        href="/service-areas/sacramento"
+        label="View Sacramento roofing services"
+      />
       <LocalSeoLinks />
 
       {/* FINAL CTA */}
@@ -361,7 +396,7 @@ export default function MetalRoofing() {
                 We will inspect your current roof, walk you through metal roofing options, and give you a clear written quote with no pressure and no obligation.
               </p>
               <ul className="space-y-2 mb-6">
-                {['Same day or next day inspection available', 'Panel style consultation included', 'Financing options available', 'Full workmanship warranty'].map(item => (
+                {['We aim to schedule inspections quickly', 'Panel style consultation included', 'Financing may be available on qualifying projects', 'Workmanship warranty confirmed in writing'].map(item => (
                   <li key={item} className="flex items-center gap-2 text-gray-300 text-sm">
                     <CheckCircle size={14} className="text-gold flex-shrink-0" /> {item}
                   </li>

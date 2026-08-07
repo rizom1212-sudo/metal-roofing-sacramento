@@ -2,19 +2,17 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { PRIMARY_CTA } from '../data/cta';
-import { PHONE_DISPLAY, PHONE_SMS } from '../data/site';
+import { PHONE_DISPLAY, PHONE_SMS, LOGO_SRC, LOGO_ALT } from '../data/site';
+import { getNavServices } from '../data/services';
 import { trackClickToSms } from '../lib/analytics';
 import TelLink from './TelLink';
 import { scrollToTopInstant } from '../lib/scroll';
 import SeasonalBanner, { SEASONAL_BANNER_SESSION_KEY } from './SeasonalBanner';
 
-const allServices = [
-  { label: 'Roof Repair', href: '/roof-repair' },
-  { label: 'Metal Roofing', href: '/metal-roofing' },
-  { label: 'Commercial Roofing', href: '/commercial-roofing' },
-  { label: 'Roof Inspection', href: '/roof-inspection' },
-  { label: 'Gutters & Siding', href: '/gutters-siding' },
-];
+const allServices = getNavServices().map(service => ({
+  label: service.name,
+  href: service.canonicalUrl,
+}));
 
 function linkClass(active: boolean) {
   return active ? 'nav-link-active' : 'nav-link';
@@ -93,8 +91,8 @@ export default function Navbar() {
 
             <Link to="/" onClick={handleHomeLogoClick} className="flex items-center flex-shrink-0" style={{ minWidth: 0 }}>
               <img
-                src="/assets/brand/prc13-logo-gold.png"
-                alt="PRC 13 Roofing"
+                src={LOGO_SRC}
+                alt={LOGO_ALT}
                 className="h-[52px] md:h-[64px] w-auto max-w-[240px] object-contain object-left transition-transform duration-200 ease-out hover:scale-[1.015]"
               />
             </Link>

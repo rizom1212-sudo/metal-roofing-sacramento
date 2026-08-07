@@ -266,7 +266,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Gutters &amp; Fascia Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Gutters &amp; Fascia Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Gutter installation, replacement cost, guards, fascia repair, and how drainage affects roof leaks—for Sacramento homeowners protecting the roofline.
+                Gutter installation, replacement cost, guards, fascia damage education, and how drainage affects roof leaks—for Sacramento homeowners protecting the roofline. PRC 13 does not offer fascia or soffit repair.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {guttersFasciaGuides.map(post => (
@@ -365,7 +365,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">El Dorado Hills Roofing Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">El Dorado Hills Roofing Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Roof repair, replacement, inspections, tile and metal roofing, fascia repair, emergency response, and insurance claims—for foothill and hillside homes.
+                Roof repair, replacement, inspections, tile and metal roofing, emergency response, and insurance claims—for foothill and hillside homes. Educational fascia articles may appear in this cluster; PRC 13 does not offer fascia or soffit repair.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {elDoradoHillsGuides.map(post => (

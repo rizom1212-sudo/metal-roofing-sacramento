@@ -4,7 +4,7 @@ import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
-import { CTA_GUTTER_EVALUATION, PRIMARY_CTA } from '../data/cta';
+import { CTA_GUTTER_EVALUATION } from '../data/cta';
 import { PHONE_DISPLAY } from '../data/site';
 import ReviewStrip from '../components/ReviewStrip';
 import HeroBackground from '../components/HeroBackground';
@@ -12,9 +12,11 @@ import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
+import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
 import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 
 // ─── FAQ data split by group ────────────────────────────────────────────────
 
@@ -27,7 +29,17 @@ const exteriorFaqs: FaqItem[] = [
   {
     question: 'How long does gutter or siding work usually take?',
     answer:
-      'Most gutter installations are completed in one day. Siding timelines vary by project size and material, and we give you the schedule before installation begins.',
+      'Many gutter installations are completed in about one day. Siding timelines vary by home size, material, and prep work. PRC 13 confirms schedule expectations before installation begins.',
+  },
+  {
+    question: 'What warning signs mean gutters need attention?',
+    answer:
+      'Overflow during rain, sagging runs, pulling away from the roofline, rust-through, seams leaking, or water staining at fascia and foundation edges all suggest gutters should be inspected. Fixing drainage early helps protect the roof edge.',
+  },
+  {
+    question: 'Do you offer fascia or soffit repair?',
+    answer:
+      'No. PRC 13 focuses on gutter services and siding on this page. We do not offer fascia or soffit repair. If roofline boards are damaged, we can still evaluate gutter and roof-edge drainage needs and point you toward the right next step.',
   },
   {
     question: 'What siding materials does PRC 13 install?',
@@ -38,11 +50,6 @@ const exteriorFaqs: FaqItem[] = [
     question: 'Do you repair siding or only install new siding?',
     answer:
       'Both. We offer siding repair, siding replacement, wood siding, moisture barrier upgrades, and exterior trim work—not just full installations.',
-  },
-  {
-    question: 'Do you offer fascia or soffit repair?',
-    answer:
-      'No. PRC 13 focuses on gutter services and siding on this page. We do not offer fascia or soffit repair. If roofline boards are damaged, we can still evaluate gutter and roof-edge drainage needs.',
   },
   {
     question: 'How do I know if my gutters need to be replaced vs. repaired?',
@@ -66,7 +73,9 @@ const exteriorFaqs: FaqItem[] = [
   },
 ];
 
-const gutterFasciaResources = blogPosts.filter(post => post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY);
+const gutterFasciaResources = blogPosts
+  .filter(post => post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY)
+  .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
@@ -78,6 +87,7 @@ export default function GuttersSiding() {
         pageName="Gutters and Siding Sacramento"
         schemaType="Service"
         serviceName="Gutters and Siding"
+        primaryImage={ASSETS.guttersSiding('1e8ea3b0-e1a4-4e74-97d2-2209fbeeeb89.webp')}
       />
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden">
@@ -154,7 +164,7 @@ export default function GuttersSiding() {
             {/* Trust badges */}
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-300">
               <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
-              <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Financing Available</span>
+              <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Financing on Qualifying Projects</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Sacramento Area</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Free Estimates</span>
             </div>
@@ -617,7 +627,7 @@ export default function GuttersSiding() {
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
-                use these guides for gutter installation, replacement cost, guards, fascia repair, and leak prevention. Pair exterior work with a{' '}
+                use these guides for gutter installation, replacement cost, guards, fascia damage education, and leak prevention. Pair exterior work with a{' '}
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
                 or{' '}
                 <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a gutter or siding estimate</Link>.
@@ -654,6 +664,10 @@ export default function GuttersSiding() {
         </div>
       </section>
 
+      <SacramentoGuideCallout
+        href="/service-areas/sacramento"
+        label="View Sacramento roofing services"
+      />
       <LocalSeoLinks />
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
@@ -676,7 +690,7 @@ export default function GuttersSiding() {
                   'Seamless gutter installation available',
                   'Fiber cement and vinyl siding options',
                   'Honest scope—no fascia/soffit upsells',
-                  'Financing available on qualifying projects',
+                  'Financing may be available on qualifying projects',
                 ].map(item => (
                   <li key={item} className="flex items-center gap-2.5 text-gray-300 text-sm">
                     <CheckCircle size={14} className="text-gold flex-shrink-0" /> {item}

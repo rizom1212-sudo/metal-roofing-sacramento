@@ -1,15 +1,24 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { serviceAreas } from '../data/serviceAreas';
+import { getLocalSeoLinkServices } from '../data/services';
+import { LOCAL_SEO_PRIORITY_CITY_SLUGS } from '../data/internalLinking';
 
-const serviceLinks = [
-  { label: 'Roof Replacement', href: '/roof-replacement' },
-  { label: 'Roof Repair', href: '/roof-repair' },
-  { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
-  { label: 'Metal Roofing', href: '/metal-roofing' },
-  { label: 'Roof Inspections', href: '/roof-inspection' },
-  { label: 'Commercial Roofing', href: '/commercial-roofing' },
-];
+const serviceLinks = getLocalSeoLinkServices().map(service => ({
+  label: service.name,
+  href: service.canonicalUrl,
+}));
+
+function pickLocalSeoCities(limit: number) {
+  const bySlug = new Map(serviceAreas.map(area => [area.slug, area]));
+  const prioritized = LOCAL_SEO_PRIORITY_CITY_SLUGS
+    .map(slug => bySlug.get(slug))
+    .filter((area): area is (typeof serviceAreas)[number] => Boolean(area));
+  if (prioritized.length >= limit) return prioritized.slice(0, limit);
+  const used = new Set(prioritized.map(area => area.slug));
+  const remainder = serviceAreas.filter(area => !used.has(area.slug));
+  return [...prioritized, ...remainder].slice(0, limit);
+}
 
 interface LocalSeoLinksProps {
   title?: string;
@@ -19,10 +28,10 @@ interface LocalSeoLinksProps {
 
 export default function LocalSeoLinks({
   title = 'Sacramento Area Roofing Services',
-  description = 'PRC 13 Roofing helps homeowners across Sacramento and nearby communities compare repair, replacement, metal roofing, and inspection options with clear local guidance.',
+  description = 'Compare PRC 13 roof repair, replacement, emergency help, inspections, metal roofing, commercial roofing, and gutters & siding across Sacramento and nearby communities.',
   cityLimit = 8,
 }: LocalSeoLinksProps) {
-  const cities = serviceAreas.slice(0, cityLimit);
+  const cities = pickLocalSeoCities(cityLimit);
 
   return (
     <section className="bg-cream py-14">
@@ -60,12 +69,12 @@ export default function LocalSeoLinks({
                   className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-gold transition-colors"
                 >
                   <MapPin size={13} className="text-gold" />
-                  {area.name}
+                  Roofing services in {area.name}
                 </Link>
               ))}
             </div>
             <Link to="/service-areas" className="inline-flex items-center gap-1.5 text-gold font-semibold text-sm mt-5 hover:text-gold-light transition-colors">
-              View all service areas <ArrowRight size={14} />
+              Browse all Sacramento-area cities <ArrowRight size={14} />
             </Link>
           </div>
         </div>

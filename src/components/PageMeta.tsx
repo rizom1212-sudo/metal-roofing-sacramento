@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getOgImage, getPageMeta } from '../data/pageMeta';
 import { ASSETS } from '../data/assets';
 import { absoluteAssetUrl, absoluteUrl } from '../data/domain';
+import { publicRoutes } from '../data/routes';
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   const selector = `meta[${attr}="${key}"]`;
@@ -46,8 +47,19 @@ function upsertLink(rel: string, href: string) {
 
 export default function PageMeta() {
   const { pathname } = useLocation();
+  const knownPaths = useMemo(() => new Set(publicRoutes.map(route => route.path)), []);
 
   useEffect(() => {
+    const existingPreload = document.getElementById('preload-lcp-hero');
+    existingPreload?.remove();
+
+    if (!knownPaths.has(pathname)) {
+      document.title = 'Page Not Found | PRC 13 Roofing';
+      upsertMetaDescription('This PRC 13 Roofing page could not be found.');
+      upsertMeta('name', 'robots', 'noindex, follow');
+      return;
+    }
+
     const meta = getPageMeta(pathname);
     const ogType = pathname.startsWith('/blog/') && pathname !== '/blog' ? 'article' : 'website';
 
@@ -69,8 +81,6 @@ export default function PageMeta() {
     upsertMeta('name', 'twitter:description', meta.description);
     upsertMeta('name', 'twitter:image', image);
 
-    const existingPreload = document.getElementById('preload-lcp-hero');
-    existingPreload?.remove();
     if (pathname === '/') {
       const link = document.createElement('link');
       link.id = 'preload-lcp-hero';
@@ -80,7 +90,7 @@ export default function PageMeta() {
       link.setAttribute('fetchpriority', 'high');
       document.head.appendChild(link);
     }
-  }, [pathname]);
+  }, [pathname, knownPaths]);
 
   return null;
 }

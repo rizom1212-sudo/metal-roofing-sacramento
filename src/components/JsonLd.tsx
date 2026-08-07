@@ -9,12 +9,16 @@ interface JsonLdProps {
   pageName?: string;
   schemaType?: 'WebPage' | 'Service' | 'BlogPosting' | 'ContactPage';
   serviceName?: string;
+  /** Optional Service.description for city / city×service page-local Service nodes */
+  serviceDescription?: string;
   blogPost?: BlogPost;
   breadcrumbs?: { label: string; href?: string }[];
   /** RoofingContractor schema included by default for local entity consistency */
   includeLocalBusiness?: boolean;
   /** Cities for page-level Service.areaServed only (RoofingContractor always uses full footprint) */
   servedAreas?: string[];
+  /** Primary page image (absolute or site-relative path) for ImageObject / primaryImageOfPage */
+  primaryImage?: string;
 }
 
 export default function JsonLd({
@@ -22,10 +26,12 @@ export default function JsonLd({
   pageName = 'PRC 13 Roofing',
   schemaType = 'WebPage',
   serviceName,
+  serviceDescription,
   blogPost,
   breadcrumbs,
   includeLocalBusiness = true,
   servedAreas = serviceAreaNames,
+  primaryImage,
 }: JsonLdProps) {
   const { pathname } = useLocation();
   const graph = buildJsonLdGraph({
@@ -33,11 +39,13 @@ export default function JsonLd({
     pageName,
     schemaType,
     serviceName,
+    serviceDescription,
     blogPost,
     breadcrumbs,
     faqs,
     includeLocalBusiness,
     servedAreas,
+    primaryImage,
   });
 
   return (

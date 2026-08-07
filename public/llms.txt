@@ -1,6 +1,7 @@
 # PRC 13 Roofing Inc.
 
-PRC 13 Roofing Inc. is a service-area roofing contractor based in Sacramento, California. The company serves homeowners and light commercial properties across the greater Sacramento region. PRC 13 Roofing does not currently promote a public storefront office address; service coverage is defined by its Sacramento-area service areas.
+PRC 13 Roofing Inc. is a service-area roofing contractor based in Sacramento, California, serving homeowners and light commercial properties across the greater Sacramento region with roof repair, replacement, inspections, metal roofing, commercial roofing, gutters, and siding.
+PRC 13 Roofing does not currently promote a public storefront office address; service coverage is defined by its Sacramento-area service areas.
 
 Official website: https://prc13roofing.com/
 Phone: 916-761-3866
@@ -21,15 +22,20 @@ Core services:
 - Roof replacement: https://prc13roofing.com/roof-replacement
 - Roof repair: https://prc13roofing.com/roof-repair
 - Emergency roof repair: https://prc13roofing.com/emergency-roof-repair
+- Roof inspection: https://prc13roofing.com/roof-inspection
 - Metal roofing: https://prc13roofing.com/metal-roofing
 - Commercial roofing: https://prc13roofing.com/commercial-roofing
-- Roof inspections: https://prc13roofing.com/roof-inspection
 - Gutters and siding: https://prc13roofing.com/gutters-siding
+
+Services not offered:
+- Fascia repair: PRC 13 does not offer fascia or soffit repair.
+- Soffit repair: PRC 13 does not offer fascia or soffit repair.
 
 Related service coverage:
 - Roof repair includes leak repair, storm damage repair, flat roof repair, shingle repair, and flashing repair.
 - Metal roofing includes metal roof installation, metal roof replacement, and standing seam roofing.
 - Roof inspections include maintenance inspections, annual roof maintenance, and preventative maintenance guidance.
+- Gutters and siding are offered on /gutters-siding; fascia and soffit repair are not offered.
 
 Service areas:
 - Sacramento
@@ -64,8 +70,8 @@ Useful roofing answers:
 - Roof repair vs replacement signs: https://prc13roofing.com/blog/signs-you-need-roof-replacement-sacramento
 
 Social and citation profiles:
-- Google Business Profile reviews: https://www.google.com/maps/place/PRC+13+Roofing+Inc./@38.6589713,-121.309352,17z/data=!4m8!3m7!1s0x22fc7c8ee9511c53:0x45dcf5879ee4c590!8m2!3d38.6589713!4d-121.309352!9m1!1b1
-- Facebook: https://www.facebook.com/prc13roofinginc/?locale=nn_NO
+- Google Business Profile reviews: https://www.google.com/maps/place/PRC+13+Roofing+Inc./@38.6589713,-121.309352,17z/data=!4m6!3m5!1s0x22fc7c8ee9511c53:0x45dcf5879ee4c590!8m2!3d38.6589713!4d-121.309352
+- Facebook: https://www.facebook.com/prc13roofinginc/
 - Instagram: https://www.instagram.com/prc13roofing_/
 - BBB: https://www.bbb.org/us/ca/sacramento/profile/roofing-contractors/prc-13-roofing-1156-90078382
 - Yelp: https://www.yelp.com/biz/prc-13-roofing-sacramento

@@ -2,19 +2,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { scrollToTopInstant } from '../lib/scroll';
 import { Phone, Shield } from 'lucide-react';
 import GoogleReviewsLink from './GoogleReviewsLink';
-import { PHONE_DISPLAY } from '../data/site';
+import { BUSINESS_ENTITY_NAME, LICENSE_SHORT, LOGO_ALT, LOGO_SRC, PHONE_DISPLAY } from '../data/site';
 import TelLink from './TelLink';
 import { serviceAreas } from '../data/serviceAreas';
+import { getFooterServices } from '../data/services';
 
-const tier1Links = [
-  { label: 'Roof Replacement', href: '/roof-replacement' },
-  { label: 'Roof Repair', href: '/roof-repair' },
-  { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
-  { label: 'Roof Inspection', href: '/roof-inspection' },
-  { label: 'Metal Roofing', href: '/metal-roofing' },
-  { label: 'Commercial Roofing', href: '/commercial-roofing' },
-  { label: 'Gutters & Siding', href: '/gutters-siding' },
-];
+const tier1Links = getFooterServices().map(service => ({
+  label: service.name,
+  href: service.canonicalUrl,
+}));
 
 const footerServiceAreas = serviceAreas.slice(0, 6);
 
@@ -37,8 +33,8 @@ export default function Footer() {
           <div className="md:col-span-2 lg:col-span-1">
             <Link to="/" onClick={handleHomeLogoClick}>
               <img
-                src="/assets/brand/prc13-logo-gold.png"
-                alt="PRC 13 Roofing"
+                src={LOGO_SRC}
+                alt={LOGO_ALT}
                 className="h-[68px] w-auto max-w-[240px] object-contain object-left mb-3.5 block"
               />
             </Link>
@@ -95,11 +91,14 @@ export default function Footer() {
                     </Link>
                   ))}
                 </div>
+                <Link to="/service-areas" className="inline-block text-gold hover:text-gold-light transition-colors text-sm font-semibold">
+                  All service areas
+                </Link>
                 <p className="flex items-center gap-2 text-gray-400">
                   <Shield size={14} className="text-gold flex-shrink-0" />
                   Licensed &amp; Insured
                 </p>
-                <p className="text-gray-500">Lic. #1087153</p>
+                <p className="text-gray-500">{LICENSE_SHORT}</p>
               </div>
             </div>
           </div>
@@ -108,10 +107,10 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
           <p className="text-xs text-gray-600">
-            &copy; {new Date().getFullYear()} PRC 13 Roofing Inc.
+            &copy; {new Date().getFullYear()} {BUSINESS_ENTITY_NAME}
           </p>
           <p className="text-xs text-gray-600">
-            Lic. #1087153 &nbsp;·&nbsp; Serving Greater Sacramento
+            {LICENSE_SHORT} &nbsp;·&nbsp; Serving Greater Sacramento
           </p>
         </div>
       </div>

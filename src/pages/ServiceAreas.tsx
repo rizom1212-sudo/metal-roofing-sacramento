@@ -3,7 +3,7 @@ import { MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import { serviceAreas } from '../data/serviceAreas';
 import { PRIMARY_CTA } from '../data/cta';
-import { PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
+import { LICENSE_SHORT, PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
 
 export default function ServiceAreas() {
   return (
@@ -64,7 +64,7 @@ export default function ServiceAreas() {
               </Link>
             </div>
             <p className="flex items-center justify-center gap-2 text-gray-500 text-xs mt-6">
-              <CheckCircle size={12} className="text-gold" /> Licensed &amp; insured · Lic. 1087153
+              <CheckCircle size={12} className="text-gold" /> Licensed &amp; insured · {LICENSE_SHORT}
             </p>
           </div>
         </div>

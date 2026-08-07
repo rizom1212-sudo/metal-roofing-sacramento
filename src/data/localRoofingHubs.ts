@@ -21,6 +21,6 @@ export const LOCAL_ROOFING_HUBS: Record<string, LocalRoofingHubConfig> = {
     label: 'El Dorado Hills Roofing Resources',
     heading: 'Guides for El Dorado Hills Homeowners',
     intro:
-      'Explore roof repair, replacement, inspections, tile and metal roofing, fascia repair, emergency leak response, and insurance claims guidance tailored to El Dorado Hills foothill homes.',
+      'Explore roof repair, replacement, inspections, tile and metal roofing, emergency leak response, and insurance claims guidance tailored to El Dorado Hills foothill homes. Educational articles may cover fascia damage; PRC 13 does not offer fascia or soffit repair.',
   },
 };

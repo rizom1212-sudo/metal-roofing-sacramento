@@ -82,7 +82,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
   '/contact': {
     title: `Contact | ${SITE_NAME} Sacramento`,
     description:
-      'Schedule a free roof inspection in Sacramento with PRC 13 Roofing. Call 916-761-3866 or send a message for fast roofing help within 24 hours.',
+      'Schedule a free roof inspection in Sacramento with PRC 13 Roofing. Call 916-761-3866 or send a message—we aim to respond quickly during normal business hours.',
     path: '/contact',
   },
   '/gallery': {

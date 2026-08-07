@@ -11,34 +11,29 @@ import ServiceAreaConversionSections from '../components/ServiceAreaConversionSe
 import { PRIMARY_CTA } from '../data/cta';
 import TelLink from '../components/TelLink';
 import { SERVICE_AREA_FORM_SECTION_ID } from '../data/serviceAreaConversion';
-import { PHONE_DISPLAY } from '../data/site';
+import { LICENSE_INSURED_LINE, PHONE_DISPLAY } from '../data/site';
 import { serviceAreas } from '../data/serviceAreas';
 import { blogPosts } from '../data/blog';
 import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
+import { cityHubServiceCtaLabel, resolveCityHubServices } from '../data/cityHubServices';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
+import NotFound from './NotFound';
 
 export default function ServiceAreaCity() {
   const { slug } = useParams<{ slug: string }>();
   const area = serviceAreas.find(item => item.slug === slug);
 
   if (!area) {
-    return (
-      <section className="bg-cream py-20 text-center">
-        <div className="max-w-xl mx-auto px-5">
-          <h1 className="text-2xl font-bold text-headline mb-4">Service area not found</h1>
-          <Link to="/service-areas" className="text-gold font-semibold hover:underline text-sm">
-            Back to all service areas
-          </Link>
-        </div>
-      </section>
-    );
+    return <NotFound />;
   }
 
   const faqs: FaqItem[] = area.faqs;
   const pageName = `${area.name} Roofing Services`;
+  const hubServices = resolveCityHubServices(area.name, area.services);
   const localHub = LOCAL_ROOFING_HUBS[area.slug];
   const localResources = localHub
-    ? blogPosts.filter(post => post.category === localHub.category)
+    ? blogPosts.filter(post => post.category === localHub.category).slice(0, SERVICE_HUB_RESOURCE_LIMIT)
     : [];
 
   return (
@@ -48,6 +43,7 @@ export default function ServiceAreaCity() {
         pageName={pageName}
         schemaType="Service"
         serviceName={`Roofing Services in ${area.name}, CA`}
+        serviceDescription={area.heroIntro}
         servedAreas={[area.name]}
         breadcrumbs={[
           { label: 'Service Areas', href: '/service-areas' },
@@ -84,7 +80,7 @@ export default function ServiceAreaCity() {
             </a>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300 mt-6">
-            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Lic. No. 1087153 · Licensed &amp; Insured</span>
+            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> {LICENSE_INSURED_LINE}</span>
             <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Free roof inspections</span>
           </div>
         </div>
@@ -100,7 +96,7 @@ export default function ServiceAreaCity() {
           </AnswerSummary>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {area.services.map(service => (
+            {hubServices.map(service => (
               <Link
                 key={service.href}
                 to={service.href}
@@ -109,7 +105,7 @@ export default function ServiceAreaCity() {
                 <h2 className="text-xl font-bold text-headline mb-2">{service.title}</h2>
                 <p className="text-body text-sm leading-relaxed mb-4">{service.desc}</p>
                 <span className="inline-flex items-center gap-1.5 text-gold font-semibold text-sm">
-                  Learn more <ArrowRight size={14} />
+                  {cityHubServiceCtaLabel(service.title)} <ArrowRight size={14} />
                 </span>
               </Link>
             ))}

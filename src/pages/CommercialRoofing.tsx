@@ -13,9 +13,12 @@ import HeroBackground from '../components/HeroBackground';
 import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
+import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
+import RetrievalAnswers from '../components/RetrievalAnswers';
 import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
 import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 
 const problems = [
   'Standing water or ponding after rain',
@@ -46,31 +49,41 @@ const process = [
 const faqs: FaqItem[] = [
   {
     question: 'What types of commercial roofs do you work on?',
-    answer: 'We work on flat and low-slope commercial roofs, including TPO, EPDM, modified bitumen, and built-up roofing systems. We primarily serve small to mid-size commercial properties in the Sacramento area.',
+    answer: 'We work on flat and low-slope commercial roofs, including TPO, EPDM, modified bitumen, and built-up systems. PRC 13 primarily serves small to mid-size commercial properties in the Sacramento area.',
+  },
+  {
+    question: 'What flat-roof warning signs should property managers watch for?',
+    answer: 'Ponding water after rain, interior leaks or ceiling stains, blistering or cracked membrane, failed seams, and leaks around HVAC penetrations are common warning signs. Schedule an inspection when any of these appear rather than waiting for the next storm.',
+  },
+  {
+    question: 'How often should a commercial roof be inspected?',
+    answer: 'Many properties benefit from at least an annual inspection, plus checks after major storms. High-traffic roofs, older membranes, or buildings with past leaks may need more frequent reviews. PRC 13 can recommend a cadence after seeing the roof.',
+  },
+  {
+    question: 'What affects commercial roof repair or replacement cost?',
+    answer: 'System type, roof size, membrane condition, insulation and deck findings, drainage corrections, and how much disruption the schedule requires all affect cost. We provide a written scope after inspection rather than a generic published rate.',
   },
   {
     question: 'Can you work around our business hours?',
-    answer: 'Yes. We can schedule commercial roofing work before or after business hours, or on weekends, to minimize disruption to your operations.',
+    answer: 'Yes. We can schedule commercial roofing work before or after business hours, or on weekends when needed, to reduce disruption to operations.',
   },
   {
     question: 'Do you help with commercial insurance claims?',
-    answer: 'Yes. We document storm damage, work alongside your commercial insurance adjuster, and help ensure the full scope of damage is captured in your claim.',
+    answer: 'Yes. We document storm damage and can work alongside your commercial insurance adjuster. Coverage decisions remain with the insurer.',
   },
   {
     question: 'How do I know if my commercial roof needs repair or full replacement?',
-    answer: 'That\'s exactly what our inspection is for. We give you an honest, documented assessment that explains what can be repaired and what has reached end of life. We don\'t push replacement when repair is sufficient.',
+    answer: 'That is what the inspection is for. We document what can be repaired and what has reached end of life. We do not push replacement when a focused repair is sufficient.',
   },
   {
     question: 'How long does a commercial roof replacement take?',
-    answer: 'Timeline depends on roof size and system type. Small commercial roofs are often completed in 2 to 3 days. Larger jobs are scoped and scheduled with a firm timeline before work begins.',
-  },
-  {
-    question: 'Do you serve Sacramento area businesses?',
-    answer: 'Yes. We serve commercial properties throughout Sacramento, Rancho Cordova, Roseville, Folsom, Elk Grove, and surrounding communities.',
+    answer: 'Timeline depends on roof size and system type. Smaller commercial roofs are often completed in a few days; larger jobs are scoped with a firm schedule before work begins.',
   },
 ];
 
-const commercialResources = blogPosts.filter(post => post.category === COMMERCIAL_CLUSTER_CATEGORY);
+const commercialResources = blogPosts
+  .filter(post => post.category === COMMERCIAL_CLUSTER_CATEGORY)
+  .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
 export default function CommercialRoofing() {
   return (
@@ -80,7 +93,7 @@ export default function CommercialRoofing() {
         pageName="Commercial Roofing Sacramento"
         schemaType="Service"
         serviceName="Commercial Roofing"
-        breadcrumbs={[{ label: 'Commercial Roofing' }]}
+        primaryImage={ASSETS.commercialRoofing('Screenshot_2026-05-20_at_09.33.13.png')}
       />
       {/* HERO */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden">
@@ -276,6 +289,27 @@ export default function CommercialRoofing() {
         </div>
       </section>
 
+      <RetrievalAnswers
+        heading="Commercial roofing answers for Sacramento properties"
+        items={[
+          {
+            question: 'What does PRC 13 do for commercial roofs?',
+            answer:
+              'PRC 13 inspects, repairs, and replaces flat and low-slope systems such as TPO, EPDM, and modified bitumen for small to mid-size Sacramento-area commercial properties.',
+          },
+          {
+            question: 'How often should a commercial roof be inspected?',
+            answer:
+              'At least annually is a practical baseline for many buildings, with extra checks after major storms or when ponding, seams, or interior leaks appear.',
+          },
+          {
+            question: 'Repair or replace?',
+            answer:
+              'Localized membrane and seam failures can often be repaired; widespread membrane failure, repeated leaks, or end-of-life systems usually need replacement planning after a documented inspection.',
+          },
+        ]}
+      />
+
       {/* FAQ */}
       <section className="bg-cream py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -285,6 +319,10 @@ export default function CommercialRoofing() {
         </div>
       </section>
 
+      <SacramentoGuideCallout
+        href="/service-areas/sacramento"
+        label="View Sacramento roofing services"
+      />
       <LocalSeoLinks />
 
       {/* FINAL CTA */}

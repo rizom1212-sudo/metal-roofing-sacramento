@@ -10,14 +10,14 @@ const steps = [
   {
     icon: FileText,
     title: 'Quote',
-    timeline: 'Within 24 hrs',
-    desc: 'Clear written quote with line items. Insurance claim assistance available for storm-related damage.',
+    timeline: 'After inspection',
+    desc: 'Clear written quote with line items. Insurance claim documentation available for storm-related damage.',
   },
   {
     icon: Hammer,
     title: 'Install',
-    timeline: '1 to 2 days typical',
-    desc: 'Most Sacramento replacements complete in one to two days. Final walkthrough when done.',
+    timeline: 'Timeline confirmed before work',
+    desc: 'Many Sacramento residential replacements finish in about one to two days; larger or complex roofs can take longer. Final walkthrough when done.',
   },
 ];
 

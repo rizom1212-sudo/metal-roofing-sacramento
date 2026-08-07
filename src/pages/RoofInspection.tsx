@@ -15,8 +15,10 @@ import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
+import RetrievalAnswers from '../components/RetrievalAnswers';
 import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 
 const checkItems = [
   { icon: Eye, title: 'Shingle Condition', desc: 'We check for granule loss, curling edges, cracks, blistering, and missing sections across the full roof surface.' },
@@ -36,7 +38,7 @@ const maintenanceItems = [
 ];
 
 const process = [
-  { num: '01', title: 'Schedule Free Inspection', desc: 'Call or fill out the form. Most Sacramento homeowners are scheduled within 24 hours.' },
+  { num: '01', title: 'Schedule Free Inspection', desc: 'Call or fill out the form. We aim to schedule quickly during normal business hours and prioritize active leaks.' },
   { num: '02', title: 'On-Site Assessment', desc: 'Our roofing team inspects the roof, walks it when safe, and checks the attic, gutters, and all penetration points.' },
   { num: '03', title: 'Honest Walkthrough', desc: 'After the inspection, we walk you through exactly what we found with no pressure and no sales tactics.' },
   { num: '04', title: 'Written Findings', desc: 'You receive a written summary of the inspection, including any issues found and our recommendation for next steps.' },
@@ -45,39 +47,54 @@ const process = [
 const faqs: FaqItem[] = [
   {
     question: 'How much does a roof inspection cost?',
-    answer: 'Our roof inspections are free with no obligation. We inspect your roof, share our honest findings, and let you decide what to do next with no pressure.',
+    answer:
+      'PRC 13 roof inspections are free with no obligation. We inspect your roof, share honest findings, and let you decide next steps without pressure.',
+  },
+  {
+    question: 'What is included in a PRC 13 roof inspection?',
+    answer:
+      'We review shingle or tile condition, flashing and penetrations, drainage and gutters, attic ventilation clues when accessible, and visible signs of leaks or soft decking. You receive clear findings and a recommendation—repair, replacement, maintenance, or no action needed.',
   },
   {
     question: 'How long does a roof inspection take?',
-    answer: 'Most residential inspections take 30 to 60 minutes depending on roof size and complexity. If we identify issues that require closer examination, we take the time needed.',
+    answer:
+      'Most residential inspections take about 30 to 60 minutes depending on roof size and complexity. If we find issues that need closer review, we take the time needed.',
+  },
+  {
+    question: 'How is this different from a home inspection or insurance inspection?',
+    answer:
+      'A general home inspection covers many systems and may only note roof concerns at a high level. An insurance inspection focuses on claim-related damage. PRC 13’s roof inspection is a roofing-focused assessment for condition, leak risk, and repair-vs-replacement guidance—useful before buying, selling, or deciding on work.',
+  },
+  {
+    question: 'When should a roof be inspected?',
+    answer:
+      'Inspect after major storms, before buying or selling a home, when you see interior stains or missing shingles, and on a periodic maintenance basis for aging roofs. Sacramento heat and seasonal rain make proactive checks useful before the wet season.',
+  },
+  {
+    question: 'How quickly can I schedule an inspection?',
+    answer:
+      'We aim to schedule inspections quickly during normal business hours. Exact timing depends on weather, routing, and demand. Active leaks are prioritized.',
   },
   {
     question: 'Do you offer annual roof maintenance inspections?',
-    answer: 'Yes. Roof maintenance is handled through our inspection service. We check wear points, sealant, flashing, drainage, debris buildup, and early warning signs before they become expensive repairs.',
-  },
-  {
-    question: 'What is preventative roof maintenance?',
-    answer: 'Preventative maintenance means finding small issues early, such as cracked sealant, loose flashing, clogged drainage, damaged shingles, or aging penetrations. Fixing them early helps prevent water damage from spreading.',
-  },
-  {
-    question: 'What will you tell me after the inspection?',
-    answer: 'We give you an honest assessment of your roof\'s condition, including its estimated remaining lifespan, any issues we found, and whether repair, replacement, or no action is needed.',
-  },
-  {
-    question: 'Do I need an inspection before buying or selling a home?',
-    answer: 'Yes. A professional roof inspection before buying or selling protects both parties. Buyers get peace of mind, and sellers can address issues before they become negotiating problems.',
+    answer:
+      'Yes. Maintenance inspections check wear points, sealant, flashing, drainage, debris buildup, and early warning signs before they become expensive repairs.',
   },
   {
     question: 'Will you try to sell me something during the inspection?',
-    answer: 'No. If a repair is all you need, we\'ll say that. If your roof is fine, we\'ll say that too. We build our reputation on honest assessments, not upselling.',
+    answer:
+      'No. If a repair is all you need, we say that. If your roof is fine, we say that too. Recommendations are based on what we find, not a scripted upsell.',
   },
   {
     question: 'Can you document roof condition for an insurance claim?',
-    answer: 'Yes. We can provide written documentation and photos of storm damage, which is often critical when filing an insurance claim. We can also be present during the adjuster\'s visit.',
+    answer:
+      'Yes. We can provide photos and written notes of visible storm damage, which often helps when filing a claim. We can also be present during an adjuster visit when scheduled.',
   },
 ];
 
-const inspectionResources = blogPosts.filter(post => post.category === 'Roof Inspection');
+const inspectionResources = blogPosts
+  .filter(post => post.category === 'Roof Inspection')
+  .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
 export default function RoofInspection() {
   return (
@@ -87,6 +104,7 @@ export default function RoofInspection() {
         pageName="Roof Inspection Sacramento"
         schemaType="Service"
         serviceName="Roof Inspection"
+        primaryImage={ASSETS.roofInspection('Screenshot_2026-05-20_at_09.37.55.png')}
         breadcrumbs={[{ label: 'Roof Inspection' }]}
       />
       {/* HERO */}
@@ -126,13 +144,13 @@ export default function RoofInspection() {
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
               <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Free Inspection</span>
               <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> No Obligation</span>
-              <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Within 24 Hours</span>
+              <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Fast Local Scheduling</span>
             </div>
           </div>
             <HeroLeadFormPanel
               sourcePage="roof-inspection-hero"
               title="Request a Free Roof Inspection"
-              subtitle="Most Sacramento inspections are scheduled within one business day."
+              subtitle="We aim to follow up quickly during normal business hours."
               submitLabel={PRIMARY_CTA}
             />
           </div>
@@ -144,7 +162,7 @@ export default function RoofInspection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex flex-wrap justify-center md:justify-between gap-4 text-sm font-medium">
             <span className="flex items-center gap-2"><CheckCircle size={15} /> Always Free, No Obligation</span>
-            <span className="flex items-center gap-2"><Clock size={15} /> Scheduled Within 24 Hours</span>
+            <span className="flex items-center gap-2"><Clock size={15} /> Scheduled During Business Hours</span>
             <span className="flex items-center gap-2"><Shield size={15} /> Licensed Roofing Team</span>
             <span className="flex items-center gap-2"><FileText size={15} /> Written Findings Provided</span>
           </div>
@@ -338,6 +356,27 @@ export default function RoofInspection() {
         </div>
       </section>
 
+      <RetrievalAnswers
+        heading="Roof inspection answers in plain language"
+        items={[
+          {
+            question: 'What does a free PRC 13 roof inspection include?',
+            answer:
+              'A roofing-focused review of surface materials, flashing, penetrations, drainage, and visible leak or wear signs, followed by clear findings and a repair, replacement, maintenance, or no-action recommendation.',
+          },
+          {
+            question: 'How long does it take?',
+            answer:
+              'Most residential visits take about 30 to 60 minutes. Complex roofs or storm documentation can take longer.',
+          },
+          {
+            question: 'When should you schedule one?',
+            answer:
+              'After storms, before buying or selling, when stains or missing shingles appear, or as periodic maintenance on an aging Sacramento roof before the wet season.',
+          },
+        ]}
+      />
+
       {/* FAQ */}
       <section className="bg-white py-[72px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -362,7 +401,7 @@ export default function RoofInspection() {
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Schedule Today</p>
               <h2 className="text-3xl font-bold text-white mb-4">Get Your Free Roof Inspection</h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                No cost, no obligation. Our roofing team inspects your roof and gives you an honest written assessment. Most Sacramento homeowners are scheduled within 24 hours.
+                No cost, no obligation. Our roofing team inspects your roof and gives you an honest written assessment. We aim to schedule quickly during Monday–Friday business hours.
               </p>
               <ul className="space-y-2 mb-6">
                 {['Free with no obligation', 'Licensed roofing team', 'Written findings provided', 'Insurance documentation available'].map(item => (

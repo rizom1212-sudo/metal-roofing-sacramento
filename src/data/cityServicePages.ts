@@ -369,7 +369,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     processSteps: [
       {
         title: 'Call and interior containment',
-        desc: 'Describe what you see—active drips, debris on the roof, overflowing gutters—and protect belongings indoors. We help you prioritize whether the situation needs same-day assessment.',
+        desc: 'Describe what you see—active drips, debris on the roof, overflowing gutters—and protect belongings indoors. We help you prioritize whether the situation needs urgent assessment.',
       },
       {
         title: 'On-site emergency evaluation',

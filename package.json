@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:ssr && npm run prerender && npm run sitemap && npm run validate:jsonld",
+    "build": "npm run build:client && npm run build:ssr && npm run prerender && npm run sitemap && npm run llms && npm run validate:jsonld",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "lint": "eslint .",
     "preview": "vite preview",
     "prerender": "node scripts/prerender.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
+    "llms": "node scripts/generate-llms.mjs",
     "validate:jsonld": "node scripts/validate-jsonld.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "assets:webp": "node scripts/generate-webp.mjs"

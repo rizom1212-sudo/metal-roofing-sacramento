@@ -20,7 +20,7 @@ import GoogleIcon from '../components/GoogleIcon';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
 import BeforeAfter from '../components/BeforeAfter';
-import { GOOGLE_REVIEW_COUNT, PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
+import { GOOGLE_REVIEW_COUNT, GOOGLE_MAPS_EMBED_URL, LICENSE_CONTRACTOR_LINE, LICENSE_LABEL, PHONE_DISPLAY, PHONE_SMS } from '../data/site';
 import { trackClickToSms } from '../lib/analytics';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import { reviews } from '../data/reviews';
@@ -34,9 +34,6 @@ import OptimizedImage from '../components/OptimizedImage';
 import { ASSETS } from '../data/assets';
 
 const HOME_FINAL_CTA_IMAGE = '/assets/brand/home-final-cta-bg.webp';
-
-const MAP_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398791.8191967971!2d-121.30935204999999!3d38.658971349999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x22fc7c8ee9511c53%3A0x45dcf5879ee4c590!2sPRC%2013%20Roofing%20Inc.!5e0!3m2!1sen!2sus!4v1779235670101!5m2!1sen!2sus';
 
 const homeFaqs: FaqItem[] = [
   {
@@ -57,7 +54,7 @@ const homeFaqs: FaqItem[] = [
   {
     question: 'Are you licensed in California?',
     answer:
-      'Yes. PRC 13 Roofing is a California Licensed Contractor (Lic. No. 1087153) and is fully insured.',
+      `Yes. PRC 13 Roofing is a California Licensed Contractor (${LICENSE_LABEL}) and is fully insured.`,
   },
   {
     question: 'Do you offer free inspections?',
@@ -87,7 +84,7 @@ const homeFaqs: FaqItem[] = [
   {
     question: 'Is financing available?',
     answer:
-      'Yes. We offer financing options on qualifying projects so you can replace your roof without waiting. Ask us about financing when you schedule your inspection.',
+      'Financing may be available on qualifying projects. Ask about options when you schedule your inspection—eligibility depends on the lender and project scope.',
   },
   {
     question: 'Do you serve areas outside Sacramento?',
@@ -195,7 +192,7 @@ export default function Home() {
 
               {/* Trust strip */}
               <div className="flex flex-wrap gap-x-4 gap-y-2 md:gap-x-5 text-xs sm:text-sm text-gray-200">
-                <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold flex-shrink-0" /> California Licensed Contractor (#1087153)</span>
+                <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold flex-shrink-0" /> {LICENSE_CONTRACTOR_LINE}</span>
                 <span className="flex items-center gap-1.5"><Shield size={14} className="text-gold flex-shrink-0" /> Fully Insured</span>
                 <span className="flex items-center gap-1.5"><FileText size={14} className="text-gold flex-shrink-0" /> Written Inspection Reports</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-gold flex-shrink-0" /> Insurance Claim Assistance</span>
@@ -205,7 +202,7 @@ export default function Home() {
             <HeroLeadFormPanel
               sourcePage="home-hero"
               title="Schedule Your Free Roof Inspection"
-              subtitle="Includes a written inspection report. Most Sacramento homeowners are scheduled same or next business day."
+              subtitle="Includes a written inspection report. We aim to schedule quickly during normal business hours."
               className="mt-5 lg:mt-0"
             />
           </div>
@@ -276,7 +273,7 @@ export default function Home() {
                 <span className="inline-block text-xs bg-gold text-white px-2.5 py-1 font-semibold uppercase tracking-wider mb-5">Most Popular Service</span>
                 <h3 className="text-3xl md:text-[2.15rem] font-bold mb-4 group-hover:text-gold transition-colors">Roof Replacement</h3>
                 <p className="text-gray-300 text-sm leading-relaxed max-w-md">
-                  Full tear-off and replacement with quality materials. Most Sacramento roofs are replaced in 1 to 2 days. Financing available.
+                  Full tear-off and replacement with quality materials. Timeline depends on roof size and condition—many residential jobs finish in about one to two days. Financing may be available on qualifying projects.
                 </p>
               </div>
               <div className="flex items-center gap-2 text-gold text-sm font-semibold mt-6">
@@ -340,7 +337,7 @@ export default function Home() {
 
               <ul className="space-y-2.5 mb-8">
                 {[
-                  'California Licensed Contractor (#1087153)',
+                  LICENSE_CONTRACTOR_LINE,
                   'Fully Insured',
                   'Free Roof Inspections',
                   'Written Inspection Reports',
@@ -473,7 +470,7 @@ export default function Home() {
           ) : (
             <div className="max-w-5xl mx-auto overflow-hidden rounded-brand shadow-md">
               <iframe
-                src={MAP_EMBED_URL}
+                src={GOOGLE_MAPS_EMBED_URL}
                 width="100%"
                 className="w-full h-[280px] md:h-[360px] block"
                 style={{ border: 0 }}
@@ -543,7 +540,7 @@ export default function Home() {
             Ready for Your Free Roof Inspection?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Already filled out the form above? Call or text PRC 13 directly. Most Sacramento homes are inspected within 24 hours.
+            Already filled out the form above? Call or text PRC 13 directly. We aim to schedule inspections quickly during normal business hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <TelLink location="home-final" className="inline-flex items-center justify-center gap-2 btn-gold px-8 py-4 text-base font-semibold">
@@ -566,7 +563,7 @@ export default function Home() {
           <p className="text-gray-500 text-xs mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
             <span className="flex items-center gap-1.5">
               <Shield size={12} className="text-gold" />
-              California Licensed Contractor (#1087153)
+              {LICENSE_CONTRACTOR_LINE}
             </span>
             <span className="hidden sm:inline text-gray-600" aria-hidden>·</span>
             <span className="flex items-center gap-1.5">

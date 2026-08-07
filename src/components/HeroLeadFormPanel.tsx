@@ -11,8 +11,8 @@ interface HeroLeadFormPanelProps {
 
 export default function HeroLeadFormPanel({
   sourcePage,
-  title = 'Get Your Roof Inspected Within 24 Hours',
-  subtitle = 'Most Sacramento homeowners are scheduled within one business day.',
+  title = 'Request a Free Roof Inspection',
+  subtitle = 'We aim to schedule inspections quickly during normal business hours.',
   className = '',
   submitLabel,
 }: HeroLeadFormPanelProps) {

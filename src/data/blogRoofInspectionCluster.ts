@@ -360,7 +360,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Call or submit the form on our contact page. Most Sacramento homeowners are scheduled within 24 hours. Tell us about leaks, storm damage, or age concerns so we know what to prioritize.',
+          'Call or submit the form on our contact page. We aim to schedule inspections quickly during normal business hours. Tell us about leaks, storm damage, or age concerns so we know what to prioritize.',
       },
       {
         type: 'heading',

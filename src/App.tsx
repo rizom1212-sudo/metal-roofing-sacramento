@@ -12,13 +12,14 @@ import ServiceAreaCity from './pages/ServiceAreaCity';
 import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-// Tier 1 service pages
 import MetalRoofing from './pages/MetalRoofing';
 import CommercialRoofing from './pages/CommercialRoofing';
 import RoofInspection from './pages/RoofInspection';
 import GuttersSiding from './pages/GuttersSiding';
 import EmergencyRoofRepair from './pages/EmergencyRoofRepair';
 import CityServicePage from './pages/CityServicePage';
+import NotFound from './pages/NotFound';
+import { cityServicePaths } from './data/cityServicePages';
 
 export default function App() {
   return (
@@ -37,15 +38,15 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/roof-replacement" element={<RoofReplacement />} />
-      <Route path="/roof-replacement/:citySlug" element={<CityServicePage />} />
       <Route path="/roof-repair" element={<RoofRepair />} />
-      <Route path="/roof-repair/:citySlug" element={<CityServicePage />} />
       <Route path="/metal-roofing" element={<MetalRoofing />} />
       <Route path="/commercial-roofing" element={<CommercialRoofing />} />
       <Route path="/roof-inspection" element={<RoofInspection />} />
       <Route path="/gutters-siding" element={<GuttersSiding />} />
       <Route path="/emergency-roof-repair" element={<EmergencyRoofRepair />} />
-      <Route path="/emergency-roof-repair/:citySlug" element={<CityServicePage />} />
+      {cityServicePaths.map(path => (
+        <Route key={path} path={path} element={<CityServicePage />} />
+      ))}
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/service-areas" element={<ServiceAreas />} />
@@ -53,6 +54,7 @@ export function AppRoutes() {
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

@@ -15,15 +15,17 @@ import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
+import RetrievalAnswers from '../components/RetrievalAnswers';
 import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
 import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 
 const steps = [
   { num: '01', title: 'Free Inspection', desc: 'Our roofing team comes to your home, evaluates your roof, and gives you an honest assessment with no pressure.' },
   { num: '02', title: 'Clear Quote', desc: 'You get a straightforward written quote with no hidden fees. We explain every line.' },
   { num: '03', title: 'Material Selection', desc: 'We walk you through your shingle, tile, or metal options and recommend the best fit for your home and budget.' },
-  { num: '04', title: 'Replacement Day', desc: 'Our crew arrives on schedule, completes the tear-off and installation, and cleans up completely. Most jobs are done in 1 to 2 days.' },
+  { num: '04', title: 'Replacement Day', desc: 'Our crew arrives on schedule, completes the tear-off and installation, and cleans up. Many residential projects finish in about one to two days; complex roofs can take longer.' },
   { num: '05', title: 'Final Walkthrough', desc: 'We walk the completed job with you. You approve the work before we consider the job done.' },
 ];
 
@@ -31,32 +33,47 @@ const replacementFaqs: FaqItem[] = [
   {
     question: 'How long does a roof replacement take?',
     answer:
-      'Most Sacramento residential roof replacements are completed in one to two days. Steep or large roofs may require a third day. We give you a firm timeline before the project starts.',
+      'Timeline depends on roof size, pitch, material, weather, and whether decking repairs are needed. Many straightforward Sacramento residential replacements are completed in about one to two days; larger, steeper, or multi-layer projects can take longer. PRC 13 confirms a project timeline before work starts.',
   },
   {
     question: 'What does a roof replacement cost in Sacramento?',
     answer:
-      'Cost depends on roof size, pitch, material selection, and deck condition. We provide clear written quotes with no hidden fees and explain every line item. Financing is available on qualifying projects.',
+      'Cost depends on roof size, pitch, material selection, tear-off requirements, deck condition, and access. PRC 13 provides a clear written quote after inspection and explains line items. Financing may be available on qualifying projects.',
+  },
+  {
+    question: 'Do you tear off the old roof or install over it?',
+    answer:
+      'Most replacements include a full tear-off so we can inspect and repair the decking. Overlay (installing over existing layers) is only considered when conditions allow and is not the default—adding layers can hide decking problems and is limited by local practice and product requirements.',
+  },
+  {
+    question: 'Why does ventilation matter during a roof replacement?',
+    answer:
+      'Poor attic ventilation can shorten shingle life and trap heat and moisture. During replacement planning, PRC 13 reviews ventilation and ridge/soffit details so the new roof system has a better chance of lasting as designed.',
+  },
+  {
+    question: 'When should I replace instead of repair?',
+    answer:
+      'Replacement is often the better path when the roof is near end of life, leaks keep returning, damage is widespread, or decking problems are extensive. A free inspection clarifies which option is more durable for your home.',
   },
   {
     question: 'Do I need to be home during the replacement?',
     answer:
-      'You do not need to be home during the work day, but we do ask that you\'re available for the final walkthrough when the job is complete. We won\'t sign off until you\'ve reviewed and approved the work.',
+      'You do not need to be home during the work day, but we ask that you are available for the final walkthrough when the job is complete so you can review the finished work.',
   },
   {
     question: 'What roofing materials do you use?',
     answer:
-      'We install architectural (dimensional) shingles, standing seam and corrugated metal roofing, and tile roofing. The right choice depends on your budget, your home\'s style, and how long you plan to stay. We\'ll help you decide during your free inspection.',
+      'We install architectural (dimensional) shingles, standing seam and corrugated metal roofing, and tile roofing. The right choice depends on budget, home style, and how long you plan to stay. We help you compare options during your free inspection.',
   },
   {
     question: 'Does a new roof come with a warranty?',
     answer:
-      'Yes. All replacements include a workmanship warranty from PRC 13, plus the manufacturer\'s material warranty on the shingles or metal panels installed.',
+      'Replacements include a PRC 13 workmanship warranty plus the manufacturer material warranty for the shingles or panels installed. Exact warranty terms are confirmed in writing with your project paperwork—we do not publish a single universal warranty length on this page.',
   },
   {
     question: 'Will you help with my insurance claim?',
     answer:
-      'Yes. If your replacement is storm-related, we document the damage, work alongside your adjuster, and help ensure the full scope of damage is captured. Many homeowners only pay their deductible.',
+      'If replacement is related to storm damage, we document visible damage and can work alongside your adjuster. The insurer decides coverage; many homeowners with approved claims pay their deductible, but that is not guaranteed.',
   },
 ];
 
@@ -66,7 +83,9 @@ const materials = [
   { name: 'Tile Roofing', desc: 'Classic Sacramento look. Extremely durable with excellent insulation properties.', badge: 'Premium Option' },
 ];
 
-const replacementResources = blogPosts.filter(post => post.category === REPLACEMENT_CLUSTER_CATEGORY);
+const replacementResources = blogPosts
+  .filter(post => post.category === REPLACEMENT_CLUSTER_CATEGORY)
+  .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
 export default function RoofReplacement() {
   return (
@@ -76,6 +95,7 @@ export default function RoofReplacement() {
         pageName="Roof Replacement Done Right"
         schemaType="Service"
         serviceName="Roof Replacement"
+        primaryImage={ASSETS.roofReplacement('roof-replacement-hero-installation.png')}
         breadcrumbs={[{ label: 'Roof Replacement' }]}
       />
       {/* HERO */}
@@ -98,7 +118,7 @@ export default function RoofReplacement() {
                 <span className="text-gold">Done Right, the First Time</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-                Roof replacement in Sacramento, California for shingle roof replacement, tile roof replacement, and metal roofing options. Free inspection, a clear written estimate, and financing on qualifying projects.
+                Roof replacement in Sacramento, California for shingle roof replacement, tile roof replacement, and metal roofing options. Free inspection, a clear written estimate, and financing on qualifying projects when available.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <TelLink location="roof-replacement" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
@@ -127,8 +147,8 @@ export default function RoofReplacement() {
           <div className="flex flex-wrap justify-center md:justify-between gap-4 text-sm font-medium">
             <span className="flex items-center gap-2"><Shield size={15} /> Licensed &amp; Insured</span>
             <span className="flex items-center gap-2"><CheckCircle size={15} /> Workmanship Warranty Included</span>
-            <span className="flex items-center gap-2"><Award size={15} /> Financing Available</span>
-            <span className="flex items-center gap-2"><Clock size={15} /> Most Replacements in 1 to 2 Days</span>
+            <span className="flex items-center gap-2"><Award size={15} /> Financing on Qualifying Projects</span>
+            <span className="flex items-center gap-2"><Clock size={15} /> Timeline Confirmed Before Work</span>
           </div>
         </div>
       </div>
@@ -139,13 +159,13 @@ export default function RoofReplacement() {
           <AnswerSummary
             title="Sacramento roof replacement: quick answer"
             points={[
-              'Most residential replacements take 1 to 2 days',
+              'Timeline depends on size, material, and decking condition',
               'Free inspection before any quote',
               'Shingle, tile, and metal options available',
-              'Financing available on qualifying projects',
+              'Financing may be available on qualifying projects',
             ]}
           >
-            Roof replacement usually makes sense when a Sacramento roof is near the end of its life, has repeated leaks, widespread shingle damage, or decking concerns that make another repair a short-term fix.
+            Roof replacement usually makes sense when a Sacramento roof is near the end of its life, has repeated leaks, widespread shingle damage, or decking concerns that make another repair a short-term fix. PRC 13 starts with a free inspection and a written estimate before tear-off.
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -301,6 +321,28 @@ export default function RoofReplacement() {
         </div>
       </section>
 
+      <RetrievalAnswers
+        heading="Roof replacement answers before you decide"
+        items={[
+          {
+            question: 'How long does roof replacement take?',
+            answer:
+              'Most timelines depend on roof size, material, weather, tear-off needs, and decking repairs. A straightforward residential replacement may finish faster than a complex multi-layer or steep roof.',
+            detail: 'PRC 13 confirms a written schedule before the crew starts tear-off.',
+          },
+          {
+            question: 'What are the major cost factors?',
+            answer:
+              'Roof square footage, pitch, material choice, number of layers to remove, decking repairs, and site access drive replacement cost more than any single advertised number.',
+          },
+          {
+            question: 'Tear-off or overlay?',
+            answer:
+              'Full tear-off is the usual approach so decking can be inspected and repaired. Overlay is only considered when conditions and product requirements allow—and it is not PRC 13’s default.',
+          },
+        ]}
+      />
+
       {/* FAQ */}
       <section className="bg-cream py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -328,7 +370,7 @@ export default function RoofReplacement() {
                 No obligation. No pressure. We will inspect your roof, walk you through your options, and give you a clear written quote.
               </p>
               <ul className="space-y-2 mb-6">
-                {['Inspection within 24 hours', 'Written quote, no surprises', 'Financing options available', 'Insurance claim assistance'].map(item => (
+                {['We aim to schedule inspections quickly', 'Written quote, no surprises', 'Financing may be available on qualifying projects', 'Insurance claim documentation support'].map(item => (
                   <li key={item} className="flex items-center gap-2 text-gray-300 text-sm">
                     <CheckCircle size={14} className="text-gold flex-shrink-0" /> {item}
                   </li>

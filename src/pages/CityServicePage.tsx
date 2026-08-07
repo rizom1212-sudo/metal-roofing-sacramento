@@ -16,22 +16,14 @@ import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 import { getCityServicePage } from '../data/cityServicePages';
 import TelLink from '../components/TelLink';
 import { PHONE_DISPLAY } from '../data/site';
+import NotFound from './NotFound';
 
 export default function CityServicePage() {
   const { pathname } = useLocation();
   const page = getCityServicePage(pathname);
 
   if (!page) {
-    return (
-      <section className="bg-cream py-20 text-center">
-        <div className="max-w-xl mx-auto px-5">
-          <h1 className="text-2xl font-bold text-headline mb-4">Page not found</h1>
-          <Link to="/" className="text-gold font-semibold hover:underline text-sm">
-            Back to home
-          </Link>
-        </div>
-      </section>
-    );
+    return <NotFound />;
   }
 
   const pageTitle = `${page.headline} ${page.headlineAccent}`.trim();
@@ -47,6 +39,8 @@ export default function CityServicePage() {
         pageName={pageTitle}
         schemaType="Service"
         serviceName={pageTitle}
+        serviceDescription={page.subheadline}
+        primaryImage={page.heroImage}
         servedAreas={[page.cityName]}
         breadcrumbs={breadcrumbItems}
       />

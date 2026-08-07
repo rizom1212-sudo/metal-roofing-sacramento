@@ -5,6 +5,10 @@ import { fileURLToPath } from 'url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 
+const BUSINESS_ID = 'https://prc13roofing.com/#business';
+const WEBSITE_ID = 'https://prc13roofing.com/#website';
+const FORBIDDEN_OFFER_NAMES = [/fascia/i, /soffit/i];
+
 const GSC_LEGACY_URLS = [
   '/roofing-contractor/asphalt-shingle-roof-replacement',
   '/Roofing-Contractor/Flat-Roof-Installation',
@@ -30,9 +34,31 @@ const GSC_LEGACY_URLS = [
   '/contact',
 ];
 
-function validateNode(node, issues, prefix) {
+function hasProviderRef(provider) {
+  if (!provider || typeof provider !== 'object') return false;
+  if (provider['@id'] === BUSINESS_ID) return true;
+  if (provider['@type'] && provider['@id']) return true;
+  return Boolean(provider['@type']);
+}
+
+function validateNode(node, issues, prefix, graphCtx) {
   const type = node['@type'];
   if (type === 'RoofingContractor' || type === 'LocalBusiness') {
+    if (node['@id'] && node['@id'] !== BUSINESS_ID) {
+      issues.push(`${prefix}: unexpected business @id ${node['@id']}`);
+    }
+    if (node.address) {
+      issues.push(`${prefix}: must not invent PostalAddress (service-area business)`);
+    }
+    if (!node.identifier) {
+      issues.push(`${prefix}: missing license identifier`);
+    }
+    if (!node.logo) {
+      issues.push(`${prefix}: missing logo`);
+    }
+    if (!node.description) {
+      issues.push(`${prefix}: missing description`);
+    }
     const rating = node.aggregateRating;
     if (rating) {
       if (typeof rating.ratingValue === 'string') {
@@ -57,15 +83,46 @@ function validateNode(node, issues, prefix) {
     if (catalog?.itemListElement && !Array.isArray(catalog.itemListElement)) {
       issues.push(`${prefix}: hasOfferCatalog.itemListElement must be an array`);
     }
+    if (Array.isArray(catalog?.itemListElement)) {
+      for (const offer of catalog.itemListElement) {
+        const name = offer?.itemOffered?.name ?? '';
+        if (FORBIDDEN_OFFER_NAMES.some(re => re.test(name))) {
+          issues.push(`${prefix}: OfferCatalog must not include fascia/soffit (${name})`);
+        }
+      }
+      graphCtx.offerCount = catalog.itemListElement.length;
+    }
+  }
+  if (type === 'WebSite') {
+    if (node['@id'] !== WEBSITE_ID) {
+      issues.push(`${prefix}: WebSite @id must be ${WEBSITE_ID}`);
+    }
+    if (node.potentialAction) {
+      issues.push(`${prefix}: SearchAction must not be present without site search`);
+    }
+    const publisherId = node.publisher?.['@id'];
+    if (publisherId && publisherId !== BUSINESS_ID) {
+      issues.push(`${prefix}: WebSite.publisher must reference business`);
+    }
+  }
+  if (type === 'WebPage' || type === 'ContactPage') {
+    const partOf = node.isPartOf?.['@id'];
+    if (partOf && partOf !== WEBSITE_ID) {
+      issues.push(`${prefix}: isPartOf should reference ${WEBSITE_ID}`);
+    }
   }
   if (type === 'Service') {
-    const provider = node.provider;
-    if (!provider || typeof provider !== 'object' || !provider['@type']) {
-      issues.push(`${prefix}: Service.provider must be an object with @type`);
+    if (!hasProviderRef(node.provider)) {
+      issues.push(`${prefix}: Service.provider must reference the business entity`);
     }
     const area = node.areaServed;
     if (area == null) {
       issues.push(`${prefix}: Service.areaServed is required`);
+    }
+  }
+  if (type === 'BlogPosting') {
+    if (node.publisher?.['@id'] && node.publisher['@id'] !== BUSINESS_ID) {
+      issues.push(`${prefix}: BlogPosting.publisher should reference business`);
     }
   }
   if (type === 'BreadcrumbList') {
@@ -107,7 +164,16 @@ async function validateHtmlFile(filePath) {
       issues.push('@graph must be an array');
       continue;
     }
-    data['@graph'].forEach((node, index) => validateNode(node, issues, `node ${index + 1} (${node['@type']})`));
+    const graphCtx = {};
+    const types = new Set(data['@graph'].map(n => n['@type']));
+    if (types.has('RoofingContractor') && !types.has('WebSite')) {
+      issues.push('graph includes RoofingContractor but missing WebSite');
+    }
+    const businesses = data['@graph'].filter(n => n['@type'] === 'RoofingContractor' || n['@type'] === 'LocalBusiness');
+    if (businesses.length > 1) {
+      issues.push(`expected at most one business entity, found ${businesses.length}`);
+    }
+    data['@graph'].forEach((node, index) => validateNode(node, issues, `node ${index + 1} (${node['@type']})`, graphCtx));
   }
   return issues;
 }

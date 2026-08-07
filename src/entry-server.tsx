@@ -9,6 +9,7 @@ import { getOgImage, getPageMeta } from './data/pageMeta';
 
 export { publicRoutes };
 export { absoluteAssetUrl, absoluteUrl, blogPosts, getOgImage, getPageMeta, SITE_URL };
+export { buildLlmsTxt } from './data/llmsTxt';
 
 export function render(url: string) {
   return renderToString(

@@ -5,7 +5,8 @@ import BeforeAfter from '../components/BeforeAfter';
 import JsonLd from '../components/JsonLd';
 import { galleryImages, type GalleryImage } from '../data/gallery';
 import { PRIMARY_CTA } from '../data/cta';
-import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { LICENSE_INSURED_LINE, PHONE_DISPLAY } from '../data/site';
+import TelLink from '../components/TelLink';
 
 const featuredProjectImages = [
   {
@@ -372,7 +373,7 @@ export default function Gallery() {
                 'Licensed & Insured',
                 'Residential Roofing Specialists',
                 'Roof Replacements & Repairs',
-                'Financing Available',
+                'Financing on Qualifying Projects',
               ].map(item => (
                 <span key={item} className="flex items-center gap-1.5 text-sm text-body">
                   <CheckCircle size={13} className="text-gold flex-shrink-0" />
@@ -435,15 +436,15 @@ export default function Gallery() {
           <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Get Started</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Need Roofing Help?</h2>
           <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            From roof repairs to full replacements, our team is ready to help. Most Sacramento homeowners are scheduled within 24 hours.
+            From roof repairs to full replacements, our team is ready to help. We aim to schedule inspections quickly during normal business hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={`tel:${PHONE_TEL}`}
+            <TelLink
+              location="gallery-final"
               className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"
             >
               <Phone size={18} /> Call {PHONE_DISPLAY}
-            </a>
+            </TelLink>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 text-base hover:border-gold hover:text-gold transition-colors rounded-brand"
@@ -453,7 +454,7 @@ export default function Gallery() {
           </div>
           <div className="mt-8 flex items-center justify-center gap-2 text-gray-600 text-xs">
             <Shield size={12} className="text-gold" />
-            Lic. No. 1087153 · Licensed & Insured · Sacramento, CA
+            {LICENSE_INSURED_LINE} · Sacramento, CA
           </div>
         </div>
       </section>

@@ -125,6 +125,8 @@ export default function ServicePageTemplate({
         pageName={pageTitle}
         schemaType="Service"
         serviceName={pageTitle}
+        serviceDescription={subheadline}
+        primaryImage={heroImage}
         breadcrumbs={[{ label: crumbLabel }]}
       />
       {/* HERO */}
@@ -276,7 +278,7 @@ export default function ServicePageTemplate({
                   </h3>
                   <p className="text-body text-xs leading-relaxed line-clamp-2">{resource.excerpt}</p>
                   <span className="inline-flex items-center gap-1 text-gold text-xs font-semibold mt-3">
-                    Read article <ArrowRight size={12} />
+                    Open this roofing guide <ArrowRight size={12} />
                   </span>
                 </Link>
               ))}

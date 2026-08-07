@@ -1,6 +1,6 @@
 
 
-  VITE v5.4.8  ready in 538 ms
+  VITE v5.4.8  ready in 364 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
@@ -8,26 +8,5 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx update-browserslist-db@latest
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
-git add
-git commit -m "Add roof inspection and emergency roof repair topical clusters"
-git push
-10:25:00 PM [vite] hmr update /src/index.css, /src/pages/EmergencyRoofRepair.tsx, /src/pages/Blog.tsx, /src/pages/BlogPost.tsx, /sr
-10:25:00 PM [vite] hmr update /src/index.css, /src/pages/EmergencyRoofRepair.tsx, /src/pages/Blog.tsx, /src/pages/BlogPost.tsx, /src/pages/RoofInspection.tsx, /src/components/PageMeta.tsx
-10:25:01 PM [vite] hmr update /src/index.css, /src/pages/EmergencyRoofRepair.tsx, /src/pages/Blog.tsx, /src/pages/BlogPost.tsx, /sr
-10:25:01 PM [vite] hmr update /src/index.css, /ses/EmergencyRoofRepair.tsx, /src/pages/Blog.tsx, /src/pages/BlogPost.tsx, /src/pages/RoofInspection.tsx, /src/components/PageMeta.tsx (x2)
-10:25:02 PM [vite] hmr update /src/pages/ServiceAreaCity.tsx, /src/index.css
-10:25:03 PM [vite] hmr update /src/pages/ServiceAreaCity.tsx, /src/index.css (x2)
-10:25:04 PM [vite] hmr update /src/pages/ServiceAreaCity.tsx, /src/index.css (x3)
-10:25:08 PM [vite] hmr update /src/pages/ServiceAreaCity.tsx, /src/index.css (x4)
-10:25:10 PM [vite] hmr update /src/pages/Blog.tsx, /src/index.css
-10:25:14 PM [vite] hmr update /src/pages/Blog.tsx, /src/index.css (x2)
-10:25:14 PM [vite] hmr update /src/pages/BlogPost.tsx, /src/index.css
-10:25:15 PM [vite] hmr update /src/pages/BlogPost.tsx, /src/index.css (x2)
-10:25:21 PM [vite] hmr update /src/pages/BlogPost.tsx, /src/index.css (x3)
-10:25:22 PM [vite] hmr update /src/index.css, /src/components/PageMeta.tsx
-10:25:38 PM [vite] page reload dist-ssr/roof-inspection-checklist.html
-10:25:39 PM [vite] page reload dist-ssr/roof-inspection-checklist.html (x2)
-npm run dev
-^Cgit add .
-git commit -m "Add Folsom roofing content hub"
-git push
+npm run typecheck
+npm run typecheck

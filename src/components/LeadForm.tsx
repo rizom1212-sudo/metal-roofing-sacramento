@@ -133,6 +133,7 @@ export default function LeadForm({
       trackGenerateLead({
         sourcePage,
         formVariant: variant,
+        formLocation: `lead-form:${sourcePage}:${variant}`,
         service: form.reason || undefined,
       });
       setStatus('success');

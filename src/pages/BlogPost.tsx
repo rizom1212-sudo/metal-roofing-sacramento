@@ -4,8 +4,9 @@ import { blogPosts } from '../data/blog';
 import JsonLd from '../components/JsonLd';
 import OptimizedImage from '../components/OptimizedImage';
 import FaqAccordion from '../components/FaqAccordion';
-import { PHONE_DISPLAY, PHONE_TEL } from '../data/site';
+import { BUSINESS_ENTITY_NAME, LICENSE_LABEL, PHONE_DISPLAY } from '../data/site';
 import { PRIMARY_CTA } from '../data/cta';
+import TelLink from '../components/TelLink';
 import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
@@ -15,22 +16,14 @@ import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluste
 import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
 import { ROOF_REPAIR_CLUSTER_CATEGORY } from '../data/blogRoofRepairCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
+import NotFound from './NotFound';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find(p => p.slug === slug);
 
   if (!post) {
-    return (
-      <section className="bg-cream py-20 text-center">
-        <div className="max-w-xl mx-auto px-5">
-          <h1 className="text-2xl font-bold text-headline mb-4">Article not found</h1>
-          <Link to="/blog" className="text-gold font-semibold hover:underline text-sm">
-            ← Back to all articles
-          </Link>
-        </div>
-      </section>
-    );
+    return <NotFound />;
   }
 
   const relatedPosts = post.relatedArticles
@@ -47,6 +40,7 @@ export default function BlogPost() {
   const isGuttersFasciaGuide = post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY;
   const isCommercialGuide = post.category === COMMERCIAL_CLUSTER_CATEGORY;
   const isRepairGuide = post.category === ROOF_REPAIR_CLUSTER_CATEGORY;
+  const isInspectionGuide = post.category === 'Roof Inspection';
 
   return (
     <>
@@ -209,6 +203,8 @@ export default function BlogPost() {
                         ? 'Metal Roofing'
                         : isReplacementGuide
                           ? 'Roof Replacement'
+                          : isInspectionGuide
+                            ? 'Roof Inspection'
                           : isElDoradoHillsGuide
                             ? 'El Dorado Hills Roofing'
                             : isFolsomGuide
@@ -223,11 +219,13 @@ export default function BlogPost() {
                       : isRepairGuide
                         ? 'Need Roof Repair in Sacramento?'
                         : isGuttersFasciaGuide
-                        ? 'Need Gutter or Fascia Help in Sacramento?'
+                        ? 'Need Gutter or Siding Help in Sacramento?'
                         : isMetalGuide
                         ? 'Considering Metal Roofing in Sacramento?'
                         : isReplacementGuide
                           ? 'Planning a Roof Replacement in Sacramento?'
+                          : isInspectionGuide
+                            ? 'Need a Roof Inspection in Sacramento?'
                           : isElDoradoHillsGuide
                             ? 'Schedule Roofing Service in El Dorado Hills'
                             : isFolsomGuide
@@ -242,25 +240,27 @@ export default function BlogPost() {
                       : isRepairGuide
                         ? 'PRC 13 Roofing helps Sacramento homeowners fix shingles, flashing, chimneys, skylights, and tile with honest inspections and written repair estimates before work begins.'
                         : isGuttersFasciaGuide
-                        ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and fascia repairs for Sacramento homeowners. Start with a free roof inspection or gutter evaluation.'
+                        ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and siding for Sacramento homeowners. We do not offer fascia or soffit repair. Start with a free roof inspection or gutter evaluation.'
                         : isMetalGuide
                         ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a free inspection and panel-style consultation.'
                         : isReplacementGuide
                           ? 'PRC 13 Roofing helps Sacramento homeowners compare shingle, tile, and metal replacement options with free inspections and written quotes before any work begins.'
+                          : isInspectionGuide
+                            ? 'PRC 13 Roofing provides free roof inspections across Sacramento with clear written findings for leaks, storm wear, aging materials, and repair-vs-replacement guidance.'
                           : isElDoradoHillsGuide
-                            ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, fascia repair, inspections, and emergency leak help on exposed foothill properties.'
+                            ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, inspections, and emergency leak help on exposed foothill properties. PRC 13 does not offer fascia or soffit repair.'
                             : isFolsomGuide
                               ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
                               : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {isEmergencyGuide ? (
-                    <a
-                      href={`tel:${PHONE_TEL}`}
+                    <TelLink
+                      location="blog-emergency-cta"
                       className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold"
                     >
                       Call {PHONE_DISPLAY}
-                    </a>
+                    </TelLink>
                   ) : (
                     <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
                       {isCommercialGuide
@@ -273,6 +273,8 @@ export default function BlogPost() {
                           ? 'Request Gutter Evaluation'
                           : isReplacementGuide
                             ? 'Request Replacement Quote'
+                            : isInspectionGuide
+                              ? 'Request Free Roof Inspection'
                             : PRIMARY_CTA}{' '}
                       <ArrowRight size={15} />
                     </Link>
@@ -291,6 +293,8 @@ export default function BlogPost() {
                             ? '/metal-roofing'
                             : isReplacementGuide
                               ? '/roof-replacement'
+                              : isInspectionGuide
+                                ? '/roof-inspection'
                               : isElDoradoHillsGuide
                                 ? '/service-areas/el-dorado-hills'
                                 : isFolsomGuide
@@ -311,6 +315,8 @@ export default function BlogPost() {
                           ? 'Metal roofing services'
                           : isReplacementGuide
                             ? 'Roof replacement services'
+                            : isInspectionGuide
+                              ? 'Roof inspection services'
                             : isElDoradoHillsGuide
                               ? 'El Dorado Hills roofing services'
                               : isFolsomGuide
@@ -376,9 +382,9 @@ export default function BlogPost() {
                   PRC
                 </div>
                 <div>
-                  <p className="font-semibold text-headline text-sm">PRC 13 Roofing Inc.</p>
+                  <p className="font-semibold text-headline text-sm">{BUSINESS_ENTITY_NAME}</p>
                   <p className="text-body text-xs mt-0.5">
-                    Sacramento residential roofing specialists. Lic. No. 1087153. Articles are based on real field experience.
+                    Sacramento residential roofing specialists. {LICENSE_LABEL}. Articles are based on real field experience.
                   </p>
                 </div>
               </div>
@@ -391,17 +397,17 @@ export default function BlogPost() {
               >
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">Free Inspection</p>
                 <p className="text-white font-bold text-base leading-snug mb-3">
-                  Get Your Roof Inspected Within 24 Hours
+                  Request a Free Roof Inspection
                 </p>
                 <p className="text-gray-400 text-xs leading-relaxed mb-5">
-                  No pressure. Honest assessment. Sacramento homeowners scheduled same or next business day.
+                  No pressure. Honest assessment. We aim to schedule quickly during normal business hours.
                 </p>
-                <a
-                  href={`tel:${PHONE_TEL}`}
+                <TelLink
+                  location="blog-sidebar"
                   className="flex items-center justify-center gap-2 btn-gold w-full py-3 text-sm font-semibold mb-3"
                 >
                   <Phone size={15} /> Call {PHONE_DISPLAY}
-                </a>
+                </TelLink>
                 <Link
                   to="/contact"
                   className="flex items-center justify-center gap-2 text-gold text-sm font-semibold hover:text-gold-light transition-colors"

@@ -4,7 +4,7 @@ import { Phone, CheckCircle, ArrowRight, AlertTriangle, Clock, Star, Shield, Map
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
-import { PHONE_DISPLAY } from '../data/site';
+import { PHONE_DISPLAY, GOOGLE_REVIEW_COUNT } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
@@ -14,13 +14,15 @@ import JsonLd from '../components/JsonLd';
 import AnswerSummary from '../components/AnswerSummary';
 import LocalSeoLinks from '../components/LocalSeoLinks';
 import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
+import RetrievalAnswers from '../components/RetrievalAnswers';
 import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
 import { ROOF_REPAIR_HUB_RESOURCE_SLUGS } from '../data/blogRoofRepairCluster';
+import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 
-const repairResources = ROOF_REPAIR_HUB_RESOURCE_SLUGS.map(slug => blogPosts.find(post => post.slug === slug)).filter(
-  (post): post is (typeof blogPosts)[number] => Boolean(post),
-);
+const repairResources = ROOF_REPAIR_HUB_RESOURCE_SLUGS.map(slug => blogPosts.find(post => post.slug === slug))
+  .filter((post): post is (typeof blogPosts)[number] => Boolean(post))
+  .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
 const repairSigns = [
   'Active leak or water stains on your ceiling',
@@ -55,10 +57,10 @@ const repairServices = [
 ];
 
 const heroTrustItems = [
-  { icon: Star, label: '81 Google Reviews' },
+  { icon: Star, label: `${GOOGLE_REVIEW_COUNT} Google Reviews` },
   { icon: Shield, label: 'Licensed & Insured' },
   { icon: MapPin, label: 'Sacramento Local Team' },
-  { icon: CreditCard, label: 'Financing Available' },
+  { icon: CreditCard, label: 'Financing on Qualifying Projects' },
 ];
 
 const repairVisitSteps = [
@@ -116,42 +118,47 @@ const repairFaqs: FaqItem[] = [
   {
     question: 'Can a roof leak be repaired without replacing the roof?',
     answer:
-      'Yes, many roof leaks can be repaired without replacing the whole roof. We inspect the source first and explain what repair makes sense.',
+      'Yes. Many Sacramento roof leaks can be repaired without replacing the whole roof when the damage is localized and the surrounding roof is still in sound condition. PRC 13 inspects the source first and explains whether a focused repair is enough.',
+  },
+  {
+    question: 'What affects roof repair cost in Sacramento?',
+    answer:
+      'Repair cost depends on the leak source, how many areas are involved, material type (shingle, tile, flat membrane), roof access, and whether decking or flashing must be replaced. PRC 13 provides a written estimate after inspection—there is no flat published price because each roof differs.',
   },
   {
     question: 'How quickly can you inspect my roof?',
     answer:
-      'Most Sacramento homeowners can be scheduled within 24 hours. Active leaks and interior water damage are prioritized.',
+      'We aim to schedule inspections quickly during normal business hours, and we prioritize active leaks and interior water damage. Exact timing depends on weather, crew routing, and demand.',
+  },
+  {
+    question: 'What is the difference between a temporary and permanent roof repair?',
+    answer:
+      'A temporary repair (such as emergency dry-in) slows water intrusion so the home can stay protected while materials arrive or a permanent repair is planned. A permanent repair addresses the actual failure—flashing, shingles, membrane, or decking—so the leak source is fixed, not just covered.',
+  },
+  {
+    question: 'Can you match discontinued shingles or tile?',
+    answer:
+      'Matching depends on what is still available. When an exact match is discontinued, we explain blending options, limited section repairs, or whether a larger area should be replaced for a cleaner result. We do not promise a perfect match when the original product is no longer made.',
   },
   {
     question: 'Will insurance cover roof repair?',
     answer:
-      'Insurance may cover repairs when damage is caused by wind, hail, falling debris, or another covered event. We document visible damage for your claim.',
+      'Insurance may cover repairs when damage is caused by a covered event such as wind, hail, or falling debris. Coverage varies by policy. We document visible damage to support your claim; the insurer decides what is covered.',
   },
   {
     question: 'How do I know if my roof damage is serious?',
     answer:
-      'Interior stains, active leaks, missing shingles, damaged flashing, soft decking, or repeated leaks should be inspected quickly.',
+      'Interior stains, active leaks, missing shingles, damaged flashing, soft decking, or repeated leaks in the same area should be inspected promptly. Waiting can let water spread into insulation and framing.',
   },
   {
-    question: 'What happens during a roof inspection?',
+    question: 'When does roof repair stop making sense?',
     answer:
-      'We check the roof surface, flashing, penetrations, drainage, and visible damage. Then we explain the findings and next steps.',
-  },
-  {
-    question: 'Can you repair part of the roof without replacing everything?',
-    answer:
-      'Yes. If the rest of the roof is in good condition, we can often repair the damaged area without replacing the entire roof.',
+      'Replacement often makes more sense when the roof is near end of life, the same area has been repaired repeatedly, damage covers a large portion of the roof, or decking problems are widespread. We explain that threshold after inspection rather than defaulting to replacement.',
   },
   {
     question: 'Do you repair flat roofs?',
     answer:
-      'Yes. We inspect seams, membrane damage, drainage, and ponding areas before recommending the right flat roof repair.',
-  },
-  {
-    question: 'Is there a minimum repair size you\'ll take on?',
-    answer:
-      'No. Small leaks can become expensive quickly, so we would rather inspect the issue early.',
+      'Yes. We inspect seams, membrane damage, drainage, and ponding areas before recommending the right flat roof repair for residential and light commercial systems we service.',
   },
 ];
 
@@ -163,6 +170,7 @@ export default function RoofRepair() {
         pageName="Roof Repair Sacramento"
         schemaType="Service"
         serviceName="Roof Repair"
+        primaryImage={ASSETS.roofRepair('roof-repair-flat-roof-work.webp')}
         breadcrumbs={[{ label: 'Roof Repair' }]}
       />
       {/* HERO */}
@@ -214,7 +222,7 @@ export default function RoofRepair() {
                 ))}
               </div>
               <p className="text-gray-500 text-sm flex items-center gap-1.5">
-                <Clock size={13} /> Most Sacramento inspections scheduled within 24 hours
+                <Clock size={13} /> We aim to schedule inspections quickly during business hours
               </p>
             </div>
             <HeroLeadFormPanel
@@ -234,12 +242,12 @@ export default function RoofRepair() {
             title="Sacramento roof repair: quick answer"
             points={[
               'Leaks, flashing, shingles, storm damage, and flat roofs',
-              'Most inspections scheduled within 24 hours',
+              'Inspections prioritized for active leaks',
               'Repair vs replacement guidance included',
               'Insurance documentation available for storm damage',
             ]}
           >
-            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home.
+            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home—or whether replacement is the more durable path.
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -312,6 +320,30 @@ export default function RoofRepair() {
           </div>
         </div>
       </section>
+
+      <RetrievalAnswers
+        heading="Roof repair answers Sacramento homeowners ask"
+        intro="Short, standalone answers you can use before you call. Full FAQs appear later on this page."
+        items={[
+          {
+            question: 'What does PRC 13 do for roof repair?',
+            answer:
+              'PRC 13 Roofing inspects the leak or damage source, documents findings, and performs focused repairs on shingles, flashing, penetrations, and flat-roof membrane issues when a full replacement is not required.',
+            detail:
+              'After temporary dry-in (if needed), the permanent repair addresses the failed detail so water is not just redirected for a short time.',
+          },
+          {
+            question: 'What affects roof repair cost?',
+            answer:
+              'Cost is driven by leak location, material type, how many areas need work, roof access, and whether decking or flashing must be replaced—not by a one-size published rate.',
+          },
+          {
+            question: 'When should you repair instead of replace?',
+            answer:
+              'Repair is usually enough when damage is localized, the roof is otherwise sound, and there is no long pattern of repeated leaks in the same area. Widespread wear, end-of-life materials, or soft decking often push the decision toward replacement.',
+          },
+        ]}
+      />
 
       {/* REPAIR SERVICES */}
       <section className="bg-white py-16">

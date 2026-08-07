@@ -50,7 +50,7 @@ export default function SeasonalBanner({ dismissed = false, onDismiss }: Seasona
               <Link to="/emergency-roof-repair" className="inline-flex items-center gap-1 text-gold font-extrabold hover:text-gold-light hover:underline transition-colors">
                 Emergency roof help <span aria-hidden>→</span>
               </Link>{' '}
-              with same-day assessment available.
+              with priority assessment when conditions allow.
             </>
           ) : (
             <>

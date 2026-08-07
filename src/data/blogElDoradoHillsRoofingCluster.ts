@@ -364,7 +364,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
     title: 'Fascia Repair El Dorado Hills CA: Eaves, Rot, and Storm Damage',
     seoTitle: 'Fascia Repair El Dorado Hills CA | PRC 13 Roofing',
     excerpt:
-      'El Dorado Hills fascia repair for rotted eaves and gutter-related water intrusion. PRC 13 addresses fascia as part of roof edge protection.',
+      'Educational guide to El Dorado Hills fascia rot, eaves damage, and gutter-related water intrusion. PRC 13 does not offer fascia or soffit repair; we help with roof inspection, repair, and gutter-related drainage evaluations.',
     date: 'June 30, 2026',
     readTime: '5 min read',
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -384,7 +384,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
       {
         question: 'Is fascia repair a roofing or siding job?',
         answer:
-          'Often both. PRC 13 addresses fascia in context of drip edge, shingles or tile termination, and gutter attachment.',
+          'Often both, depending on how the eave is built. PRC 13 does not offer fascia or soffit repair. During roof or gutter evaluations we can explain how drip edge, tile or shingle termination, and gutter attachment relate to what you are seeing.',
       },
       {
         question: 'Can fascia damage mean roof leaks?',
@@ -392,9 +392,9 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
           'Yes. Compromised eaves allow water behind fascia into soffits and along wall lines.',
       },
       {
-        question: 'Do you replace fascia during roof replacement?',
+        question: 'Should fascia be replaced during roof replacement?',
         answer:
-          'We recommend replacing rotted fascia before or during re-roofing so new edge metal seals to sound wood.',
+          'Rotted fascia should be addressed before or during re-roofing so new edge metal seals to sound wood. PRC 13 does not perform fascia repair; we note roof-edge conditions during inspections so you can plan board work separately if needed.',
       },
       {
         question: 'How do I know fascia needs repair?',
@@ -406,7 +406,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: fascia repair in El Dorado Hills protects roof edges where gutters, tile overhangs, and foothill storms meet. PRC 13 Roofing replaces damaged fascia and corrects the roof drainage details that caused rot.',
+          'Short answer: fascia repair protects roof edges where gutters, tile overhangs, and foothill storms meet. This article explains common EDH fascia problems. PRC 13 Roofing does not offer fascia or soffit repair; we focus on roof inspection, roof repair, and related drainage evaluations.',
       },
       {
         type: 'heading',
@@ -421,10 +421,10 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
         type: 'list',
         content: '',
         items: [
-          'Replace soft or discolored fascia boards at eaves',
-          'Reset drip edge and tile or shingle termination',
-          'Reattach gutters to solid backing',
-          'Seal transitions at stucco and trim intersections',
+          'Replace soft or discolored fascia boards at eaves (not a PRC 13 service)',
+          'Reset drip edge and tile or shingle termination during roofing work',
+          'Reattach gutters to solid backing after boards are sound',
+          'Watch transitions at stucco and trim intersections for water entry',
         ],
       },
       {

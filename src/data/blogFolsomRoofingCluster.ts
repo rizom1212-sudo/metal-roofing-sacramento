@@ -54,7 +54,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How fast can PRC 13 respond to a Folsom roof repair?',
         answer:
-          'Active leaks are prioritized. Many homeowners are scheduled within 24 hours for assessment.',
+          'Active leaks are prioritized. We aim to schedule assessments quickly during normal business hours, depending on weather and crew routing.',
       },
       {
         question: 'Can wind near Folsom Lake cause repair needs?',
@@ -272,7 +272,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Book a free roof inspection in Folsom through our contact page. Most homeowners are scheduled within 24 hours.',
+          'Book a free roof inspection in Folsom through our contact page. We aim to schedule quickly during normal business hours.',
       },
     ],
   },

@@ -63,7 +63,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Do you repair fascia when installing gutters?',
         answer:
-          'Yes. Fascia and soffit damage often appears when gutters fail. PRC 13 assesses and replaces damaged boards when needed.',
+          'No. PRC 13 does not offer fascia or soffit repair. During a gutter evaluation we can note fascia condition and explain how overflow or pull-away may be affecting the roof edge, then point you to the right next step for board work if needed.',
       },
       {
         question: 'When should I replace gutters instead of installing new runs only?',
@@ -98,7 +98,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
           'Downspouts sized for Sacramento rainfall volume',
           'Proper pitch so water flows toward outlets—not into fascia',
           'Gutter guards when homeowners want less debris buildup',
-          'Fascia and soffit assessment before attachment',
+          'Roofline and attachment-point check before new gutters go up',
         ],
       },
       {
@@ -116,7 +116,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'PRC 13 inspects your roofline, checks fascia condition, and explains whether repair or full installation makes sense. Most jobs finish in one day once scheduled.',
+          'PRC 13 inspects your roofline and gutter attachment points and explains whether gutter repair or full installation makes sense. Most gutter jobs finish in one day once scheduled. PRC 13 does not offer fascia or soffit repair.',
       },
     ],
   },
@@ -125,7 +125,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Gutter Replacement Cost in Sacramento: What Affects Your Quote',
     seoTitle: 'Gutter Replacement Cost Sacramento | PRC 13 Roofing',
     excerpt:
-      'Sacramento gutter replacement cost depends on footage, stories, fascia condition, and guards. PRC 13 inspects first and provides a written estimate.',
+      'Sacramento gutter replacement cost depends on footage, stories, access, and guards. PRC 13 inspects first and provides a written estimate. Fascia or soffit board work is separate and is not a PRC 13 service.',
     date: 'July 6, 2026',
     readTime: '5 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -140,7 +140,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'How much does gutter replacement cost in Sacramento?',
         answer:
-          'Cost depends on home size, material, access, and whether fascia or soffit repairs are needed. PRC 13 provides a clear written estimate after inspection.',
+          'Cost depends on home size, material, access, and downspout layout. If fascia boards are too damaged to support gutters, that board work is separate—PRC 13 does not offer fascia or soffit repair—and we will explain what we find during the gutter inspection.',
       },
       {
         question: 'Is gutter replacement more expensive than repair?',
@@ -148,9 +148,9 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
           'Small leaks may be repairable, but gutters pulling from fascia, sagging, or rusting through often cost more to patch repeatedly than replace once.',
       },
       {
-        question: 'Does fascia repair add to gutter replacement cost?',
+        question: 'Does fascia damage affect gutter replacement?',
         answer:
-          'Yes when boards are rotted. Fascia damage often appears when gutters fail, and sound wood is required for proper gutter attachment.',
+          'Yes. Sound wood is required for proper gutter attachment. If fascia is rotted, board repair should be handled before or with new gutters—but PRC 13 does not offer fascia or soffit repair. We document what we see so you can plan that work separately.',
       },
       {
         question: 'Do gutter guards increase replacement cost?',
@@ -185,7 +185,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
           'Total linear feet of gutter and downspout runs',
           'Single-story vs multi-story access and ladder time',
           'Seamless aluminum vs sectional material choices',
-          'Fascia or soffit board replacement at the roof edge',
+          'Whether roof-edge boards are sound enough for attachment (board repair is not a PRC 13 service)',
           'Gutter guard add-ons',
           'Disposal of rusted or failing existing gutters',
         ],
@@ -292,7 +292,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
           'Leaf and debris guards paired with seamless gutter installation',
           'Guard retrofits when existing gutters are still sound',
           'Assessment of pitch and downspout capacity—not just surface covers',
-          'Coordination with fascia repair when overflow already caused damage',
+          'Honest notes when overflow has already damaged roof-edge boards (fascia/soffit repair is not offered by PRC 13)',
         ],
       },
       {
@@ -310,7 +310,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'PRC 13 inspects your gutters, checks fascia at the roof edge, and recommends guards only when the underlying system is worth protecting.',
+          'PRC 13 inspects your gutters and roof-edge attachment points and recommends guards only when the underlying gutter system is worth protecting. PRC 13 does not offer fascia or soffit repair.',
       },
     ],
   },
@@ -319,7 +319,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Fascia Repair Sacramento: Fix Rotted Eaves Before Damage Spreads',
     seoTitle: 'Fascia Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Sacramento fascia repair fixes rotted eaves and gutter-related water intrusion. PRC 13 replaces damaged fascia and corrects roof edge drainage.',
+      'Educational guide to Sacramento fascia rot, eaves damage, and gutter-related water intrusion. PRC 13 does not offer fascia or soffit repair—we help with gutters, siding, and roof edge drainage evaluations.',
     date: 'July 6, 2026',
     readTime: '6 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -347,7 +347,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Does PRC 13 repair fascia and gutters together?',
         answer:
-          'Yes. Fascia damage often appears when gutters fail. We assess and replace damaged boards and reattach gutters to sound wood.',
+          'No. PRC 13 does not offer fascia or soffit repair. We can evaluate gutters and roof-edge drainage, install or replace gutters when appropriate, and explain when separate fascia work may be needed before gutters can attach properly.',
       },
       {
         question: 'How do I know fascia needs repair?',
@@ -357,19 +357,19 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Should fascia be replaced during roof replacement?',
         answer:
-          'Rotted fascia should be addressed before or during re-roofing so new edge metal seals to sound wood. PRC 13 coordinates both scopes when needed.',
+          'Rotted fascia should be addressed before or during re-roofing so new edge metal seals to sound wood. PRC 13 does not perform fascia repair; during roof or gutter evaluations we note edge conditions so you can plan board work with the right trade.',
       },
       {
         question: 'Is fascia repair urgent when water is entering?',
         answer:
-          'Active interior leaks need prompt attention. Call for emergency roof repair if water is entering now, then schedule fascia and gutter corrections.',
+          'Active interior leaks need prompt attention. Call for emergency roof repair if water is entering now. After the roof is stabilized, plan gutter corrections with PRC 13 and fascia board work with a trade that performs that service—PRC 13 does not offer fascia or soffit repair.',
       },
     ],
     body: [
       {
         type: 'paragraph',
         content:
-          'Short answer: fascia repair in Sacramento protects roof edges where gutters, drip edge, and winter rain meet. PRC 13 Roofing replaces rotted boards and fixes the drainage details that caused the damage.',
+          'Short answer: fascia repair protects roof edges where gutters, drip edge, and winter rain meet. This article explains how fascia fails in Sacramento. PRC 13 Roofing does not offer fascia or soffit repair; we focus on gutters, siding, roof inspection, and roof repair when the leak path involves the roof system.',
       },
       {
         type: 'heading',
@@ -382,17 +382,17 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       },
       {
         type: 'heading',
-        content: 'Fascia Services PRC 13 Provides',
+        content: 'What Fascia Repair Typically Includes (Educational)',
       },
       {
         type: 'list',
         content: '',
         items: [
-          'Replace soft or discolored fascia boards at eaves',
-          'Reattach gutters to solid backing',
-          'Address soffit damage when water traveled inward',
-          'Coordinate drip edge and shingle termination at the roof edge',
-          'Recommend roof repair when leaks extend past the fascia zone',
+          'Replace soft or discolored fascia boards at eaves (not a PRC 13 service)',
+          'Reattach gutters to solid backing after boards are sound',
+          'Address soffit damage when water traveled inward (not a PRC 13 service)',
+          'Coordinate drip edge and shingle termination at the roof edge during roofing work',
+          'Inspect for roof leaks when water has moved past the eave into the roof system',
         ],
       },
       {
@@ -406,12 +406,12 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       },
       {
         type: 'heading',
-        content: 'Schedule a Fascia Inspection',
+        content: 'Schedule a Roofline and Gutter Evaluation',
       },
       {
         type: 'paragraph',
         content:
-          'PRC 13 inspects fascia, gutters, and roof edge flashing together so repairs address the cause—not just the visible rot.',
+          'PRC 13 can inspect gutters and roof edge flashing and explain what we find. We do not offer fascia or soffit repair; if boards are damaged, we will say so clearly so you can arrange that work separately.',
       },
     ],
   },
@@ -420,7 +420,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'How Gutters Prevent Roof Leaks in Sacramento Homes',
     seoTitle: 'Gutters and Roof Leaks Sacramento | PRC 13 Roofing',
     excerpt:
-      'Failed gutters, rotted fascia, and poor drainage push water into roof edges and cause leaks. PRC 13 helps Sacramento homeowners trace gutter-related leak paths.',
+      'Failed gutters, rotted fascia, and poor drainage push water into roof edges and cause leaks. PRC 13 helps Sacramento homeowners trace gutter-related leak paths. Fascia and soffit repair are not PRC 13 services.',
     date: 'July 6, 2026',
     readTime: '6 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -445,7 +445,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Should I get a roof inspection or gutter evaluation first?',
         answer:
-          'Start with a roof inspection that includes gutters and fascia. PRC 13 reviews the full water path from roof surface to downspout.',
+          'Start with a roof inspection that includes gutters and roof-edge drainage. PRC 13 reviews the water path from roof surface to downspout. We do not offer fascia or soffit repair.',
       },
       {
         question: 'Can overflowing gutters damage foundations?',
@@ -460,7 +460,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'What if I have an active leak right now?',
         answer:
-          'Call for emergency roof repair when water is entering. PRC 13 can stabilize the situation, then plan gutter and fascia corrections.',
+          'Call for emergency roof repair when water is entering. PRC 13 can stabilize the roof situation, then plan gutter corrections. Fascia board repair is not a PRC 13 service.',
       },
     ],
     body: [
@@ -501,7 +501,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Patching interior drywall without fixing gutters leaves the root cause in place. PRC 13 traces leak sources during free inspections and recommends gutter replacement, fascia repair, or roof repair based on what we find.',
+          'Patching interior drywall without fixing gutters leaves the root cause in place. PRC 13 traces leak sources during free inspections and recommends gutter work or roof repair based on what we find. If fascia boards are damaged, we will note that clearly—PRC 13 does not offer fascia or soffit repair.',
       },
       {
         type: 'links',
