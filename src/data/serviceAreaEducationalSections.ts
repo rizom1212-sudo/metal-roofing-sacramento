@@ -47,4 +47,14 @@ export const serviceAreaEducationalSections: Record<string, ServiceAreaEducation
       'Tile roofs in El Dorado Hills also need underlayment and flashing checked after storms, because tile appearance alone can hide membrane wear on wind-exposed lots. Our [tile roofing guidance for El Dorado Hills](/blog/tile-roofing-el-dorado-hills-ca) covers repair and replacement considerations for foothill tile systems without assuming every home needs the same scope of work.',
     ],
   },
+  colfax: {
+    eyebrow: 'Wildfire & Roofing Guidance',
+    heading: 'Why Roofing Matters for Wildfire Home Hardening in Colfax',
+    paragraphs: [
+      'In wildfire-prone foothill communities like Colfax, roofs are vulnerable to ignition from flying embers as well as from ordinary leak and storm wear. Embers can settle in debris-filled gutters, land on aged shingle fields, or find openings at vents and roof edges. That is why roof condition is part of home hardening conversations alongside defensible space.',
+      'Class A roof assemblies are designed and tested as systems—not just a single product name on a shingle wrapper. When Colfax homeowners plan [roof replacement](/roof-replacement), it is worth asking which assembly rating applies, what underlayment and ventilation details are required, and how edges and penetrations will be finished. Fire-resistant materials such as certain asphalt systems and [metal roofing](/metal-roofing) are commonly compared for durability and maintenance in Placer County foothill weather.',
+      'Ember intrusion and roof-to-wall or eave details matter because wind-driven embers look for gaps. Gutters that hold dry leaves or pine needles create ready fuel on the roof edge. Keeping drainage clear supports both leak prevention and wildfire readiness. PRC 13 can inspect gutters and roof edges during a free [roof inspection](/roof-inspection); fascia and soffit repair are not services PRC 13 offers.',
+      'Wildland-urban interface (WUI) and Placer County foothill settings often push homeowners to think beyond a cosmetic reroof. A practical sequence is: understand roof condition, review fire-performance options with documented products, confirm any City of Colfax program questions through the [official Home Hardening page](https://colfax-ca.gov/homehardening/), and then decide on repair or replacement scope. For a deeper informational overview, read our guide to the [Colfax Home Hardening Program and roofing](/blog/colfax-home-hardening-program-2026-roofing-wildfire-protection).',
+    ],
+  },
 };

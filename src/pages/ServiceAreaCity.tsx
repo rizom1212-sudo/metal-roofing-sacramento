@@ -35,6 +35,9 @@ export default function ServiceAreaCity() {
   const localResources = localHub
     ? blogPosts.filter(post => post.category === localHub.category).slice(0, SERVICE_HUB_RESOURCE_LIMIT)
     : [];
+  const featured = area.featuredProgram;
+  const heroLead = area.heroLead ?? 'Roofing Services in';
+  const primaryCtaLabel = featured?.primaryCtaLabel ?? PRIMARY_CTA;
 
   return (
     <>
@@ -49,6 +52,11 @@ export default function ServiceAreaCity() {
           { label: 'Service Areas', href: '/service-areas' },
           { label: area.name },
         ]}
+        offers={
+          featured
+            ? [{ name: featured.offerSchemaName, description: featured.offerSchemaDescription }]
+            : undefined
+        }
       />
 
       <section className="bg-charcoal-dark text-white py-16 md:py-20">
@@ -63,21 +71,46 @@ export default function ServiceAreaCity() {
             <span className="inline-flex items-center gap-1.5"><MapPin size={14} /> Service Area</span>
           </p>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
-            Roofing Services in<br />
+            {heroLead}
+            <br />
             <span className="text-gold">{area.name}, CA</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-8">{area.heroIntro}</p>
+          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-4">{area.heroIntro}</p>
+          {featured ? (
+            <p className="text-sm text-gray-400 mb-8">
+              Last Updated: <span className="text-gray-200">{featured.lastUpdatedLabel}</span>
+            </p>
+          ) : (
+            <div className="mb-8" />
+          )}
           <div className="flex flex-col sm:flex-row gap-3">
-            <TelLink location={`hero-service-area-${area.slug}`} className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
-              <Phone size={18} /> Call {PHONE_DISPLAY}
-            </TelLink>
-            <a
-              href={`#${SERVICE_AREA_FORM_SECTION_ID}`}
-              onClick={e => handleSamePageAnchorClick(e, SERVICE_AREA_FORM_SECTION_ID)}
-              className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
-            >
-              {PRIMARY_CTA} <ArrowRight size={18} />
-            </a>
+            {featured ? (
+              <>
+                <a
+                  href={`#${SERVICE_AREA_FORM_SECTION_ID}`}
+                  onClick={e => handleSamePageAnchorClick(e, SERVICE_AREA_FORM_SECTION_ID)}
+                  className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"
+                >
+                  {primaryCtaLabel} <ArrowRight size={18} />
+                </a>
+                <TelLink location={`hero-service-area-${area.slug}`} className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold">
+                  <Phone size={18} /> Call {PHONE_DISPLAY}
+                </TelLink>
+              </>
+            ) : (
+              <>
+                <TelLink location={`hero-service-area-${area.slug}`} className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
+                  <Phone size={18} /> Call {PHONE_DISPLAY}
+                </TelLink>
+                <a
+                  href={`#${SERVICE_AREA_FORM_SECTION_ID}`}
+                  onClick={e => handleSamePageAnchorClick(e, SERVICE_AREA_FORM_SECTION_ID)}
+                  className="inline-flex items-center justify-center gap-2 btn-outline py-4 px-8 text-base font-semibold"
+                >
+                  {primaryCtaLabel} <ArrowRight size={18} />
+                </a>
+              </>
+            )}
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300 mt-6">
             <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> {LICENSE_INSURED_LINE}</span>
@@ -85,6 +118,60 @@ export default function ServiceAreaCity() {
           </div>
         </div>
       </section>
+
+      {featured && (
+        <section className="bg-gold/10 border-b border-gold/20 py-10 md:py-12">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+              <div>
+                <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">{featured.programEyebrow}</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-headline mb-4">{featured.programHeading}</h2>
+                <p className="text-body text-sm leading-relaxed mb-4">{featured.programIntro}</p>
+                <p className="text-headline text-sm font-semibold leading-relaxed mb-4">{featured.costShareStatement}</p>
+                <ul className="space-y-2.5 mb-5">
+                  {featured.programBullets.map(item => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                      <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-body text-xs leading-relaxed mb-4">{featured.programDisclaimer}</p>
+                <a
+                  href={featured.officialSourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-gold font-semibold text-sm hover:text-gold-dark transition-colors"
+                >
+                  {featured.officialSourceLabel} <ArrowRight size={14} />
+                </a>
+              </div>
+              <div className="bg-white border border-gold/30 p-6 md:p-7 shadow-sm">
+                <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">{featured.offerEyebrow}</p>
+                <h2 className="text-2xl font-bold text-headline mb-3">{featured.offerHeading}</h2>
+                <p className="text-headline text-base font-semibold leading-relaxed mb-3">{featured.offerStatement}</p>
+                <p className="text-body text-sm leading-relaxed mb-6">{featured.offerSeparationNote}</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={`#${SERVICE_AREA_FORM_SECTION_ID}`}
+                    onClick={e => handleSamePageAnchorClick(e, SERVICE_AREA_FORM_SECTION_ID)}
+                    className="inline-flex items-center justify-center btn-gold py-3.5 px-6 text-sm font-semibold"
+                  >
+                    {featured.primaryCtaLabel}
+                  </a>
+                  <a
+                    href={`#${SERVICE_AREA_FORM_SECTION_ID}`}
+                    onClick={e => handleSamePageAnchorClick(e, SERVICE_AREA_FORM_SECTION_ID)}
+                    className="inline-flex items-center justify-center border-2 border-charcoal text-charcoal font-semibold px-6 py-3.5 text-sm hover:bg-charcoal hover:text-white transition-colors"
+                  >
+                    {featured.secondaryCtaLabel}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-cream py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -113,7 +200,27 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-16">
+      {featured && featured.answerBlocks.length > 0 && (
+        <section className="bg-white py-14 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Quick Answers</p>
+            <h2 className="section-heading mb-8">{area.name} Home Hardening and Roofing Questions</h2>
+            <div className="space-y-8 max-w-3xl">
+              {featured.answerBlocks.map(block => (
+                <div key={block.question}>
+                  <h3 className="text-xl font-bold text-headline mb-3">{block.question}</h3>
+                  <p className="text-body text-sm leading-relaxed mb-3">{block.directAnswer}</p>
+                  {block.detail && (
+                    <p className="text-body text-sm leading-relaxed">{block.detail}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className={`${featured ? 'bg-cream' : 'bg-white'} py-14 md:py-16`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mb-8 md:mb-10">
             <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Local Roofing Guidance</p>
@@ -289,6 +396,7 @@ export default function ServiceAreaCity() {
         cityName={area.name}
         inspectionIntro={area.inspectionIntro}
         trustIntro={area.trustIntro}
+        ctaLabel={featured ? featured.primaryCtaLabel : undefined}
       />
 
       <section id={SERVICE_AREA_FORM_SECTION_ID} data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16 scroll-mt-28">

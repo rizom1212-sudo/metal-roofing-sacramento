@@ -361,4 +361,31 @@ export const serviceAreaExtraSections: Record<string, ServiceAreaExtraSections> 
     repairReplaceClosing:
       'PRC 13 Roofing performs inspections to help Florin homeowners determine the most cost-effective option between repair and full replacement.',
   },
+  colfax: {
+    insuranceClaimsIntro:
+      'Colfax and nearby Placer County foothill homes often see roof damage after winter storms, wind along the I-80 corridor, or falling limbs from oak and pine cover. Wildfire seasons also push homeowners to document roof condition when considering hardening upgrades.',
+    insuranceClaimsBullets: [
+      'Missing or lifted shingles after foothill wind events',
+      'Storm leaks around aged vents, chimneys, and valleys',
+      'Debris-related moisture problems in gutters and roof edges',
+      'Hail or branch impact on exposed roof planes',
+      'Interior stains discovered after the first heavy winter rain',
+    ],
+    insuranceClaimsClosing:
+      'PRC 13 Roofing provides photo documentation and inspection reports homeowners can use during insurance conversations. Insurance coverage decisions belong to the insurer and are separate from any City of Colfax home-hardening program.',
+    repairWhenPoints: [
+      'Damage is isolated to one flashing detail, boot, or small roof section',
+      'The roof is relatively young with sound underlayment and decking',
+      'Leaks are limited and surrounding materials still hold granules well',
+      'A targeted repair restores weather protection without widespread matching issues',
+    ],
+    replaceWhenPoints: [
+      'Multiple leaks or widespread material fatigue appear across the Colfax roof',
+      'Shingles are brittle, curling, or failing across sun- and wind-exposed planes',
+      'You are planning a Class A or fire-resistant assembly as part of home hardening',
+      'The roof is near end of service life and repeated patches are no longer reliable',
+    ],
+    repairReplaceClosing:
+      'PRC 13 Roofing inspects first so Colfax homeowners can compare repair, replacement, and fire-resistant material options with clear scope—without confusing City program assistance with contractor pricing.',
+  },
 };

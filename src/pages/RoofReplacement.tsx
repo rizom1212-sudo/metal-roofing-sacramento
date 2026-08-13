@@ -248,8 +248,9 @@ export default function RoofReplacement() {
             <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento materials guide</Link>.
             We serve{' '}
             <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-            <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
-            <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+            <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}
+            <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
+            <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>.
             See also{' '}
             <Link to="/blog/roof-replacement-folsom-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom replacement planning</Link>,{' '}
             <Link to="/blog/roof-replacement-el-dorado-hills-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills replacement</Link>, and{' '}
@@ -290,8 +291,9 @@ export default function RoofReplacement() {
               <p className="text-body text-sm leading-relaxed max-w-3xl">
                 Homeowners across{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
-                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
+                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>{' '}
                 use these guides for replacement cost, materials, insurance, financing, and timelines. Ready to hire asphalt replacement in Rocklin? See{' '}
                 <Link to="/roof-replacement/rocklin" className="text-gold font-semibold hover:text-gold-dark transition-colors">shingle roof replacement in Rocklin</Link>.
                 Schedule a{' '}

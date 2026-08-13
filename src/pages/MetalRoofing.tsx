@@ -198,8 +198,9 @@ export default function MetalRoofing() {
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof inspection</Link>.
                 We serve{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>.
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
+                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>.
                 Folsom homeowners comparing materials should read{' '}
                 <Link to="/blog/best-roofing-materials-folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">best roofing materials for Folsom</Link>.
                 {' '}
@@ -319,8 +320,9 @@ export default function MetalRoofing() {
               <p className="text-body text-sm leading-relaxed max-w-3xl">
                 Homeowners across{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
-                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
+                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>{' '}
                 use these guides for metal cost, standing seam options, climate fit, installation steps, and shingle comparisons. Schedule a{' '}
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
                 or{' '}

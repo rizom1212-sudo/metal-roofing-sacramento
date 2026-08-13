@@ -14,9 +14,10 @@ export const EMERGENCY_HUB_RESOURCE_SLUGS = [
   'emergency-roof-repair-cost',
 ] as const;
 
-/** Priority cities for LocalSeoLinks (descriptive subset, not all 13 every time). */
+/** Priority cities for LocalSeoLinks (descriptive subset, not all cities every time). */
 export const LOCAL_SEO_PRIORITY_CITY_SLUGS = [
   'sacramento',
+  'colfax',
   'folsom',
   'roseville',
   'rocklin',

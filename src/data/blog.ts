@@ -5,6 +5,7 @@ import { roofInspectionClusterPosts } from './blogRoofInspectionCluster';
 import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluster';
 import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
 import { elDoradoHillsRoofingClusterPosts } from './blogElDoradoHillsRoofingCluster';
+import { colfaxRoofingClusterPosts } from './blogColfaxHomeHardening';
 import { roofReplacementClusterPosts } from './blogRoofReplacementCluster';
 import { metalRoofingClusterPosts } from './blogMetalRoofingCluster';
 import { guttersFasciaClusterPosts } from './blogGuttersFasciaCluster';
@@ -334,6 +335,7 @@ const rawBlogPosts: BlogPost[] = [
   ...phase4EmergencyPosts,
   ...folsomRoofingClusterPosts,
   ...elDoradoHillsRoofingClusterPosts,
+  ...colfaxRoofingClusterPosts,
   ...roofReplacementClusterPosts,
   ...phase4ReplacementPosts,
   ...metalRoofingClusterPosts,
@@ -350,6 +352,7 @@ export const ROOF_INSPECTION_CLUSTER_SLUGS = roofInspectionClusterPosts.map(post
 export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPosts.map(post => post.slug);
 export const FOLSOM_ROOFING_CLUSTER_SLUGS = folsomRoofingClusterPosts.map(post => post.slug);
 export const EL_DORADO_HILLS_ROOFING_CLUSTER_SLUGS = elDoradoHillsRoofingClusterPosts.map(post => post.slug);
+export const COLFAX_ROOFING_CLUSTER_SLUGS = colfaxRoofingClusterPosts.map(post => post.slug);
 export const ROOF_REPLACEMENT_CLUSTER_SLUGS = roofReplacementClusterPosts.map(post => post.slug);
 export const METAL_ROOFING_CLUSTER_SLUGS = metalRoofingClusterPosts.map(post => post.slug);
 export const GUTTERS_FASCIA_CLUSTER_SLUGS = guttersFasciaClusterPosts.map(post => post.slug);

@@ -1216,4 +1216,82 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       },
     ],
   },
+
+  colfax: {
+    localHeading: 'Common Roofing Problems in Colfax, CA',
+    localContent:
+      'Colfax roofs take foothill sun, winter storm cycles, and wind across hillside and corridor lots along I-80 in Placer County. Wildfire ember risk also makes debris-filled gutters, aged shingles, and weak roof edges more than a maintenance nuisance—they are part of home-hardening readiness.',
+    localSignals: [
+      'Heat-aged and storm-worn shingles on foothill exposures',
+      'Granule loss and brittle tabs after repeated freeze–thaw and sun cycles',
+      'Debris accumulation in gutters and valleys that can hold moisture or embers',
+      'Lifted edges and ridge wear after Sierra foothill wind events',
+      'Aging flashing at vents, chimneys, and roof-to-wall transitions',
+      'Older underlayment failing beneath roofs that still look intact from the street',
+      'Homeowners comparing Class A and fire-resistant roofing options',
+      'Leak stains after the first heavy winter storm of the season',
+    ],
+    faqs: [
+      {
+        question: 'What is the City of Colfax Home Hardening Program?',
+        answer:
+          'It is a City of Colfax Home Hardening and Defensible Space Program meant to reduce wildfire risk for qualifying residential properties within city limits. Confirm details on the City’s official Home Hardening page.',
+      },
+      {
+        question: 'How much of the cost can the Colfax program cover?',
+        answer:
+          'Colfax homeowners may be eligible for assistance covering up to 90% of qualifying home-hardening and defensible-space improvements through the City’s program. Coverage depends on eligibility and approved measures.',
+      },
+      {
+        question: 'Is there an income limit for the Colfax home hardening program?',
+        answer:
+          'The City of Colfax states the program is open to Colfax homeowners without an income limit. Always verify current rules with the official City source.',
+      },
+      {
+        question: 'Does the program automatically pay for a new roof?',
+        answer:
+          'No. The program does not automatically fund every roof replacement. Roofing may be considered when it aligns with program-approved measures for a property after program review.',
+      },
+      {
+        question: 'Can roofing be part of wildfire home hardening?',
+        answer:
+          'Yes. Roofs are a common wildfire vulnerability because flying embers can ignite debris, aged materials, or openings. Fire-resistant and Class A roof assemblies are often discussed as part of home hardening.',
+      },
+      {
+        question: 'What is Class A roofing?',
+        answer:
+          'Class A is a fire-performance rating for a roof assembly under standardized testing. It indicates a high level of resistance to severe fire exposure when the full rated assembly is installed correctly.',
+      },
+      {
+        question: 'What roofing materials are better for wildfire-prone homes?',
+        answer:
+          'Homeowners often compare Class A asphalt systems, metal roofing, and other fire-resistant assemblies. The best choice depends on structure, ventilation, budget, and product documentation—not marketing claims alone.',
+      },
+      {
+        question: 'Does PRC 13 Roofing serve Colfax?',
+        answer:
+          'Yes. PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California.',
+      },
+      {
+        question: 'What is PRC 13 Roofing’s Colfax 5% offer?',
+        answer:
+          'PRC 13 Roofing is offering Colfax homeowners an additional 5% off qualifying roofing work. This promotional offer is from PRC 13 only and is separate from any City or government program assistance.',
+      },
+      {
+        question: 'How can I request a roof inspection in Colfax?',
+        answer:
+          'Call PRC 13 Roofing or use the inspection request form on this page. Inspections are free and include clear findings with no obligation.',
+      },
+      {
+        question: 'Do I qualify for the Colfax home hardening program?',
+        answer:
+          'PRC 13 cannot determine City program eligibility. Contact the City of Colfax through its official Home Hardening resource to confirm whether your property and planned improvements qualify.',
+      },
+      {
+        question: 'How do I harden my roof against wildfire?',
+        answer:
+          'Priorities often include reducing roof and gutter debris, closing vulnerable openings where practical, and planning fire-resistant or Class A roof assemblies during repair or replacement. Pair roof work with broader defensible-space guidance from official sources.',
+      },
+    ],
+  },
 };

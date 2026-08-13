@@ -40,6 +40,8 @@
     { "source": "/siding-contractor/vinyl-siding-installation", "destination": "/gutters-siding", "permanent": true },
     { "source": "/services/servicecategory/category3-service5", "destination": "/service-areas", "permanent": true },
     { "source": "/services/servicecategory/category2-service7", "destination": "/service-areas", "permanent": true },
-    { "source": "/service-areas/service-abcd", "destination": "/service-areas", "permanent": true }
+    { "source": "/service-areas/service-abcd", "destination": "/service-areas", "permanent": true },
+    { "source": "/colfax", "destination": "/service-areas/colfax", "permanent": true },
+    { "source": "/Colfax", "destination": "/service-areas/colfax", "permanent": true }
   ]
 }

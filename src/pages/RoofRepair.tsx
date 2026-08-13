@@ -429,8 +429,9 @@ export default function RoofRepair() {
               <p className="text-body text-sm leading-relaxed max-w-3xl">
                 Planning a repair—not an emergency? These guides cover cost, shingles, flashing, chimneys, skylights, and tile systems for{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
-                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>.
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
+                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>.
                 Hiring for a specific community? See{' '}
                 <Link to="/roof-repair/granite-bay" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair in Granite Bay</Link>.
                 Active leak right now? See{' '}

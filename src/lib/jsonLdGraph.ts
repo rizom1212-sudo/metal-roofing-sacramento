@@ -64,13 +64,25 @@ export function serviceEntityId(canonicalUrl: string): string {
 export function areaServedPlaces(cityNames: string[]) {
   return cityNames.map(name => {
     if (cityNames.length === 1) {
+      const containedInPlace =
+        name === 'Colfax'
+          ? {
+              '@type': 'AdministrativeArea',
+              name: 'Placer County, CA',
+              containedInPlace: {
+                '@type': 'State',
+                name: 'California',
+              },
+            }
+          : {
+              '@type': 'State',
+              name: 'California',
+            };
+
       return {
         '@type': 'City',
         name: `${name}, CA`,
-        containedInPlace: {
-          '@type': 'State',
-          name: 'California',
-        },
+        containedInPlace,
       };
     }
     return {
@@ -293,6 +305,7 @@ export function buildJsonLdGraph(options: {
   includeLocalBusiness?: boolean;
   servedAreas?: string[];
   primaryImage?: string;
+  offers?: { name: string; description: string }[];
 }): object[] {
   const {
     pathname,
@@ -306,6 +319,7 @@ export function buildJsonLdGraph(options: {
     includeLocalBusiness = true,
     servedAreas = serviceAreaNames,
     primaryImage,
+    offers = [],
   } = options;
 
   const pageUrl = absoluteUrl(pathname);
@@ -399,6 +413,18 @@ export function buildJsonLdGraph(options: {
 
   const faq = faqSchema(faqs, pageName, pageUrl);
   if (faq) graph.push(faq);
+
+  offers.forEach((offer, index) => {
+    graph.push({
+      '@type': 'Offer',
+      '@id': `${pageUrl}#offer-${index + 1}`,
+      name: offer.name,
+      description: offer.description,
+      seller: businessProviderReference(),
+      areaServed: areaServedPlaces(servedAreas.length ? servedAreas : ['Colfax'])[0],
+      category: 'Roofing',
+    });
+  });
 
   return graph;
 }

@@ -18,7 +18,7 @@ export default function ServiceAreas() {
             Areas We Serve
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
-            PRC 13 Roofing is based in Sacramento and serves homeowners across the greater Sacramento region with honest inspections, repairs, and replacements.
+            PRC 13 Roofing is based in Sacramento and serves homeowners across the greater Sacramento region—including Placer County foothill communities such as Colfax—with honest inspections, repairs, and replacements.
           </p>
         </div>
       </section>

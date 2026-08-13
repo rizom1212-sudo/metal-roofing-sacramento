@@ -19,6 +19,8 @@ interface JsonLdProps {
   servedAreas?: string[];
   /** Primary page image (absolute or site-relative path) for ImageObject / primaryImageOfPage */
   primaryImage?: string;
+  /** Optional page-local Offers (e.g. city promotional discount). */
+  offers?: { name: string; description: string }[];
 }
 
 export default function JsonLd({
@@ -32,6 +34,7 @@ export default function JsonLd({
   includeLocalBusiness = true,
   servedAreas = serviceAreaNames,
   primaryImage,
+  offers,
 }: JsonLdProps) {
   const { pathname } = useLocation();
   const graph = buildJsonLdGraph({
@@ -46,6 +49,7 @@ export default function JsonLd({
     includeLocalBusiness,
     servedAreas,
     primaryImage,
+    offers,
   });
 
   return (

@@ -6,6 +6,10 @@ import {
   serviceAreaEducationalSections,
   type ServiceAreaEducationalSection,
 } from './serviceAreaEducationalSections.ts';
+import {
+  serviceAreaFeaturedPrograms,
+  type ServiceAreaFeaturedProgram,
+} from './serviceAreaFeaturedPrograms.ts';
 
 interface ServiceAreaBase {
   name: string;
@@ -14,6 +18,8 @@ interface ServiceAreaBase {
   metaTitle: string;
   metaDescription: string;
   heroIntro: string;
+  /** Optional H1 lead text before the city name (default: "Roofing Services in"). */
+  heroLead?: string;
   quickAnswer: string;
   quickPoints: string[];
   localHeading: string;
@@ -36,6 +42,7 @@ export type ServiceArea = ServiceAreaBase &
   ServiceAreaLocalAuthority &
   ServiceAreaConversion & {
     educationalSection?: ServiceAreaEducationalSection;
+    featuredProgram?: ServiceAreaFeaturedProgram;
   };
 
 const rawServiceAreas: ServiceAreaBase[] = [
@@ -392,6 +399,91 @@ const rawServiceAreas: ServiceAreaBase[] = [
     ],
     cta: 'Schedule a free roof inspection in Florin, CA.',
   },
+  {
+    name: 'Colfax',
+    slug: 'colfax',
+    blurb:
+      'Roofing services for Colfax, CA homeowners—including inspections, repair, replacement, and wildfire-minded Class A roofing guidance tied to local home-hardening planning.',
+    metaTitle: 'Roofing Contractor Colfax CA | Home Hardening Roofing | PRC 13',
+    metaDescription:
+      'Colfax homeowners may qualify for assistance with eligible wildfire home-hardening improvements. Explore Class A roofing options and PRC 13 Roofing’s additional 5% Colfax offer.',
+    heroLead: 'Roofing Contractor in',
+    heroIntro:
+      'PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California—a Placer County foothill community where wildfire readiness and durable roofing details matter as much as leak prevention.',
+    quickAnswer:
+      'PRC 13 Roofing serves Colfax homeowners with free roof inspections, repair and replacement guidance, and fire-resistant roofing options. Colfax also has a City Home Hardening and Defensible Space Program that may help with eligible improvements—confirm details with the City’s official program resource.',
+    quickPoints: [
+      'Roof inspections for Colfax and nearby Placer County foothill homes',
+      'Roof repair and replacement planning for aging or storm-worn roofs',
+      'Class A and fire-resistant roofing guidance for wildfire-prone settings',
+      'Clear separation between City program assistance and PRC 13’s Colfax offer',
+    ],
+    localHeading: 'Roofing Considerations for Colfax, CA Homes',
+    localContent:
+      'Colfax sits along the I-80 corridor in the Sierra Nevada foothills of Placer County. Homes here face a mix of summer heat, winter storms, wind exposure on hillside lots, and wildfire ember risk that makes roof condition part of broader home hardening—not just curb appeal.',
+    localSignals: [
+      'Aging shingles or worn underlayment on foothill and hillside roofs',
+      'Debris buildup in valleys and gutters that can hold embers or trap moisture',
+      'Wind-lifted edges and ridge wear after Sierra foothill storm events',
+      'Older flashing details around vents, chimneys, and roof-to-wall transitions',
+      'Homeowners evaluating Class A or fire-resistant roofing as part of hardening plans',
+    ],
+    services: [
+      {
+        title: 'Roof Repair in Colfax',
+        href: '/roof-repair',
+        desc: 'Leak repair, storm damage fixes, flashing work, and practical repair-vs-replacement guidance for Colfax homes.',
+      },
+      {
+        title: 'Roof Replacement in Colfax',
+        href: '/roof-replacement',
+        desc: 'Full roof replacement planning with material options suited to Placer County foothill weather and wildfire considerations.',
+      },
+      {
+        title: 'Roof Inspections in Colfax',
+        href: '/roof-inspection',
+        desc: 'Free Colfax roof inspections with written findings for leaks, aging materials, drainage, and fire-hardening readiness discussions.',
+      },
+      {
+        title: 'Emergency Roof Repair in Colfax',
+        href: '/emergency-roof-repair',
+        desc: 'Priority help for active leaks, storm openings, temporary protection, and next-step repair planning.',
+      },
+      {
+        title: 'Metal Roofing in Colfax',
+        href: '/metal-roofing',
+        desc: 'Metal roofing options for Colfax homeowners comparing durable, low-maintenance systems and fire-performance characteristics.',
+      },
+      {
+        title: 'Gutters & Siding in Colfax',
+        href: '/gutters-siding',
+        desc: 'Gutter and siding support that can reduce debris buildup and improve exterior readiness. PRC 13 does not offer fascia or soffit repair.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Does PRC 13 Roofing serve Colfax?',
+        answer:
+          'Yes. PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California.',
+      },
+      {
+        question: 'Does Colfax have a home hardening program?',
+        answer:
+          'Yes. The City of Colfax operates a Home Hardening and Defensible Space Program. Confirm current eligibility and covered improvements on the City’s official Home Hardening page.',
+      },
+      {
+        question: 'How much of the cost can the Colfax program cover?',
+        answer:
+          'Colfax homeowners may be eligible for assistance covering up to 90% of qualifying home-hardening and defensible-space improvements through the City’s program. Exact coverage depends on eligibility and approved measures.',
+      },
+      {
+        question: 'Is there an income limit for the Colfax program?',
+        answer:
+          'The City of Colfax states the program is open to Colfax homeowners without an income limit. Verify current rules with the official City program resource.',
+      },
+    ],
+    cta: 'Request a Colfax roof inspection with PRC 13 Roofing.',
+  },
 ];
 
 export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => ({
@@ -402,6 +494,9 @@ export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => ({
   ...serviceAreaConversion[area.slug],
   ...(serviceAreaEducationalSections[area.slug]
     ? { educationalSection: serviceAreaEducationalSections[area.slug] }
+    : {}),
+  ...(serviceAreaFeaturedPrograms[area.slug]
+    ? { featuredProgram: serviceAreaFeaturedPrograms[area.slug] }
     : {}),
 }));
 

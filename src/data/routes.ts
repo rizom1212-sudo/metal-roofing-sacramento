@@ -5,6 +5,7 @@ import { cityServicePages } from './cityServicePages';
 import { EMERGENCY_CLUSTER_CATEGORY } from './blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from './blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogElDoradoHillsRoofingCluster';
+import { COLFAX_CLUSTER_CATEGORY } from './blogColfaxHomeHardening';
 import { REPLACEMENT_CLUSTER_CATEGORY } from './blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from './blogMetalRoofingCluster';
 import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from './blogGuttersFasciaCluster';
@@ -68,6 +69,7 @@ const SERVICE_ROUTE_LASTMOD: Record<(typeof SERVICE_ROUTES)[number], string> = {
 function serviceAreaLastmod(slug: string): string {
   if (slug === 'folsom') return clusterLastmod(FOLSOM_CLUSTER_CATEGORY);
   if (slug === 'el-dorado-hills') return clusterLastmod(EL_DORADO_HILLS_CLUSTER_CATEGORY);
+  if (slug === 'colfax') return clusterLastmod(COLFAX_CLUSTER_CATEGORY);
   return siteContentLastmod;
 }
 

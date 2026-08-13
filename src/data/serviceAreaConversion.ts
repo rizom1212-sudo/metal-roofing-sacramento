@@ -93,4 +93,10 @@ export const serviceAreaConversion: Record<string, ServiceAreaConversion> = {
     trustIntro:
       'PRC 13 Roofing focuses on honest recommendations, clear communication, and helping Florin homeowners decide when repair still makes sense and when replacement is the more reliable path.',
   },
+  colfax: {
+    inspectionIntro:
+      'Colfax homeowners can schedule a no-obligation roof inspection to identify leaks, storm wear, aging materials, debris-prone gutters, and fire-resistant roofing options before deciding on repair or replacement.',
+    trustIntro:
+      'PRC 13 Roofing focuses on honest recommendations and clear communication for Colfax homeowners—keeping City of Colfax home-hardening program questions separate from contractor estimates and our Colfax promotional offer.',
+  },
 };

@@ -160,12 +160,23 @@ export default function BlogPost() {
                         <ul className="space-y-1.5">
                           {section.links.map(link => (
                             <li key={link.href}>
-                              <Link
-                                to={link.href}
-                                className="text-sm font-semibold text-headline hover:text-gold transition-colors"
-                              >
-                                {link.label}
-                              </Link>
+                              {link.href.startsWith('http://') || link.href.startsWith('https://') ? (
+                                <a
+                                  href={link.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-sm font-semibold text-headline hover:text-gold transition-colors"
+                                >
+                                  {link.label}
+                                </a>
+                              ) : (
+                                <Link
+                                  to={link.href}
+                                  className="text-sm font-semibold text-headline hover:text-gold transition-colors"
+                                >
+                                  {link.label}
+                                </Link>
+                              )}
                             </li>
                           ))}
                         </ul>

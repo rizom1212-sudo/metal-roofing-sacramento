@@ -11,6 +11,7 @@ interface ServiceAreaConversionSectionsProps {
   cityName: string;
   inspectionIntro: string;
   trustIntro: string;
+  ctaLabel?: string;
 }
 
 const trustBadges = [
@@ -35,6 +36,7 @@ export default function ServiceAreaConversionSections({
   cityName,
   inspectionIntro,
   trustIntro,
+  ctaLabel = 'Schedule Your Free Roof Inspection',
 }: ServiceAreaConversionSectionsProps) {
   const scrollToForm = (event: MouseEvent<HTMLAnchorElement>) => {
     handleSamePageAnchorClick(event, SERVICE_AREA_FORM_SECTION_ID);
@@ -61,7 +63,7 @@ export default function ServiceAreaConversionSections({
               onClick={scrollToForm}
               className="inline-flex items-center justify-center btn-gold py-3.5 px-7 text-sm font-semibold"
             >
-              Schedule Your Free Roof Inspection
+              {ctaLabel}
             </a>
           </div>
         </div>
