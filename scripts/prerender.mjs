@@ -19,7 +19,7 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function headTags({ title, description, canonical, image, type = 'website', publishedTime, modifiedTime }) {
+function headTags({ title, description, canonical, image, type = 'website', publishedTime, modifiedTime, siteName = 'Metal Roofing Sacramento' }) {
   const tags = [
     `<title>${escapeHtml(title)}</title>`,
     `<link rel="canonical" href="${canonical}" />`,
@@ -30,7 +30,7 @@ function headTags({ title, description, canonical, image, type = 'website', publ
     `<meta property="og:url" content="${canonical}" />`,
     `<meta property="og:image" content="${image}" />`,
     `<meta property="og:type" content="${type}" />`,
-    `<meta property="og:site_name" content="PRC 13 Roofing" />`,
+    `<meta property="og:site_name" content="${escapeHtml(siteName)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
@@ -59,7 +59,7 @@ function routeMeta(route, api) {
   const post = blogSlug ? api.blogPosts.find(item => item.slug === blogSlug) : null;
   const meta = post
     ? {
-        title: post.seoTitle ?? `${post.title} | PRC 13 Roofing`,
+        title: post.seoTitle ?? `${post.title} | ${api.BRAND_NAME ?? 'Metal Roofing Sacramento'}`,
         description: post.excerpt,
         image: api.absoluteAssetUrl(post.coverImage),
         type: 'article',
@@ -98,7 +98,7 @@ async function main() {
   for (const route of api.publicRoutes) {
     const appHtml = api.render(route.path);
     const meta = routeMeta(route, api);
-    const html = injectHead(template, headTags(meta)).replace(
+    const html = injectHead(template, headTags({ ...meta, siteName: api.BRAND_NAME })).replace(
       '<div id="root"></div>',
       `<div id="root">${appHtml}</div>`,
     );

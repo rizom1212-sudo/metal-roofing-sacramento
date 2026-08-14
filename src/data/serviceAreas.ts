@@ -1,5 +1,8 @@
+import { metalCityOverlays, metalCityServices, metalEducationalSections, metalExtraSections } from './metalCityContent.ts';
+import { rewriteHireLanguage } from '../lib/metalizeRetargetedCopy';
+import { rewriteLinksInUnknownValue } from '../lib/rewritePublicLinks';
 import { serviceAreaDetails } from './serviceAreaDetails.ts';
-import { serviceAreaExtraSections, type ServiceAreaExtraSections } from './serviceAreaExtraSections.ts';
+import { type ServiceAreaExtraSections } from './serviceAreaExtraSections.ts';
 import { serviceAreaLocalAuthority, type ServiceAreaLocalAuthority } from './serviceAreaLocalAuthority.ts';
 import { serviceAreaConversion, type ServiceAreaConversion } from './serviceAreaConversion.ts';
 import {
@@ -18,7 +21,7 @@ interface ServiceAreaBase {
   metaTitle: string;
   metaDescription: string;
   heroIntro: string;
-  /** Optional H1 lead text before the city name (default: "Roofing Services in"). */
+  /** Optional H1 lead text before the city name (default: "Metal Roofing in"). */
   heroLead?: string;
   quickAnswer: string;
   quickPoints: string[];
@@ -487,18 +490,63 @@ const rawServiceAreas: ServiceAreaBase[] = [
   },
 ];
 
-export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => ({
-  ...area,
-  ...serviceAreaDetails[area.slug],
-  ...serviceAreaExtraSections[area.slug],
-  ...serviceAreaLocalAuthority[area.slug],
-  ...serviceAreaConversion[area.slug],
-  ...(serviceAreaEducationalSections[area.slug]
-    ? { educationalSection: serviceAreaEducationalSections[area.slug] }
-    : {}),
-  ...(serviceAreaFeaturedPrograms[area.slug]
-    ? { featuredProgram: serviceAreaFeaturedPrograms[area.slug] }
-    : {}),
-}));
+function metalizeAuthority(authority: ServiceAreaLocalAuthority): ServiceAreaLocalAuthority {
+  const metalize = (text: string) =>
+    text
+      .replace(
+        /roof repair, inspections, replacements, and emergency roofing services/gi,
+        'metal roof inspection, repair, and replacement',
+      )
+      .replace(/emergency roofing services/gi, 'metal roofing services');
+  return {
+    ...authority,
+    nearbyAreasIntro: metalize(authority.nearbyAreasIntro),
+    landmarksIntro: metalize(authority.landmarksIntro),
+  };
+}
+
+function metalizeConversion(conversion: ServiceAreaConversion): ServiceAreaConversion {
+  return {
+    inspectionIntro: rewriteHireLanguage(conversion.inspectionIntro, 'inspection'),
+    trustIntro: rewriteHireLanguage(conversion.trustIntro, 'general'),
+  };
+}
+
+export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => {
+  const overlay = metalCityOverlays[area.slug];
+  const merged: ServiceArea = {
+    ...area,
+    ...serviceAreaDetails[area.slug],
+    ...(overlay
+      ? {
+          blurb: overlay.blurb,
+          metaTitle: overlay.metaTitle,
+          metaDescription: overlay.metaDescription,
+          heroLead: overlay.heroLead,
+          heroIntro: overlay.heroIntro,
+          quickAnswer: overlay.quickAnswer,
+          quickPoints: overlay.quickPoints,
+          localHeading: overlay.localHeading,
+          localContent: overlay.localContent,
+          localSignals: overlay.localSignals,
+          faqs: overlay.faqs,
+          cta: overlay.cta,
+        }
+      : {}),
+    services: metalCityServices(area.name),
+    ...metalExtraSections(area.name),
+    ...metalizeAuthority(serviceAreaLocalAuthority[area.slug]),
+    ...metalizeConversion(serviceAreaConversion[area.slug]),
+    ...(metalEducationalSections[area.slug]
+      ? { educationalSection: metalEducationalSections[area.slug] }
+      : serviceAreaEducationalSections[area.slug]
+        ? { educationalSection: serviceAreaEducationalSections[area.slug] }
+        : {}),
+    ...(serviceAreaFeaturedPrograms[area.slug]
+      ? { featuredProgram: serviceAreaFeaturedPrograms[area.slug] }
+      : {}),
+  };
+  return rewriteLinksInUnknownValue(merged);
+});
 
 export const serviceAreaNames = serviceAreas.map(a => a.name);

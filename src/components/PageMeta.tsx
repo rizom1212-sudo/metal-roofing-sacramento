@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { getOgImage, getPageMeta } from '../data/pageMeta';
 import { ASSETS } from '../data/assets';
 import { absoluteAssetUrl, absoluteUrl } from '../data/domain';
+import { BRAND_NAME } from '../data/site';
 import { publicRoutes } from '../data/routes';
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -54,8 +55,8 @@ export default function PageMeta() {
     existingPreload?.remove();
 
     if (!knownPaths.has(pathname)) {
-      document.title = 'Page Not Found | PRC 13 Roofing';
-      upsertMetaDescription('This PRC 13 Roofing page could not be found.');
+      document.title = `Page Not Found | ${BRAND_NAME}`;
+      upsertMetaDescription(`This ${BRAND_NAME} page could not be found.`);
       upsertMeta('name', 'robots', 'noindex, follow');
       return;
     }
@@ -74,7 +75,7 @@ export default function PageMeta() {
     upsertMeta('property', 'og:url', url);
     upsertMeta('property', 'og:image', image);
     upsertMeta('property', 'og:type', ogType);
-    upsertMeta('property', 'og:site_name', 'PRC 13 Roofing');
+    upsertMeta('property', 'og:site_name', BRAND_NAME);
     upsertMeta('name', 'robots', 'index,follow');
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', meta.title);

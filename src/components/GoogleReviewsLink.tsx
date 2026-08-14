@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react';
-import { GOOGLE_REVIEWS_URL } from '../data/site';
+import { GOOGLE_REVIEWS_URL, OPERATOR_DISPLAY_NAME } from '../data/site';
 
 interface GoogleReviewsLinkProps {
   className?: string;
@@ -23,7 +23,7 @@ export default function GoogleReviewsLink({
       rel="noopener noreferrer"
       className={`${styles} ${className}`.trim()}
     >
-      Read Our Google Reviews
+      Read {OPERATOR_DISPLAY_NAME} Google Reviews
       <ExternalLink size={variant === 'button' ? 16 : 14} aria-hidden />
     </a>
   );

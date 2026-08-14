@@ -11,8 +11,7 @@ import {
 } from '../data/blogColfaxHomeHardening';
 import { serviceAreaFeaturedPrograms } from '../data/serviceAreaFeaturedPrograms';
 import {
-  GOOGLE_RATING_VALUE,
-  GOOGLE_REVIEW_COUNT,
+  OPERATOR_RATING_LINE,
   LICENSE_INSURED_LINE,
   PHONE_DISPLAY,
 } from '../data/site';
@@ -29,7 +28,7 @@ export function ColfaxTrustRow({ className = '' }: { className?: string }) {
         <CheckCircle size={13} className="text-gold flex-shrink-0" /> {LICENSE_INSURED_LINE}
       </span>
       <span className="inline-flex items-center gap-1.5">
-        <CheckCircle size={13} className="text-gold flex-shrink-0" /> {GOOGLE_RATING_VALUE.toFixed(1)} Google Rating · {GOOGLE_REVIEW_COUNT} Reviews
+        <CheckCircle size={13} className="text-gold flex-shrink-0" /> {OPERATOR_RATING_LINE}
       </span>
       <span className="inline-flex items-center gap-1.5">
         <CheckCircle size={13} className="text-gold flex-shrink-0" /> Serves Colfax, CA
@@ -282,7 +281,7 @@ export function ColfaxFinalCta() {
 
 export function ColfaxSidebarForm() {
   return (
-    <div className="p-6" style={{ background: '#111827', border: '1px solid rgba(201,151,0,0.2)' }}>
+    <div className="p-6 bg-charcoal-dark border border-gold/20 rounded-brand">
       <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">Colfax Inspection</p>
       <p className="text-white font-bold text-base leading-snug mb-3">Request Your Free Colfax Roof Inspection</p>
       <p className="text-gray-400 text-sm leading-[1.7] mb-5">

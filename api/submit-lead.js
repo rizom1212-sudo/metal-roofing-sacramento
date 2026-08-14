@@ -75,6 +75,7 @@ export default async function handler(request, response) {
   const token = process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
   const baseId = process.env.AIRTABLE_BASE_ID || 'appaVNgcgomXyQ6Z2';
   const tableName = process.env.AIRTABLE_TABLE_NAME || 'PRC Leads';
+  // Shared PRC 13 Airtable base/table. Leads from metalroofingsacramento.com are distinguished by Page URL.
   const webhookUrl = process.env.AIRTABLE_LEAD_WEBHOOK_URL;
 
   if (!token) {

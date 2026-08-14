@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import GoogleReviewsLink from '../components/GoogleReviewsLink';
 import JsonLd from '../components/JsonLd';
 import OptimizedImage from '../components/OptimizedImage';
-import { ASSETS } from '../data/assets';
 import {
+  BRAND_NAME,
+  OPERATOR_DISCLOSURE,
   ABOUT_PHOTO_ALT,
   ABOUT_PHOTO_SRC,
   BBB_URL,
   BUSINESS_DAYS_CLOSED,
   BUSINESS_DESCRIPTION,
-  BUSINESS_DISPLAY_NAME,
   BUSINESS_ENTITY_NAME,
   BUSINESS_HOURS,
   GOOGLE_RATING_VALUE,
@@ -22,7 +22,8 @@ import {
   LICENSE_TEXT,
   PHONE_DISPLAY,
 } from '../data/site';
-import { getOfferedServices, SERVICES_NOT_OFFERED } from '../data/services';
+import { getNavHref, getOfferedServices, SERVICES_NOT_OFFERED } from '../data/services';
+import { PRIMARY_CTA } from '../data/cta';
 import { serviceAreas } from '../data/serviceAreas';
 
 function formatHourLabel(hhmm: string): string {
@@ -44,7 +45,7 @@ const values = [
   {
     icon: CheckCircle,
     title: 'Honesty Over Sales',
-    desc: 'We tell you what your roof actually needs. If a repair is enough, we recommend the repair. Referrals come from clear advice and work done right.',
+    desc: 'We tell you what the roof actually needs. If a metal repair is enough, we recommend the repair. If replacement with metal is the honest path, we say that too.',
   },
   {
     icon: Users,
@@ -66,7 +67,7 @@ const values = [
 export default function About() {
   return (
     <>
-      <JsonLd pageName="About PRC 13 Roofing" schemaType="WebPage" primaryImage={ABOUT_PHOTO_SRC} />
+      <JsonLd pageName={`About ${BRAND_NAME}`} schemaType="WebPage" primaryImage={ABOUT_PHOTO_SRC} />
 
       {/* WHO */}
       <section className="bg-cream py-10 md:py-12">
@@ -75,7 +76,6 @@ export default function About() {
             <div className="relative">
               <OptimizedImage
                 src={ABOUT_PHOTO_SRC}
-                webpSrc={ASSETS.brand.ownerPhotoWebp}
                 alt={ABOUT_PHOTO_ALT}
                 width={800}
                 height={460}
@@ -83,14 +83,20 @@ export default function About() {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-charcoal-dark/90 p-4">
                 <p className="text-white font-semibold">{BUSINESS_ENTITY_NAME}</p>
-                <p className="text-gray-400 text-sm">Sacramento-area roofing contractor</p>
+                <p className="text-gray-400 text-sm">Licensed operator of Metal Roofing Sacramento</p>
               </div>
             </div>
 
             <div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Who We Are</p>
-              <h1 className="section-heading mb-5">About {BUSINESS_DISPLAY_NAME}</h1>
+              <h1 className="section-heading mb-5">About {BRAND_NAME}</h1>
               <p className="text-body text-lg font-semibold leading-relaxed mb-4">
+                {BRAND_NAME} is the specialized metal-roofing website for Sacramento. Roofing work is performed and contracted by {BUSINESS_ENTITY_NAME}, CA CSLB #{LICENSE_NUMBER}.
+              </p>
+              <p className="text-body text-base leading-relaxed mb-4">
+                {OPERATOR_DISCLOSURE} This is not a separate company, license, or Google Business Profile. There is no invented founding story for the {BRAND_NAME} brand.
+              </p>
+              <p className="text-body text-base leading-relaxed mb-4">
                 {BUSINESS_DESCRIPTION}
               </p>
               <div className="space-y-3.5 text-body text-sm leading-relaxed">
@@ -106,10 +112,10 @@ export default function About() {
               </div>
               <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
                 <TelLink location="about" className="inline-flex items-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
-                  <Phone size={16} /> Call PRC 13: {PHONE_DISPLAY}
+                  <Phone size={16} /> Call {PHONE_DISPLAY}
                 </TelLink>
                 <Link to="/contact" className="inline-flex items-center gap-2 border-2 border-charcoal text-charcoal font-semibold px-6 py-3 text-sm hover:bg-charcoal hover:text-white transition-colors">
-                  Request a Roof Inspection
+                  {PRIMARY_CTA}
                 </Link>
                 <GoogleReviewsLink variant="button" />
               </div>
@@ -137,6 +143,7 @@ export default function About() {
                 {GOOGLE_RATING_VALUE} rating · {GOOGLE_REVIEW_COUNT} reviews
               </p>
               <p className="text-body text-xs mt-1.5 leading-relaxed">
+                Reviews belong to the {BUSINESS_ENTITY_NAME} Google Business Profile, not a separate Metal Roofing Sacramento listing.{' '}
                 <GoogleReviewsLink className="text-gold font-semibold" />
               </p>
             </div>
@@ -173,15 +180,15 @@ export default function About() {
       <section className="bg-cream py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">What We Do</p>
-          <h2 className="section-heading mb-3">Roofing and Exterior Services</h2>
+          <h2 className="section-heading mb-3">Metal Roofing Services</h2>
           <p className="text-body text-sm leading-relaxed max-w-3xl mb-6">
-            PRC 13 offers the services below across its Sacramento-area footprint. Scope is confirmed after inspection. There is no published price list because cost depends on roof size, materials, access, and condition.
+            {BRAND_NAME} focuses on the metal roofing services below across the Sacramento-area footprint. Contracting work is performed by {BUSINESS_ENTITY_NAME}. Scope is confirmed after inspection. There is no published price list because cost depends on roof size, materials, access, and condition.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
             {offeredServices.map(service => (
               <Link
                 key={service.id}
-                to={service.canonicalUrl}
+                to={getNavHref(service)}
                 className="flex items-start gap-2.5 p-4 bg-white border border-gray-100 hover:border-gold/40 transition-colors"
               >
                 <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
@@ -213,7 +220,7 @@ export default function About() {
           </p>
           <h2 className="section-heading mb-3">Sacramento-Area Service Cities</h2>
           <p className="text-body text-sm leading-relaxed max-w-3xl mb-6">
-            PRC 13 serves homeowners and light commercial properties in {serviceAreas.length} communities across the greater Sacramento region. City pages describe local roofing conditions, not separate storefront offices.
+            PRC 13 serves homeowners and light commercial properties in {serviceAreas.length} communities across the greater Sacramento region. City pages describe local metal-roofing conditions, not separate storefront offices.
           </p>
           <div className="flex flex-wrap gap-2 mb-5">
             {serviceAreas.map(area => (
@@ -269,16 +276,16 @@ export default function About() {
           <h2 className="section-heading mb-4">How We Help Sacramento Homeowners</h2>
           <p className="text-body text-sm leading-relaxed max-w-3xl mb-6">
             Start with a{' '}
-            <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">
-              free roof inspection
+            <Link to="/metal-roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              metal roof inspection
             </Link>
             , compare{' '}
-            <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">
-              roof repair
+            <Link to="/metal-roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              metal roof repair
             </Link>{' '}
             and{' '}
-            <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">
-              roof replacement
+            <Link to="/metal-roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              metal roof replacement
             </Link>
             , review{' '}
             <Link to="/service-areas" className="text-gold font-semibold hover:text-gold-dark transition-colors">
@@ -286,19 +293,19 @@ export default function About() {
             </Link>
             , or see recent{' '}
             <Link to="/gallery" className="text-gold font-semibold hover:text-gold-dark transition-colors">
-              roofing projects
+              projects
             </Link>
             .
           </p>
           <div className="flex flex-wrap gap-2">
-            <Link to="/roof-repair" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
-              Roof Repair
+            <Link to="/metal-roof-repair" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
+              Metal Roof Repair
             </Link>
-            <Link to="/roof-replacement" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
-              Roof Replacement
+            <Link to="/metal-roof-replacement" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
+              Metal Roof Replacement
             </Link>
-            <Link to="/emergency-roof-repair" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
-              Emergency Roof Repair
+            <Link to="/standing-seam-metal-roofing" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
+              Standing Seam
             </Link>
             <Link to="/service-areas" className="px-4 py-2 text-sm font-semibold border border-gray-200 bg-white text-headline hover:border-gold hover:text-gold transition-colors">
               Service Areas
@@ -317,17 +324,17 @@ export default function About() {
       <section data-final-cta className="bg-white py-9 md:py-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-headline mb-3">
-            Need Honest Roofing Advice?
+            Need a Metal Roof Estimate?
           </h2>
           <p className="text-body mb-5">
-            Call or message PRC 13 for clear answers and no-pressure recommendations. {LICENSE_TEXT}.
+            Call or message us for clear answers and no-pressure recommendations. {OPERATOR_DISCLOSURE} {LICENSE_TEXT}.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <TelLink location="about-final" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
               <Phone size={18} /> {PHONE_DISPLAY}
             </TelLink>
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-charcoal text-charcoal font-semibold py-4 px-8 text-base hover:bg-charcoal hover:text-white transition-colors">
-              Request a Roof Inspection
+              {PRIMARY_CTA}
             </Link>
           </div>
         </div>

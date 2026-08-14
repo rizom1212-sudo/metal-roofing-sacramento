@@ -1,12 +1,11 @@
 /**
- * Canonical service catalog for PRC 13 Roofing.
- * Single source for offered / not-offered services used by nav, footer,
- * LocalSeoLinks, schema OfferCatalog/knowsAbout, and llms.txt generation.
+ * Canonical service catalog for Metal Roofing Sacramento.
+ * Offered services are metal-first specialist offerings operated by PRC 13 Roofing Inc.
  *
- * Do not invent services. Update this file when real offerings change.
+ * Historical non-metal routes were consolidated or retired in Phase 4.
  */
 
-export type ServiceCategory = 'roofing' | 'exterior' | 'commercial';
+export type ServiceCategory = 'metal' | 'roofing' | 'exterior' | 'commercial';
 
 export interface ServiceDefinition {
   id: string;
@@ -14,12 +13,20 @@ export interface ServiceDefinition {
   name: string;
   shortName?: string;
   canonicalUrl: string;
+  /** Optional in-page href for nav/footer before dedicated URLs exist. */
+  navHref?: string;
+  /** Unique JSON-LD Service @id fragment when several offerings share a page. */
+  schemaIdSuffix?: string;
+  /** True for the service that owns schema `#service` on canonicalUrl. */
+  isCatalogHub?: boolean;
   description: string;
   /** Name used in schema.org Service / knowsAbout entries */
   schemaName: string;
   offered: boolean;
   category: ServiceCategory;
   showInNav: boolean;
+  /** Dedicated money pages shown in the Services dropdown. */
+  showInServicesMenu: boolean;
   showInFooter: boolean;
   showInLocalSeoLinks: boolean;
   showOnCityHubs: boolean;
@@ -28,119 +35,159 @@ export interface ServiceDefinition {
 }
 
 /**
- * Offered services (verified by existing site pages).
- * Gutters and Siding share `/gutters-siding` as one commercial page;
- * schema lists them as one combined offering to match that URL.
+ * Metal-first offerings. Each primary service has a dedicated canonical URL.
  */
 export const SERVICES: ServiceDefinition[] = [
-  {
-    id: 'roof-replacement',
-    slug: 'roof-replacement',
-    name: 'Roof Replacement',
-    canonicalUrl: '/roof-replacement',
-    description:
-      'Full roof tear-off and replacement for Sacramento-area homes, including shingle, tile, and metal options with clear written estimates.',
-    schemaName: 'Roof replacement',
-    offered: true,
-    category: 'roofing',
-    showInNav: true,
-    showInFooter: true,
-    showInLocalSeoLinks: true,
-    showOnCityHubs: true,
-  },
-  {
-    id: 'roof-repair',
-    slug: 'roof-repair',
-    name: 'Roof Repair',
-    canonicalUrl: '/roof-repair',
-    description:
-      'Roof leak repair, storm damage, missing shingles, flashing failures, and other residential roof repairs.',
-    schemaName: 'Roof repair',
-    offered: true,
-    category: 'roofing',
-    showInNav: true,
-    showInFooter: true,
-    showInLocalSeoLinks: true,
-    showOnCityHubs: true,
-  },
-  {
-    id: 'emergency-roof-repair',
-    slug: 'emergency-roof-repair',
-    name: 'Emergency Roof Repair',
-    canonicalUrl: '/emergency-roof-repair',
-    description:
-      'Urgent help for active leaks, storm openings, and temporary stabilization when water is entering the home.',
-    schemaName: 'Emergency roof repair',
-    offered: true,
-    category: 'roofing',
-    showInNav: true,
-    showInFooter: true,
-    showInLocalSeoLinks: true,
-    showOnCityHubs: true,
-  },
-  {
-    id: 'roof-inspection',
-    slug: 'roof-inspection',
-    name: 'Roof Inspection',
-    shortName: 'Roof Inspections',
-    canonicalUrl: '/roof-inspection',
-    description:
-      'Free roof inspections with clear findings for leaks, storm wear, aging materials, and repair-vs-replacement guidance.',
-    schemaName: 'Roof inspection',
-    offered: true,
-    category: 'roofing',
-    showInNav: true,
-    showInFooter: true,
-    showInLocalSeoLinks: true,
-    showOnCityHubs: true,
-  },
   {
     id: 'metal-roofing',
     slug: 'metal-roofing',
     name: 'Metal Roofing',
     canonicalUrl: '/metal-roofing',
+    isCatalogHub: true,
     description:
-      'Metal roof installation and replacement, including standing seam and other metal systems for Sacramento Valley conditions.',
+      'Metal roofing services in Sacramento, including installation, replacement, repair, standing seam systems, residential and commercial metal roofs, and metal roof inspections.',
     schemaName: 'Metal roofing',
     offered: true,
-    category: 'roofing',
+    category: 'metal',
     showInNav: true,
+    showInServicesMenu: false,
     showInFooter: true,
     showInLocalSeoLinks: true,
     showOnCityHubs: true,
   },
   {
-    id: 'commercial-roofing',
-    slug: 'commercial-roofing',
-    name: 'Commercial Roofing',
-    canonicalUrl: '/commercial-roofing',
+    id: 'metal-roof-installation',
+    slug: 'metal-roof-installation',
+    name: 'Metal Roof Installation',
+    shortName: 'Installation',
+    canonicalUrl: '/metal-roof-installation',
     description:
-      'Commercial roof repair, replacement, and inspections for flat and low-slope systems including TPO, EPDM, and modified bitumen.',
-    schemaName: 'Commercial roofing',
+      'New metal roof installation in Sacramento, including standing seam, corrugated, and ribbed systems with underlayment, flashing, ventilation, and panel installation.',
+    schemaName: 'Metal roof installation',
     offered: true,
-    category: 'commercial',
-    showInNav: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
     showInFooter: true,
     showInLocalSeoLinks: true,
-    showOnCityHubs: true,
+    showOnCityHubs: false,
   },
   {
-    id: 'gutters-siding',
-    slug: 'gutters-siding',
-    name: 'Gutters & Siding',
-    shortName: 'Gutters and siding',
-    canonicalUrl: '/gutters-siding',
+    id: 'metal-roof-replacement',
+    slug: 'metal-roof-replacement',
+    name: 'Metal Roof Replacement',
+    shortName: 'Replacement',
+    canonicalUrl: '/metal-roof-replacement',
     description:
-      'Gutter installation and replacement, gutter guards, and siding services for Sacramento-area homes. Does not include fascia or soffit repair.',
-    schemaName: 'Gutters and siding',
+      'Metal roof replacement in Sacramento, including tear-off, deck inspection, and replacing aging shingles, tile, or failing metal with a long-life metal roof system.',
+    schemaName: 'Metal roof replacement',
     offered: true,
-    category: 'exterior',
-    showInNav: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
     showInFooter: true,
     showInLocalSeoLinks: true,
-    showOnCityHubs: true,
+    showOnCityHubs: false,
+  },
+  {
+    id: 'metal-roof-repair',
+    slug: 'metal-roof-repair',
+    name: 'Metal Roof Repair',
+    shortName: 'Repair',
+    canonicalUrl: '/metal-roof-repair',
+    description:
+      'Metal roof repair in Sacramento for leaking seams, flashing failures, damaged panels, loose fasteners, penetrations, and storm-related metal roof damage.',
+    schemaName: 'Metal roof repair',
+    offered: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
+    showInFooter: true,
+    showInLocalSeoLinks: true,
+    showOnCityHubs: false,
+  },
+  {
+    id: 'standing-seam-metal-roofing',
+    slug: 'standing-seam-metal-roofing',
+    name: 'Standing Seam Metal Roofing',
+    shortName: 'Standing Seam',
+    canonicalUrl: '/standing-seam-metal-roofing',
+    description:
+      'Standing seam metal roofing in Sacramento with concealed fasteners, raised seams, and a clean panel profile for residential and commercial buildings.',
+    schemaName: 'Standing seam metal roofing',
+    offered: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
+    showInFooter: true,
+    showInLocalSeoLinks: true,
+    showOnCityHubs: false,
+  },
+  {
+    id: 'residential-metal-roofing',
+    slug: 'residential-metal-roofing',
+    name: 'Residential Metal Roofing',
+    shortName: 'Residential',
+    canonicalUrl: '/residential-metal-roofing',
+    description:
+      'Residential metal roofing for Sacramento-area homes, including standing seam and other metal profiles chosen for architecture, climate, and long-term ownership.',
+    schemaName: 'Residential metal roofing',
+    offered: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
+    showInFooter: true,
+    showInLocalSeoLinks: true,
+    showOnCityHubs: false,
+  },
+  {
+    id: 'commercial-metal-roofing',
+    slug: 'commercial-metal-roofing',
+    name: 'Commercial Metal Roofing',
+    shortName: 'Commercial',
+    canonicalUrl: '/commercial-metal-roofing',
+    description:
+      'Commercial metal roofing for Sacramento-area buildings where metal systems are the right fit, including metal installation, reroofing, repair, and inspection. Flat TPO/EPDM work is not the focus of this service.',
+    schemaName: 'Commercial metal roofing',
+    offered: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
+    showInFooter: true,
+    showInLocalSeoLinks: true,
+    showOnCityHubs: false,
+  },
+  {
+    id: 'metal-roof-inspection',
+    slug: 'metal-roof-inspection',
+    name: 'Metal Roof Inspection',
+    shortName: 'Inspection',
+    canonicalUrl: '/metal-roof-inspection',
+    description:
+      'Metal roof inspections in Sacramento covering leaks, panels, fasteners, seams, flashing, penetrations, drainage, and repair-versus-replacement guidance.',
+    schemaName: 'Metal roof inspection',
+    offered: true,
+    category: 'metal',
+    showInNav: false,
+    showInServicesMenu: true,
+    showInFooter: true,
+    showInLocalSeoLinks: true,
+    showOnCityHubs: false,
   },
 ];
+
+/**
+ * Cloned PRC 13 generic service URLs. Consolidated or retired in Phase 4 —
+ * not published on this specialist site.
+ */
+export const HISTORICAL_SERVICE_ROUTES = [
+  '/roof-replacement',
+  '/roof-repair',
+  '/emergency-roof-repair',
+  '/roof-inspection',
+  '/commercial-roofing',
+  '/gutters-siding',
+] as const;
 
 /**
  * Verified non-services. Keep short—only facts needed to prevent contradictions.
@@ -151,33 +198,35 @@ export const SERVICES_NOT_OFFERED: ServiceDefinition[] = [
     id: 'fascia-repair',
     slug: 'fascia-repair',
     name: 'Fascia repair',
-    canonicalUrl: '/blog/fascia-repair-sacramento',
+    canonicalUrl: '/about',
     description:
-      'Educational topic only. PRC 13 Roofing does not offer fascia repair.',
+      'Educational topic only. PRC 13 Roofing Inc. does not offer fascia repair.',
     schemaName: 'Fascia repair',
     offered: false,
     category: 'exterior',
     showInNav: false,
+    showInServicesMenu: false,
     showInFooter: false,
     showInLocalSeoLinks: false,
     showOnCityHubs: false,
-    note: 'PRC 13 does not offer fascia or soffit repair.',
+    note: 'PRC 13 Roofing Inc. does not offer fascia or soffit repair.',
   },
   {
     id: 'soffit-repair',
     slug: 'soffit-repair',
     name: 'Soffit repair',
-    canonicalUrl: '/gutters-siding',
+    canonicalUrl: '/about',
     description:
-      'PRC 13 Roofing does not offer soffit repair.',
+      'PRC 13 Roofing Inc. does not offer soffit repair.',
     schemaName: 'Soffit repair',
     offered: false,
     category: 'exterior',
     showInNav: false,
+    showInServicesMenu: false,
     showInFooter: false,
     showInLocalSeoLinks: false,
     showOnCityHubs: false,
-    note: 'PRC 13 does not offer fascia or soffit repair.',
+    note: 'PRC 13 Roofing Inc. does not offer fascia or soffit repair.',
   },
 ];
 
@@ -194,6 +243,10 @@ export function getNavServices(): ServiceDefinition[] {
   return SERVICES.filter(service => service.offered && service.showInNav);
 }
 
+export function getServicesMenuItems(): ServiceDefinition[] {
+  return SERVICES.filter(service => service.offered && service.showInServicesMenu);
+}
+
 export function getFooterServices(): ServiceDefinition[] {
   return SERVICES.filter(service => service.offered && service.showInFooter);
 }
@@ -206,13 +259,18 @@ export function getCityHubServices(): ServiceDefinition[] {
   return SERVICES.filter(service => service.offered && service.showOnCityHubs);
 }
 
+export function getNavHref(service: ServiceDefinition): string {
+  return service.navHref ?? service.canonicalUrl;
+}
+
 export function getServiceById(id: string): ServiceDefinition | undefined {
   return ALL_SERVICE_DEFINITIONS.find(service => service.id === id);
 }
 
 export function getServiceByUrl(url: string): ServiceDefinition | undefined {
-  const normalized = url.replace(/\/+$/, '') || '/';
-  return SERVICES.find(service => service.canonicalUrl === normalized);
+  const normalized = (url.replace(/\/+$/, '') || '/').split('#')[0];
+  const matches = SERVICES.filter(service => service.canonicalUrl === normalized);
+  return matches.find(service => service.isCatalogHub) ?? matches[0];
 }
 
 /** schema.org knowsAbout / OfferCatalog labels for offered services only */

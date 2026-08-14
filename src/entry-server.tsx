@@ -8,6 +8,7 @@ import { absoluteAssetUrl, absoluteUrl, SITE_URL } from './data/domain';
 import { getOgImage, getPageMeta } from './data/pageMeta';
 
 export { publicRoutes };
+export { BRAND_NAME } from './data/site';
 export { absoluteAssetUrl, absoluteUrl, blogPosts, getOgImage, getPageMeta, SITE_URL };
 export { buildLlmsTxt } from './data/llmsTxt';
 

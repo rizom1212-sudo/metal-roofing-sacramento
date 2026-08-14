@@ -9,12 +9,15 @@ import TrustResponseLine from './TrustResponseLine';
 
 const REASON_OPTIONS = [
   { value: '', label: 'What do you need help with?' },
-  { value: 'leak', label: 'Leak / Active Problem' },
-  { value: 'storm', label: 'Storm Damage' },
-  { value: 'replacement', label: 'Roof Replacement' },
-  { value: 'inspection', label: 'Free Inspection' },
-  { value: 'estimate', label: 'Roofing Estimate' },
-  { value: 'other', label: 'Other' },
+  { value: 'metal-estimate', label: 'Metal Roof Estimate' },
+  { value: 'metal-installation', label: 'Metal Roof Installation' },
+  { value: 'metal-replacement', label: 'Metal Roof Replacement' },
+  { value: 'metal-repair', label: 'Metal Roof Repair / Leak' },
+  { value: 'standing-seam', label: 'Standing Seam Roofing' },
+  { value: 'residential-metal', label: 'Residential Metal Roofing' },
+  { value: 'commercial-metal', label: 'Commercial Metal Roofing' },
+  { value: 'metal-inspection', label: 'Metal Roof Inspection' },
+  { value: 'other', label: 'Other metal roofing question' },
 ] as const;
 
 const CONTACT_METHOD_OPTIONS = [
@@ -24,7 +27,7 @@ const CONTACT_METHOD_OPTIONS = [
   { value: 'email', label: 'Email' },
 ] as const;
 
-const PRIVACY_COPY = 'We won\'t share your info. A PRC 13 team member will contact you about your roof.';
+const PRIVACY_COPY = 'We won\'t share your info. A PRC 13 Roofing team member will contact you about your metal roof.';
 
 function FieldLabel({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (

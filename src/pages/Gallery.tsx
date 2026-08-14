@@ -1,38 +1,11 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, ArrowRight, X, ChevronLeft, ChevronRight, Shield, CheckCircle } from 'lucide-react';
-import BeforeAfter from '../components/BeforeAfter';
 import JsonLd from '../components/JsonLd';
-import { galleryImages, type GalleryImage } from '../data/gallery';
+import { publicGalleryImages, type GalleryImage } from '../data/gallery';
 import { PRIMARY_CTA } from '../data/cta';
-import { LICENSE_INSURED_LINE, PHONE_DISPLAY } from '../data/site';
+import { LICENSE_INSURED_LINE, OPERATOR_DISCLOSURE, PHONE_DISPLAY } from '../data/site';
 import TelLink from '../components/TelLink';
-
-const featuredProjectImages = [
-  {
-    src: '/assets/featured-project/sacramento-roof-replacement-showcase-01.png',
-    alt: 'Sacramento home roof tear off before replacement',
-  },
-  {
-    src: '/assets/featured-project/sacramento-roof-replacement-showcase-02.png',
-    alt: 'Sacramento roof replacement in progress with materials staged',
-  },
-  {
-    src: '/assets/featured-project/sacramento-roof-replacement-showcase-03.png',
-    alt: 'Residential roof replacement installation in progress',
-  },
-  {
-    src: '/assets/featured-project/sacramento-roof-replacement-showcase-04.png',
-    alt: 'Completed Sacramento residential roof replacement',
-  },
-];
-
-const featuredProjectStats = [
-  'Full Tear-Off',
-  'Architectural Shingles',
-  'Residential Roof Replacement',
-  'Sacramento, CA',
-];
 
 const metalFeaturedProjectImages = [
   {
@@ -45,30 +18,13 @@ const metalFeaturedProjectImages = [
   },
   {
     src: '/assets/featured-project/standing-seam-metal-roof-03.png',
-    alt: 'Standing seam metal roofing installed above James Hardie siding',
-  },
-  {
-    src: '/assets/featured-project/standing-seam-metal-roof-04.png',
-    alt: 'James Hardie siding installation on new construction Sacramento residence',
-  },
-  {
-    src: '/assets/featured-project/standing-seam-metal-roof-05.png',
-    alt: 'New construction home exterior with standing seam metal roof and siding work',
-  },
-  {
-    src: '/assets/featured-project/standing-seam-metal-roof-06.png',
-    alt: 'Garage elevation during James Hardie siding installation on Sacramento project',
-  },
-  {
-    src: '/assets/featured-project/standing-seam-metal-roof-07.png',
-    alt: 'Completed James Hardie siding on new construction Sacramento home',
+    alt: 'Standing seam metal roofing installed on a Sacramento-area residence',
   },
 ];
 
 const metalFeaturedProjectStats = [
   'Standing Seam Metal Roofing',
-  'James Hardie Siding',
-  'Residential Roofing',
+  'Residential Metal Roof',
   'Sacramento, CA',
   'New Construction',
 ];
@@ -169,11 +125,7 @@ function Lightbox({
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [featuredIndex, setFeaturedIndex] = useState(0);
   const [metalFeaturedIndex, setMetalFeaturedIndex] = useState(0);
-  const mainGalleryImages = galleryImages.slice(0, -1);
-  const centeredGalleryImages = galleryImages.slice(-1);
-  const featuredImage = featuredProjectImages[featuredIndex];
   const metalFeaturedImage = metalFeaturedProjectImages[metalFeaturedIndex];
 
   const openLightbox = useCallback((idx: number) => setLightboxIndex(idx), []);
@@ -185,16 +137,8 @@ export default function Gallery() {
   const goNext = useCallback(
     () =>
       setLightboxIndex(i =>
-        i !== null && i < galleryImages.length - 1 ? i + 1 : i,
+        i !== null && i < publicGalleryImages.length - 1 ? i + 1 : i,
       ),
-    [],
-  );
-  const showPreviousFeaturedImage = useCallback(
-    () => setFeaturedIndex(i => (i === 0 ? featuredProjectImages.length - 1 : i - 1)),
-    [],
-  );
-  const showNextFeaturedImage = useCallback(
-    () => setFeaturedIndex(i => (i === featuredProjectImages.length - 1 ? 0 : i + 1)),
     [],
   );
   const showPreviousMetalFeaturedImage = useCallback(
@@ -208,87 +152,8 @@ export default function Gallery() {
 
   return (
     <>
-      <JsonLd pageName="Project Gallery" schemaType="WebPage" />
+      <JsonLd pageName="Metal Roofing Project Gallery" schemaType="WebPage" />
 
-      {/* BEFORE / AFTER */}
-      <section className="bg-cream py-12 md:py-14 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-5 sm:px-7">
-          <BeforeAfter limit={3} />
-        </div>
-      </section>
-
-      {/* FEATURED PROJECT SHOWCASE */}
-      <section className="bg-[#F3F1EE] py-12 md:py-16 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-5 sm:px-7">
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div>
-              <div className="relative overflow-hidden rounded-brand bg-white shadow-[0_20px_54px_rgba(15,20,28,0.16)] ring-1 ring-black/5">
-                <div className="relative bg-charcoal-dark/5">
-                  <img
-                    src={featuredImage.src}
-                    alt={featuredImage.alt}
-                    className="h-[300px] w-full object-contain sm:h-[420px] lg:h-[520px]"
-                    loading="lazy"
-                  />
-                  <button
-                    type="button"
-                    onClick={showPreviousFeaturedImage}
-                    className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-charcoal-dark/85 text-white shadow-[0_8px_24px_rgba(0,0,0,0.24)] transition-colors hover:bg-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                    aria-label="Show previous featured project photo"
-                  >
-                    <ChevronLeft size={22} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={showNextFeaturedImage}
-                    className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-charcoal-dark/85 text-white shadow-[0_8px_24px_rgba(0,0,0,0.24)] transition-colors hover:bg-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                    aria-label="Show next featured project photo"
-                  >
-                    <ChevronRight size={22} />
-                  </button>
-                </div>
-                <div className="flex items-center justify-center gap-2 border-t border-gray-100 bg-white px-4 py-3">
-                  {featuredProjectImages.map((image, index) => (
-                    <button
-                      key={image.src}
-                      type="button"
-                      onClick={() => setFeaturedIndex(index)}
-                      className={`h-2.5 rounded-full transition-all ${
-                        featuredIndex === index ? 'w-8 bg-gold' : 'w-2.5 bg-gray-300 hover:bg-gold/60'
-                      }`}
-                      aria-label={`Show featured project photo ${index + 1}`}
-                      aria-current={featuredIndex === index}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center lg:text-left">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Featured Project</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-4">
-                Featured Sacramento Roof Replacement
-              </h2>
-              <p className="text-body text-base leading-relaxed mb-6">
-                See how PRC 13 Roofing completed a full residential roof replacement from tear off to final installation with clean workmanship and durable roofing materials.
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
-                {featuredProjectStats.map(stat => (
-                  <span
-                    key={stat}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-gold/25 bg-white px-3.5 py-2 text-xs font-semibold text-headline shadow-sm"
-                  >
-                    <CheckCircle size={13} className="text-gold" />
-                    {stat}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED METAL PROJECT SHOWCASE */}
       <section className="bg-[#F3F1EE] py-12 md:py-16 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-5 sm:px-7">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
@@ -341,7 +206,7 @@ export default function Gallery() {
                 Standing Seam Metal Roof Installation, Sacramento, CA
               </h2>
               <p className="text-body text-base leading-relaxed mb-6">
-                New construction residential project featuring a premium standing seam metal roofing system and James Hardie siding installation. This project highlights modern design, weather protection, energy efficiency, and long-term durability.
+                New-construction residential standing seam metal roofing completed by PRC 13 Roofing Inc. Photos 01–03 show the metal roof. Siding work on the same job is not presented as metal roofing.
               </p>
               <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
                 {metalFeaturedProjectStats.map(stat => (
@@ -359,22 +224,21 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* PROJECT GRID */}
       <section className="bg-[#F7F6F4] py-12 md:py-14">
         <div className="max-w-6xl mx-auto px-5 sm:px-7">
           <div className="mb-8 text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-3">
-              Roofing Projects Across Sacramento
+              Metal Roofing Projects
             </h1>
             <p className="text-body text-base leading-relaxed max-w-2xl mx-auto mb-6">
-              Recent roof replacements, repairs, and restoration projects completed by the PRC 13 team.
+              Standing seam, finished metal roofs, and metal panel details from PRC 13 Roofing Inc. Shingle, tile, and membrane projects are not shown as metal.
             </p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               {[
                 'Licensed & Insured',
-                'Residential Roofing Specialists',
-                'Roof Replacements & Repairs',
-                'Financing on Qualifying Projects',
+                'Standing Seam Metal Roofing',
+                'Residential Metal Roofs',
+                'Financing may be available on qualifying projects',
               ].map(item => (
                 <span key={item} className="flex items-center gap-1.5 text-sm text-body">
                   <CheckCircle size={13} className="text-gold flex-shrink-0" />
@@ -385,7 +249,7 @@ export default function Gallery() {
           </div>
 
           <div className="[column-count:1] sm:[column-count:2] lg:[column-count:3]" style={{ columnGap: '8px' }}>
-            {mainGalleryImages.map((img, idx) => (
+            {publicGalleryImages.map((img, idx) => (
               <div key={img.id} className="break-inside-avoid mb-2">
                 <button
                   type="button"
@@ -408,44 +272,15 @@ export default function Gallery() {
               </div>
             ))}
           </div>
-
-          <div className="mx-auto mt-2 grid w-full max-w-md gap-2">
-            {centeredGalleryImages.map((img, idx) => {
-              const imageIndex = mainGalleryImages.length + idx;
-
-              return (
-                <div key={img.id} className="w-full">
-                  <button
-                    type="button"
-                    className="w-full group overflow-hidden bg-gray-200 cursor-pointer rounded-brand shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                    onClick={() => openLightbox(imageIndex)}
-                    aria-label={`Open project photo: ${img.caption}`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      loading="lazy"
-                      className={`w-full object-cover block transition-transform duration-500 motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.02] ${
-                        img.impact ? 'h-64 md:h-[320px]' : 'h-44 md:h-52'
-                      }`}
-                    />
-                  </button>
-                  <div className="px-1 pt-2 pb-3">
-                    <p className="text-headline text-xs font-semibold leading-snug">{img.caption}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
       <section className="bg-charcoal-dark py-16 mobile-section-bottom">
         <div className="max-w-4xl mx-auto px-5 sm:px-7 text-center">
           <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Get Started</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Need Roofing Help?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Get a Metal Roof Estimate</h2>
           <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            From roof repairs to full replacements, our team is ready to help. We aim to schedule inspections quickly during normal business hours.
+            {OPERATOR_DISCLOSURE} We aim to schedule metal roof inspections during normal business hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <TelLink
@@ -468,9 +303,9 @@ export default function Gallery() {
         </div>
       </section>
 
-      {lightboxIndex !== null && galleryImages.length > 0 && (
+      {lightboxIndex !== null && publicGalleryImages.length > 0 && (
         <Lightbox
-          images={galleryImages}
+          images={publicGalleryImages}
           index={lightboxIndex}
           onClose={closeLightbox}
           onPrev={goPrev}

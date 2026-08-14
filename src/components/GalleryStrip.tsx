@@ -51,10 +51,7 @@ export default function GalleryStrip({
     : galleryImages.filter(img => img.category === category)
   ).filter(inCity);
 
-  const extra = !byId && !city && pool.length < limit
-    ? galleryImages.filter(img => img.category !== category).slice(0, limit - pool.length)
-    : [];
-  const items = byId ?? [...pool, ...extra].slice(0, limit);
+  const items = byId ?? pool.slice(0, limit);
 
   if (items.length === 0) return null;
 

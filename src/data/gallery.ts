@@ -9,12 +9,7 @@ export type GalleryCategory =
   | 'Exterior Work';
 
 export const GALLERY_FILTER_CATEGORIES: GalleryCategory[] = [
-  'All',
-  'Roof Replacement',
-  'Roof Repairs',
   'Metal Roofing',
-  'Inspections',
-  'Exterior Work',
 ];
 
 export interface GalleryImage {
@@ -145,7 +140,7 @@ export const galleryImages: GalleryImage[] = [
     id: 'a-frame-cabin-roof',
     src: ASSETS.gallery('Screenshot_2026-05-20_at_08.52.30.png'),
     alt: 'A-frame cabin roof replacement project',
-    caption: 'Cabin roof replacement project',
+    caption: 'A-frame cabin metal roof project',
     category: 'Metal Roofing',
     city: 'Sacramento, CA',
     tall: true,
@@ -197,12 +192,15 @@ export const galleryImages: GalleryImage[] = [
 ];
 
 export const GALLERY_SERVICE_PATHS: Record<Exclude<GalleryCategory, 'All'>, string> = {
-  'Roof Replacement': '/roof-replacement',
-  'Roof Repairs': '/roof-repair',
+  'Roof Replacement': '/metal-roof-replacement',
+  'Roof Repairs': '/metal-roof-repair',
   'Metal Roofing': '/metal-roofing',
-  Inspections: '/roof-inspection',
-  'Exterior Work': '/gutters-siding',
+  Inspections: '/metal-roof-inspection',
+  'Exterior Work': '/metal-roofing',
 };
+
+/** Public specialist gallery: metal-tagged photography only. */
+export const publicGalleryImages = galleryImages.filter(img => img.category === 'Metal Roofing');
 
 /** Hub path only when gallery.city metadata matches a known service-area slug. */
 const GALLERY_CITY_HUB_SLUGS: Record<string, string> = {
@@ -247,7 +245,7 @@ export function filterGalleryByCategory(
   return images.filter(img => img.category === category);
 }
 
-export const homepageGalleryImages = galleryImages.slice(0, 6);
+export const homepageGalleryImages = publicGalleryImages;
 
 /** Neutral heading for service-page gallery strips (no unverified city/service in the title). */
 export const SERVICE_PAGE_GALLERY_HEADING = 'Project Gallery';

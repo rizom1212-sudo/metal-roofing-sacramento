@@ -10,10 +10,10 @@ const COVER_D = ASSETS.blog('Screenshot_2026-05-20_at_10.49.35.png');
 
 const coreServices = (): BlogRelatedService[] => [
   { label: 'Metal Roofing', href: '/metal-roofing' },
-  { label: 'Roof Replacement', href: '/roof-replacement' },
-  { label: 'Free Roof Inspection', href: '/roof-inspection' },
-  { label: 'Sacramento Service Area', href: '/service-areas/sacramento' },
-  { label: 'Contact PRC 13', href: '/contact' },
+  { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
+  { label: 'Metal Roof Replacement', href: '/metal-roof-replacement' },
+  { label: 'Metal Roof Inspection', href: '/metal-roof-inspection' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const article = (slug: string, label: string): BlogRelatedService => ({
@@ -130,7 +130,12 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     readTime: '6 min read',
     category: METAL_CLUSTER_CATEGORY,
     coverImage: COVER_B,
-    relatedServices: coreServices(),
+    relatedServices: [
+      { label: 'Standing Seam Metal Roofing', href: '/standing-seam-metal-roofing' },
+      { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
+      { label: 'Metal Roofing', href: '/metal-roofing' },
+      { label: 'Contact', href: '/contact' },
+    ],
     relatedArticles: [
       article('metal-roofing-cost-sacramento', 'Metal roofing cost Sacramento'),
       article('metal-roof-installation-process-sacramento', 'Metal roof installation process'),
@@ -203,7 +208,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
         content: 'Learn more:',
         links: [
           article('metal-roofing-cost-sacramento', 'Metal roofing cost guide'),
-          { label: 'Metal roofing services', href: '/metal-roofing' },
+          { label: 'Standing seam metal roofing', href: '/standing-seam-metal-roofing' },
         ],
       },
       {
@@ -324,7 +329,12 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     readTime: '5 min read',
     category: METAL_CLUSTER_CATEGORY,
     coverImage: COVER_D,
-    relatedServices: coreServices(),
+    relatedServices: [
+      { label: 'Metal Roof Replacement', href: '/metal-roof-replacement' },
+      { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
+      { label: 'Metal Roofing', href: '/metal-roofing' },
+      { label: 'Contact', href: '/contact' },
+    ],
     relatedArticles: [
       article('metal-roof-installation-process-sacramento', 'Metal roof installation process'),
       article('metal-roofing-cost-sacramento', 'Metal roofing cost Sacramento'),
@@ -396,7 +406,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
         content: 'Related guides:',
         links: [
           article('metal-roof-installation-process-sacramento', 'Metal installation process'),
-          { label: 'Roof replacement services', href: '/roof-replacement' },
+          { label: 'Metal roof replacement', href: '/metal-roof-replacement' },
         ],
       },
       {
@@ -420,7 +430,12 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     readTime: '6 min read',
     category: METAL_CLUSTER_CATEGORY,
     coverImage: COVER_B,
-    relatedServices: coreServices(),
+    relatedServices: [
+      { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
+      { label: 'Standing Seam Metal Roofing', href: '/standing-seam-metal-roofing' },
+      { label: 'Metal Roofing', href: '/metal-roofing' },
+      { label: 'Contact', href: '/contact' },
+    ],
     relatedArticles: [
       article('standing-seam-metal-roofing-sacramento', 'Standing seam metal roofing'),
       article('metal-roof-over-shingles-sacramento', 'Metal over shingles guide'),
@@ -513,7 +528,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
         type: 'links',
         content: 'Plan your project:',
         links: [
-          { label: 'Metal roofing services', href: '/metal-roofing' },
+          { label: 'Metal roof installation', href: '/metal-roof-installation' },
           article('metal-roof-over-shingles-sacramento', 'Metal over shingles decision'),
           { label: 'El Dorado Hills service area', href: '/service-areas/el-dorado-hills' },
         ],
@@ -561,12 +576,12 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       {
         question: 'Can PRC 13 install either material?',
         answer:
-          'Yes. PRC 13 installs architectural shingles, standing seam and corrugated metal, and tile roofing. We recommend the best fit during your free inspection.',
+          'This specialist site is for metal roofing. PRC 13 Roofing Inc. installs standing seam, corrugated, and ribbed metal systems. Architectural shingles remain a common existing covering and a practical alternative for some owners, but they are not a public offering on this website.',
       },
       {
         question: 'What should I do if I am undecided?',
         answer:
-          'Schedule a free roof inspection. PRC 13 explains remaining shingle life, metal options, and written quotes for both paths without pressure.',
+          'Request a metal roof inspection. PRC 13 explains remaining shingle life, metal options, and a written metal quote without pressure. If shingles are the better fit, we will say so.',
       },
     ],
     body: [

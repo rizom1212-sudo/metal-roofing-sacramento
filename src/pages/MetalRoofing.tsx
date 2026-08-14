@@ -1,10 +1,10 @@
-import { Phone, CheckCircle, ArrowRight, Shield, Award, Zap, Sun, Wrench, Timer, BookOpen } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Shield, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
-import { PHONE_DISPLAY, LICENSE_SHORT } from '../data/site';
+import { LICENSE_SHORT, OPERATOR_DISCLOSURE, PHONE_DISPLAY } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { PRIMARY_CTA } from '../data/cta';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -22,79 +22,43 @@ import { ASSETS } from '../data/assets';
 import { blogPosts } from '../data/blog';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
 import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
+import { getOfferedServices, getNavHref } from '../data/services';
 
-const benefits = [
-  { icon: Timer, title: '50+ Year Lifespan', desc: 'Outlasts asphalt shingles by 2 to 3 times. Many Sacramento homeowners install metal as their last roof ever.' },
-  { icon: Sun, title: 'Energy Efficient', desc: "Metal reflects solar heat, which helps during Sacramento's hot summers. Lower cooling bills year round." },
-  { icon: Shield, title: 'Wind & Fire Resistant', desc: 'Class A fire rating and rated for high winds. Metal stands up to California weather without buckling.' },
-  { icon: Wrench, title: 'Virtually No Maintenance', desc: 'No granule loss, no curling shingles, no rotting. Metal holds up year after year with minimal upkeep.' },
-  { icon: Award, title: 'Manufacturer Warranty', desc: 'Metal roofing products carry manufacturer material warranties. PRC 13 also provides a workmanship warranty on completed metal installations. Terms are confirmed in writing with your project.' },
-  { icon: Zap, title: 'Increases Home Value', desc: 'Metal roofing adds measurable resale value and boosts curb appeal with a modern or classic profile.' },
-];
-
-const metalServices = [
+const hubFaqs: FaqItem[] = [
   {
-    title: 'Metal Roof Installation',
-    desc: 'New standing seam, corrugated, and ribbed metal roof systems installed with proper underlayment, flashing, and trim.',
+    question: 'What metal roofing services do you provide?',
+    answer:
+      'Metal Roofing Sacramento covers metal roof installation, replacement, repair, standing seam systems, residential and commercial metal roofs, and metal roof inspections. Each service has its own page so you can go deep on the job you actually need.',
   },
   {
-    title: 'Metal Roof Replacement',
-    desc: 'Full removal and replacement of aging shingles or failing roofing with a long life metal roof system.',
-  },
-  {
-    title: 'Standing Seam Roofing',
-    desc: 'Premium concealed fastener standing seam panels for homeowners who want durability, clean lines, and low maintenance.',
-  },
-  {
-    title: 'Metal Roof Repair',
-    desc: 'Leak tracing, panel and seam repairs, flashing and fastener fixes, and honest repair-versus-replacement guidance for existing metal roofs.',
-  },
-];
-
-const process = [
-  { num: '01', title: 'Free Inspection & Consult', desc: 'Our roofing team evaluates your current roof, discusses metal options, and explains what the installation process looks like for your home.' },
-  { num: '02', title: 'Material Selection', desc: "We walk you through panel styles like standing seam, corrugated, and ribbed, then help you choose what fits your home's architecture and budget." },
-  { num: '03', title: 'Written Quote', desc: 'A clear, itemized written quote with no hidden fees. Financing may be available on qualifying projects.' },
-  { num: '04', title: 'Installation', desc: 'Our crew installs your new metal roof with proper underlayment, flashing, trim, and fasteners. Many residential jobs take about 2 to 3 days; larger or complex roofs can take longer.' },
-  { num: '05', title: 'Final Walkthrough', desc: 'We walk the finished job with you before we leave. You approve the work.' },
-];
-
-const faqs: FaqItem[] = [
-  {
-    question: 'Is metal roofing right for Sacramento\'s climate?',
-    answer: 'Yes. Metal handles Sacramento summer heat well by reflecting solar energy compared with dark aging shingles, and it performs in winter rain when installed with proper underlayment and flashing.',
+    question: 'Is metal roofing right for Sacramento’s climate?',
+    answer:
+      'Metal handles Sacramento summer heat well by reflecting solar energy compared with dark aging shingles, and it performs in winter rain when installed with proper underlayment and flashing.',
   },
   {
     question: 'How much more does metal roofing cost vs. shingles?',
-    answer: 'Metal typically costs more upfront than architectural shingles, often roughly 40 to 60% more depending on profile and complexity. Lifetime cost can be competitive because many metal systems are designed for decades of service when installed correctly.',
+    answer:
+      'Metal typically costs more upfront than architectural shingles, often roughly 40 to 60% more depending on profile and complexity. Lifetime cost can be competitive because many metal systems are designed for decades of service when installed correctly. Quotes are written after inspection.',
   },
   {
     question: 'Is metal roofing noisy when it rains?',
-    answer: 'Modern metal roofing installed over solid decking with proper underlayment is generally not significantly louder indoors than shingles. Decking and insulation absorb most rain sound.',
-  },
-  {
-    question: 'Does metal roofing need special insulation?',
-    answer: 'Metal itself is not insulation. Attic ventilation, underlayment, and the home’s existing insulation package matter more for comfort. We discuss roof assembly details during consultation so heat and condensation risks are addressed for your home.',
-  },
-  {
-    question: 'How long does metal roofing last?',
-    answer: 'Quality metal systems are commonly marketed for 50+ year service life, but actual lifespan depends on profile, coating, installation quality, and maintenance. PRC 13 explains expected performance for the specific product specified on your quote.',
-  },
-  {
-    question: 'Can solar be mounted on a metal roof?',
-    answer: 'Many metal roofs can accept solar mounting with the correct attachment method for the panel profile. Mounting details should be coordinated so penetrations and warranties are handled properly. We can discuss roof readiness during inspection; solar equipment itself is typically provided by a solar contractor.',
+    answer:
+      'Modern metal roofing installed over solid decking with proper underlayment is generally not significantly louder indoors than shingles. Decking and insulation absorb most rain sound.',
   },
   {
     question: 'What metal roofing styles do you install?',
-    answer: 'We install standing seam, corrugated, and exposed fastener ribbed metal panels in steel and aluminum options. We show profile choices during your free consultation.',
+    answer:
+      'We install standing seam, corrugated, and exposed-fastener ribbed metal panels in steel and aluminum options. Standing seam is the concealed-fastener premium profile. We show choices during consultation.',
   },
   {
-    question: 'Can you replace my shingle roof with metal?',
-    answer: 'Yes. Metal replacement usually includes removal so decking can be inspected, then underlayment, flashing, trim, and panel installation. Overlay over shingles is only considered when conditions allow and is not the default.',
+    question: 'Who operates Metal Roofing Sacramento?',
+    answer:
+      'Metal Roofing Sacramento is operated by PRC 13 Roofing Inc., CA CSLB #1087153. PRC 13 is the licensed contractor that performs the work. This brand does not have a separate contractor license or a separate Google Business Profile.',
   },
   {
-    question: 'How long does metal roof installation take?',
-    answer: 'Many Sacramento residential metal installations take about 2 to 3 days. Larger or more complex roofs may need additional time. Weather and material lead times also affect scheduling.',
+    question: 'Do you still offer shingle, tile, or TPO as primary services here?',
+    answer:
+      'This site is a metal-roofing specialist. Historical pages for other roofing types may still exist, but they are not the primary offerings. Start with the metal service that matches your project.',
   },
 ];
 
@@ -102,22 +66,23 @@ const metalResources = blogPosts
   .filter(post => post.category === METAL_CLUSTER_CATEGORY)
   .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
+const childServices = getOfferedServices().filter(service => service.id !== 'metal-roofing');
+
 export default function MetalRoofing() {
   return (
     <>
       <JsonLd
-        faqs={faqs}
-        pageName="Metal Roofing Built to Last"
+        faqs={hubFaqs}
+        pageName="Metal Roofing Services in Sacramento"
         schemaType="Service"
         serviceName="Metal Roofing"
         primaryImage={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')}
         breadcrumbs={[{ label: 'Metal Roofing' }]}
       />
-      {/* HERO */}
       <section className="relative bg-charcoal-dark text-white overflow-hidden lg:min-h-[75vh]">
         <HeroBackground
           image={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')}
-          alt="Metal roof installation on a Sacramento area home"
+          alt="Metal roofing on a Sacramento area home"
         />
         <div
           className="absolute inset-0"
@@ -127,16 +92,17 @@ export default function MetalRoofing() {
           <Breadcrumbs items={[{ label: 'Metal Roofing' }]} />
           <div className="flex flex-col lg:block">
             <div className="max-w-2xl">
-              <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5 rounded-brand">50+ Year Lifespan</span>
+              <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5 rounded-brand">Metal roofing services</span>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                Metal Roofing in Sacramento<br />
-                <span className="text-gold">Standing Seam & Metal Install</span>
+                Metal Roofing Services<br />
+                <span className="text-gold">in Sacramento</span>
               </h1>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-                Premium standing seam and corrugated metal roofing for Sacramento homes. Built for long term durability, lower maintenance, and reliable performance through Sacramento heat and weather.
+              <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-xl">
+                Installation, replacement, repair, standing seam, residential and commercial metal roofs, and metal inspections—choose the service that matches the job, then go to that page for the details.
               </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-xl">{OPERATOR_DISCLOSURE}</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <TelLink location="metal" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
+                <TelLink location="metal-hub" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
                 <a
                   href="#metal-quote"
                   onClick={e => handleSamePageAnchorClick(e, 'metal-quote')}
@@ -147,8 +113,7 @@ export default function MetalRoofing() {
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
                 <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
-                <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Workmanship Warranty</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Financing on Qualifying Projects</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Written quotes after inspection</span>
               </div>
             </div>
             <HeroLeadFormPanel sourcePage="metal-roofing-hero" />
@@ -156,81 +121,45 @@ export default function MetalRoofing() {
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <div className="bg-gold text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-          <div className="flex flex-wrap justify-center md:justify-between gap-4 text-sm font-medium">
-            <span className="flex items-center gap-2"><Timer size={15} /> 50+ Year Lifespan</span>
-            <span className="flex items-center gap-2"><Sun size={15} /> Energy Efficient and Reflects Sacramento Heat</span>
-            <span className="flex items-center gap-2"><Shield size={15} /> Class A Fire Rating</span>
-            <span className="flex items-center gap-2"><CheckCircle size={15} /> Financing on Qualifying Projects</span>
-          </div>
-        </div>
-      </div>
-
-      {/* INTRO */}
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnswerSummary
-            title="Metal roofing in Sacramento: quick answer"
+            title="What this metal roofing hub is for"
             points={[
-              '50+ year lifespan when installed correctly',
-              'Strong performance in Sacramento heat',
-              'Standing seam and corrugated options',
-              'Higher upfront cost, lower lifetime maintenance',
+              'One place to see the full metal offering',
+              'Specialized pages for install, replace, repair, and more',
+              'Sacramento climate context without a fake catalog',
+              'Licensed work performed by PRC 13 Roofing Inc.',
             ]}
           >
-            Metal roofing is a strong fit for Sacramento homeowners who plan to stay long-term and want a durable, low-maintenance roof that handles heat, rain, and wind better than many aging shingle systems.
+            This page is the parent for Sacramento metal roofing services. It explains the offering and sends you to the specialized page for installation, replacement, repair, standing seam, residential metal, commercial metal, or inspection. It is not a duplicate of those pages.
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Why Metal?</p>
-              <h2 className="section-heading mb-5">Sacramento's Climate Makes Metal a Smart Investment</h2>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Why metal in this climate</p>
+              <h2 className="section-heading mb-5">Sacramento heat and rain favor a well-installed metal roof</h2>
               <p className="text-body text-sm leading-relaxed mb-4">
-                Sacramento summers are brutal on asphalt shingles. High heat accelerates granule loss, dries out sealants, and causes shingles to curl years ahead of schedule. Metal roofing reflects solar energy instead of absorbing it, which keeps your attic cooler and your cooling bills lower.
+                Sacramento summers accelerate granule loss and curling on aging asphalt shingles. Metal reflects solar energy instead of absorbing it the way dark, worn shingles often do. That climate fit only shows up when underlayment, flashing, and ventilation are part of the assembly.
               </p>
               <p className="text-body text-sm leading-relaxed mb-6">
-                Beyond energy efficiency, metal roofing simply lasts. Most Sacramento homeowners who install metal today will never replace their roof again. That is a fundamentally different value proposition than a 25-year shingle replacement cycle. Learn more in our{' '}
-                <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal vs shingles comparison</Link>{' '}
-                or explore{' '}
-                <Link to="/blog/metal-roofing-el-dorado-hills-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing in El Dorado Hills</Link>.
-                Need a flat commercial membrane system instead? Explore{' '}
-                <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">commercial roofing for Sacramento businesses</Link>.
+                Quality metal systems are commonly marketed for decades of service. Actual lifespan depends on profile, coating, installation, and maintenance—not a guaranteed year count. Compare{' '}
+                <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal vs shingles</Link>
+                {' '}or read about{' '}
+                <Link to="/blog/metal-roofing-sacramento-climate" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal in Sacramento’s climate</Link>.
               </p>
-              <p className="text-body text-sm leading-relaxed mb-6">
-                Metal installs often pair with{' '}
-                <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof replacement</Link>{' '}
-                and start with a{' '}
-                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof inspection</Link>.
+              <p className="text-body text-sm leading-relaxed">
                 We serve{' '}
-                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>,{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>, and{' '}
-                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>.
-                Folsom homeowners comparing materials should read{' '}
-                <Link to="/blog/best-roofing-materials-folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">best roofing materials for Folsom</Link>.
-                {' '}
-                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">Contact PRC 13</Link>{' '}
-                for a consultation.
+                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark">Sacramento</Link>,{' '}
+                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark">El Dorado Hills</Link>,{' '}
+                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark">Folsom</Link>, and{' '}
+                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark">Colfax</Link>
+                {' '}as a service-area contractor.
               </p>
-              <ul className="space-y-2.5">
-                {[
-                  'Ideal for Sacramento\'s hot, dry summers',
-                  'No granule loss, no curling, no seasonal maintenance',
-                  'Strong resale appeal that buyers recognize',
-                  'Available in profiles that match any home style',
-                ].map(item => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-body">
-                    <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
             <div className="relative rounded-brand overflow-hidden">
               <OptimizedImage
                 src={ASSETS.metalRoofing('metal-roof-smart-investment.webp')}
-                alt="Metal roof on Sacramento home"
+                alt="Metal roof on a Sacramento home"
                 width={800}
                 height={400}
                 className="h-[400px]"
@@ -240,102 +169,26 @@ export default function MetalRoofing() {
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section className="bg-white py-16">
+      <section className="bg-charcoal text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Advantages</p>
-          <h2 className="section-heading mb-10">Why Homeowners Choose Metal Roofing</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {benefits.map(b => (
-              <div key={b.title} className="bg-cream border border-gray-100 p-6 hover:border-gold/30 hover:shadow-sm transition-all duration-200">
-                <b.icon size={22} className="text-gold mb-4" />
-                <h3 className="font-bold text-headline text-sm mb-2">{b.title}</h3>
-                <p className="text-body text-xs leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* METAL SERVICES */}
-      <section className="bg-charcoal text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Metal Roofing Services</p>
-          <h2 className="text-3xl font-bold text-white mb-8">Installation, Replacement, Standing Seam &amp; Repair</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {metalServices.map(service => (
-              <div key={service.title} className="border border-white/10 bg-white/[0.04] p-6 rounded-brand">
-                <h3 className="text-white font-bold text-base mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* METAL ROOF REPAIR */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Metal Roof Repair</p>
-          <h2 className="section-heading mb-4">When Your Metal Roof Needs Repair, Not a Full Reroof</h2>
-          <p className="section-subheading max-w-3xl mb-8">
-            PRC 13 repairs metal roofs as well as installs them. Many issues are localized: a leak at a penetration, a loose fastener, a damaged panel, or failed flashing can often be corrected without replacing the entire system.
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Choose a metal service</p>
+          <h2 className="text-3xl font-bold text-white mb-4">Specialized metal roofing pages</h2>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-3xl mb-10">
+            Each page is written for a different customer intent. Use the hub to orient, then open the page that matches the work.
           </p>
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h3 className="font-bold text-headline text-base mb-3">Common metal roof repair issues</h3>
-              <ul className="space-y-2.5">
-                {[
-                  'Leaks at seams, valleys, or panel joints',
-                  'Damaged or dented metal panels',
-                  'Failed or missing fasteners',
-                  'Flashing problems at edges, walls, and chimneys',
-                  'Penetrations around vents, skylights, and pipes',
-                  'Corrosion or finish wear in exposed areas',
-                ].map(item => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-body">
-                    <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-headline text-base mb-3">Repair vs. replacement</h3>
-              <p className="text-body text-sm leading-relaxed mb-4">
-                A focused metal roof repair makes sense when damage is limited and the rest of the system is sound. Full{' '}
-                <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof replacement</Link>{' '}
-                is the better conversation when panels are widespread-failing, leaks keep returning after prior fixes, or the substrate underneath is compromised.
-              </p>
-              <p className="text-body text-sm leading-relaxed">
-                Start with a{' '}
-                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
-                so we can document the cause. For general leak and storm repair context across roof types, see our{' '}
-                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>{' '}
-                page. Metal-specific work stays on this page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="bg-cream py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">How It Works</p>
-          <h2 className="section-heading mb-10">Our Metal Roofing Process</h2>
-          <div className="grid md:grid-cols-5 gap-6">
-            {process.map((step, i) => (
-              <div key={step.num} className="relative">
-                <div className="text-3xl font-bold text-gold/20 mb-2">{step.num}</div>
-                <h3 className="font-bold text-headline text-sm mb-2">{step.title}</h3>
-                <p className="text-body text-xs leading-relaxed">{step.desc}</p>
-                {i < process.length - 1 && (
-                  <div className="hidden md:block absolute top-5 -right-3 text-gray-200">
-                    <ArrowRight size={16} />
-                  </div>
-                )}
-              </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {childServices.map(service => (
+              <Link
+                key={service.id}
+                to={getNavHref(service)}
+                className="border border-white/10 bg-white/[0.04] p-6 rounded-brand hover:border-gold/40 transition-colors group"
+              >
+                <h3 className="text-white font-bold text-base mb-2 group-hover:text-gold transition-colors">{service.shortName ?? service.name}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">{service.description}</p>
+                <span className="inline-flex items-center gap-1 text-gold text-sm font-semibold">
+                  Open {service.shortName ?? service.name} <ArrowRight size={14} />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -343,42 +196,34 @@ export default function MetalRoofing() {
 
       <MetalComparisonTable />
 
-      {/* GALLERY STRIP */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent Work</p>
-          <h2 className="section-heading mb-8">Project Gallery</h2>
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent work</p>
+          <h2 className="section-heading mb-8">Project gallery</h2>
           <GalleryStrip category="Metal Roofing" limit={4} showLink />
         </div>
       </section>
 
-      {/* REVIEWS */}
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">5.0 Google Rating · 3 Reviews</p>
-          <h2 className="section-heading mb-8">What Sacramento Homeowners Say</h2>
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Licensed operator reviews</p>
+          <h2 className="section-heading mb-3">What homeowners say about PRC 13 Roofing Inc.</h2>
+          <p className="text-body text-sm leading-relaxed max-w-3xl mb-8">
+            Google reviews belong to PRC 13 Roofing Inc., the licensed operator of Metal Roofing Sacramento — not a separate specialist listing.
+          </p>
           <ReviewStrip count={3} variant="light" />
         </div>
       </section>
 
-      {/* METAL ROOFING RESOURCES */}
       <section className="bg-white py-14 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-start gap-3 mb-6">
             <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
             <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Metal Roofing Resources</p>
-              <h2 className="section-heading mb-3">Plan Your Sacramento Metal Roof</h2>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Metal roofing resources</p>
+              <h2 className="section-heading mb-3">Guides that support these services</h2>
               <p className="text-body text-sm leading-relaxed max-w-3xl">
-                Homeowners across{' '}
-                <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
-                <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}
-                <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}
-                <Link to="/service-areas/colfax" className="text-gold font-semibold hover:text-gold-dark transition-colors">Colfax</Link>{' '}
-                use these guides for metal cost, standing seam options, climate fit, installation steps, and shingle comparisons. Schedule a{' '}
-                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
-                or{' '}
-                <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">request a metal roofing consultation</Link>.
+                Cost, standing seam, climate, installation steps, overlay vs tear-off, and repair-versus-replacement articles stay at their current URLs. Use them to learn, then hire through the matching money page.
               </p>
             </div>
           </div>
@@ -404,32 +249,31 @@ export default function MetalRoofing() {
       </section>
 
       <RetrievalAnswers
-        heading="Metal roofing answers Sacramento homeowners ask"
+        heading="Metal roofing answers, in brief"
         items={[
           {
-            question: 'Is metal roofing noisy in the rain?',
+            question: 'Which metal page should I open first?',
             answer:
-              'Installed over solid decking with proper underlayment, modern metal roofs are generally not much louder indoors than shingles. Decking and insulation absorb most of the sound.',
+              'New system → installation. Old covering coming off → replacement. Existing metal leak → repair. Concealed-fastener profile → standing seam. House vs building → residential or commercial. Need findings → inspection.',
           },
           {
-            question: 'How long can metal roofing last?',
+            question: 'Who does the roofing work?',
             answer:
-              'Quality metal systems are often designed for decades of service (commonly marketed at 50+ years), but real lifespan depends on profile, coating, installation, and maintenance.',
+              'PRC 13 Roofing Inc., CA CSLB #1087153, operates Metal Roofing Sacramento and performs the contracted work. Reviews and the Google Business Profile belong to PRC 13, not a separate specialist listing.',
           },
           {
             question: 'Tear-off or install over shingles?',
             answer:
-              'PRC 13 typically recommends full tear-off so decking can be inspected. Overlay is only considered when conditions and product requirements allow.',
+              'Full tear-off so the deck can be inspected is the usual recommendation. Overlay is only considered when conditions and product requirements allow.',
           },
         ]}
       />
 
-      {/* FAQ */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Common Questions</p>
-          <h2 className="section-heading mb-8">Metal Roofing FAQs</h2>
-          <FaqAccordion items={faqs} variant="light" />
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Common questions</p>
+          <h2 className="section-heading mb-8">Metal roofing FAQs</h2>
+          <FaqAccordion items={hubFaqs} variant="light" />
         </div>
       </section>
 
@@ -437,30 +281,26 @@ export default function MetalRoofing() {
         href="/service-areas/sacramento"
         label="View Sacramento roofing services"
       />
-      <LocalSeoLinks />
+      <LocalSeoLinks
+        title="Sacramento metal roofing services"
+        description="Open the specialized metal page that matches installation, replacement, repair, standing seam, residential or commercial metal, or inspection."
+      />
 
-      {/* FINAL CTA */}
       <section id="metal-quote" data-final-cta className="bg-charcoal-dark py-12 md:py-16 mobile-section-bottom md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Free Consultation</p>
-              <h2 className="text-3xl font-bold text-white mb-4">Get Your Free Metal Roofing Quote</h2>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Get started</p>
+              <h2 className="text-3xl font-bold text-white mb-4">Get a metal roof estimate</h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                We will inspect your current roof, walk you through metal roofing options, and give you a clear written quote with no pressure and no obligation.
+                Tell us what is going on with the roof. We inspect, explain the matching metal service, and provide a written quote before work is scheduled.
               </p>
-              <ul className="space-y-2 mb-6">
-                {['We aim to schedule inspections quickly', 'Panel style consultation included', 'Financing may be available on qualifying projects', 'Workmanship warranty confirmed in writing'].map(item => (
-                  <li key={item} className="flex items-center gap-2 text-gray-300 text-sm">
-                    <CheckCircle size={14} className="text-gold flex-shrink-0" /> {item}
-                  </li>
-                ))}
-              </ul>
-              <TelLink location="metal-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
+              <p className="text-gray-500 text-sm mb-6">{OPERATOR_DISCLOSURE}</p>
+              <TelLink location="metal-hub-final" className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
                 <Phone size={16} /> Or call directly: {PHONE_DISPLAY}
               </TelLink>
             </div>
-            <LeadForm sourcePage="metal-roofing" variant="full" hideEmail hideReason compactSpacing />
+            <LeadForm sourcePage="metal-roofing" variant="full" hideEmail compactSpacing />
           </div>
         </div>
       </section>

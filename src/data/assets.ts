@@ -5,14 +5,15 @@
 export const ASSETS = {
   brand: {
     logo: '/assets/prc13-logo-white.svg',
-    hero: '/assets/brand/IMG_5952.jpeg',
+    // Specialist wordmark lives in chrome via BrandMark; SVG is used for schema.
+    hero: '/assets/featured-project/standing-seam-metal-roof-02.png',
     /** Optional generated variant; keep undefined until the file exists. */
     heroWebp: undefined,
     ownerPhoto: '/assets/brand/about-roofing-team-turret.png',
     recommendationsPhoto: '/assets/brand/roofing-recommendations-team.jpg',
     /** Optional generated variant; keep undefined until the file exists. */
     ownerPhotoWebp: undefined,
-    favicon: '/favicon-32.png',
+    favicon: '/assets/brand/favicon.svg',
   },
   beforeAfter: (file: string) => `/assets/before-after/${file}`,
   gallery: (file: string) => `/assets/gallery/${file}`,

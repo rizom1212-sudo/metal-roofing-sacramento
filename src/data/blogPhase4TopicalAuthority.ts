@@ -1301,8 +1301,8 @@ export const phase4MetalPosts: BlogPost[] = [
     category: METAL_CLUSTER_CATEGORY,
     coverImage: COVER_C,
     relatedServices: [
+      { label: 'Standing Seam Metal Roofing', href: '/standing-seam-metal-roofing' },
       { label: 'Metal Roofing', href: '/metal-roofing' },
-      inspection(),
       sacramento(),
       contact(),
     ],
@@ -1392,7 +1392,7 @@ export const phase4MetalPosts: BlogPost[] = [
         type: 'links',
         content: 'Helpful links:',
         links: [
-          { label: 'Metal roofing', href: '/metal-roofing' },
+          { label: 'Standing seam metal roofing', href: '/standing-seam-metal-roofing' },
           sacramento(),
           contact(),
           article('standing-seam-metal-roofing-sacramento', 'Standing seam overview'),
@@ -1417,8 +1417,9 @@ export const phase4MetalPosts: BlogPost[] = [
     category: METAL_CLUSTER_CATEGORY,
     coverImage: COVER_D,
     relatedServices: [
+      { label: 'Metal Roof Inspection', href: '/metal-roof-inspection' },
+      { label: 'Metal Roof Repair', href: '/metal-roof-repair' },
       { label: 'Metal Roofing', href: '/metal-roofing' },
-      inspection(),
       sacramento(),
       contact(),
     ],
@@ -1507,7 +1508,7 @@ export const phase4MetalPosts: BlogPost[] = [
         type: 'links',
         content: 'Helpful links:',
         links: [
-          { label: 'Metal roofing', href: '/metal-roofing' },
+          { label: 'Metal roof inspection', href: '/metal-roof-inspection' },
           sacramento(),
           contact(),
           article('metal-roof-repair-vs-replacement', 'Metal repair vs replacement'),
@@ -1532,9 +1533,9 @@ export const phase4MetalPosts: BlogPost[] = [
     category: METAL_CLUSTER_CATEGORY,
     coverImage: COVER_A,
     relatedServices: [
-      { label: 'Metal Roofing', href: '/metal-roofing' },
-      { label: 'Roof Repair', href: '/roof-repair' },
-      inspection(),
+      { label: 'Metal Roof Repair', href: '/metal-roof-repair' },
+      { label: 'Metal Roof Replacement', href: '/metal-roof-replacement' },
+      { label: 'Metal Roof Inspection', href: '/metal-roof-inspection' },
       sacramento(),
       contact(),
     ],
@@ -1631,7 +1632,8 @@ export const phase4MetalPosts: BlogPost[] = [
         type: 'links',
         content: 'Helpful links:',
         links: [
-          { label: 'Metal roofing', href: '/metal-roofing' },
+          { label: 'Metal roof repair', href: '/metal-roof-repair' },
+          { label: 'Metal roof replacement', href: '/metal-roof-replacement' },
           sacramento(),
           contact(),
           article('how-long-does-standing-seam-metal-roof-last', 'Standing seam lifespan'),

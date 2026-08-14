@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { captureSessionAttribution } from '../lib/referralAttribution';
 import { trackSessionAttributionCaptured } from '../lib/analytics';
 
+/** Shared PRC 13 Roofing GA4 property (`G-9WWQLWZGSV`). Do not replace until a specialist-site measurement plan is chosen. */
 const GA_MEASUREMENT_ID = 'G-9WWQLWZGSV';
 
 function trackPageView(path: string) {

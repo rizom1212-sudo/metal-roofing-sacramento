@@ -3,22 +3,22 @@ import { MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import { serviceAreas } from '../data/serviceAreas';
 import { PRIMARY_CTA } from '../data/cta';
-import { LICENSE_SHORT, PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
+import { LICENSE_SHORT, OPERATOR_DISCLOSURE, PHONE_DISPLAY, PHONE_SMS, PHONE_TEL } from '../data/site';
 
 export default function ServiceAreas() {
   return (
     <>
-      <JsonLd pageName="Areas We Serve" schemaType="WebPage" />
+      <JsonLd pageName="Sacramento Metal Roofing Service Areas" schemaType="WebPage" />
       <section className="bg-charcoal-dark text-white py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">
             <span className="inline-flex items-center gap-1.5"><MapPin size={14} /> Service Areas</span>
           </p>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-            Areas We Serve
+            Sacramento Metal Roofing Service Areas
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
-            PRC 13 Roofing is based in Sacramento and serves homeowners across the greater Sacramento region, including Placer County foothill communities such as Colfax, with honest inspections, repairs, and replacements.
+            {OPERATOR_DISCLOSURE} We serve homeowners across the greater Sacramento region, including Placer County foothill communities such as Colfax, with metal roof inspections, repairs, and replacements.
           </p>
         </div>
       </section>
@@ -35,11 +35,11 @@ export default function ServiceAreas() {
               >
                 <article>
                   <h2 className="text-xl font-bold text-headline mb-2 group-hover:text-gold transition-colors">
-                    {area.name} Roofing Services
+                  {area.name} Metal Roofing
                   </h2>
                   <p className="text-body text-sm leading-relaxed mb-4">{area.blurb}</p>
                   <span className="inline-flex items-center gap-1.5 text-gold font-semibold text-sm">
-                    View {area.name} roofing guide <ArrowRight size={14} />
+                    View {area.name} metal roofing <ArrowRight size={14} />
                   </span>
                 </article>
               </Link>

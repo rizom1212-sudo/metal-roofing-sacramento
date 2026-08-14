@@ -30,14 +30,14 @@ export default function SeasonalBanner({ dismissed = false, onDismiss }: Seasona
   }, []);
 
   if (dismissed || !visible) {
-    return <div className="h-3 md:h-4 bg-[#071323] border-b border-[#071323]" aria-hidden />;
+    return <div className="h-3 md:h-4 bg-charcoal-dark border-b border-charcoal-dark" aria-hidden />;
   }
 
   const isRain = season === 'rain';
 
   return (
     <div
-      className="bg-[#071323] border-b border-gold/25 px-3 py-1.5 text-xs text-gray-100 sm:px-4 sm:py-2.5 sm:text-sm"
+      className="bg-charcoal-dark border-b border-gold/25 px-3 py-1.5 text-xs text-gray-100 sm:px-4 sm:py-2.5 sm:text-sm"
       role="region"
       aria-label="Seasonal roofing reminder"
     >
@@ -47,16 +47,16 @@ export default function SeasonalBanner({ dismissed = false, onDismiss }: Seasona
           {isRain ? (
             <>
               Storm season?{' '}
-              <Link to="/emergency-roof-repair" className="inline-flex items-center gap-1 text-gold font-extrabold hover:text-gold-light hover:underline transition-colors">
-                Emergency roof help <span aria-hidden>→</span>
+              <Link to="/metal-roof-repair" className="inline-flex items-center gap-1 text-gold font-extrabold hover:text-gold-light hover:underline transition-colors">
+                Metal roof leak help <span aria-hidden>→</span>
               </Link>{' '}
               with priority assessment when conditions allow.
             </>
           ) : (
             <>
-              Sacramento heat stressing your roof?{' '}
-              <Link to="/roof-inspection" className="text-gold font-semibold hover:underline">
-                Book a free inspection
+              Sacramento heat stressing your metal roof?{' '}
+              <Link to="/metal-roof-inspection" className="text-gold font-semibold hover:underline">
+                Request a metal roof inspection
               </Link>{' '}
               before small issues spread.
             </>

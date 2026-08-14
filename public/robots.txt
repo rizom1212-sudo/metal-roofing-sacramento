@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prc13roofing.com/sitemap.xml
+Sitemap: https://www.metalroofingsacramento.com/sitemap.xml

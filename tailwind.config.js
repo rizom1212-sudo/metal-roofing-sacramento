@@ -5,18 +5,18 @@ export default {
     extend: {
       colors: {
         charcoal: {
-          DEFAULT: '#1F2937',
-          dark: '#111827',
-          light: '#374151',
+          DEFAULT: '#1A222C',
+          dark: '#0E141C',
+          light: '#2C3642',
         },
         gold: {
-          DEFAULT: '#C99700',
-          light: '#D4A900',
-          dark: '#A67C00',
+          DEFAULT: '#C4843A',
+          light: '#D49652',
+          dark: '#A66B28',
         },
-        cream: '#F8F8F6',
-        headline: '#111111',
-        body: '#4B5563',
+        cream: '#F3F1EC',
+        headline: '#12161C',
+        body: '#4A5560',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

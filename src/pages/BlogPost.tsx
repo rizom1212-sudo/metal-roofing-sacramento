@@ -1,11 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Tag, Phone, ArrowRight, Wrench } from 'lucide-react';
-import { blogPosts } from '../data/blog';
+import { blogPosts, displayBlogCategory } from '../data/blog';
 import JsonLd from '../components/JsonLd';
 import OptimizedImage from '../components/OptimizedImage';
 import FaqAccordion from '../components/FaqAccordion';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
+  BRAND_NAME,
   BUSINESS_ENTITY_NAME,
   LICENSE_LABEL,
   PHONE_DISPLAY,
@@ -106,7 +107,7 @@ export default function BlogPost() {
             )}
             <div className="flex items-center gap-3 mb-4">
               <span className="inline-flex items-center gap-1.5 text-xs text-gold font-semibold uppercase tracking-wider">
-                <Tag size={11} /> {post.category}
+                <Tag size={11} /> {displayBlogCategory(post.category)}
               </span>
               <span className="text-white/30">·</span>
               <span className="inline-flex items-center gap-1.5 text-xs text-gray-300">
@@ -264,66 +265,66 @@ export default function BlogPost() {
               <div className="mt-12 card-brand bg-charcoal-dark border border-gold/20 p-6 md:p-8">
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
                   {isEmergencyGuide
-                    ? 'Emergency Help'
+                    ? 'Metal Roof Leak Help'
                     : isCommercialGuide
-                      ? 'Commercial Roofing'
+                      ? 'Commercial Metal Roofing'
                       : isRepairGuide
-                        ? 'Roof Repair'
+                        ? 'Metal Roof Repair'
                         : isGuttersFasciaGuide
-                        ? 'Gutters & Fascia'
+                        ? 'Metal Roofing'
                         : isMetalGuide
                         ? 'Metal Roofing'
                         : isReplacementGuide
-                          ? 'Roof Replacement'
+                          ? 'Metal Roof Replacement'
                           : isInspectionGuide
-                            ? 'Roof Inspection'
+                            ? 'Metal Roof Inspection'
                           : isElDoradoHillsGuide
-                            ? 'El Dorado Hills Roofing'
+                            ? 'El Dorado Hills Metal Roofing'
                             : isFolsomGuide
-                              ? 'Folsom Roofing'
-                              : 'Free Inspection'}
+                              ? 'Folsom Metal Roofing'
+                              : 'Metal Roof Estimate'}
                 </p>
                 <h2 className="text-2xl font-bold text-white mb-3 leading-snug">
                   {isEmergencyGuide
-                    ? 'Need Emergency Roof Repair in Sacramento?'
+                    ? 'Need Metal Roof Repair After a Storm?'
                     : isCommercialGuide
-                      ? 'Need Commercial Roofing Help in Sacramento?'
+                      ? 'Need Commercial Metal Roofing in Sacramento?'
                       : isRepairGuide
-                        ? 'Need Roof Repair in Sacramento?'
+                        ? 'Need Metal Roof Repair in Sacramento?'
                         : isGuttersFasciaGuide
-                        ? 'Need Gutter or Siding Help in Sacramento?'
+                        ? 'Looking for Metal Roofing in Sacramento?'
                         : isMetalGuide
                         ? 'Considering Metal Roofing in Sacramento?'
                         : isReplacementGuide
-                          ? 'Planning a Roof Replacement in Sacramento?'
+                          ? 'Planning a Metal Roof Replacement in Sacramento?'
                           : isInspectionGuide
-                            ? 'Need a Roof Inspection in Sacramento?'
+                            ? 'Need a Metal Roof Inspection in Sacramento?'
                           : isElDoradoHillsGuide
-                            ? 'Schedule Roofing Service in El Dorado Hills'
+                            ? 'Schedule Metal Roofing in El Dorado Hills'
                             : isFolsomGuide
-                              ? 'Schedule Roofing Service in Folsom'
-                              : 'Schedule Your Free Roof Inspection'}
+                              ? 'Schedule Metal Roofing in Folsom'
+                              : 'Get a Metal Roof Estimate'}
                 </h2>
                 <p className="text-gray-300 text-base leading-[1.7] mb-5">
                   {isEmergencyGuide
-                    ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
+                    ? 'If a metal roof is leaking, contain water indoors and call PRC 13 Roofing during Monday through Friday business hours. We do not claim 24/7 emergency service.'
                     : isCommercialGuide
-                      ? 'PRC 13 Roofing serves small to mid-size commercial properties in Sacramento with flat roof repair, replacement, maintenance, and leak response. Start with a commercial roof inspection or written estimate.'
+                      ? 'PRC 13 Roofing installs and repairs metal systems on commercial and light-commercial buildings where metal is the right covering — not TPO or EPDM membranes.'
                       : isRepairGuide
-                        ? 'PRC 13 Roofing helps Sacramento homeowners fix shingles, flashing, chimneys, skylights, and tile with honest inspections and written repair estimates before work begins.'
+                        ? 'PRC 13 Roofing repairs metal roofs when the failure is localized — seams, flashing, panels, fasteners, and penetrations — after an honest inspection.'
                         : isGuttersFasciaGuide
-                        ? 'PRC 13 Roofing installs seamless gutters, gutter guards, and siding for Sacramento homeowners. We do not offer fascia or soffit repair. Start with a free roof inspection or gutter evaluation.'
+                        ? 'This specialist site focuses on metal roofing. PRC 13 does not offer fascia or soffit repair.'
                         : isMetalGuide
-                        ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a free inspection and panel-style consultation.'
+                        ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a metal roof inspection.'
                         : isReplacementGuide
-                          ? 'PRC 13 Roofing helps Sacramento homeowners compare shingle, tile, and metal replacement options with free inspections and written quotes before any work begins.'
+                          ? 'PRC 13 Roofing replaces aging coverings with metal after inspection. Tear-off is the usual approach so the deck can be reviewed.'
                           : isInspectionGuide
-                            ? 'PRC 13 Roofing provides free roof inspections across Sacramento with clear written findings for leaks, storm wear, aging materials, and repair-vs-replacement guidance.'
+                            ? 'Standard residential metal roof inspections are free with written findings. Commercial metal inspections are scheduled when you contact us.'
                           : isElDoradoHillsGuide
-                            ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, inspections, and emergency leak help on exposed foothill properties. PRC 13 does not offer fascia or soffit repair.'
+                            ? 'PRC 13 Roofing serves El Dorado Hills with metal roofing, inspection, repair, and replacement on exposed foothill properties. PRC 13 does not offer fascia or soffit repair.'
                             : isFolsomGuide
-                              ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help, from lake-area winds to hillside tile and shingle roofs.'
-                              : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
+                              ? 'PRC 13 Roofing serves Folsom homeowners with metal roofing, inspection, repair, and replacement. HOA rules vary and are not a PRC 13 catalog.'
+                              : 'PRC 13 Roofing serves Sacramento and nearby communities with metal roof inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {isEmergencyGuide ? (
@@ -335,88 +336,68 @@ export default function BlogPost() {
                     </TelLink>
                   ) : (
                     <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
-                      {isCommercialGuide
-                        ? 'Request Commercial Estimate'
-                        : isRepairGuide
-                          ? 'Get Roof Repair Estimate'
-                          : isMetalGuide
-                        ? 'Request Metal Roofing Consultation'
-                        : isGuttersFasciaGuide
-                          ? 'Request Gutter Evaluation'
-                          : isReplacementGuide
-                            ? 'Request Replacement Quote'
-                            : isInspectionGuide
-                              ? 'Request Free Roof Inspection'
-                            : PRIMARY_CTA}{' '}
+                      {PRIMARY_CTA}{' '}
                       <ArrowRight size={15} />
                     </Link>
                   )}
                   <Link
                     to={
                       isEmergencyGuide
-                        ? '/emergency-roof-repair'
+                        ? '/metal-roof-repair'
                         : isCommercialGuide
-                          ? '/commercial-roofing'
+                          ? '/commercial-metal-roofing'
                           : isRepairGuide
-                            ? '/roof-repair'
+                            ? '/metal-roof-repair'
                             : isGuttersFasciaGuide
-                            ? '/gutters-siding'
+                            ? '/metal-roofing'
                             : isMetalGuide
                             ? '/metal-roofing'
                             : isReplacementGuide
-                              ? '/roof-replacement'
+                              ? '/metal-roof-replacement'
                               : isInspectionGuide
-                                ? '/roof-inspection'
+                                ? '/metal-roof-inspection'
                               : isElDoradoHillsGuide
                                 ? '/service-areas/el-dorado-hills'
                                 : isFolsomGuide
                                   ? '/service-areas/folsom'
-                                  : '/roof-inspection'
+                                  : '/metal-roof-inspection'
                     }
                     className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                   >
                     {isEmergencyGuide
-                      ? 'Emergency roof repair page'
+                      ? 'Metal roof repair'
                       : isCommercialGuide
-                        ? 'Commercial roofing services'
+                        ? 'Commercial metal roofing'
                         : isRepairGuide
-                          ? 'Roof repair services'
+                          ? 'Metal roof repair'
                           : isGuttersFasciaGuide
-                          ? 'Gutters & siding services'
+                          ? 'Metal roofing services'
                           : isMetalGuide
                           ? 'Metal roofing services'
                           : isReplacementGuide
-                            ? 'Roof replacement services'
+                            ? 'Metal roof replacement'
                             : isInspectionGuide
-                              ? 'Roof inspection services'
+                              ? 'Metal roof inspection'
                             : isElDoradoHillsGuide
-                              ? 'El Dorado Hills roofing services'
+                              ? 'El Dorado Hills metal roofing'
                               : isFolsomGuide
-                                ? 'Folsom roofing services'
-                                : 'Roof inspection service page'}
+                                ? 'Folsom metal roofing'
+                                : 'Metal roof inspection'}
                   </Link>
                   {isCommercialGuide && (
                     <Link
-                      to="/roof-inspection"
+                      to="/metal-roof-inspection"
                       className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                     >
-                      Commercial roof inspection <ArrowRight size={15} />
-                    </Link>
-                  )}
-                  {isGuttersFasciaGuide && (
-                    <Link
-                      to="/roof-inspection"
-                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
-                    >
-                      Free roof inspection <ArrowRight size={15} />
+                      Metal roof inspection <ArrowRight size={15} />
                     </Link>
                   )}
                   {isMetalGuide && (
                     <Link
-                      to="/roof-inspection"
+                      to="/metal-roof-inspection"
                       className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                     >
-                      Free roof inspection <ArrowRight size={15} />
+                      Metal roof inspection <ArrowRight size={15} />
                     </Link>
                   )}
                   {isEmergencyGuide && (
@@ -451,15 +432,15 @@ export default function BlogPost() {
               )}
 
               <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold flex-shrink-0">
-                  PRC
+                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold flex-shrink-0 text-[10px] leading-tight text-center px-1">
+                  MRS
                 </div>
                 <div>
-                  <p className="font-semibold text-headline text-sm">{BUSINESS_ENTITY_NAME}</p>
+                  <p className="font-semibold text-headline text-sm">{BRAND_NAME}</p>
                   <p className="text-body text-sm leading-relaxed mt-1">
                     {isColfaxGuide
-                      ? `Licensed California roofing contractor serving Colfax and the Sacramento area. ${LICENSE_LABEL}. City program rules come from official Colfax sources; roofing guidance on this page is from PRC 13.`
-                      : `Sacramento residential roofing specialists. ${LICENSE_LABEL}. Articles are based on real field experience.`}
+                      ? `${BRAND_NAME} is operated by ${BUSINESS_ENTITY_NAME}. ${LICENSE_LABEL}. City program rules come from official Colfax sources; metal-roofing guidance on this page is from PRC 13.`
+                      : `${BRAND_NAME} is operated by ${BUSINESS_ENTITY_NAME}. ${LICENSE_LABEL}. Articles are based on field experience with metal roofing in the Sacramento region.`}
                   </p>
                 </div>
               </div>
@@ -469,16 +450,13 @@ export default function BlogPost() {
               {isColfaxGuide ? (
                 <ColfaxSidebarForm />
               ) : (
-              <div
-                className="p-6"
-                style={{ background: '#111827', border: '1px solid rgba(201,151,0,0.2)' }}
-              >
-                <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">Free Inspection</p>
+              <div className="p-6 bg-charcoal-dark border border-gold/20 rounded-brand">
+                <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">Metal Roof Estimate</p>
                 <p className="text-white font-bold text-base leading-snug mb-3">
-                  Request a Free Roof Inspection
+                  Get a Metal Roof Estimate
                 </p>
                 <p className="text-gray-400 text-xs leading-relaxed mb-5">
-                  No pressure. Honest assessment. We aim to schedule quickly during normal business hours.
+                  Request a metal roof inspection and written findings. We aim to schedule during normal business hours.
                 </p>
                 <TelLink
                   location="blog-sidebar"
@@ -513,7 +491,7 @@ export default function BlogPost() {
                           className="w-16 h-16 flex-shrink-0"
                         />
                         <div>
-                          <p className="text-xs text-gold font-semibold mb-1">{r.category}</p>
+                          <p className="text-xs text-gold font-semibold mb-1">{displayBlogCategory(r.category)}</p>
                           <p className="text-headline text-xs font-semibold leading-snug group-hover:text-gold transition-colors line-clamp-2">
                             {r.title}
                           </p>

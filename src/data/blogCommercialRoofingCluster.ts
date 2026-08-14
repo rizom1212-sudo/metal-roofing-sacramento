@@ -3,8 +3,8 @@ import { ASSETS } from './assets';
 
 export const COMMERCIAL_CLUSTER_CATEGORY = 'Commercial Roofing';
 
-const COVER_A = ASSETS.commercialRoofing('Screenshot_2026-05-20_at_09.33.13.png');
-const COVER_B = ASSETS.gallery('6998f81ba2a2c02b517b9648-1.jpg');
+const COVER_A = '/assets/featured-project/standing-seam-metal-roof-02.png';
+const COVER_B = '/assets/featured-project/standing-seam-metal-roof-04.png';
 const COVER_C = ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp');
 const COVER_D = ASSETS.blog('6998f81b8713f61878709b43.jpg');
 const COVER_E = ASSETS.blog('035dfafc-8416-46bd-b5ab-f8c6b6b4eff9.webp');

@@ -1,30 +1,23 @@
 import { blogPosts } from './blog';
 import { PAGE_META } from './pageMeta';
 import { serviceAreas } from './serviceAreas';
-import { cityServicePages } from './cityServicePages';
-import { EMERGENCY_CLUSTER_CATEGORY } from './blogEmergencyRoofRepairCluster';
+import { COLFAX_CLUSTER_CATEGORY } from './blogColfaxHomeHardening';
 import { FOLSOM_CLUSTER_CATEGORY } from './blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogElDoradoHillsRoofingCluster';
-import { COLFAX_CLUSTER_CATEGORY } from './blogColfaxHomeHardening';
-import { REPLACEMENT_CLUSTER_CATEGORY } from './blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from './blogMetalRoofingCluster';
-import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from './blogGuttersFasciaCluster';
-import { COMMERCIAL_CLUSTER_CATEGORY } from './blogCommercialRoofingCluster';
-import { ROOF_REPAIR_CLUSTER_CATEGORY } from './blogRoofRepairCluster';
 
 const SERVICE_ROUTES = [
-  '/roof-replacement',
-  '/roof-repair',
   '/metal-roofing',
-  '/commercial-roofing',
-  '/roof-inspection',
-  '/gutters-siding',
-  '/emergency-roof-repair',
+  '/metal-roof-installation',
+  '/metal-roof-replacement',
+  '/metal-roof-repair',
+  '/standing-seam-metal-roofing',
+  '/residential-metal-roofing',
+  '/commercial-metal-roofing',
+  '/metal-roof-inspection',
 ] as const;
 
 const GENERAL_ROUTES = ['/', '/about', '/contact', '/service-areas', '/gallery', '/blog'] as const;
-
-const INSPECTION_CATEGORY = 'Roof Inspection';
 
 export interface PublicRoute {
   path: string;
@@ -57,13 +50,14 @@ function clusterLastmod(category: string): string {
 const siteContentLastmod = maxIsoDate(blogPosts.map(post => post.updatedDate ?? post.date));
 
 const SERVICE_ROUTE_LASTMOD: Record<(typeof SERVICE_ROUTES)[number], string> = {
-  '/roof-replacement': clusterLastmod(REPLACEMENT_CLUSTER_CATEGORY),
-  '/roof-repair': clusterLastmod(ROOF_REPAIR_CLUSTER_CATEGORY),
   '/metal-roofing': clusterLastmod(METAL_CLUSTER_CATEGORY),
-  '/commercial-roofing': clusterLastmod(COMMERCIAL_CLUSTER_CATEGORY),
-  '/roof-inspection': clusterLastmod(INSPECTION_CATEGORY),
-  '/gutters-siding': clusterLastmod(GUTTERS_FASCIA_CLUSTER_CATEGORY),
-  '/emergency-roof-repair': clusterLastmod(EMERGENCY_CLUSTER_CATEGORY),
+  '/metal-roof-installation': clusterLastmod(METAL_CLUSTER_CATEGORY),
+  '/metal-roof-replacement': clusterLastmod(METAL_CLUSTER_CATEGORY),
+  '/metal-roof-repair': clusterLastmod(METAL_CLUSTER_CATEGORY),
+  '/standing-seam-metal-roofing': clusterLastmod(METAL_CLUSTER_CATEGORY),
+  '/residential-metal-roofing': clusterLastmod(METAL_CLUSTER_CATEGORY),
+  '/commercial-metal-roofing': clusterLastmod(METAL_CLUSTER_CATEGORY),
+  '/metal-roof-inspection': clusterLastmod(METAL_CLUSTER_CATEGORY),
 };
 
 function serviceAreaLastmod(slug: string): string {
@@ -77,12 +71,12 @@ export const serviceRoutes = SERVICE_ROUTES.map(path => ({
   path,
   lastmod: SERVICE_ROUTE_LASTMOD[path],
   changefreq: 'monthly' as const,
-  priority: path === '/roof-replacement' || path === '/roof-repair' ? 0.9 : 0.8,
+  priority: 0.9,
 }));
 
 export const generalRoutes = GENERAL_ROUTES.map(path => ({
   path,
-  lastmod: path === '/blog' ? siteContentLastmod : siteContentLastmod,
+  lastmod: siteContentLastmod,
   changefreq: path === '/blog' ? ('weekly' as const) : ('monthly' as const),
   priority: path === '/' ? 1 : path === '/contact' ? 0.9 : 0.7,
 }));
@@ -101,19 +95,11 @@ export const serviceAreaRoutes = serviceAreas.map(area => ({
   priority: area.slug === 'sacramento' ? 0.8 : 0.7,
 }));
 
-const CITY_SERVICE_LASTMOD = '2026-07-18';
-
-export const cityServiceRoutes: PublicRoute[] = cityServicePages.map(page => ({
-  path: page.path,
-  lastmod: CITY_SERVICE_LASTMOD,
-  changefreq: 'monthly' as const,
-  priority: 0.75,
-}));
+export const cityServiceRoutes: PublicRoute[] = [];
 
 export const publicRoutes: PublicRoute[] = [
   ...generalRoutes,
   ...serviceRoutes,
-  ...cityServiceRoutes,
   ...serviceAreaRoutes,
   ...blogRoutes,
 ];
@@ -123,5 +109,5 @@ export function isServiceRoute(path: string): boolean {
 }
 
 export function getRouteTitle(path: string): string {
-  return PAGE_META[path]?.title ?? 'PRC 13 Roofing';
+  return PAGE_META[path]?.title ?? 'Metal Roofing Sacramento';
 }

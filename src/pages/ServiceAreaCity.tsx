@@ -30,14 +30,14 @@ export default function ServiceAreaCity() {
   }
 
   const faqs: FaqItem[] = area.faqs;
-  const pageName = `${area.name} Roofing Services`;
+  const pageName = `${area.name} Metal Roofing`;
   const hubServices = resolveCityHubServices(area.name, area.services);
   const localHub = LOCAL_ROOFING_HUBS[area.slug];
   const localResources = localHub
     ? blogPosts.filter(post => post.category === localHub.category).slice(0, SERVICE_HUB_RESOURCE_LIMIT)
     : [];
   const featured = area.featuredProgram;
-  const heroLead = area.heroLead ?? 'Roofing Services in';
+  const heroLead = area.heroLead ?? 'Metal Roofing in';
   const primaryCtaLabel = featured?.primaryCtaLabel ?? PRIMARY_CTA;
 
   return (
@@ -46,7 +46,7 @@ export default function ServiceAreaCity() {
         faqs={faqs}
         pageName={pageName}
         schemaType="Service"
-        serviceName={`Roofing Services in ${area.name}, CA`}
+        serviceName={`Metal Roofing in ${area.name}, CA`}
         serviceDescription={area.heroIntro}
         servedAreas={[area.name]}
         breadcrumbs={[
@@ -391,11 +391,11 @@ export default function ServiceAreaCity() {
       )}
 
       <LocalSeoLinks
-        title={area.slug === 'sacramento' ? 'Sacramento roofing services' : `Roofing services near ${area.name}`}
+        title={area.slug === 'sacramento' ? 'Sacramento metal roofing services' : `Metal roofing near ${area.name}`}
         description={
           area.slug === 'sacramento'
-            ? 'This hub covers Sacramento as a service area. Open a service page for repair, replacement, emergency leaks, inspections, metal roofing, commercial roofing, or gutters.'
-            : `Compare PRC 13 Roofing services for ${area.name} and nearby Sacramento communities, including repair, replacement, emergency leak response, inspections, metal roofing, and recent project examples.`
+            ? 'This hub covers Sacramento as a metal roofing service area. Open a service page for metal installation, replacement, repair, standing seam, inspection, or commercial metal roofing.'
+            : `Metal roofing in ${area.name} and nearby Sacramento communities: installation, replacement, repair, standing seam, inspection, and related metal services from PRC 13 Roofing Inc.`
         }
       />
 

@@ -3,6 +3,7 @@ import type { BlogPost } from '../data/blog';
 import type { FaqItem } from '../components/FaqAccordion';
 import { buildJsonLdGraph, serializeJsonLd } from '../lib/jsonLdGraph';
 import { serviceAreaNames } from '../data/serviceAreas';
+import { BRAND_NAME } from '../data/site';
 
 interface JsonLdProps {
   faqs?: FaqItem[];
@@ -25,7 +26,7 @@ interface JsonLdProps {
 
 export default function JsonLd({
   faqs = [],
-  pageName = 'PRC 13 Roofing',
+  pageName = BRAND_NAME,
   schemaType = 'WebPage',
   serviceName,
   serviceDescription,

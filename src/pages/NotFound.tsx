@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { BRAND_NAME } from '../data/site';
 
 /**
  * Client-side not-found UI. Direct requests for unknown URLs rely on
@@ -7,7 +8,7 @@ import { Link } from 'react-router-dom';
  */
 export default function NotFound() {
   useEffect(() => {
-    document.title = 'Page Not Found | PRC 13 Roofing';
+    document.title = `Page Not Found | ${BRAND_NAME}`;
 
     let robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!robots) {
@@ -24,7 +25,7 @@ export default function NotFound() {
         <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">404</p>
         <h1 className="text-2xl md:text-3xl font-bold text-headline mb-4">Page not found</h1>
         <p className="text-body text-sm leading-relaxed mb-8">
-          That URL is not a published PRC 13 Roofing page. Check the address or continue from one of the links below.
+          That URL is not a published {BRAND_NAME} page. Check the address or continue from one of the links below.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link to="/" className="inline-flex items-center justify-center btn-gold px-6 py-3 text-sm font-semibold">
@@ -34,7 +35,13 @@ export default function NotFound() {
             to="/contact"
             className="inline-flex items-center justify-center border-2 border-charcoal text-charcoal font-semibold px-6 py-3 text-sm hover:bg-charcoal hover:text-white transition-colors"
           >
-            Contact PRC 13
+            Contact us
+          </Link>
+          <Link
+            to="/metal-roofing"
+            className="inline-flex items-center justify-center border-2 border-charcoal text-charcoal font-semibold px-6 py-3 text-sm hover:bg-charcoal hover:text-white transition-colors"
+          >
+            Metal roofing
           </Link>
         </div>
       </div>

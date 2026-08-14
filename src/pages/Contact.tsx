@@ -8,9 +8,11 @@ import {
   BUSINESS_HOURS,
   IS_SERVICE_AREA_BUSINESS,
   LICENSE_TEXT,
+  OPERATOR_DISCLOSURE,
   PHONE_DISPLAY,
   PHONE_SMS,
 } from '../data/site';
+import { PRIMARY_CTA } from '../data/cta';
 import { trackClickToSms } from '../lib/analytics';
 import TelLink from '../components/TelLink';
 import { Link } from 'react-router-dom';
@@ -28,7 +30,7 @@ const hoursRange = `${formatHourLabel(weekdayHours.opens)} to ${formatHourLabel(
 export default function Contact() {
   return (
     <>
-      <JsonLd pageName="Contact PRC 13 Roofing" schemaType="ContactPage" />
+      <JsonLd pageName={`Contact ${BUSINESS_DISPLAY_NAME}`} schemaType="ContactPage" />
       <section className="bg-cream py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-12 gap-8 lg:gap-10 items-stretch">
@@ -76,7 +78,7 @@ export default function Contact() {
                     <MapPin size={13} /> Service-Area Business
                   </p>
                   <p className="text-body text-sm leading-relaxed">
-                    {BUSINESS_ENTITY_NAME} schedules inspections and roofing work across the greater Sacramento region. There is no public retail storefront address listed on this site.
+                    {BUSINESS_ENTITY_NAME} schedules metal roof inspections and metal-roofing work across the greater Sacramento region. There is no public retail storefront address listed on this site.
                   </p>
                   <Link to="/service-areas" className="inline-block text-gold font-semibold text-sm mt-2 hover:underline">
                     View service areas
@@ -88,10 +90,10 @@ export default function Contact() {
                 <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-2.5">What to Expect</p>
                 <ul className="space-y-1.5">
                   {[
-                    'We aim to respond quickly during normal business hours',
-                    'Free, no-obligation roof inspection',
-                    'Clear written quote before any work',
-                    'Insurance documentation support when storm damage is involved',
+                    'Metal roof installation, replacement, and repair',
+                    'Standing seam, residential, and commercial metal roofs',
+                    'Free residential metal roof inspection with written findings',
+                    'Insurance documentation support when storm damage is involved — no coverage guarantee',
                     'Financing may be available on qualifying projects',
                   ].map(item => (
                     <li key={item} className="flex items-start gap-2 text-sm text-body">
@@ -104,10 +106,11 @@ export default function Contact() {
             </div>
 
             <div id="contact-form" className="md:col-span-8 card-brand bg-white border border-gray-100 p-6 md:p-8 lg:min-h-[460px] flex flex-col justify-center">
-              <h1 className="text-2xl md:text-3xl font-bold text-headline mb-2">Request a Roof Inspection</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-headline mb-2">{PRIMARY_CTA}</h1>
               <p className="text-body text-sm mb-2">
-                Tell us what is going on with your roof. We aim to respond quickly during Monday through Friday business hours ({hoursRange}).
+                Tell us what is going on with your metal roof. We aim to respond quickly during Monday through Friday business hours ({hoursRange}).
               </p>
+              <p className="text-xs text-gray-500 mb-2">{OPERATOR_DISCLOSURE}</p>
               <p className="text-xs text-gray-500 mb-5">{LICENSE_TEXT}</p>
               <LeadForm sourcePage="contact" variant="full" showExtendedFields className="max-w-xl" />
             </div>

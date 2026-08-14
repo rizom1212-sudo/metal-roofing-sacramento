@@ -7,9 +7,9 @@ export interface ServiceAreaConversion {
 
 export const INSPECTION_BENEFITS = [
   'No obligation',
-  'Written inspection report',
-  'Local roofing expertise',
-  'Fast scheduling',
+  'Written metal inspection findings',
+  'Local metal-roofing expertise',
+  'Scheduling during business hours',
 ] as const;
 
 export const SERVICE_AREA_FORM_SECTION_ID = 'schedule-inspection';

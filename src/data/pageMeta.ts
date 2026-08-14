@@ -1,7 +1,7 @@
 import { DEFAULT_OG_IMAGE } from './assets';
 import { blogPosts } from './blog';
 import { serviceAreas } from './serviceAreas';
-import { getCityServicePage } from './cityServicePages';
+import { BRAND_NAME, OPERATOR_DISCLOSURE, PHONE_DISPLAY } from './site';
 
 export interface PageMetaConfig {
   title: string;
@@ -9,7 +9,7 @@ export interface PageMetaConfig {
   path: string;
 }
 
-const SITE_NAME = 'PRC 13 Roofing';
+const SITE_NAME = BRAND_NAME;
 
 const serviceAreaMeta = Object.fromEntries(
   serviceAreas.map(area => [
@@ -24,84 +24,90 @@ const serviceAreaMeta = Object.fromEntries(
 
 export const DEFAULT_SITE_META: PageMetaConfig = {
   title:
-    'Best Roofing Contractor in Sacramento, CA | PRC 13 Roofing | Roof Replacement, Repair, Emergency, Metal, Commercial Roofing, Inspection & Gutters Near Me',
+    'Metal Roofing Sacramento, CA | Installation, Replacement & Repair',
   description:
-    'PRC 13 Roofing is a Sacramento roofing contractor for roof replacement, repair, emergency repair, metal roofing, commercial roofing, inspections, and gutters & siding. Free roof inspections. Licensed & insured. Call 916-761-3866.',
+    `${OPERATOR_DISCLOSURE} Residential and commercial metal roofing, standing seam systems, metal roof replacement, repair, and inspections in Sacramento, CA. Call ${PHONE_DISPLAY}.`,
   path: '/',
 };
 
 export const PAGE_META: Record<string, PageMetaConfig> = {
   '/': DEFAULT_SITE_META,
-  '/roof-replacement': {
-    title: 'Roof Replacement Sacramento, CA | Free Inspection | PRC 13',
-    description:
-      'Roof replacement in Sacramento for shingle, tile, and metal roofing systems. Get a free inspection, written estimate, financing options, and clear next steps.',
-    path: '/roof-replacement',
-  },
-  '/roof-repair': {
-    title: 'Roof Repair Sacramento, CA | Free Inspection | PRC 13',
-    description:
-      'Roof repair in Sacramento for leaks, missing shingles, flashing failures, storm damage, and other urgent roofing problems. Schedule a free inspection with PRC 13 Roofing.',
-    path: '/roof-repair',
-  },
   '/metal-roofing': {
-    title: 'Metal Roofing Sacramento, CA | Install & Repair | PRC 13',
+    title: 'Metal Roofing Services Sacramento | Installation, Repair & More',
     description:
-      'Metal roofing in Sacramento, including standing seam and durable metal roof systems built for heat, energy efficiency, long lifespan, and low maintenance.',
+      'Metal roofing services in Sacramento: installation, replacement, repair, standing seam, residential and commercial metal roofs, and inspections. Operated by PRC 13 Roofing Inc., CA CSLB #1087153.',
     path: '/metal-roofing',
   },
-  '/commercial-roofing': {
-    title: 'Commercial Roofing Sacramento | Repair & Inspect | PRC 13',
+  '/metal-roof-installation': {
+    title: 'Metal Roof Installation Sacramento | Process & Estimate',
     description:
-      'Commercial roofing in Sacramento for repairs, replacements, inspections, TPO, EPDM, and modified bitumen systems from a licensed local roofing team.',
-    path: '/commercial-roofing',
+      'New metal roof installation in Sacramento, including standing seam, underlayment, flashing, ventilation, and panel installation. Get a metal roof installation estimate from PRC 13 Roofing Inc.',
+    path: '/metal-roof-installation',
   },
-  '/roof-inspection': {
-    title: 'Free Roof Inspection Sacramento, CA | PRC 13 Roofing',
+  '/metal-roof-replacement': {
+    title: 'Metal Roof Replacement Sacramento | Tear-Off & New Metal',
     description:
-      'Schedule a free roof inspection in Sacramento. PRC 13 Roofing checks for leaks, storm damage, aging materials, flashing problems, and replacement needs.',
-    path: '/roof-inspection',
+      'Replace aging shingles, tile, or failing metal with a metal roof in Sacramento. Tear-off, deck inspection, and repair-versus-replacement guidance from PRC 13 Roofing Inc.',
+    path: '/metal-roof-replacement',
   },
-  '/gutters-siding': {
-    title: 'Gutters & Siding Sacramento, CA | Repair & Replacement | PRC 13',
+  '/metal-roof-repair': {
+    title: 'Metal Roof Repair Sacramento | Leaks, Seams & Panels',
     description:
-      'Gutter installation, siding repair, and exterior protection for Sacramento homes. PRC 13 Roofing provides free inspections and clear recommendations.',
-    path: '/gutters-siding',
+      'Metal roof repair in Sacramento for leaking seams, flashing, damaged panels, fasteners, and penetrations. Request metal roof repair from PRC 13 Roofing Inc., CA CSLB #1087153.',
+    path: '/metal-roof-repair',
   },
-  '/emergency-roof-repair': {
-    title: 'Emergency Roof Repair Sacramento, CA | Fast Leak Help | PRC 13',
+  '/standing-seam-metal-roofing': {
+    title: 'Standing Seam Metal Roofing Sacramento | Concealed Fastener',
     description:
-      'Emergency roof repair in Sacramento for active leaks, storm damage, missing shingles, and urgent water intrusion. Call PRC 13 Roofing for fast assistance.',
-    path: '/emergency-roof-repair',
+      'Standing seam metal roofing in Sacramento with concealed fasteners and raised seams. Compare standing seam vs exposed-fastener systems and request a standing seam estimate.',
+    path: '/standing-seam-metal-roofing',
+  },
+  '/residential-metal-roofing': {
+    title: 'Residential Metal Roofing Sacramento | Homes & Replacement',
+    description:
+      'Residential metal roofing for Sacramento-area homes, including standing seam, replacement, new construction, and homeowner guidance. Get a residential metal roof estimate.',
+    path: '/residential-metal-roofing',
+  },
+  '/commercial-metal-roofing': {
+    title: 'Commercial Metal Roofing Sacramento | Metal Systems Only',
+    description:
+      'Commercial metal roofing in Sacramento for buildings where metal systems fit: standing seam, metal reroofing, repair, and inspection. Not a TPO or EPDM membrane page.',
+    path: '/commercial-metal-roofing',
+  },
+  '/metal-roof-inspection': {
+    title: 'Metal Roof Inspection Sacramento | Repair vs Replacement',
+    description:
+      'Metal roof inspection in Sacramento covering leaks, panels, fasteners, seams, flashing, and drainage. Free residential inspections with written findings from PRC 13 Roofing Inc.',
+      path: '/metal-roof-inspection',
   },
   '/about': {
-    title: `About Us | ${SITE_NAME} Sacramento`,
+    title: `About ${SITE_NAME} | Operated by PRC 13 Roofing Inc.`,
     description:
-      'Meet PRC 13 Roofing, a Sacramento roofing company built on honest inspections, licensed service, quality workmanship, and clear communication on every project.',
+      `${OPERATOR_DISCLOSURE} Learn how this Sacramento metal-roofing brand is operated by a licensed California roofing contractor with honest inspections and clear communication.`,
     path: '/about',
   },
   '/contact': {
-    title: `Contact | ${SITE_NAME} Sacramento`,
+    title: `Contact ${SITE_NAME} | Get a Metal Roof Estimate`,
     description:
-      'Schedule a free roof inspection in Sacramento with PRC 13 Roofing. Call 916-761-3866 or send a message. We aim to respond quickly during normal business hours.',
+      `Request a metal roof estimate or inspection in Sacramento. ${OPERATOR_DISCLOSURE} Call ${PHONE_DISPLAY} or send a message. We aim to respond quickly during normal business hours.`,
     path: '/contact',
   },
   '/gallery': {
-    title: `Project Gallery | ${SITE_NAME}`,
+    title: `Metal Roofing Project Gallery | ${SITE_NAME}`,
     description:
-      'View Sacramento roof replacement, roof repair, metal roofing, and exterior projects completed by PRC 13 Roofing across local homes and neighborhoods.',
+      'View standing seam and metal roofing projects completed by PRC 13 Roofing Inc. for Metal Roofing Sacramento. Non-metal work is not presented as metal.',
     path: '/gallery',
   },
   '/blog': {
-    title: `Roofing Blog | ${SITE_NAME}`,
+    title: `Metal Roofing Blog | ${SITE_NAME}`,
     description:
-      'Sacramento roofing tips, inspection guides, emergency repair resources, and local guides for Folsom and El Dorado Hills from PRC 13 Roofing.',
+      'Sacramento metal roofing guides covering standing seam, cost, climate, installation, inspection, storm damage, and repair-versus-replacement.',
     path: '/blog',
   },
   '/service-areas': {
-    title: 'Sacramento Roofing Service Areas | PRC 13',
+    title: `Sacramento Metal Roofing Service Areas | ${SITE_NAME}`,
     description:
-      'PRC 13 Roofing serves Sacramento, Roseville, Rocklin, Folsom, Elk Grove, and surrounding communities. Free roof inspections.',
+      'Metal Roofing Sacramento, operated by PRC 13 Roofing Inc., serves Sacramento, Roseville, Rocklin, Folsom, Elk Grove, and surrounding communities.',
     path: '/service-areas',
   },
   ...serviceAreaMeta,
@@ -118,15 +124,6 @@ export function getPageMeta(pathname: string): PageMetaConfig {
         path: pathname,
       };
     }
-  }
-
-  const cityServicePage = getCityServicePage(pathname);
-  if (cityServicePage) {
-    return {
-      title: cityServicePage.metaTitle,
-      description: cityServicePage.metaDescription,
-      path: cityServicePage.path,
-    };
   }
 
   return PAGE_META[pathname] ?? DEFAULT_SITE_META;

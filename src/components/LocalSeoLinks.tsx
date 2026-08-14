@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { serviceAreas } from '../data/serviceAreas';
-import { getLocalSeoLinkServices } from '../data/services';
+import { getLocalSeoLinkServices, getNavHref } from '../data/services';
 import { LOCAL_SEO_PRIORITY_CITY_SLUGS } from '../data/internalLinking';
 
 const serviceLinks = getLocalSeoLinkServices().map(service => ({
-  label: service.name,
-  href: service.canonicalUrl,
+  id: service.id,
+  label: service.shortName ?? service.name,
+  href: getNavHref(service),
 }));
 
 function pickLocalSeoCities(limit: number) {
@@ -27,8 +28,8 @@ interface LocalSeoLinksProps {
 }
 
 export default function LocalSeoLinks({
-  title = 'Sacramento Area Roofing Services',
-  description = 'Compare PRC 13 roof repair, replacement, emergency help, inspections, metal roofing, commercial roofing, and gutters & siding across Sacramento and nearby communities.',
+  title = 'Sacramento Metal Roofing Services',
+  description = 'Compare metal roofing, installation, replacement, repair, standing seam, residential and commercial metal systems, and metal roof inspections across Sacramento and nearby communities.',
   cityLimit = 8,
 }: LocalSeoLinksProps) {
   const cities = pickLocalSeoCities(cityLimit);
@@ -44,7 +45,7 @@ export default function LocalSeoLinks({
             <div className="grid sm:grid-cols-2 gap-3">
               {serviceLinks.map(link => (
                 <Link
-                  key={link.href}
+                  key={link.id}
                   to={link.href}
                   className="flex items-center justify-between gap-3 border border-gray-100 bg-cream px-4 py-3 text-sm font-semibold text-headline hover:border-gold/40 hover:text-gold transition-colors"
                 >
@@ -57,9 +58,9 @@ export default function LocalSeoLinks({
 
           <div className="card-brand bg-charcoal-dark text-white p-6 md:p-7">
             <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Service Areas</p>
-            <h2 className="text-2xl font-bold mb-3">Local Roofing Help Near Sacramento</h2>
+            <h2 className="text-2xl font-bold mb-3">Metal Roofing Near Sacramento</h2>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              See city-specific roofing guidance for nearby communities where heat, wind, older subdivisions, and winter rain affect roof decisions.
+              City hubs explain local metal-roofing context — heat, wind, housing stock, and rain — without inventing offices or projects in every city.
             </p>
             <div className="grid sm:grid-cols-2 gap-2.5">
               {cities.map(area => (
@@ -69,7 +70,7 @@ export default function LocalSeoLinks({
                   className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-gold transition-colors"
                 >
                   <MapPin size={13} className="text-gold" />
-                  Roofing services in {area.name}
+                  Metal roofing in {area.name}
                 </Link>
               ))}
             </div>

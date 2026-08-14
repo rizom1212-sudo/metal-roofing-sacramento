@@ -2,16 +2,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { scrollToTopInstant } from '../lib/scroll';
 import { Phone, Shield } from 'lucide-react';
 import GoogleReviewsLink from './GoogleReviewsLink';
-import { BUSINESS_ENTITY_NAME, LICENSE_SHORT, LOGO_ALT, LOGO_SRC, PHONE_DISPLAY } from '../data/site';
+import { BUSINESS_ENTITY_NAME, LICENSE_SHORT, OPERATOR_DISCLOSURE, PHONE_DISPLAY } from '../data/site';
 import TelLink from './TelLink';
+import BrandMark from './BrandMark';
 import { serviceAreas } from '../data/serviceAreas';
-import { getFooterServices } from '../data/services';
+import { getFooterServices, getNavHref } from '../data/services';
 import { FOOTER_PRIORITY_CITY_SLUGS } from '../data/internalLinking';
 
-const tier1Links = getFooterServices().map(service => ({
-  label: service.name,
-  href: service.canonicalUrl,
-}));
+const footerServices = getFooterServices();
 
 const footerServiceAreas = FOOTER_PRIORITY_CITY_SLUGS
   .map(slug => serviceAreas.find(area => area.slug === slug))
@@ -34,15 +32,12 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-2 lg:col-span-1">
-            <Link to="/" onClick={handleHomeLogoClick}>
-              <img
-                src={LOGO_SRC}
-                alt={LOGO_ALT}
-                className="h-[68px] w-auto max-w-[240px] object-contain object-left mb-3.5 block"
-              />
-            </Link>
-            <p className="text-sm leading-relaxed mb-4 text-gray-400">
-              Sacramento residential roofing specialists focused on honest inspections, quality workmanship, and fast local service.
+            <BrandMark to="/" onClick={handleHomeLogoClick} size="footer" variant="onDark" className="mb-3.5" />
+            <p className="text-sm leading-relaxed mb-3 text-gray-400">
+              Sacramento metal roofing specialists for residential and commercial metal systems, standing seam, replacement, repair, and inspections.
+            </p>
+            <p className="text-xs leading-relaxed mb-4 text-gray-500">
+              {OPERATOR_DISCLOSURE}
             </p>
             <div className="flex flex-col gap-3">
               <TelLink location="footer" className="flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-colors">
@@ -57,9 +52,15 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-xs uppercase tracking-widest mb-4">Services</h4>
             <ul className="space-y-2.5">
-              {tier1Links.map(s => (
-                <li key={s.href}>
-                  <Link to={s.href} className="text-sm text-gray-400 hover:text-gold transition-colors">{s.label}</Link>
+              {footerServices.map(service => (
+                <li key={service.id}>
+                  <Link
+                    key={service.id}
+                    to={getNavHref(service)}
+                    className="text-sm text-gray-400 hover:text-gold transition-colors"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -70,7 +71,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-xs uppercase tracking-widest mb-4">Company</h4>
             <ul className="space-y-2.5">
               <li><Link to="/about" className="text-sm text-gray-400 hover:text-gold transition-colors">About</Link></li>
-              <li><Link to="/gallery" className="text-sm text-gray-400 hover:text-gold transition-colors">Gallery</Link></li>
+              <li><Link to="/gallery" className="text-sm text-gray-400 hover:text-gold transition-colors">Projects</Link></li>
               <li><Link to="/blog" className="text-sm text-gray-400 hover:text-gold transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="text-sm text-gray-400 hover:text-gold transition-colors">Contact</Link></li>
               <li><Link to="/service-areas" className="text-sm text-gray-400 hover:text-gold transition-colors">Service Areas</Link></li>

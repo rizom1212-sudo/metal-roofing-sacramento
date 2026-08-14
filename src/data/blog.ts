@@ -1,6 +1,9 @@
 import type { FaqItem } from '../components/FaqAccordion';
 import { ASSETS } from './assets';
 import { applyClusterLinkEnrichmentsToPosts } from './applyClusterLinkEnrichments';
+import { applyBlogRetargets } from './applyBlogRetargets';
+import { RETIRED_BLOG_SLUGS } from './urlPolicy';
+import { rewriteLinksInUnknownValue } from '../lib/rewritePublicLinks';
 import { roofInspectionClusterPosts } from './blogRoofInspectionCluster';
 import { emergencyRoofRepairClusterPosts } from './blogEmergencyRoofRepairCluster';
 import { folsomRoofingClusterPosts } from './blogFolsomRoofingCluster';
@@ -21,6 +24,24 @@ import {
 export interface BlogRelatedService {
   label: string;
   href: string;
+}
+
+const BLOG_CATEGORY_DISPLAY: Record<string, string> = {
+  'Roof Inspection': 'Metal Roof Inspection',
+  'Sacramento Roof Replacement': 'Metal Roof Replacement',
+  'Sacramento Roof Repair': 'Metal Roof Repair',
+  'Commercial Roofing': 'Commercial Metal Roofing',
+  'Emergency Roof Repair': 'Metal Roof Leak Help',
+  'Gutters & Fascia': 'Metal Roofing Guides',
+  'Folsom Roofing': 'Folsom Metal Roofing',
+  'El Dorado Hills Roofing': 'El Dorado Hills Metal Roofing',
+  'Colfax Roofing': 'Colfax Metal Roofing',
+  'Metal Roofing': 'Metal Roofing',
+};
+
+/** Display label only. Do not use for filters — those match original category constants. */
+export function displayBlogCategory(category: string): string {
+  return BLOG_CATEGORY_DISPLAY[category] ?? category;
 }
 
 export interface BlogPost {
@@ -351,7 +372,11 @@ const rawBlogPosts: BlogPost[] = [
   ...phase4RepairPosts,
 ];
 
-export const blogPosts = applyClusterLinkEnrichmentsToPosts(rawBlogPosts);
+export const blogPosts = applyBlogRetargets(
+  applyClusterLinkEnrichmentsToPosts(rawBlogPosts)
+    .filter(post => !(RETIRED_BLOG_SLUGS as readonly string[]).includes(post.slug))
+    .map(post => rewriteLinksInUnknownValue(post)),
+);
 
 export const ROOF_INSPECTION_CLUSTER_SLUGS = roofInspectionClusterPosts.map(post => post.slug);
 export const EMERGENCY_ROOF_REPAIR_CLUSTER_SLUGS = emergencyRoofRepairClusterPosts.map(post => post.slug);

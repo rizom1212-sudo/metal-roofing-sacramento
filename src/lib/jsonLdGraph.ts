@@ -1,11 +1,11 @@
 /**
- * JSON-LD @graph builder for PRC 13 Roofing.
- * Uses Phase 2 canonical entity (site.ts) and service catalog (services.ts).
- * Prefer one RoofingContractor @id and stable Service @ids — no fake addresses/offices.
+ * JSON-LD @graph builder for Metal Roofing Sacramento.
+ * One licensed RoofingContractor (PRC 13 Roofing Inc.) operates the specialist brand.
+ * Prefer one contractor @id, a Brand node, and stable Service @ids — no fake addresses/GBPs.
  */
 import {
+  BRAND_NAME,
   BUSINESS_DESCRIPTION,
-  BUSINESS_DISPLAY_NAME,
   BUSINESS_ENTITY_NAME,
   BUSINESS_HOURS,
   GEO_LATITUDE,
@@ -14,8 +14,10 @@ import {
   GOOGLE_REVIEW_COUNT,
   LICENSE_NUMBER,
   LOGO_SRC,
+  OPERATOR_DESCRIPTION,
+  OPERATOR_DISPLAY_NAME,
+  OPERATOR_SAME_AS_URLS,
   PHONE_E164,
-  SAME_AS_URLS,
 } from '../data/site';
 import { DEFAULT_OG_IMAGE } from '../data/assets';
 import { absoluteAssetUrl, absoluteUrl, SITE_URL } from '../data/domain';
@@ -31,6 +33,7 @@ import type { FaqItem } from '../components/FaqAccordion';
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const LOGO_ID = `${SITE_URL}/#logo`;
+export const BRAND_ID = `${SITE_URL}/#brand`;
 
 const tel = PHONE_E164;
 
@@ -44,20 +47,27 @@ const DAY_OF_WEEK_URL: Record<string, string> = {
   Sunday: 'https://schema.org/Sunday',
 };
 
-/** Map blog categories to canonical offered service IDs (when the article is clearly about that service). */
+/** Map blog categories to offered catalog service IDs when the article is clearly about that service.
+ * Historical non-metal categories are left unmapped because those URLs are no longer primary catalog entries.
+ */
 const BLOG_CATEGORY_TO_SERVICE_ID: Record<string, string> = {
-  'Sacramento Roof Repair': 'roof-repair',
-  'Roof Repair': 'roof-repair',
-  'Emergency Roof Repair': 'emergency-roof-repair',
-  'Sacramento Roof Replacement': 'roof-replacement',
   'Metal Roofing': 'metal-roofing',
-  'Commercial Roofing': 'commercial-roofing',
-  'Roof Inspection': 'roof-inspection',
-  'Gutters & Fascia': 'gutters-siding',
+  'Roof Inspection': 'metal-roof-inspection',
+  'Sacramento Roof Replacement': 'metal-roof-replacement',
+  'Sacramento Roof Repair': 'metal-roof-repair',
+  'Commercial Roofing': 'commercial-metal-roofing',
+  'Emergency Roof Repair': 'metal-roof-repair',
+  'Folsom Roofing': 'metal-roofing',
+  'El Dorado Hills Roofing': 'metal-roofing',
+  'Colfax Roofing': 'metal-roofing',
 };
 
-export function serviceEntityId(canonicalUrl: string): string {
-  return `${absoluteUrl(canonicalUrl)}#service`;
+export function serviceEntityId(serviceOrUrl: ServiceDefinition | string): string {
+  if (typeof serviceOrUrl === 'string') {
+    return `${absoluteUrl(serviceOrUrl)}#service`;
+  }
+  const suffix = serviceOrUrl.schemaIdSuffix ?? 'service';
+  return `${absoluteUrl(serviceOrUrl.canonicalUrl)}#${suffix}`;
 }
 
 /** Place nodes for areaServed. Single city → City; multiple → AdministrativeArea list. */
@@ -110,7 +120,7 @@ function logoImageObject() {
     '@id': LOGO_ID,
     url: absoluteAssetUrl(LOGO_SRC),
     contentUrl: absoluteAssetUrl(LOGO_SRC),
-    caption: BUSINESS_DISPLAY_NAME,
+    caption: BRAND_NAME,
   };
 }
 
@@ -124,24 +134,37 @@ function primaryImageObject(imagePath: string, caption?: string) {
   };
 }
 
+function brandSchema() {
+  return {
+    '@type': 'Brand',
+    '@id': BRAND_ID,
+    name: BRAND_NAME,
+    url: SITE_URL,
+    description: BUSINESS_DESCRIPTION,
+    logo: { '@id': LOGO_ID },
+  };
+}
+
 /** Top-level WebSite node — referenced by WebPage.isPartOf via @id only. */
 export function webSiteSchema() {
   return {
     '@type': 'WebSite',
     '@id': WEBSITE_ID,
     url: SITE_URL,
-    name: BUSINESS_DISPLAY_NAME,
+    name: BRAND_NAME,
     description: BUSINESS_DESCRIPTION,
     inLanguage: 'en-US',
     publisher: { '@id': BUSINESS_ID },
-    about: { '@id': BUSINESS_ID },
+    about: [{ '@id': BRAND_ID }, { '@id': BUSINESS_ID }],
   };
 }
 
 /**
- * Single PRC 13 RoofingContractor entity.
+ * Single licensed RoofingContractor: PRC 13 Roofing Inc.
+ * Brand (Metal Roofing Sacramento) is a related Brand node, not a second contractor.
  * No PostalAddress — service-area business without a public storefront.
  * License via PropertyValue identifier only (no invented issuing org / credential dates).
+ * sameAs points at PRC 13 Roofing Inc. profiles, not a fabricated specialist GBP.
  */
 export function localBusinessSchema() {
   const areas = areaServedPlaces(serviceAreaNames);
@@ -151,12 +174,13 @@ export function localBusinessSchema() {
     '@type': 'RoofingContractor',
     '@id': BUSINESS_ID,
     name: BUSINESS_ENTITY_NAME,
-    alternateName: BUSINESS_DISPLAY_NAME,
-    description: BUSINESS_DESCRIPTION,
+    alternateName: OPERATOR_DISPLAY_NAME,
+    description: OPERATOR_DESCRIPTION,
     url: SITE_URL,
     telephone: tel,
     image: absoluteAssetUrl(DEFAULT_OG_IMAGE),
     logo: { '@id': LOGO_ID },
+    brand: { '@id': BRAND_ID },
     priceRange: '$$',
     geo: {
       '@type': 'GeoCoordinates',
@@ -195,19 +219,19 @@ export function localBusinessSchema() {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       '@id': `${SITE_URL}/#offer-catalog`,
-      name: 'Sacramento roofing services',
+      name: 'Sacramento metal roofing services',
       itemListElement: offeredServices.map((service, index) => ({
         '@type': 'Offer',
         position: index + 1,
         itemOffered: {
           '@type': 'Service',
-          '@id': serviceEntityId(service.canonicalUrl),
+          '@id': serviceEntityId(service),
           name: service.schemaName,
           url: absoluteUrl(service.canonicalUrl),
         },
       })),
     },
-    sameAs: [...SAME_AS_URLS],
+    sameAs: [...OPERATOR_SAME_AS_URLS],
   };
 }
 
@@ -253,7 +277,7 @@ export function catalogServiceSchema(
   const areas = areaServedPlaces(servedAreas);
   return {
     '@type': 'Service',
-    '@id': serviceEntityId(service.canonicalUrl),
+    '@id': serviceEntityId(service),
     name: service.schemaName,
     description: service.description,
     url: absoluteUrl(service.canonicalUrl),
@@ -290,7 +314,7 @@ export function resolveBlogAboutServiceId(blogPost: BlogPost): string | undefine
   const serviceId = BLOG_CATEGORY_TO_SERVICE_ID[blogPost.category];
   if (!serviceId) return undefined;
   const service = getOfferedServices().find(item => item.id === serviceId);
-  return service ? serviceEntityId(service.canonicalUrl) : undefined;
+  return service ? serviceEntityId(service) : undefined;
 }
 
 export function buildJsonLdGraph(options: {
@@ -331,6 +355,7 @@ export function buildJsonLdGraph(options: {
 
   if (includeLocalBusiness) {
     graph.push(logoImageObject());
+    graph.push(brandSchema());
     graph.push(localBusinessSchema());
     graph.push(webSiteSchema());
   }
@@ -343,7 +368,7 @@ export function buildJsonLdGraph(options: {
     name: pageName,
     inLanguage: 'en-US',
     isPartOf: { '@id': WEBSITE_ID },
-    about: { '@id': BUSINESS_ID },
+    about: [{ '@id': BRAND_ID }, { '@id': BUSINESS_ID }],
     primaryImageOfPage: primaryImageObject(imagePath, pageName),
   };
 

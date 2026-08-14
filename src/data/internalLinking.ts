@@ -4,14 +4,11 @@
  */
 export const SERVICE_HUB_RESOURCE_LIMIT = 6;
 
-/** High-intent emergency guides surfaced on /emergency-roof-repair */
+/** High-intent storm/leak guides that remain after emergency-page retirement */
 export const EMERGENCY_HUB_RESOURCE_SLUGS = [
   'what-to-do-roof-leak-sacramento-storm',
   'roof-leak-repair-sacramento',
-  'emergency-roof-tarp-guide',
   'storm-damage-roof-repair-sacramento',
-  'when-to-call-emergency-roofer',
-  'emergency-roof-repair-cost',
 ] as const;
 
 /** Priority cities for LocalSeoLinks (descriptive subset, not all cities every time). */

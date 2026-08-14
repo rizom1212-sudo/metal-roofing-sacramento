@@ -5,8 +5,11 @@ import { fileURLToPath } from 'url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 
-const BUSINESS_ID = 'https://prc13roofing.com/#business';
-const WEBSITE_ID = 'https://prc13roofing.com/#website';
+const BUSINESS_ID = 'https://www.metalroofingsacramento.com/#business';
+const WEBSITE_ID = 'https://www.metalroofingsacramento.com/#website';
+const BRAND_ID = 'https://www.metalroofingsacramento.com/#brand';
+const OPERATOR_NAME = 'PRC 13 Roofing Inc.';
+const BRAND_NAME = 'Metal Roofing Sacramento';
 const FORBIDDEN_OFFER_NAMES = [/fascia/i, /soffit/i];
 
 const GSC_LEGACY_URLS = [
@@ -49,6 +52,12 @@ function validateNode(node, issues, prefix, graphCtx) {
     }
     if (node.address) {
       issues.push(`${prefix}: must not invent PostalAddress (service-area business)`);
+    }
+    if (node.name && node.name !== OPERATOR_NAME) {
+      issues.push(`${prefix}: RoofingContractor.name must be ${OPERATOR_NAME}`);
+    }
+    if (node.brand?.['@id'] && node.brand['@id'] !== BRAND_ID) {
+      issues.push(`${prefix}: RoofingContractor.brand must reference ${BRAND_ID}`);
     }
     if (!node.identifier) {
       issues.push(`${prefix}: missing license identifier`);
@@ -100,9 +109,20 @@ function validateNode(node, issues, prefix, graphCtx) {
     if (node.potentialAction) {
       issues.push(`${prefix}: SearchAction must not be present without site search`);
     }
+    if (node.name && node.name !== BRAND_NAME) {
+      issues.push(`${prefix}: WebSite.name must be ${BRAND_NAME}`);
+    }
     const publisherId = node.publisher?.['@id'];
     if (publisherId && publisherId !== BUSINESS_ID) {
       issues.push(`${prefix}: WebSite.publisher must reference business`);
+    }
+  }
+  if (type === 'Brand') {
+    if (node['@id'] !== BRAND_ID) {
+      issues.push(`${prefix}: Brand @id must be ${BRAND_ID}`);
+    }
+    if (node.name && node.name !== BRAND_NAME) {
+      issues.push(`${prefix}: Brand.name must be ${BRAND_NAME}`);
     }
   }
   if (type === 'WebPage' || type === 'ContactPage') {
@@ -181,18 +201,9 @@ async function validateHtmlFile(filePath) {
 function legacyRedirectTarget(urlPath) {
   const normalized = urlPath.replace(/\/+$/, '').toLowerCase();
   const map = {
-    '/roofing-contractor/asphalt-shingle-roof-replacement': '/roof-replacement',
-    '/roofing-contractor/flat-roof-installation': '/commercial-roofing',
-    '/roofing-contractor/roof-inspection-assessment': '/roof-inspection',
-    '/roofing-contractor/roof-maintenance': '/roof-inspection',
-    '/roofing-contractor/emergency-roof-repair': '/emergency-roof-repair',
+    '/roofing-contractor/roof-inspection-assessment': '/metal-roof-inspection',
+    '/roofing-contractor/roof-maintenance': '/metal-roof-inspection',
     '/roofing-contractor': '/',
-    '/siding-contractor': '/gutters-siding',
-    '/siding-contractor/fiber-cement-siding-installation': '/gutters-siding',
-    '/siding-contractor/vinyl-siding-repair': '/gutters-siding',
-    '/siding-contractor/vinyl-siding-installation': '/gutters-siding',
-    '/siding-contractor/wood-siding-installation': '/gutters-siding',
-    '/siding-contractor/siding-inspection-assessment': '/gutters-siding',
     '/woodland': '/service-areas/woodland',
     '/rancho-cordova': '/service-areas/rancho-cordova',
     '/grass-valley': '/service-areas',
@@ -206,6 +217,18 @@ function legacyRedirectTarget(urlPath) {
   };
   return map[normalized] ?? null;
 }
+
+const INTENTIONALLY_RETIRED_LEGACY = new Set([
+  '/roofing-contractor/asphalt-shingle-roof-replacement',
+  '/roofing-contractor/flat-roof-installation',
+  '/roofing-contractor/emergency-roof-repair',
+  '/siding-contractor',
+  '/siding-contractor/fiber-cement-siding-installation',
+  '/siding-contractor/vinyl-siding-repair',
+  '/siding-contractor/vinyl-siding-installation',
+  '/siding-contractor/wood-siding-installation',
+  '/siding-contractor/siding-inspection-assessment',
+]);
 
 async function main() {
   const htmlFiles = (await fs.readdir(dist, { recursive: true }))
@@ -224,6 +247,8 @@ async function main() {
 
   const legacyMissing = [];
   for (const legacyUrl of GSC_LEGACY_URLS) {
+    const normalized = legacyUrl.replace(/\/+$/, '').toLowerCase();
+    if (INTENTIONALLY_RETIRED_LEGACY.has(normalized)) continue;
     const target = legacyRedirectTarget(legacyUrl);
     if (!target) {
       legacyMissing.push(legacyUrl);

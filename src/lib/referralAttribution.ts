@@ -3,6 +3,7 @@
  * Conservative AI referral detection from document.referrer only.
  * Never stores or sends PII.
  */
+import { isOwnSiteHost } from '../data/domain';
 
 export type ReferralSource =
   | 'google'
@@ -65,7 +66,12 @@ export function detectReferralSource(referrer?: string | null): ReferralSource {
   if (!host) return 'unknown';
 
   // Same-site navigations are not external acquisition.
-  if (host === 'prc13roofing.com' || host.endsWith('.prc13roofing.com')) {
+  // Operator site (prc13roofing.com) is first-party related, not a third-party referrer.
+  if (
+    isOwnSiteHost(host)
+    || host === 'prc13roofing.com'
+    || host.endsWith('.prc13roofing.com')
+  ) {
     return 'direct';
   }
 

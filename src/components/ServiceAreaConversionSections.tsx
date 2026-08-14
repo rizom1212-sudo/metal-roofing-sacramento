@@ -23,12 +23,12 @@ const trustBadges = [
   {
     icon: Award,
     title: 'Insured',
-    desc: 'Fully insured roofing contractor',
+    desc: 'Fully insured roofing contractor (operator)',
   },
   {
     icon: ClipboardCheck,
-    title: 'Free Roof Inspections',
-    desc: 'No-cost, no-obligation assessments',
+    title: 'Free Metal Roof Inspections',
+    desc: 'No-cost residential metal inspections with written findings',
   },
 ] as const;
 
@@ -36,7 +36,7 @@ export default function ServiceAreaConversionSections({
   cityName,
   inspectionIntro,
   trustIntro,
-  ctaLabel = 'Schedule Your Free Roof Inspection',
+  ctaLabel = 'Request a Metal Roof Inspection',
 }: ServiceAreaConversionSectionsProps) {
   const scrollToForm = (event: MouseEvent<HTMLAnchorElement>) => {
     handleSamePageAnchorClick(event, SERVICE_AREA_FORM_SECTION_ID);
@@ -48,7 +48,7 @@ export default function ServiceAreaConversionSections({
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
             <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Get Started</p>
-            <h2 className="section-heading mb-5">Schedule Your Free Roof Inspection</h2>
+            <h2 className="section-heading mb-5">Request a Metal Roof Inspection</h2>
             <p className="text-body text-sm leading-relaxed mb-6">{inspectionIntro}</p>
             <ul className="space-y-2.5 mb-8">
               {INSPECTION_BENEFITS.map(item => (
@@ -71,8 +71,8 @@ export default function ServiceAreaConversionSections({
 
       <section className="bg-white py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Why PRC 13</p>
-          <h2 className="section-heading mb-5">Why Homeowners Choose PRC 13 Roofing</h2>
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Licensed operator</p>
+          <h2 className="section-heading mb-5">Metal roofing, contracted by PRC 13 Roofing Inc.</h2>
           <p className="text-body text-sm leading-relaxed mb-8 max-w-3xl">{trustIntro}</p>
           <div className="grid sm:grid-cols-3 gap-4">
             {trustBadges.map(badge => (
