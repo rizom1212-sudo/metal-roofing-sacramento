@@ -54,6 +54,10 @@ interface LeadFormProps {
   submitLabel?: string;
   /** Optional city + preferred contact (Contact page). */
   showExtendedFields?: boolean;
+  /** Hidden CRM city when the visible city field is not shown. */
+  defaultCity?: string;
+  /** Prefills the reason select when present. */
+  defaultReason?: string;
 }
 
 export default function LeadForm({
@@ -66,6 +70,8 @@ export default function LeadForm({
   compactSpacing = false,
   submitLabel,
   showExtendedFields = false,
+  defaultCity = '',
+  defaultReason = '',
 }: LeadFormProps) {
   const fieldId = useId();
   const ids = {
@@ -81,8 +87,8 @@ export default function LeadForm({
     name: '',
     phone: '',
     email: '',
-    reason: '',
-    city: '',
+    reason: defaultReason,
+    city: defaultCity,
     contactMethod: '',
     message: '',
   });
@@ -368,7 +374,7 @@ export default function LeadForm({
           />
           {phoneInvalid && <p className="text-red-300 text-xs mt-1">Enter a valid 10-digit number.</p>}
         </div>
-        {isHero && (
+        {isHero && !hideReason && (
           <div>
             <FieldLabel htmlFor={ids.reason}>What do you need help with?</FieldLabel>
             <select

@@ -1,13 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
-import { PRIMARY_CTA } from '../data/cta';
+import { PRIMARY_CTA, PRIMARY_CTA_FREE } from '../data/cta';
 import { PHONE_DISPLAY, PHONE_SMS, LOGO_SRC, LOGO_ALT } from '../data/site';
 import { getNavServices } from '../data/services';
 import { trackClickToSms } from '../lib/analytics';
 import TelLink from './TelLink';
-import { scrollToTopInstant } from '../lib/scroll';
+import { handleSamePageAnchorClick, scrollToTopInstant } from '../lib/scroll';
 import SeasonalBanner, { SEASONAL_BANNER_SESSION_KEY } from './SeasonalBanner';
+import { COLFAX_HOME_HARDENING_SLUG, COLFAX_INSPECTION_FORM_ID } from '../data/blogColfaxHomeHardening';
 
 const allServices = getNavServices().map(service => ({
   label: service.name,
@@ -27,6 +28,10 @@ export default function Navbar() {
 
   const isActive = (href: string) =>
     href === '/' ? location.pathname === '/' : location.pathname.startsWith(href);
+
+  const isColfaxHomeHardeningArticle =
+    location.pathname === `/blog/${COLFAX_HOME_HARDENING_SLUG}`;
+  const stickyInspectionLabel = isColfaxHomeHardeningArticle ? PRIMARY_CTA_FREE : PRIMARY_CTA;
 
   const handleHomeLogoClick = () => {
     if (location.pathname === '/') {
@@ -243,13 +248,23 @@ export default function Navbar() {
             <Phone size={18} />
             Call Now
           </TelLink>
-          <Link
-            to="/contact"
-            onClick={() => handleNavLinkClick('/contact')}
-            className="flex-1 flex items-center justify-center gap-2 bg-[#071323] text-white font-semibold py-4 text-sm hover:bg-charcoal-light transition-colors border-l border-white/10"
-          >
-            {PRIMARY_CTA}
-          </Link>
+          {isColfaxHomeHardeningArticle ? (
+            <a
+              href={`#${COLFAX_INSPECTION_FORM_ID}`}
+              onClick={e => handleSamePageAnchorClick(e, COLFAX_INSPECTION_FORM_ID)}
+              className="flex-1 flex items-center justify-center gap-2 bg-[#071323] text-white font-semibold py-4 text-sm hover:bg-charcoal-light transition-colors border-l border-white/10"
+            >
+              {stickyInspectionLabel}
+            </a>
+          ) : (
+            <Link
+              to="/contact"
+              onClick={() => handleNavLinkClick('/contact')}
+              className="flex-1 flex items-center justify-center gap-2 bg-[#071323] text-white font-semibold py-4 text-sm hover:bg-charcoal-light transition-colors border-l border-white/10"
+            >
+              {stickyInspectionLabel}
+            </Link>
+          )}
         </div>
       </div>
     </>

@@ -4,18 +4,38 @@ import { blogPosts } from '../data/blog';
 import JsonLd from '../components/JsonLd';
 import OptimizedImage from '../components/OptimizedImage';
 import FaqAccordion from '../components/FaqAccordion';
-import { BUSINESS_ENTITY_NAME, LICENSE_LABEL, PHONE_DISPLAY } from '../data/site';
+import Breadcrumbs from '../components/Breadcrumbs';
+import {
+  BUSINESS_ENTITY_NAME,
+  LICENSE_LABEL,
+  PHONE_DISPLAY,
+} from '../data/site';
 import { PRIMARY_CTA } from '../data/cta';
 import TelLink from '../components/TelLink';
 import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
 import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
+import {
+  COLFAX_HOME_HARDENING_SLUG,
+} from '../data/blogColfaxHomeHardening';
+import { serviceAreaFeaturedPrograms } from '../data/serviceAreaFeaturedPrograms';
 import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
 import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
 import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
 import { ROOF_REPAIR_CLUSTER_CATEGORY } from '../data/blogRoofRepairCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
+import {
+  ColfaxArticleCta,
+  ColfaxFactCards,
+  ColfaxFinalCta,
+  ColfaxHowItWorks,
+  ColfaxInspectionForm,
+  ColfaxOfferCard,
+  ColfaxOfficialSourceNote,
+  ColfaxOpportunityIntro,
+  ColfaxSidebarForm,
+} from '../components/ColfaxHomeHardeningChrome';
 import NotFound from './NotFound';
 
 export default function BlogPost() {
@@ -41,6 +61,8 @@ export default function BlogPost() {
   const isCommercialGuide = post.category === COMMERCIAL_CLUSTER_CATEGORY;
   const isRepairGuide = post.category === ROOF_REPAIR_CLUSTER_CATEGORY;
   const isInspectionGuide = post.category === 'Roof Inspection';
+  const isColfaxGuide = post.slug === COLFAX_HOME_HARDENING_SLUG;
+  const colfaxProgram = isColfaxGuide ? serviceAreaFeaturedPrograms.colfax : undefined;
 
   return (
     <>
@@ -49,6 +71,12 @@ export default function BlogPost() {
         schemaType="BlogPosting"
         blogPost={post}
         faqs={post.faqs}
+        servedAreas={isColfaxGuide ? ['Colfax'] : undefined}
+        offers={
+          colfaxProgram
+            ? [{ name: colfaxProgram.offerSchemaName, description: colfaxProgram.offerSchemaDescription }]
+            : undefined
+        }
         breadcrumbs={[
           { label: 'Blog', href: '/blog' },
           { label: post.title },
@@ -58,7 +86,7 @@ export default function BlogPost() {
       <div className="relative bg-charcoal-dark overflow-hidden" style={{ maxHeight: '480px' }}>
         <OptimizedImage
           src={post.coverImage}
-          alt={post.title}
+          alt={post.coverImageAlt ?? post.title}
           width={1200}
           height={480}
           priority
@@ -67,7 +95,15 @@ export default function BlogPost() {
         />
         <div className="absolute inset-0 bg-charcoal-dark/60" />
         <div className="absolute inset-0 flex items-end">
-          <div className="max-w-4xl mx-auto w-full px-5 sm:px-7 pb-10">
+          <div className="blog-article-shell mx-auto w-full px-5 sm:px-7 pb-10">
+            {isColfaxGuide && (
+              <Breadcrumbs
+                items={[
+                  { label: 'Blog', href: '/blog' },
+                  { label: 'Colfax Home Hardening Program 2026' },
+                ]}
+              />
+            )}
             <div className="flex items-center gap-3 mb-4">
               <span className="inline-flex items-center gap-1.5 text-xs text-gold font-semibold uppercase tracking-wider">
                 <Tag size={11} /> {post.category}
@@ -90,7 +126,7 @@ export default function BlogPost() {
 
       {/* CONTENT */}
       <section className="bg-cream py-14">
-        <div className="max-w-4xl mx-auto px-5 sm:px-7">
+        <div className="blog-article-shell mx-auto px-5 sm:px-7">
           <Link
             to="/blog"
             className="inline-flex items-center gap-1.5 text-sm text-gold font-semibold hover:text-gold-light transition-colors mb-8"
@@ -98,11 +134,21 @@ export default function BlogPost() {
             <ArrowLeft size={14} /> All Articles
           </Link>
 
-          <div className="grid lg:grid-cols-[1fr_300px] gap-12 items-start">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_280px] gap-10 lg:gap-14 items-start">
             <article>
-              <p className="text-body text-base leading-relaxed mb-8 text-lg font-normal border-l-4 border-gold pl-5">
-                {post.excerpt}
-              </p>
+              {isColfaxGuide ? (
+                <>
+                  <ColfaxOpportunityIntro />
+                  <ColfaxFactCards />
+                  <ColfaxOfferCard />
+                  <ColfaxHowItWorks />
+                  <ColfaxOfficialSourceNote />
+                </>
+              ) : (
+                <p className="text-body text-base leading-relaxed mb-8 text-lg font-normal border-l-4 border-gold pl-5">
+                  {post.excerpt}
+                </p>
+              )}
 
               {post.relatedServices.length > 0 && (
                 <div className="mb-8 card-brand bg-white border border-gray-100 p-4">
@@ -123,14 +169,23 @@ export default function BlogPost() {
                 </div>
               )}
 
-              <div className="space-y-6">
+              <div className="blog-article-body">
                 {post.body.map((section, i) => {
+                  if (section.type === 'cta' && section.ctaLabel && section.ctaHref) {
+                    return (
+                      <ColfaxArticleCta
+                        key={i}
+                        heading={section.heading || section.content}
+                        statement={section.statement || ''}
+                        ctaLabel={section.ctaLabel}
+                        ctaHref={section.ctaHref}
+                      />
+                    );
+                  }
                   if (section.type === 'heading') {
                     const HeadingTag = section.level === 3 ? 'h3' : 'h2';
                     const headingClass =
-                      section.level === 3
-                        ? 'text-lg font-bold text-headline mt-8 mb-2'
-                        : 'text-xl font-bold text-headline mt-10 mb-2';
+                      section.level === 3 ? 'blog-article-h3' : 'blog-article-h2';
                     return (
                       <HeadingTag key={i} className={headingClass}>
                         {section.content}
@@ -139,11 +194,11 @@ export default function BlogPost() {
                   }
                   if (section.type === 'list' && section.items) {
                     return (
-                      <ul key={i} className="space-y-2.5">
+                      <ul key={i} className="blog-article-list">
                         {section.items.map((item, j) => (
-                          <li key={j} className="flex items-start gap-3 text-sm text-body leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
-                            {renderBlogInlineLinks(item)}
+                          <li key={j} className="flex items-start gap-3 text-body">
+                            <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2.5" />
+                            <span>{renderBlogInlineLinks(item)}</span>
                           </li>
                         ))}
                       </ul>
@@ -165,14 +220,14 @@ export default function BlogPost() {
                                   href={link.href}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-sm font-semibold text-headline hover:text-gold transition-colors"
+                                  className="font-semibold text-headline hover:text-gold transition-colors"
                                 >
                                   {link.label}
                                 </a>
                               ) : (
                                 <Link
                                   to={link.href}
-                                  className="text-sm font-semibold text-headline hover:text-gold transition-colors"
+                                  className="font-semibold text-headline hover:text-gold transition-colors"
                                 >
                                   {link.label}
                                 </Link>
@@ -184,7 +239,7 @@ export default function BlogPost() {
                     );
                   }
                   return (
-                    <p key={i} className="text-body text-sm leading-relaxed md:text-base">
+                    <p key={i}>
                       {renderBlogInlineLinks(section.content)}
                     </p>
                   );
@@ -192,14 +247,20 @@ export default function BlogPost() {
               </div>
 
               {post.faqs && post.faqs.length > 0 && (
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                  <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
+                <div className="mt-14 pt-10 border-t border-gray-200">
+                  <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">
                     Frequently Asked Questions
                   </p>
-                  <FaqAccordion items={post.faqs} variant="light" compact />
+                  <FaqAccordion items={post.faqs} variant="light" size="article" />
                 </div>
               )}
 
+              {isColfaxGuide ? (
+                <>
+                  <ColfaxFinalCta />
+                  <ColfaxInspectionForm />
+                </>
+              ) : (
               <div className="mt-12 card-brand bg-charcoal-dark border border-gold/20 p-6 md:p-8">
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
                   {isEmergencyGuide
@@ -222,7 +283,7 @@ export default function BlogPost() {
                               ? 'Folsom Roofing'
                               : 'Free Inspection'}
                 </p>
-                <h2 className="text-xl font-bold text-white mb-3">
+                <h2 className="text-2xl font-bold text-white mb-3 leading-snug">
                   {isEmergencyGuide
                     ? 'Need Emergency Roof Repair in Sacramento?'
                     : isCommercialGuide
@@ -243,7 +304,7 @@ export default function BlogPost() {
                               ? 'Schedule Roofing Service in Folsom'
                               : 'Schedule Your Free Roof Inspection'}
                 </h2>
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                <p className="text-gray-300 text-base leading-[1.7] mb-5">
                   {isEmergencyGuide
                     ? 'Active leak or storm damage? PRC 13 Roofing responds quickly to urgent roof repair calls across Sacramento and nearby communities.'
                     : isCommercialGuide
@@ -368,6 +429,7 @@ export default function BlogPost() {
                   )}
                 </div>
               </div>
+              )}
 
               {post.relatedServices.length > 0 && (
                 <div className="mt-12 pt-8 border-t border-gray-200">
@@ -394,14 +456,19 @@ export default function BlogPost() {
                 </div>
                 <div>
                   <p className="font-semibold text-headline text-sm">{BUSINESS_ENTITY_NAME}</p>
-                  <p className="text-body text-xs mt-0.5">
-                    Sacramento residential roofing specialists. {LICENSE_LABEL}. Articles are based on real field experience.
+                  <p className="text-body text-sm leading-relaxed mt-1">
+                    {isColfaxGuide
+                      ? `Licensed California roofing contractor serving Colfax and the Sacramento area. ${LICENSE_LABEL}. City program rules come from official Colfax sources; roofing guidance on this page is from PRC 13.`
+                      : `Sacramento residential roofing specialists. ${LICENSE_LABEL}. Articles are based on real field experience.`}
                   </p>
                 </div>
               </div>
             </article>
 
             <aside className="space-y-6">
+              {isColfaxGuide ? (
+                <ColfaxSidebarForm />
+              ) : (
               <div
                 className="p-6"
                 style={{ background: '#111827', border: '1px solid rgba(201,151,0,0.2)' }}
@@ -426,6 +493,7 @@ export default function BlogPost() {
                   Request Online <ArrowRight size={13} />
                 </Link>
               </div>
+              )}
 
               {relatedPosts.length > 0 && (
                 <div>

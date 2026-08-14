@@ -392,6 +392,12 @@ export function buildJsonLdGraph(options: {
     } else {
       blogNode.about = { '@id': BUSINESS_ID };
     }
+    if (servedAreas.length === 1) {
+      blogNode.contentLocation = areaServedPlaces(servedAreas)[0];
+    }
+    if (offers.length > 0) {
+      blogNode.mentions = offers.map((_, index) => ({ '@id': `${pageUrl}#offer-${index + 1}` }));
+    }
     graph.push(blogNode);
   }
 

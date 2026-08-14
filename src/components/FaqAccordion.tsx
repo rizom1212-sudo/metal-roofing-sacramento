@@ -12,6 +12,8 @@ interface FaqAccordionProps {
   variant?: 'light' | 'dark';
   /** Tighter vertical spacing between items */
   compact?: boolean;
+  /** Article reading size for blog posts. Does not change FAQ content. */
+  size?: 'default' | 'article';
   /** Two columns from md breakpoint upward; single column on mobile */
   columns?: 1 | 2;
   /** Show this many items initially; remainder stay in the DOM and expand on demand */
@@ -32,6 +34,7 @@ function FaqItemRow({
   hoverBg,
   reducedMotion,
   compact,
+  size = 'default',
   itemBorder,
 }: {
   item: FaqItem;
@@ -44,6 +47,7 @@ function FaqItemRow({
   hoverBg: string;
   reducedMotion: boolean;
   compact?: boolean;
+  size?: 'default' | 'article';
   itemBorder?: boolean;
 }) {
   const panelId = useId();
@@ -59,9 +63,19 @@ function FaqItemRow({
     setHeight(isOpen ? panelRef.current.scrollHeight : 0);
   }, [isOpen, reducedMotion]);
 
-  const buttonPadding = compact ? 'py-3 px-2 md:px-3' : 'py-5 px-3 md:px-4';
-  const answerPadding = compact ? 'pb-3 pr-6' : 'pb-5 pr-8';
-  const answerLeading = compact ? 'leading-6' : 'leading-7';
+  const isArticle = size === 'article';
+  const buttonPadding = isArticle
+    ? 'py-4 px-1 md:px-2'
+    : compact
+      ? 'py-3 px-2 md:px-3'
+      : 'py-5 px-3 md:px-4';
+  const answerPadding = isArticle ? 'pb-4 pr-6' : compact ? 'pb-3 pr-6' : 'pb-5 pr-8';
+  const questionClass = isArticle
+    ? `blog-article-faq-question ${questionColor}`
+    : `font-semibold text-sm md:text-base leading-snug ${questionColor}`;
+  const answerClass = isArticle
+    ? `blog-article-faq-answer transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0'} ${answerColor}`
+    : `text-sm ${compact ? 'leading-6' : 'leading-7'} transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0'} ${answerColor}`;
 
   return (
     <div
@@ -76,7 +90,7 @@ function FaqItemRow({
         aria-controls={panelId}
         className={`w-full flex items-start justify-between gap-3 md:gap-4 ${buttonPadding} text-left transition-all duration-200 ease-out ${hoverBg} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded-brand`}
       >
-        <span className={`font-semibold text-sm md:text-base leading-snug ${questionColor}`}>
+        <span className={questionClass}>
           {item.question}
         </span>
         <ChevronDown
@@ -102,7 +116,7 @@ function FaqItemRow({
           className={answerPadding}
           style={reducedMotion && !isOpen ? { display: 'none' } : undefined}
         >
-          <p className={`text-sm ${answerLeading} transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0'} ${answerColor}`}>
+          <p className={answerClass}>
             {renderBlogInlineLinks(item.answer)}
           </p>
         </div>
@@ -115,6 +129,7 @@ export default function FaqAccordion({
   items,
   variant = 'light',
   compact = false,
+  size = 'default',
   columns = 1,
   defaultVisibleCount,
   expandLabel = 'View More FAQs',
@@ -166,6 +181,7 @@ export default function FaqAccordion({
     hoverBg,
     reducedMotion,
     compact,
+    size,
     itemBorder,
   };
 

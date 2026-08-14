@@ -33,6 +33,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   coverImage: string;
+  coverImageAlt?: string;
   body: BlogSection[];
   relatedServices: BlogRelatedService[];
   relatedArticles?: BlogRelatedService[];
@@ -40,12 +41,16 @@ export interface BlogPost {
 }
 
 export interface BlogSection {
-  type: 'paragraph' | 'heading' | 'list' | 'links';
+  type: 'paragraph' | 'heading' | 'list' | 'links' | 'cta';
   content: string;
   items?: string[];
   links?: BlogRelatedService[];
   /** Heading level; defaults to 2 when type is heading */
   level?: 2 | 3;
+  heading?: string;
+  statement?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 const rawBlogPosts: BlogPost[] = [
