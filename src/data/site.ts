@@ -41,21 +41,21 @@ export const IS_INSURED = true;
  * Do not invent or auto-fetch values.
  */
 export const GOOGLE_RATING_VALUE = 5;
-export const GOOGLE_REVIEW_COUNT = 81;
+export const GOOGLE_REVIEW_COUNT = 3;
 
 /**
  * Canonical Google Business Profile / Maps URL (reviews + place).
  * Tracking/locale query params stripped; CID preserved.
  */
 export const GOOGLE_BUSINESS_PROFILE_URL =
-  'https://www.google.com/maps/place/PRC+13+Roofing+Inc./@38.6589713,-121.309352,17z/data=!4m6!3m5!1s0x22fc7c8ee9511c53:0x45dcf5879ee4c590!8m2!3d38.6589713!4d-121.309352';
+  'https://www.google.com/maps/place/prc13roofing+inc/@38.7381043,-121.3688315,10z/data=!4m15!1m8!3m7!1s0x2a17cd54bcebe9af:0xc15db07780ea27a!2sprc13roofing+inc!8m2!3d38.7381043!4d-121.3688315!10e1!16s%2Fg%2F11nr2376pr!3m5!1s0x2a17cd54bcebe9af:0xc15db07780ea27a!8m2!3d38.7381043!4d-121.3688315!16s%2Fg%2F11nr2376pr?hl=en&entry=ttu&g_ep=EgoyMDI2MDgxMS4wIKXMDSoASAFQAw%3D%3D';
 
 /** @deprecated Use GOOGLE_BUSINESS_PROFILE_URL — alias kept for existing imports. */
 export const GOOGLE_REVIEWS_URL = GOOGLE_BUSINESS_PROFILE_URL;
 
 /** Maps embed used on the homepage (same place / CID as GOOGLE_BUSINESS_PROFILE_URL). */
 export const GOOGLE_MAPS_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398791.8191967971!2d-121.30935204999999!3d38.658971349999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x22fc7c8ee9511c53%3A0x45dcf5879ee4c590!2sPRC%2013%20Roofing%20Inc.!5e0!3m2!1sen!2sus!4v1779235670101!5m2!1sen!2sus';
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d398350.8250564826!2d-121.3688315!3d38.73810434999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a17cd54bcebe9af%3A0xc15db07780ea27a!2sprc13roofing%20inc!5e0!3m2!1sen!2sus!4v1786694228027!5m2!1sen!2sus';
 
 export const FACEBOOK_URL = 'https://www.facebook.com/prc13roofinginc/';
 export const INSTAGRAM_URL = 'https://www.instagram.com/prc13roofing_/';
