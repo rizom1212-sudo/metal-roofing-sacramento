@@ -5,7 +5,7 @@ import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
 import { CTA_GUTTER_EVALUATION } from '../data/cta';
-import { PHONE_DISPLAY } from '../data/site';
+import { LICENSE_SHORT, PHONE_DISPLAY } from '../data/site';
 import ReviewStrip from '../components/ReviewStrip';
 import HeroBackground from '../components/HeroBackground';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -117,8 +117,8 @@ export default function GuttersSiding() {
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-tight mb-5">
-              Exterior Protection<br />
-              <span className="text-gold">Services</span>
+              Gutters & Siding<br />
+              <span className="text-gold">for Sacramento Homes</span>
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
@@ -163,7 +163,7 @@ export default function GuttersSiding() {
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-300">
-              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
+              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
               <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Financing on Qualifying Projects</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Sacramento Area</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Free Estimates</span>
@@ -567,7 +567,7 @@ export default function GuttersSiding() {
               },
               {
                 src: ASSETS.gallery('Screenshot_2026-05-20_at_08.52.43.png'),
-                label: 'Fascia Replacement',
+                label: 'Historic Roofline Detail',
               },
               {
                 src: ASSETS.gallery('6998f81ba2a2c02b517b9648.jpg'),
@@ -620,7 +620,7 @@ export default function GuttersSiding() {
           <div className="flex items-start gap-3 mb-6">
             <BookOpen size={22} className="text-gold flex-shrink-0 mt-1" aria-hidden />
             <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Gutters, Fascia &amp; Exterior Resources</p>
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Gutters, Siding &amp; Exterior Resources</p>
               <h2 className="section-heading mb-3">Protect Your Sacramento Roofline &amp; Walls</h2>
               <p className="text-body text-sm leading-relaxed max-w-3xl">
                 Homeowners across{' '}

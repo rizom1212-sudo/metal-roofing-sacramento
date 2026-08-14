@@ -5,7 +5,7 @@ import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
 import { CTA_COMMERCIAL_ASSESSMENT } from '../data/cta';
-import { PHONE_DISPLAY } from '../data/site';
+import { LICENSE_SHORT, PHONE_DISPLAY } from '../data/site';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
 import GalleryStrip from '../components/GalleryStrip';
@@ -129,7 +129,7 @@ export default function CommercialRoofing() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
+                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
                 <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> COI Available on Request</span>
                 <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Flexible Scheduling</span>
               </div>
@@ -229,15 +229,19 @@ export default function CommercialRoofing() {
         </div>
       </section>
 
-      {/* GALLERY STRIP */}
+      {/* GALLERY STRIP — flat/low-slope work only (verified gallery assets) */}
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Our Work</p>
-          <h2 className="section-heading mb-3">Sacramento Roofing Project Gallery</h2>
+          <h2 className="section-heading mb-3">Flat &amp; Low-Slope Roof Projects</h2>
           <p className="section-subheading max-w-2xl mb-8">
-            Recent roofing repair, replacement, and maintenance work completed by the PRC 13 team across the Sacramento area.
+            Membrane and flat-roof work from our Sacramento-area projects—the same system types we assess and service on small commercial and light-commercial roofs.
           </p>
-          <GalleryStrip category="Roof Replacement" limit={4} showLink />
+          <GalleryStrip
+            imageIds={['flat-roof-restoration', 'flat-membrane-wide', 'flat-membrane-detail']}
+            limit={3}
+            showLink
+          />
         </div>
       </section>
 

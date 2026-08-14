@@ -9,6 +9,8 @@ interface ReviewStripProps {
   variant?: 'light' | 'dark';
   /** Override which reviews to show by index */
   indices?: number[];
+  /** Explicit review list (e.g. city-filtered). Takes precedence over indices/count. */
+  items?: Review[];
 }
 
 function StarRow({ count = 5 }: { count?: number }) {
@@ -21,17 +23,21 @@ function StarRow({ count = 5 }: { count?: number }) {
   );
 }
 
-export default function ReviewStrip({ count = 3, variant = 'light', indices }: ReviewStripProps) {
-  const shown: Review[] = indices
-    ? indices.map(i => reviews[i]).filter(Boolean)
-    : reviews.slice(0, count);
+export default function ReviewStrip({ count = 3, variant = 'light', indices, items }: ReviewStripProps) {
+  const shown: Review[] = items
+    ? items
+    : indices
+      ? indices.map(i => reviews[i]).filter(Boolean)
+      : reviews.slice(0, count);
 
   const cardBg = variant === 'dark' ? 'bg-white/5 border-white/10 hover:border-gold/30' : 'bg-white border-gray-100 hover:border-gold/20';
   const textMain = variant === 'dark' ? 'text-white' : 'text-headline';
   const textSub = variant === 'dark' ? 'text-gray-400' : 'text-body';
 
+  const columns = shown.length === 1 ? 'grid-cols-1 max-w-xl' : shown.length === 2 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3';
+
   return (
-    <div className="grid gap-3 md:grid-cols-3 md:gap-5">
+    <div className={`grid gap-3 md:gap-5 ${columns}`}>
       {shown.map(review => (
         <div
           key={review.name}
@@ -44,6 +50,9 @@ export default function ReviewStrip({ count = 3, variant = 'light', indices }: R
           <StarRow count={review.rating} />
           <p className={`text-[13px] md:text-sm leading-6 md:leading-relaxed mt-2.5 md:mt-3.5 mb-3 md:mb-5 italic ${textSub}`}>"{review.text}"</p>
           <p className={`font-semibold text-sm mt-auto ${textMain}`}>{review.name}</p>
+          {review.location ? (
+            <p className={`text-xs mt-1 ${textSub}`}>{review.location}</p>
+          ) : null}
         </div>
       ))}
     </div>

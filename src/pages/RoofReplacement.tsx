@@ -4,7 +4,7 @@ import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
-import { PHONE_DISPLAY } from '../data/site';
+import { LICENSE_SHORT, PHONE_DISPLAY } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { PRIMARY_CTA } from '../data/cta';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -114,8 +114,8 @@ export default function RoofReplacement() {
             <div className="max-w-2xl">
               <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5 rounded-brand">Our Specialty</span>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                Roof Replacement<br />
-                <span className="text-gold">Done Right, the First Time</span>
+                Roof Replacement in Sacramento<br />
+                <span className="text-gold">Shingle, Tile & Full Reroofs</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
                 Roof replacement in Sacramento, California for shingle roof replacement, tile roof replacement, and metal roofing options. Free inspection, a clear written estimate, and financing on qualifying projects when available.
@@ -131,7 +131,7 @@ export default function RoofReplacement() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
+                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Free Inspections</span>
                 <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Sacramento, CA</span>
               </div>
@@ -203,6 +203,59 @@ export default function RoofReplacement() {
         </div>
       </section>
 
+      {/* REPAIR VS REPLACEMENT */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Honest Guidance</p>
+          <h2 className="section-heading mb-4">Repair vs. Replacement: How to Decide</h2>
+          <p className="section-subheading max-w-3xl mb-8">
+            This page is for homeowners considering a full roof replacement. A focused repair is still the right answer for many roofs—we explain the difference so you can choose with clear eyes.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-gray-100 bg-cream/40 p-6">
+              <h3 className="font-bold text-headline text-base mb-3">Repair may make sense when</h3>
+              <ul className="space-y-2.5 mb-4">
+                {[
+                  'Damage is localized to one area or a few shingles or flashing points',
+                  'Leaks have a clear source and the surrounding roof is otherwise sound',
+                  'Missing or damaged materials are limited—not widespread across the roof',
+                  'You are not already cycling through repeated repairs on the same roof',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                    <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-body text-sm leading-relaxed">
+                If that sounds like your situation, start with{' '}
+                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>
+                —we will still flag replacement if the inspection shows it is the more durable path.
+              </p>
+            </div>
+            <div className="border border-gray-100 bg-cream/40 p-6">
+              <h3 className="font-bold text-headline text-base mb-3">Replacement is often the better path when</h3>
+              <ul className="space-y-2.5 mb-4">
+                {[
+                  'Problems are widespread across large sections of the roof',
+                  'Leaks keep returning after prior repairs',
+                  'Materials are missing, curling, or failing in multiple areas',
+                  'Overall roof condition makes another repair a short-term fix',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                    <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-body text-sm leading-relaxed">
+                A free inspection confirms which side you are on before you commit to tear-off. Replacement remains our specialty when a full system change is the honest recommendation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROCESS */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -246,6 +299,8 @@ export default function RoofReplacement() {
             <Link to="/metal-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing</Link>{' '}
             with shingles in our{' '}
             <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento materials guide</Link>.
+            For flat or low-slope business roofs, see our{' '}
+            <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">commercial roofing services</Link>.
             We serve{' '}
             <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
             <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}

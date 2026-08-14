@@ -24,79 +24,39 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Sacramento?',
+        question: 'Which Sacramento neighborhoods does this page cover?',
         answer:
-          'Sacramento roof repair cost depends on leak location, material type, and how much decking or flashing work is needed. Small repairs may be a few hundred dollars, while larger sections can cost more. PRC 13 inspects first and provides a written estimate before any work begins.',
+          'This hub covers Sacramento as a service area, including neighborhoods already named on this page such as East Sacramento, Land Park, Midtown, Natomas, Curtis Park, Tahoe Park, Pocket-Greenhaven, and Del Paso Heights. It is geographic guidance—not a separate hire page for each neighborhood.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Sacramento?',
+        question: 'How is this Sacramento hub different from your repair and replacement pages?',
         answer:
-          'Yes, especially after wind or heavy rain. Storms can lift shingles, clog valleys, and expose weak flashing that was fine before. A post-storm inspection in Sacramento helps catch damage early before water reaches insulation or drywall.',
+          'This page owns Sacramento service-area context: neighborhoods, local roof wear patterns, and how to choose the next step. [Roof repair](/roof-repair), [roof replacement](/roof-replacement), [metal roofing](/metal-roofing), [commercial roofing](/commercial-roofing), [roof inspection](/roof-inspection), [emergency roof repair](/emergency-roof-repair), and [gutters & siding](/gutters-siding) own their specific services.',
       },
       {
-        question: 'What roofing material lasts longest in Sacramento?',
+        question: 'Where should I go if water is entering my Sacramento home?',
         answer:
-          'Metal roofing and quality tile systems typically last longer than standard asphalt shingles in Sacramento heat. Architectural shingles are still popular for value. We explain lifespan, maintenance, and upfront cost during your free inspection.',
+          'Use [emergency roof repair](/emergency-roof-repair) for active leaks. This hub explains Sacramento conditions; the emergency page is the hire path when water is coming in.',
       },
       {
-        question: 'How long does roof replacement take in Sacramento?',
+        question: 'Do you inspect older Sacramento bungalows and suburban roofs?',
         answer:
-          'Most Sacramento residential replacements finish in one to two days. Larger homes, tile tear-offs, or decking repairs may add time. We give you a firm schedule before the project starts.',
+          'Yes. Sacramento homes range from older bungalows near Midtown and East Sacramento to suburban roofs near Natomas. We inspect the system in front of us—shingles, tile, low-slope sections, flashing, and drainage—then point you to the matching service page.',
       },
       {
-        question: 'What are signs of hidden roof damage in Sacramento?',
+        question: 'Is there Sacramento project proof on this site?',
         answer:
-          'Musty attic odors, dark ceiling stains, granules in gutters, and soft spots near vents can signal hidden damage. Sacramento heat can dry shingles while underlayment fails underneath. An inspection checks both visible and attic-side clues.',
+          'Yes. Gallery items tagged Sacramento, CA appear on this hub and on [/gallery](/gallery). Captions follow the recorded category (replacement, repairs, metal, or exterior work). We do not invent project addresses beyond that city tag.',
       },
       {
-        question: 'Does insurance cover roof damage in Sacramento?',
+        question: 'Do you offer commercial roofing in Sacramento?',
         answer:
-          'Storm and wind damage is often covered when documented properly. Age-related wear is usually not. We help Sacramento homeowners document visible damage and work alongside adjusters when insurance applies.',
+          'Yes, for small to mid-size commercial and light-commercial flat or low-slope systems. Details live on [commercial roofing](/commercial-roofing), not as extra city URLs.',
       },
       {
-        question: 'How often should I schedule a roof inspection in Sacramento?',
+        question: 'Are you a licensed Sacramento-area contractor?',
         answer:
-          'Every one to two years is reasonable for most Sacramento homes. Inspect sooner after major storms, before buying or selling, or if your roof is over 15 years old. Inspections are free with PRC 13.',
-      },
-      {
-        question: 'Can a roof leak cause mold in a Sacramento home?',
-        answer:
-          'Yes. Even a slow leak can wet insulation and framing, especially if Sacramento winter rain continues before the leak is found. Fixing the roof source quickly limits mold risk indoors.',
-      },
-      {
-        question: 'When should shingles be replaced in Sacramento?',
-        answer:
-          'Consider replacement when shingles are brittle, losing granules widely, curling, or leaking repeatedly past 20 years. We inspect age, ventilation, and decking before recommending replacement over another patch.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Sacramento?',
-        answer:
-          'We review shingles or tile, flashing, vents, valleys, gutters, and attic clues when accessible. You get honest findings and a clear recommendation for repair, maintenance, or replacement with no pressure.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Sacramento?',
-        answer:
-          'Yes. Active leaks and storm openings are prioritized. We assess the source, explain temporary options when needed, and plan permanent repair.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Sacramento?',
-        answer:
-          'Yes. Every Sacramento project starts with inspection and a written quote with line items before work is approved.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Sacramento?',
-        answer:
-          'Yes. Failed pipe boots, chimney flashing, and skylight seals are common leak sources on Sacramento homes. We trace the entry point and repair the actual failure, not just the ceiling stain.',
-      },
-      {
-        question: 'Is metal roofing a good option in Sacramento?',
-        answer:
-          'Metal handles Sacramento heat well and can last decades with lower maintenance. It costs more upfront but performs strongly over time. We review whether it fits your home style and budget.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Sacramento?',
-        answer:
-          'Yes. Gutters affect how water leaves the roof edge. We note overflow, sagging, or debris that could push water under shingles or into fascia during winter rain.',
+          'Yes. PRC 13 Roofing is a California licensed contractor (Lic. #1087153), based in Sacramento and serving the greater Sacramento region. The license also appears in the site footer.',
       },
     ],
   },
@@ -117,79 +77,34 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Rancho Cordova?',
+        question: 'Do you have a Rancho Cordova-tagged homeowner review?',
         answer:
-          'Costs vary by leak severity, roof pitch, and materials. Minor flashing or shingle repairs are often straightforward; widespread wind damage costs more. We inspect and quote in writing before work starts.',
+          'Yes. One published Google review on this site is tagged Rancho Cordova, CA and describes a roof leak estimate. It is a location-tagged testimonial, not a named project address.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Rancho Cordova?',
+        question: 'Is there a Rancho Cordova hire page for repair or emergency work?',
         answer:
-          'Wind events are common along open corridors. Missing tabs, lifted edges, and debris in valleys should be checked soon after storms. Early inspection prevents small damage from becoming interior leaks.',
+          'No city-specific hire URL exists. Use [roof repair](/roof-repair) or [emergency roof repair](/emergency-roof-repair) plus this hub.',
       },
       {
-        question: 'What roofing material lasts longest in Rancho Cordova?',
+        question: 'Why does this page mention open corridors and sun exposure?',
         answer:
-          'Metal and tile tend to outlast standard shingles under constant sun. Many Rancho Cordova homeowners choose architectural shingles for balance of cost and performance. We compare options on site.',
+          'Existing Rancho Cordova copy describes open corridors, afternoon sun, seasonal wind, and winter rain finding gaps in flashing, vents, and ridge caps. That is local condition guidance already on this hub.',
       },
       {
-        question: 'How long does roof replacement take in Rancho Cordova?',
+        question: 'Are there Rancho Cordova-tagged gallery photos?',
         answer:
-          'Typical homes are done in one to two days. Decking repairs or complex flashing can extend the schedule slightly. You receive a clear timeline before tear-off.',
+          'Not in current gallery metadata. We will not label Sacramento-tagged photos as Rancho Cordova projects.',
       },
       {
-        question: 'What are signs of hidden roof damage in Rancho Cordova?',
+        question: 'Do you offer metal roofing in Rancho Cordova?',
         answer:
-          'Check for granules in gutters, daylight at the ridge, and damp insulation after rain. Wind can loosen materials without obvious damage from the street. Attic and edge inspection reveals more.',
+          'Yes, through [metal roofing](/metal-roofing). There is no /metal-roofing/rancho-cordova page.',
       },
       {
-        question: 'Does insurance cover roof damage in Rancho Cordova?',
+        question: 'Where should I start if I only see granules in the gutters?',
         answer:
-          'Sudden storm or wind damage may qualify when documented. Gradual sun wear usually does not. We help document storm-related issues for your claim process.',
-      },
-      {
-        question: 'How often should I schedule a roof inspection in Rancho Cordova?',
-        answer:
-          'Annual checks are smart before rainy season. Inspect after strong wind and whenever you see ceiling stains or gutter granule buildup.',
-      },
-      {
-        question: 'Can a roof leak cause mold in a Rancho Cordova home?',
-        answer:
-          'Moisture from an undetected leak can soak insulation and drywall. Rancho Cordova winter rain can keep materials wet long enough for mold if the roof source is not fixed promptly.',
-      },
-      {
-        question: 'When should shingles be replaced in Rancho Cordova?',
-        answer:
-          'Replace when shingles are widely brittle, losing granules, or leaking after prior patches. Roofs heavily exposed to sun often age faster than shaded homes.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Rancho Cordova?',
-        answer:
-          'We evaluate wind-exposed edges, flashing, vents, valleys, and attic conditions. You receive practical next steps, whether that is a targeted repair or replacement planning.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Rancho Cordova?',
-        answer:
-          'Yes. We respond to active leaks and storm damage with priority scheduling when water is entering the home.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Rancho Cordova?',
-        answer:
-          'Yes. Written estimates follow every inspection so you can compare repair and replacement clearly.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Rancho Cordova?',
-        answer:
-          'Vent and chimney flashing failures are frequent leak points. We repair or replace flashing and sealants at the source.',
-      },
-      {
-        question: 'Is metal roofing a good option in Rancho Cordova?',
-        answer:
-          'Metal performs well where sun exposure is heavy. It reflects heat and resists wind when installed correctly. We discuss profiles and cost during consultation.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Rancho Cordova?',
-        answer:
-          'Yes. Proper drainage matters after dry summers. We flag gutters that overflow or dump water against fascia and roof edges.',
+          'Schedule a [free roof inspection](/roof-inspection). Granule loss can be aging, not an emergency. If water is entering, use the emergency page instead.',
       },
     ],
   },
@@ -210,79 +125,39 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Roseville?',
+        question: 'Do Roseville homes typically have tile or shingle roofs?',
         answer:
-          'Tile repairs, shingle patches, and flashing work are priced by scope. We inspect first and explain whether a repair is durable or replacement makes more sense financially.',
+          'Roseville subdivisions mix tile and shingle systems. Tile can look intact from the curb while underlayment ages underneath; shingles in newer tracts still take heavy summer heat. A [free roof inspection](/roof-inspection) identifies which system you have and what actually needs work.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Roseville?',
+        question: 'Is there a Roseville-specific hire page for roof repair?',
         answer:
-          'Yes. Wind can shift tiles and drive rain into valleys. Post-storm checks catch underlayment risks that are not visible from the ground.',
+          'No. Roseville repair and replacement intent is served by the metro pages—[roof repair](/roof-repair) and [roof replacement](/roof-replacement)—plus this city hub for local context. We do not maintain a separate /roof-repair/roseville URL.',
       },
       {
-        question: 'What roofing material lasts longest in Roseville?',
+        question: 'Do you have a Roseville homeowner review on this site?',
         answer:
-          'Tile and metal generally outlast standard shingles in Roseville heat. Underlayment quality matters for tile. We help you compare longevity and maintenance.',
+          'Yes. One published Google review on this site is tagged Roseville, CA. It is shown as a location-tagged testimonial, not as a named project address.',
       },
       {
-        question: 'How long does roof replacement take in Roseville?',
+        question: 'Should I inspect a Roseville tile roof after a storm?',
         answer:
-          'Most shingle replacements take one to two days. Tile projects may take longer due to material handling and underlayment work.',
+          'Yes. Wind can shift tiles and drive rain into valleys. Post-storm checks catch underlayment risks that are not visible from the ground. Start with [roof inspection](/roof-inspection); if water is entering, use [emergency roof repair](/emergency-roof-repair).',
       },
       {
-        question: 'What are signs of hidden roof damage in Roseville?',
+        question: 'Do you offer metal roofing in Roseville?',
         answer:
-          'Stains on ceilings, musty attic air, and slipped tiles are warning signs. Tile can look fine while underlayment fails underneath.',
+          'Yes. Metal installation and repair live on [metal roofing](/metal-roofing). This hub does not create a separate Roseville metal URL.',
       },
       {
-        question: 'Does insurance cover roof damage in Roseville?',
+        question: 'Are gutters part of a Roseville roof inspection?',
         answer:
-          'Storm-related damage may be covered with proper documentation. Wear from heat and age typically is not. We document what we find for your adjuster.',
+          'Yes. Suburban runoff during winter storms can overwhelm gutters. Drainage is reviewed during inspection. Gutter work is offered on [gutters & siding](/gutters-siding); PRC 13 does not offer fascia or soffit repair.',
       },
       {
-        question: 'How often should I schedule a roof inspection in Roseville?',
+        question: 'Are there Roseville-tagged gallery photos?',
         answer:
-          'Every year or two, and after major storms. Homes with tile should be checked for underlayment age even when tiles appear intact.',
-      },
-      {
-        question: 'Can a roof leak cause mold in a Roseville home?',
-        answer:
-          'Yes. Slow tile underlayment leaks can wet framing for months. Fixing the roof path quickly limits interior mold risk.',
-      },
-      {
-        question: 'When should shingles be replaced in Roseville?',
-        answer:
-          'When granule loss is widespread, shingles curl, or leaks repeat on a 20-plus-year roof. Heat exposure can shorten effective shingle life.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Roseville?',
-        answer:
-          'We review tile, shingles, flashing, ventilation, valleys, and gutters. Findings are explained in plain language with written next steps.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Roseville?',
-        answer:
-          'Yes. We prioritize active leaks and storm openings with fast assessment and repair planning.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Roseville?',
-        answer:
-          'Yes. You receive a written quote after inspection with clear scope and material notes.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Roseville?',
-        answer:
-          'Absolutely. Vent boots and chimney flashing are common failure points on Roseville tile and shingle roofs.',
-      },
-      {
-        question: 'Is metal roofing a good option in Roseville?',
-        answer:
-          'Metal is a strong choice for heat performance and long life. Many Roseville homeowners consider it when replacing aging shingles.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Roseville?',
-        answer:
-          'Yes. Suburban homes need gutters moving winter runoff away from roof edges and foundations. We include drainage in every inspection.',
+          'Not currently. Gallery city tags in the repository are Sacramento and Folsom only. We will not label metro photos as Roseville projects.',
       },
     ],
   },
@@ -303,79 +178,39 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Rocklin?',
+        question: 'Do you have a Rocklin shingle roof replacement page?',
         answer:
-          'Wind-damaged edges and valley leaks vary in cost. We trace the failure, quote the repair in writing, and explain if replacement is the better long-term value.',
+          'Yes. [Shingle roof replacement in Rocklin](/roof-replacement/rocklin) is the hire page for that specific service. This hub covers Rocklin as a service area; the metro [roof replacement](/roof-replacement) page remains the broader replacement authority.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Rocklin?',
+        question: 'Why does Rocklin get extra attention on wind and hillside lots?',
         answer:
-          'Hillside homes should be checked after wind events. Lifted materials and valley debris are easier to fix before the next rain.',
+          'Existing Rocklin copy notes hillside wind exposure, sun-baked slopes, tile systems, and seasonal storms at ridge caps, tile edges, and valley flashing. That is local condition guidance—not a claim about every lot.',
       },
       {
-        question: 'What roofing material lasts longest in Rocklin?',
+        question: 'Is there a Rocklin roof-repair hire URL?',
         answer:
-          'Metal and tile handle Rocklin wind and heat well when installed correctly. Shingles work on many homes but may need earlier replacement on exposed lots.',
+          'No. Rocklin repairs go through [roof repair](/roof-repair) plus this hub. We did not create /roof-repair/rocklin.',
       },
       {
-        question: 'How long does roof replacement take in Rocklin?',
+        question: 'Are there Rocklin-tagged gallery photos?',
         answer:
-          'Most projects complete in one to two days. Steep pitches or extensive decking repair can add a day.',
+          'Not in the current gallery metadata. We will not present Sacramento-tagged photos as Rocklin projects.',
       },
       {
-        question: 'What are signs of hidden roof damage in Rocklin?',
+        question: 'Do you offer metal roofing in Rocklin?',
         answer:
-          'Loose ridge pieces, attic moisture, and ceiling stains after wind-driven rain suggest hidden damage. Ground-level views often miss edge wear.',
+          'Yes, through [metal roofing](/metal-roofing). There is no /metal-roofing/rocklin page.',
       },
       {
-        question: 'Does insurance cover roof damage in Rocklin?',
+        question: 'What should I do after a wind event in Rocklin?',
         answer:
-          'Wind and storm damage may be covered if sudden and documented. We help Rocklin homeowners record visible damage for claims.',
+          'Schedule a [roof inspection](/roof-inspection) to check lifted edges and valley debris. If water is entering, use [emergency roof repair](/emergency-roof-repair).',
       },
       {
-        question: 'How often should I schedule a roof inspection in Rocklin?',
+        question: 'Can I compare shingles and metal before replacing a Rocklin roof?',
         answer:
-          'Inspect yearly and after major wind. Exposed Rocklin lots benefit from more frequent edge and flashing checks.',
-      },
-      {
-        question: 'Can a roof leak cause mold in a Rocklin home?',
-        answer:
-          'Yes. Wind-driven leaks can soak insulation quickly. Address active leaks before mold develops in walls or attic spaces.',
-      },
-      {
-        question: 'When should shingles be replaced in Rocklin?',
-        answer:
-          'Replace when wind and sun have caused widespread cracking, granule loss, or recurring leaks. Exposed roofs often age faster.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Rocklin?',
-        answer:
-          'We focus on wind exposure, valleys, tile condition, flashing, and attic clues. You get a clear repair or replacement recommendation.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Rocklin?',
-        answer:
-          'Yes. Storm and active leak calls are prioritized for Rocklin homeowners.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Rocklin?',
-        answer:
-          'Yes. Written estimates follow inspection with no obligation to proceed.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Rocklin?',
-        answer:
-          'Yes. Chimney and vent flashing are checked on every Rocklin inspection and repaired when they are the leak source.',
-      },
-      {
-        question: 'Is metal roofing a good option in Rocklin?',
-        answer:
-          'Metal resists wind uplift better than many shingle systems when properly installed. It is worth considering on exposed Rocklin properties.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Rocklin?',
-        answer:
-          'Yes. Wind blows debris into gutters and valleys. We note drainage issues that could cause edge leaks.',
+          'Yes. Material comparison lives on the replacement and metal service pages, and in existing educational articles. The Rocklin hire page is focused on shingle replacement process—not a second metal authority URL.',
       },
     ],
   },
@@ -396,79 +231,44 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Folsom?',
+        question: 'Where do I go for an active leak in Folsom?',
         answer:
-          'Repair cost depends on material and leak location. We provide a written quote after inspection so Folsom homeowners know the scope before approving work.',
+          'Use [emergency roof repair in Folsom](/emergency-roof-repair/folsom) when water is entering. That hire page owns Folsom emergency intent. The metro [emergency roof repair](/emergency-roof-repair) page still covers the wider Sacramento area.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Folsom?',
+        question: 'Do you inspect both tile and shingle roofs in Folsom?',
         answer:
-          'Wind near the lake can damage edges and valleys. Schedule an inspection after strong storms even if you do not see obvious damage from the ground.',
+          'Yes. Folsom neighborhoods mix tile, shingle, and newer systems. See [tile vs asphalt shingles in Folsom](/blog/tile-vs-asphalt-shingles-folsom) and [best roofing materials for Folsom](/blog/best-roofing-materials-folsom) for educational comparison—not as extra hire URLs.',
       },
       {
-        question: 'What roofing material lasts longest in Folsom?',
+        question: 'Is there a verified Folsom project photo on this site?',
         answer:
-          'Metal and tile offer long service life in Folsom conditions. Quality architectural shingles are a solid mid-range option. We review all three during consultation.',
+          'Yes. The gallery item tagged Folsom, CA is a roof repair and ventilation detail (vents and skylights)—not a full replacement. It links to [roof repair](/roof-repair). We will not relabel it as a reroof.',
       },
       {
-        question: 'How long does roof replacement take in Folsom?',
+        question: 'Do you have a Folsom homeowner review?',
         answer:
-          'Most residential replacements finish in one to two days. Larger tile roofs or decking repairs may need additional time.',
+          'Yes. One published Google review on this site is tagged Folsom, CA and mentions a roof replacement process. That review is separate from the Folsom gallery photo.',
       },
       {
-        question: 'What are signs of hidden roof damage in Folsom?',
+        question: 'How should Folsom storm damage be handled?',
         answer:
-          'Attic stains, musty smells, and lifted shingles on the back slope are common hidden signs. Underlayment can fail before exterior materials look bad.',
+          'Photograph what you can from the ground, then get the roof assessed. Educational detail is in [storm damage roof repair Folsom](/blog/storm-damage-roof-repair-folsom). If water is active, go to the Folsom emergency hire page rather than waiting on a blog.',
       },
       {
-        question: 'Does insurance cover roof damage in Folsom?',
+        question: 'Is there a Folsom metal roofing URL?',
         answer:
-          'Sudden storm or wind damage may be covered. Normal aging from heat is typically excluded. We document storm-related findings when applicable.',
+          'No. Metal work for Folsom homeowners is served by [metal roofing](/metal-roofing) plus this hub. We did not create /metal-roofing/folsom.',
       },
       {
-        question: 'How often should I schedule a roof inspection in Folsom?',
+        question: 'Where can I read about Folsom roofing costs?',
         answer:
-          'Every one to two years, plus after wind events. Homes near open areas should be checked more often for edge wear.',
+          'There is an educational guide, [roofing costs in Folsom CA](/blog/roofing-costs-folsom-ca). It is not a published price list. Written estimates still follow inspection.',
       },
       {
-        question: 'Can a roof leak cause mold in a Folsom home?',
+        question: 'Should I start with inspection or repair in Folsom?',
         answer:
-          'Yes. Moisture in walls or attic insulation can support mold if leaks continue through winter rains. Fix the roof source first.',
-      },
-      {
-        question: 'When should shingles be replaced in Folsom?',
-        answer:
-          'When heat and age cause widespread granule loss, curling, or repeat leaks. We inspect ventilation and decking before recommending replacement.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Folsom?',
-        answer:
-          'We check shingles or tile, flashing, gutters, valleys, and attic access points. You receive honest guidance without sales pressure.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Folsom?',
-        answer:
-          'Yes. Active leaks are prioritized. We assess damage and explain temporary and permanent repair options.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Folsom?',
-        answer:
-          'Yes. Every Folsom project includes a written estimate after inspection.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Folsom?',
-        answer:
-          'Yes. Vent boots and chimney flashing are frequent leak sources in Folsom. We repair at the penetration, not just indoors.',
-      },
-      {
-        question: 'Is metal roofing a good option in Folsom?',
-        answer:
-          'Metal handles wind and heat well and can lower long-term maintenance. It is popular with Folsom homeowners planning to stay long term.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Folsom?',
-        answer:
-          'Yes. Gutters are part of the drainage system. We flag clogs and overflow that can damage fascia and roof edges.',
+          'If the roof is not actively leaking, start with a [free roof inspection](/roof-inspection) or this hub. Focused leaks that are not emergencies belong on [roof repair](/roof-repair). Widespread failure belongs on [roof replacement](/roof-replacement).',
       },
     ],
   },
@@ -489,79 +289,34 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Elk Grove?',
+        question: 'Do you have an Elk Grove-tagged homeowner review?',
         answer:
-          'Elk Grove repair pricing depends on roof size, pitch, and damage extent. We inspect, explain options, and provide a written estimate before work.',
+          'Yes. One published Google review on this site is tagged Elk Grove, CA. It is a location-tagged testimonial, not a named project address.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Elk Grove?',
+        question: 'Is there an Elk Grove hire page for repair or replacement?',
         answer:
-          'Yes. Wind can crease shingles on large roof planes. Post-storm inspection catches damage before the next rain enters the home.',
+          'No. Use [roof repair](/roof-repair) and [roof replacement](/roof-replacement) plus this hub. We did not create Elk Grove service×city URLs.',
       },
       {
-        question: 'What roofing material lasts longest in Elk Grove?',
+        question: 'Why do large roof planes and gutters matter in Elk Grove?',
         answer:
-          'Metal and tile last longer than standard shingles. Many Elk Grove homeowners replace aging subdivision shingles with architectural shingles or metal.',
+          'Existing Elk Grove copy describes broad suburban roof planes, subdivision-era shingles, and gutters that must move winter rain after dry months. Water can travel far from the visible exterior damage on large roofs.',
       },
       {
-        question: 'How long does roof replacement take in Elk Grove?',
+        question: 'Are there Elk Grove-tagged gallery photos?',
         answer:
-          'Typical Elk Grove homes are completed in one to two days. Larger footprints may take slightly longer.',
+          'Not in current gallery metadata. We will not label Sacramento-tagged photos as Elk Grove projects.',
       },
       {
-        question: 'What are signs of hidden roof damage in Elk Grove?',
+        question: 'Do clogged gutters cause roof-edge problems in Elk Grove?',
         answer:
-          'Granules in gutters, soft decking near valleys, and upstairs ceiling stains are common signs. Large roofs can leak far from the visible exterior damage.',
+          'Yes. Poor drainage can push water into roof edges. Gutter work is offered on [gutters & siding](/gutters-siding). PRC 13 does not offer fascia or soffit repair.',
       },
       {
-        question: 'Does insurance cover roof damage in Elk Grove?',
+        question: 'Where should I go for an active leak in Elk Grove?',
         answer:
-          'Storm and wind claims may apply when damage is sudden. Gradual wear on older subdivision roofs usually is not covered.',
-      },
-      {
-        question: 'How often should I schedule a roof inspection in Elk Grove?',
-        answer:
-          'Every one to two years, and before rainy season if your roof is over 15 years old. Free inspections are available from PRC 13.',
-      },
-      {
-        question: 'Can a roof leak cause mold in an Elk Grove home?',
-        answer:
-          'Yes. Two-story homes can hide slow leaks until insulation is saturated. Fixing the roof quickly limits mold and drywall damage.',
-      },
-      {
-        question: 'When should shingles be replaced in Elk Grove?',
-        answer:
-          'When subdivision-era shingles are brittle, losing granules, or leaking in multiple areas. Replacement often makes sense before repeated patches add up.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Elk Grove?',
-        answer:
-          'We review the full roof plane, flashing, gutters, valleys, and attic when accessible. You get clear written findings.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Elk Grove?',
-        answer:
-          'Yes. We prioritize active leaks and help stabilize damage until permanent repair is completed.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Elk Grove?',
-        answer:
-          'Yes. Written quotes are standard after every Elk Grove inspection.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Elk Grove?',
-        answer:
-          'Yes. Penetrations are common leak points on large suburban roofs. We repair flashing and boots at the source.',
-      },
-      {
-        question: 'Is metal roofing a good option in Elk Grove?',
-        answer:
-          'Metal is a durable upgrade for homeowners tired of replacing aging shingles. We explain cost and lifespan during your inspection.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Elk Grove?',
-        answer:
-          'Yes. Elk Grove homes rely on gutters to move water off wide roof areas. We include drainage in the inspection.',
+          'Use [emergency roof repair](/emergency-roof-repair). There is no /emergency-roof-repair/elk-grove page.',
       },
     ],
   },
@@ -768,79 +523,34 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Orangevale?',
+        question: 'Do you have an Orangevale emergency roof repair page?',
         answer:
-          'Tree damage, flashing repairs, and shingle replacement are priced by scope. We inspect and provide a written quote before any work.',
+          'Yes. [Emergency roof repair in Orangevale](/emergency-roof-repair/orangevale) owns Orangevale emergency hire intent. The metro [emergency roof repair](/emergency-roof-repair) page remains for the wider region.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Orangevale?',
+        question: 'Why do trees and gutters come up so often for Orangevale roofs?',
         answer:
-          'Yes. Wind drops branches and fills gutters with debris. Post-storm inspection prevents minor damage from becoming major leaks.',
+          'Existing Orangevale copy describes mature trees, larger lots, older shingle roofs, debris in valleys, and gutters that back up in winter rain. That is local condition guidance already on this hub.',
       },
       {
-        question: 'What roofing material lasts longest in Orangevale?',
+        question: 'Do you offer fascia replacement in Orangevale?',
         answer:
-          'Metal and algae-resistant shingles perform well where shade and moisture are concerns. Tile is also durable in many Orangevale neighborhoods.',
+          'No. Educational copy may mention fascia damage from overflowing gutters. PRC 13 does not offer fascia or soffit repair. Gutter work is on [gutters & siding](/gutters-siding).',
       },
       {
-        question: 'How long does roof replacement take in Orangevale?',
+        question: 'Are there Orangevale-tagged gallery photos?',
         answer:
-          'Most homes are completed in one to two days. Larger lots with complex roof lines may take slightly longer.',
+          'Not in current gallery metadata. The Orangevale emergency page will not present Sacramento-tagged photos as Orangevale projects.',
       },
       {
-        question: 'What are signs of hidden roof damage in Orangevale?',
+        question: 'Is there an Orangevale roof-repair hire URL?',
         answer:
-          'Moss growth, attic moisture, and stains near exterior walls often indicate hidden issues. Tree cover can hide damage until rain exposes it.',
+          'No. Non-emergency repairs use [roof repair](/roof-repair) plus this hub.',
       },
       {
-        question: 'Does insurance cover roof damage in Orangevale?',
+        question: 'Should I inspect after an Orangevale storm even if I do not see missing shingles?',
         answer:
-          'Sudden storm or fallen limb damage may be covered. Moss-related wear is typically maintenance. We document storm findings when applicable.',
-      },
-      {
-        question: 'How often should I schedule a roof inspection in Orangevale?',
-        answer:
-          'Annual inspection is wise under heavy tree cover. Check gutters each fall and inspect after major storms.',
-      },
-      {
-        question: 'Can a roof leak cause mold in an Orangevale home?',
-        answer:
-          'Yes. Shaded, moist roof areas can lead to interior mold if leaks continue. Roof and gutter fixes should happen promptly.',
-      },
-      {
-        question: 'When should shingles be replaced in Orangevale?',
-        answer:
-          'When shingles are moss-covered, brittle, or leaking despite repairs. Older Orangevale roofs on large lots often benefit from full replacement.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Orangevale?',
-        answer:
-          'We review tree impact zones, gutters, moss areas, flashing, and shingle condition. You receive practical written recommendations.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Orangevale?',
-        answer:
-          'Yes. We prioritize storm and active leak calls across Orangevale.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Orangevale?',
-        answer:
-          'Yes. Written estimates follow every inspection.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Orangevale?',
-        answer:
-          'Yes. Chimney and vent flashing failures are common on older Orangevale homes with mature landscaping.',
-      },
-      {
-        question: 'Is metal roofing a good option in Orangevale?',
-        answer:
-          'Metal resists moss better than some shingles and lasts decades. It is worth considering when replacing tree-shaded roofs.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Orangevale?',
-        answer:
-          'Yes. Gutter condition is critical in Orangevale. We flag overflow and debris that can rot fascia and roof edges.',
+          'Yes. Wind can drop branches and fill gutters with debris that is easy to miss from the street. Use [roof inspection](/roof-inspection) unless water is entering—then use the Orangevale emergency hire page.',
       },
     ],
   },
@@ -861,79 +571,34 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in Granite Bay?',
+        question: 'What is the difference between Granite Bay roof repair and emergency repair?',
         answer:
-          'Tile, skylight, and valley repairs on larger homes vary in scope. We provide detailed written estimates after inspection.',
+          'Use [roof repair in Granite Bay](/roof-repair/granite-bay) for non-urgent leaks, tile/flashing, and valleys. Use [emergency roof repair in Granite Bay](/emergency-roof-repair/granite-bay) when water is actively entering. Both hire pages exist; this hub is the geographic overview.',
       },
       {
-        question: 'Do I need a roof inspection after a storm in Granite Bay?',
+        question: 'Why do Granite Bay roofs get extra attention on tile and valleys?',
         answer:
-          'Yes. Wind can shift tile and drive rain into valleys. Luxury homes with complex geometry need post-storm checks even when damage is not obvious.',
+          'Existing Granite Bay content describes larger custom roofs, tile systems, complex valleys, skylights, and premium materials. Underlayment can fail while tiles still look acceptable from the curb.',
       },
       {
-        question: 'What roofing material lasts longest in Granite Bay?',
+        question: 'Are there Granite Bay-tagged gallery photos?',
         answer:
-          'Tile and standing seam metal are among the longest-lasting options. Underlayment quality is critical for tile. We discuss premium materials during consultation.',
+          'Not in current gallery metadata. Hire pages will not present Sacramento-tagged photos as Granite Bay projects until city-tagged assets exist.',
       },
       {
-        question: 'How long does roof replacement take in Granite Bay?',
+        question: 'Do you offer metal roofing in Granite Bay?',
         answer:
-          'Larger or tile roofs may take two to three days. We plan sequencing and walkthroughs for complex Granite Bay properties.',
+          'Yes, through [metal roofing](/metal-roofing). There is no /metal-roofing/granite-bay page.',
       },
       {
-        question: 'What are signs of hidden roof damage in Granite Bay?',
+        question: 'Should a Granite Bay tile roof be inspected after a storm?',
         answer:
-          'Ceiling stains near skylights, attic moisture, and slipped tile are key signs. Underlayment can fail while tiles still look acceptable from the curb.',
+          'Yes. Wind can shift tile and drive rain into valleys. Start with [roof inspection](/roof-inspection) unless water is already entering—then use the Granite Bay emergency hire page.',
       },
       {
-        question: 'Does insurance cover roof damage in Granite Bay?',
+        question: 'Is fascia replacement part of Granite Bay roofing services?',
         answer:
-          'Storm and wind damage may be covered with documentation. Gradual underlayment wear is usually not. We help record storm-related findings.',
-      },
-      {
-        question: 'How often should I schedule a roof inspection in Granite Bay?',
-        answer:
-          'Tile roofs should be inspected every one to two years for underlayment condition. Inspect after storms and before major real estate decisions.',
-      },
-      {
-        question: 'Can a roof leak cause mold in a Granite Bay home?',
-        answer:
-          'Yes. Slow valley or skylight leaks can damage high-end interiors. Early roof repair protects finished spaces below.',
-      },
-      {
-        question: 'When should shingles or tile be replaced in Granite Bay?',
-        answer:
-          'Replace when underlayment age, widespread tile damage, or repeat leaks indicate the system is failing. Patch-only approaches often fail on complex roofs.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in Granite Bay?',
-        answer:
-          'We inspect valleys, skylights, tile, flashing, ventilation, and drainage paths. You receive a thorough written assessment.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in Granite Bay?',
-        answer:
-          'Yes. We respond to active leaks and storm damage on Granite Bay homes with priority scheduling.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in Granite Bay?',
-        answer:
-          'Yes. Detailed written estimates are standard after inspection.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in Granite Bay?',
-        answer:
-          'Yes. Complex homes have multiple penetrations. We trace leaks to flashing, skylights, or valley failures.',
-      },
-      {
-        question: 'Is metal roofing a good option in Granite Bay?',
-        answer:
-          'Standing seam metal suits many Granite Bay homes seeking long life and clean aesthetics. We review compatibility with your architecture.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in Granite Bay?',
-        answer:
-          'Yes. Valleys and gutters must move water cleanly on large roofs. We include full drainage review.',
+          'No. PRC 13 does not offer fascia or soffit repair. Gutter and siding work is on [gutters & siding](/gutters-siding).',
       },
     ],
   },
@@ -954,79 +619,39 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
     ],
     faqs: [
       {
-        question: 'How much does roof repair cost in El Dorado Hills?',
+        question: 'Is there an El Dorado Hills emergency roofing hire page?',
         answer:
-          'Wind and tile repairs vary by exposure and roof complexity. We inspect and provide written pricing before work begins.',
+          'No separate /emergency-roof-repair/el-dorado-hills URL exists. Active leaks use [emergency roof repair](/emergency-roof-repair). Educational local detail is in [emergency roof repair El Dorado Hills](/blog/emergency-roof-repair-el-dorado-hills-ca).',
       },
       {
-        question: 'Do I need a roof inspection after a storm in El Dorado Hills?',
+        question: 'Do you write about tile and metal roofing for El Dorado Hills?',
         answer:
-          'Hillside wind is stronger here. Inspect after storms for lifted edges, tile shifts, and valley debris even if leaks have not started yet.',
+          'Yes. See [tile roofing El Dorado Hills](/blog/tile-roofing-el-dorado-hills-ca) and [metal roofing El Dorado Hills](/blog/metal-roofing-el-dorado-hills-ca). Hire intent for those services still lives on [roof replacement](/roof-replacement) and [metal roofing](/metal-roofing)—not on extra city URLs.',
       },
       {
-        question: 'What roofing material lasts longest in El Dorado Hills?',
+        question: 'Do you offer fascia repair in El Dorado Hills?',
         answer:
-          'Metal and tile handle wind and sun well. Proper installation matters on exposed lots. We compare lifespans during your free inspection.',
+          'No. The [fascia repair El Dorado Hills](/blog/fascia-repair-el-dorado-hills-ca) article is educational. PRC 13 does not offer fascia or soffit repair.',
       },
       {
-        question: 'How long does roof replacement take in El Dorado Hills?',
+        question: 'Are there El Dorado Hills-tagged gallery photos?',
         answer:
-          'Most homes finish in one to three days depending on material and roof size. We confirm timeline before starting.',
+          'Not in current gallery metadata. This hub will not display Sacramento-tagged photos as El Dorado Hills projects.',
       },
       {
-        question: 'What are signs of hidden roof damage in El Dorado Hills?',
+        question: 'Why does hillside wind come up so often for El Dorado Hills roofs?',
         answer:
-          'Loose ridge materials, attic moisture, and stains after wind-driven rain are common. Exposed homes may hide edge damage from street view.',
+          'Existing local copy describes hillside wind, intense sun, and storm exposure on edges, ridge caps, flashing, and aging materials. That is condition guidance already on this hub—not a weather statistic we invented for SEO.',
       },
       {
-        question: 'Does insurance cover roof damage in El Dorado Hills?',
+        question: 'Where should I start if I am not sure repair or replacement is needed?',
         answer:
-          'Wind and storm claims may apply when damage is sudden. We document visible impact for insurance discussions.',
+          'Start with a [free roof inspection](/roof-inspection) or this hub. Repair vs replacement is then handled on [roof repair](/roof-repair) and [roof replacement](/roof-replacement). Local planning articles include [roof repair El Dorado Hills](/blog/roof-repair-el-dorado-hills-ca) and [roof replacement El Dorado Hills](/blog/roof-replacement-el-dorado-hills-ca).',
       },
       {
-        question: 'How often should I schedule a roof inspection in El Dorado Hills?',
+        question: 'Is there an El Dorado Hills commercial roofing page?',
         answer:
-          'Exposed properties benefit from annual inspection and post-wind-event checks.',
-      },
-      {
-        question: 'Can a roof leak cause mold in an El Dorado Hills home?',
-        answer:
-          'Yes. Wind-driven leaks can soak insulation quickly. Address roof damage before interior mold remediation.',
-      },
-      {
-        question: 'When should shingles be replaced in El Dorado Hills?',
-        answer:
-          'When wind and sun have caused widespread wear or repeat leaks. Exposed roofs often need replacement sooner than sheltered ones.',
-      },
-      {
-        question: 'What happens during a PRC 13 roof inspection in El Dorado Hills?',
-        answer:
-          'We focus on wind exposure, tile condition, valleys, drainage, and flashing. You receive clear repair or replacement guidance.',
-      },
-      {
-        question: 'Do you offer emergency roof repair in El Dorado Hills?',
-        answer:
-          'Yes. Active leaks and storm openings are prioritized for El Dorado Hills homeowners.',
-      },
-      {
-        question: 'Do you provide written roofing estimates in El Dorado Hills?',
-        answer:
-          'Yes. Financing may be available on qualifying replacement projects. Written estimates are always provided.',
-      },
-      {
-        question: 'Can PRC 13 help with roof leaks around vents or chimneys in El Dorado Hills?',
-        answer:
-          'Yes. Multi-level homes often leak at transitions and penetrations. We repair the actual roof failure point.',
-      },
-      {
-        question: 'Is metal roofing a good option in El Dorado Hills?',
-        answer:
-          'Metal is excellent for wind and sun exposure when properly installed. Many hillside homeowners choose it for durability.',
-      },
-      {
-        question: 'Do you inspect gutters during a roof inspection in El Dorado Hills?',
-        answer:
-          'Yes. Long roof runs need effective gutters. We check drainage paths that protect fascia and foundations.',
+          'No. Commercial and flat/low-slope work is on [commercial roofing](/commercial-roofing).',
       },
     ],
   },

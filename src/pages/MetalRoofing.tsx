@@ -4,7 +4,7 @@ import { handleSamePageAnchorClick } from '../lib/scroll';
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
-import { PHONE_DISPLAY } from '../data/site';
+import { PHONE_DISPLAY, LICENSE_SHORT } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { PRIMARY_CTA } from '../data/cta';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
@@ -44,6 +44,10 @@ const metalServices = [
   {
     title: 'Standing Seam Roofing',
     desc: 'Premium concealed fastener standing seam panels for homeowners who want durability, clean lines, and low maintenance.',
+  },
+  {
+    title: 'Metal Roof Repair',
+    desc: 'Leak tracing, panel and seam repairs, flashing and fastener fixes, and honest repair-versus-replacement guidance for existing metal roofs.',
   },
 ];
 
@@ -125,8 +129,8 @@ export default function MetalRoofing() {
             <div className="max-w-2xl">
               <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5 rounded-brand">50+ Year Lifespan</span>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                Metal Roofing<br />
-                <span className="text-gold">Built to Last a Lifetime</span>
+                Metal Roofing in Sacramento<br />
+                <span className="text-gold">Standing Seam & Metal Install</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
                 Premium standing seam and corrugated metal roofing for Sacramento homes. Built for long term durability, lower maintenance, and reliable performance through Sacramento heat and weather.
@@ -142,7 +146,7 @@ export default function MetalRoofing() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
+                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
                 <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Workmanship Warranty</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Financing on Qualifying Projects</span>
               </div>
@@ -190,6 +194,8 @@ export default function MetalRoofing() {
                 <Link to="/blog/metal-roofing-vs-shingles-sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal vs shingles comparison</Link>{' '}
                 or explore{' '}
                 <Link to="/blog/metal-roofing-el-dorado-hills-ca" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing in El Dorado Hills</Link>.
+                Need a flat commercial membrane system instead? Explore{' '}
+                <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">commercial roofing for Sacramento businesses</Link>.
               </p>
               <p className="text-body text-sm leading-relaxed mb-6">
                 Metal installs often pair with{' '}
@@ -255,14 +261,60 @@ export default function MetalRoofing() {
       <section className="bg-charcoal text-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Metal Roofing Services</p>
-          <h2 className="text-3xl font-bold text-white mb-8">Installation, Replacement &amp; Standing Seam Systems</h2>
-          <div className="grid md:grid-cols-3 gap-5">
+          <h2 className="text-3xl font-bold text-white mb-8">Installation, Replacement, Standing Seam &amp; Repair</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {metalServices.map(service => (
               <div key={service.title} className="border border-white/10 bg-white/[0.04] p-6 rounded-brand">
                 <h3 className="text-white font-bold text-base mb-2">{service.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{service.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* METAL ROOF REPAIR */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Metal Roof Repair</p>
+          <h2 className="section-heading mb-4">When Your Metal Roof Needs Repair—Not a Full Reroof</h2>
+          <p className="section-subheading max-w-3xl mb-8">
+            PRC 13 repairs metal roofs as well as installs them. Many issues are localized: a leak at a penetration, a loose fastener, a damaged panel, or failed flashing can often be corrected without replacing the entire system.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="font-bold text-headline text-base mb-3">Common metal roof repair issues</h3>
+              <ul className="space-y-2.5">
+                {[
+                  'Leaks at seams, valleys, or panel joints',
+                  'Damaged or dented metal panels',
+                  'Failed or missing fasteners',
+                  'Flashing problems at edges, walls, and chimneys',
+                  'Penetrations around vents, skylights, and pipes',
+                  'Corrosion or finish wear in exposed areas',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                    <CheckCircle size={15} className="text-gold flex-shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-headline text-base mb-3">Repair vs. replacement</h3>
+              <p className="text-body text-sm leading-relaxed mb-4">
+                A focused metal roof repair makes sense when damage is limited and the rest of the system is sound. Full{' '}
+                <Link to="/roof-replacement" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof replacement</Link>{' '}
+                is the better conversation when panels are widespread-failing, leaks keep returning after prior fixes, or the substrate underneath is compromised.
+              </p>
+              <p className="text-body text-sm leading-relaxed">
+                Start with a{' '}
+                <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
+                so we can document the cause. For general leak and storm repair context across roof types, see our{' '}
+                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>{' '}
+                page—metal-specific work stays on this page.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -296,7 +348,7 @@ export default function MetalRoofing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent Work</p>
           <h2 className="section-heading mb-8">Metal Roofing Projects in Sacramento</h2>
-          <GalleryStrip category="Roof Replacement" limit={4} showLink />
+          <GalleryStrip category="Metal Roofing" limit={4} showLink />
         </div>
       </section>
 

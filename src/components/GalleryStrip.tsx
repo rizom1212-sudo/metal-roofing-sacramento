@@ -5,22 +5,54 @@ import { galleryImages, type GalleryCategory } from '../data/gallery';
 interface GalleryStripProps {
   /** Filter by category. 'All' shows any category. */
   category?: GalleryCategory;
+  /**
+   * Exact gallery image IDs to show (order preserved).
+   * When set, category filtering and cross-category padding are skipped.
+   */
+  imageIds?: string[];
+  /**
+   * When set, only images whose gallery.city metadata matches this city.
+   * Disables cross-category padding so metro photos are not implied as local projects.
+   */
+  city?: string;
   /** Max images to render. Defaults to 4. */
   limit?: number;
   /** Show the View Full Gallery link at the bottom */
   showLink?: boolean;
 }
 
-export default function GalleryStrip({ category = 'All', limit = 4, showLink = true }: GalleryStripProps) {
-  const pool = category === 'All'
-    ? galleryImages
-    : galleryImages.filter(img => img.category === category);
+export default function GalleryStrip({
+  category = 'All',
+  imageIds,
+  city,
+  limit = 4,
+  showLink = true,
+}: GalleryStripProps) {
+  const byId = imageIds
+    ? imageIds
+        .map(id => galleryImages.find(img => img.id === id))
+        .filter((img): img is (typeof galleryImages)[number] => Boolean(img))
+        .slice(0, limit)
+    : null;
 
-  // pad with fallback from other categories if not enough in this category
-  const extra = pool.length < limit
+  const cityNeedle = city?.replace(/,\s*CA$/i, '').trim().toLowerCase();
+  const inCity = (img: (typeof galleryImages)[number]) => {
+    if (!cityNeedle) return true;
+    const tagged = img.city?.replace(/,\s*CA$/i, '').trim().toLowerCase();
+    return tagged === cityNeedle;
+  };
+
+  const pool = (category === 'All'
+    ? galleryImages
+    : galleryImages.filter(img => img.category === category)
+  ).filter(inCity);
+
+  const extra = !byId && !city && pool.length < limit
     ? galleryImages.filter(img => img.category !== category).slice(0, limit - pool.length)
     : [];
-  const items = [...pool, ...extra].slice(0, limit);
+  const items = byId ?? [...pool, ...extra].slice(0, limit);
+
+  if (items.length === 0) return null;
 
   return (
     <div>

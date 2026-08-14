@@ -78,6 +78,7 @@ export function buildLlmsTxt(): string {
     `- Rocklin service-area page: ${absoluteUrl('/service-areas/rocklin')}`,
     `- Folsom service-area page: ${absoluteUrl('/service-areas/folsom')}`,
     `- Elk Grove service-area page: ${absoluteUrl('/service-areas/elk-grove')}`,
+    `- El Dorado Hills service-area page: ${absoluteUrl('/service-areas/el-dorado-hills')}`,
     `- Colfax service-area page: ${absoluteUrl('/service-areas/colfax')}`,
     `- Colfax home hardening roofing guide: ${absoluteUrl('/blog/colfax-home-hardening-program-2026-roofing-wildfire-protection')}`,
     '',

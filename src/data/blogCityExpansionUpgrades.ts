@@ -580,6 +580,7 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
   relatedServices: [
     { label: 'Folsom Roofing', href: '/service-areas/folsom' },
     { label: 'Roof Repair', href: '/roof-repair' },
+    { label: 'Folsom Emergency Roof Repair', href: '/emergency-roof-repair/folsom' },
     { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
     { label: 'Roof Inspection', href: '/roof-inspection' },
   ],
@@ -756,7 +757,7 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'If your Folsom home has an active drip, a new stain after wind-driven rain, or a known opening, focus on interior protection and professional source tracing. Visit our [Folsom roofing](/service-areas/folsom) hub for local service context, then contact PRC 13 for emergency help when water is entering or for an inspection when the leak is intermittent but unresolved. The goal is a dry home with a repaired water path—not a ceiling that merely looks finished until the next storm.',
+        'If your Folsom home has an active drip, a new stain after wind-driven rain, or a known opening, focus on interior protection and professional source tracing. Visit our [Folsom roofing](/service-areas/folsom) hub for local service context, then [hire Folsom emergency roof repair](/emergency-roof-repair/folsom) when water is entering, or schedule an inspection when the leak is intermittent but unresolved. Metro [emergency roof repair](/emergency-roof-repair) remains available for the wider Sacramento area. The goal is a dry home with a repaired water path—not a ceiling that merely looks finished until the next storm.',
     },
   ],
 };

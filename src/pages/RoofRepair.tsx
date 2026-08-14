@@ -4,7 +4,7 @@ import { Phone, CheckCircle, ArrowRight, AlertTriangle, Clock, Star, Shield, Map
 import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
-import { PHONE_DISPLAY, GOOGLE_REVIEW_COUNT } from '../data/site';
+import { PHONE_DISPLAY, GOOGLE_REVIEW_COUNT, LICENSE_SHORT } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
@@ -58,7 +58,7 @@ const repairServices = [
 
 const heroTrustItems = [
   { icon: Star, label: `${GOOGLE_REVIEW_COUNT} Google Reviews` },
-  { icon: Shield, label: 'Licensed & Insured' },
+  { icon: Shield, label: LICENSE_SHORT },
   { icon: MapPin, label: 'Sacramento Local Team' },
   { icon: CreditCard, label: 'Financing on Qualifying Projects' },
 ];
@@ -197,8 +197,8 @@ export default function RoofRepair() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                Roof Leak?<br />
-                <span className="text-gold">We'll Get There Fast.</span>
+                Roof Repair in Sacramento<br />
+                <span className="text-gold">Leaks, Shingles & Flashing</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
                 Roof repair in Sacramento, California for roof leaks, missing or damaged shingles, flashing issues, and storm damage. We find the source, explain your options, and start with a free inspection—no pressure.
@@ -247,7 +247,8 @@ export default function RoofRepair() {
               'Insurance documentation available for storm damage',
             ]}
           >
-            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home—or whether replacement is the more durable path.
+            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home—or whether replacement is the more durable path. For flat and low-slope systems on small commercial properties, see our{' '}
+            <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">commercial and flat-roof services</Link>.
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -264,7 +265,12 @@ export default function RoofRepair() {
               <div className="p-4 bg-charcoal-dark/5 border-l-4 border-charcoal">
                 <p className="text-sm text-body">
                   <strong className="text-headline">Seeing water damage inside your home?</strong> That's an emergency. Call us immediately at{' '}
-                  <TelLink location="roof-repair-inline" className="text-gold font-semibold hover:underline">{PHONE_DISPLAY}</TelLink>.
+                  <TelLink location="roof-repair-inline" className="text-gold font-semibold hover:underline">{PHONE_DISPLAY}</TelLink>
+                  {' '}or go to{' '}
+                  <Link to="/emergency-roof-repair" className="text-gold font-semibold hover:underline">
+                    emergency roof repair
+                  </Link>
+                  .
                 </p>
               </div>
             </div>

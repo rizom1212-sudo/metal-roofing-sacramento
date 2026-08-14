@@ -18,6 +18,7 @@ import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
 import { cityHubServiceCtaLabel, resolveCityHubServices } from '../data/cityHubServices';
 import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
+import CityHubLocalProof from '../components/CityHubLocalProof';
 import NotFound from './NotFound';
 
 export default function ServiceAreaCity() {
@@ -189,7 +190,7 @@ export default function ServiceAreaCity() {
                 to={service.href}
                 className="card-brand bg-white border border-gray-100 p-6 hover:border-gold/30 hover:shadow-sm transition-all duration-200"
               >
-                <h2 className="text-xl font-bold text-headline mb-2">{service.title}</h2>
+                <h3 className="text-xl font-bold text-headline mb-2">{service.title}</h3>
                 <p className="text-body text-sm leading-relaxed mb-4">{service.desc}</p>
                 <span className="inline-flex items-center gap-1.5 text-gold font-semibold text-sm">
                   {cityHubServiceCtaLabel(service.title)} <ArrowRight size={14} />
@@ -199,6 +200,8 @@ export default function ServiceAreaCity() {
           </div>
         </div>
       </section>
+
+      <CityHubLocalProof cityName={area.name} citySlug={area.slug} />
 
       {featured && featured.answerBlocks.length > 0 && (
         <section className="bg-white py-14 md:py-16">
@@ -388,8 +391,12 @@ export default function ServiceAreaCity() {
       )}
 
       <LocalSeoLinks
-        title={`Roofing services near ${area.name}`}
-        description={`Compare PRC 13 Roofing services for ${area.name} and nearby Sacramento communities, including repair, replacement, emergency leak response, inspections, metal roofing, and recent project examples.`}
+        title={area.slug === 'sacramento' ? 'Sacramento roofing services' : `Roofing services near ${area.name}`}
+        description={
+          area.slug === 'sacramento'
+            ? 'This hub covers Sacramento as a service area. Open a service page for repair, replacement, emergency leaks, inspections, metal roofing, commercial roofing, or gutters.'
+            : `Compare PRC 13 Roofing services for ${area.name} and nearby Sacramento communities, including repair, replacement, emergency leak response, inspections, metal roofing, and recent project examples.`
+        }
       />
 
       <ServiceAreaConversionSections

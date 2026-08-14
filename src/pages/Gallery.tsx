@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Phone, ArrowRight, X, ChevronLeft, ChevronRight, Shield, CheckCircle } from 'lucide-react';
 import BeforeAfter from '../components/BeforeAfter';
 import JsonLd from '../components/JsonLd';
-import { galleryImages, type GalleryImage } from '../data/gallery';
+import { galleryImages, galleryCityHubPath, galleryCityName, galleryServicePath, type GalleryImage } from '../data/gallery';
 import { PRIMARY_CTA } from '../data/cta';
 import { LICENSE_INSURED_LINE, PHONE_DISPLAY } from '../data/site';
 import TelLink from '../components/TelLink';
@@ -160,6 +160,22 @@ function Lightbox({
         />
         <p className="text-gray-500 text-xs">
           {index + 1} / {images.length} · Use arrow keys to navigate
+        </p>
+        <p className="text-white text-sm font-semibold">{img.caption}</p>
+        <p className="text-gray-400 text-xs">
+          <Link to={galleryServicePath(img.category)} className="text-gold hover:text-gold-light transition-colors">
+            {img.category}
+          </Link>
+          {galleryCityHubPath(img.city) ? (
+            <>
+              {' · '}
+              <Link to={galleryCityHubPath(img.city)!} className="text-gold hover:text-gold-light transition-colors">
+                {galleryCityName(img.city)}
+              </Link>
+            </>
+          ) : img.city ? (
+            <> · {img.city}</>
+          ) : null}
         </p>
       </div>
     </div>
@@ -385,36 +401,12 @@ export default function Gallery() {
 
           <div className="[column-count:1] sm:[column-count:2] lg:[column-count:3]" style={{ columnGap: '8px' }}>
             {mainGalleryImages.map((img, idx) => (
-              <button
-                key={img.id}
-                type="button"
-                className="break-inside-avoid mb-2 w-full group overflow-hidden bg-gray-200 cursor-pointer rounded-brand shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                onClick={() => openLightbox(idx)}
-                aria-label={`Open project photo ${idx + 1}`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className={`w-full object-cover block transition-transform duration-500 motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.02] ${
-                    img.impact ? 'h-64 md:h-[320px]' : 'h-44 md:h-52'
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-
-          <div className="mx-auto mt-2 grid w-full max-w-md gap-2">
-            {centeredGalleryImages.map((img, idx) => {
-              const imageIndex = mainGalleryImages.length + idx;
-
-              return (
+              <div key={img.id} className="break-inside-avoid mb-2">
                 <button
-                  key={img.id}
                   type="button"
                   className="w-full group overflow-hidden bg-gray-200 cursor-pointer rounded-brand shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                  onClick={() => openLightbox(imageIndex)}
-                  aria-label={`Open project photo ${imageIndex + 1}`}
+                  onClick={() => openLightbox(idx)}
+                  aria-label={`Open project photo: ${img.caption}`}
                 >
                   <img
                     src={img.src}
@@ -425,6 +417,68 @@ export default function Gallery() {
                     }`}
                   />
                 </button>
+                <div className="px-1 pt-2 pb-3">
+                  <p className="text-headline text-xs font-semibold leading-snug mb-1">{img.caption}</p>
+                  <p className="text-body text-xs">
+                    <Link to={galleryServicePath(img.category)} className="text-gold font-semibold hover:text-gold-dark transition-colors">
+                      {img.category}
+                    </Link>
+                    {galleryCityHubPath(img.city) ? (
+                      <>
+                        {' · '}
+                        <Link to={galleryCityHubPath(img.city)!} className="text-gold font-semibold hover:text-gold-dark transition-colors">
+                          {galleryCityName(img.city)}
+                        </Link>
+                      </>
+                    ) : img.city ? (
+                      <> · {img.city}</>
+                    ) : null}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-2 grid w-full max-w-md gap-2">
+            {centeredGalleryImages.map((img, idx) => {
+              const imageIndex = mainGalleryImages.length + idx;
+
+              return (
+                <div key={img.id} className="w-full">
+                  <button
+                    type="button"
+                    className="w-full group overflow-hidden bg-gray-200 cursor-pointer rounded-brand shadow-sm transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    onClick={() => openLightbox(imageIndex)}
+                    aria-label={`Open project photo: ${img.caption}`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      className={`w-full object-cover block transition-transform duration-500 motion-reduce:transition-none motion-reduce:group-hover:scale-100 group-hover:scale-[1.02] ${
+                        img.impact ? 'h-64 md:h-[320px]' : 'h-44 md:h-52'
+                      }`}
+                    />
+                  </button>
+                  <div className="px-1 pt-2 pb-3">
+                    <p className="text-headline text-xs font-semibold leading-snug mb-1">{img.caption}</p>
+                    <p className="text-body text-xs">
+                      <Link to={galleryServicePath(img.category)} className="text-gold font-semibold hover:text-gold-dark transition-colors">
+                        {img.category}
+                      </Link>
+                      {galleryCityHubPath(img.city) ? (
+                        <>
+                          {' · '}
+                          <Link to={galleryCityHubPath(img.city)!} className="text-gold font-semibold hover:text-gold-dark transition-colors">
+                            {galleryCityName(img.city)}
+                          </Link>
+                        </>
+                      ) : img.city ? (
+                        <> · {img.city}</>
+                      ) : null}
+                    </p>
+                  </div>
+                </div>
               );
             })}
           </div>

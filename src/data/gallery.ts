@@ -196,6 +196,49 @@ export const galleryImages: GalleryImage[] = [
   },
 ];
 
+export const GALLERY_SERVICE_PATHS: Record<Exclude<GalleryCategory, 'All'>, string> = {
+  'Roof Replacement': '/roof-replacement',
+  'Roof Repairs': '/roof-repair',
+  'Metal Roofing': '/metal-roofing',
+  Inspections: '/roof-inspection',
+  'Exterior Work': '/gutters-siding',
+};
+
+/** Hub path only when gallery.city metadata matches a known service-area slug. */
+const GALLERY_CITY_HUB_SLUGS: Record<string, string> = {
+  sacramento: 'sacramento',
+  folsom: 'folsom',
+};
+
+export function galleryCityName(city?: string): string | undefined {
+  if (!city) return undefined;
+  return city.replace(/,\s*CA$/i, '').trim() || undefined;
+}
+
+export function galleryCityHubPath(city?: string): string | undefined {
+  const name = galleryCityName(city)?.toLowerCase();
+  if (!name) return undefined;
+  const slug = GALLERY_CITY_HUB_SLUGS[name];
+  return slug ? `/service-areas/${slug}` : undefined;
+}
+
+export function galleryServicePath(category: GalleryImage['category']): string {
+  return GALLERY_SERVICE_PATHS[category];
+}
+
+export function normalizeGalleryCity(city?: string): string | undefined {
+  return galleryCityName(city)?.toLowerCase();
+}
+
+export function filterGalleryByCity(
+  cityName: string,
+  images: GalleryImage[] = galleryImages,
+): GalleryImage[] {
+  const wanted = normalizeGalleryCity(cityName);
+  if (!wanted) return [];
+  return images.filter(img => normalizeGalleryCity(img.city) === wanted);
+}
+
 export function filterGalleryByCategory(
   category: GalleryCategory,
   images: GalleryImage[] = galleryImages,

@@ -5,6 +5,15 @@ export interface Review {
   location?: string;
 }
 
+export function reviewsForCity(cityName: string): Review[] {
+  const wanted = cityName.replace(/,\s*CA$/i, '').trim().toLowerCase();
+  if (!wanted) return [];
+  return reviews.filter(review => {
+    const locationCity = review.location?.replace(/,\s*CA$/i, '').trim().toLowerCase();
+    return locationCity === wanted;
+  });
+}
+
 export const reviews: Review[] = [
   {
     name: 'Molly Sweeney',

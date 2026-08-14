@@ -5,7 +5,7 @@ import LeadForm from '../components/LeadForm';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import TelLink from '../components/TelLink';
 import { PRIMARY_CTA } from '../data/cta';
-import { PHONE_DISPLAY } from '../data/site';
+import { LICENSE_SHORT, PHONE_DISPLAY } from '../data/site';
 import Breadcrumbs from '../components/Breadcrumbs';
 import FaqAccordion, { type FaqItem } from '../components/FaqAccordion';
 import ReviewStrip from '../components/ReviewStrip';
@@ -123,8 +123,8 @@ export default function RoofInspection() {
           <div className="max-w-2xl">
             <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5">Free, No Obligation</span>
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-              Roof Inspection<br />
-              <span className="text-gold">Know Exactly What You're Dealing With</span>
+              Free Roof Inspection<br />
+              <span className="text-gold">in Sacramento, CA</span>
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
               Schedule a free roof inspection in Sacramento, California. You get written findings covering leak detection, storm damage, aging materials, flashing problems, and clear repair-versus-replacement guidance—from a licensed roofer, not a salesperson.
@@ -142,7 +142,7 @@ export default function RoofInspection() {
               </a>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Free Inspection</span>
+              <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
               <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> No Obligation</span>
               <span className="flex items-center gap-1.5"><Clock size={13} className="text-gold" /> Fast Local Scheduling</span>
             </div>
@@ -233,6 +233,13 @@ export default function RoofInspection() {
                 or{' '}
                 <Link to="/contact" className="text-gold font-semibold hover:text-gold-dark transition-colors">contact us</Link>{' '}
                 to schedule.
+              </p>
+              <p className="text-body text-sm leading-relaxed mb-6">
+                Inspection findings often point to a clear next step. When metal panels, seams, or fasteners are the issue, we may recommend{' '}
+                <Link to="/metal-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing repair or installation options</Link>.
+                When the roof is flat or low-slope on a small commercial property, we may point you to{' '}
+                <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">flat and commercial roof solutions</Link>.
+                Either way, the inspection comes first—so the recommendation matches what we actually find.
               </p>
               <ul className="space-y-2.5">
                 {[

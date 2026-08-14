@@ -6,13 +6,16 @@ import { BUSINESS_ENTITY_NAME, LICENSE_SHORT, LOGO_ALT, LOGO_SRC, PHONE_DISPLAY 
 import TelLink from './TelLink';
 import { serviceAreas } from '../data/serviceAreas';
 import { getFooterServices } from '../data/services';
+import { FOOTER_PRIORITY_CITY_SLUGS } from '../data/internalLinking';
 
 const tier1Links = getFooterServices().map(service => ({
   label: service.name,
   href: service.canonicalUrl,
 }));
 
-const footerServiceAreas = serviceAreas.slice(0, 6);
+const footerServiceAreas = FOOTER_PRIORITY_CITY_SLUGS
+  .map(slug => serviceAreas.find(area => area.slug === slug))
+  .filter((area): area is (typeof serviceAreas)[number] => Boolean(area));
 
 export default function Footer() {
   const location = useLocation();
@@ -81,7 +84,7 @@ export default function Footer() {
             </h4>
             <div className="space-y-4">
               <p className="text-sm text-gray-400 leading-relaxed">
-                Serving Sacramento, Roseville, Folsom, Elk Grove, Rocklin, and surrounding areas.
+                Serving greater Sacramento, including Folsom, El Dorado Hills, Roseville, Rocklin, Colfax, and nearby communities.
               </p>
               <div className="space-y-2 text-sm">
                 <div className="grid grid-cols-2 gap-1.5">

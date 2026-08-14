@@ -3,6 +3,7 @@ import { Phone, CheckCircle, ArrowRight, Shield, Award, BookOpen, MapPin } from 
 import LeadForm from '../components/LeadForm';
 import FaqAccordion from '../components/FaqAccordion';
 import GalleryStrip from '../components/GalleryStrip';
+import { filterGalleryByCity, filterGalleryByCategory } from '../data/gallery';
 import Breadcrumbs from '../components/Breadcrumbs';
 import HeroLeadFormPanel from '../components/HeroLeadFormPanel';
 import HeroBackground from '../components/HeroBackground';
@@ -31,6 +32,10 @@ export default function CityServicePage() {
     { label: page.parentLabel, href: page.parentPath },
     { label: `${page.cityName}, CA` },
   ];
+  const localHirePhotos = filterGalleryByCategory(
+    page.galleryCategory,
+    filterGalleryByCity(page.cityName),
+  );
 
   return (
     <>
@@ -234,13 +239,23 @@ export default function CityServicePage() {
         </div>
       </section>
 
-      <section className="bg-cream py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent Work</p>
-          <h2 className="section-heading mb-8">{page.galleryHeading}</h2>
-          <GalleryStrip category={page.galleryCategory} limit={4} showLink />
-        </div>
-      </section>
+      {localHirePhotos.length > 0 && (
+          <section className="bg-cream py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Verified Local Photos</p>
+              <h2 className="section-heading mb-3">{page.galleryHeading}</h2>
+              <p className="section-subheading max-w-2xl mb-8">
+                Only gallery items tagged {page.cityName} in our project data appear here. Captions follow the recorded project type.
+              </p>
+              <GalleryStrip
+                category={page.galleryCategory}
+                city={page.cityName}
+                limit={4}
+                showLink
+              />
+            </div>
+          </section>
+      )}
 
       {page.resourceGuides.length > 0 && (
         <section className="bg-white py-14 md:py-16">

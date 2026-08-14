@@ -89,7 +89,7 @@ const homeFaqs: FaqItem[] = [
   {
     question: 'Do you serve areas outside Sacramento?',
     answer:
-      'Yes. We serve the greater Sacramento area including Roseville, Rocklin, Folsom, Rancho Cordova, Elk Grove, Granite Bay, El Dorado Hills, Orangevale, Lincoln, Woodland, Davis, and Florin. Each service-area page includes local roofing guidance.',
+      'Yes. We serve the greater Sacramento area including Roseville, Rocklin, Folsom, Rancho Cordova, Elk Grove, Granite Bay, El Dorado Hills, Orangevale, Lincoln, Woodland, Davis, Florin, and Colfax. Each service-area page includes local roofing guidance.',
   },
   {
     question: 'What should I do if my roof is leaking right now?',
@@ -261,7 +261,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-sm font-semibold text-gold uppercase tracking-widest mb-3">What We Do</p>
           <h2 className="section-heading mb-2">Our Roofing Services</h2>
-          <p className="section-subheading mb-10 max-w-2xl">Residential roofing is our focus. Roof replacement is our specialty.</p>
+          <p className="section-subheading mb-10 max-w-2xl">
+            Residential roofing is our focus. Roof replacement is our specialty. We also handle{' '}
+            <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">flat and low-slope roofs for small commercial properties</Link>.
+          </p>
 
           {/* Primary replacement card */}
           <div className="grid md:grid-cols-[1.08fr_0.92fr] gap-7 mb-7 items-stretch">
@@ -303,7 +306,7 @@ export default function Home() {
               { label: 'Roof Inspection', desc: 'Honest condition assessment', href: '/roof-inspection' },
               { label: 'Metal Roofing', desc: '50+ year lifespan option', href: '/metal-roofing' },
               { label: 'Gutters & Siding', desc: 'Full exterior protection', href: '/gutters-siding' },
-              { label: 'Commercial', desc: 'Small commercial projects', href: '/commercial-roofing' },
+              { label: 'Commercial', desc: 'Flat & low-slope business roofs', href: '/commercial-roofing' },
             ].map(s => (
               <Link
                 key={s.label}

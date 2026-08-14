@@ -39,14 +39,9 @@ export default function FinancingSection() {
               Schedule Free Inspection <ArrowRight size={15} />
             </Link>
             <p className="text-body text-xs mt-4">
-              <a
-                href="/roof-inspection-checklist.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold font-semibold hover:underline"
-              >
+              <Link to="/blog/roof-inspection-checklist" className="text-gold font-semibold hover:underline">
                 Print pre-storm roof checklist
-              </a>
+              </Link>
             </p>
           </div>
         </div>

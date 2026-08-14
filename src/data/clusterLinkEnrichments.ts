@@ -121,22 +121,27 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
     patchFirstParagraph:
       'Short answer: [roof repair in Folsom](/roof-repair) must account for hillside wind and lake-corridor gusts. PRC 13 Roofing traces leaks on shingle and tile systems throughout [Folsom](/service-areas/folsom) and documents repair scope in writing.',
     appendParagraphs: [
-      'Active leak? See [emergency roof repair](/emergency-roof-repair). Compare [tile vs shingles in Folsom](/blog/tile-vs-asphalt-shingles-folsom), [storm damage repair](/blog/storm-damage-roof-repair-folsom), and [roofing costs](/blog/roofing-costs-folsom-ca). [Roof inspection](/roof-inspection) · [Contact](/contact).',
+      'Active leak in Folsom? See [emergency roof repair in Folsom](/emergency-roof-repair/folsom). Compare [tile vs shingles in Folsom](/blog/tile-vs-asphalt-shingles-folsom), [storm damage repair](/blog/storm-damage-roof-repair-folsom), and [roofing costs](/blog/roofing-costs-folsom-ca). Metro [emergency roof repair](/emergency-roof-repair) · [Roof inspection](/roof-inspection) · [Contact](/contact).',
     ],
   },
   'roof-replacement-folsom-ca': {
     appendParagraphs: [
-      'Explore materials on [best roofing materials for Folsom](/blog/best-roofing-materials-folsom) and [tile vs shingles](/blog/tile-vs-asphalt-shingles-folsom). Plan via [roof replacement](/roof-replacement) and [Folsom roofing services](/service-areas/folsom). [Roof inspection](/roof-inspection) · [Emergency repair](/emergency-roof-repair) · [Contact](/contact).',
+      'Explore materials on [best roofing materials for Folsom](/blog/best-roofing-materials-folsom) and [tile vs shingles](/blog/tile-vs-asphalt-shingles-folsom). Plan via [roof replacement](/roof-replacement) and [Folsom roofing services](/service-areas/folsom). [Roof inspection](/roof-inspection) · [Folsom emergency leak help](/emergency-roof-repair/folsom) · [Contact](/contact).',
     ],
   },
   'roof-inspection-folsom-ca': {
     appendParagraphs: [
-      'Free inspections are listed on [roof inspection](/roof-inspection). Local context: [Folsom service area](/service-areas/folsom). If leaks appear, see [roof leak repair Folsom](/blog/roof-leak-repair-folsom-ca) and [roof repair](/roof-repair). [Replacement planning](/blog/roof-replacement-folsom-ca) · [Contact](/contact).',
+      'Free inspections are listed on [roof inspection](/roof-inspection). Local context: [Folsom service area](/service-areas/folsom). If leaks appear, see [roof leak repair Folsom](/blog/roof-leak-repair-folsom-ca) and [roof repair](/roof-repair). Active water in Folsom: [Folsom emergency roof repair](/emergency-roof-repair/folsom). [Replacement planning](/blog/roof-replacement-folsom-ca) · [Contact](/contact).',
     ],
   },
   'storm-damage-roof-repair-folsom': {
     appendParagraphs: [
-      'Insurance help: [roof insurance claims](/blog/roof-insurance-claims-storm-damage) (Sacramento-focused process applies region-wide). [Emergency roof repair](/emergency-roof-repair) · [Roof repair](/roof-repair) · [Folsom](/service-areas/folsom) · [Leak repair guide](/blog/roof-leak-repair-folsom-ca) · [Contact](/contact).',
+      'Insurance help: [roof insurance claims](/blog/roof-insurance-claims-storm-damage) (Sacramento-focused process applies region-wide). [Folsom emergency roof repair](/emergency-roof-repair/folsom) · [Emergency roof repair](/emergency-roof-repair) · [Roof repair](/roof-repair) · [Folsom](/service-areas/folsom) · [Leak repair guide](/blog/roof-leak-repair-folsom-ca) · [Contact](/contact).',
+    ],
+  },
+  'roof-leak-repair-folsom-ca': {
+    appendParagraphs: [
+      'If water is entering a Folsom home now, [emergency roof repair in Folsom](/emergency-roof-repair/folsom) is the hire path. The metro [emergency roof repair](/emergency-roof-repair) page still covers the wider Sacramento area. [Folsom](/service-areas/folsom) · [Roof repair](/roof-repair) · [Contact](/contact).',
     ],
   },
   'best-roofing-materials-folsom': {
@@ -151,7 +156,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'roofing-costs-folsom-ca': {
     appendParagraphs: [
-      'Understand scope through [roof inspection](/roof-inspection) first. Related Folsom guides: [repair](/blog/roof-repair-folsom-ca) · [replacement](/blog/roof-replacement-folsom-ca) · [materials](/blog/best-roofing-materials-folsom). [Folsom](/service-areas/folsom) · [Emergency repair](/emergency-roof-repair) · [Contact](/contact).',
+      'Understand scope through [roof inspection](/roof-inspection) first. Related Folsom guides: [repair](/blog/roof-repair-folsom-ca) · [replacement](/blog/roof-replacement-folsom-ca) · [materials](/blog/best-roofing-materials-folsom). [Folsom](/service-areas/folsom) · [Priority leak help in Folsom](/emergency-roof-repair/folsom) · [Contact](/contact).',
     ],
   },
 

@@ -3,6 +3,11 @@ import type { ReactNode } from 'react';
 
 const INLINE_LINK_PATTERN = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]+)\)/g;
 
+/** Strip markdown-style links to plain text for JSON-LD FAQ answers. */
+export function plainTextFromInlineLinks(text: string): string {
+  return text.replace(INLINE_LINK_PATTERN, '$1');
+}
+
 /** Renders paragraph/list text with markdown-style links: [label](/path) or [label](https://...). */
 export function renderBlogInlineLinks(text: string): ReactNode[] {
   const nodes: ReactNode[] = [];

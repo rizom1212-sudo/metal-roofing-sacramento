@@ -287,7 +287,14 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
     readTime: '6 min read',
     category: FOLSOM_CLUSTER_CATEGORY,
     coverImage: COVER_A,
-    relatedServices: coreServices(),
+    relatedServices: [
+      { label: 'Folsom Roofing Services', href: '/service-areas/folsom' },
+      { label: 'Folsom Emergency Roof Repair', href: '/emergency-roof-repair/folsom' },
+      { label: 'Emergency Roof Repair', href: '/emergency-roof-repair' },
+      { label: 'Roof Repair', href: '/roof-repair' },
+      { label: 'Roof Inspection', href: '/roof-inspection' },
+      { label: 'Contact PRC 13', href: '/contact' },
+    ],
     relatedArticles: [
       article('roof-leak-repair-folsom-ca', 'Roof leak repair Folsom'),
       article('roof-repair-folsom-ca', 'Roof repair Folsom'),
@@ -349,6 +356,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
         type: 'links',
         content: 'Related resources:',
         links: [
+          { label: 'Folsom emergency roof repair', href: '/emergency-roof-repair/folsom' },
           { label: 'Emergency roof repair', href: '/emergency-roof-repair' },
           { label: 'Folsom roofing', href: '/service-areas/folsom' },
         ],

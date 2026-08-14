@@ -221,7 +221,7 @@ export function faqSchema(items: FaqItem[], _pageName: string, pageUrl: string) 
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: item.answer.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]+)\)/g, '$1'),
       },
     })),
   };

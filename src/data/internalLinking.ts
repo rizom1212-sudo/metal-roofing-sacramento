@@ -17,12 +17,21 @@ export const EMERGENCY_HUB_RESOURCE_SLUGS = [
 /** Priority cities for LocalSeoLinks (descriptive subset, not all cities every time). */
 export const LOCAL_SEO_PRIORITY_CITY_SLUGS = [
   'sacramento',
-  'colfax',
   'folsom',
+  'el-dorado-hills',
+  'colfax',
   'roseville',
   'rocklin',
-  'elk-grove',
   'granite-bay',
   'orangevale',
+] as const;
+
+/** Compact footer city list. Full footprint remains on /service-areas. */
+export const FOOTER_PRIORITY_CITY_SLUGS = [
+  'sacramento',
+  'folsom',
   'el-dorado-hills',
+  'roseville',
+  'rocklin',
+  'colfax',
 ] as const;

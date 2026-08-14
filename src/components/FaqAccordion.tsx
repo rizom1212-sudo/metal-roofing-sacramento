@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useId } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 
 export interface FaqItem {
   question: string;
@@ -102,7 +103,7 @@ function FaqItemRow({
           style={reducedMotion && !isOpen ? { display: 'none' } : undefined}
         >
           <p className={`text-sm ${answerLeading} transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0'} ${answerColor}`}>
-            {item.answer}
+            {renderBlogInlineLinks(item.answer)}
           </p>
         </div>
       </div>

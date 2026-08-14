@@ -12,7 +12,7 @@ import AnswerSummary from './AnswerSummary';
 import LocalSeoLinks from './LocalSeoLinks';
 import SacramentoGuideCallout from './SacramentoGuideCallout';
 import { CTA_EMERGENCY_CALL, PRIMARY_CTA } from '../data/cta';
-import { PHONE_DISPLAY } from '../data/site';
+import { LICENSE_SHORT, PHONE_DISPLAY } from '../data/site';
 import TelLink from './TelLink';
 import ReviewStrip from './ReviewStrip';
 import { handleSamePageAnchorClick } from '../lib/scroll';
@@ -161,7 +161,7 @@ export default function ServicePageTemplate({
                 </a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
-                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> Licensed &amp; Insured</span>
+                <span className="flex items-center gap-1.5"><Shield size={13} className="text-gold" /> {LICENSE_SHORT}</span>
                 <span className="flex items-center gap-1.5"><Award size={13} className="text-gold" /> Free Inspections</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Sacramento Area</span>
               </div>
