@@ -173,9 +173,13 @@ export default function Home() {
                 <span className="text-gold text-sm sm:text-base md:text-[17px] font-bold">5.0 Google Rating · {GOOGLE_REVIEW_COUNT} Reviews</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 md:mb-5">
-                Protect Your Home With Sacramento&apos;s Trusted Roofers
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4">
+                Roofing Contractor in Sacramento, CA
               </h1>
+
+              <p className="text-white text-xl sm:text-2xl md:text-[1.65rem] font-semibold leading-snug mb-3 md:mb-4 max-w-xl">
+                Protect Your Home With Sacramento&apos;s Trusted Roofers
+              </p>
 
               <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed mb-5 md:mb-8 max-w-xl">
                 Free roof inspections for Sacramento homeowners, with a written inspection report so you know what your roof needs before any work starts.
