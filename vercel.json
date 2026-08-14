@@ -42,6 +42,7 @@
     { "source": "/services/servicecategory/category2-service7", "destination": "/service-areas", "permanent": true },
     { "source": "/service-areas/service-abcd", "destination": "/service-areas", "permanent": true },
     { "source": "/colfax", "destination": "/service-areas/colfax", "permanent": true },
-    { "source": "/Colfax", "destination": "/service-areas/colfax", "permanent": true }
+    { "source": "/Colfax", "destination": "/service-areas/colfax", "permanent": true },
+    { "source": "/roof-inspection-checklist.html", "destination": "/blog/roof-inspection-checklist", "permanent": true }
   ]
 }

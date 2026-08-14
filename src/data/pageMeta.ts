@@ -26,7 +26,7 @@ export const DEFAULT_SITE_META: PageMetaConfig = {
   title:
     'Best Roofing Contractor in Sacramento, CA | PRC 13 Roofing | Roof Replacement, Repair, Emergency, Metal, Commercial Roofing, Inspection & Gutters Near Me',
   description:
-    'Sacramento roofing company specializing in roof replacement, repair, and metal roofing. Free inspections. Licensed & insured. Call 916-761-3866.',
+    'PRC 13 Roofing is a Sacramento roofing contractor for roof replacement, repair, emergency repair, metal roofing, commercial roofing, inspections, and gutters & siding. Free roof inspections. Licensed & insured. Call 916-761-3866.',
   path: '/',
 };
 
