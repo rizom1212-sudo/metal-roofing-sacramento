@@ -53,7 +53,7 @@ const faqs: FaqItem[] = [
   {
     question: 'What is included in a PRC 13 roof inspection?',
     answer:
-      'We review shingle or tile condition, flashing and penetrations, drainage and gutters, attic ventilation clues when accessible, and visible signs of leaks or soft decking. You receive clear findings and a recommendation—repair, replacement, maintenance, or no action needed.',
+      'We review shingle or tile condition, flashing and penetrations, drainage and gutters, attic ventilation clues when accessible, and visible signs of leaks or soft decking. You receive clear findings and a recommendation: repair, replacement, maintenance, or no action needed.',
   },
   {
     question: 'How long does a roof inspection take?',
@@ -63,7 +63,7 @@ const faqs: FaqItem[] = [
   {
     question: 'How is this different from a home inspection or insurance inspection?',
     answer:
-      'A general home inspection covers many systems and may only note roof concerns at a high level. An insurance inspection focuses on claim-related damage. PRC 13’s roof inspection is a roofing-focused assessment for condition, leak risk, and repair-vs-replacement guidance—useful before buying, selling, or deciding on work.',
+      'A general home inspection covers many systems and may only note roof concerns at a high level. An insurance inspection focuses on claim-related damage. PRC 13’s roof inspection is a roofing-focused assessment for condition, leak risk, and repair-vs-replacement guidance, useful before buying, selling, or deciding on work.',
   },
   {
     question: 'When should a roof be inspected?',
@@ -127,7 +127,7 @@ export default function RoofInspection() {
               <span className="text-gold">in Sacramento, CA</span>
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              Schedule a free roof inspection in Sacramento, California. You get written findings covering leak detection, storm damage, aging materials, flashing problems, and clear repair-versus-replacement guidance—from a licensed roofer, not a salesperson.
+              Schedule a free roof inspection in Sacramento, California. You get written findings covering leak detection, storm damage, aging materials, flashing problems, and clear repair-versus-replacement guidance from a licensed roofer, not a salesperson.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <TelLink location="hero-inspection" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold">
@@ -239,7 +239,7 @@ export default function RoofInspection() {
                 <Link to="/metal-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">metal roofing repair or installation options</Link>.
                 When the roof is flat or low-slope on a small commercial property, we may point you to{' '}
                 <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">flat and commercial roof solutions</Link>.
-                Either way, the inspection comes first—so the recommendation matches what we actually find.
+                Either way, the inspection comes first, so the recommendation matches what we actually find.
               </p>
               <ul className="space-y-2.5">
                 {[
@@ -309,7 +309,7 @@ export default function RoofInspection() {
       <section className="bg-white py-[72px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Our Work</p>
-          <h2 className="section-heading mb-8">Inspection & Repair Projects in Sacramento</h2>
+          <h2 className="section-heading mb-8">Project Gallery</h2>
           <GalleryStrip category="Inspections" limit={4} showLink />
         </div>
       </section>
@@ -408,7 +408,7 @@ export default function RoofInspection() {
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Schedule Today</p>
               <h2 className="text-3xl font-bold text-white mb-4">Get Your Free Roof Inspection</h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                No cost, no obligation. Our roofing team inspects your roof and gives you an honest written assessment. We aim to schedule quickly during Monday–Friday business hours.
+                No cost, no obligation. Our roofing team inspects your roof and gives you an honest written assessment. We aim to schedule quickly during Monday through Friday business hours.
               </p>
               <ul className="space-y-2 mb-6">
                 {['Free with no obligation', 'Licensed roofing team', 'Written findings provided', 'Insurance documentation available'].map(item => (

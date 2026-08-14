@@ -101,7 +101,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Roof Inspection Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Sacramento Roof Inspection Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Free inspections, costs, checklists, insurance visits, storm assessments, and more—written for Sacramento-area homeowners.
+                Free inspections, costs, checklists, insurance visits, storm assessments, and more, written for Sacramento-area homeowners.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {inspectionGuides.map(post => (
@@ -134,7 +134,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Emergency Roof Repair Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Sacramento Emergency Roof Repair Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Roof leaks, storm damage, tarping, hail and wind repair, insurance claims, and when to call an emergency roofer—practical guides for Sacramento-area homeowners.
+                Roof leaks, storm damage, tarping, hail and wind repair, insurance claims, and when to call an emergency roofer: practical guides for Sacramento-area homeowners.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {emergencyGuides.map(post => (
@@ -167,7 +167,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Sacramento Roof Repair Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Roof Repair Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Repair cost, missing shingles, flashing, chimneys, skylights, and tile systems—practical guides for planned Sacramento roof repairs. For active leaks and storm damage, see the emergency guides above.
+                Repair cost, missing shingles, flashing, chimneys, skylights, and tile systems: practical guides for planned Sacramento roof repairs. For active leaks and storm damage, see the emergency guides above.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {repairGuides.map(post => (
@@ -200,7 +200,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Sacramento Roof Replacement Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Roof Replacement Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Replacement cost, materials, insurance, financing, timelines, and what to expect—written for Sacramento homeowners planning a new roof.
+                Replacement cost, materials, insurance, financing, timelines, and what to expect, written for Sacramento homeowners planning a new roof.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {replacementGuides.map(post => (
@@ -233,7 +233,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Metal Roofing Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Metal Roofing Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Cost, standing seam, Sacramento climate fit, installation process, and honest shingle comparisons—for homeowners planning a long-term metal roof.
+                Cost, standing seam, Sacramento climate fit, installation process, and honest shingle comparisons for homeowners planning a long-term metal roof.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {metalGuides.map(post => (
@@ -266,7 +266,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Gutters &amp; Fascia Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Gutters &amp; Fascia Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Gutter installation, replacement cost, guards, fascia damage education, and how drainage affects roof leaks—for Sacramento homeowners protecting the roofline. PRC 13 does not offer fascia or soffit repair.
+                Gutter installation, replacement cost, guards, fascia damage education, and how drainage affects roof leaks for Sacramento homeowners protecting the roofline. PRC 13 does not offer fascia or soffit repair.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {guttersFasciaGuides.map(post => (
@@ -299,7 +299,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Commercial Roofing Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Commercial Roofing Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Replacement, repair, TPO vs EPDM, maintenance, and leak response—for Sacramento flat and low-slope commercial properties.
+                Replacement, repair, TPO vs EPDM, maintenance, and leak response for Sacramento flat and low-slope commercial properties.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {commercialGuides.map(post => (
@@ -332,7 +332,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Folsom Roofing Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">Folsom Roofing Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Roof repair, replacement, inspections, leak fixes, storm damage, material choices, and roofing costs—written for Folsom homeowners and lake-area properties.
+                Roof repair, replacement, inspections, leak fixes, storm damage, material choices, and roofing costs, written for Folsom homeowners and lake-area properties.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {folsomGuides.map(post => (
@@ -365,7 +365,7 @@ export default function Blog() {
               <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">El Dorado Hills Roofing Guides</p>
               <h2 className="text-2xl font-bold text-headline mb-2">El Dorado Hills Roofing Resources</h2>
               <p className="text-body text-sm leading-relaxed mb-6 max-w-2xl">
-                Roof repair, replacement, inspections, tile and metal roofing, emergency response, and insurance claims—for foothill and hillside homes. Educational fascia articles may appear in this cluster; PRC 13 does not offer fascia or soffit repair.
+                Roof repair, replacement, inspections, tile and metal roofing, emergency response, and insurance claims for foothill and hillside homes. Educational fascia articles may appear in this cluster; PRC 13 does not offer fascia or soffit repair.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {elDoradoHillsGuides.map(post => (

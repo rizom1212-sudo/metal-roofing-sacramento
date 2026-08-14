@@ -89,7 +89,7 @@ const rawBlogPosts: BlogPost[] = [
       {
         question: 'When should I call PRC 13 after a storm leak?',
         answer:
-          'Call as soon as it is safe—especially if water is actively entering the home. PRC 13 can help with emergency response and schedule a full inspection to find the source.',
+ 'Call as soon as it is safe, especially if water is actively entering the home. PRC 13 can help with emergency response and schedule a full inspection to find the source.',
       },
       {
         question: 'Can PRC 13 inspect my roof after the storm passes?',
@@ -283,7 +283,7 @@ const rawBlogPosts: BlogPost[] = [
       {
         question: 'What documentation does PRC 13 provide for claims?',
         answer:
-          'PRC 13 documents issues with photos, notes, and a written assessment—information homeowners can use when filing a claim and meeting with an adjuster.',
+ 'PRC 13 documents issues with photos, notes, and a written assessment, information homeowners can use when filing a claim and meeting with an adjuster.',
       },
     ],
     body: [

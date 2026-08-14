@@ -146,7 +146,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How do I know if repair is enough?',
         answer:
-          'That is what our inspection is for. PRC 13 explains what can be repaired and what has reached end of life—we do not push replacement when repair is sufficient.',
+ 'That is what our inspection is for. PRC 13 explains what can be repaired and what has reached end of life, we do not push replacement when repair is sufficient.',
       },
       {
         question: 'Does PRC 13 repair TPO and EPDM roofs?',
@@ -308,7 +308,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Ponding water, clogged drains, and failed HVAC curb flashing cause most Sacramento commercial leaks—not membrane brand alone. PRC 13 inspects drainage, seams, and penetrations before recommending TPO, EPDM, or another system.',
+ 'Ponding water, clogged drains, and failed HVAC curb flashing cause most Sacramento commercial leaks, not membrane brand alone. PRC 13 inspects drainage, seams, and penetrations before recommending TPO, EPDM, or another system.',
       },
       {
         type: 'links',
@@ -345,7 +345,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
       {
         question: 'What does commercial roof maintenance include?',
         answer:
-          'Inspection of membrane condition, drainage paths, seams, flashing, and rooftop equipment penetrations—plus recommendations for repairs before leaks spread.',
+ 'Inspection of membrane condition, drainage paths, seams, flashing, and rooftop equipment penetrations, plus recommendations for repairs before leaks spread.',
       },
       {
         question: 'Can maintenance prevent full replacement?',
@@ -382,7 +382,7 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
         type: 'list',
         content: '',
         items: [
-          'Drain and scupper flow—no standing water after rain',
+ 'Drain and scupper flow, no standing water after rain',
           'Membrane surface for cracks, blisters, and punctures',
           'Seam integrity along field and perimeter',
           'HVAC curb and pipe boot flashing',
@@ -458,19 +458,19 @@ export const commercialRoofingClusterPosts: BlogPost[] = [
       {
         question: 'What should I do while waiting for repair?',
         answer:
-          'Contain interior water, protect equipment and inventory, and document stains or drips. Do not ignore ceiling damage—it often traces to a identifiable roof defect.',
+ 'Contain interior water, protect equipment and inventory, and document stains or drips. Do not ignore ceiling damage, it often traces to a identifiable roof defect.',
       },
       {
         question: 'Do leak repairs include drainage fixes?',
         answer:
-          'When ponding or clogged drains cause the leak, PRC 13 addresses drainage as part of the repair scope—not just the interior symptom.',
+ 'When ponding or clogged drains cause the leak, PRC 13 addresses drainage as part of the repair scope, not just the interior symptom.',
       },
     ],
     body: [
       {
         type: 'paragraph',
         content:
-          'Short answer: commercial roof leak repair in Sacramento starts with tracing water from the interior stain back to membrane failure, open seams, or drainage backup. PRC 13 Roofing documents the source and fixes the roof—not just the ceiling.',
+ 'Short answer: commercial roof leak repair in Sacramento starts with tracing water from the interior stain back to membrane failure, open seams, or drainage backup. PRC 13 Roofing documents the source and fixes the roof, not just the ceiling.',
       },
       {
         type: 'heading',

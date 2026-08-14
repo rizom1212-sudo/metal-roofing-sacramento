@@ -123,7 +123,7 @@ const repairFaqs: FaqItem[] = [
   {
     question: 'What affects roof repair cost in Sacramento?',
     answer:
-      'Repair cost depends on the leak source, how many areas are involved, material type (shingle, tile, flat membrane), roof access, and whether decking or flashing must be replaced. PRC 13 provides a written estimate after inspection—there is no flat published price because each roof differs.',
+      'Repair cost depends on the leak source, how many areas are involved, material type (shingle, tile, flat membrane), roof access, and whether decking or flashing must be replaced. PRC 13 provides a written estimate after inspection. There is no flat published price because each roof differs.',
   },
   {
     question: 'How quickly can you inspect my roof?',
@@ -133,7 +133,7 @@ const repairFaqs: FaqItem[] = [
   {
     question: 'What is the difference between a temporary and permanent roof repair?',
     answer:
-      'A temporary repair (such as emergency dry-in) slows water intrusion so the home can stay protected while materials arrive or a permanent repair is planned. A permanent repair addresses the actual failure—flashing, shingles, membrane, or decking—so the leak source is fixed, not just covered.',
+      'A temporary repair (such as emergency dry-in) slows water intrusion so the home can stay protected while materials arrive or a permanent repair is planned. A permanent repair addresses the actual failure: flashing, shingles, membrane, or decking, so the leak source is fixed, not just covered.',
   },
   {
     question: 'Can you match discontinued shingles or tile?',
@@ -201,7 +201,7 @@ export default function RoofRepair() {
                 <span className="text-gold">Leaks, Shingles & Flashing</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-                Roof repair in Sacramento, California for roof leaks, missing or damaged shingles, flashing issues, and storm damage. We find the source, explain your options, and start with a free inspection—no pressure.
+                Roof repair in Sacramento, California for roof leaks, missing or damaged shingles, flashing issues, and storm damage. We find the source, explain your options, and start with a free inspection with no pressure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <TelLink location="roof-repair" className="inline-flex items-center justify-center gap-2 btn-gold py-4 px-8 text-base font-semibold"><Phone size={18} /> Call {PHONE_DISPLAY}</TelLink>
@@ -247,7 +247,7 @@ export default function RoofRepair() {
               'Insurance documentation available for storm damage',
             ]}
           >
-            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home—or whether replacement is the more durable path. For flat and low-slope systems on small commercial properties, see our{' '}
+            Many roof leaks can be repaired without replacing the entire roof. PRC 13 Roofing inspects the leak source, checks surrounding roof conditions, and explains whether a focused repair is enough for your Sacramento home, or whether replacement is the more durable path. For flat and low-slope systems on small commercial properties, see our{' '}
             <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">commercial and flat-roof services</Link>.
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -341,7 +341,7 @@ export default function RoofRepair() {
           {
             question: 'What affects roof repair cost?',
             answer:
-              'Cost is driven by leak location, material type, how many areas need work, roof access, and whether decking or flashing must be replaced—not by a one-size published rate.',
+              'Cost is driven by leak location, material type, how many areas need work, roof access, and whether decking or flashing must be replaced, not by a one-size published rate.',
           },
           {
             question: 'When should you repair instead of replace?',
@@ -388,7 +388,7 @@ export default function RoofRepair() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent Work</p>
-          <h2 className="section-heading mb-8">Recent Roof Repair Work Across Sacramento</h2>
+          <h2 className="section-heading mb-8">Project Gallery</h2>
           <GalleryStrip category="Roof Repairs" limit={4} showLink />
         </div>
       </section>
@@ -433,7 +433,7 @@ export default function RoofRepair() {
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Roof Repair Resources</p>
               <h2 className="section-heading mb-3">Sacramento Roof Repair Guides</h2>
               <p className="text-body text-sm leading-relaxed max-w-3xl">
-                Planning a repair—not an emergency? These guides cover cost, shingles, flashing, chimneys, skylights, and tile systems for{' '}
+                Planning a repair, not an emergency? These guides cover cost, shingles, flashing, chimneys, skylights, and tile systems for{' '}
                 <Link to="/service-areas/sacramento" className="text-gold font-semibold hover:text-gold-dark transition-colors">Sacramento</Link>,{' '}
                 <Link to="/service-areas/folsom" className="text-gold font-semibold hover:text-gold-dark transition-colors">Folsom</Link>,{' '}
                 <Link to="/service-areas/el-dorado-hills" className="text-gold font-semibold hover:text-gold-dark transition-colors">El Dorado Hills</Link>, and{' '}

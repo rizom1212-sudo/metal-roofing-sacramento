@@ -50,7 +50,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         question: 'How much does roof repair cost in Sacramento?',
         answer:
-          'Cost depends on the failure type—pipe boot, flashing, shingle replacement, or tile underlayment. PRC 13 provides a written quote after a free inspection with line items explained.',
+ 'Cost depends on the failure type, pipe boot, flashing, shingle replacement, or tile underlayment. PRC 13 provides a written quote after a free inspection with line items explained.',
       },
       {
         question: 'Is a roof repair estimate free?',
@@ -82,7 +82,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: Sacramento roof repair cost depends on what failed on the roof—not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix on our main roof repair page.',
+ 'Short answer: Sacramento roof repair cost depends on what failed on the roof, not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix on our main roof repair page.',
       },
       {
         type: 'heading',
@@ -159,7 +159,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         question: 'What is roof flashing?',
         answer:
-          'Flashing is metal or membrane at roof transitions—walls, chimneys, skylights, valleys, and vents—that directs water over the roofing material instead of under it.',
+ 'Flashing is metal or membrane at roof transitions, walls, chimneys, skylights, valleys, and vents, that directs water over the roofing material instead of under it.',
       },
       {
         question: 'How do I know flashing is causing my leak?',
@@ -174,7 +174,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         question: 'Do tile roofs need different flashing repair?',
         answer:
-          'Yes. Tile systems rely on pan flashing at walls and valleys. Repairs must respect tile weight and underlayment continuity—not just surface sealant.',
+ 'Yes. Tile systems rely on pan flashing at walls and valleys. Repairs must respect tile weight and underlayment continuity, not just surface sealant.',
       },
       {
         question: 'How long does flashing repair take?',
@@ -256,7 +256,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         question: 'Why do chimneys leak in Sacramento?',
         answer:
-          'Failed counter-flashing, cracked mortar caps, and separated base flashing let water run behind the chimney profile—especially after long heat cycles dry out sealants.',
+ 'Failed counter-flashing, cracked mortar caps, and separated base flashing let water run behind the chimney profile, especially after long heat cycles dry out sealants.',
       },
       {
         question: 'Can you repair chimney flashing without replacing the roof?',
@@ -283,7 +283,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: chimney flashing repair in Sacramento restores the metal layers where the chimney meets the roof plane. PRC 13 inspects base flashing, counter-flashing, and mortar caps before quoting repair—many chimney leaks are flashing problems, not roof-wide failures.',
+ 'Short answer: chimney flashing repair in Sacramento restores the metal layers where the chimney meets the roof plane. PRC 13 inspects base flashing, counter-flashing, and mortar caps before quoting repair, many chimney leaks are flashing problems, not roof-wide failures.',
       },
       {
         type: 'heading',
@@ -375,7 +375,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: skylight leak repair in Sacramento focuses on the curb and flashing detail where the unit meets the roof—not just re-caulking the interior frame. PRC 13 inspects uphill roofing and underlayment continuity before quoting work.',
+ 'Short answer: skylight leak repair in Sacramento focuses on the curb and flashing detail where the unit meets the roof, not just re-caulking the interior frame. PRC 13 inspects uphill roofing and underlayment continuity before quoting work.',
       },
       {
         type: 'heading',
@@ -472,7 +472,7 @@ export const roofRepairClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: tile roof repair in Sacramento addresses broken tile, failed underlayment, and pan flashing—not just surface cracks. PRC 13 inspects what is beneath the tile before quoting, because heat-aged felt is the most common hidden failure on Sacramento tile homes.',
+ 'Short answer: tile roof repair in Sacramento addresses broken tile, failed underlayment, and pan flashing, not just surface cracks. PRC 13 inspects what is beneath the tile before quoting, because heat-aged felt is the most common hidden failure on Sacramento tile homes.',
       },
       {
         type: 'heading',

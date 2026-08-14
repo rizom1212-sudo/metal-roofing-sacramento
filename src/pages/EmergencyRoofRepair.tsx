@@ -24,7 +24,7 @@ export default function EmergencyRoofRepair() {
         'Storm Damage Documentation',
         'Fully Insured',
       ]}
-      answerSummary="If your Sacramento-area roof is actively leaking, call first, contain the water indoors, and avoid climbing onto the roof. PRC 13 Roofing can assess urgent leaks, provide temporary stabilization when appropriate, and document storm damage for repair planning or insurance. Response timing depends on weather, routing, and crew capacity—same-day assessment is often possible but not guaranteed."
+      answerSummary="If your Sacramento-area roof is actively leaking, call first, contain the water indoors, and avoid climbing onto the roof. PRC 13 Roofing can assess urgent leaks, provide temporary stabilization when appropriate, and document storm damage for repair planning or insurance. Response timing depends on weather, routing, and crew capacity. Same-day assessment is often possible but not guaranteed."
       answerPoints={[
         'Active leaks and storm damage prioritized',
         'Temporary weatherproofing when conditions allow',
@@ -34,7 +34,7 @@ export default function EmergencyRoofRepair() {
       introHeading="What Happens in a Roof Emergency"
       introParagraphs={[
         'A roof leak that keeps running can push water into insulation, drywall, and framing. Speed matters, but so does a clear plan: stop active intrusion when possible, document the damage, then complete a permanent repair.',
-        `PRC 13 Roofing provides emergency roof repair in Sacramento, California for active roof leaks, water intrusion, and storm damage. Call ${PHONE_DISPLAY} during or outside posted business hours for urgent leaks—we prioritize these calls and aim to assess quickly when crews can route safely.`,
+        `PRC 13 Roofing provides emergency roof repair in Sacramento, California for active roof leaks, water intrusion, and storm damage. Call ${PHONE_DISPLAY} during or outside posted business hours for urgent leaks. We prioritize these calls and aim to assess quickly when crews can route safely.`,
       ]}
       introChecklist={[
         'Active leaks assessed and stabilized when conditions allow',
@@ -51,10 +51,10 @@ export default function EmergencyRoofRepair() {
         { title: 'Temporary Stabilization', desc: 'When needed, we can provide emergency weatherproofing (temporary dry-in) to slow water while a permanent repair is planned.' },
         { title: 'Honest Diagnosis', desc: 'We explain what failed, what temporary protection does, and what permanent repair or replacement comes next.' },
         { title: 'Insurance Support', desc: 'We document visible storm damage to support your claim. Coverage decisions remain with your insurer.' },
-        { title: 'Follow-Through Repair', desc: 'Temporary dry-in is not the finish line—we plan the permanent repair once the home is protected.' },
+        { title: 'Follow-Through Repair', desc: 'Temporary dry-in is not the finish line. We plan the permanent repair once the home is protected.' },
         { title: 'Written Scope', desc: 'You get a written estimate before permanent work begins. No surprise emergency surcharge language on the estimate.' },
       ]}
-      galleryHeading="Roof Repair Work in Sacramento"
+      galleryHeading="Project Gallery"
       galleryCategory="Roof Repairs"
       faqHeading="Emergency Roof Repair FAQs"
       faqs={[
@@ -84,14 +84,14 @@ export default function EmergencyRoofRepair() {
         },
         {
           question: 'Do you only respond during business hours?',
-          answer: 'Normal business hours are Monday–Friday. For active leaks, call anytime—we prioritize urgent water intrusion and respond as capacity allows. Weekend or after-hours timing depends on conditions and crew availability.',
+          answer: 'Normal business hours are Monday through Friday. For active leaks, call anytime. We prioritize urgent water intrusion and respond as capacity allows. Weekend or after-hours timing depends on conditions and crew availability.',
         },
       ]}
       ctaHeading="Call Now for Emergency Roof Help"
       ctaSubtext="If your roof is leaking or you have active storm damage, call us directly. We prioritize Sacramento-area roof emergencies and aim to assess quickly."
       ctaChecklist={[
         'Active leaks prioritized',
-        'Same-day assessment often possible—not guaranteed',
+        'Same-day assessment often possible, not guaranteed',
         'Written estimate before permanent work',
         'Insurance documentation support',
       ]}
@@ -101,7 +101,7 @@ export default function EmergencyRoofRepair() {
         label: 'View our Sacramento service area page',
       }}
       resourceSectionHeading="Emergency Roof Repair Resources"
-      resourceSectionIntro="Homeowners across Sacramento use these guides to understand roof leaks, storm and wind damage, emergency tarping, repair costs, insurance claims after storms, and when to call an emergency roofer—before reaching out for help."
+      resourceSectionIntro="Homeowners across Sacramento use these guides to understand roof leaks, storm and wind damage, emergency tarping, repair costs, insurance claims after storms, and when to call an emergency roofer before reaching out for help."
       resourceGuides={emergencyResources}
       contextualLinkParagraphs={[
         'We serve [Sacramento](/service-areas/sacramento), [Folsom](/service-areas/folsom), and [El Dorado Hills](/service-areas/el-dorado-hills). City-specific emergency help: [Granite Bay](/emergency-roof-repair/granite-bay), [Orangevale](/emergency-roof-repair/orangevale), and [Folsom emergency roof repair](/emergency-roof-repair/folsom). For non-urgent issues, see [roof repair](/roof-repair) or schedule a [roof inspection](/roof-inspection). Popular guides: [roof leak repair](/blog/roof-leak-repair-sacramento), [storm damage repair](/blog/storm-damage-roof-repair-sacramento), and [emergency tarping](/blog/emergency-roof-tarp-guide). [Contact us](/contact) anytime.',

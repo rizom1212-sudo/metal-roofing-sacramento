@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { galleryImages, type GalleryCategory } from '../data/gallery';
+import OptimizedImage from './OptimizedImage';
 
 interface GalleryStripProps {
   /** Filter by category. 'All' shows any category. */
@@ -20,6 +21,9 @@ interface GalleryStripProps {
   /** Show the View Full Gallery link at the bottom */
   showLink?: boolean;
 }
+
+const STRIP_IMAGE_WIDTH = 400;
+const STRIP_IMAGE_HEIGHT = 208;
 
 export default function GalleryStrip({
   category = 'All',
@@ -57,17 +61,21 @@ export default function GalleryStrip({
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {items.map(img => (
+        {items.map((img, index) => (
           <div
             key={img.id}
             data-stagger-item
             className="group relative overflow-hidden bg-gray-100 transition-shadow duration-300 hover:shadow-[0_12px_30px_rgba(15,20,28,0.12)]"
+            style={{ aspectRatio: `${STRIP_IMAGE_WIDTH} / ${STRIP_IMAGE_HEIGHT}` }}
           >
-            <img
+            <OptimizedImage
               src={img.src}
               alt={img.alt}
-              loading="lazy"
-              className="w-full h-44 md:h-52 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              width={STRIP_IMAGE_WIDTH}
+              height={STRIP_IMAGE_HEIGHT}
+              sizes="(max-width: 768px) 50vw, 25vw"
+              priority={index < 2}
+              className="h-full transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </div>
         ))}

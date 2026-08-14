@@ -63,7 +63,7 @@ export const upgradedRoofLeakRepairSacramento: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'A roof leak in Sacramento is stressful because the water you see indoors rarely tells the whole story. Rain can enter at a flashing joint, pipe boot, valley, skylight, or damaged shingle, then travel along underlayment, decking, or framing before it reaches drywall. A good repair starts by protecting the home and tracing that route—not by treating the stain as the source.',
+ 'A roof leak in Sacramento is stressful because the water you see indoors rarely tells the whole story. Rain can enter at a flashing joint, pipe boot, valley, skylight, or damaged shingle, then travel along underlayment, decking, or framing before it reaches drywall. A good repair starts by protecting the home and tracing that route, not by treating the stain as the source.',
     },
     { type: 'heading', content: 'What to Do While Water Is Entering' },
     {
@@ -420,7 +420,7 @@ export const upgradedRoofInsuranceClaimsStormDamage: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Even when a claim is accepted, a deductible is commonly your share of the cost under the policy. Older roofs may also be affected by depreciation or age-related settlement rules that change the unpaid amount. Ask your insurer how the settlement was calculated rather than assuming the first number equals the full project cost. If additional storm-related damage is found after the initial review, some claims involve supplemental documentation—again decided by the insurer, not the contractor.',
+ 'Even when a claim is accepted, a deductible is commonly your share of the cost under the policy. Older roofs may also be affected by depreciation or age-related settlement rules that change the unpaid amount. Ask your insurer how the settlement was calculated rather than assuming the first number equals the full project cost. If additional storm-related damage is found after the initial review, some claims involve supplemental documentation, again decided by the insurer, not the contractor.',
     },
     {
       type: 'paragraph',
@@ -562,7 +562,7 @@ export const upgradedFreeRoofInspectionSacramento: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'The inspection examines accessible, visible parts of the roof system. That usually includes the field material—shingles, tile, metal, or a low-slope surface—plus ridge areas, valleys, flashings, pipe boots, skylights, roof-to-wall transitions, gutters, and drainage. When safe and available, interior or attic clues such as moisture, staining, ventilation issues, or daylight can help identify the water path.',
+ 'The inspection examines accessible, visible parts of the roof system. That usually includes the field material, shingles, tile, metal, or a low-slope surface, plus ridge areas, valleys, flashings, pipe boots, skylights, roof-to-wall transitions, gutters, and drainage. When safe and available, interior or attic clues such as moisture, staining, ventilation issues, or daylight can help identify the water path.',
     },
     {
       type: 'list',
@@ -591,13 +591,13 @@ export const upgradedFreeRoofInspectionSacramento: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'No visual inspection can predict every future failure or see every concealed condition without access or invasive testing. Safe access, roof pitch, weather, material type, and the visibility of the affected area influence what can be observed. The value is a professional assessment of the available evidence and a clear explanation of uncertainty—not a blanket guarantee that a roof will never leak.',
+ 'No visual inspection can predict every future failure or see every concealed condition without access or invasive testing. Safe access, roof pitch, weather, material type, and the visibility of the affected area influence what can be observed. The value is a professional assessment of the available evidence and a clear explanation of uncertainty, not a blanket guarantee that a roof will never leak.',
     },
     { type: 'heading', content: 'Repair, Maintenance, or Replacement?' },
     {
       type: 'paragraph',
       content:
-        'A localized issue such as a failed pipe boot, small flashing defect, or limited wind damage may be repairable when surrounding materials are healthy. Broader problems—repeated leaks, widespread brittleness, extensive material loss, deteriorated underlayment, or soft decking—may make replacement more practical. You should be told why a recommendation is being made and what the alternatives are, not pressured to choose a scope before you understand the condition.',
+ 'A localized issue such as a failed pipe boot, small flashing defect, or limited wind damage may be repairable when surrounding materials are healthy. Broader problems, repeated leaks, widespread brittleness, extensive material loss, deteriorated underlayment, or soft decking, may make replacement more practical. You should be told why a recommendation is being made and what the alternatives are, not pressured to choose a scope before you understand the condition.',
     },
     { type: 'heading', content: 'Prepare for the Appointment' },
     {
@@ -722,7 +722,7 @@ export const upgradedMissingShingleRepairSacramento: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Ridge-cap shingles sit at a high-wind location and can crack, lift, or lose adhesion before the field. Heavy granule loss in gutters or at downspouts can signal aging that makes future uplift more likely. Curling corners, surface cracking, and blistering are additional age and heat indicators that change whether a one-shingle repair is still a durable solution. Poor fastening—nails too high, too few, or poorly seated—can also allow tabs to release sooner under wind.',
+ 'Ridge-cap shingles sit at a high-wind location and can crack, lift, or lose adhesion before the field. Heavy granule loss in gutters or at downspouts can signal aging that makes future uplift more likely. Curling corners, surface cracking, and blistering are additional age and heat indicators that change whether a one-shingle repair is still a durable solution. Poor fastening, nails too high, too few, or poorly seated, can also allow tabs to release sooner under wind.',
     },
     { type: 'heading', content: 'When a Localized Repair Makes Sense' },
     {
@@ -791,7 +791,7 @@ export const upgradedMissingShingleRepairSacramento: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'PRC 13 can inspect the missing shingle area, assess the surrounding roof, and explain whether a focused repair is a sound choice. Request an inspection before the next rain so you can make a repair or replacement decision based on the whole roof—not just the most visible gap.',
+ 'PRC 13 can inspect the missing shingle area, assess the surrounding roof, and explain whether a focused repair is a sound choice. Request an inspection before the next rain so you can make a repair or replacement decision based on the whole roof, not just the most visible gap.',
     },
   ],
 };

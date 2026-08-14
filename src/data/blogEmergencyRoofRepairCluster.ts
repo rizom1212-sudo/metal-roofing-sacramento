@@ -59,7 +59,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       {
         question: 'How long does a roof tarp last?',
         answer:
-          'Quality tarp installs are temporary—often weeks to a few months depending on wind exposure. Permanent repair should follow quickly.',
+ 'Quality tarp installs are temporary, often weeks to a few months depending on wind exposure. Permanent repair should follow quickly.',
       },
       {
         question: 'Will insurance pay for emergency tarping?',
@@ -112,7 +112,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'What To Do If Your Roof Leaks At Night in Sacramento',
     seoTitle: 'Roof Leak at Night? Steps for Sacramento Homeowners',
     excerpt:
-      'A roof leak at night is stressful. Here is a safe step-by-step plan for Sacramento homeowners—and when to call PRC 13 for emergency roof repair.',
+ 'A roof leak at night is stressful. Here is a safe step-by-step plan for Sacramento homeowners, and when to call PRC 13 for emergency roof repair.',
     date: 'June 19, 2026',
     readTime: '5 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -127,12 +127,12 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       {
         question: 'Should I go on the roof at night to find a leak?',
         answer:
-          'No. Wet, dark roofs are extremely dangerous. Contain water inside and call a professional in the morning—or sooner if flow is heavy.',
+ 'No. Wet, dark roofs are extremely dangerous. Contain water inside and call a professional in the morning, or sooner if flow is heavy.',
       },
       {
         question: 'Can I poke a ceiling bulge to drain water?',
         answer:
-          'If a bulge is actively growing, carefully puncturing with a bucket below can prevent collapse—but only if you can do so safely. Otherwise call for help.',
+ 'If a bulge is actively growing, carefully puncturing with a bucket below can prevent collapse, but only if you can do so safely. Otherwise call for help.',
       },
       {
         question: 'Will PRC 13 come out after hours?',
@@ -154,7 +154,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: move valuables, capture water in containers, stay off the roof, and call PRC 13 Roofing if water is entering the home. Night leaks feel urgent—but indoor safety comes first.',
+ 'Short answer: move valuables, capture water in containers, stay off the roof, and call PRC 13 Roofing if water is entering the home. Night leaks feel urgent, but indoor safety comes first.',
       },
       {
         type: 'heading',
@@ -167,7 +167,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
           'Place buckets or bins under active drips',
           'Move furniture, electronics, and rugs away from the area',
           'Use towels or plastic on floors along the drip path',
-          'Note whether dripping speeds up in heavy rain—that helps locate severity',
+ 'Note whether dripping speeds up in heavy rain, that helps locate severity',
           'Call PRC 13 if multiple rooms are affected',
         ],
       },
@@ -249,7 +249,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
         items: [
           'Photograph debris, missing shingles, and interior stains',
           'Check attic for new light or moisture if safely accessible',
-          'Clear gutters only from the ground or ladder height—avoid roof walking in wet conditions',
+ 'Clear gutters only from the ground or ladder height, avoid roof walking in wet conditions',
           'Call PRC 13 for emergency assessment if water is entering the home',
         ],
       },
@@ -437,7 +437,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
     title: 'When To Call An Emergency Roofer in Sacramento',
     seoTitle: 'When To Call An Emergency Roofer | Sacramento',
     excerpt:
-      'Not every drip requires a midnight call—but some do. Learn when to call an emergency roofer in Sacramento and how PRC 13 prioritizes urgent roof repair.',
+ 'Not every drip requires a midnight call, but some do. Learn when to call an emergency roofer in Sacramento and how PRC 13 prioritizes urgent roof repair.',
     date: 'June 22, 2026',
     readTime: '5 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -457,7 +457,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       {
         question: 'When can I wait for a standard appointment?',
         answer:
-          'A small stain after rain with no active drip may be urgent but not always same-hour emergency—still schedule within days.',
+ 'A small stain after rain with no active drip may be urgent but not always same-hour emergency, still schedule within days.',
       },
       {
         question: 'Should I call if only the garage is leaking?',
@@ -503,7 +503,7 @@ export const emergencyRoofRepairClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'A single missing shingle found on the ground, minor granule loss, or an old stain with no active drip still deserves prompt roof repair—but may not need after-hours response. PRC 13 helps you sort urgency honestly.',
+ 'A single missing shingle found on the ground, minor granule loss, or an old stain with no active drip still deserves prompt roof repair, but may not need after-hours response. PRC 13 helps you sort urgency honestly.',
       },
       {
         type: 'links',

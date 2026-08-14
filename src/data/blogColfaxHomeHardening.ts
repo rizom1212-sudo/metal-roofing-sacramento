@@ -63,7 +63,7 @@ export const colfaxRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: The City of Colfax operates a Home Hardening and Defensible Space Program for residential properties within city limits, and Colfax homeowners may be eligible for assistance covering up to 90% of qualifying home-hardening and defensible-space improvements. Roofing can matter for wildfire readiness, but program eligibility and covered work are decided through the City’s process—not by a contractor marketing page.',
+ 'Short answer: The City of Colfax operates a Home Hardening and Defensible Space Program for residential properties within city limits, and Colfax homeowners may be eligible for assistance covering up to 90% of qualifying home-hardening and defensible-space improvements. Roofing can matter for wildfire readiness, but program eligibility and covered work are decided through the City’s process, not by a contractor marketing page.',
       },
       {
         type: 'paragraph',
@@ -109,16 +109,16 @@ export const colfaxRoofingClusterPosts: BlogPost[] = [
       },
       {
         type: 'heading',
-        content: 'Class A and fire-resistant roofing—in plain language',
+ content: 'Class A and fire-resistant roofing, in plain language',
       },
       {
         type: 'paragraph',
         content:
-          'Class A describes a roof assembly’s fire-performance rating under standardized testing. It is about the installed system—not only a product brochure claim. When comparing [roof replacement](/roof-replacement) or [metal roofing](/metal-roofing) options, ask which assembly rating applies and how edges, underlayment, and penetrations will be detailed.',
+ 'Class A describes a roof assembly’s fire-performance rating under standardized testing. It is about the installed system, not only a product brochure claim. When comparing [roof replacement](/roof-replacement) or [metal roofing](/metal-roofing) options, ask which assembly rating applies and how edges, underlayment, and penetrations will be detailed.',
       },
       {
         type: 'heading',
-        content: 'Where PRC 13 Roofing fits—and where it does not',
+ content: 'Where PRC 13 Roofing fits, and where it does not',
       },
       {
         type: 'paragraph',

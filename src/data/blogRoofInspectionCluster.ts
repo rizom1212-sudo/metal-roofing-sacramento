@@ -26,7 +26,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Roof Inspection Cost in Sacramento: Free vs. Paid Options',
     seoTitle: 'Roof Inspection Cost Sacramento | What to Expect',
     excerpt:
-      'What does a roof inspection cost in Sacramento? Learn typical ranges for residential, insurance, and real estate inspections—and when PRC 13 offers them free.',
+ 'What does a roof inspection cost in Sacramento? Learn typical ranges for residential, insurance, and real estate inspections, and when PRC 13 offers them free.',
     date: 'June 10, 2026',
     readTime: '5 min read',
     category: CATEGORY,
@@ -61,7 +61,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'Is a free inspection lower quality than a paid one?',
         answer:
-          'Not necessarily. A licensed roofer inspection focuses on roof-specific defects. The key is who performs it and whether findings are explained clearly—not whether a fee is charged.',
+ 'Not necessarily. A licensed roofer inspection focuses on roof-specific defects. The key is who performs it and whether findings are explained clearly, not whether a fee is charged.',
       },
     ],
     body: [
@@ -80,7 +80,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
         items: [
           'Standard residential inspection with PRC 13: free',
           'Home inspector roof section (part of full home inspection): often bundled',
-          'Standalone paid roof assessment: commonly $150–$400+',
+ 'Standalone paid roof assessment: commonly $150-$400+',
           'Commercial flat roof survey: varies by square footage and core samples',
           'Insurance adjuster visit: usually part of claim process',
         ],
@@ -123,7 +123,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
     title: 'Roof Inspection Checklist for Sacramento Homeowners',
     seoTitle: 'Roof Inspection Checklist for Homeowners | Sacramento',
     excerpt:
-      'Practical roof inspection checklist for Sacramento homes: what to check from the ground, in the attic, and after storms—plus when to call PRC 13.',
+ 'Practical roof inspection checklist for Sacramento homes: what to check from the ground, in the attic, and after storms, plus when to call PRC 13.',
     date: 'June 11, 2026',
     readTime: '7 min read',
     category: CATEGORY,
@@ -138,7 +138,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'Can homeowners inspect their own roof safely?',
         answer:
-          'You can check many items from the ground and attic without climbing on the roof. Avoid walking on wet, steep, or tile roofs—call a professional instead.',
+ 'You can check many items from the ground and attic without climbing on the roof. Avoid walking on wet, steep, or tile roofs, call a professional instead.',
       },
       {
         question: 'What is the most important item on a roof checklist?',
@@ -148,7 +148,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'How often should I use this checklist?',
         answer:
-          'At least twice a year in Sacramento—before winter rain and after summer heat—and after any major wind or hail event.',
+ 'At least twice a year in Sacramento, before winter rain and after summer heat, and after any major wind or hail event.',
       },
       {
         question: 'Does PRC 13 offer a printable checklist?',
@@ -194,7 +194,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
           'Musty odors or visible mold in the attic',
           'Daylight showing through roof decking',
           'Wet insulation or dark streaks on rafters',
-          'Proper attic ventilation—blocked vents shorten shingle life in Sacramento heat',
+ 'Proper attic ventilation, blocked vents shorten shingle life in Sacramento heat',
         ],
       },
       {
@@ -212,7 +212,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'If you mark more than one concern—or any active leak—schedule a professional roof inspection. PRC 13 serves Sacramento homeowners with free inspections and written findings so you know what to fix first.',
+ 'If you mark more than one concern, or any active leak, schedule a professional roof inspection. PRC 13 serves Sacramento homeowners with free inspections and written findings so you know what to fix first.',
       },
     ],
   },
@@ -236,7 +236,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'How often should Sacramento homeowners inspect their roof?',
         answer:
-          'A professional inspection every 1–2 years is reasonable for most homes. Inspect sooner after major storms or if the roof is over 15 years old.',
+ 'A professional inspection every 1 to 2 years is reasonable for most homes. Inspect sooner after major storms or if the roof is over 15 years old.',
       },
       {
         question: 'Do new roofs need inspections?',
@@ -256,7 +256,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'Does PRC 13 offer maintenance inspection programs?',
         answer:
-          'We handle maintenance through our inspection service—checking wear points, sealant, flashing, and drainage during each visit.',
+ 'We handle maintenance through our inspection service, checking wear points, sealant, flashing, and drainage during each visit.',
       },
     ],
     body: [
@@ -273,7 +273,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
         type: 'list',
         content: '',
         items: [
-          'Every 12–24 months for typical asphalt shingle roofs under 15 years',
+ 'Every 12 to 24 months for typical asphalt shingle roofs under 15 years',
           'Annually for roofs older than 15 years or with prior leak history',
           'After wind, hail, or heavy rain that may have lifted shingles or flashing',
           'Before listing a home or making an offer in Sacramento',
@@ -300,7 +300,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'PRC 13 Roofing offers free roof inspections across Sacramento and nearby cities. If it has been more than two years since your last look—or you are unsure of your roof age—now is a good time to schedule.',
+ 'PRC 13 Roofing offers free roof inspections across Sacramento and nearby cities. If it has been more than two years since your last look, or you are unsure of your roof age, now is a good time to schedule.',
       },
     ],
   },
@@ -383,7 +383,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'We explain what we found in plain language—repair, maintenance, replacement, or no action. You receive documentation you can use for insurance, real estate, or future planning.',
+ 'We explain what we found in plain language, repair, maintenance, replacement, or no action. You receive documentation you can use for insurance, real estate, or future planning.',
       },
       {
         type: 'links',
@@ -454,7 +454,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Your roofer inspection focuses on technical roof damage—lifted shingles, bruised tiles, compromised flashing. The insurance adjuster determines coverage and settlement. Having both aligned improves outcomes.',
+ 'Your roofer inspection focuses on technical roof damage, lifted shingles, bruised tiles, compromised flashing. The insurance adjuster determines coverage and settlement. Having both aligned improves outcomes.',
       },
       {
         type: 'heading',
@@ -519,7 +519,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'How often should commercial roofs be inspected?',
         answer:
-          'At least twice a year—before and after rainy season—and after any equipment installation on the roof.',
+ 'At least twice a year, before and after rainy season, and after any equipment installation on the roof.',
       },
       {
         question: 'Can you inspect roofs on retail or office buildings?',
@@ -536,7 +536,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: commercial roof inspections in Sacramento focus on flat or low-slope drainage, membrane condition, and rooftop equipment seals. PRC 13 serves small commercial properties with practical assessments—not generic checklists.',
+ 'Short answer: commercial roof inspections in Sacramento focus on flat or low-slope drainage, membrane condition, and rooftop equipment seals. PRC 13 serves small commercial properties with practical assessments, not generic checklists.',
       },
       {
         type: 'heading',
@@ -600,7 +600,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'When should I schedule a roof inspection after a storm?',
         answer:
-          'As soon as it is safe—within days of the event. Damage is easier to document before repairs or weather obscure evidence.',
+ 'As soon as it is safe, within days of the event. Damage is easier to document before repairs or weather obscure evidence.',
       },
       {
         question: 'What storm damage is common in Sacramento?',
@@ -663,7 +663,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Sacramento storm season is hard on roofs. PRC 13 offers free inspections so you can fix problems while they are still small—or document them properly for insurance.',
+ 'Sacramento storm season is hard on roofs. PRC 13 offers free inspections so you can fix problems while they are still small, or document them properly for insurance.',
       },
     ],
   },
@@ -687,7 +687,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'What is the most common sign a roof inspection is needed?',
         answer:
-          'Water stains on ceilings or walls—even small ones—mean water crossed the roof system somewhere. Do not ignore them.',
+ 'Water stains on ceilings or walls, even small ones, mean water crossed the roof system somewhere. Do not ignore them.',
       },
       {
         question: 'Do missing granules mean I need an inspection?',
@@ -714,7 +714,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: schedule a roof inspection if you see stains, missing shingles, granules in gutters, daylight in the attic, or your roof is past 15–20 years. PRC 13 offers free inspections across Sacramento.',
+ 'Short answer: schedule a roof inspection if you see stains, missing shingles, granules in gutters, daylight in the attic, or your roof is past 15 to 20 years. PRC 13 offers free inspections across Sacramento.',
       },
       {
         type: 'heading',
@@ -789,7 +789,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         question: 'Can sellers schedule an inspection before listing?',
         answer:
-          'Yes. Pre-listing inspections help sellers fix issues or price the home accurately—common in competitive Sacramento neighborhoods.',
+ 'Yes. Pre-listing inspections help sellers fix issues or price the home accurately, common in competitive Sacramento neighborhoods.',
       },
       {
         question: 'What if the roof needs replacement before closing?',
@@ -806,7 +806,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: before buying a Sacramento home, get a roofer-led inspection—not just a checkbox on the general home report. PRC 13 identifies leak risk, remaining lifespan, and repair costs you can factor into your offer.',
+ 'Short answer: before buying a Sacramento home, get a roofer-led inspection, not just a checkbox on the general home report. PRC 13 identifies leak risk, remaining lifespan, and repair costs you can factor into your offer.',
       },
       {
         type: 'heading',
@@ -820,7 +820,7 @@ export const roofInspectionClusterPosts: BlogPost[] = [
           'Evidence of prior leaks or patched sections',
           'Ventilation adequacy for Sacramento heat',
           'Whether repairs suffice or replacement is near-term',
-          'Estimated budget for work in the first 1–3 years',
+ 'Estimated budget for work in the first 1 to 3 years',
         ],
       },
       {

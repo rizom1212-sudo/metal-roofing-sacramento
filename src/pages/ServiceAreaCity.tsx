@@ -201,7 +201,7 @@ export default function ServiceAreaCity() {
         </div>
       </section>
 
-      <CityHubLocalProof cityName={area.name} citySlug={area.slug} />
+      <CityHubLocalProof cityName={area.name} />
 
       {featured && featured.answerBlocks.length > 0 && (
         <section className="bg-white py-14 md:py-16">

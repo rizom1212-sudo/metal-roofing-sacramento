@@ -15,7 +15,7 @@ export const LOCAL_ROOFING_HUBS: Record<string, LocalRoofingHubConfig> = {
     label: 'Folsom Roofing Resources',
     heading: 'Guides for Folsom Homeowners',
     intro:
-      'Learn about roof repair, roof replacement, inspections, roof leaks, storm damage, roofing costs, and roofing materials in Folsom—before you schedule service with PRC 13 Roofing.',
+ 'Learn about roof repair, roof replacement, inspections, roof leaks, storm damage, roofing costs, and roofing materials in Folsom, before you schedule service with PRC 13 Roofing.',
   },
   'el-dorado-hills': {
     category: EL_DORADO_HILLS_CLUSTER_CATEGORY,
@@ -29,6 +29,6 @@ export const LOCAL_ROOFING_HUBS: Record<string, LocalRoofingHubConfig> = {
     label: 'Colfax Roofing Resources',
     heading: 'Guides for Colfax Homeowners',
     intro:
-      'Read about the City of Colfax Home Hardening Program, wildfire-minded roofing choices, and how PRC 13 Roofing supports Colfax homeowners with inspections, repair, and replacement—without confusing City program assistance with contractor offers.',
+ 'Read about the City of Colfax Home Hardening Program, wildfire-minded roofing choices, and how PRC 13 Roofing supports Colfax homeowners with inspections, repair, and replacement, without confusing City program assistance with contractor offers.',
   },
 };

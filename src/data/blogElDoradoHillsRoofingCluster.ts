@@ -49,7 +49,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How much does roof repair cost in El Dorado Hills?',
         answer:
-          'Repair pricing depends on material, roof height, and leak source. PRC 13 inspects first and provides a written quote—hillside access and tile work can affect labor compared with valley tract homes.',
+ 'Repair pricing depends on material, roof height, and leak source. PRC 13 inspects first and provides a written quote, hillside access and tile work can affect labor compared with valley tract homes.',
       },
       {
         question: 'Why do El Dorado Hills roofs fail at the ridges first?',
@@ -100,7 +100,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Steep driveways and two-story roof planes are normal here. Repairs should use matching materials and proper fastening for wind zones—not quick patches that fail on the next foothill gust. PRC 13 plans access and staging so repairs are done once, correctly.',
+ 'Steep driveways and two-story roof planes are normal here. Repairs should use matching materials and proper fastening for wind zones, not quick patches that fail on the next foothill gust. PRC 13 plans access and staging so repairs are done once, correctly.',
       },
       {
         type: 'links',
@@ -223,17 +223,17 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How often should El Dorado Hills homeowners inspect?',
         answer:
-          'Every one to two years, plus after significant wind or rain—and before buying a hillside property.',
+ 'Every one to two years, plus after significant wind or rain, and before buying a hillside property.',
       },
       {
         question: 'What do inspectors check on exposed lots?',
         answer:
-          'Ridge caps, gable ends, perimeter fastening, flashing, attic moisture, and ventilation—areas wind and sun stress first.',
+ 'Ridge caps, gable ends, perimeter fastening, flashing, attic moisture, and ventilation, areas wind and sun stress first.',
       },
       {
         question: 'Do you inspect tile underlayment?',
         answer:
-          'We assess signs of underlayment failure even when tile looks intact from the street—a common issue in aging EDH tile roofs.',
+ 'We assess signs of underlayment failure even when tile looks intact from the street, a common issue in aging EDH tile roofs.',
       },
       {
         question: 'Will you document findings for insurance?',
@@ -297,7 +297,7 @@ export const elDoradoHillsRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How long does tile roofing last in El Dorado Hills?',
         answer:
-          'Tile pieces can last decades, but underlayment beneath typically needs renewal every 20–30 years depending on heat exposure and installation quality.',
+ 'Tile pieces can last decades, but underlayment beneath typically needs renewal every 20 to 30 years depending on heat exposure and installation quality.',
       },
       {
         question: 'Can you repair individual broken tiles?',

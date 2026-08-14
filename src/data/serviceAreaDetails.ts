@@ -26,7 +26,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Which Sacramento neighborhoods does this page cover?',
         answer:
-          'This hub covers Sacramento as a service area, including neighborhoods already named on this page such as East Sacramento, Land Park, Midtown, Natomas, Curtis Park, Tahoe Park, Pocket-Greenhaven, and Del Paso Heights. It is geographic guidance—not a separate hire page for each neighborhood.',
+ 'This hub covers Sacramento as a service area, including neighborhoods already named on this page such as East Sacramento, Land Park, Midtown, Natomas, Curtis Park, Tahoe Park, Pocket-Greenhaven, and Del Paso Heights. It is geographic guidance, not a separate hire page for each neighborhood.',
       },
       {
         question: 'How is this Sacramento hub different from your repair and replacement pages?',
@@ -41,7 +41,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Do you inspect older Sacramento bungalows and suburban roofs?',
         answer:
-          'Yes. Sacramento homes range from older bungalows near Midtown and East Sacramento to suburban roofs near Natomas. We inspect the system in front of us—shingles, tile, low-slope sections, flashing, and drainage—then point you to the matching service page.',
+ 'Yes. Sacramento homes range from older bungalows near Midtown and East Sacramento to suburban roofs near Natomas. We inspect the system in front of us, shingles, tile, low-slope sections, flashing, and drainage, then point you to the matching service page.',
       },
       {
         question: 'Is there Sacramento project proof on this site?',
@@ -132,7 +132,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Is there a Roseville-specific hire page for roof repair?',
         answer:
-          'No. Roseville repair and replacement intent is served by the metro pages—[roof repair](/roof-repair) and [roof replacement](/roof-replacement)—plus this city hub for local context. We do not maintain a separate /roof-repair/roseville URL.',
+ 'No. Roseville repair and replacement intent is served by the metro pages, [roof repair](/roof-repair) and [roof replacement](/roof-replacement), plus this city hub for local context. We do not maintain a separate /roof-repair/roseville URL.',
       },
       {
         question: 'Do you have a Roseville homeowner review on this site?',
@@ -185,7 +185,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Why does Rocklin get extra attention on wind and hillside lots?',
         answer:
-          'Existing Rocklin copy notes hillside wind exposure, sun-baked slopes, tile systems, and seasonal storms at ridge caps, tile edges, and valley flashing. That is local condition guidance—not a claim about every lot.',
+ 'Existing Rocklin copy notes hillside wind exposure, sun-baked slopes, tile systems, and seasonal storms at ridge caps, tile edges, and valley flashing. That is local condition guidance, not a claim about every lot.',
       },
       {
         question: 'Is there a Rocklin roof-repair hire URL?',
@@ -210,7 +210,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Can I compare shingles and metal before replacing a Rocklin roof?',
         answer:
-          'Yes. Material comparison lives on the replacement and metal service pages, and in existing educational articles. The Rocklin hire page is focused on shingle replacement process—not a second metal authority URL.',
+ 'Yes. Material comparison lives on the replacement and metal service pages, and in existing educational articles. The Rocklin hire page is focused on shingle replacement process, not a second metal authority URL.',
       },
     ],
   },
@@ -238,12 +238,12 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Do you inspect both tile and shingle roofs in Folsom?',
         answer:
-          'Yes. Folsom neighborhoods mix tile, shingle, and newer systems. See [tile vs asphalt shingles in Folsom](/blog/tile-vs-asphalt-shingles-folsom) and [best roofing materials for Folsom](/blog/best-roofing-materials-folsom) for educational comparison—not as extra hire URLs.',
+ 'Yes. Folsom neighborhoods mix tile, shingle, and newer systems. See [tile vs asphalt shingles in Folsom](/blog/tile-vs-asphalt-shingles-folsom) and [best roofing materials for Folsom](/blog/best-roofing-materials-folsom) for educational comparison, not as extra hire URLs.',
       },
       {
         question: 'Is there a verified Folsom project photo on this site?',
         answer:
-          'Yes. The gallery item tagged Folsom, CA is a roof repair and ventilation detail (vents and skylights)—not a full replacement. It links to [roof repair](/roof-repair). We will not relabel it as a reroof.',
+ 'Yes. The gallery item tagged Folsom, CA is a roof repair and ventilation detail (vents and skylights), not a full replacement. It links to [roof repair](/roof-repair). We will not relabel it as a reroof.',
       },
       {
         question: 'Do you have a Folsom homeowner review?',
@@ -550,7 +550,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Should I inspect after an Orangevale storm even if I do not see missing shingles?',
         answer:
-          'Yes. Wind can drop branches and fill gutters with debris that is easy to miss from the street. Use [roof inspection](/roof-inspection) unless water is entering—then use the Orangevale emergency hire page.',
+ 'Yes. Wind can drop branches and fill gutters with debris that is easy to miss from the street. Use [roof inspection](/roof-inspection) unless water is entering, then use the Orangevale emergency hire page.',
       },
     ],
   },
@@ -593,7 +593,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Should a Granite Bay tile roof be inspected after a storm?',
         answer:
-          'Yes. Wind can shift tile and drive rain into valleys. Start with [roof inspection](/roof-inspection) unless water is already entering—then use the Granite Bay emergency hire page.',
+ 'Yes. Wind can shift tile and drive rain into valleys. Start with [roof inspection](/roof-inspection) unless water is already entering, then use the Granite Bay emergency hire page.',
       },
       {
         question: 'Is fascia replacement part of Granite Bay roofing services?',
@@ -626,7 +626,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Do you write about tile and metal roofing for El Dorado Hills?',
         answer:
-          'Yes. See [tile roofing El Dorado Hills](/blog/tile-roofing-el-dorado-hills-ca) and [metal roofing El Dorado Hills](/blog/metal-roofing-el-dorado-hills-ca). Hire intent for those services still lives on [roof replacement](/roof-replacement) and [metal roofing](/metal-roofing)—not on extra city URLs.',
+ 'Yes. See [tile roofing El Dorado Hills](/blog/tile-roofing-el-dorado-hills-ca) and [metal roofing El Dorado Hills](/blog/metal-roofing-el-dorado-hills-ca). Hire intent for those services still lives on [roof replacement](/roof-replacement) and [metal roofing](/metal-roofing), not on extra city URLs.',
       },
       {
         question: 'Do you offer fascia repair in El Dorado Hills?',
@@ -641,7 +641,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'Why does hillside wind come up so often for El Dorado Hills roofs?',
         answer:
-          'Existing local copy describes hillside wind, intense sun, and storm exposure on edges, ridge caps, flashing, and aging materials. That is condition guidance already on this hub—not a weather statistic we invented for SEO.',
+ 'Existing local copy describes hillside wind, intense sun, and storm exposure on edges, ridge caps, flashing, and aging materials. That is condition guidance already on this hub, not a weather statistic we invented for SEO.',
       },
       {
         question: 'Where should I start if I am not sure repair or replacement is needed?',
@@ -845,10 +845,10 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
   colfax: {
     localHeading: 'Common Roofing Problems in Colfax, CA',
     localContent:
-      'Colfax roofs take foothill sun, winter storm cycles, and wind across hillside and corridor lots along I-80 in Placer County. Wildfire ember risk also makes debris-filled gutters, aged shingles, and weak roof edges more than a maintenance nuisance—they are part of home-hardening readiness.',
+ 'Colfax roofs take foothill sun, winter storm cycles, and wind across hillside and corridor lots along I-80 in Placer County. Wildfire ember risk also makes debris-filled gutters, aged shingles, and weak roof edges more than a maintenance nuisance, they are part of home-hardening readiness.',
     localSignals: [
       'Heat-aged and storm-worn shingles on foothill exposures',
-      'Granule loss and brittle tabs after repeated freeze–thaw and sun cycles',
+ 'Granule loss and brittle tabs after repeated freeze-thaw and sun cycles',
       'Debris accumulation in gutters and valleys that can hold moisture or embers',
       'Lifted edges and ridge wear after Sierra foothill wind events',
       'Aging flashing at vents, chimneys, and roof-to-wall transitions',
@@ -890,7 +890,7 @@ export const serviceAreaDetails: Record<string, ServiceAreaDetailContent> = {
       {
         question: 'What roofing materials are better for wildfire-prone homes?',
         answer:
-          'Homeowners often compare Class A asphalt systems, metal roofing, and other fire-resistant assemblies. The best choice depends on structure, ventilation, budget, and product documentation—not marketing claims alone.',
+ 'Homeowners often compare Class A asphalt systems, metal roofing, and other fire-resistant assemblies. The best choice depends on structure, ventilation, budget, and product documentation, not marketing claims alone.',
       },
       {
         question: 'Does PRC 13 Roofing serve Colfax?',

@@ -51,7 +51,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
       {
         question: 'What affects Sacramento roof replacement pricing the most?',
         answer:
-          'Square footage, roof complexity, tear-off layers, decking repairs, and material choice—architectural shingles, tile, or metal—are the biggest factors.',
+ 'Square footage, roof complexity, tear-off layers, decking repairs, and material choice, architectural shingles, tile, or metal, are the biggest factors.',
       },
       {
         question: 'Is financing available for roof replacement?',
@@ -83,7 +83,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
         type: 'list',
         content: '',
         items: [
-          'Roof square footage and pitch—steep or multi-level roofs take more labor',
+ 'Roof square footage and pitch, steep or multi-level roofs take more labor',
           'Material selection: architectural shingles, tile, or metal',
           'Number of existing layers requiring tear-off',
           'Decking repairs where plywood is soft or rotted',
@@ -311,7 +311,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: 'What Happens During a Roof Replacement in Sacramento?',
     seoTitle: 'Roof Replacement Process Sacramento | PRC 13 Roofing',
     excerpt:
-      'From free inspection to final walkthrough—here is what Sacramento homeowners should expect during a roof replacement with PRC 13 Roofing.',
+ 'From free inspection to final walkthrough, here is what Sacramento homeowners should expect during a roof replacement with PRC 13 Roofing.',
     date: 'July 3, 2026',
     readTime: '6 min read',
     category: REPLACEMENT_CLUSTER_CATEGORY,
@@ -556,7 +556,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
           'Large or steeply pitched roofs requiring more safety rigging',
           'Significant decking damage needing replacement',
           'Multiple existing layers on older Sacramento homes',
-          'Weather delays—we do not install in rain',
+ 'Weather delays, we do not install in rain',
           'Tile systems requiring full underlayment replacement',
         ],
       },
@@ -581,7 +581,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
     title: '7 Signs Your Sacramento Roof Needs Replacement (Not Just a Repair)',
     seoTitle: '7 Signs Your Sacramento Roof Needs Replacement',
     excerpt:
-      'Sacramento heat and winter storms wear roofs down over time. Seven signs repair may no longer be enough—and when to schedule a free inspection with PRC 13.',
+ 'Sacramento heat and winter storms wear roofs down over time. Seven signs repair may no longer be enough, and when to schedule a free inspection with PRC 13.',
     date: 'April 28, 2026',
     updatedDate: 'July 4, 2026',
     readTime: '6 min read',
@@ -629,7 +629,7 @@ export const roofReplacementClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Not every roofing problem calls for a full replacement, but some do. PRC 13 Roofing gives Sacramento homeowners honest answers—even when a repair is all they actually need.',
+ 'Not every roofing problem calls for a full replacement, but some do. PRC 13 Roofing gives Sacramento homeowners honest answers, even when a repair is all they actually need.',
       },
       {
         type: 'heading',
@@ -639,13 +639,13 @@ export const roofReplacementClusterPosts: BlogPost[] = [
         type: 'list',
         content: '',
         items: [
-          'Your roof is 20+ years old—most asphalt shingles have a 20 to 25 year lifespan in Sacramento climate',
+ 'Your roof is 20+ years old, most asphalt shingles have a 20 to 25 year lifespan in Sacramento climate',
           'You have repaired the same area more than once, which can signal underlying issues',
           'Granule loss is visible in gutters, a sign shingles may be near end of life',
           'Multiple shingles are curling, cracking, or missing, making spot repairs less practical',
           'Energy bills have climbed unexpectedly, which can point to ventilation problems',
           'You see sagging sections that may indicate decking or structural damage',
-          'Neighboring homes are replacing roofs—subdivision roofs often age together',
+ 'Neighboring homes are replacing roofs, subdivision roofs often age together',
         ],
       },
       {

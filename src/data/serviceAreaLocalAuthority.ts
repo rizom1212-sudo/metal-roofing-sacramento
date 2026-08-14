@@ -286,7 +286,7 @@ export const serviceAreaLocalAuthority: Record<string, ServiceAreaLocalAuthority
   },
   colfax: {
     nearbyAreasIntro:
-      'PRC 13 Roofing serves Colfax homeowners and regularly works across nearby Placer County foothill communities. The places below help describe the local corridor—not separate PRC 13 offices.',
+ 'PRC 13 Roofing serves Colfax homeowners and regularly works across nearby Placer County foothill communities. The places below help describe the local corridor, not separate PRC 13 offices.',
     nearbyAreas: [
       'Auburn',
       'Weimar',
@@ -296,7 +296,7 @@ export const serviceAreaLocalAuthority: Record<string, ServiceAreaLocalAuthority
       'Iowa Hill Road corridor',
     ],
     landmarksIntro:
-      'Whether your home is near Historic Downtown Colfax, the Colfax Depot area, or hillside streets off the I-80 corridor, PRC 13 Roofing provides roof inspections, repair, and replacement services for Colfax properties—without claiming a storefront office in Colfax.',
+ 'Whether your home is near Historic Downtown Colfax, the Colfax Depot area, or hillside streets off the I-80 corridor, PRC 13 Roofing provides roof inspections, repair, and replacement services for Colfax properties, without claiming a storefront office in Colfax.',
     landmarks: [
       'Historic Downtown Colfax',
       'Colfax Depot / railroad corridor',

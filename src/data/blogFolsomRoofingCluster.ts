@@ -44,7 +44,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How much does roof repair cost in Folsom?',
         answer:
-          'Costs depend on material type, leak location, and decking condition. PRC 13 provides a written quote after inspection—most targeted repairs are a few hundred to a few thousand dollars.',
+ 'Costs depend on material type, leak location, and decking condition. PRC 13 provides a written quote after inspection, most targeted repairs are a few hundred to a few thousand dollars.',
       },
       {
         question: 'Do you repair tile and shingle roofs in Folsom?',
@@ -71,7 +71,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: roof repair in Folsom should fix the actual entry point—not just the ceiling stain. PRC 13 Roofing traces leaks on tile, shingle, and metal roofs from Historic Folsom to Empire Ranch and explains repair scope before work starts.',
+ 'Short answer: roof repair in Folsom should fix the actual entry point, not just the ceiling stain. PRC 13 Roofing traces leaks on tile, shingle, and metal roofs from Historic Folsom to Empire Ranch and explains repair scope before work starts.',
       },
       {
         type: 'heading',
@@ -117,7 +117,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
     title: 'Roof Replacement Folsom CA: When It Is Time and What to Expect',
     seoTitle: 'Roof Replacement Folsom CA | PRC 13 Roofing',
     excerpt:
-      'Considering roof replacement in Folsom? PRC 13 helps homeowners compare shingle, tile, and metal options—and complete most replacements in one to two days.',
+ 'Considering roof replacement in Folsom? PRC 13 helps homeowners compare shingle, tile, and metal options, and complete most replacements in one to two days.',
     date: 'June 24, 2026',
     readTime: '6 min read',
     category: FOLSOM_CLUSTER_CATEGORY,
@@ -173,7 +173,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
           'Multiple leak locations after one storm season',
           'Tile roofs with widespread underlayment failure',
           'Soft or sagging decking discovered in the attic',
-          'Roofs past 20–25 years on original builder-grade shingles',
+ 'Roofs past 20 to 25 years on original builder-grade shingles',
         ],
       },
       {
@@ -202,7 +202,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
     title: 'Roof Inspection Folsom CA: Free Assessments for Local Homeowners',
     seoTitle: 'Roof Inspection Folsom CA | Free Inspections',
     excerpt:
-      'Free roof inspections in Folsom from PRC 13 Roofing. We check shingles, tile, flashing, ventilation, and leak risks—with honest recommendations and no pressure.',
+ 'Free roof inspections in Folsom from PRC 13 Roofing. We check shingles, tile, flashing, ventilation, and leak risks, with honest recommendations and no pressure.',
     date: 'June 25, 2026',
     readTime: '5 min read',
     category: FOLSOM_CLUSTER_CATEGORY,
@@ -227,7 +227,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         question: 'Do you inspect tile roofs in Folsom?',
         answer:
-          'Yes. We check tile, underlayment, flashing, and ventilation—tile can look fine while underlayment fails.',
+ 'Yes. We check tile, underlayment, flashing, and ventilation, tile can look fine while underlayment fails.',
       },
       {
         question: 'What happens during a Folsom roof inspection?',
@@ -237,7 +237,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         question: 'Will you try to sell a replacement during inspection?',
         answer:
-          'No. If repair is enough—or the roof is fine—we say so clearly.',
+ 'No. If repair is enough, or the roof is fine, we say so clearly.',
       },
     ],
     body: [
@@ -388,12 +388,12 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         question: 'Does metal roofing work in Folsom heat?',
         answer:
-          'Yes. Metal reflects solar heat and handles wind well—popular for long-term owners.',
+ 'Yes. Metal reflects solar heat and handles wind well, popular for long-term owners.',
       },
       {
         question: 'How long do shingles last in Folsom?',
         answer:
-          'Quality architectural shingles often last 20–30 years with proper ventilation. Heat accelerates aging on poorly vented attics.',
+ 'Quality architectural shingles often last 20 to 30 years with proper ventilation. Heat accelerates aging on poorly vented attics.',
       },
       {
         question: 'Is tile worth the cost in Folsom?',
@@ -487,7 +487,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: tile vs asphalt shingles in Folsom is a trade-off between upfront cost, aesthetics, and maintenance rhythm. PRC 13 helps homeowners choose based on roof structure—not generic sales pitches.',
+ 'Short answer: tile vs asphalt shingles in Folsom is a trade-off between upfront cost, aesthetics, and maintenance rhythm. PRC 13 helps homeowners choose based on roof structure, not generic sales pitches.',
       },
       {
         type: 'heading',
@@ -496,7 +496,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Architectural shingles are common on homes built during Folsom growth years. They install faster, cost less initially, and suit many budgets—especially when the roof deck is sound and ventilation is adequate.',
+ 'Architectural shingles are common on homes built during Folsom growth years. They install faster, cost less initially, and suit many budgets, especially when the roof deck is sound and ventilation is adequate.',
       },
       {
         type: 'heading',
@@ -505,7 +505,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Tile matches many Folsom streetscapes and lasts long—but heat and age degrade underlayment beneath. A tile roof looking perfect from the curb can still need underlayment work.',
+ 'Tile matches many Folsom streetscapes and lasts long, but heat and age degrade underlayment beneath. A tile roof looking perfect from the curb can still need underlayment work.',
       },
       {
         type: 'links',
@@ -522,7 +522,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
     title: 'Roofing Costs in Folsom CA: Repair, Replacement, and Inspections',
     seoTitle: 'Roofing Costs Folsom CA | What Homeowners Pay',
     excerpt:
-      'How much does roofing cost in Folsom? PRC 13 breaks down typical ranges for roof repair, replacement, and inspections—and what affects your quote.',
+ 'How much does roofing cost in Folsom? PRC 13 breaks down typical ranges for roof repair, replacement, and inspections, and what affects your quote.',
     date: 'June 27, 2026',
     readTime: '6 min read',
     category: FOLSOM_CLUSTER_CATEGORY,
@@ -537,7 +537,7 @@ export const folsomRoofingClusterPosts: BlogPost[] = [
       {
         question: 'How much does roof replacement cost in Folsom?',
         answer:
-          'Replacement depends on square footage, pitch, material, and decking repairs. PRC 13 quotes after inspection—tile and metal cost more than standard shingles.',
+ 'Replacement depends on square footage, pitch, material, and decking repairs. PRC 13 quotes after inspection, tile and metal cost more than standard shingles.',
       },
       {
         question: 'Are Folsom roof inspections free?',

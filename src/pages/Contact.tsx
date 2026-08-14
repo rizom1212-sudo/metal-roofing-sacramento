@@ -106,7 +106,7 @@ export default function Contact() {
             <div id="contact-form" className="md:col-span-8 card-brand bg-white border border-gray-100 p-6 md:p-8 lg:min-h-[460px] flex flex-col justify-center">
               <h1 className="text-2xl md:text-3xl font-bold text-headline mb-2">Request a Roof Inspection</h1>
               <p className="text-body text-sm mb-2">
-                Tell us what is going on with your roof. We aim to respond quickly during Monday–Friday business hours ({hoursRange}).
+                Tell us what is going on with your roof. We aim to respond quickly during Monday through Friday business hours ({hoursRange}).
               </p>
               <p className="text-xs text-gray-500 mb-5">{LICENSE_TEXT}</p>
               <LeadForm sourcePage="contact" variant="full" showExtendedFields className="max-w-xl" />

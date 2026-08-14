@@ -248,3 +248,6 @@ export function filterGalleryByCategory(
 }
 
 export const homepageGalleryImages = galleryImages.slice(0, 6);
+
+/** Neutral heading for service-page gallery strips (no unverified city/service in the title). */
+export const SERVICE_PAGE_GALLERY_HEADING = 'Project Gallery';

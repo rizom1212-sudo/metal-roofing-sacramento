@@ -84,7 +84,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
         type: 'list',
         content: '',
         items: [
-          'Roof square footage and pitch—steep or multi-level roofs take more labor',
+ 'Roof square footage and pitch, steep or multi-level roofs take more labor',
           'Panel style: standing seam, corrugated, or ribbed exposed-fastener systems',
           'Whether existing shingles are removed or the metal is installed over them',
           'Decking repairs where plywood is soft or rotted',
@@ -257,7 +257,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       {
         question: 'Will metal make my attic hotter?',
         answer:
-          'Reflective metal typically reduces heat gain compared with dark asphalt shingles. Ventilation still matters—PRC 13 checks attic airflow during inspection.',
+ 'Reflective metal typically reduces heat gain compared with dark asphalt shingles. Ventilation still matters. PRC 13 checks attic airflow during inspection.',
       },
       {
         question: 'Is metal noisy during rainstorms?',
@@ -290,7 +290,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
         items: [
           'Class A fire rating for California wildfire awareness',
           'Rated for high winds with proper edge and fastening details',
-          'No granule loss or curling—common failure modes on aging shingles',
+ 'No granule loss or curling, common failure modes on aging shingles',
           'Low maintenance once installed with correct underlayment',
         ],
       },
@@ -310,7 +310,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Climate suitability still depends on your roof structure, neighborhood style, and budget. PRC 13 Roofing inspects your home, explains how metal performs on your specific roof planes, and gives honest guidance—even when shingles remain the practical choice.',
+ 'Climate suitability still depends on your roof structure, neighborhood style, and budget. PRC 13 Roofing inspects your home, explains how metal performs on your specific roof planes, and gives honest guidance, even when shingles remain the practical choice.',
       },
     ],
   },
@@ -415,7 +415,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     title: 'Metal Roof Installation Process: What Sacramento Homeowners Should Expect',
     seoTitle: 'Metal Roof Installation Process Sacramento | PRC 13',
     excerpt:
-      'From free inspection to final walkthrough, here is how PRC 13 installs standing seam and metal panel systems on Sacramento homes—typically in 2 to 3 days.',
+ 'From free inspection to final walkthrough, here is how PRC 13 installs standing seam and metal panel systems on Sacramento homes, typically in 2 to 3 days.',
     date: 'July 5, 2026',
     readTime: '6 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -462,7 +462,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: PRC 13 Roofing follows a five-step metal installation process—free inspection, material selection, written quote, installation, and final walkthrough. Most Sacramento homes finish in 2 to 3 days.',
+ 'Short answer: PRC 13 Roofing follows a five-step metal installation process, free inspection, material selection, written quote, installation, and final walkthrough. Most Sacramento homes finish in 2 to 3 days.',
       },
       {
         type: 'heading',
@@ -573,7 +573,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'When Sacramento homeowners ask PRC 13 Roofing about metal, the conversation usually centers on upfront cost versus long-term value. Both metal and architectural shingles are proven choices—the right pick depends on your timeline and budget.',
+ 'When Sacramento homeowners ask PRC 13 Roofing about metal, the conversation usually centers on upfront cost versus long-term value. Both metal and architectural shingles are proven choices, the right pick depends on your timeline and budget.',
       },
       {
         type: 'heading',

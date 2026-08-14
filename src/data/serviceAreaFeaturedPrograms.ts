@@ -46,7 +46,7 @@ export const serviceAreaFeaturedPrograms: Record<string, ServiceAreaFeaturedProg
       'Colfax homeowners may be eligible for assistance covering up to 90% of qualifying home-hardening and defensible-space improvements through the City of Colfax Home Hardening and Defensible Space Program.',
     programBullets: [
       'The City states the program is open to Colfax homeowners without an income limit.',
-      'Eligibility, recommended measures, and qualifying improvements are determined through the program—not by PRC 13 Roofing.',
+ 'Eligibility, recommended measures, and qualifying improvements are determined through the program, not by PRC 13 Roofing.',
       'Individual properties may receive different recommended measures based on inspection and program guidelines.',
       'Roofing may be considered among home-hardening options when it aligns with program-approved measures, but coverage is not automatic for every roof project.',
     ],
@@ -82,7 +82,7 @@ export const serviceAreaFeaturedPrograms: Record<string, ServiceAreaFeaturedProg
     offerStatement:
       'PRC 13 Roofing is offering Colfax homeowners an additional 5% off qualifying roofing work.',
     offerSeparationNote:
-      'This 5% promotional offer is from PRC 13 Roofing only. It is separate from—and not affiliated with—the City of Colfax Home Hardening and Defensible Space Program, FEMA, CAL FIRE, or Cal OES.',
+ 'This 5% promotional offer is from PRC 13 Roofing only. It is separate from, and not affiliated with, the City of Colfax Home Hardening and Defensible Space Program, FEMA, CAL FIRE, or Cal OES.',
     primaryCtaLabel: 'Request a Colfax Roof Inspection',
     secondaryCtaLabel: 'Check Your Roofing Options',
     offerSchemaName: 'Colfax Home Hardening Roofing Offer',

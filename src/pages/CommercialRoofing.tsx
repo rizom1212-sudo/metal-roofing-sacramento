@@ -137,7 +137,7 @@ export default function CommercialRoofing() {
             <HeroLeadFormPanel
               sourcePage="commercial-roofing-hero"
               title="Request a Commercial Roof Assessment"
-              subtitle="Tell us about your property—we respond quickly on business days."
+              subtitle="Tell us about your property. We respond quickly on business days."
               submitLabel={CTA_COMMERCIAL_ASSESSMENT}
             />
           </div>
@@ -233,9 +233,9 @@ export default function CommercialRoofing() {
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Our Work</p>
-          <h2 className="section-heading mb-3">Flat &amp; Low-Slope Roof Projects</h2>
+          <h2 className="section-heading mb-3">Project Gallery</h2>
           <p className="section-subheading max-w-2xl mb-8">
-            Membrane and flat-roof work from our Sacramento-area projects—the same system types we assess and service on small commercial and light-commercial roofs.
+            Recent flat and low-slope roof project photos from our portfolio.
           </p>
           <GalleryStrip
             imageIds={['flat-roof-restoration', 'flat-membrane-wide', 'flat-membrane-detail']}

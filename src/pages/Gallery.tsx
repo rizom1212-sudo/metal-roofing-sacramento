@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Phone, ArrowRight, X, ChevronLeft, ChevronRight, Shield, CheckCircle } from 'lucide-react';
 import BeforeAfter from '../components/BeforeAfter';
 import JsonLd from '../components/JsonLd';
-import { galleryImages, galleryCityHubPath, galleryCityName, galleryServicePath, type GalleryImage } from '../data/gallery';
+import { galleryImages, type GalleryImage } from '../data/gallery';
 import { PRIMARY_CTA } from '../data/cta';
 import { LICENSE_INSURED_LINE, PHONE_DISPLAY } from '../data/site';
 import TelLink from '../components/TelLink';
@@ -162,21 +162,6 @@ function Lightbox({
           {index + 1} / {images.length} · Use arrow keys to navigate
         </p>
         <p className="text-white text-sm font-semibold">{img.caption}</p>
-        <p className="text-gray-400 text-xs">
-          <Link to={galleryServicePath(img.category)} className="text-gold hover:text-gold-light transition-colors">
-            {img.category}
-          </Link>
-          {galleryCityHubPath(img.city) ? (
-            <>
-              {' · '}
-              <Link to={galleryCityHubPath(img.city)!} className="text-gold hover:text-gold-light transition-colors">
-                {galleryCityName(img.city)}
-              </Link>
-            </>
-          ) : img.city ? (
-            <> · {img.city}</>
-          ) : null}
-        </p>
       </div>
     </div>
   );
@@ -353,7 +338,7 @@ export default function Gallery() {
             <div className="text-center lg:text-left">
               <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Featured Project</p>
               <h2 className="text-3xl md:text-4xl font-bold text-headline leading-tight mb-4">
-                Standing Seam Metal Roof Installation – Sacramento, CA
+                Standing Seam Metal Roof Installation, Sacramento, CA
               </h2>
               <p className="text-body text-base leading-relaxed mb-6">
                 New construction residential project featuring a premium standing seam metal roofing system and James Hardie siding installation. This project highlights modern design, weather protection, energy efficiency, and long-term durability.
@@ -418,22 +403,7 @@ export default function Gallery() {
                   />
                 </button>
                 <div className="px-1 pt-2 pb-3">
-                  <p className="text-headline text-xs font-semibold leading-snug mb-1">{img.caption}</p>
-                  <p className="text-body text-xs">
-                    <Link to={galleryServicePath(img.category)} className="text-gold font-semibold hover:text-gold-dark transition-colors">
-                      {img.category}
-                    </Link>
-                    {galleryCityHubPath(img.city) ? (
-                      <>
-                        {' · '}
-                        <Link to={galleryCityHubPath(img.city)!} className="text-gold font-semibold hover:text-gold-dark transition-colors">
-                          {galleryCityName(img.city)}
-                        </Link>
-                      </>
-                    ) : img.city ? (
-                      <> · {img.city}</>
-                    ) : null}
-                  </p>
+                  <p className="text-headline text-xs font-semibold leading-snug">{img.caption}</p>
                 </div>
               </div>
             ))}
@@ -461,22 +431,7 @@ export default function Gallery() {
                     />
                   </button>
                   <div className="px-1 pt-2 pb-3">
-                    <p className="text-headline text-xs font-semibold leading-snug mb-1">{img.caption}</p>
-                    <p className="text-body text-xs">
-                      <Link to={galleryServicePath(img.category)} className="text-gold font-semibold hover:text-gold-dark transition-colors">
-                        {img.category}
-                      </Link>
-                      {galleryCityHubPath(img.city) ? (
-                        <>
-                          {' · '}
-                          <Link to={galleryCityHubPath(img.city)!} className="text-gold font-semibold hover:text-gold-dark transition-colors">
-                            {galleryCityName(img.city)}
-                          </Link>
-                        </>
-                      ) : img.city ? (
-                        <> · {img.city}</>
-                      ) : null}
-                    </p>
+                    <p className="text-headline text-xs font-semibold leading-snug">{img.caption}</p>
                   </div>
                 </div>
               );

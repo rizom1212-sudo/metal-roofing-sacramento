@@ -116,7 +116,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     introHeading: 'Hire Emergency Roof Repair in Granite Bay, CA',
     introParagraphs: [
       'Granite Bay, California sits in Sacramento County with many custom and estate-style homes that use tile, complex valleys, and multi-level roof planes. Open lots and hillside exposure put more wind on ridges and edges than sheltered valley streets. When a storm lifts material, a limb strikes a ridge, or water finds a weak flashing joint, the failure is often harder to diagnose from the ground than on a simple ranch roof.',
-      'Emergency roof repair here is about protecting people and the interior first, then securing the opening when it is safe to work. PRC 13 Roofing provides urgent assessment for Granite Bay homeowners who need to hire help now—not a long educational essay. We explain whether temporary stabilization or a more complete repair is the right next step, then schedule the permanent work once conditions allow.',
+ 'Emergency roof repair here is about protecting people and the interior first, then securing the opening when it is safe to work. PRC 13 Roofing provides urgent assessment for Granite Bay homeowners who need to hire help now, not a long educational essay. We explain whether temporary stabilization or a more complete repair is the right next step, then schedule the permanent work once conditions allow.',
       'If water is entering, call first and contain drips indoors. Do not climb wet tile or steep slopes. This hire page is for homeowners ready to schedule emergency roof repair in Granite Bay, CA. For Sacramento-wide emergency standards, see our parent [emergency roof repair](/emergency-roof-repair) page. For general roofing in this community, visit the [Granite Bay service area](/service-areas/granite-bay) hub.',
       'Nearby homeowners in Roseville, Rocklin, and Folsom face related Sacramento County weather, but Granite Bay\'s mix of custom footprints, tile systems, and open-lot exposure deserves its own response plan. Call PRC 13 when you need assessment, temporary protection planning, and a written path to lasting repair.',
     ],
@@ -130,7 +130,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     localContextParagraphs: [
       'Many Granite Bay roofs combine tile surfaces with long valley runs, roof-to-wall transitions, and upper ridges that take more wind than sheltered Sacramento neighborhoods. Oak and pine debris can collect in valleys before winter rain. When a blockage and a wind event arrive together, water can enter at a transition that looked fine during dry months.',
       'Custom footprints also mean water can travel farther from the entry point before it stains a ceiling. An upstairs hallway stain may trace back to a chimney saddle, skylight curb, or hip detail several feet away. Emergency response still starts with containment indoors, but the assessment has to respect that complexity so you are not paying for a patch in the wrong place.',
-      'Sacramento County heat ages sealants and underlayment between storm seasons. A Granite Bay homeowner may first notice a problem during the first strong atmospheric river after a long dry stretch. That seasonal pattern is common across the county, but hillside and open-lot exposure in Granite Bay can make ridge and edge failures show up sooner—and harder to reach safely without a planned crew.',
+ 'Sacramento County heat ages sealants and underlayment between storm seasons. A Granite Bay homeowner may first notice a problem during the first strong atmospheric river after a long dry stretch. That seasonal pattern is common across the county, but hillside and open-lot exposure in Granite Bay can make ridge and edge failures show up sooner, and harder to reach safely without a planned crew.',
       'If you are comparing options after a storm, hire a contractor who will document conditions, explain temporary versus permanent work, and schedule follow-through. We serve Granite Bay, CA within our California service area and keep communication clear from the first call through repair authorization.',
     ],
     problemsHeading: 'Common Emergency Roof Problems in Granite Bay',
@@ -155,7 +155,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Urgent assessment',
-        desc: 'When weather and access allow, we evaluate the opening, surrounding material, and likely water path from interior clues to roof transitions common on Granite Bay homes—including valleys, chimneys, and multi-level transitions.',
+ desc: 'When weather and access allow, we evaluate the opening, surrounding material, and likely water path from interior clues to roof transitions common on Granite Bay homes, including valleys, chimneys, and multi-level transitions.',
       },
       {
         title: 'Temporary stabilization',
@@ -163,7 +163,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Permanent repair planning',
-        desc: 'After the emergency phase, we outline the lasting fix—tile reset, underlayment work, flashing rebuild, or a broader recommendation if surrounding material is failing—so you can authorize the right scope.',
+ desc: 'After the emergency phase, we outline the lasting fix, tile reset, underlayment work, flashing rebuild, or a broader recommendation if surrounding material is failing, so you can authorize the right scope.',
       },
       {
         title: 'Written scope and next steps',
@@ -188,7 +188,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         name: 'Underlayment and decking',
-        desc: 'Once weather exposes secondary layers, the permanent repair may include underlayment replacement or decking repair—not only surface tile or shingles.',
+ desc: 'Once weather exposes secondary layers, the permanent repair may include underlayment replacement or decking repair, not only surface tile or shingles.',
       },
     ],
     benefitsHeading: 'Why Granite Bay Homeowners Call PRC 13 for Emergencies',
@@ -199,7 +199,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Complex-roof awareness',
-        desc: 'Tile, valleys, and multi-level geometry common in Granite Bay, CA are part of how we plan access and repair—not an afterthought added after the visit.',
+ desc: 'Tile, valleys, and multi-level geometry common in Granite Bay, CA are part of how we plan access and repair, not an afterthought added after the visit.',
       },
       {
         title: 'Temporary then permanent',
@@ -211,7 +211,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Documentation for your records',
-        desc: 'Photos and notes support repair planning and, when relevant, your conversation with an insurer—without promising claim outcomes or approval.',
+ desc: 'Photos and notes support repair planning and, when relevant, your conversation with an insurer, without promising claim outcomes or approval.',
       },
       {
         title: 'Honest scope',
@@ -238,7 +238,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       {
         question: 'How is Granite Bay emergency work different from a simple ranch roof?',
         answer:
-          'Custom roof lines, tile systems, and long valleys often require more careful access and diagnosis. The emergency goals—safety and stopping water—are the same; the assessment respects local construction patterns so temporary work does not damage surrounding material.',
+ 'Custom roof lines, tile systems, and long valleys often require more careful access and diagnosis. The emergency goals, safety and stopping water, are the same; the assessment respects local construction patterns so temporary work does not damage surrounding material.',
       },
       {
         question: 'Will homeowners insurance pay for emergency roof repair?',
@@ -301,7 +301,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     introImage: emergencyIntro,
     introImageAlt: 'Roof emergency assessment and temporary protection planning',
     galleryCategory: 'Roof Repairs',
-    galleryHeading: 'Roof Repair and Emergency Response Work',
+    galleryHeading: 'Project Gallery',
   },
   {
     path: '/emergency-roof-repair/orangevale',
@@ -334,7 +334,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     introHeading: 'Schedule Emergency Roof Help in Orangevale, California',
     introParagraphs: [
       'Orangevale, CA sits in Sacramento County with mature trees, established neighborhoods, and many asphalt-shingle roofs that have aged through heat cycles and winter storms. Emergency calls here often start with a different story than custom hillside tile: a limb drops onto a slope, needles and leaves choke a valley or gutter, or worn shingles finally lift during a heavy band of rain.',
-      'When water is active, you need a contractor you can hire—not a blog lecture. PRC 13 Roofing responds to Orangevale emergency roof repair requests with priority assessment, careful documentation, and a plan that separates short-term weather protection from the permanent fix. We serve Orangevale within our California service area and keep next steps practical.',
+ 'When water is active, you need a contractor you can hire, not a blog lecture. PRC 13 Roofing responds to Orangevale emergency roof repair requests with priority assessment, careful documentation, and a plan that separates short-term weather protection from the permanent fix. We serve Orangevale within our California service area and keep next steps practical.',
       'Start by protecting the interior: catch drips, move furniture, and keep people away from wet electrical areas. Leave exterior climbing to the crew. For county-wide emergency framing, use our parent [emergency roof repair](/emergency-roof-repair) page. For community roofing context, see the [Orangevale service area](/service-areas/orangevale) hub.',
       'Homeowners near Folsom and Roseville share Sacramento County storm patterns, but Orangevale\'s tree canopy, gutter load, and aging shingle stock create a distinct hire need. Call now if rain is entering, and we will help you schedule assessment and discuss stabilization options when weather allows safe work.',
     ],
@@ -349,7 +349,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       'Mature landscaping is part of Orangevale\'s character, and it is also a common emergency trigger. Limbs can crack shingles, shift ridge pieces, or puncture a path through the surface. Even without a direct hit, needles and leaves pack valleys and gutters until water backs up under edges during Sacramento County storms.',
       'Many Orangevale roofs are asphalt systems that have already seen years of Central Valley heat. Sealant strips harden, tabs become brittle, and ridge caps loosen. The first strong atmospheric river after a dry summer can expose those weaknesses as active leaks rather than slow staining. Hiring emergency repair means treating that failure as urgent, then planning a lasting correction.',
       'Drainage at the roof edge matters here. Overflowing gutters can push water behind fascia, into eaves, or back under the first courses of shingles. An emergency visit that ignores gutters may miss why the ceiling stain keeps returning. We look at the roof surface and the edge system when overflow is part of the story.',
-      'Compared with more open or custom-roof communities nearby, Orangevale emergencies more often mix debris, drainage, and age. That is why this page focuses on hireable response for Orangevale, CA—not a recycled outline from another suburb. Call PRC 13 when you need assessment and scheduling, not generic advice.',
+ 'Compared with more open or custom-roof communities nearby, Orangevale emergencies more often mix debris, drainage, and age. That is why this page focuses on hireable response for Orangevale, CA, not a recycled outline from another suburb. Call PRC 13 when you need assessment and scheduling, not generic advice.',
     ],
     problemsHeading: 'Urgent Roof Issues Orangevale Homeowners Call About',
     problemsIntro:
@@ -369,7 +369,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     processSteps: [
       {
         title: 'Call and interior containment',
-        desc: 'Describe what you see—active drips, debris on the roof, overflowing gutters—and protect belongings indoors. We help you prioritize whether the situation needs urgent assessment.',
+ desc: 'Describe what you see, active drips, debris on the roof, overflowing gutters, and protect belongings indoors. We help you prioritize whether the situation needs urgent assessment.',
       },
       {
         title: 'On-site emergency evaluation',
@@ -394,7 +394,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     materials: [
       {
         name: 'Asphalt architectural shingles',
-        desc: 'Common on Orangevale streets. Wind lift, worn tabs, and brittle ridges need careful replacement of damaged courses—not sealant-only shortcuts that fail on the next storm.',
+ desc: 'Common on Orangevale streets. Wind lift, worn tabs, and brittle ridges need careful replacement of damaged courses, not sealant-only shortcuts that fail on the next storm.',
       },
       {
         name: 'Underlayment and decking',
@@ -413,7 +413,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     features: [
       {
         title: 'Hire-ready urgency',
-        desc: 'We focus on assessment, stabilization planning, and scheduling—so Orangevale homeowners can act during active water, not after another storm cycle.',
+ desc: 'We focus on assessment, stabilization planning, and scheduling, so Orangevale homeowners can act during active water, not after another storm cycle.',
       },
       {
         title: 'Tree and debris awareness',
@@ -433,7 +433,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'No claim guarantees',
-        desc: 'We document conditions for your records. Insurance outcomes depend on your policy and the insurer\'s review—we do not promise approval or payment.',
+ desc: 'We document conditions for your records. Insurance outcomes depend on your policy and the insurer\'s review, we do not promise approval or payment.',
       },
     ],
     faqHeading: 'Orangevale Emergency Roof Repair FAQs',
@@ -454,7 +454,7 @@ export const cityServicePages: CityServicePageConfig[] = [
           'No. Temporary weatherproofing is meant to limit further exposure until permanent materials can be installed correctly. Hire emergency help to stabilize when needed, then authorize the lasting repair for a durable result.',
       },
       {
-        question: 'My shingles are old—will you only patch the leak?',
+ question: 'My shingles are old, will you only patch the leak?',
         answer:
           'We stop active water first, then explain what we see. A targeted repair may be appropriate in some cases; broader wear may call for a larger scope. You get a written recommendation so you can schedule what makes sense for the roof condition.',
       },
@@ -511,14 +511,14 @@ export const cityServicePages: CityServicePageConfig[] = [
     ],
     contextualLinkParagraphs: [
       'Hire [emergency roof repair](/emergency-roof-repair) for Orangevale, California through PRC 13, and review local roofing context on our [Orangevale service area](/service-areas/orangevale) page. Once water is controlled, schedule lasting [roof repair](/roof-repair) if the permanent scope is ready.',
-      'We also serve nearby [Folsom](/service-areas/folsom) and [Roseville](/service-areas/roseville). After you call, use the resource guides below for tarp, leak, storm, and gutter reading that supports—not replaces—professional assessment.',
+ 'We also serve nearby [Folsom](/service-areas/folsom) and [Roseville](/service-areas/roseville). After you call, use the resource guides below for tarp, leak, storm, and gutter reading that supports, not replaces, professional assessment.',
     ],
     heroImage: emergencyHero,
     heroAlt: 'Emergency roof repair for an Orangevale California home after storm damage',
     introImage: emergencyIntro,
     introImageAlt: 'Urgent roof leak assessment and weather protection planning',
     galleryCategory: 'Roof Repairs',
-    galleryHeading: 'Roof Repair and Emergency Response Work',
+    galleryHeading: 'Project Gallery',
   },
   {
     path: '/emergency-roof-repair/folsom',
@@ -541,7 +541,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       'Licensed & Insured California',
     ],
     answerSummary:
-      'For Folsom, California homeowners with active leaks or storm openings, hire emergency roof repair now: protect the interior, stay off unsafe slopes, and call PRC 13 for assessment and temporary stabilization when needed. We serve Folsom in Sacramento County with clear next steps toward permanent repair—not a delayed educational visit.',
+ 'For Folsom, California homeowners with active leaks or storm openings, hire emergency roof repair now: protect the interior, stay off unsafe slopes, and call PRC 13 for assessment and temporary stabilization when needed. We serve Folsom in Sacramento County with clear next steps toward permanent repair, not a delayed educational visit.',
     answerPoints: [
       'Call-first response for water entering Folsom homes',
       'Wind and heat-related openings assessed for shingle and tile',
@@ -550,9 +550,9 @@ export const cityServicePages: CityServicePageConfig[] = [
     ],
     introHeading: 'Hire Emergency Roof Repair in Folsom, CA',
     introParagraphs: [
-      'Folsom, California sits along the American River and Folsom Lake corridor in Sacramento County, where gusty wind bands, strong sun, and seasonal atmospheric rivers combine hard on roof systems. Homes range from asphalt-shingle neighborhoods to tile roofs in planned communities. When a ridge lifts, a flashing joint fails, or wind opens a field, you need a crew you can hire—not another article about leak theory.',
+ 'Folsom, California sits along the American River and Folsom Lake corridor in Sacramento County, where gusty wind bands, strong sun, and seasonal atmospheric rivers combine hard on roof systems. Homes range from asphalt-shingle neighborhoods to tile roofs in planned communities. When a ridge lifts, a flashing joint fails, or wind opens a field, you need a crew you can hire, not another article about leak theory.',
       'PRC 13 Roofing provides emergency roof repair for Folsom homeowners ready to schedule assessment, temporary protection when appropriate, and a written permanent scope. We keep the conversation transactional: what is urgent, what can wait until safer weather, and what you need to authorize next. HOA neighborhoods are common here; we work within practical access and documentation needs without treating every street like a case study.',
-      'If water is active, contain drips indoors and call. Do not walk wet roofs. For parent service standards, see [emergency roof repair](/emergency-roof-repair). For community roofing overview, visit the [Folsom service area](/service-areas/folsom) hub. Nearby El Dorado Hills and Orangevale share regional weather but have different housing mixes—this page is specifically for hiring help in Folsom, CA.',
+ 'If water is active, contain drips indoors and call. Do not walk wet roofs. For parent service standards, see [emergency roof repair](/emergency-roof-repair). For community roofing overview, visit the [Folsom service area](/service-areas/folsom) hub. Nearby El Dorado Hills and Orangevale share regional weather but have different housing mixes, this page is specifically for hiring help in Folsom, CA.',
       'Educational Folsom leak and storm guides are useful after you stabilize the home. Right now, the job is assessment and control. Call PRC 13 to schedule emergency roof help and get a clear path from today\'s opening to a lasting repair estimate.',
     ],
     introChecklist: [
@@ -563,10 +563,10 @@ export const cityServicePages: CityServicePageConfig[] = [
     ],
     localContextHeading: 'Folsom Emergency Conditions: Wind, Heat, and Mixed Roof Stock',
     localContextParagraphs: [
-      'Lake-corridor wind can load ridges, hips, and exposed edges differently than inland cul-de-sacs. Folsom homeowners sometimes see lifted ridge caps or displaced field material after a gusty cell even when rainfall totals are moderate. Emergency hiring focuses on closing the opening and documenting what failed—not waiting to see if the next storm is worse.',
+ 'Lake-corridor wind can load ridges, hips, and exposed edges differently than inland cul-de-sacs. Folsom homeowners sometimes see lifted ridge caps or displaced field material after a gusty cell even when rainfall totals are moderate. Emergency hiring focuses on closing the opening and documenting what failed, not waiting to see if the next storm is worse.',
       'Sacramento County heat between storms ages shingles, sealants, and underlayment. A Folsom roof that looked acceptable in September can leak in the first prolonged winter rain. That pattern shows up on both asphalt and tile systems: tile may look whole while flashings or underlayment fail underneath. Emergency response has to inspect the right layers.',
       'Many Folsom neighborhoods include HOA guidelines for exterior appearance and access. During an emergency, safety and water control come first; permanent materials and appearance details can be planned in the follow-up scope. We communicate clearly so temporary work and lasting repair stay distinct for homeowners and, when relevant, association requirements.',
-      'El Dorado Hills and Orangevale sit nearby with their own terrain and canopy patterns. Folsom\'s mix of lake-adjacent exposure, planned-community roofs, and shingle-or-tile stock is why this hire page stands alone. Call when you need Folsom emergency roof repair scheduled—not a recycled outline from another city.',
+ 'El Dorado Hills and Orangevale sit nearby with their own terrain and canopy patterns. Folsom\'s mix of lake-adjacent exposure, planned-community roofs, and shingle-or-tile stock is why this hire page stands alone. Call when you need Folsom emergency roof repair scheduled, not a recycled outline from another city.',
     ],
     problemsHeading: 'Emergency Roof Problems Folsom Homeowners Hire Us For',
     problemsIntro:
@@ -586,7 +586,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     processSteps: [
       {
         title: 'Urgent call and safety first',
-        desc: 'Tell us what you see—active water, missing material, wind damage—and protect the interior. Stay off wet roofs and away from electrical hazards while we arrange assessment.',
+ desc: 'Tell us what you see, active water, missing material, wind damage, and protect the interior. Stay off wet roofs and away from electrical hazards while we arrange assessment.',
       },
       {
         title: 'Folsom on-site assessment',
@@ -598,7 +598,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Permanent repair plan',
-        desc: 'We outline the lasting fix—materials, transitions, and any broader wear we found—so you can authorize a scoped repair instead of guessing after the emergency phase.',
+ desc: 'We outline the lasting fix, materials, transitions, and any broader wear we found, so you can authorize a scoped repair instead of guessing after the emergency phase.',
       },
       {
         title: 'Schedule follow-through',
@@ -630,7 +630,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     features: [
       {
         title: 'Transactional urgency',
-        desc: 'This page is for hiring help: assessment, stabilization, and scheduling—not a long educational walkthrough of Folsom weather history.',
+ desc: 'This page is for hiring help: assessment, stabilization, and scheduling, not a long educational walkthrough of Folsom weather history.',
       },
       {
         title: 'Shingle and tile readiness',
@@ -729,7 +729,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     introImage: emergencyIntro,
     introImageAlt: 'Urgent roof opening evaluation and repair planning in Folsom',
     galleryCategory: 'Roof Repairs',
-    galleryHeading: 'Roof Repair and Emergency Response Work',
+    galleryHeading: 'Project Gallery',
   },
   {
     path: '/roof-repair/granite-bay',
@@ -739,12 +739,12 @@ export const cityServicePages: CityServicePageConfig[] = [
     parentLabel: 'Roof Repair',
     metaTitle: 'Roof Repair Granite Bay, CA | Free Inspection | PRC 13',
     metaDescription:
-      'Roof repair in Granite Bay, California for tile, complex flashings, and valley leaks. Schedule PRC 13 for assessment and a written repair estimate—call for active water emergencies.',
+ 'Roof repair in Granite Bay, California for tile, complex flashings, and valley leaks. Schedule PRC 13 for assessment and a written repair estimate, call for active water emergencies.',
     badge: 'Granite Bay, CA Roof Repair',
     headline: 'Roof Repair',
     headlineAccent: 'in Granite Bay, CA',
     subheadline:
-      'Tile systems, complex flashings, and long valleys need careful repair on Granite Bay, California homes. Schedule PRC 13 Roofing for assessment and a written estimate—or call immediately if water is actively entering.',
+ 'Tile systems, complex flashings, and long valleys need careful repair on Granite Bay, California homes. Schedule PRC 13 Roofing for assessment and a written estimate, or call immediately if water is actively entering.',
     trustBarItems: [
       'Tile and Complex Roof Focus',
       'Flashing and Valley Expertise',
@@ -752,7 +752,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       'Licensed California Contractor',
     ],
     answerSummary:
-      'Granite Bay, California homeowners hire roof repair for tile resets, flashing rebuilds, valley corrections, and targeted shingle work—not only emergencies. PRC 13 assesses the leak path, matches materials to your system, and provides a written scope. If water is actively entering now, use emergency roof repair first, then schedule lasting repairs.',
+ 'Granite Bay, California homeowners hire roof repair for tile resets, flashing rebuilds, valley corrections, and targeted shingle work, not only emergencies. PRC 13 assesses the leak path, matches materials to your system, and provides a written scope. If water is actively entering now, use emergency roof repair first, then schedule lasting repairs.',
     answerPoints: [
       'Scheduled repair for non-emergency Granite Bay roof issues',
       'Tile, flashing, and valley work planned for complex geometry',
@@ -761,8 +761,8 @@ export const cityServicePages: CityServicePageConfig[] = [
     ],
     introHeading: 'Schedule Roof Repair in Granite Bay, California',
     introParagraphs: [
-      'Granite Bay, CA homeowners often need roof repair that respects custom geometry: concrete or clay tile, long valley runs, chimney saddles, skylight curbs, and multi-level transitions. A ceiling stain may sit far from the true entry point. Hiring a repair crew means getting diagnosis and detailing right—not applying a generic patch that fails on the next Sacramento County storm.',
-      'This page is for scheduling roof repair in Granite Bay when the situation is urgent to fix but not necessarily an active emergency. If water is pouring in during a storm, call our [emergency roof repair](/emergency-roof-repair) team first for assessment and temporary protection. Once the opening is controlled—or if you have a known leak that needs lasting correction—schedule permanent repair with PRC 13.',
+ 'Granite Bay, CA homeowners often need roof repair that respects custom geometry: concrete or clay tile, long valley runs, chimney saddles, skylight curbs, and multi-level transitions. A ceiling stain may sit far from the true entry point. Hiring a repair crew means getting diagnosis and detailing right, not applying a generic patch that fails on the next Sacramento County storm.',
+ 'This page is for scheduling roof repair in Granite Bay when the situation is urgent to fix but not necessarily an active emergency. If water is pouring in during a storm, call our [emergency roof repair](/emergency-roof-repair) team first for assessment and temporary protection. Once the opening is controlled, or if you have a known leak that needs lasting correction, schedule permanent repair with PRC 13.',
       'We serve Granite Bay within our California service area and focus on hireable next steps: inspection findings, material matching, written scope, and scheduling. For general community roofing, visit the [Granite Bay service area](/service-areas/granite-bay) hub. For Sacramento-wide repair standards, see the parent [roof repair](/roof-repair) page.',
       'Nearby Roseville, Rocklin, and Folsom share regional weather, but Granite Bay\'s custom and tile-heavy stock needs repair methods that protect surrounding material during access. Call or request an estimate when you are ready to authorize professional repair on your Granite Bay roof.',
     ],
@@ -775,9 +775,9 @@ export const cityServicePages: CityServicePageConfig[] = [
     localContextHeading: 'Granite Bay Roof Repair Context: Tile, Valleys, and Custom Lines',
     localContextParagraphs: [
       'Many Granite Bay properties use tile roofs over steep or multi-plane designs. Repair work must lift and reset tile carefully, inspect underlayment when a section is opened, and avoid cracking neighboring pieces during access. Sealant-only shortcuts on tile systems often fail because they do not restore the water-shedding layers beneath.',
-      'Valleys collect debris from oaks and pines common around open lots. Over time, abrasion and overflow can wear underlayment or overwhelm flashings. A lasting Granite Bay repair often includes valley correction and debris management planning—not only replacing a few surface tiles near a stain.',
+ 'Valleys collect debris from oaks and pines common around open lots. Over time, abrasion and overflow can wear underlayment or overwhelm flashings. A lasting Granite Bay repair often includes valley correction and debris management planning, not only replacing a few surface tiles near a stain.',
       'Flashings at chimneys, sidewalls, and skylights are frequent leak sources on custom homes. Sacramento County heat cycles age sealants; the first long rain can reveal a joint that looked fine in summer. Hire repair that rebuilds the flashing detail correctly rather than coating over a gap.',
-      'If you are comparing repair versus larger scope, we will say when surrounding wear suggests more than a localized fix. That honesty helps Granite Bay, California homeowners schedule the right project—targeted repair now, or a broader plan when the system is near end of life—without fabricated timelines or price guarantees.',
+ 'If you are comparing repair versus larger scope, we will say when surrounding wear suggests more than a localized fix. That honesty helps Granite Bay, California homeowners schedule the right project, targeted repair now, or a broader plan when the system is near end of life, without fabricated timelines or price guarantees.',
     ],
     problemsHeading: 'Roof Repair Problems We Fix in Granite Bay',
     problemsIntro:
@@ -797,7 +797,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     processSteps: [
       {
         title: 'Assessment and leak tracing',
-        desc: 'We inspect from interior clues to exterior transitions common on Granite Bay homes—valleys, flashings, tile fields, and multi-level joints—to locate the water path before materials are ordered.',
+ desc: 'We inspect from interior clues to exterior transitions common on Granite Bay homes, valleys, flashings, tile fields, and multi-level joints, to locate the water path before materials are ordered.',
       },
       {
         title: 'Written repair scope',
@@ -813,7 +813,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Walkthrough and next steps',
-        desc: 'After repair, we review what was done and note any broader wear you may want to plan for later—without pressure tactics or invented urgency.',
+ desc: 'After repair, we review what was done and note any broader wear you may want to plan for later, without pressure tactics or invented urgency.',
       },
     ],
     materialsHeading: 'Materials Used in Granite Bay Roof Repairs',
@@ -826,7 +826,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         name: 'Underlayment repair',
-        desc: 'When secondary layers are worn or exposed at valleys and openings, lasting repair includes restoring underlayment—not only the visible surface.',
+ desc: 'When secondary layers are worn or exposed at valleys and openings, lasting repair includes restoring underlayment, not only the visible surface.',
       },
       {
         name: 'Custom flashings',
@@ -841,11 +841,11 @@ export const cityServicePages: CityServicePageConfig[] = [
     features: [
       {
         title: 'Complex-roof repair focus',
-        desc: 'Tile, valleys, and custom flashings are central to how we scope Granite Bay repairs—not treated as rare exceptions.',
+ desc: 'Tile, valleys, and custom flashings are central to how we scope Granite Bay repairs, not treated as rare exceptions.',
       },
       {
         title: 'Hire clarity',
-        desc: 'You get assessment findings, a written scope, and scheduling—transactional communication for homeowners ready to authorize work.',
+ desc: 'You get assessment findings, a written scope, and scheduling, transactional communication for homeowners ready to authorize work.',
       },
       {
         title: 'Emergency link when needed',
@@ -869,12 +869,12 @@ export const cityServicePages: CityServicePageConfig[] = [
       {
         question: 'How is this different from emergency roof repair in Granite Bay?',
         answer:
-          'Emergency service is for active water intrusion or exposed openings that need immediate assessment and possible temporary protection. This roof repair page is for scheduling lasting fixes—tile, flashing, valley, and related work—once you can plan the job. If water is entering now, call emergency roof repair first.',
+ 'Emergency service is for active water intrusion or exposed openings that need immediate assessment and possible temporary protection. This roof repair page is for scheduling lasting fixes, tile, flashing, valley, and related work, once you can plan the job. If water is entering now, call emergency roof repair first.',
       },
       {
         question: 'Do you repair tile roofs in Granite Bay, CA?',
         answer:
-          'Yes. Tile repairs require careful access, underlayment awareness, and correct reset or replacement. We scope tile work based on what we find beneath and around the failure—not surface appearance alone.',
+ 'Yes. Tile repairs require careful access, underlayment awareness, and correct reset or replacement. We scope tile work based on what we find beneath and around the failure, not surface appearance alone.',
       },
       {
         question: 'Can flashing repair stop a recurring leak?',
@@ -884,7 +884,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       {
         question: 'Will you give a written estimate?',
         answer:
-          'Yes. After assessment, we provide a written repair scope and estimate so you can authorize work clearly. Exact pricing depends on access, materials, and findings—we do not publish one-size prices that ignore your roof.',
+ 'Yes. After assessment, we provide a written repair scope and estimate so you can authorize work clearly. Exact pricing depends on access, materials, and findings, we do not publish one-size prices that ignore your roof.',
       },
       {
         question: 'What if my roof needs more than repair?',
@@ -947,7 +947,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     introImage: repairIntro,
     introImageAlt: 'Detail roof repair and flashing work for complex roofs',
     galleryCategory: 'Roof Repairs',
-    galleryHeading: 'Roof Repair Project Gallery',
+    galleryHeading: 'Project Gallery',
   },
   {
     path: '/roof-replacement/rocklin',
@@ -962,7 +962,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     headline: 'Shingle Roof Replacement',
     headlineAccent: 'in Rocklin, CA',
     subheadline:
-      'Asphalt shingle roof replacement for Rocklin, California homes that are ready for a full system—not another patch. Call PRC 13 Roofing to schedule assessment and a written replacement estimate.',
+ 'Asphalt shingle roof replacement for Rocklin, California homes that are ready for a full system, not another patch. Call PRC 13 Roofing to schedule assessment and a written replacement estimate.',
     trustBarItems: [
       'Asphalt Shingle Specialists',
       'Full Tear-Off Process',
@@ -970,7 +970,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       'Licensed California Roofing',
     ],
     answerSummary:
-      'Rocklin, California homeowners hire asphalt shingle roof replacement when repair no longer makes sense for age, wear, or widespread damage. PRC 13 assesses the roof, explains the full replacement process, and provides a written estimate. Tile and metal are different systems—we can discuss those options and link you to the right materials guidance without overselling.',
+ 'Rocklin, California homeowners hire asphalt shingle roof replacement when repair no longer makes sense for age, wear, or widespread damage. PRC 13 assesses the roof, explains the full replacement process, and provides a written estimate. Tile and metal are different systems, we can discuss those options and link you to the right materials guidance without overselling.',
     answerPoints: [
       'Primary focus: asphalt shingle replacement in Rocklin, CA',
       'Full process from assessment through install and cleanup',
@@ -979,9 +979,9 @@ export const cityServicePages: CityServicePageConfig[] = [
     ],
     introHeading: 'Hire Shingle Roof Replacement in Rocklin, California',
     introParagraphs: [
-      'Rocklin, CA sits in Sacramento County with many neighborhoods built on architectural asphalt shingle roofs that face Central Valley heat, seasonal wind, and winter rain. When shingles are brittle, missing across multiple slopes, or past practical repair, homeowners hire full roof replacement—not another temporary patch. PRC 13 Roofing provides shingle roof replacement for Rocklin properties ready to schedule assessment and estimate.',
+ 'Rocklin, CA sits in Sacramento County with many neighborhoods built on architectural asphalt shingle roofs that face Central Valley heat, seasonal wind, and winter rain. When shingles are brittle, missing across multiple slopes, or past practical repair, homeowners hire full roof replacement, not another temporary patch. PRC 13 Roofing provides shingle roof replacement for Rocklin properties ready to schedule assessment and estimate.',
       'This page is transactional: call or request an estimate, review findings, authorize a scoped replacement, and move through tear-off and install with clear communication. We serve Rocklin within our California service area. For parent replacement standards, see [roof replacement](/roof-replacement). For community context, visit the [Rocklin service area](/service-areas/rocklin) hub.',
-      'Asphalt shingles are the primary intent here because they dominate local housing stock. If you are comparing tile aesthetics or long-term metal performance, we can discuss those paths and point you to [metal roofing](/metal-roofing) and our materials guides—without pretending every Rocklin home needs the same system.',
+ 'Asphalt shingles are the primary intent here because they dominate local housing stock. If you are comparing tile aesthetics or long-term metal performance, we can discuss those paths and point you to [metal roofing](/metal-roofing) and our materials guides, without pretending every Rocklin home needs the same system.',
       'Nearby Roseville and Lincoln share regional climate and similar shingle aging patterns. Call PRC 13 when your Rocklin roof is ready for replacement planning, and we will help you schedule the assessment that starts a written estimate.',
     ],
     introChecklist: [
@@ -993,13 +993,13 @@ export const cityServicePages: CityServicePageConfig[] = [
     localContextHeading: 'Why Rocklin Homes Often Choose Shingle Replacement',
     localContextParagraphs: [
       'Many Rocklin roofs were installed during neighborhood build-outs and have since absorbed years of Sacramento County sun. Granule loss, curled tabs, cracked ridges, and repeated leak repairs are common signals that the field is due for replacement rather than another localized fix. Hiring replacement means restoring underlayment, flashings, and a new shingle system as a whole.',
-      'Wind events can remove tabs or ridge caps across multiple planes. If repairs keep stacking season after season, a full shingle replacement often becomes the clearer value for the homeowner—especially when decking and underlayment also need attention. Assessment documents that condition without inventing urgency.',
+ 'Wind events can remove tabs or ridge caps across multiple planes. If repairs keep stacking season after season, a full shingle replacement often becomes the clearer value for the homeowner, especially when decking and underlayment also need attention. Assessment documents that condition without inventing urgency.',
       'Some Rocklin properties consider tile or metal for appearance or longevity. Those are different products with different structural and cost considerations. We keep asphalt shingle replacement as the primary hire path on this page, while linking metal roofing and materials education for homeowners who want a contrast discussion before they authorize work.',
       'Roseville and Lincoln sit nearby with comparable heat and storm exposure. Rocklin\'s street patterns and shingle-heavy stock still deserve a dedicated replacement page so scheduling, process, and local links stay specific. Call when you are ready to estimate a full shingle roof for your Rocklin, California home.',
     ],
     problemsHeading: 'Signs Rocklin Homeowners Schedule Shingle Replacement',
     problemsIntro:
-      'These conditions often lead Rocklin, CA homeowners to hire asphalt shingle roof replacement. A professional assessment confirms whether replacement—not repair—is the right next step.',
+ 'These conditions often lead Rocklin, CA homeowners to hire asphalt shingle roof replacement. A professional assessment confirms whether replacement, not repair, is the right next step.',
     problems: [
       'Widespread granule loss, curling, or brittle shingles across slopes',
       'Repeated leaks after multiple prior repairs',
@@ -1019,7 +1019,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Written estimate and scope',
-        desc: 'You receive a scoped estimate covering tear-off, underlayment, flashings, shingles, and related work discussed for your Rocklin roof—so authorization is based on documented scope.',
+ desc: 'You receive a scoped estimate covering tear-off, underlayment, flashings, shingles, and related work discussed for your Rocklin roof, so authorization is based on documented scope.',
       },
       {
         title: 'Scheduling and preparation',
@@ -1059,7 +1059,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     features: [
       {
         title: 'Shingle-first clarity',
-        desc: 'This page is built for asphalt replacement hiring in Rocklin, CA—the most common local need—while remaining honest about other material paths.',
+ desc: 'This page is built for asphalt replacement hiring in Rocklin, CA, the most common local need, while remaining honest about other material paths.',
       },
       {
         title: 'Full-process accountability',
@@ -1075,7 +1075,7 @@ export const cityServicePages: CityServicePageConfig[] = [
       },
       {
         title: 'Repair-versus-replace honesty',
-        desc: 'If targeted repair still makes sense, we say so. If replacement is the clearer path, we explain why based on conditions—not invented stats.',
+ desc: 'If targeted repair still makes sense, we say so. If replacement is the clearer path, we explain why based on conditions, not invented stats.',
       },
       {
         title: 'Materials guidance on request',
@@ -1158,7 +1158,7 @@ export const cityServicePages: CityServicePageConfig[] = [
     introImage: replacementIntro,
     introImageAlt: 'Completed shingle roof replacement on a Sacramento County home',
     galleryCategory: 'Roof Replacement',
-    galleryHeading: 'Roof Replacement Project Gallery',
+    galleryHeading: 'Project Gallery',
   },
 ];
 

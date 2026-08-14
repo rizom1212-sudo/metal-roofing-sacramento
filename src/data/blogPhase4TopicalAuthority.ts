@@ -95,7 +95,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Start with what you can see safely from the ground. Active dripping, wet insulation in the attic, a growing ceiling stain, or water near lights and outlets raises urgency. A faint mark discovered weeks after rain, with no current moisture, is still worth inspecting—but it is a different priority than water pouring into a room during a Sacramento storm.',
+ 'Start with what you can see safely from the ground. Active dripping, wet insulation in the attic, a growing ceiling stain, or water near lights and outlets raises urgency. A faint mark discovered weeks after rain, with no current moisture, is still worth inspecting, but it is a different priority than water pouring into a room during a Sacramento storm.',
       },
       {
         type: 'list',
@@ -154,7 +154,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
     title: 'Who to Call When Your Roof Is Leaking: Roofer, Plumber, or Handyman?',
     seoTitle: 'Who to Call When a Roof Is Leaking | Sacramento',
     excerpt:
-      'Roof leak or plumbing problem? Learn who to call—emergency roofer, plumber, or another trade—so Sacramento homeowners get the right help first.',
+ 'Roof leak or plumbing problem? Learn who to call, emergency roofer, plumber, or another trade, so Sacramento homeowners get the right help first.',
     date: DATE,
     readTime: '7 min read',
     category: EMERGENCY_CLUSTER_CATEGORY,
@@ -180,7 +180,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         question: 'Can a handyman fix a roof leak?',
         answer:
-          'Roof leaks often involve flashing, underlayment, or decking—not surface sealant alone. A licensed roofing contractor is the safer choice for diagnosis and weatherproofing.',
+ 'Roof leaks often involve flashing, underlayment, or decking, not surface sealant alone. A licensed roofing contractor is the safer choice for diagnosis and weatherproofing.',
       },
       {
         question: 'Who should I call if water is entering during a storm?',
@@ -202,7 +202,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: call a roofing contractor when water entry lines up with rain, storms, or visible roof damage. Call a plumber when leaks appear on dry days near bathrooms, kitchens, or supply lines. A handyman is rarely the right first call for an active roof leak—diagnosis and weatherproofing belong with a licensed roofer.',
+ 'Short answer: call a roofing contractor when water entry lines up with rain, storms, or visible roof damage. Call a plumber when leaks appear on dry days near bathrooms, kitchens, or supply lines. A handyman is rarely the right first call for an active roof leak, diagnosis and weatherproofing belong with a licensed roofer.',
       },
       {
         type: 'heading',
@@ -211,7 +211,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Timing is the clearest clue. Leaks that start or intensify during Sacramento rain usually point to the roof plane, flashing, valleys, or penetrations. Leaks that appear while the weather is dry often involve plumbing, HVAC condensate, or an appliance. Ceiling stains alone do not tell you which trade to call—context does.',
+ 'Timing is the clearest clue. Leaks that start or intensify during Sacramento rain usually point to the roof plane, flashing, valleys, or penetrations. Leaks that appear while the weather is dry often involve plumbing, HVAC condensate, or an appliance. Ceiling stains alone do not tell you which trade to call, context does.',
       },
       {
         type: 'list',
@@ -294,7 +294,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         question: 'Does insurance cover temporary tarping?',
         answer:
-          'Many policies consider reasonable temporary measures after a covered event. Keep photos, invoices, and notes. Confirm details with your insurer—coverage is not guaranteed.',
+ 'Many policies consider reasonable temporary measures after a covered event. Keep photos, invoices, and notes. Confirm details with your insurer, coverage is not guaranteed.',
       },
       {
         question: 'Should I wait for an adjuster before stopping the leak?',
@@ -309,7 +309,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         question: 'Can PRC 13 help with insurance documentation?',
         answer:
-          'Yes. PRC 13 documents roof conditions and explains repair needs. We do not decide whether a claim is covered—that remains with the insurer.',
+ 'Yes. PRC 13 documents roof conditions and explains repair needs. We do not decide whether a claim is covered, that remains with the insurer.',
       },
       {
         question: 'What if the leak is from age, not a storm?',
@@ -321,7 +321,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: insurance may help with emergency roof repairs after a covered event, but coverage is never automatic. Your insurer decides what is covered. PRC 13 documents roof conditions, helps with temporary protection when appropriate, and provides clear findings—without promising claim outcomes.',
+ 'Short answer: insurance may help with emergency roof repairs after a covered event, but coverage is never automatic. Your insurer decides what is covered. PRC 13 documents roof conditions, helps with temporary protection when appropriate, and provides clear findings, without promising claim outcomes.',
       },
       {
         type: 'heading',
@@ -369,7 +369,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Need help after storm damage in Sacramento? Contact PRC 13 for emergency response and documentation support. We focus on protecting the home and explaining what we find—your insurer makes the coverage decision.',
+ 'Need help after storm damage in Sacramento? Contact PRC 13 for emergency response and documentation support. We focus on protecting the home and explaining what we find, your insurer makes the coverage decision.',
       },
     ],
   },
@@ -398,7 +398,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         question: 'How soon should I inspect my roof after a storm?',
         answer:
-          'As soon as it is safe. If water is entering or the roof is open, seek urgent help right away. If the home is dry, schedule an inspection promptly—ideally before the next rain—so hidden damage is not missed.',
+ 'As soon as it is safe. If water is entering or the roof is open, seek urgent help right away. If the home is dry, schedule an inspection promptly, ideally before the next rain, so hidden damage is not missed.',
       },
       {
         question: 'Can I wait a few weeks after wind damage?',
@@ -425,7 +425,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: inspect storm roof damage as soon as conditions are safe. Active leaks and open roofing need immediate attention. Even when the home looks dry, a prompt professional inspection—before the next Sacramento rain—helps catch lifted materials, debris impact, and flashing displacement that are easy to miss from the street.',
+ 'Short answer: inspect storm roof damage as soon as conditions are safe. Active leaks and open roofing need immediate attention. Even when the home looks dry, a prompt professional inspection, before the next Sacramento rain, helps catch lifted materials, debris impact, and flashing displacement that are easy to miss from the street.',
       },
       {
         type: 'heading',
@@ -434,7 +434,7 @@ export const phase4EmergencyPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Storm damage is not always dramatic. A few lifted edges, a cracked tile, or a displaced flashing piece can sit quietly until the next weather system drives water underneath. Early inspection also helps with documentation while evidence is fresh—useful for your records and any insurance conversation.',
+ 'Storm damage is not always dramatic. A few lifted edges, a cracked tile, or a displaced flashing piece can sit quietly until the next weather system drives water underneath. Early inspection also helps with documentation while evidence is fresh, useful for your records and any insurance conversation.',
       },
       {
         type: 'list',
@@ -496,7 +496,7 @@ export const phase4RepairPosts: BlogPost[] = [
     title: 'Common Causes of Roof Leaks in Sacramento Homes',
     seoTitle: 'Common Causes of Roof Leaks | Sacramento',
     excerpt:
-      'Most Sacramento roof leaks start at flashing, penetrations, valleys, or worn covering materials—not where the ceiling stain appears. Learn the usual causes.',
+ 'Most Sacramento roof leaks start at flashing, penetrations, valleys, or worn covering materials, not where the ceiling stain appears. Learn the usual causes.',
     date: DATE,
     readTime: '8 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -516,7 +516,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         question: 'What causes most roof leaks?',
         answer:
-          'Failed flashing, aged pipe boots, valley problems, damaged shingles or underlayment, and poorly sealed penetrations are among the most common sources—often away from the indoor stain.',
+ 'Failed flashing, aged pipe boots, valley problems, damaged shingles or underlayment, and poorly sealed penetrations are among the most common sources, often away from the indoor stain.',
       },
       {
         question: 'Why is the leak not directly above the stain?',
@@ -543,7 +543,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: common roof leak causes include failed flashing, worn pipe boots, valley issues, damaged covering materials, and aged underlayment—especially on tile systems. The ceiling stain is a symptom; the entry point is often elsewhere on the roof plane.',
+ 'Short answer: common roof leak causes include failed flashing, worn pipe boots, valley issues, damaged covering materials, and aged underlayment, especially on tile systems. The ceiling stain is a symptom; the entry point is often elsewhere on the roof plane.',
       },
       {
         type: 'heading',
@@ -587,7 +587,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Call for roof repair help when you see active dripping, recurring stains after rain, or visible material damage. A free roof inspection identifies the cause so repairs target the failure—not just the indoor symptom. If water is entering heavily during a storm, start with emergency response.',
+ 'Call for roof repair help when you see active dripping, recurring stains after rain, or visible material damage. A free roof inspection identifies the cause so repairs target the failure, not just the indoor symptom. If water is entering heavily during a storm, start with emergency response.',
       },
       {
         type: 'links',
@@ -643,7 +643,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         question: 'Can PRC 13 tell me which option is better?',
         answer:
-          'Yes. After a free inspection, we explain repair scope versus replacement so you can decide with clear findings—not pressure.',
+ 'Yes. After a free inspection, we explain repair scope versus replacement so you can decide with clear findings, not pressure.',
       },
       {
         question: 'Is financing available if I choose replacement?',
@@ -669,7 +669,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Focus on pattern, not panic. One failed pipe boot on an otherwise healthy roof is usually a repair. Multiple active leaks, brittle covering across slopes, soft decking, or recurring flashes of the same problem on an older roof point toward replacement planning. Cost alone should not decide—remaining service life and risk of the next failure matter too.',
+ 'Focus on pattern, not panic. One failed pipe boot on an otherwise healthy roof is usually a repair. Multiple active leaks, brittle covering across slopes, soft decking, or recurring flashes of the same problem on an older roof point toward replacement planning. Cost alone should not decide, remaining service life and risk of the next failure matter too.',
       },
       {
         type: 'list',
@@ -737,7 +737,7 @@ export const phase4RepairPosts: BlogPost[] = [
     title: 'Signs Your Roof Needs Immediate Repair',
     seoTitle: 'Signs a Roof Needs Immediate Repair | Sacramento',
     excerpt:
-      'Know the urgency signals that mean your roof needs repair now—active leaks, exposed areas, and storm damage—not just long-term replacement clues.',
+ 'Know the urgency signals that mean your roof needs repair now, active leaks, exposed areas, and storm damage, not just long-term replacement clues.',
     date: DATE,
     readTime: '7 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -763,7 +763,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         question: 'Is a missing shingle always an emergency?',
         answer:
-          'A single missing shingle may not be a same-hour emergency if no water is entering, but it should be repaired promptly—especially with rain in the forecast.',
+ 'A single missing shingle may not be a same-hour emergency if no water is entering, but it should be repaired promptly, especially with rain in the forecast.',
       },
       {
         question: 'How is this different from replacement signs?',
@@ -785,7 +785,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: your roof needs immediate repair attention when water is entering, when covering materials leave underlayment or decking exposed, or when storm damage has opened a path for the next rain. These are urgency signals—not the same checklist as long-term replacement indicators.',
+ 'Short answer: your roof needs immediate repair attention when water is entering, when covering materials leave underlayment or decking exposed, or when storm damage has opened a path for the next rain. These are urgency signals, not the same checklist as long-term replacement indicators.',
       },
       {
         type: 'heading',
@@ -849,7 +849,7 @@ export const phase4RepairPosts: BlogPost[] = [
     title: 'What Causes Roof Flashing to Fail?',
     seoTitle: 'What Causes Roof Flashing to Fail? | Sacramento',
     excerpt:
-      'Flashing fails from heat-dried sealant, improper overlaps, corrosion, movement at walls, and debris—not just age. Learn the common causes in Sacramento.',
+ 'Flashing fails from heat-dried sealant, improper overlaps, corrosion, movement at walls, and debris, not just age. Learn the common causes in Sacramento.',
     date: DATE,
     readTime: '7 min read',
     category: ROOF_REPAIR_CLUSTER_CATEGORY,
@@ -879,7 +879,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         question: 'Does corrosion cause flashing leaks?',
         answer:
-          'Corrosion, pinholes, and separated seams can open paths for water—especially where dissimilar metals or long-term moisture exposure are present.',
+ 'Corrosion, pinholes, and separated seams can open paths for water, especially where dissimilar metals or long-term moisture exposure are present.',
       },
       {
         question: 'Are DIY sealant touch-ups enough?',
@@ -905,7 +905,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Flashing exists wherever the roof plane changes—walls, chimneys, skylights, valleys, and penetrations. Those details must shed water over the roofing material. When metal lifts, sealant cracks, or counter-flashing separates from masonry, water follows the gap instead of the intended path.',
+ 'Flashing exists wherever the roof plane changes, walls, chimneys, skylights, valleys, and penetrations. Those details must shed water over the roofing material. When metal lifts, sealant cracks, or counter-flashing separates from masonry, water follows the gap instead of the intended path.',
       },
       {
         type: 'list',
@@ -940,7 +940,7 @@ export const phase4RepairPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Call for a free roof inspection if stains appear near walls, chimneys, skylights, or valleys after rain. PRC 13 diagnoses whether sealant, metal replacement, or a broader repair is needed—rather than guessing from the ceiling alone.',
+ 'Call for a free roof inspection if stains appear near walls, chimneys, skylights, or valleys after rain. PRC 13 diagnoses whether sealant, metal replacement, or a broader repair is needed, rather than guessing from the ceiling alone.',
       },
       {
         type: 'links',
@@ -1073,7 +1073,7 @@ export const phase4ReplacementPosts: BlogPost[] = [
     title: 'Best Time to Replace a Roof in Sacramento',
     seoTitle: 'Best Time to Replace a Roof in Sacramento | PRC 13',
     excerpt:
-      'Sacramento roof replacement timing depends on weather windows, material needs, and urgency—not a single perfect month. Learn how to plan wisely.',
+ 'Sacramento roof replacement timing depends on weather windows, material needs, and urgency, not a single perfect month. Learn how to plan wisely.',
     date: DATE,
     readTime: '7 min read',
     category: REPLACEMENT_CLUSTER_CATEGORY,
@@ -1103,7 +1103,7 @@ export const phase4ReplacementPosts: BlogPost[] = [
       {
         question: 'Should I wait until summer if my roof is leaking?',
         answer:
-          'No. Active leaks and failing roofs need prompt assessment. Temporary protection and repair or replacement planning should follow condition—not the calendar alone.',
+ 'No. Active leaks and failing roofs need prompt assessment. Temporary protection and repair or replacement planning should follow condition, not the calendar alone.',
       },
       {
         question: 'How long does a typical replacement take?',
@@ -1120,7 +1120,7 @@ export const phase4ReplacementPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: the best time to replace a Sacramento roof is during a stretch of workable weather—often outside the heaviest rain—unless your roof’s condition makes waiting risky. Urgency beats the calendar when leaks, soft decking, or widespread failure are already present.',
+ 'Short answer: the best time to replace a Sacramento roof is during a stretch of workable weather, often outside the heaviest rain, unless your roof’s condition makes waiting risky. Urgency beats the calendar when leaks, soft decking, or widespread failure are already present.',
       },
       {
         type: 'heading',
@@ -1168,7 +1168,7 @@ export const phase4ReplacementPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Planning a Sacramento roof replacement? Contact PRC 13 for a free inspection and a schedule that fits your roof’s condition—not just the calendar.',
+ 'Planning a Sacramento roof replacement? Contact PRC 13 for a free inspection and a schedule that fits your roof’s condition, not just the calendar.',
       },
     ],
   },
@@ -1224,7 +1224,7 @@ export const phase4ReplacementPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: roof replacement on older Sacramento homes should plan for decking condition, flashing transitions, and ventilation—not only new covering materials. Tear-off often reveals what decades of heat and rain have done beneath the surface.',
+ 'Short answer: roof replacement on older Sacramento homes should plan for decking condition, flashing transitions, and ventilation, not only new covering materials. Tear-off often reveals what decades of heat and rain have done beneath the surface.',
       },
       {
         type: 'heading',
@@ -1267,7 +1267,7 @@ export const phase4ReplacementPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'If your older Sacramento home has recurring leaks, widespread wear, or an aging roof you plan to reset, schedule a free inspection. PRC 13 explains replacement scope clearly—including what may be discovered during tear-off—so you can plan with fewer surprises. Financing may be available on qualifying projects.',
+ 'If your older Sacramento home has recurring leaks, widespread wear, or an aging roof you plan to reset, schedule a free inspection. PRC 13 explains replacement scope clearly, including what may be discovered during tear-off, so you can plan with fewer surprises. Financing may be available on qualifying projects.',
       },
       {
         type: 'links',
@@ -1315,7 +1315,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         question: 'How long does standing seam metal roofing last?',
         answer:
-          'Standing seam systems are designed for long, multi-decade service when panels, underlayment, and flashing are installed correctly. Actual life depends on climate exposure, maintenance, and detail quality—not a single fixed number for every home.',
+ 'Standing seam systems are designed for long, multi-decade service when panels, underlayment, and flashing are installed correctly. Actual life depends on climate exposure, maintenance, and detail quality, not a single fixed number for every home.',
       },
       {
         question: 'Does Sacramento heat shorten metal roof life?',
@@ -1342,7 +1342,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: a standing seam metal roof is designed for long, multi-decade service when the panel system, underlayment, and flashings are installed correctly. Lifespan is not a single guaranteed number—it depends on product, detailing, climate exposure, and how well transitions are maintained over time.',
+ 'Short answer: a standing seam metal roof is designed for long, multi-decade service when the panel system, underlayment, and flashings are installed correctly. Lifespan is not a single guaranteed number, it depends on product, detailing, climate exposure, and how well transitions are maintained over time.',
       },
       {
         type: 'heading',
@@ -1386,7 +1386,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'If you are comparing standing seam for a Sacramento replacement—or evaluating an existing metal roof—schedule a free inspection. PRC 13 can explain system options and what drives long-term performance on your home. Financing may be available on qualifying projects.',
+ 'If you are comparing standing seam for a Sacramento replacement, or evaluating an existing metal roof, schedule a free inspection. PRC 13 can explain system options and what drives long-term performance on your home. Financing may be available on qualifying projects.',
       },
       {
         type: 'links',
@@ -1411,7 +1411,7 @@ export const phase4MetalPosts: BlogPost[] = [
     title: 'How Should a Metal Roof Be Cleaned?',
     seoTitle: 'How Should a Metal Roof Be Cleaned? | Owner Guidance',
     excerpt:
-      'Metal roof cleaning is owner maintenance—not a PRC 13 service. Learn safe guidance for debris, rinsing, and when to call a roofer instead.',
+ 'Metal roof cleaning is owner maintenance, not a PRC 13 service. Learn safe guidance for debris, rinsing, and when to call a roofer instead.',
     date: DATE,
     readTime: '7 min read',
     category: METAL_CLUSTER_CATEGORY,
@@ -1458,7 +1458,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: metal roofs generally need light, careful maintenance—removing debris and following manufacturer cleaning guidance—not harsh scrubbing. Important: PRC 13 Roofing does not offer metal roof cleaning as a service. This article is owner and maintenance guidance only; for leaks or damaged details, schedule an inspection instead.',
+ 'Short answer: metal roofs generally need light, careful maintenance, removing debris and following manufacturer cleaning guidance, not harsh scrubbing. Important: PRC 13 Roofing does not offer metal roof cleaning as a service. This article is owner and maintenance guidance only; for leaks or damaged details, schedule an inspection instead.',
       },
       {
         type: 'heading',
@@ -1501,7 +1501,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Call PRC 13 for a free roof inspection if you suspect damage, leaks, failed flashings, or impact problems. We install and evaluate metal roofing—we do not provide cleaning service. If your concern is dirt or organic growth alone, follow manufacturer care guidance or hire a cleaning specialist experienced with metal finishes.',
+ 'Call PRC 13 for a free roof inspection if you suspect damage, leaks, failed flashings, or impact problems. We install and evaluate metal roofing, we do not provide cleaning service. If your concern is dirt or organic growth alone, follow manufacturer care guidance or hire a cleaning specialist experienced with metal finishes.',
       },
       {
         type: 'links',
@@ -1517,7 +1517,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Need help with a metal roof issue that is more than cleaning? Contact PRC 13 for an inspection in Sacramento. For routine washing and debris cleaning, rely on manufacturer guidance or a qualified cleaning provider—PRC 13 does not offer that service.',
+ 'Need help with a metal roof issue that is more than cleaning? Contact PRC 13 for an inspection in Sacramento. For routine washing and debris cleaning, rely on manufacturer guidance or a qualified cleaning provider. PRC 13 does not offer that service.',
       },
     ],
   },
@@ -1547,7 +1547,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         question: 'Can a metal roof be repaired instead of replaced?',
         answer:
-          'Yes, when damage is localized—such as a flashing failure, isolated panel issue, or accessory problem—and surrounding materials remain sound.',
+ 'Yes, when damage is localized, such as a flashing failure, isolated panel issue, or accessory problem, and surrounding materials remain sound.',
       },
       {
         question: 'When does metal roof replacement make more sense?',
@@ -1574,7 +1574,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: repair a metal roof when the failure is localized and the panels remain sound. Consider replacement when damage, corrosion, or underlayment problems are widespread—or when repeated fixes no longer protect the home reliably. An inspection should separate flashing repairs from full-system decisions.',
+ 'Short answer: repair a metal roof when the failure is localized and the panels remain sound. Consider replacement when damage, corrosion, or underlayment problems are widespread, or when repeated fixes no longer protect the home reliably. An inspection should separate flashing repairs from full-system decisions.',
       },
       {
         type: 'heading',
@@ -1583,7 +1583,7 @@ export const phase4MetalPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Metal systems often fail at details first: ridge caps, wall flashings, pipe penetrations, and edge metal. Those can be repairable. Broad corrosion, multiple active leaks across slopes, or underlayment breakdown beneath panels points toward a larger conversation. Your long-term plans for the home matter too—especially if you want a modern standing seam reset rather than ongoing patches.',
+ 'Metal systems often fail at details first: ridge caps, wall flashings, pipe penetrations, and edge metal. Those can be repairable. Broad corrosion, multiple active leaks across slopes, or underlayment breakdown beneath panels points toward a larger conversation. Your long-term plans for the home matter too, especially if you want a modern standing seam reset rather than ongoing patches.',
       },
       {
         type: 'list',

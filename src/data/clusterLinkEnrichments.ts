@@ -102,12 +102,12 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   },
   'wind-damage-roof-repair': {
     appendParagraphs: [
-      'Folsom and [El Dorado Hills](/service-areas/el-dorado-hills) see similar ridge uplift—see [storm damage in Folsom](/blog/storm-damage-roof-repair-folsom) for foothill context. Temporary protection: [emergency tarp guide](/blog/emergency-roof-tarp-guide). Permanent fixes: [missing shingle repair](/blog/missing-shingle-repair-sacramento) · [roof repair](/roof-repair) · [flashing repair](/blog/roof-flashing-repair-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
+ 'Folsom and [El Dorado Hills](/service-areas/el-dorado-hills) see similar ridge uplift, see [storm damage in Folsom](/blog/storm-damage-roof-repair-folsom) for foothill context. Temporary protection: [emergency tarp guide](/blog/emergency-roof-tarp-guide). Permanent fixes: [missing shingle repair](/blog/missing-shingle-repair-sacramento) · [roof repair](/roof-repair) · [flashing repair](/blog/roof-flashing-repair-sacramento) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],
   },
   'emergency-roof-repair-cost': {
     appendParagraphs: [
-      'Compare routine pricing on [roof repair](/roof-repair) and [leak repair in Sacramento](/blog/roof-leak-repair-sacramento). Insurance may apply—read [storm damage claims](/blog/roof-insurance-claims-storm-damage). [Emergency services](/emergency-roof-repair) · [Contact](/contact).',
+ 'Compare routine pricing on [roof repair](/roof-repair) and [leak repair in Sacramento](/blog/roof-leak-repair-sacramento). Insurance may apply, read [storm damage claims](/blog/roof-insurance-claims-storm-damage). [Emergency services](/emergency-roof-repair) · [Contact](/contact).',
     ],
   },
   'when-to-call-emergency-roofer': {
@@ -300,7 +300,7 @@ export const CLUSTER_LINK_ENRICHMENTS: Record<string, ClusterLinkEnrichment> = {
   // —— Sacramento Roof Repair cluster ——
   'roof-repair-cost-sacramento': {
     patchFirstParagraph:
-      'Short answer: Sacramento [roof repair](/roof-repair) cost depends on what failed on the roof—not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix.',
+ 'Short answer: Sacramento [roof repair](/roof-repair) cost depends on what failed on the roof, not the size of the ceiling stain. PRC 13 inspects shingles, flashing, penetrations, and decking before quoting a targeted fix.',
     appendParagraphs: [
       'Compare scope with [missing shingle repair](/blog/missing-shingle-repair-sacramento) and [flashing repair](/blog/roof-flashing-repair-sacramento). When repair no longer makes sense, review [roof replacement](/roof-replacement). [Free inspection](/roof-inspection) · [Sacramento](/service-areas/sacramento) · [Contact](/contact).',
     ],

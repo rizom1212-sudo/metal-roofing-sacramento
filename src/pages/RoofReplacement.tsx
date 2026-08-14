@@ -43,7 +43,7 @@ const replacementFaqs: FaqItem[] = [
   {
     question: 'Do you tear off the old roof or install over it?',
     answer:
-      'Most replacements include a full tear-off so we can inspect and repair the decking. Overlay (installing over existing layers) is only considered when conditions allow and is not the default—adding layers can hide decking problems and is limited by local practice and product requirements.',
+      'Most replacements include a full tear-off so we can inspect and repair the decking. Overlay (installing over existing layers) is only considered when conditions allow and is not the default. Adding layers can hide decking problems and is limited by local practice and product requirements.',
   },
   {
     question: 'Why does ventilation matter during a roof replacement?',
@@ -68,7 +68,7 @@ const replacementFaqs: FaqItem[] = [
   {
     question: 'Does a new roof come with a warranty?',
     answer:
-      'Replacements include a PRC 13 workmanship warranty plus the manufacturer material warranty for the shingles or panels installed. Exact warranty terms are confirmed in writing with your project paperwork—we do not publish a single universal warranty length on this page.',
+      'Replacements include a PRC 13 workmanship warranty plus the manufacturer material warranty for the shingles or panels installed. Exact warranty terms are confirmed in writing with your project paperwork. We do not publish a single universal warranty length on this page.',
   },
   {
     question: 'Will you help with my insurance claim?',
@@ -209,7 +209,7 @@ export default function RoofReplacement() {
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Honest Guidance</p>
           <h2 className="section-heading mb-4">Repair vs. Replacement: How to Decide</h2>
           <p className="section-subheading max-w-3xl mb-8">
-            This page is for homeowners considering a full roof replacement. A focused repair is still the right answer for many roofs—we explain the difference so you can choose with clear eyes.
+            This page is for homeowners considering a full roof replacement. A focused repair is still the right answer for many roofs. We explain the difference so you can choose with clear eyes.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-gray-100 bg-cream/40 p-6">
@@ -218,7 +218,7 @@ export default function RoofReplacement() {
                 {[
                   'Damage is localized to one area or a few shingles or flashing points',
                   'Leaks have a clear source and the surrounding roof is otherwise sound',
-                  'Missing or damaged materials are limited—not widespread across the roof',
+                  'Missing or damaged materials are limited, not widespread across the roof',
                   'You are not already cycling through repeated repairs on the same roof',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-body">
@@ -229,8 +229,8 @@ export default function RoofReplacement() {
               </ul>
               <p className="text-body text-sm leading-relaxed">
                 If that sounds like your situation, start with{' '}
-                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>
-                —we will still flag replacement if the inspection shows it is the more durable path.
+                <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>.
+                We will still flag replacement if the inspection shows it is the more durable path.
               </p>
             </div>
             <div className="border border-gray-100 bg-cream/40 p-6">
@@ -321,7 +321,7 @@ export default function RoofReplacement() {
       <section className="bg-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent Work</p>
-          <h2 className="section-heading mb-8">Roof Replacement Projects in Sacramento</h2>
+          <h2 className="section-heading mb-8">Project Gallery</h2>
           <GalleryStrip category="Roof Replacement" limit={4} showLink />
         </div>
       </section>
@@ -395,7 +395,7 @@ export default function RoofReplacement() {
           {
             question: 'Tear-off or overlay?',
             answer:
-              'Full tear-off is the usual approach so decking can be inspected and repaired. Overlay is only considered when conditions and product requirements allow—and it is not PRC 13’s default.',
+              'Full tear-off is the usual approach so decking can be inspected and repaired. Overlay is only considered when conditions and product requirements allow, and it is not PRC 13’s default.',
           },
         ]}
       />

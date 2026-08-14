@@ -386,6 +386,6 @@ export const serviceAreaExtraSections: Record<string, ServiceAreaExtraSections> 
       'The roof is near end of service life and repeated patches are no longer reliable',
     ],
     repairReplaceClosing:
-      'PRC 13 Roofing inspects first so Colfax homeowners can compare repair, replacement, and fire-resistant material options with clear scope—without confusing City program assistance with contractor pricing.',
+ 'PRC 13 Roofing inspects first so Colfax homeowners can compare repair, replacement, and fire-resistant material options with clear scope, without confusing City program assistance with contractor pricing.',
   },
 };

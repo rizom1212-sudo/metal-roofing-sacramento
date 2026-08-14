@@ -97,6 +97,6 @@ export const serviceAreaConversion: Record<string, ServiceAreaConversion> = {
     inspectionIntro:
       'Colfax homeowners can schedule a no-obligation roof inspection to identify leaks, storm wear, aging materials, debris-prone gutters, and fire-resistant roofing options before deciding on repair or replacement.',
     trustIntro:
-      'PRC 13 Roofing focuses on honest recommendations and clear communication for Colfax homeowners—keeping City of Colfax home-hardening program questions separate from contractor estimates and our Colfax promotional offer.',
+ 'PRC 13 Roofing focuses on honest recommendations and clear communication for Colfax homeowners, keeping City of Colfax home-hardening program questions separate from contractor estimates and our Colfax promotional offer.',
   },
 };

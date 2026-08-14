@@ -83,7 +83,7 @@ const homeFaqs: FaqItem[] = [
   {
     question: 'Is financing available?',
     answer:
-      'Financing may be available on qualifying projects. Ask about options when you schedule your inspection—eligibility depends on the lender and project scope.',
+      'Financing may be available on qualifying projects. Ask about options when you schedule your inspection. Eligibility depends on the lender and project scope.',
   },
   {
     question: 'Do you serve areas outside Sacramento?',
@@ -277,7 +277,7 @@ export default function Home() {
                 <span className="inline-block text-xs bg-gold text-white px-2.5 py-1 font-semibold uppercase tracking-wider mb-5">Most Popular Service</span>
                 <h3 className="text-3xl md:text-[2.15rem] font-bold mb-4 group-hover:text-gold transition-colors">Roof Replacement</h3>
                 <p className="text-gray-300 text-sm leading-relaxed max-w-md">
-                  Full tear-off and replacement with quality materials. Timeline depends on roof size and condition—many residential jobs finish in about one to two days. Financing may be available on qualifying projects.
+                  Full tear-off and replacement with quality materials. Timeline depends on roof size and condition. Many residential jobs finish in about one to two days. Financing may be available on qualifying projects.
                 </p>
               </div>
               <div className="flex items-center gap-2 text-gold text-sm font-semibold mt-6">

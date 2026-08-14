@@ -28,7 +28,7 @@ const benefits = [
   { icon: Sun, title: 'Energy Efficient', desc: "Metal reflects solar heat, which helps during Sacramento's hot summers. Lower cooling bills year round." },
   { icon: Shield, title: 'Wind & Fire Resistant', desc: 'Class A fire rating and rated for high winds. Metal stands up to California weather without buckling.' },
   { icon: Wrench, title: 'Virtually No Maintenance', desc: 'No granule loss, no curling shingles, no rotting. Metal holds up year after year with minimal upkeep.' },
-  { icon: Award, title: 'Manufacturer Warranty', desc: 'Metal roofing products carry manufacturer material warranties. PRC 13 also provides a workmanship warranty on completed metal installations—terms are confirmed in writing with your project.' },
+  { icon: Award, title: 'Manufacturer Warranty', desc: 'Metal roofing products carry manufacturer material warranties. PRC 13 also provides a workmanship warranty on completed metal installations. Terms are confirmed in writing with your project.' },
   { icon: Zap, title: 'Increases Home Value', desc: 'Metal roofing adds measurable resale value and boosts curb appeal with a modern or classic profile.' },
 ];
 
@@ -66,7 +66,7 @@ const faqs: FaqItem[] = [
   },
   {
     question: 'How much more does metal roofing cost vs. shingles?',
-    answer: 'Metal typically costs more upfront than architectural shingles—often roughly 40 to 60% more depending on profile and complexity. Lifetime cost can be competitive because many metal systems are designed for decades of service when installed correctly.',
+    answer: 'Metal typically costs more upfront than architectural shingles, often roughly 40 to 60% more depending on profile and complexity. Lifetime cost can be competitive because many metal systems are designed for decades of service when installed correctly.',
   },
   {
     question: 'Is metal roofing noisy when it rains?',
@@ -277,7 +277,7 @@ export default function MetalRoofing() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Metal Roof Repair</p>
-          <h2 className="section-heading mb-4">When Your Metal Roof Needs Repair—Not a Full Reroof</h2>
+          <h2 className="section-heading mb-4">When Your Metal Roof Needs Repair, Not a Full Reroof</h2>
           <p className="section-subheading max-w-3xl mb-8">
             PRC 13 repairs metal roofs as well as installs them. Many issues are localized: a leak at a penetration, a loose fastener, a damaged panel, or failed flashing can often be corrected without replacing the entire system.
           </p>
@@ -312,7 +312,7 @@ export default function MetalRoofing() {
                 <Link to="/roof-inspection" className="text-gold font-semibold hover:text-gold-dark transition-colors">free roof inspection</Link>{' '}
                 so we can document the cause. For general leak and storm repair context across roof types, see our{' '}
                 <Link to="/roof-repair" className="text-gold font-semibold hover:text-gold-dark transition-colors">roof repair</Link>{' '}
-                page—metal-specific work stays on this page.
+                page. Metal-specific work stays on this page.
               </p>
             </div>
           </div>
@@ -347,7 +347,7 @@ export default function MetalRoofing() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Recent Work</p>
-          <h2 className="section-heading mb-8">Metal Roofing Projects in Sacramento</h2>
+          <h2 className="section-heading mb-8">Project Gallery</h2>
           <GalleryStrip category="Metal Roofing" limit={4} showLink />
         </div>
       </section>
@@ -409,7 +409,7 @@ export default function MetalRoofing() {
           {
             question: 'Is metal roofing noisy in the rain?',
             answer:
-              'Installed over solid decking with proper underlayment, modern metal roofs are generally not much louder indoors than shingles—decking and insulation absorb most of the sound.',
+              'Installed over solid decking with proper underlayment, modern metal roofs are generally not much louder indoors than shingles. Decking and insulation absorb most of the sound.',
           },
           {
             question: 'How long can metal roofing last?',

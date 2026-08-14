@@ -143,7 +143,7 @@ export const upgradedEmergencyRoofRepairElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Emergency work often means limiting further water entry and protecting the home until a full diagnosis is possible. That can include interior containment and, when weather and access allow, temporary exterior protection over an opening. Permanent repair restores the water-shedding layers—shingles or tile details, underlayment, flashing, ridge, or penetration work—so the roof can handle later storms. Temporary and permanent are different jobs with different goals.',
+ 'Emergency work often means limiting further water entry and protecting the home until a full diagnosis is possible. That can include interior containment and, when weather and access allow, temporary exterior protection over an opening. Permanent repair restores the water-shedding layers, shingles or tile details, underlayment, flashing, ridge, or penetration work, so the roof can handle later storms. Temporary and permanent are different jobs with different goals.',
     },
     {
       type: 'paragraph',
@@ -156,7 +156,7 @@ export const upgradedEmergencyRoofRepairElDoradoHills: BlogPost = {
       content:
         'Once conditions allow safer access, a roofer reviews interior clues, attic moisture when accessible, and the roof areas uphill from the symptom. Penetrations, valleys, ridge lines, edges, and drainage paths get attention because EDH storm water often concentrates there. Findings are explained in plain language: what is urgent, what can wait for dry weather, and whether targeted repair or a broader plan fits the roof condition. A [roof inspection](/roof-inspection) after the emergency phase can confirm the full picture once the system has dried.',
     },
-    { type: 'heading', content: 'Insurance Documentation—With an Important Disclaimer', level: 3 },
+ { type: 'heading', content: 'Insurance Documentation. With an Important Disclaimer', level: 3 },
     {
       type: 'paragraph',
       content:
@@ -168,7 +168,7 @@ export const upgradedEmergencyRoofRepairElDoradoHills: BlogPost = {
       content:
         'Before winter rain, walk the property from the ground and note loose debris, overflowing gutters, or prior leak rooms. Clear gutters and downspouts when it is safe to do so. If the roof is aging, has had prior wind damage, or sits on an exposed lot, schedule inspection before the wettest months. After atmospheric river periods, check for new stains and material on the ground. Prep does not prevent every emergency, but it reduces surprises and shortens the path to a clear repair decision.',
     },
-    { type: 'heading', content: 'When Repair Makes Sense—and When Replacement Enters the Conversation' },
+ { type: 'heading', content: 'When Repair Makes Sense, and When Replacement Enters the Conversation' },
     {
       type: 'paragraph',
       content:
@@ -178,7 +178,7 @@ export const upgradedEmergencyRoofRepairElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'If your El Dorado Hills home has active water intrusion, a storm opening, or impact damage, prioritize safety indoors and contact PRC 13 for [emergency roof repair](/emergency-roof-repair). For community-specific service context, visit our [El Dorado Hills roofing](/service-areas/el-dorado-hills) hub. When the immediate risk is controlled, we can move from temporary protection to a documented permanent repair plan that fits the roof you have—not a generic checklist.',
+ 'If your El Dorado Hills home has active water intrusion, a storm opening, or impact damage, prioritize safety indoors and contact PRC 13 for [emergency roof repair](/emergency-roof-repair). For community-specific service context, visit our [El Dorado Hills roofing](/service-areas/el-dorado-hills) hub. When the immediate risk is controlled, we can move from temporary protection to a documented permanent repair plan that fits the roof you have, not a generic checklist.',
     },
   ],
 };
@@ -230,7 +230,7 @@ export const upgradedRoofInsuranceClaimsElDoradoHills: BlogPost = {
     {
       question: 'What is a supplement in a roof claim?',
       answer:
-        'A supplement is additional documentation submitted when hidden damage or necessary work becomes clear after the initial estimate—for example, decking issues found during repair. Whether a supplement is accepted is still up to the insurer under the policy.',
+ 'A supplement is additional documentation submitted when hidden damage or necessary work becomes clear after the initial estimate, for example, decking issues found during repair. Whether a supplement is accepted is still up to the insurer under the policy.',
     },
     {
       question: 'Can PRC 13 meet an adjuster on my property?',
@@ -247,7 +247,7 @@ export const upgradedRoofInsuranceClaimsElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Storm damage on an El Dorado Hills roof can leave you with wet ceilings, lifted material, and a stack of questions about insurance. The most useful next step is usually documentation and a clear roof assessment—not guessing coverage from a neighbor\'s experience. PRC 13 helps homeowners record conditions and estimate repair needs while keeping an important boundary: coverage decisions belong to the insurer under your policy.',
+ 'Storm damage on an El Dorado Hills roof can leave you with wet ceilings, lifted material, and a stack of questions about insurance. The most useful next step is usually documentation and a clear roof assessment, not guessing coverage from a neighbor\'s experience. PRC 13 helps homeowners record conditions and estimate repair needs while keeping an important boundary: coverage decisions belong to the insurer under your policy.',
     },
     { type: 'heading', content: 'Important Disclaimer About Coverage' },
     {
@@ -325,7 +325,7 @@ export const upgradedRoofInsuranceClaimsElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Your deductible and policy terms affect what you pay out of pocket even when a claim is accepted. Supplements may be submitted if necessary work is discovered after tear-off or closer inspection—such as decking damage not visible at first. Acceptance of supplements is not automatic. Keep communication clear, dated, and tied to observed conditions rather than assumptions.',
+ 'Your deductible and policy terms affect what you pay out of pocket even when a claim is accepted. Supplements may be submitted if necessary work is discovered after tear-off or closer inspection, such as decking damage not visible at first. Acceptance of supplements is not automatic. Keep communication clear, dated, and tied to observed conditions rather than assumptions.',
     },
     {
       type: 'paragraph',
@@ -506,7 +506,7 @@ export const upgradedHailDamageRoofRepair: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Hail paths can be narrow. A cell that affects parts of Folsom, El Dorado Hills, or Rocklin may spare other Sacramento County neighborhoods a few miles away. If local reports, vehicle damage, or weather alerts suggest hail near your home, treat that as a reason for a roof look—even if friends across town saw only rain. County-wide awareness matters; property-level inspection decides what actually happened on your slopes.',
+ 'Hail paths can be narrow. A cell that affects parts of Folsom, El Dorado Hills, or Rocklin may spare other Sacramento County neighborhoods a few miles away. If local reports, vehicle damage, or weather alerts suggest hail near your home, treat that as a reason for a roof look, even if friends across town saw only rain. County-wide awareness matters; property-level inspection decides what actually happened on your slopes.',
     },
     {
       type: 'paragraph',
@@ -529,7 +529,7 @@ export const upgradedHailDamageRoofRepair: BlogPost = {
       content:
         'For broader storm patterns that include wind and rain alongside ice, see our [Sacramento storm damage roof repair guide](/blog/storm-damage-roof-repair-sacramento). Hail is one damage mode among several that county storms can produce.',
     },
-    { type: 'heading', content: 'Insurance Considerations—Without Guarantees', level: 3 },
+ { type: 'heading', content: 'Insurance Considerations. Without Guarantees', level: 3 },
     {
       type: 'paragraph',
       content:
@@ -561,7 +561,7 @@ export const upgradedHailDamageRoofRepair: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Occasional hail still deserves a serious response when it hits your neighborhood. PRC 13 can inspect for bruise patterns, tile cracks, metal dents, and related flashing or gutter effects, then explain whether repair, monitoring, or a larger plan fits the findings. If water is already entering, prioritize emergency protection first—then move to a documented assessment so the next storm does not turn subtle impact marks into interior damage.',
+ 'Occasional hail still deserves a serious response when it hits your neighborhood. PRC 13 can inspect for bruise patterns, tile cracks, metal dents, and related flashing or gutter effects, then explain whether repair, monitoring, or a larger plan fits the findings. If water is already entering, prioritize emergency protection first, then move to a documented assessment so the next storm does not turn subtle impact marks into interior damage.',
     },
   ],
 };
@@ -571,7 +571,7 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
   title: 'Roof Leak Repair Folsom CA: Stop Water Damage Fast',
   seoTitle: 'Roof Leak Repair Folsom CA | PRC 13 Roofing',
   excerpt:
-    'Folsom roof leaks need source tracing—not just a ceiling patch. Learn immediate steps, how pros find entry points, and when temporary protection becomes permanent repair.',
+ 'Folsom roof leaks need source tracing, not just a ceiling patch. Learn immediate steps, how pros find entry points, and when temporary protection becomes permanent repair.',
   date: 'June 25, 2026',
   updatedDate: 'July 18, 2026',
   readTime: '14 min read',
@@ -631,13 +631,13 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'A roof leak in Folsom is a water-path problem, not only a drywall problem. Rain can enter at a valley, pipe boot, chimney flashing, lifted shingle, or failed tile underlayment, then travel before it stains a ceiling. Stopping water damage fast means protecting the interior, finding the source, and repairing the failed detail—not painting over the symptom. This guide focuses on leak diagnosis and stop-water response; for broader Folsom repair patterns, see our [roof repair Folsom](/blog/roof-repair-folsom-ca) article.',
+ 'A roof leak in Folsom is a water-path problem, not only a drywall problem. Rain can enter at a valley, pipe boot, chimney flashing, lifted shingle, or failed tile underlayment, then travel before it stains a ceiling. Stopping water damage fast means protecting the interior, finding the source, and repairing the failed detail, not painting over the symptom. This guide focuses on leak diagnosis and stop-water response; for broader Folsom repair patterns, see our [roof repair Folsom](/blog/roof-repair-folsom-ca) article.',
     },
     { type: 'heading', content: 'Folsom Exposure: Lake Corridor, Hillsides, and Wind' },
     {
       type: 'paragraph',
       content:
-        'A Folsom homeowner on a hillside or lake-corridor lot may notice wind-driven rain pressing into edges and valleys more than a sheltered interior street. Gusts can lift tabs or stress ridge details; debris can pack valleys before a front arrives. Those local conditions do not invent unique physics—they change how often water tests weak transitions. Leak repair still starts with the same principle: identify the entry point and correct the water-shedding layer.',
+ 'A Folsom homeowner on a hillside or lake-corridor lot may notice wind-driven rain pressing into edges and valleys more than a sheltered interior street. Gusts can lift tabs or stress ridge details; debris can pack valleys before a front arrives. Those local conditions do not invent unique physics, they change how often water tests weak transitions. Leak repair still starts with the same principle: identify the entry point and correct the water-shedding layer.',
     },
     {
       type: 'paragraph',
@@ -659,7 +659,7 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Interior containment buys time. It does not replace finding where water entered. If the leak is intermittent and only appears in wind-driven rain, note that pattern—it often points to edges, ridges, or flashing that fail under pressure rather than a simple hole in the field.',
+ 'Interior containment buys time. It does not replace finding where water entered. If the leak is intermittent and only appears in wind-driven rain, note that pattern, it often points to edges, ridges, or flashing that fail under pressure rather than a simple hole in the field.',
     },
     {
       type: 'paragraph',
@@ -692,7 +692,7 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'A leak inspection starts with context: when the drip appears, which direction rain was blowing, whether it is new or recurring, and whether recent work occurred near the roof. Interior stains and attic clues, when accessible, narrow the search. On the roof, the inspector works above and uphill from the symptom—checking material, flashings, valleys, penetrations, and drainage. The ceiling mark is a starting clue, not the finish line.',
+ 'A leak inspection starts with context: when the drip appears, which direction rain was blowing, whether it is new or recurring, and whether recent work occurred near the roof. Interior stains and attic clues, when accessible, narrow the search. On the roof, the inspector works above and uphill from the symptom, checking material, flashings, valleys, penetrations, and drainage. The ceiling mark is a starting clue, not the finish line.',
     },
     {
       type: 'paragraph',
@@ -718,13 +718,13 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Attic checks are useful only when access is dry and safe: look for wet insulation, daylight at penetrations, and water trails on framing—then stop and share what you saw. A professional tracing from interior clues to roof details is still required before a permanent stop-water repair is scoped.',
+ 'Attic checks are useful only when access is dry and safe: look for wet insulation, daylight at penetrations, and water trails on framing, then stop and share what you saw. A professional tracing from interior clues to roof details is still required before a permanent stop-water repair is scoped.',
     },
     { type: 'heading', content: 'Temporary Protection Versus Permanent Leak Repair' },
     {
       type: 'paragraph',
       content:
-        'Temporary exterior protection may be appropriate when weather or access prevents a complete repair and an opening needs short-term weather resistance. Interior drying and finish repairs matter, but they should follow a roof that no longer admits water. Permanent leak repair restores the failed detail—flashing rebuild, underlayment section, shingle replacement, tile underlayment work, or valley correction—so the next storm does not reopen the same path.',
+ 'Temporary exterior protection may be appropriate when weather or access prevents a complete repair and an opening needs short-term weather resistance. Interior drying and finish repairs matter, but they should follow a roof that no longer admits water. Permanent leak repair restores the failed detail, flashing rebuild, underlayment section, shingle replacement, tile underlayment work, or valley correction, so the next storm does not reopen the same path.',
     },
     {
       type: 'paragraph',
@@ -740,7 +740,7 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'If you have already patched the same area more than once, bring that history to the inspection. Repeated leaks in one zone often mean the first repair never reached the true entry point—or that surrounding material can no longer integrate cleanly with a small patch.',
+ 'If you have already patched the same area more than once, bring that history to the inspection. Repeated leaks in one zone often mean the first repair never reached the true entry point, or that surrounding material can no longer integrate cleanly with a small patch.',
     },
     { type: 'heading', content: 'Storm-Related Leaks and Insurance Notes', level: 3 },
     {
@@ -753,11 +753,11 @@ export const upgradedRoofLeakRepairFolsom: BlogPost = {
       content:
         'Wear-related leaks and storm-related openings can look similar indoors. An inspection that separates those causes helps you decide whether to contact your insurer and keeps repair planning honest about what failed.',
     },
-    { type: 'heading', content: 'Stop the Water—Then Fix the Path' },
+ { type: 'heading', content: 'Stop the Water. Then Fix the Path' },
     {
       type: 'paragraph',
       content:
-        'If your Folsom home has an active drip, a new stain after wind-driven rain, or a known opening, focus on interior protection and professional source tracing. Visit our [Folsom roofing](/service-areas/folsom) hub for local service context, then [hire Folsom emergency roof repair](/emergency-roof-repair/folsom) when water is entering, or schedule an inspection when the leak is intermittent but unresolved. Metro [emergency roof repair](/emergency-roof-repair) remains available for the wider Sacramento area. The goal is a dry home with a repaired water path—not a ceiling that merely looks finished until the next storm.',
+ 'If your Folsom home has an active drip, a new stain after wind-driven rain, or a known opening, focus on interior protection and professional source tracing. Visit our [Folsom roofing](/service-areas/folsom) hub for local service context, then [hire Folsom emergency roof repair](/emergency-roof-repair/folsom) when water is entering, or schedule an inspection when the leak is intermittent but unresolved. Metro [emergency roof repair](/emergency-roof-repair) remains available for the wider Sacramento area. The goal is a dry home with a repaired water path, not a ceiling that merely looks finished until the next storm.',
     },
   ],
 };
@@ -767,7 +767,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
   title: 'Metal Roofing El Dorado Hills CA: Durability on Exposed Foothill Lots',
   seoTitle: 'Metal Roofing El Dorado Hills CA | PRC 13',
   excerpt:
-    'Metal roofing can suit El Dorado Hills homes that face foothill wind, long sun exposure, and a preference for long-service systems—when profile, underlayment, and edge details match the roof.',
+ 'Metal roofing can suit El Dorado Hills homes that face foothill wind, long sun exposure, and a preference for long-service systems, when profile, underlayment, and edge details match the roof.',
   date: 'July 1, 2026',
   updatedDate: 'July 18, 2026',
   readTime: '14 min read',
@@ -794,7 +794,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
     {
       question: 'Is standing seam better than other metal profiles for EDH?',
       answer:
-        'Standing seam is popular for clean lines and concealed-fastener designs on many residential roofs. Other profiles may fit different budgets, slopes, or architectural goals. The right choice depends on roof geometry, attachment method, and appearance requirements—not a single label.',
+ 'Standing seam is popular for clean lines and concealed-fastener designs on many residential roofs. Other profiles may fit different budgets, slopes, or architectural goals. The right choice depends on roof geometry, attachment method, and appearance requirements, not a single label.',
     },
     {
       question: 'Will a metal roof be noisy in rain?',
@@ -804,7 +804,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
     {
       question: 'Does metal help with summer heat on sun-exposed EDH roofs?',
       answer:
-        'Reflective finishes and a correctly ventilated assembly can help manage heat gain compared with some darker aging shingle roofs. Results depend on color, insulation, attic ventilation, and the whole building—not the metal label alone.',
+ 'Reflective finishes and a correctly ventilated assembly can help manage heat gain compared with some darker aging shingle roofs. Results depend on color, insulation, attic ventilation, and the whole building, not the metal label alone.',
     },
     {
       question: 'Can metal replace tile on an El Dorado Hills home?',
@@ -843,7 +843,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Standing seam systems use raised seams and often conceal fasteners, which many residential clients prefer for weather performance and a refined look. Other profiles—such as exposed-fastener panels—may suit certain slopes, accessory buildings, or design goals. Panel width, seam height, coating, and attachment method all affect appearance and performance. An inspection should match profile to pitch, complexity, and aesthetic constraints rather than defaulting to one product for every EDH street.',
+ 'Standing seam systems use raised seams and often conceal fasteners, which many residential clients prefer for weather performance and a refined look. Other profiles, such as exposed-fastener panels, may suit certain slopes, accessory buildings, or design goals. Panel width, seam height, coating, and attachment method all affect appearance and performance. An inspection should match profile to pitch, complexity, and aesthetic constraints rather than defaulting to one product for every EDH street.',
     },
     {
       type: 'list',
@@ -877,7 +877,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'A metal surface does not forgive poor attic ventilation or weak eave and rake details. Heat and moisture still move through the building. Edge metal controls drip lines and wind-driven rain at perimeters—areas EDH winds often test. Discuss ventilation upgrades when the old roof showed heat stress or inadequate airflow, especially on sun-exposed upper planes.',
+ 'A metal surface does not forgive poor attic ventilation or weak eave and rake details. Heat and moisture still move through the building. Edge metal controls drip lines and wind-driven rain at perimeters, areas EDH winds often test. Discuss ventilation upgrades when the old roof showed heat stress or inadequate airflow, especially on sun-exposed upper planes.',
     },
     { type: 'heading', content: 'HOA and Architectural Considerations' },
     {
@@ -890,7 +890,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
       content:
         'If guidelines are unclear, bring sample photos and finish chips to the association early. A short approval delay is easier than fabricating panels that later fail review. Keep written approvals with your project file.',
     },
-    { type: 'heading', content: 'Noise and Heat Myths—With Realistic Context' },
+ { type: 'heading', content: 'Noise and Heat Myths. With Realistic Context' },
     {
       type: 'paragraph',
       content:
@@ -905,7 +905,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Weight change from tile to metal can be an advantage on some structures, but structural review still belongs in the inspection. Do not assume every roof can swap materials without checking decking, framing, and load paths—especially on older hillside homes with complex additions.',
+ 'Weight change from tile to metal can be an advantage on some structures, but structural review still belongs in the inspection. Do not assume every roof can swap materials without checking decking, framing, and load paths, especially on older hillside homes with complex additions.',
     },
     { type: 'heading', content: 'Maintenance After Installation' },
     {
@@ -918,7 +918,7 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
       content:
         'If solar, satellite, or HVAC work is added later, ask the trade to coordinate with a roofer on flashings. New penetrations are common leak points when they are cut into a finished metal roof without matching details. A quick post-install ground check after those trades leave can catch displaced edge pieces early.',
     },
-    { type: 'heading', content: 'When Metal Is—and Is Not—the Right Fit' },
+ { type: 'heading', content: 'When Metal Is, and Is Not, the Right Fit' },
     {
       type: 'paragraph',
       content:
@@ -938,13 +938,13 @@ export const upgradedMetalRoofingElDoradoHills: BlogPost = {
     {
       type: 'paragraph',
       content:
-        'Also clarify tear-off disposal, jobsite protection for landscaping, and how long sections of the home may be without a finished roof surface during install. Those process details are practical ownership decisions—not marketing extras—and they matter on exposed foothill lots where weather windows can shift quickly.',
+ 'Also clarify tear-off disposal, jobsite protection for landscaping, and how long sections of the home may be without a finished roof surface during install. Those process details are practical ownership decisions, not marketing extras, and they matter on exposed foothill lots where weather windows can shift quickly.',
     },
     { type: 'heading', content: 'Talk Through Metal for Your EDH Roof' },
     {
       type: 'paragraph',
       content:
-        'If you are considering metal for an El Dorado Hills home, start with inspection and a clear comparison of profile, underlayment, ventilation, and neighborhood rules. Explore [metal roofing](/metal-roofing) services and our [El Dorado Hills roofing](/service-areas/el-dorado-hills) hub, then schedule a visit so recommendations follow your slopes, exposure, and architectural constraints—not a generic foothill brochure.',
+ 'If you are considering metal for an El Dorado Hills home, start with inspection and a clear comparison of profile, underlayment, ventilation, and neighborhood rules. Explore [metal roofing](/metal-roofing) services and our [El Dorado Hills roofing](/service-areas/el-dorado-hills) hub, then schedule a visit so recommendations follow your slopes, exposure, and architectural constraints, not a generic foothill brochure.',
     },
   ],
 };

@@ -100,7 +100,7 @@ export default function About() {
                 </p>
                 <p>
                   {IS_SERVICE_AREA_BUSINESS
-                    ? 'PRC 13 operates as a service-area business across the greater Sacramento region. There is no public retail storefront address on this website—customers schedule inspections and service by phone, text, or the contact form.'
+                    ? 'PRC 13 operates as a service-area business across the greater Sacramento region. There is no public retail storefront address on this website. Customers schedule inspections and service by phone, text, or the contact form.'
                     : null}
                 </p>
               </div>
@@ -146,7 +146,7 @@ export default function About() {
               </p>
               <p className="text-headline font-semibold text-sm">{PHONE_DISPLAY}</p>
               <p className="text-body text-xs mt-1.5 leading-relaxed">
-                Monday–Friday {hoursLabel}. {BUSINESS_DAYS_CLOSED.join(' & ')} closed.
+                Monday through Friday {hoursLabel}. {BUSINESS_DAYS_CLOSED.join(' & ')} closed.
               </p>
             </div>
             <div className="p-4 bg-cream border border-gray-100">
@@ -175,7 +175,7 @@ export default function About() {
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">What We Do</p>
           <h2 className="section-heading mb-3">Roofing and Exterior Services</h2>
           <p className="text-body text-sm leading-relaxed max-w-3xl mb-6">
-            PRC 13 offers the services below across its Sacramento-area footprint. Scope is confirmed after inspection—there is no published price list because cost depends on roof size, materials, access, and condition.
+            PRC 13 offers the services below across its Sacramento-area footprint. Scope is confirmed after inspection. There is no published price list because cost depends on roof size, materials, access, and condition.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
             {offeredServices.map(service => (
@@ -213,7 +213,7 @@ export default function About() {
           </p>
           <h2 className="section-heading mb-3">Sacramento-Area Service Cities</h2>
           <p className="text-body text-sm leading-relaxed max-w-3xl mb-6">
-            PRC 13 serves homeowners and light commercial properties in {serviceAreas.length} communities across the greater Sacramento region. City pages describe local roofing conditions—not separate storefront offices.
+            PRC 13 serves homeowners and light commercial properties in {serviceAreas.length} communities across the greater Sacramento region. City pages describe local roofing conditions, not separate storefront offices.
           </p>
           <div className="flex flex-wrap gap-2 mb-5">
             {serviceAreas.map(area => (
@@ -237,8 +237,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center gap-4">
           <Clock size={22} className="text-gold flex-shrink-0" aria-hidden />
           <p className="text-body text-sm leading-relaxed">
-            <span className="font-semibold text-headline">Business hours:</span> Monday–Friday {hoursLabel}.{' '}
-            {BUSINESS_DAYS_CLOSED.join(' and ')} closed. For active leaks, call {PHONE_DISPLAY}—emergency assessment availability depends on weather, routing, and crew capacity.
+            <span className="font-semibold text-headline">Business hours:</span> Monday through Friday {hoursLabel}.{' '}
+            {BUSINESS_DAYS_CLOSED.join(' and ')} closed. For active leaks, call {PHONE_DISPLAY}. Emergency assessment availability depends on weather, routing, and crew capacity.
           </p>
         </div>
       </section>

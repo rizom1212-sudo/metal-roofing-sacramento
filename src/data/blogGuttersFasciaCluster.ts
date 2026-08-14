@@ -84,7 +84,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Sectional gutters join every ten feet or so—the joints are where leaks and clogs often start. Seamless aluminum gutters are formed to your home\'s exact measurements, reducing those weak points and protecting fascia boards that winter rain and summer heat already stress.',
+ 'Sectional gutters join every ten feet or so, the joints are where leaks and clogs often start. Seamless aluminum gutters are formed to your home\'s exact measurements, reducing those weak points and protecting fascia boards that winter rain and summer heat already stress.',
       },
       {
         type: 'heading',
@@ -96,7 +96,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
         items: [
           'Custom-formed seamless aluminum gutter runs',
           'Downspouts sized for Sacramento rainfall volume',
-          'Proper pitch so water flows toward outlets—not into fascia',
+ 'Proper pitch so water flows toward outlets, not into fascia',
           'Gutter guards when homeowners want less debris buildup',
           'Roofline and attachment-point check before new gutters go up',
         ],
@@ -140,7 +140,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'How much does gutter replacement cost in Sacramento?',
         answer:
-          'Cost depends on home size, material, access, and downspout layout. If fascia boards are too damaged to support gutters, that board work is separate—PRC 13 does not offer fascia or soffit repair—and we will explain what we find during the gutter inspection.',
+ 'Cost depends on home size, material, access, and downspout layout. If fascia boards are too damaged to support gutters, that board work is separate. PRC 13 does not offer fascia or soffit repair, and we will explain what we find during the gutter inspection.',
       },
       {
         question: 'Is gutter replacement more expensive than repair?',
@@ -150,7 +150,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Does fascia damage affect gutter replacement?',
         answer:
-          'Yes. Sound wood is required for proper gutter attachment. If fascia is rotted, board repair should be handled before or with new gutters—but PRC 13 does not offer fascia or soffit repair. We document what we see so you can plan that work separately.',
+ 'Yes. Sound wood is required for proper gutter attachment. If fascia is rotted, board repair should be handled before or with new gutters, but PRC 13 does not offer fascia or soffit repair. We document what we see so you can plan that work separately.',
       },
       {
         question: 'Do gutter guards increase replacement cost?',
@@ -197,7 +197,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'PRC 13 tells you which option makes sense after inspection. Gutters overflowing during rainfall, pulling away from fascia, or showing rust holes usually need replacement—not another season of patchwork.',
+ 'PRC 13 tells you which option makes sense after inspection. Gutters overflowing during rainfall, pulling away from fascia, or showing rust holes usually need replacement, not another season of patchwork.',
       },
       {
         type: 'links',
@@ -243,7 +243,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Can PRC 13 add guards to existing gutters?',
         answer:
-          'Often yes, depending on gutter condition. We inspect first—failing gutters may need replacement before guards make sense.',
+ 'Often yes, depending on gutter condition. We inspect first, failing gutters may need replacement before guards make sense.',
       },
       {
         question: 'Do guards eliminate gutter cleaning entirely?',
@@ -279,7 +279,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Sacramento neighborhoods with mature trees see gutters fill with leaves and needles faster than open lots. When gutters clog, winter rain spills over the edge—peeling paint, rotting fascia, and foundation pooling follow. Guards reduce how often that cycle repeats.',
+ 'Sacramento neighborhoods with mature trees see gutters fill with leaves and needles faster than open lots. When gutters clog, winter rain spills over the edge, peeling paint, rotting fascia, and foundation pooling follow. Guards reduce how often that cycle repeats.',
       },
       {
         type: 'heading',
@@ -291,7 +291,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
         items: [
           'Leaf and debris guards paired with seamless gutter installation',
           'Guard retrofits when existing gutters are still sound',
-          'Assessment of pitch and downspout capacity—not just surface covers',
+ 'Assessment of pitch and downspout capacity, not just surface covers',
           'Honest notes when overflow has already damaged roof-edge boards (fascia/soffit repair is not offered by PRC 13)',
         ],
       },
@@ -319,7 +319,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
     title: 'Fascia Repair Sacramento: Fix Rotted Eaves Before Damage Spreads',
     seoTitle: 'Fascia Repair Sacramento | PRC 13 Roofing',
     excerpt:
-      'Educational guide to Sacramento fascia rot, eaves damage, and gutter-related water intrusion. PRC 13 does not offer fascia or soffit repair—we help with gutters, siding, and roof edge drainage evaluations.',
+ 'Educational guide to Sacramento fascia rot, eaves damage, and gutter-related water intrusion. PRC 13 does not offer fascia or soffit repair, we help with gutters, siding, and roof edge drainage evaluations.',
     date: 'July 6, 2026',
     readTime: '6 min read',
     category: GUTTERS_FASCIA_CLUSTER_CATEGORY,
@@ -362,7 +362,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'Is fascia repair urgent when water is entering?',
         answer:
-          'Active interior leaks need prompt attention. Call for emergency roof repair if water is entering now. After the roof is stabilized, plan gutter corrections with PRC 13 and fascia board work with a trade that performs that service—PRC 13 does not offer fascia or soffit repair.',
+ 'Active interior leaks need prompt attention. Call for emergency roof repair if water is entering now. After the roof is stabilized, plan gutter corrections with PRC 13 and fascia board work with a trade that performs that service. PRC 13 does not offer fascia or soffit repair.',
       },
     ],
     body: [
@@ -440,7 +440,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         question: 'How do I tell if a leak is gutter-related?',
         answer:
-          'Stains near exterior walls, soft fascia, overflow marks, or leaks that worsen during heavy rain—not just wind-driven roof damage—often trace to drainage.',
+ 'Stains near exterior walls, soft fascia, overflow marks, or leaks that worsen during heavy rain, not just wind-driven roof damage, often trace to drainage.',
       },
       {
         question: 'Should I get a roof inspection or gutter evaluation first?',
@@ -467,7 +467,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Short answer: gutters are not separate from your roof—they protect the edge where shingles, fascia, and flashing meet. When Sacramento gutters fail, water finds paths into the roofline that look like roof leaks but start at the eave.',
+ 'Short answer: gutters are not separate from your roof, they protect the edge where shingles, fascia, and flashing meet. When Sacramento gutters fail, water finds paths into the roofline that look like roof leaks but start at the eave.',
       },
       {
         type: 'heading',
@@ -501,7 +501,7 @@ export const guttersFasciaClusterPosts: BlogPost[] = [
       {
         type: 'paragraph',
         content:
-          'Patching interior drywall without fixing gutters leaves the root cause in place. PRC 13 traces leak sources during free inspections and recommends gutter work or roof repair based on what we find. If fascia boards are damaged, we will note that clearly—PRC 13 does not offer fascia or soffit repair.',
+ 'Patching interior drywall without fixing gutters leaves the root cause in place. PRC 13 traces leak sources during free inspections and recommends gutter work or roof repair based on what we find. If fascia boards are damaged, we will note that clearly. PRC 13 does not offer fascia or soffit repair.',
       },
       {
         type: 'links',

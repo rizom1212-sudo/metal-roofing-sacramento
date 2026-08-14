@@ -261,7 +261,7 @@ export default function BlogPost() {
                           : isElDoradoHillsGuide
                             ? 'PRC 13 Roofing serves El Dorado Hills homeowners with repair, replacement, tile and metal roofing, inspections, and emergency leak help on exposed foothill properties. PRC 13 does not offer fascia or soffit repair.'
                             : isFolsomGuide
-                              ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help—from lake-area winds to hillside tile and shingle roofs.'
+                              ? 'PRC 13 Roofing serves Folsom homeowners with roof repair, replacement, inspections, and emergency leak help, from lake-area winds to hillside tile and shingle roofs.'
                               : 'PRC 13 Roofing serves Sacramento and nearby communities with honest inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">

@@ -53,8 +53,8 @@ const rawServiceAreas: ServiceAreaBase[] = [
     metaTitle: 'Sacramento Roofing Service Area | Neighborhoods | PRC 13',
     metaDescription: 'PRC 13 Roofing serves Sacramento neighborhoods with free inspections, then routes you to the right service page for repair, replacement, emergency leaks, metal, commercial, or gutters.',
     heroLead: 'Neighborhood Roofing in',
-    heroIntro: 'From older East Sacramento bungalows to suburban homes near Natomas, Sacramento roofs deal with heat, dry attic spaces, tree debris, and sudden winter rain that can reveal hidden wear. This page is the Sacramento service-area hub—specific hire details live on each service page.',
-    quickAnswer: 'PRC 13 Roofing is based in Sacramento and helps homeowners understand roof condition first. Use this hub for local context, then follow through to the service page that matches what you need—repair, replacement, emergency leak help, inspection, metal, commercial, or gutters.',
+ heroIntro: 'From older East Sacramento bungalows to suburban homes near Natomas, Sacramento roofs deal with heat, dry attic spaces, tree debris, and sudden winter rain that can reveal hidden wear. This page is the Sacramento service-area hub, specific hire details live on each service page.',
+ quickAnswer: 'PRC 13 Roofing is based in Sacramento and helps homeowners understand roof condition first. Use this hub for local context, then follow through to the service page that matches what you need, repair, replacement, emergency leak help, inspection, metal, commercial, or gutters.',
     quickPoints: ['Sacramento neighborhood roofing context', 'Free inspections with written findings', 'Service pages own repair, replacement, and emergency hire intent', 'Project photos tagged Sacramento in our gallery'],
     localHeading: 'Sacramento Roof Problems We See Often',
     localContent: 'Sacramento homes often show roof wear first around valleys, vents, gutters, and shaded roof sections under mature trees. Summer heat can dry out shingles and sealants, while winter storms test flashing, underlayment, and attic ventilation.',
@@ -404,15 +404,15 @@ const rawServiceAreas: ServiceAreaBase[] = [
     name: 'Colfax',
     slug: 'colfax',
     blurb:
-      'Roofing services for Colfax, CA homeowners—including inspections, repair, replacement, and wildfire-minded Class A roofing guidance tied to local home-hardening planning.',
+ 'Roofing services for Colfax, CA homeowners, including inspections, repair, replacement, and wildfire-minded Class A roofing guidance tied to local home-hardening planning.',
     metaTitle: 'Roofing Contractor Colfax CA | Home Hardening Roofing | PRC 13',
     metaDescription:
       'Colfax homeowners may qualify for assistance with eligible wildfire home-hardening improvements. Explore Class A roofing options and PRC 13 Roofing’s additional 5% Colfax offer.',
     heroLead: 'Roofing Contractor in',
     heroIntro:
-      'PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California—a Placer County foothill community where wildfire readiness and durable roofing details matter as much as leak prevention.',
+ 'PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California, a Placer County foothill community where wildfire readiness and durable roofing details matter as much as leak prevention.',
     quickAnswer:
-      'PRC 13 Roofing serves Colfax homeowners with free roof inspections, repair and replacement guidance, and fire-resistant roofing options. Colfax also has a City Home Hardening and Defensible Space Program that may help with eligible improvements—confirm details with the City’s official program resource.',
+ 'PRC 13 Roofing serves Colfax homeowners with free roof inspections, repair and replacement guidance, and fire-resistant roofing options. Colfax also has a City Home Hardening and Defensible Space Program that may help with eligible improvements, confirm details with the City’s official program resource.',
     quickPoints: [
       'Roof inspections for Colfax and nearby Placer County foothill homes',
       'Roof repair and replacement planning for aging or storm-worn roofs',
@@ -421,7 +421,7 @@ const rawServiceAreas: ServiceAreaBase[] = [
     ],
     localHeading: 'Roofing Considerations for Colfax, CA Homes',
     localContent:
-      'Colfax sits along the I-80 corridor in the Sierra Nevada foothills of Placer County. Homes here face a mix of summer heat, winter storms, wind exposure on hillside lots, and wildfire ember risk that makes roof condition part of broader home hardening—not just curb appeal.',
+ 'Colfax sits along the I-80 corridor in the Sierra Nevada foothills of Placer County. Homes here face a mix of summer heat, winter storms, wind exposure on hillside lots, and wildfire ember risk that makes roof condition part of broader home hardening, not just curb appeal.',
     localSignals: [
       'Aging shingles or worn underlayment on foothill and hillside roofs',
       'Debris buildup in valleys and gutters that can hold embers or trap moisture',
