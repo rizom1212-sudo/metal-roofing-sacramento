@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone,
@@ -122,8 +121,6 @@ const problemCards: {
 ];
 
 export default function Home() {
-  const [localTab, setLocalTab] = useState<'areas' | 'map'>('areas');
-
   return (
     <>
       <JsonLd faqs={homeFaqs} pageName="PRC 13 Roofing Sacramento" />
@@ -230,7 +227,7 @@ export default function Home() {
       <section className="bg-white pt-14 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-center text-sm font-semibold text-gold uppercase tracking-widest mb-3">We Can Help</p>
-          <h2 className="section-heading text-center mb-10">What's Going On With Your Roof?</h2>
+          <h2 className="section-heading text-center mb-10">Roof Repair, Replacement &amp; Emergency Options</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {problemCards.map(card => (
               <Link
@@ -264,7 +261,7 @@ export default function Home() {
       <section className="bg-cream py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-sm font-semibold text-gold uppercase tracking-widest mb-3">What We Do</p>
-          <h2 className="section-heading mb-2">Our Roofing Services</h2>
+          <h2 className="section-heading mb-2">Roof Replacement, Repair, Emergency &amp; Metal Services</h2>
           <p className="section-subheading mb-10 max-w-2xl">
             Residential roofing is our focus. Roof replacement is our specialty. We also handle{' '}
             <Link to="/commercial-roofing" className="text-gold font-semibold hover:text-gold-dark transition-colors">flat and low-slope roofs for small commercial properties</Link>.
@@ -436,50 +433,32 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-2 mb-6">
-            <button
-              type="button"
-              onClick={() => setLocalTab('areas')}
-              className={`px-5 py-2 text-sm font-semibold rounded-brand transition-colors ${
-                localTab === 'areas' ? 'bg-charcoal-dark text-white' : 'bg-white text-body border border-gray-200 hover:border-gold/40'
-              }`}
-            >
-              Service Areas
-            </button>
-            <button
-              type="button"
-              onClick={() => setLocalTab('map')}
-              className={`px-5 py-2 text-sm font-semibold rounded-brand transition-colors flex items-center gap-1.5 ${
-                localTab === 'map' ? 'bg-charcoal-dark text-white' : 'bg-white text-body border border-gray-200 hover:border-gold/40'
-              }`}
-            >
-              <MapPin size={14} /> Find Us on the Map
-            </button>
+          <div className="flex flex-wrap justify-center gap-1.5 max-w-2xl mx-auto mb-8">
+            {serviceAreas.map(area => (
+              <Link
+                key={area.slug}
+                to={`/service-areas/${area.slug}`}
+                className={`group card-brand inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-sm ${
+                  area.name === 'Sacramento'
+                    ? 'bg-charcoal-dark text-white border border-charcoal-dark shadow-sm hover:bg-charcoal hover:text-gold'
+                    : 'bg-[#2E3744] text-gray-200 border border-[#2E3744] hover:text-gold shadow-sm'
+                }`}
+              >
+                {area.name}
+                <ArrowRight size={12} className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
+              </Link>
+            ))}
           </div>
 
-          {localTab === 'areas' ? (
-            <div className="flex flex-wrap justify-center gap-1.5 max-w-2xl mx-auto">
-              {serviceAreas.map(area => (
-                <Link
-                  key={area.slug}
-                  to={`/service-areas/${area.slug}`}
-                  className={`group card-brand inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-sm ${
-                    area.name === 'Sacramento'
-                      ? 'bg-charcoal-dark text-white border border-charcoal-dark shadow-sm hover:bg-charcoal hover:text-gold'
-                      : 'bg-[#2E3744] text-gray-200 border border-[#2E3744] hover:text-gold shadow-sm'
-                  }`}
-                >
-                  {area.name}
-                  <ArrowRight size={12} className="opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <div className="max-w-5xl mx-auto overflow-hidden rounded-brand shadow-md">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-center text-xs font-semibold text-gold uppercase tracking-widest mb-3 flex items-center justify-center gap-1.5">
+              <MapPin size={14} aria-hidden /> Find Us on the Map
+            </p>
+            <div className="overflow-hidden rounded-brand shadow-md">
               <iframe
                 src={GOOGLE_MAPS_EMBED_URL}
                 width="100%"
-                className="w-full h-[280px] md:h-[360px] block"
+                className="w-full h-[240px] sm:h-[280px] md:h-[360px] block"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -487,7 +466,7 @@ export default function Home() {
                 title="PRC 13 Roofing location in Sacramento"
               />
             </div>
-          )}
+          </div>
         </div>
       </section>
 

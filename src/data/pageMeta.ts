@@ -23,7 +23,8 @@ const serviceAreaMeta = Object.fromEntries(
 ) as Record<string, PageMetaConfig>;
 
 export const DEFAULT_SITE_META: PageMetaConfig = {
-  title: `${SITE_NAME} | Sacramento Roof Replacement & Repair`,
+  title:
+    'Best Roofing Contractor in Sacramento, CA | PRC 13 Roofing | Roof Replacement, Repair, Emergency, Metal, Commercial Roofing, Inspection & Gutters Near Me',
   description:
     'Sacramento roofing company specializing in roof replacement, repair, and metal roofing. Free inspections. Licensed & insured. Call 916-761-3866.',
   path: '/',
