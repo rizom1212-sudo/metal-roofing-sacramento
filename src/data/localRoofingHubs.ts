@@ -1,6 +1,8 @@
-import { FOLSOM_CLUSTER_CATEGORY } from './blogFolsomRoofingCluster';
-import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogElDoradoHillsRoofingCluster';
-import { COLFAX_CLUSTER_CATEGORY } from './blogColfaxHomeHardening';
+import {
+  COLFAX_CLUSTER_CATEGORY,
+  EL_DORADO_HILLS_CLUSTER_CATEGORY,
+  FOLSOM_CLUSTER_CATEGORY,
+} from './blogCategories';
 
 export interface LocalRoofingHubConfig {
   category: string;

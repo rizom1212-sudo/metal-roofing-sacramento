@@ -5,8 +5,9 @@ import {
   upgradedRoofInsuranceClaimsElDoradoHills,
   upgradedMetalRoofingElDoradoHills,
 } from './blogCityExpansionUpgrades';
+import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogCategories';
 
-export const EL_DORADO_HILLS_CLUSTER_CATEGORY = 'El Dorado Hills Roofing';
+export { EL_DORADO_HILLS_CLUSTER_CATEGORY };
 
 const COVER_A = ASSETS.blog('035dfafc-8416-46bd-b5ab-f8c6b6b4eff9.webp');
 const COVER_B = ASSETS.emergencyRepair('emergency-roof-hero.webp');

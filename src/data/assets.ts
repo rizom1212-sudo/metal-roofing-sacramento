@@ -6,7 +6,7 @@ export const ASSETS = {
   brand: {
     logo: '/assets/prc13-logo-white.svg',
     // Specialist wordmark lives in chrome via BrandMark; SVG is used for schema.
-    hero: '/assets/featured-project/standing-seam-metal-roof-02.png',
+    hero: '/assets/metal-roof-replacement/739958db-594f-4c28-9e5d-06a076554fe7.webp',
     /** Optional generated variant; keep undefined until the file exists. */
     heroWebp: undefined,
     ownerPhoto: '/assets/brand/about-roofing-team-turret.png',

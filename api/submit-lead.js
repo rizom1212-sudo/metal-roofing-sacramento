@@ -1,3 +1,5 @@
+import { isAllowedLeadOrigin, MAX_LEAD_JSON_BYTES, validateLeadPayload } from './leadValidation.js';
+
 const AIRTABLE_API_BASE = 'https://api.airtable.com/v0';
 
 function sendJson(response, statusCode, body) {
@@ -72,6 +74,13 @@ export default async function handler(request, response) {
     return;
   }
 
+  const origin = request.headers.origin || request.headers.Origin || '';
+  const host = request.headers.host || request.headers.Host || '';
+  if (!isAllowedLeadOrigin(origin, host)) {
+    sendJson(response, 403, { success: false, error: 'Origin is not allowed' });
+    return;
+  }
+
   const token = process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
   const baseId = process.env.AIRTABLE_BASE_ID || 'appaVNgcgomXyQ6Z2';
   const tableName = process.env.AIRTABLE_TABLE_NAME || 'PRC Leads';
@@ -86,6 +95,11 @@ export default async function handler(request, response) {
 
   let body;
   try {
+    const raw = typeof request.body === 'string' ? request.body : JSON.stringify(request.body || {});
+    if (raw.length > MAX_LEAD_JSON_BYTES) {
+      sendJson(response, 413, { success: false, error: 'Payload too large' });
+      return;
+    }
     body = typeof request.body === 'string'
       ? JSON.parse(request.body || '{}')
       : request.body || {};
@@ -94,16 +108,19 @@ export default async function handler(request, response) {
     sendJson(response, 400, { success: false, error: 'Invalid JSON request body' });
     return;
   }
-  const name = typeof body.name === 'string' ? body.name.trim() : '';
-  const phone = typeof body.phone === 'string' ? body.phone.trim() : '';
-  const pageUrl = typeof body.pageUrl === 'string' ? body.pageUrl.trim() : '';
-  const inquiry = getInquiry(body);
 
-  if (!name || !phone || !pageUrl) {
-    console.error('[airtable] Missing required lead fields', { hasName: Boolean(name), hasPhone: Boolean(phone), hasPageUrl: Boolean(pageUrl) });
-    sendJson(response, 400, { success: false, error: 'Missing required lead fields' });
+  const validation = validateLeadPayload(body);
+  if (!validation.ok) {
+    if (validation.silent) {
+      sendJson(response, 200, { success: true });
+      return;
+    }
+    sendJson(response, validation.status || 400, { success: false, error: validation.error });
     return;
   }
+
+  const { name, phone, pageUrl, email, service, message, sourcePage } = validation.value;
+  const inquiry = getInquiry({ service, email, message });
 
   const payload = getAirtablePayload({ name, phone, pageUrl, inquiry });
   console.info('[airtable] Creating lead record', {
@@ -145,7 +162,7 @@ export default async function handler(request, response) {
     pageUrl,
     inquiry: payload.fields.Inquiry,
     status: payload.fields.Status,
-    sourcePage: body.source_page || body.sourcePage || '',
+    sourcePage,
     fields: payload.fields,
   });
   sendJson(response, 200, { success: true });

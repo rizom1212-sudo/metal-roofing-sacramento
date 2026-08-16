@@ -36,7 +36,7 @@ export default function MetalMoneyPage({ page }: MetalMoneyPageProps) {
       />
 
       <section className="relative bg-charcoal-dark text-white overflow-hidden lg:min-h-[75vh]">
-        <HeroBackground image={page.primaryImage} alt={page.heroImageAlt} />
+        <HeroBackground image={page.primaryImage} alt={page.heroImageAlt} priority />
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to right, rgba(15,20,28,0.93) 0%, rgba(15,20,28,0.75) 50%, rgba(15,20,28,0.35) 100%)' }}
@@ -50,9 +50,7 @@ export default function MetalMoneyPage({ page }: MetalMoneyPageProps) {
           />
           <div className="flex flex-col lg:block">
             <div className="max-w-2xl">
-              <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5 rounded-brand">
-                {page.heroKicker}
-              </span>
+              <p className="brand-kicker brand-kicker-light mb-5">{page.heroKicker}</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
                 {page.h1}
                 {page.h1Accent ? (

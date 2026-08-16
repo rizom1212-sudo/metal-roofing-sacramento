@@ -1,5 +1,7 @@
-import type { FaqItem } from '../components/FaqAccordion';
 import { ASSETS } from './assets';
+import type { BlogPost } from './blogTypes';
+
+export type { BlogPost, BlogRelatedService, BlogSection } from './blogTypes';
 import { applyClusterLinkEnrichmentsToPosts } from './applyClusterLinkEnrichments';
 import { applyBlogRetargets } from './applyBlogRetargets';
 import { RETIRED_BLOG_SLUGS } from './urlPolicy';
@@ -21,11 +23,6 @@ import {
   phase4MetalPosts,
 } from './blogPhase4TopicalAuthority';
 
-export interface BlogRelatedService {
-  label: string;
-  href: string;
-}
-
 const BLOG_CATEGORY_DISPLAY: Record<string, string> = {
   'Roof Inspection': 'Metal Roof Inspection',
   'Sacramento Roof Replacement': 'Metal Roof Replacement',
@@ -42,36 +39,6 @@ const BLOG_CATEGORY_DISPLAY: Record<string, string> = {
 /** Display label only. Do not use for filters — those match original category constants. */
 export function displayBlogCategory(category: string): string {
   return BLOG_CATEGORY_DISPLAY[category] ?? category;
-}
-
-export interface BlogPost {
-  slug: string;
-  title: string;
-  seoTitle?: string;
-  excerpt: string;
-  date: string;
-  updatedDate?: string;
-  readTime: string;
-  category: string;
-  coverImage: string;
-  coverImageAlt?: string;
-  body: BlogSection[];
-  relatedServices: BlogRelatedService[];
-  relatedArticles?: BlogRelatedService[];
-  faqs?: FaqItem[];
-}
-
-export interface BlogSection {
-  type: 'paragraph' | 'heading' | 'list' | 'links' | 'cta';
-  content: string;
-  items?: string[];
-  links?: BlogRelatedService[];
-  /** Heading level; defaults to 2 when type is heading */
-  level?: 2 | 3;
-  heading?: string;
-  statement?: string;
-  ctaLabel?: string;
-  ctaHref?: string;
 }
 
 const rawBlogPosts: BlogPost[] = [

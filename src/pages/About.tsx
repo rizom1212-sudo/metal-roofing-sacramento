@@ -79,6 +79,7 @@ export default function About() {
                 alt={ABOUT_PHOTO_ALT}
                 width={800}
                 height={460}
+                priority
                 className="h-[380px] md:h-[460px] object-cover object-[center_30%]"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-charcoal-dark/90 p-4">
@@ -94,7 +95,7 @@ export default function About() {
                 {BRAND_NAME} is the specialized metal-roofing website for Sacramento. Roofing work is performed and contracted by {BUSINESS_ENTITY_NAME}, CA CSLB #{LICENSE_NUMBER}.
               </p>
               <p className="text-body text-base leading-relaxed mb-4">
-                {OPERATOR_DISCLOSURE} This is not a separate company, license, or Google Business Profile. There is no invented founding story for the {BRAND_NAME} brand.
+                {OPERATOR_DISCLOSURE} This is not a separate company, license, or Google Business Profile. {BRAND_NAME} is the specialist website for this metal-roofing work.
               </p>
               <p className="text-body text-base leading-relaxed mb-4">
                 {BUSINESS_DESCRIPTION}

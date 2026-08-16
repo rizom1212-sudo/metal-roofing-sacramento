@@ -60,7 +60,7 @@ export default function LocalSeoLinks({
             <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Service Areas</p>
             <h2 className="text-2xl font-bold mb-3">Metal Roofing Near Sacramento</h2>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              City hubs explain local metal-roofing context — heat, wind, housing stock, and rain — without inventing offices or projects in every city.
+              City hubs explain local metal-roofing context — heat, wind, housing stock, and rain — for communities we serve across Greater Sacramento.
             </p>
             <div className="grid sm:grid-cols-2 gap-2.5">
               {cities.map(area => (

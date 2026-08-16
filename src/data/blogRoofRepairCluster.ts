@@ -1,8 +1,9 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
 import { upgradedMissingShingleRepairSacramento } from './blogContentUpgrades';
+import { ROOF_REPAIR_CLUSTER_CATEGORY } from './blogCategories';
 
-export const ROOF_REPAIR_CLUSTER_CATEGORY = 'Sacramento Roof Repair';
+export { ROOF_REPAIR_CLUSTER_CATEGORY };
 
 /** Emergency-cluster articles surfaced on the /roof-repair hub (not duplicated). */
 export const ROOF_REPAIR_HUB_CROSS_LINK_SLUGS = [

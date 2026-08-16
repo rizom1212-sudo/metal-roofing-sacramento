@@ -35,7 +35,7 @@ export function metalCityServices(cityName: string): CityHubServiceCard[] {
     {
       title: `Commercial Metal Roofing in ${cityName}`,
       href: '/commercial-metal-roofing',
-      desc: `Metal systems for ${cityName}-area commercial buildings. This is not a TPO or EPDM membrane service.`,
+      desc: `Metal panel systems for ${cityName}-area commercial and light-commercial buildings where metal is the right covering.`,
     },
     {
       title: `Metal Roof Inspection in ${cityName}`,
@@ -122,7 +122,7 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
     heroIntro:
       'Rancho Cordova roofs see long sun exposure, wind through open corridors, and winter rain that exposes weak flashing. Metal roofing is often considered here for heat performance and fewer surface replacements — if the home, structure, and profile choice fit.',
     quickAnswer:
-      'PRC 13 inspects Rancho Cordova roofs and explains whether metal installation, replacement, or repair of an existing metal system is the honest next step. No invented local office or project list.',
+      'PRC 13 inspects Rancho Cordova roofs and explains whether metal installation, replacement, or repair of an existing metal system is the honest next step. We serve the city as a Greater Sacramento service-area contractor.',
     quickPoints: [
       'Sun and wind exposure on open corridors',
       'Metal replacement vs repairing a tired covering',
@@ -212,7 +212,7 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
     heroIntro:
       'Rocklin roofs often deal with hillside wind, sun-baked slopes, and mixed coverings. This hub is for metal roofing in Rocklin. There is no Rocklin-only asphalt replacement page on this specialist site.',
     quickAnswer:
-      'We inspect Rocklin roofs for storm and heat wear, then explain whether metal installation, replacement, or repair of an existing metal system makes sense. No invented Rocklin office.',
+      'We inspect Rocklin roofs for storm and heat wear, then explain whether metal installation, replacement, or repair of an existing metal system makes sense. PRC 13 serves Rocklin as part of the Greater Sacramento service area.',
     quickPoints: [
       'Wind and hillside exposure on metal details',
       'Standing seam and other profiles PRC 13 installs',
@@ -352,7 +352,7 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
       'Older home deck and covering checks',
       'Debris at valleys that can hide flashing problems',
       'Metal as a lower-maintenance covering when it fits',
-      'No invented Woodland storefront',
+      'Service-area coverage for Woodland — no public storefront on this site',
     ],
     localHeading: 'Older Woodland roofs and metal',
     localContent:
@@ -392,7 +392,7 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
     heroIntro:
       'Davis roofs often sit under mature tree canopies and still face hot valley summers. This page is metal roofing in Davis: installation, replacement, repair, standing seam, and inspections.',
     quickAnswer:
-      'PRC 13 inspects Davis roofs and explains metal options, including how shade, debris, and attic ventilation affect a metal assembly. We do not invent a Davis office.',
+      'PRC 13 inspects Davis roofs and explains metal options, including how shade, debris, and attic ventilation affect a metal assembly. We serve Davis as a Greater Sacramento service-area contractor.',
     quickPoints: [
       'Shade and debris vs sun-baked slopes on the same house',
       'Ventilation as part of a metal assembly',
@@ -527,7 +527,7 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
     heroIntro:
       'El Dorado Hills roofs can face hillside wind, intense sun, and storm exposure on edges and ridges. This hub is metal roofing in El Dorado Hills. Tile and fascia articles that were not metal-relevant were retired from this specialist site.',
     quickAnswer:
-      'PRC 13 helps El Dorado Hills homeowners evaluate metal roofing, including standing seam, for exposed lots. Financing may be available on qualifying projects. City program claims are not invented here; Colfax has its own documented program.',
+      'PRC 13 helps El Dorado Hills homeowners evaluate metal roofing, including standing seam, for exposed lots. Financing may be available on qualifying projects. Colfax has a separately documented city home-hardening program; that program is not applied to El Dorado Hills here.',
     quickPoints: [
       'Hillside wind on metal edges and ridges',
       'Standing seam for exposed lots when it fits',
@@ -704,15 +704,188 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
   },
 };
 
-export function metalExtraSections(cityName: string): {
+type MetalExtraSections = {
   insuranceClaimsIntro: string;
   insuranceClaimsBullets: string[];
   insuranceClaimsClosing: string;
   repairWhenPoints: string[];
   replaceWhenPoints: string[];
   repairReplaceClosing: string;
-} {
-  return {
+};
+
+const EXTRA_BY_SLUG: Record<string, Partial<MetalExtraSections>> = {
+  sacramento: {
+    insuranceClaimsIntro:
+      'Sacramento heat, winter rain, and mixed older roof lines can open leaks at metal flashings, penetrations, and worn coverings. PRC 13 documents metal roof conditions homeowners can share with an insurer. Coverage and payment remain the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Wind-related metal edge, ridge, or trim damage in Sacramento neighborhoods',
+      'Heat-cycled sealants and flashings after a long dry season',
+      'Leak staining tied to a metal penetration or wall transition',
+      'Panel or seam issues found after the first heavy winter rain',
+    ],
+    repairReplaceClosing:
+      'Inspection in Sacramento should separate a durable metal repair from a replacement conversation. Neighborhood context lives on this hub; hire details live on metal roof repair and metal roof replacement.',
+  },
+  'rancho-cordova': {
+    insuranceClaimsIntro:
+      'Sun-exposed Rancho Cordova corridors and seasonal wind can age metal edges, ridges, and flashings faster than shaded streets. PRC 13 documents what we find. Coverage and payment remain the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Wind-lifted metal edge or ridge details on open corridors',
+      'Sun-baked trim and flashing wear',
+      'Leak staining at a wall transition after rain',
+      'Fastener or seam issues on an existing metal roof',
+    ],
+    repairReplaceClosing:
+      'On an exposed Rancho Cordova lot, inspection should separate a localized metal repair from a covering that is ready for replacement. See metal roof repair and metal roof replacement.',
+  },
+  roseville: {
+    insuranceClaimsIntro:
+      'Roseville summer heat and subdivision roof systems can show wear at underlayment, vents, and metal details even when the field covering still looks intact. PRC 13 documents metal conditions for an insurer. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Heat-aged flashings and accessories on sun-facing Roseville slopes',
+      'Wind-related edge or ridge damage',
+      'Leak staining at a penetration or wall',
+      'An existing metal roof with seam or fastener issues after weather',
+    ],
+    repairReplaceClosing:
+      'Roseville inspection should decide whether a metal repair is enough or the current covering — shingle, tile, or metal — is ready to come off. See metal roof repair and metal roof replacement.',
+  },
+  rocklin: {
+    insuranceClaimsIntro:
+      'Hillside wind and sun-baked Rocklin slopes test metal edges, ridges, and wall transitions. PRC 13 documents those conditions. Coverage and payment remain the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Wind-related metal edge, ridge, or trim damage in Rocklin',
+      'Wind-driven rain at a weak wall transition',
+      'Heat-cycled flashings on south-facing slopes',
+      'Panel or seam issues found after a wind event',
+    ],
+    repairReplaceClosing:
+      'Rocklin inspection should separate a durable metal repair from a replacement conversation, especially after wind. See metal roof repair and metal roof replacement.',
+  },
+  folsom: {
+    insuranceClaimsIntro:
+      'Folsom heat and lake-corridor wind can age underlayment, accessories, and metal flashings while the covering still looks acceptable from the street. PRC 13 documents metal conditions. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Heat-aged sealants at vents and walls in Folsom',
+      'Wind-tested edges on more open lots',
+      'Leak staining at a metal penetration',
+      'Seam or flashing issues on an existing metal roof',
+    ],
+    repairReplaceClosing:
+      'Folsom inspection should separate a localized metal repair from a heat-aged covering that is ready for metal replacement. See metal roof repair and metal roof replacement.',
+  },
+  'elk-grove': {
+    insuranceClaimsIntro:
+      'Broad Elk Grove roof planes sit through long dry stretches, then move a lot of water in the first storms. PRC 13 documents metal edge, valley, and penetration conditions. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Leak paths at edges and valleys on a large Elk Grove roof',
+      'Wind-related trim or ridge damage',
+      'Penetration leaks after the first heavy rain',
+      'Panel or seam issues on an existing metal system',
+    ],
+    repairReplaceClosing:
+      'On a large Elk Grove roof, inspection should decide whether a focused metal repair is honest or the whole covering is due. See metal roof repair and metal roof replacement.',
+  },
+  woodland: {
+    insuranceClaimsIntro:
+      'Older Woodland homes and tree debris can hide flashing problems in valleys and edges. PRC 13 documents metal conditions after storms. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Debris-related staining at Woodland valleys and edges',
+      'Wind-related metal trim or ridge damage',
+      'Leak paths at aging flashings on an older home',
+      'An existing metal roof with a localized seam or penetration leak',
+    ],
+    repairReplaceClosing:
+      'Woodland inspection should weigh an older deck and covering against a localized metal repair. See metal roof repair and metal roof replacement.',
+  },
+  davis: {
+    insuranceClaimsIntro:
+      'Davis roofs often mix tree-canopy moisture with hot valley summers. PRC 13 documents metal conditions at skylights, walls, and debris-prone details. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Skylight or penetration leaks on a Davis metal roof',
+      'Debris-held moisture at shaded valleys',
+      'Heat-cycled flashings on exposed slopes of the same house',
+      'Wind-related edge or trim damage',
+    ],
+    repairReplaceClosing:
+      'Davis inspection should account for shade, debris, and ventilation before choosing metal repair or replacement. See metal roof repair and metal roof replacement.',
+  },
+  orangevale: {
+    insuranceClaimsIntro:
+      'Orangevale lots with mature trees can load valleys and edges after wind. PRC 13 documents metal flashing and trim conditions. Coverage remains the insurer’s decision. Cleaning debris is owner maintenance.',
+    insuranceClaimsBullets: [
+      'Valley or edge staining after wind and debris in Orangevale',
+      'Limb-related impact at a metal detail when that is what we find',
+      'Leak paths at flashings on an older covering',
+      'An existing metal roof with edge or penetration leaks',
+    ],
+    repairReplaceClosing:
+      'Orangevale inspection should separate debris-related maintenance from a metal repair or a covering that is ready to replace. See metal roof repair and metal roof replacement.',
+  },
+  'granite-bay': {
+    insuranceClaimsIntro:
+      'Complex Granite Bay roofs collect problems at valleys, skylights, and wall transitions. PRC 13 documents those metal details. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Valley or wall-transition leaks on a multi-plane Granite Bay roof',
+      'Skylight curb or penetration staining',
+      'Wind-related edge or ridge damage',
+      'Seam or flashing issues on standing seam or other metal',
+    ],
+    repairReplaceClosing:
+      'On a custom Granite Bay roof, inspection has to see the actual planes before a metal repair or replacement is honest. See metal roof repair and metal roof replacement.',
+  },
+  'el-dorado-hills': {
+    insuranceClaimsIntro:
+      'Exposed El Dorado Hills lots take more wind at ridges and eaves. PRC 13 documents metal edge, ridge, and flashing conditions after storms. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Wind-tested ridges and eaves on open EDH lots',
+      'Sun-aged coatings and accessories',
+      'Leak staining at a wall or penetration',
+      'Panel or seam issues found after a storm',
+    ],
+    repairReplaceClosing:
+      'EDH inspection should separate a storm-related metal repair from a covering that is ready for replacement. See metal roof repair and metal roof replacement.',
+  },
+  lincoln: {
+    insuranceClaimsIntro:
+      'Lincoln homes often have limited shade and direct summer sun, then winter storms that test edges and vents. PRC 13 documents those metal conditions. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Sun-aged flashings and accessories on open Lincoln lots',
+      'Ridge or edge wear after wind',
+      'Leaks at vents or pipe boots',
+      'Seam or fastener issues on an existing metal roof',
+    ],
+    repairReplaceClosing:
+      'Lincoln inspection should happen before you assume metal is — or is not — the next covering. See metal roof repair and metal roof replacement.',
+  },
+  florin: {
+    insuranceClaimsIntro:
+      'Older Florin roof systems and past patches can leave leak paths at flashings and penetrations. PRC 13 documents metal conditions. Coverage remains the insurer’s decision.',
+    insuranceClaimsBullets: [
+      'Repeated leak staining on an older Florin covering',
+      'Flashing or penetration failures after rain',
+      'Wind-related trim damage',
+      'An existing metal roof with a localized seam leak',
+    ],
+    repairReplaceClosing:
+      'Florin inspection should check deck clues before recommending a metal repair or a full metal replacement. See metal roof repair and metal roof replacement.',
+  },
+  colfax: {
+    insuranceClaimsIntro:
+      'Colfax foothill homes face summer heat, winter storms, and hillside wind. PRC 13 documents metal roof conditions. Coverage and any city program assistance remain separate decisions — we do not treat inspection findings as a promised payout.',
+    insuranceClaimsBullets: [
+      'Wind-related metal edge or ridge damage in the Colfax foothills',
+      'Storm wear at flashings and penetrations',
+      'Debris in valleys that can hold moisture against details',
+      'An existing metal roof that needs a documented condition report',
+    ],
+    repairReplaceClosing:
+      'Colfax inspection should separate a metal repair from replacement, and keep City home-hardening rules separate from PRC 13’s scope. See metal roof repair and metal roof replacement.',
+  },
+};
+
+export function metalExtraSections(cityName: string, slug = ''): MetalExtraSections {
+  const base: MetalExtraSections = {
     insuranceClaimsIntro: `Storms, wind, and heat in ${cityName} can damage metal trim, flashings, seams, and panels. PRC 13 Roofing documents metal roof conditions homeowners can share with an insurer. Coverage and payment remain the insurer’s decision.`,
     insuranceClaimsBullets: [
       `Wind-related metal edge, ridge, or trim damage in ${cityName}`,
@@ -736,6 +909,8 @@ export function metalExtraSections(cityName: string): {
     ],
     repairReplaceClosing: `Inspection in ${cityName} should separate a durable metal repair from a replacement conversation. See metal roof repair and metal roof replacement for hire details.`,
   };
+
+  return { ...base, ...EXTRA_BY_SLUG[slug] };
 }
 
 export const metalEducationalSections: Record<string, { eyebrow: string; heading: string; paragraphs: string[] }> = {
@@ -753,7 +928,7 @@ export const metalEducationalSections: Record<string, { eyebrow: string; heading
     heading: 'Metal roofing, heat, and HOAs in Folsom',
     paragraphs: [
       'Folsom heat ages underlayment and accessories even when the covering still looks acceptable from the street. Metal is a long-service option when the house, structure, and budget support it.',
-      'Some Folsom communities have HOA rules for exterior changes. Rules vary. PRC 13 can explain metal profile and color options we actually install; only the association can say what it will approve. We do not invent an HOA catalog.',
+      'Some Folsom communities have HOA rules for exterior changes. Rules vary. PRC 13 can explain metal profile and color options we install; only the association can say what it will approve.',
       'Folsom metal and materials guides remain on the blog. Hire paths are [metal roofing](/metal-roofing), [metal roof replacement](/metal-roof-replacement), and [metal roof inspection](/metal-roof-inspection).',
     ],
   },
@@ -773,6 +948,86 @@ export const metalEducationalSections: Record<string, { eyebrow: string; heading
       'Hillside and open-lot EDH homes take more wind at ridges and eaves. Metal still needs those details done correctly. Our [metal roofing El Dorado Hills](/blog/metal-roofing-el-dorado-hills-ca) article stays published.',
       'After storms, inspect metal trim, panels, and flashings when it is safe. PRC 13 does not claim 24/7 emergency service. See [metal roof inspection](/metal-roof-inspection) and [metal roof repair](/metal-roof-repair).',
       'Insurance documentation is findings, not a promised payout. Tile-only EDH articles were retired from this specialist site.',
+    ],
+  },
+  roseville: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Roseville heat, subdivisions, and metal',
+    paragraphs: [
+      'Roseville homes often combine newer subdivision roofs with heavy summer heat. Attic ventilation and underlayment belong in a metal conversation, not as an afterthought. Tile can look intact while underlayment ages; shingles can go brittle on sun-facing slopes.',
+      'Metal is one long-service answer when the house, any HOA review, and budget line up. Hire paths: [standing seam metal roofing](/standing-seam-metal-roofing), [metal roof replacement](/metal-roof-replacement), and [metal roof inspection](/metal-roof-inspection).',
+    ],
+  },
+  'elk-grove': {
+    eyebrow: 'Local metal roofing',
+    heading: 'Broad Elk Grove roofs and metal layout',
+    paragraphs: [
+      'Elk Grove homes often have wide roof planes that sit through long dry months, then move a lot of water in the first storms. Metal replacement on a large plane is a layout and flashing project as much as a panel choice.',
+      'Drainage at edges and valleys still matters on metal. PRC 13 does not sell gutters as a primary service here, but a metal inspection still checks how water leaves the roof. See [metal roof installation](/metal-roof-installation) and [residential metal roofing](/residential-metal-roofing).',
+    ],
+  },
+  'rancho-cordova': {
+    eyebrow: 'Local metal roofing',
+    heading: 'Sun, wind, and metal on Rancho Cordova corridors',
+    paragraphs: [
+      'Afternoon sun and seasonal wind age roof edges faster on open Rancho Cordova corridors than in shaded neighborhoods. Metal handles heat well when underlayment, flashing, and fasteners or clips are detailed correctly.',
+      'Wind still tests ridge, edge metal, and wall transitions — those details matter as much as the panel profile. Start with [residential metal roofing](/residential-metal-roofing) or [metal roof inspection](/metal-roof-inspection).',
+    ],
+  },
+  orangevale: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Trees, valleys, and metal in Orangevale',
+    paragraphs: [
+      'Orangevale homes often sit on larger lots with mature trees. Leaves and branches can sit in valleys long enough to trap moisture against flashings. Metal panels do not change that physics.',
+      'Inspection looks at edges, valleys, and penetrations. Debris clearing is owner maintenance; PRC 13 does not offer metal cleaning. Active metal leaks go through [metal roof repair](/metal-roof-repair) during normal business hours.',
+    ],
+  },
+  lincoln: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Open-sky Lincoln lots and metal',
+    paragraphs: [
+      'Lincoln developments often have limited shade and direct summer sun, then winter storms that test edges and vents. Metal reflects more solar energy than dark worn shingles when the assembly is right.',
+      'Wind and rain still find weak penetrations. Inspection should happen before you assume metal is the next covering. See [metal roofing](/metal-roofing) and [metal roof inspection](/metal-roof-inspection).',
+    ],
+  },
+  woodland: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Older Woodland homes and metal',
+    paragraphs: [
+      'Woodland has older homes, mature trees, and agricultural dust that can load valleys and edges. Metal can reduce how often the field covering itself is replaced when the structure supports it. It does not remove the need to keep valleys clear.',
+      'PRC 13 does not offer metal cleaning. Decking, structure, and architecture have to support the system — inspection first. See [metal roof replacement](/metal-roof-replacement) and [metal roof repair](/metal-roof-repair).',
+    ],
+  },
+  davis: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Canopy, heat, and metal in Davis',
+    paragraphs: [
+      'Davis roofs often sit under mature tree canopies and still face hot valley summers. Shaded slopes can hold debris and moisture longer; exposed slopes still cook. Metal does not skip ventilation or flashing.',
+      'Skylights and wall intersections remain leak-risk details on metal. See [residential metal roofing](/residential-metal-roofing) and [standing seam metal roofing](/standing-seam-metal-roofing).',
+    ],
+  },
+  florin: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Older Florin roofs and metal replacement',
+    paragraphs: [
+      'Florin homes and nearby neighborhoods often include older roof systems and mature trees. Brittle coverings and past patches are common reasons owners ask about metal. Metal still needs a sound deck and correct flashings.',
+      'Inspection looks at the covering, flashings, and deck clues when accessible. See [metal roof inspection](/metal-roof-inspection) and [metal roof replacement](/metal-roof-replacement).',
+    ],
+  },
+  sacramento: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Sacramento neighborhoods and metal',
+    paragraphs: [
+      'Sacramento mixes older bungalows, suburban streets, and sun-facing slopes that wear shingles faster than shaded planes. Metal is a fit when you want a long-service covering and the structure, architecture, and budget support it.',
+      'Winter rain still tests flashings, penetrations, and drainage on any covering, including standing seam. Use this hub for city context, then open [metal roof installation](/metal-roof-installation), [metal roof replacement](/metal-roof-replacement), or [metal roof inspection](/metal-roof-inspection).',
+    ],
+  },
+  colfax: {
+    eyebrow: 'Local metal roofing',
+    heading: 'Colfax foothills, home hardening, and metal',
+    paragraphs: [
+      'Colfax sits along the I-80 corridor in the Sierra Nevada foothills. Homes face summer heat, winter storms, hillside wind, and wildfire ember risk. Many metal assemblies can be specified as Class A systems — that is an assembly rating, not a promise about insurance or program eligibility.',
+      'The City of Colfax operates a Home Hardening and Defensible Space Program. Confirm current rules with the City. PRC 13’s Colfax metal work and any contractor offer stay separate from City assistance. See the Colfax home-hardening guide on this site and [metal roofing](/metal-roofing).',
     ],
   },
 };

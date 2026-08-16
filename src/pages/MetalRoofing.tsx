@@ -19,8 +19,8 @@ import LocalSeoLinks from '../components/LocalSeoLinks';
 import SacramentoGuideCallout from '../components/SacramentoGuideCallout';
 import RetrievalAnswers from '../components/RetrievalAnswers';
 import { ASSETS } from '../data/assets';
-import { blogPosts } from '../data/blog';
-import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
+import { METAL_CLUSTER_CATEGORY } from '../data/blogCategories';
+import { blogSummaries } from '../data/blogSummaries';
 import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
 import { getOfferedServices, getNavHref } from '../data/services';
 
@@ -62,7 +62,7 @@ const hubFaqs: FaqItem[] = [
   },
 ];
 
-const metalResources = blogPosts
+const metalResources = blogSummaries
   .filter(post => post.category === METAL_CLUSTER_CATEGORY)
   .slice(0, SERVICE_HUB_RESOURCE_LIMIT);
 
@@ -83,6 +83,7 @@ export default function MetalRoofing() {
         <HeroBackground
           image={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')}
           alt="Metal roofing on a Sacramento area home"
+          priority
         />
         <div
           className="absolute inset-0"
@@ -92,7 +93,7 @@ export default function MetalRoofing() {
           <Breadcrumbs items={[{ label: 'Metal Roofing' }]} />
           <div className="flex flex-col lg:block">
             <div className="max-w-2xl">
-              <span className="inline-block text-xs bg-gold text-white px-3 py-1 font-semibold uppercase tracking-wider mb-5 rounded-brand">Metal roofing services</span>
+              <p className="brand-kicker brand-kicker-light mb-5">Metal roofing services</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
                 Metal Roofing Services<br />
                 <span className="text-gold">in Sacramento</span>
@@ -116,7 +117,7 @@ export default function MetalRoofing() {
                 <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-gold" /> Written quotes after inspection</span>
               </div>
             </div>
-            <HeroLeadFormPanel sourcePage="metal-roofing-hero" />
+            <HeroLeadFormPanel sourcePage="metal-roofing-hero" defaultReason="metal-estimate" />
           </div>
         </div>
       </section>
@@ -128,7 +129,7 @@ export default function MetalRoofing() {
             points={[
               'One place to see the full metal offering',
               'Specialized pages for install, replace, repair, and more',
-              'Sacramento climate context without a fake catalog',
+              'Sacramento climate context and the metal systems we actually install',
               'Licensed work performed by PRC 13 Roofing Inc.',
             ]}
           >
@@ -300,7 +301,7 @@ export default function MetalRoofing() {
                 <Phone size={16} /> Or call directly: {PHONE_DISPLAY}
               </TelLink>
             </div>
-            <LeadForm sourcePage="metal-roofing" variant="full" hideEmail compactSpacing />
+            <LeadForm sourcePage="metal-roofing" variant="full" hideEmail compactSpacing defaultReason="metal-estimate" />
           </div>
         </div>
       </section>

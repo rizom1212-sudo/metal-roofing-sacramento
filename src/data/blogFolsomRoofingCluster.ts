@@ -1,8 +1,9 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
 import { upgradedRoofLeakRepairFolsom } from './blogCityExpansionUpgrades';
+import { FOLSOM_CLUSTER_CATEGORY } from './blogCategories';
 
-export const FOLSOM_CLUSTER_CATEGORY = 'Folsom Roofing';
+export { FOLSOM_CLUSTER_CATEGORY };
 
 const COVER_A = ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp');
 const COVER_B = ASSETS.blog('6998f81b8713f61878709b43.jpg');

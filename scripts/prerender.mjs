@@ -19,7 +19,7 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function headTags({ title, description, canonical, image, type = 'website', publishedTime, modifiedTime, siteName = 'Metal Roofing Sacramento' }) {
+function headTags({ title, description, canonical, image, type = 'website', publishedTime, modifiedTime, siteName = 'Metal Roofing Sacramento', preloadImage = false }) {
   const tags = [
     `<title>${escapeHtml(title)}</title>`,
     `<link rel="canonical" href="${canonical}" />`,
@@ -36,6 +36,10 @@ function headTags({ title, description, canonical, image, type = 'website', publ
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `<meta name="twitter:image" content="${image}" />`,
   ];
+
+  if (preloadImage) {
+    tags.push(`<link rel="preload" as="image" href="${image}" fetchpriority="high" />`);
+  }
 
   if (type === 'article' && publishedTime) tags.push(`<meta property="article:published_time" content="${publishedTime}" />`);
   if (type === 'article' && modifiedTime) tags.push(`<meta property="article:modified_time" content="${modifiedTime}" />`);
@@ -98,7 +102,7 @@ async function main() {
   for (const route of api.publicRoutes) {
     const appHtml = api.render(route.path);
     const meta = routeMeta(route, api);
-    const html = injectHead(template, headTags({ ...meta, siteName: api.BRAND_NAME })).replace(
+    const html = injectHead(template, headTags({ ...meta, siteName: api.BRAND_NAME, preloadImage: route.path === '/' })).replace(
       '<div id="root"></div>',
       `<div id="root">${appHtml}</div>`,
     );

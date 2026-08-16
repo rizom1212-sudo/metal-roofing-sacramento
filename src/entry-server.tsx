@@ -1,7 +1,7 @@
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import Layout from './components/Layout';
-import { AppRoutes } from './App';
+import { AppRoutes } from './AppRoutes';
 import { publicRoutes } from './data/routes';
 import { blogPosts } from './data/blog';
 import { absoluteAssetUrl, absoluteUrl, SITE_URL } from './data/domain';

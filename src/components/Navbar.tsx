@@ -9,7 +9,7 @@ import TelLink from './TelLink';
 import BrandMark from './BrandMark';
 import { handleSamePageAnchorClick, scrollToTopInstant } from '../lib/scroll';
 import SeasonalBanner, { SEASONAL_BANNER_SESSION_KEY } from './SeasonalBanner';
-import { COLFAX_HOME_HARDENING_SLUG, COLFAX_INSPECTION_FORM_ID } from '../data/blogColfaxHomeHardening';
+import { COLFAX_HOME_HARDENING_SLUG, COLFAX_INSPECTION_FORM_ID } from '../data/blogColfaxConstants';
 
 const hubLinks = getNavServices();
 const serviceMenuItems = getServicesMenuItems();
@@ -42,7 +42,7 @@ export default function Navbar() {
   const servicesMenuActive = serviceMenuItems.some(service => isActive(getNavHref(service)));
 
   function linkClass(active: boolean) {
-    return active ? 'nav-link-active' : 'nav-link';
+    return `${active ? 'nav-link-active' : 'nav-link'} py-2`;
   }
 
   const isColfaxHomeHardeningArticle =
@@ -117,13 +117,13 @@ export default function Navbar() {
       <div ref={headerStackRef} className="fixed top-0 left-0 right-0 z-[60]">
         <SeasonalBanner dismissed={bannerDismissed} onDismiss={() => setBannerDismissed(true)} />
 
-        <header className="bg-charcoal-dark border-b border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
-          <div className="max-w-7xl mx-auto px-5 sm:px-7">
-          <div className="flex h-[68px] md:h-[82px] items-center justify-between">
+        <header className="bg-[#0b1016] border-b border-white/15">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="flex h-[60px] md:h-[68px] items-center justify-between gap-4">
 
             <BrandMark to="/" onClick={handleHomeLogoClick} size="nav" variant="onDark" />
 
-            <nav className="hidden lg:flex items-center gap-3 xl:gap-6">
+            <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
               {hubLinks.map(service => (
                 <Link
                   key={service.id}
@@ -162,7 +162,7 @@ export default function Navbar() {
                     <div
                       id="services-menu"
                       role="menu"
-                      className="bg-charcoal-dark border border-white/10 shadow-[0_18px_44px_rgba(0,0,0,0.28)] py-2 rounded-brand max-h-[70vh] overflow-y-auto"
+                      className="bg-[#0b1016] border border-white/10 shadow-[0_18px_44px_rgba(0,0,0,0.28)] py-2 max-h-[70vh] overflow-y-auto"
                     >
                       {serviceMenuItems.map(service => {
                         const href = getNavHref(service);
@@ -172,8 +172,8 @@ export default function Navbar() {
                             role="menuitem"
                             to={href}
                             onClick={() => handleNavLinkClick(href)}
-                            className={`block px-4 py-2.5 text-sm transition-all duration-200 ease-out hover:bg-gold/15 hover:text-gold ${
-                              isActive(href) ? 'text-gold font-semibold bg-gold/10' : 'text-gray-300'
+                            className={`block px-4 py-3 text-sm min-h-11 transition-colors duration-200 hover:bg-gold/15 hover:text-gold ${
+                              isActive(href) ? 'text-gold font-semibold bg-gold/10' : 'text-[#e8e4db]'
                             }`}
                           >
                             {service.name}
@@ -197,15 +197,19 @@ export default function Navbar() {
               ))}
             </nav>
 
-            <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-5">
               <TelLink
                 location="nav-desktop"
-                className="hidden xl:flex items-center gap-2 text-gold hover:text-gold-light font-semibold text-sm transition-all duration-200 ease-out hover:-translate-y-0.5"
+                className="hidden xl:flex items-center gap-2 text-[#f6f1e8] hover:text-gold-light font-semibold text-[13px] tracking-[0.04em] transition-colors"
               >
-                <Phone size={15} />
+                <Phone size={14} />
                 {PHONE_DISPLAY}
               </TelLink>
-              <Link to="/contact" onClick={() => handleNavLinkClick('/contact')} className="btn-gold text-sm px-4 xl:px-5 py-3 font-semibold tracking-wide">
+              <Link
+                to="/contact"
+                onClick={() => handleNavLinkClick('/contact')}
+                className="btn-gold text-[11px] tracking-[0.12em] uppercase px-4 xl:px-5 py-2.5 font-semibold"
+              >
                 {PRIMARY_CTA}
               </Link>
             </div>
@@ -213,7 +217,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden text-white p-2 rounded-brand transition-all duration-200 hover:bg-white/10 active:scale-95"
+              className="lg:hidden text-white p-2 min-h-11 min-w-11 flex items-center justify-center rounded-brand transition-colors duration-200 hover:bg-white/10"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
@@ -232,14 +236,14 @@ export default function Navbar() {
                     key={service.id}
                     to={href}
                     onClick={() => handleMobileNavLinkClick(href)}
-                    className={`block px-3 py-2.5 text-sm ${isActive(href) ? 'text-gold font-semibold' : 'text-white hover:text-gold'}`}
+                    className={`block px-3 py-3 text-sm min-h-11 ${isActive(href) ? 'text-gold font-semibold' : 'text-white hover:text-gold'}`}
                   >
                     {service.name}
                   </Link>
                 );
               })}
 
-              <div className="px-3 py-1.5 text-xs text-gray-500 uppercase tracking-wider mt-2">Services</div>
+              <div className="px-3 py-1.5 text-xs text-[#c8cdd3] uppercase tracking-wider mt-2">Services</div>
               {serviceMenuItems.map(service => {
                 const href = getNavHref(service);
                 return (
@@ -247,8 +251,8 @@ export default function Navbar() {
                     key={service.id}
                     to={href}
                     onClick={() => handleMobileNavLinkClick(href)}
-                    className={`block px-3 py-2.5 text-sm hover:text-gold transition-colors ${
-                      isActive(href) ? 'text-gold font-semibold' : 'text-gray-400'
+                    className={`block px-3 py-3 text-sm min-h-11 hover:text-gold transition-colors ${
+                      isActive(href) ? 'text-gold font-semibold' : 'text-[#d5d0c6]'
                     }`}
                   >
                     {service.name}
@@ -262,7 +266,7 @@ export default function Navbar() {
                   key={link.id}
                   to={link.href}
                   onClick={() => handleMobileNavLinkClick(link.href)}
-                  className={`block px-3 py-2.5 text-sm ${isActive(link.href) ? 'text-gold font-semibold' : 'text-gray-300 hover:text-white'}`}
+                    className={`block px-3 py-3 text-sm min-h-11 ${isActive(link.href) ? 'text-gold font-semibold' : 'text-[#e8e4db] hover:text-white'}`}
                 >
                   {link.label}
                 </Link>
@@ -275,7 +279,7 @@ export default function Navbar() {
                 <a
                   href={PHONE_SMS}
                   onClick={() => trackClickToSms('nav-mobile-menu')}
-                  className="flex items-center justify-center w-full text-sm text-gray-400 hover:text-gold py-2 transition-colors"
+                  className="flex items-center justify-center w-full text-sm text-[#d5d0c6] hover:text-[#e0b06a] py-2 transition-colors"
                 >
                   Text us instead
                 </a>

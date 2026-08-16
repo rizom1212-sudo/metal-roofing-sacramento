@@ -1,7 +1,8 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import { METAL_CLUSTER_CATEGORY } from './blogCategories';
 
-export const METAL_CLUSTER_CATEGORY = 'Metal Roofing';
+export { METAL_CLUSTER_CATEGORY };
 
 const COVER_A = ASSETS.blog('035dfafc-8416-46bd-b5ab-f8c6b6b4eff9.webp');
 const COVER_B = ASSETS.blog('6998f81b8713f61878709b43.jpg');

@@ -2,12 +2,11 @@ import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
 import { serviceAreaFeaturedPrograms } from './serviceAreaFeaturedPrograms';
 
-export const COLFAX_CLUSTER_CATEGORY = 'Colfax Roofing';
+import { COLFAX_CLUSTER_CATEGORY } from './blogCategories';
+import { COLFAX_HOME_HARDENING_SLUG, COLFAX_INSPECTION_FORM_ID } from './blogColfaxConstants';
 
-export const COLFAX_HOME_HARDENING_SLUG =
-  'colfax-home-hardening-program-2026-roofing-wildfire-protection';
-
-export const COLFAX_INSPECTION_FORM_ID = 'colfax-roof-inspection';
+export { COLFAX_CLUSTER_CATEGORY };
+export { COLFAX_HOME_HARDENING_SLUG, COLFAX_INSPECTION_FORM_ID };
 
 export const COLFAX_CITY_PROGRAM_URL = 'https://colfax-ca.gov/homehardening/';
 

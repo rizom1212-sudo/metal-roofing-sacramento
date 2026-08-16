@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import { isAllowedLeadOrigin, MAX_LEAD_JSON_BYTES, validateLeadPayload } from './api/leadValidation.js';
 
 const AIRTABLE_API_BASE = 'https://api.airtable.com/v0';
 
@@ -54,12 +55,40 @@ function airtableDevApi(env: Record<string, string>) {
         });
         request.on('end', async () => {
           try {
+            if (rawBody.length > MAX_LEAD_JSON_BYTES) {
+              response.statusCode = 413;
+              response.setHeader('Content-Type', 'application/json');
+              response.end(JSON.stringify({ success: false, error: 'Payload too large' }));
+              return;
+            }
+
+            const origin = request.headers.origin || '';
+            const host = request.headers.host || '';
+            if (!isAllowedLeadOrigin(origin, host)) {
+              response.statusCode = 403;
+              response.setHeader('Content-Type', 'application/json');
+              response.end(JSON.stringify({ success: false, error: 'Origin is not allowed' }));
+              return;
+            }
+
             const body = JSON.parse(rawBody || '{}');
+            const validation = validateLeadPayload(body);
+            if (!validation.ok) {
+              response.statusCode = validation.silent ? 200 : (validation.status || 400);
+              response.setHeader('Content-Type', 'application/json');
+              response.end(JSON.stringify({
+                success: Boolean(validation.silent),
+                error: validation.silent ? undefined : validation.error,
+              }));
+              return;
+            }
+
             const token = env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
             const baseId = env.AIRTABLE_BASE_ID || 'appaVNgcgomXyQ6Z2';
             const tableName = env.AIRTABLE_TABLE_NAME || 'PRC Leads';
             const webhookUrl = env.AIRTABLE_LEAD_WEBHOOK_URL;
-            const inquiry = [body.service, body.email ? `Email: ${body.email}` : '', body.message]
+            const { name, phone, pageUrl, email, service, message, sourcePage } = validation.value;
+            const inquiry = [service, email ? `Email: ${email}` : '', message]
               .filter(Boolean)
               .join('\n')
               .trim();
@@ -75,9 +104,9 @@ function airtableDevApi(env: Record<string, string>) {
             const payload = {
               typecast: true,
               fields: {
-                Name: body.name,
-                'Phone Number': body.phone,
-                'Page URL': body.pageUrl,
+                Name: name,
+                'Phone Number': phone,
+                'Page URL': pageUrl,
                 Inquiry: inquiry || 'General Inquiry',
                 Status: 'New',
               },
@@ -114,12 +143,12 @@ function airtableDevApi(env: Record<string, string>) {
               const airtableResult = JSON.parse(responseText || '{}');
               await notifyLeadWebhook(webhookUrl, {
                 airtableRecordId: airtableResult.id,
-                name: body.name,
-                phone: body.phone,
-                pageUrl: body.pageUrl,
+                name,
+                phone,
+                pageUrl,
                 inquiry: payload.fields.Inquiry,
                 status: payload.fields.Status,
-                sourcePage: body.source_page || body.sourcePage || '',
+                sourcePage,
                 fields: payload.fields,
               });
             }
@@ -153,6 +182,18 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), airtableDevApi(env)],
     optimizeDeps: {
       exclude: ['lucide-react'],
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/') || id.includes('node_modules/react-router')) {
+              return 'react-vendor';
+            }
+            return undefined;
+          },
+        },
+      },
     },
   };
 });

@@ -152,20 +152,26 @@ export function getSessionAttribution(): SessionAttribution {
   };
 }
 
-/** Infer service slug from a path when obvious (no PII). */
+const MONEY_PAGE_SERVICES: Array<{ path: string; label: string }> = [
+  { path: '/metal-roof-installation', label: 'Metal Roof Installation' },
+  { path: '/metal-roof-replacement', label: 'Metal Roof Replacement' },
+  { path: '/metal-roof-repair', label: 'Metal Roof Repair' },
+  { path: '/standing-seam-metal-roofing', label: 'Standing Seam Metal Roofing' },
+  { path: '/residential-metal-roofing', label: 'Residential Metal Roofing' },
+  { path: '/commercial-metal-roofing', label: 'Commercial Metal Roofing' },
+  { path: '/metal-roof-inspection', label: 'Metal Roof Inspection' },
+  { path: '/metal-roofing', label: 'Metal Roofing' },
+];
+
+/** Infer a reporting service label from a hire-intent path. Do not infer from blog articles. */
 export function inferServiceFromPath(pathname: string): string | undefined {
   const path = pathname.replace(/\/+$/, '') || '/';
-  const services = [
-    'roof-replacement',
-    'roof-repair',
-    'emergency-roof-repair',
-    'roof-inspection',
-    'metal-roofing',
-    'commercial-roofing',
-    'gutters-siding',
-  ];
-  for (const service of services) {
-    if (path === `/${service}` || path.startsWith(`/${service}/`)) return service;
+  if (path === '/' || path.startsWith('/blog')) return undefined;
+  if (path === '/service-areas' || path.startsWith('/service-areas/')) return 'Metal Roofing';
+  if (path === '/contact' || path === '/about' || path === '/gallery') return undefined;
+
+  for (const service of MONEY_PAGE_SERVICES) {
+    if (path === service.path || path.startsWith(`${service.path}/`)) return service.label;
   }
   return undefined;
 }

@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import type { BlogPost } from '../data/blog';
+import type { BlogPost } from '../data/blogTypes';
 import type { FaqItem } from '../components/FaqAccordion';
 import { buildJsonLdGraph, serializeJsonLd } from '../lib/jsonLdGraph';
 import { serviceAreaNames } from '../data/serviceAreas';

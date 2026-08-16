@@ -6,8 +6,9 @@ import {
   upgradedRoofInsuranceClaimsStormDamage,
 } from './blogContentUpgrades';
 import { upgradedHailDamageRoofRepair } from './blogCityExpansionUpgrades';
+import { EMERGENCY_CLUSTER_CATEGORY } from './blogCategories';
 
-export const EMERGENCY_CLUSTER_CATEGORY = 'Emergency Roof Repair';
+export { EMERGENCY_CLUSTER_CATEGORY };
 
 const COVER_A = ASSETS.emergencyRepair('emergency-roof-hero.webp');
 const COVER_B = ASSETS.emergencyRepair('6998f81bd83aec69908449bf.jpg');

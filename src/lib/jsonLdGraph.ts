@@ -27,7 +27,7 @@ import {
   type ServiceDefinition,
 } from '../data/services';
 import { serviceAreaNames } from '../data/serviceAreas';
-import type { BlogPost } from '../data/blog';
+import type { BlogPost } from '../data/blogTypes';
 import type { FaqItem } from '../components/FaqAccordion';
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;

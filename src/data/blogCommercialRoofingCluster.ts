@@ -1,7 +1,8 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import { COMMERCIAL_CLUSTER_CATEGORY } from './blogCategories';
 
-export const COMMERCIAL_CLUSTER_CATEGORY = 'Commercial Roofing';
+export { COMMERCIAL_CLUSTER_CATEGORY };
 
 const COVER_A = '/assets/featured-project/standing-seam-metal-roof-02.png';
 const COVER_B = '/assets/featured-project/standing-seam-metal-roof-04.png';

@@ -1,7 +1,8 @@
 import type { BlogPost, BlogRelatedService } from './blog';
 import { ASSETS } from './assets';
+import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from './blogCategories';
 
-export const GUTTERS_FASCIA_CLUSTER_CATEGORY = 'Gutters & Fascia';
+export { GUTTERS_FASCIA_CLUSTER_CATEGORY };
 
 const COVER_A = ASSETS.guttersSiding('1e8ea3b0-e1a4-4e74-97d2-2209fbeeeb89.webp');
 const COVER_B = ASSETS.guttersSiding('prc-13-roofing-website-image-hh-2880w.webp');

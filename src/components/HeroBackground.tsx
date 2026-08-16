@@ -4,6 +4,8 @@ interface HeroBackgroundProps {
   image?: string;
   webpImage?: string;
   alt?: string;
+  width?: number;
+  height?: number;
   /** LCP hero preloads and uses fetchpriority */
   priority?: boolean;
   className?: string;
@@ -17,6 +19,8 @@ export default function HeroBackground({
   image = ASSETS.brand.hero,
   webpImage,
   alt = '',
+  width = 1408,
+  height = 768,
   priority = false,
   className = 'absolute inset-0',
   imageClassName = '',
@@ -33,10 +37,11 @@ export default function HeroBackground({
             src={image}
             alt={alt}
             className={`hero-cinematic-image w-full h-full object-cover ${imageClassName}`}
-            width={1920}
-            height={1080}
+            width={width}
+            height={height}
             loading={priority ? 'eager' : 'lazy'}
             decoding={priority ? 'sync' : 'async'}
+            sizes="100vw"
             {...priorityAttrs}
           />
         </picture>

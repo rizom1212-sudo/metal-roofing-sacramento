@@ -2,6 +2,7 @@ import { useId, useState } from 'react';
 import { Phone } from 'lucide-react';
 import { submitLead } from '../lib/airtable';
 import { trackGenerateLead } from '../lib/analytics';
+import { inferServiceFromPath } from '../lib/referralAttribution';
 import { PRIMARY_CTA } from '../data/cta';
 import { PHONE_DISPLAY } from '../data/site';
 import TelLink from './TelLink';
@@ -85,6 +86,7 @@ export default function LeadForm({
     city: `${fieldId}-city`,
     contactMethod: `${fieldId}-contact-method`,
     message: `${fieldId}-message`,
+    website: `${fieldId}-website`,
   };
   const [form, setForm] = useState({
     name: '',
@@ -94,6 +96,7 @@ export default function LeadForm({
     city: defaultCity,
     contactMethod: '',
     message: '',
+    website: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [touched, setTouched] = useState({ name: false, phone: false, reason: false });
@@ -109,8 +112,38 @@ export default function LeadForm({
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
   };
 
+  const resolveServiceCode = () => form.reason || defaultReason || undefined;
+
+  const resolveServiceLabel = () => {
+    const selected = form.reason
+      ? REASON_OPTIONS.find(option => option.value === form.reason)?.label
+      : undefined;
+    if (selected) return selected;
+    const fallback = defaultReason
+      ? REASON_OPTIONS.find(option => option.value === defaultReason)?.label
+      : undefined;
+    if (fallback) return fallback;
+    const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+    return inferServiceFromPath(pathname);
+  };
+
+  const honeypotField = (
+    <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <label htmlFor={ids.website}>Company website</label>
+      <input
+        id={ids.website}
+        name="website"
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        value={form.website}
+        onChange={handleChange}
+      />
+    </div>
+  );
+
   const buildPayload = () => {
-    const reasonLabel = form.reason ? REASON_OPTIONS.find(o => o.value === form.reason)?.label : undefined;
+    const reasonLabel = resolveServiceLabel();
     const methodLabel = form.contactMethod
       ? CONTACT_METHOD_OPTIONS.find(o => o.value === form.contactMethod)?.label
       : undefined;
@@ -124,9 +157,10 @@ export default function LeadForm({
       name: form.name.trim(),
       phone: form.phone.trim(),
       email: form.email.trim() || undefined,
-      service: form.reason || undefined,
+      service: resolveServiceCode(),
       message: parts.join(' — ') || reasonLabel || 'General Inquiry',
       source_page: sourcePage,
+      website: form.website,
     };
   };
 
@@ -136,6 +170,11 @@ export default function LeadForm({
 
     if (!form.name.trim() || !form.phone.trim() || !isValidPhone(form.phone)) return;
 
+    if (form.website.trim()) {
+      setStatus('success');
+      return;
+    }
+
     setStatus('loading');
     const result = await submitLead(buildPayload());
     if (result.success) {
@@ -143,7 +182,7 @@ export default function LeadForm({
         sourcePage,
         formVariant: variant,
         formLocation: `lead-form:${sourcePage}:${variant}`,
-        service: form.reason || undefined,
+        service: resolveServiceLabel(),
       });
       setStatus('success');
     } else {
@@ -190,7 +229,7 @@ export default function LeadForm({
   );
 
   const privacy = (
-    <p className={`text-xs leading-relaxed ${variant === 'full' ? 'text-gray-400' : 'text-gray-400/90'}`}>
+    <p className={`text-xs leading-relaxed ${variant === 'full' ? 'text-gray-400' : 'text-[#5c6570]'}`}>
       {PRIVACY_COPY}
     </p>
   );
@@ -200,7 +239,8 @@ export default function LeadForm({
 
   if (variant === 'full') {
     return (
-      <form onSubmit={handleSubmit} className={`${compact || compactSpacing ? 'space-y-2.5' : 'space-y-3'} ${className}`} noValidate>
+      <form onSubmit={handleSubmit} className={`relative ${compact || compactSpacing ? 'space-y-2.5' : 'space-y-3'} ${className}`} noValidate>
+        {honeypotField}
         <div>
           <FieldLabel htmlFor={ids.name}>Your name (required)</FieldLabel>
           <input
@@ -342,7 +382,8 @@ export default function LeadForm({
   const isHero = variant === 'hero';
 
   return (
-    <form onSubmit={handleSubmit} className={className} noValidate>
+    <form onSubmit={handleSubmit} className={`relative ${className}`} noValidate>
+      {honeypotField}
       <div className="flex flex-col gap-2.5">
         <div>
           <FieldLabel htmlFor={ids.name}>Your name (required)</FieldLabel>
@@ -356,7 +397,7 @@ export default function LeadForm({
             required
             autoComplete="name"
             aria-invalid={touched.name && !form.name.trim()}
-            className={`input-brand w-full px-4 py-3 bg-white/10 border border-white/25 text-white placeholder-white/55 focus:outline-none focus:border-gold focus:bg-white/15 transition-colors text-sm ${touched.name && !form.name.trim() ? 'border-red-400' : ''}`}
+            className={`input-brand w-full px-4 py-3 bg-white border border-black/15 text-headline placeholder-[#6b7280] focus:outline-none focus:border-gold transition-colors text-sm ${touched.name && !form.name.trim() ? 'border-red-400' : ''}`}
           />
         </div>
         <div>
@@ -373,7 +414,7 @@ export default function LeadForm({
             inputMode="tel"
             autoComplete="tel"
             aria-invalid={phoneInvalid}
-            className={`input-brand w-full px-4 py-3 bg-white/10 border border-white/25 text-white placeholder-white/55 focus:outline-none focus:border-gold focus:bg-white/15 transition-colors text-sm ${inputErrorClass(phoneInvalid)}`}
+            className={`input-brand w-full px-4 py-3 bg-white border border-black/15 text-headline placeholder-[#6b7280] focus:outline-none focus:border-gold transition-colors text-sm ${inputErrorClass(phoneInvalid)}`}
           />
           {phoneInvalid && <p className="text-red-300 text-xs mt-1">Enter a valid 10-digit number.</p>}
         </div>
@@ -386,8 +427,8 @@ export default function LeadForm({
               value={form.reason}
               onChange={handleChange}
               onBlur={() => setTouched(t => ({ ...t, reason: true }))}
-              className="input-brand w-full px-4 py-3 bg-white/10 border border-white/25 text-white focus:outline-none focus:border-gold focus:bg-white/15 transition-colors text-sm"
-              style={{ colorScheme: 'dark' }}
+              className="input-brand w-full px-4 py-3 bg-white border border-black/15 text-headline focus:outline-none focus:border-gold transition-colors text-sm"
+              style={{ colorScheme: 'light' }}
             >
               {reasonOptions.map(opt => (
                 <option key={opt.value || 'default'} value={opt.value} className="text-headline bg-charcoal-dark">
@@ -400,7 +441,7 @@ export default function LeadForm({
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full rounded-brand bg-[#F5A623] hover:bg-[#ffb739] active:bg-gold-dark text-white font-bold py-4 text-sm tracking-wide transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(245,166,35,0.30)] active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed mt-0.5"
+          className="w-full btn-gold py-4 text-sm tracking-[0.04em] disabled:opacity-60 disabled:cursor-not-allowed mt-0.5"
           style={{ letterSpacing: '0.02em' }}
         >
           {status === 'loading' ? 'Sending…' : submitLabel ?? PRIMARY_CTA}

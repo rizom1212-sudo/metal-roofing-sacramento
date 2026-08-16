@@ -534,7 +534,7 @@ export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => {
         }
       : {}),
     services: metalCityServices(area.name),
-    ...metalExtraSections(area.name),
+    ...metalExtraSections(area.name, area.slug),
     ...metalizeAuthority(serviceAreaLocalAuthority[area.slug]),
     ...metalizeConversion(serviceAreaConversion[area.slug]),
     ...(metalEducationalSections[area.slug]

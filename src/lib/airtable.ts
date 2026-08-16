@@ -5,6 +5,7 @@ export interface LeadData {
   service?: string;
   message?: string;
   source_page?: string;
+  website?: string;
 }
 
 export async function submitLead(data: LeadData): Promise<{ success: boolean; error?: string }> {

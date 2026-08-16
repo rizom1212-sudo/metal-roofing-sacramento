@@ -163,8 +163,12 @@ export default function Gallery() {
                   <img
                     src={metalFeaturedImage.src}
                     alt={metalFeaturedImage.alt}
+                    width={1200}
+                    height={800}
                     className="h-[300px] w-full object-contain sm:h-[420px] lg:h-[520px]"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="sync"
+                    {...({ fetchpriority: 'high' } as Record<string, string>)}
                   />
                   <button
                     type="button"

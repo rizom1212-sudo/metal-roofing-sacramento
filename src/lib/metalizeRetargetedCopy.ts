@@ -1,4 +1,4 @@
-import type { BlogPost, BlogSection } from '../data/blog';
+import type { BlogPost, BlogSection } from '../data/blogTypes';
 
 export type MetalIntent = 'inspection' | 'replacement' | 'repair' | 'commercial' | 'storm' | 'general';
 

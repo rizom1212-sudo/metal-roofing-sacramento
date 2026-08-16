@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:ssr && npm run prerender && npm run sitemap && npm run llms && npm run validate:jsonld",
+    "build": "npm run build:ssr && npm run blog:summaries && npm run build:ssr && npm run build:client && npm run prerender && npm run sitemap && npm run llms && npm run validate:jsonld",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
+    "blog:summaries": "node scripts/write-blog-summaries.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "prerender": "node scripts/prerender.mjs",

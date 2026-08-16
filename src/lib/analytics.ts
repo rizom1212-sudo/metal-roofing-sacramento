@@ -40,19 +40,27 @@ export function trackClickToSms(location: string) {
 export function trackGenerateLead(params: {
   sourcePage: string;
   formVariant?: string;
-  /** Non-PII service intent code from the form (e.g. leak, replacement). */
+  /** Human-readable service label. Prefer the user's selected reason. */
   service?: string;
   formLocation?: string;
 }) {
+  const hostname = typeof window !== 'undefined' ? window.location.hostname : undefined;
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : undefined;
+
   gtagEvent('generate_lead', {
     event_category: 'conversion',
     event_label: params.sourcePage,
     source_page: params.sourcePage,
+    hostname,
+    pathname,
     form_variant: params.formVariant,
     form_location: params.formLocation ?? params.formVariant ?? params.sourcePage,
+    service: params.service || undefined,
     service_needed: params.service || undefined,
     cta_type: 'lead_form',
-    ...withAttribution(),
+    ...withAttribution({
+      service_context: params.service || undefined,
+    }),
   });
 }
 

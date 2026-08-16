@@ -245,7 +245,7 @@ export function ColfaxInspectionForm() {
         hideReason
         compactSpacing
         defaultCity="Colfax"
-        defaultReason="inspection"
+        defaultReason="metal-inspection"
         submitLabel="Request My Roof Inspection"
       />
     </div>
@@ -292,7 +292,7 @@ export function ColfaxSidebarForm() {
         variant="hero"
         hideReason
         defaultCity="Colfax"
-        defaultReason="inspection"
+        defaultReason="metal-inspection"
         submitLabel="Request My Roof Inspection"
       />
       <TrustResponseLine className="mt-3 text-gray-500" />

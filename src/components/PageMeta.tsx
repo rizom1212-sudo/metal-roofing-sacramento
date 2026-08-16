@@ -4,7 +4,7 @@ import { getOgImage, getPageMeta } from '../data/pageMeta';
 import { ASSETS } from '../data/assets';
 import { absoluteAssetUrl, absoluteUrl } from '../data/domain';
 import { BRAND_NAME } from '../data/site';
-import { publicRoutes } from '../data/routes';
+import { getPublicPaths } from '../data/publicPaths';
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   const selector = `meta[${attr}="${key}"]`;
@@ -48,7 +48,7 @@ function upsertLink(rel: string, href: string) {
 
 export default function PageMeta() {
   const { pathname } = useLocation();
-  const knownPaths = useMemo(() => new Set(publicRoutes.map(route => route.path)), []);
+  const knownPaths = useMemo(() => new Set(getPublicPaths()), []);
 
   useEffect(() => {
     const existingPreload = document.getElementById('preload-lcp-hero');

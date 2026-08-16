@@ -1,5 +1,5 @@
 import { DEFAULT_OG_IMAGE } from './assets';
-import { blogPosts } from './blog';
+import { blogSummaries } from './blogSummaries';
 import { serviceAreas } from './serviceAreas';
 import { BRAND_NAME, OPERATOR_DISCLOSURE, PHONE_DISPLAY } from './site';
 
@@ -116,7 +116,7 @@ export const PAGE_META: Record<string, PageMetaConfig> = {
 export function getPageMeta(pathname: string): PageMetaConfig {
   if (pathname.startsWith('/blog/') && pathname !== '/blog') {
     const slug = pathname.replace('/blog/', '');
-    const post = blogPosts.find(item => item.slug === slug);
+    const post = blogSummaries.find(item => item.slug === slug);
     if (post) {
       return {
         title: post.seoTitle ?? `${post.title} | ${SITE_NAME}`,

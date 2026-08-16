@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -86,20 +84,52 @@
     transform-origin: 58% 62%;
   }
   .btn-gold {
-    @apply relative overflow-hidden bg-gold text-white font-semibold px-6 py-3 rounded-brand transition-all duration-300 ease-out hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(196,132,58,0.24)] active:translate-y-0 active:bg-gold-dark active:shadow-[0_4px_12px_rgba(166,107,40,0.18)];
-  }
-  .btn-gold::after {
-    content: '';
-    position: absolute;
-    inset: -60% auto -60% -35%;
-    width: 28%;
-    transform: translateX(-180%) rotate(18deg);
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
-    animation: cta-shine 9s ease-in-out infinite;
-    pointer-events: none;
+    @apply relative bg-gold text-white font-semibold px-6 py-3 rounded-brand transition-colors duration-200 ease-out hover:bg-gold-light active:bg-gold-dark;
   }
   .btn-outline {
-    @apply border-2 border-white text-white font-semibold px-6 py-3 rounded-brand transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:text-charcoal hover:shadow-[0_10px_24px_rgba(255,255,255,0.16)] active:translate-y-0 active:shadow-none;
+    @apply border border-white/70 text-white font-semibold px-6 py-3 rounded-brand transition-colors duration-200 ease-out hover:bg-white hover:text-charcoal active:bg-white/90;
+  }
+  .brand-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c4843a;
+    line-height: 1;
+  }
+  .brand-kicker::before {
+    content: '';
+    width: 1.35rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.8;
+  }
+  .brand-kicker-light {
+    color: #e0b06a;
+  }
+  .brand-seam {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 3px;
+    height: 1.85rem;
+    flex-shrink: 0;
+  }
+  .brand-seam > span {
+    display: block;
+    width: 2px;
+    background: currentColor;
+  }
+  .brand-seam > span:nth-child(1) {
+    opacity: 0.38;
+  }
+  .brand-seam > span:nth-child(2) {
+    opacity: 0.7;
+  }
+  .brand-seam > span:nth-child(3) {
+    opacity: 1;
   }
   .section-heading {
     @apply text-3xl md:text-4xl font-bold text-headline leading-tight tracking-tight;
@@ -246,10 +276,34 @@
 
 @layer utilities {
   .nav-link {
-    @apply text-gray-300 hover:text-white text-sm font-medium transition-colors tracking-wide;
+    @apply relative text-[#f3eee4] hover:text-white text-[12px] xl:text-[13px] font-medium transition-colors tracking-[0.06em] uppercase;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.15rem;
+    height: 1px;
+    background: #c4843a;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
   }
   .nav-link-active {
-    @apply text-white font-semibold text-sm tracking-wide;
+    @apply relative text-white font-semibold text-[12px] xl:text-[13px] tracking-[0.06em] uppercase;
+  }
+  .nav-link-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.15rem;
+    height: 1px;
+    background: #c4843a;
   }
 }
 
@@ -346,8 +400,7 @@
     transform: none !important;
   }
 
-  .hero-cinematic-image,
-  .btn-gold::after {
+  .hero-cinematic-image {
     animation: none !important;
   }
 

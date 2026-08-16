@@ -37,7 +37,7 @@ export default function SeasonalBanner({ dismissed = false, onDismiss }: Seasona
 
   return (
     <div
-      className="bg-charcoal-dark border-b border-gold/25 px-3 py-1.5 text-xs text-gray-100 sm:px-4 sm:py-2.5 sm:text-sm"
+      className="bg-[#080c11] border-b border-white/10 px-3 py-1 text-[11px] text-[#e8e4db] sm:px-4 sm:py-1.5 sm:text-xs"
       role="region"
       aria-label="Seasonal roofing reminder"
     >
@@ -47,7 +47,7 @@ export default function SeasonalBanner({ dismissed = false, onDismiss }: Seasona
           {isRain ? (
             <>
               Storm season?{' '}
-              <Link to="/metal-roof-repair" className="inline-flex items-center gap-1 text-gold font-extrabold hover:text-gold-light hover:underline transition-colors">
+              <Link to="/metal-roof-repair" className="inline-flex items-center gap-1 text-gold font-semibold hover:text-gold-light transition-colors">
                 Metal roof leak help <span aria-hidden>→</span>
               </Link>{' '}
               with priority assessment when conditions allow.

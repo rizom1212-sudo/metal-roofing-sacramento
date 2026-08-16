@@ -1,10 +1,12 @@
 import { blogPosts } from './blog';
 import { PAGE_META } from './pageMeta';
 import { serviceAreas } from './serviceAreas';
-import { COLFAX_CLUSTER_CATEGORY } from './blogColfaxHomeHardening';
-import { FOLSOM_CLUSTER_CATEGORY } from './blogFolsomRoofingCluster';
-import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from './blogElDoradoHillsRoofingCluster';
-import { METAL_CLUSTER_CATEGORY } from './blogMetalRoofingCluster';
+import {
+  COLFAX_CLUSTER_CATEGORY,
+  EL_DORADO_HILLS_CLUSTER_CATEGORY,
+  FOLSOM_CLUSTER_CATEGORY,
+  METAL_CLUSTER_CATEGORY,
+} from './blogCategories';
 
 const SERVICE_ROUTES = [
   '/metal-roofing',

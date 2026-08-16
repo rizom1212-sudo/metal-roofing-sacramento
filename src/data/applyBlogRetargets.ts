@@ -68,9 +68,9 @@ const RETARGETS: Record<string, Retarget> = {
     title: 'Metal Roof Inspection Cost in Sacramento',
     seoTitle: 'Metal Roof Inspection Cost Sacramento | Free Residential',
     excerpt:
-      'Standard residential metal roof inspections with PRC 13 are free. Commercial metal inspections are scheduled when you contact us. No invented price list.',
+      'Standard residential metal roof inspections with PRC 13 are free. Commercial metal inspections are scheduled when you contact us. We do not publish a commercial price list.',
     first:
-      'Short answer: standard residential metal roof inspections are free with written findings and no obligation. We do not publish a fake commercial price sheet. Commercial metal inspections are scheduled when you contact us, and we confirm expectations for that visit.',
+      'Short answer: standard residential metal roof inspections are free with written findings and no obligation. We do not publish a commercial price list. Commercial metal inspections are scheduled when you contact us, and we confirm expectations for that visit.',
     services: s(inspect, hub),
   },
   'roof-inspection-checklist': {
@@ -151,7 +151,7 @@ const RETARGETS: Record<string, Retarget> = {
     excerpt:
       'Standard residential metal roof inspections with PRC 13 are free and include written findings. Commercial visits are scheduled separately.',
     first:
-      'Short answer: yes — standard residential metal roof inspections are free, with no obligation, and include written findings. That claim is for residential metal inspections, not a separate Metal Roofing Sacramento Google listing and not an invented commercial freebie.',
+      'Short answer: yes — standard residential metal roof inspections are free, with no obligation, and include written findings. That applies to residential metal inspections. Commercial metal inspections are scheduled when you contact us.',
     services: s(inspect, hub),
   },
   'storm-damage-roof-repair-sacramento': {
@@ -232,7 +232,7 @@ const RETARGETS: Record<string, Retarget> = {
     excerpt:
       'Financing may be available on qualifying metal roof projects. Eligibility depends on the lender and scope. Ask during inspection.',
     first:
-      'Short answer: financing may be available on qualifying metal roof projects. We do not invent a named loan product, rate, or approval. Ask during your metal roof inspection.',
+      'Short answer: financing may be available on qualifying metal roof projects. Rates, products, and approval belong to the lender. Ask during your metal roof inspection.',
     services: s(replace, inspect, hub),
   },
   'how-long-does-roof-replacement-take': {
@@ -259,7 +259,7 @@ const RETARGETS: Record<string, Retarget> = {
     excerpt:
       'Dry months are easier for metal replacement, but a failing roof should not wait on the calendar. Weather still affects scheduling.',
     first:
-      'Short answer: dry weather is easier for tear-off and metal installation, which is why many Sacramento replacements land outside the heaviest rain. A leaking or failing covering should not wait for a perfect month. We schedule around weather rather than inventing a guaranteed start date.',
+      'Short answer: dry weather is easier for tear-off and metal installation, which is why many Sacramento replacements land outside the heaviest rain. A leaking or failing covering should not wait for a perfect month. We schedule around weather rather than promising a fixed start date.',
     services: s(replace, install, hub),
   },
   'roof-replacement-for-older-homes': {
@@ -268,16 +268,16 @@ const RETARGETS: Record<string, Retarget> = {
     excerpt:
       'Older homes can take metal when the structure and deck support it. Inspection has to see the actual roof, not a catalog photo.',
     first:
-      'Short answer: older Sacramento homes can be good metal candidates when decking and structure support the system. Mixed planes, chimneys, and low-slope sections need honest detailing. Inspection first — we do not invent a “historic metal package.”',
+      'Short answer: older Sacramento homes can be good metal candidates when decking and structure support the system. Mixed planes, chimneys, and low-slope sections need honest detailing. Inspection comes first.',
     services: s(replace, inspect, hub),
   },
   'roof-repair-cost-sacramento': {
     title: 'Metal Roof Repair Cost in Sacramento',
     seoTitle: 'Metal Roof Repair Cost Sacramento',
     excerpt:
-      'Metal repair cost depends on the failed detail — flashing, panel, fastener, or penetration — and access. Quotes follow inspection. No invented price menu.',
+      'Metal repair cost depends on the failed detail — flashing, panel, fastener, or penetration — and access. Quotes follow inspection rather than a published per-repair price list.',
     first:
-      'Short answer: metal roof repair is quoted after we see the leak path. A pipe boot is not the same job as replacing a damaged pan or rebuilding a wall flashing. We do not publish a fake per-repair menu.',
+      'Short answer: metal roof repair is quoted after we see the leak path. A pipe boot is not the same job as replacing a damaged pan or rebuilding a wall flashing. We do not publish a per-repair price list.',
     services: s(repair, inspect, replace),
   },
   'roof-flashing-repair-sacramento': {
@@ -419,9 +419,9 @@ const RETARGETS: Record<string, Retarget> = {
     title: 'Metal Roofing Costs in Folsom, CA',
     seoTitle: 'Metal Roofing Cost Folsom CA',
     excerpt:
-      'Folsom metal roofing cost follows inspection: size, pitch, profile, tear-off, and deck. No invented Folsom price list.',
+      'Folsom metal roofing cost follows inspection: size, pitch, profile, tear-off, and deck. We do not publish a Folsom price list.',
     first:
-      'Short answer: Folsom metal cost is quoted after inspection. Heat and access can affect labor. We do not publish a fake per-square Folsom menu. See [metal roofing cost](/blog/metal-roofing-cost-sacramento).',
+      'Short answer: Folsom metal cost is quoted after inspection. Heat and access can affect labor. We do not publish a per-square Folsom price list. See [metal roofing cost](/blog/metal-roofing-cost-sacramento).',
     services: s(replace, hub, { label: 'Folsom service area', href: '/service-areas/folsom' }),
   },
   'roof-leak-repair-folsom-ca': {

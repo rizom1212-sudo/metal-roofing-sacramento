@@ -520,7 +520,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
     ctaLabel: CTA_STANDING_SEAM,
     formTitle: CTA_STANDING_SEAM,
     formSubtitle: 'Ask about standing seam for your home or building. We inspect and quote the profile that actually fits.',
-    defaultReason: 'metal-estimate',
+    defaultReason: 'standing-seam',
     sourcePage: 'standing-seam-metal-roofing',
     pageName: 'Standing Seam Metal Roofing Sacramento',
     serviceName: 'Standing seam metal roofing',
@@ -663,7 +663,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
     ctaLabel: CTA_RESIDENTIAL_METAL,
     formTitle: CTA_RESIDENTIAL_METAL,
     formSubtitle: 'Tell us about the house. Residential inspections are free with written findings and no obligation.',
-    defaultReason: 'metal-estimate',
+    defaultReason: 'residential-metal',
     sourcePage: 'residential-metal-roofing',
     pageName: 'Residential Metal Roofing Sacramento',
     serviceName: 'Residential metal roofing',
@@ -685,7 +685,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
     problems: [
       'Will metal look right on this house?',
       'Is the extra upfront cost worth it if we plan to stay?',
-      'What colors and styles are possible without a fake catalog?',
+      'What colors and styles fit this house and the metal system we specify?',
       'How much maintenance will we actually do?',
       'Should we replace the current roof with metal or keep repairing shingles?',
     ],
@@ -698,7 +698,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
         ],
       },
       {
-        heading: 'Climate, energy, and lifespan—without fake numbers',
+        heading: 'Climate, energy, and lifespan without published savings percentages',
         paragraphs: [
           'Metal reflects solar energy compared with dark, worn asphalt, which helps during Sacramento summers. Metal is not insulation; attic ventilation still matters. We do not publish energy-savings percentages.',
           'Quality metal is commonly marketed for 50+ year service. Real life depends on profile, coating, installation, and maintenance. Shingles in this climate often last a shorter cycle. If you may sell within a few years, architectural shingles can still be the practical choice. If you plan to stay, metal’s ownership story is stronger.',
@@ -794,14 +794,14 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
     id: 'commercial-metal-roofing',
     path: '/commercial-metal-roofing',
     h1: 'Commercial Metal Roofing',
-    h1Accent: 'Metal systems for buildings—not TPO or EPDM',
+    h1Accent: 'Metal systems for commercial buildings',
     heroIntro:
-      'This page is only for commercial and light-commercial buildings where a metal roof system is the right covering. It is not the historical flat-roof membrane page. If the building needs TPO, EPDM, or similar membranes, that is a different conversation on a different URL.',
+      'This page focuses specifically on commercial metal roofing systems for commercial and light-commercial buildings where a metal panel system is the right covering — installation, reroofing, repair, standing seam, and inspection.',
     heroKicker: 'Metal on commercial buildings',
     ctaLabel: CTA_COMMERCIAL_METAL,
     formTitle: CTA_COMMERCIAL_METAL,
     formSubtitle: 'Describe the building and the current roof. We will tell you if a metal system is in play.',
-    defaultReason: 'metal-estimate',
+    defaultReason: 'commercial-metal',
     sourcePage: 'commercial-metal-roofing',
     pageName: 'Commercial Metal Roofing Sacramento',
     serviceName: 'Commercial metal roofing',
@@ -809,10 +809,10 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       'Commercial metal roofing for Sacramento-area buildings where metal systems are the right fit, including metal installation, reroofing, repair, and inspection.',
     answerTitle: 'What commercial metal roofing means here',
     answer:
-      'Commercial metal roofing is metal panel work on commercial or light-commercial buildings: standing seam or other metal profiles, metal reroofing, repairs, new metal installation, and inspection of those systems. PRC 13 Roofing Inc. primarily serves small to mid-size commercial properties in the Sacramento area. We do not invent a list of building types we have not verified.',
+      'Commercial metal roofing is metal panel work on commercial or light-commercial buildings: standing seam or other metal profiles, metal reroofing, repairs, new metal installation, and inspection of those systems. PRC 13 Roofing Inc. primarily serves small to mid-size commercial properties in the Sacramento area. Scope is confirmed after we see the building and the existing covering.',
     answerPoints: [
-      'Metal panel systems only on this page',
-      'Not a TPO, EPDM, or built-up membrane offering',
+      'Metal panel systems for commercial and light-commercial buildings',
+      'Installation, reroofing, repair, standing seam, and inspection',
       'Small to mid-size commercial properties',
       'Inspection before repair, reroof, or new metal install',
     ],
@@ -830,7 +830,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         heading: 'Metal systems, not membranes',
         paragraphs: [
-          'Standing seam and other metal panels are the subject. Historical commercial roofing content on this domain still discusses TPO and EPDM for flat and low-slope membranes. That work is not what this specialist page sells.',
+          'This page focuses specifically on commercial metal roofing systems — standing seam and other metal panels. Membrane assemblies are a different covering and are not the hire path here.',
           'If we inspect and the honest covering is not metal, we will say so rather than force a panel system onto a roof that needs a different assembly.',
         ],
       },
@@ -857,7 +857,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         heading: 'What we will not claim',
         paragraphs: [
-          'We will not list unverified building types, square-footage capacities, or manufacturer certifications. PRC 13 is a California licensed roofing contractor (CA CSLB #1087153) serving the greater Sacramento region, including light commercial properties. Scope is confirmed after we see the roof.',
+          'Scope is confirmed after we see the roof. PRC 13 is a California licensed roofing contractor (CA CSLB #1087153) serving the greater Sacramento region, including light commercial properties. Building type, access, and the existing covering decide whether a metal system is the right path.',
         ],
       },
     ],
@@ -884,7 +884,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         question: 'Do you install TPO or EPDM on this page?',
         answer:
-          'No. This page is commercial metal roofing only. Historical membrane commercial content may still exist elsewhere on the domain; it is not the offering here.',
+          'This page focuses specifically on commercial metal roofing systems. Membrane roofs are a different assembly and are not the offering here.',
       },
       {
         question: 'What commercial metal work do you perform?',
@@ -911,7 +911,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         question: 'Is commercial metal roofing the same as commercial roofing on this site?',
         answer:
-          'No. This page is metal panel systems. The historical commercial roofing URL covers flat and low-slope membranes such as TPO and EPDM and is not this specialist offering.',
+          'This page is for metal panel systems. Flat and low-slope membrane assemblies are a different covering and are not the hire path on this page.',
       },
       {
         question: 'Can a commercial building get standing seam?',
@@ -978,7 +978,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         heading: 'Repair vs replacement assessment',
         paragraphs: [
-          'The useful output is a recommendation you can act on: a focused metal repair, a replacement conversation, or no work if the roof is sound. We would rather send you away with a clean report than invent a project.',
+          'The useful output is a recommendation you can act on: a focused metal repair, a replacement conversation, or no work if the roof is sound. We would rather send you away with a clean report than recommend work the roof does not need.',
           'If the roof is not metal yet, the inspection still informs whether a metal replacement is timely or whether the current covering has remaining life.',
         ],
       },
@@ -991,7 +991,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         heading: 'What inspection does not include',
         paragraphs: [
-          'We do not offer metal roof cleaning. We do not invent laboratory corrosion testing. We do not claim same-day reports as a guarantee; we aim to schedule inspections quickly during Monday–Friday business hours.',
+          'We do not offer metal roof cleaning or laboratory corrosion testing. We do not claim same-day reports as a guarantee; we aim to schedule inspections quickly during Monday–Friday business hours.',
         ],
       },
     ],

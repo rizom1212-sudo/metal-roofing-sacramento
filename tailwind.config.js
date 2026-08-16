@@ -22,7 +22,7 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        brand: '8px',
+        brand: '2px',
       },
     },
   },

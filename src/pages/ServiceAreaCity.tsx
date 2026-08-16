@@ -13,7 +13,7 @@ import TelLink from '../components/TelLink';
 import { SERVICE_AREA_FORM_SECTION_ID } from '../data/serviceAreaConversion';
 import { LICENSE_INSURED_LINE, PHONE_DISPLAY } from '../data/site';
 import { serviceAreas } from '../data/serviceAreas';
-import { blogPosts } from '../data/blog';
+import { blogSummaries } from '../data/blogSummaries';
 import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
 import { cityHubServiceCtaLabel, resolveCityHubServices } from '../data/cityHubServices';
 import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
@@ -34,7 +34,7 @@ export default function ServiceAreaCity() {
   const hubServices = resolveCityHubServices(area.name, area.services);
   const localHub = LOCAL_ROOFING_HUBS[area.slug];
   const localResources = localHub
-    ? blogPosts.filter(post => post.category === localHub.category).slice(0, SERVICE_HUB_RESOURCE_LIMIT)
+    ? blogSummaries.filter(post => post.category === localHub.category).slice(0, SERVICE_HUB_RESOURCE_LIMIT)
     : [];
   const featured = area.featuredProgram;
   const heroLead = area.heroLead ?? 'Metal Roofing in';
