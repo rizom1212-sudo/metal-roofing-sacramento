@@ -112,9 +112,9 @@ function airtableDevApi(env: Record<string, string>) {
               return;
             }
 
-            const token = env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
+            const token = env.AIRTABLE_TOKEN || env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
             const baseId = env.AIRTABLE_BASE_ID || 'appaVNgcgomXyQ6Z2';
-            const tableName = env.AIRTABLE_TABLE_NAME || 'PRC Leads';
+            const tableId = env.AIRTABLE_TABLE_ID || env.AIRTABLE_TABLE_NAME || 'tbljeowKnkIGXb62x';
             const webhookUrl = env.AIRTABLE_LEAD_WEBHOOK_URL;
             const { name, phone, pageUrl, email, service, message, sourcePage } = validation.value;
             const inquiry = [service, email ? `Email: ${email}` : '', message]
@@ -123,7 +123,7 @@ function airtableDevApi(env: Record<string, string>) {
               .trim();
 
             if (!token) {
-              console.error('[airtable:dev] Missing AIRTABLE_PERSONAL_ACCESS_TOKEN');
+              console.error('[airtable:dev] Missing AIRTABLE_TOKEN');
               response.statusCode = 500;
               response.setHeader('Content-Type', 'application/json');
               response.end(JSON.stringify({ success: false, error: 'Airtable token is not configured' }));
@@ -143,13 +143,13 @@ function airtableDevApi(env: Record<string, string>) {
 
             console.info('[airtable:dev] Creating lead record', {
               baseId,
-              tableName,
+              tableId,
               fields: Object.keys(payload.fields),
               pageUrl: body.pageUrl,
             });
 
             const airtableResponse = await fetch(
-              `${AIRTABLE_API_BASE}/${baseId}/${encodeURIComponent(tableName)}`,
+              `${AIRTABLE_API_BASE}/${baseId}/${encodeURIComponent(tableId)}`,
               {
                 method: 'POST',
                 headers: {

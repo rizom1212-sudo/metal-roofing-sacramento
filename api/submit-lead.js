@@ -81,14 +81,14 @@ export default async function handler(request, response) {
     return;
   }
 
-  const token = process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
+  const token = process.env.AIRTABLE_TOKEN || process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
   const baseId = process.env.AIRTABLE_BASE_ID || 'appaVNgcgomXyQ6Z2';
-  const tableName = process.env.AIRTABLE_TABLE_NAME || 'PRC Leads';
+  const tableId = process.env.AIRTABLE_TABLE_ID || process.env.AIRTABLE_TABLE_NAME || 'tbljeowKnkIGXb62x';
   // Shared PRC 13 Airtable base/table. Leads from metalroofingsacramento.com are distinguished by Page URL.
   const webhookUrl = process.env.AIRTABLE_LEAD_WEBHOOK_URL;
 
   if (!token) {
-    console.error('[airtable] Missing AIRTABLE_PERSONAL_ACCESS_TOKEN');
+    console.error('[airtable] Missing AIRTABLE_TOKEN');
     sendJson(response, 500, { success: false, error: 'Airtable token is not configured' });
     return;
   }
@@ -125,13 +125,13 @@ export default async function handler(request, response) {
   const payload = getAirtablePayload({ name, phone, pageUrl, inquiry });
   console.info('[airtable] Creating lead record', {
     baseId,
-    tableName,
+    tableId,
     fields: Object.keys(payload.fields),
     pageUrl,
   });
 
   const airtableResponse = await fetch(
-    `${AIRTABLE_API_BASE}/${baseId}/${encodeURIComponent(tableName)}`,
+    `${AIRTABLE_API_BASE}/${baseId}/${encodeURIComponent(tableId)}`,
     {
       method: 'POST',
       headers: {
