@@ -1,18 +1,18 @@
 import { metalCityOverlays, metalCityServices, metalEducationalSections, metalExtraSections } from './metalCityContent.ts';
 import { rewriteHireLanguage } from '../lib/metalizeRetargetedCopy';
 import { rewriteLinksInUnknownValue } from '../lib/rewritePublicLinks';
-import { serviceAreaDetails } from './serviceAreaDetails.ts';
-import { type ServiceAreaExtraSections } from './serviceAreaExtraSections.ts';
-import { serviceAreaLocalAuthority, type ServiceAreaLocalAuthority } from './serviceAreaLocalAuthority.ts';
-import { serviceAreaConversion, type ServiceAreaConversion } from './serviceAreaConversion.ts';
-import {
-  serviceAreaEducationalSections,
-  type ServiceAreaEducationalSection,
-} from './serviceAreaEducationalSections.ts';
+import { type ServiceAreaLocalAuthority, serviceAreaLocalAuthority } from './serviceAreaLocalAuthority.ts';
+import { type ServiceAreaConversion, serviceAreaConversion } from './serviceAreaConversion.ts';
 import {
   serviceAreaFeaturedPrograms,
   type ServiceAreaFeaturedProgram,
 } from './serviceAreaFeaturedPrograms.ts';
+
+export interface ServiceAreaEducationalSection {
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+}
 
 interface ServiceAreaBase {
   name: string;
@@ -41,453 +41,28 @@ interface ServiceAreaBase {
 }
 
 export type ServiceArea = ServiceAreaBase &
-  ServiceAreaExtraSections &
+  ReturnType<typeof metalExtraSections> &
   ServiceAreaLocalAuthority &
   ServiceAreaConversion & {
     educationalSection?: ServiceAreaEducationalSection;
     featuredProgram?: ServiceAreaFeaturedProgram;
   };
 
-const rawServiceAreas: ServiceAreaBase[] = [
-  {
-    name: 'Sacramento',
-    slug: 'sacramento',
-    blurb: 'Our home base for inspections across Sacramento neighborhoods where summer heat, older roof decking, and winter rain can expose leaks quickly.',
-    metaTitle: 'Sacramento Roofing Service Area | Neighborhoods | PRC 13',
-    metaDescription: 'PRC 13 Roofing serves Sacramento neighborhoods with free inspections, then routes you to the right service page for repair, replacement, emergency leaks, metal, commercial, or gutters.',
-    heroLead: 'Neighborhood Roofing in',
- heroIntro: 'From older East Sacramento bungalows to suburban homes near Natomas, Sacramento roofs deal with heat, dry attic spaces, tree debris, and sudden winter rain that can reveal hidden wear. This page is the Sacramento service-area hub, specific hire details live on each service page.',
- quickAnswer: 'PRC 13 Roofing is based in Sacramento and helps homeowners understand roof condition first. Use this hub for local context, then follow through to the service page that matches what you need, repair, replacement, emergency leak help, inspection, metal, commercial, or gutters.',
-    quickPoints: ['Sacramento neighborhood roofing context', 'Free inspections with written findings', 'Service pages own repair, replacement, and emergency hire intent', 'Project photos tagged Sacramento in our gallery'],
-    localHeading: 'Sacramento Roof Problems We See Often',
-    localContent: 'Sacramento homes often show roof wear first around valleys, vents, gutters, and shaded roof sections under mature trees. Summer heat can dry out shingles and sealants, while winter storms test flashing, underlayment, and attic ventilation.',
-    localSignals: ['Ceiling stains after the first heavy rain', 'Granules collecting near downspouts', 'Lifted shingles after windy weather', 'Soft decking around vents or valleys', 'Repeated repairs on roofs near the end of service life'],
-    services: [
-      { title: 'Roof Repair', href: '/roof-repair', desc: 'Leak repair, missing shingles, flashing issues, storm damage, and repair-vs-replacement guidance. The roof repair page owns this service for Sacramento.' },
-      { title: 'Roof Replacement', href: '/roof-replacement', desc: 'Full tear-off and replacement planning, including decking review, material options, and a clean final walkthrough.' },
-      { title: 'Roof Inspections', href: '/roof-inspection', desc: 'Free inspections with written findings for leaks, storm wear, aging materials, and next-step planning.' },
-      { title: 'Emergency Roof Repair', href: '/emergency-roof-repair', desc: 'Urgent help for active leaks, storm damage, and temporary stabilization when water is entering the home.' },
-      { title: 'Metal Roofing', href: '/metal-roofing', desc: 'Standing seam and other metal roofing options for homeowners who want long life, heat performance, and lower maintenance.' },
-      { title: 'Gutters & Siding', href: '/gutters-siding', desc: 'Gutter installation, gutter guards, and siding. PRC 13 does not offer fascia or soffit repair.' },
-      { title: 'Commercial Roofing', href: '/commercial-roofing', desc: 'Flat roof repair, replacement, and maintenance for Sacramento-area commercial properties, including TPO, EPDM, and modified bitumen systems.' },
-    ],
-    faqs: [
-      { question: 'Is this the Sacramento hire page for roof replacement?', answer: 'No. This is the Sacramento service-area hub. Roof replacement details live on the roof replacement page.' },
-      { question: 'Where do I go for an active leak?', answer: 'Use the emergency roof repair page when water is entering the home.' },
-      { question: 'Do you inspect roofs near large trees in Sacramento neighborhoods?', answer: 'Yes. We check debris buildup, shaded roof sections, gutters, valleys, and areas where branches or leaves can trap moisture against the roof.' },
-      { question: 'Do you install metal roofing in Sacramento?', answer: 'Yes. Metal roofing details live on the metal roofing service page.' },
-    ],
-    cta: 'Schedule a free roof inspection in Sacramento, CA.',
-  },
-  {
-    name: 'Rancho Cordova',
-    slug: 'rancho-cordova',
-    blurb: 'Roof repair and replacement for Rancho Cordova homeowners, including storm leak checks, shingle repairs, and full reroofs with clear written quotes.',
-    metaTitle: 'Rancho Cordova Roofing Company | Repair & Replacement | PRC 13',
-    metaDescription: 'Rancho Cordova roof repair, replacement, and inspections for wind-exposed corridors, sun-aged shingles, and storm leaks near the American River from PRC 13.',
-    heroIntro: 'Rancho Cordova roofs see long sun exposure, wind through open corridors, and winter rain that can expose weak flashing around vents, chimneys, and roof transitions.',
-    quickAnswer: 'We help Rancho Cordova homeowners diagnose leaks, evaluate aging shingles, and plan roof replacement without pressure or unclear recommendations.',
-    quickPoints: ['Storm leak checks and repair planning', 'Aging shingle roof assessments', 'Written estimates before work begins', 'Metal roof options for heat exposure'],
-    localHeading: 'Roofing Concerns Around Rancho Cordova',
-    localContent: 'Many Rancho Cordova homes have roofs that age under direct sun for much of the day. Wind can loosen ridge caps or exposed edges, while seasonal rain finds small gaps around penetrations and older flashing.',
-    localSignals: ['Lifted shingles on exposed roof slopes', 'Water marks near vents or bathroom fans', 'Cracked sealant around roof penetrations', 'Worn ridge caps after wind events', 'Older shingles that shed granules into gutters'],
-    services: [
-      { title: 'Roof Repair in Rancho Cordova', href: '/roof-repair', desc: 'Leak tracing, shingle repair, flashing repair, and practical fixes for storm or wind-related roof damage.' },
-      { title: 'Roof Replacement in Rancho Cordova', href: '/roof-replacement', desc: 'Replacement planning for aging Rancho Cordova roofs, including decking checks and material recommendations built for local heat.' },
-      { title: 'Roof Inspections in Rancho Cordova', href: '/roof-inspection', desc: 'Free inspections that review roof age, storm damage, drainage, ventilation, and areas where water may enter.' },
-      { title: 'Emergency Roof Repair in Rancho Cordova', href: '/emergency-roof-repair', desc: 'Priority support for active leaks, wind damage, temporary protection, and next-step repair guidance.' },
-      { title: 'Metal Roofing in Rancho Cordova', href: '/metal-roofing', desc: 'Metal roof options for homeowners looking for durable performance in sunny, exposed Sacramento Valley conditions.' },
-    ],
-    faqs: [
-      { question: 'How quickly can you inspect a Rancho Cordova roof leak?', answer: 'Active leaks are prioritized, and many inspections can be scheduled quickly depending on weather and crew routing.' },
-      { question: 'What causes roof leaks in Rancho Cordova homes?', answer: 'Common causes include aged shingles, failed flashing, cracked pipe boots, wind-lifted materials, and drainage problems around valleys.' },
-      { question: 'Do you provide written roof replacement quotes in Rancho Cordova?', answer: 'Yes. After inspection, we provide a clear written recommendation and quote so you can compare repair and replacement options.' },
-      { question: 'Is metal roofing a good option in Rancho Cordova?', answer: 'Yes. Metal roofing can be a strong fit for homes with heavy sun exposure and owners who want long service life with lower maintenance.' },
-    ],
-    cta: 'Schedule a free roof inspection in Rancho Cordova, CA.',
-  },
-  {
-    name: 'Roseville',
-    slug: 'roseville',
-    blurb: 'Serving Roseville homes with honest roof inspections, replacement planning, and heat-ready roofing options for long Sacramento Valley summers.',
-    metaTitle: 'Roseville Roofing Company | Roof Repair & Replacement | PRC 13',
-    metaDescription: 'Roof repair, emergency leak help, inspections, and roof replacement in Roseville, CA. Schedule a free inspection with PRC 13 Roofing.',
-    heroIntro: 'Roseville homes often combine newer subdivision roofs, tile or shingle systems, and heavy summer heat that can wear underlayment, sealants, and ventilation details over time.',
-    quickAnswer: 'PRC 13 Roofing gives Roseville homeowners clear roof inspections, repair options, and replacement plans based on condition instead of pressure.',
-    quickPoints: ['Tile and shingle roof assessments', 'Heat and ventilation concerns reviewed', 'Leak repair after winter storms', 'Replacement options for aging subdivisions'],
-    localHeading: 'Roseville Roofing Conditions',
-    localContent: 'In Roseville, roof performance often depends on how well the attic breathes and how protected valleys, flashings, and underlayment remain after years of summer heat. Small cracks or slipped materials can become leaks during heavy rain.',
-    localSignals: ['Broken or slipped tile pieces', 'Dry, brittle shingles on sun-facing slopes', 'Attic heat or ventilation concerns', 'Water stains after wind-driven rain', 'Underlayment wear on older tile roofs'],
-    services: [
-      { title: 'Roof Repair in Roseville', href: '/roof-repair', desc: 'Repairs for leaks, damaged shingles, flashing failures, and roof details affected by heat or storm exposure.' },
-      { title: 'Roof Replacement in Roseville', href: '/roof-replacement', desc: 'Full replacement guidance for older Roseville roofs, with material choices and ventilation details explained before work begins.' },
-      { title: 'Roof Inspections in Roseville', href: '/roof-inspection', desc: 'Free inspections covering tiles, shingles, underlayment clues, drainage, attic ventilation, and roof age.' },
-      { title: 'Emergency Roof Repair in Roseville', href: '/emergency-roof-repair', desc: 'Fast help for active leaks, storm openings, temporary dry-in options, and repair recommendations.' },
-      { title: 'Metal Roofing in Roseville', href: '/metal-roofing', desc: 'Durable metal roofing options for Roseville homeowners considering a long-life roof system with strong heat performance.' },
-    ],
-    faqs: [
-      { question: 'Do you inspect tile roofs in Roseville?', answer: 'Yes. We inspect visible tile damage, underlayment warning signs, flashing, valleys, and leak points without walking unnecessarily on fragile sections.' },
-      { question: 'How do I know if a Roseville roof needs replacement?', answer: 'Repeated leaks, widespread material wear, underlayment concerns, or a roof near the end of its expected life can point toward replacement.' },
-      { question: 'Can you repair storm leaks in Roseville?', answer: 'Yes. We assess the leak source, stabilize urgent problems when needed, and explain whether a focused repair will hold.' },
-      { question: 'Do Roseville homes benefit from metal roofing?', answer: 'Metal roofing can be a good option for homeowners wanting long service life, strong heat performance, and a different look from shingle or tile.' },
-    ],
-    cta: 'Schedule a free roof inspection in Roseville, CA.',
-  },
-  {
-    name: 'Rocklin',
-    slug: 'rocklin',
-    blurb: 'Rocklin roof replacements and leak repairs for tile, shingle, and metal roofs, with practical guidance on repair versus replacement.',
-    metaTitle: 'Rocklin Roofing Company | Repair & Shingle Replacement | PRC 13',
-    metaDescription: 'Roofing services in Rocklin, CA for shingle replacement, roof leaks, storm damage, inspections, and complete roof replacement. Schedule a free inspection.',
-    heroIntro: 'Rocklin roofs often deal with hillside wind exposure, sun-baked slopes, tile systems, and seasonal storms that can push water into weak flashing or valley details.',
-    quickAnswer: 'We inspect Rocklin roofs for storm damage, heat wear, and age-related problems, then explain the repair or replacement path that makes sense.',
-    quickPoints: ['Wind and hillside exposure reviewed', 'Tile, shingle, and metal options', 'Leak checks around valleys and flashing', 'Free inspection with clear recommendations'],
-    localHeading: 'Rocklin Roof Wear Patterns',
-    localContent: 'Some Rocklin homes sit in more exposed areas where wind can test roof edges and ridge details. Combined with summer heat, that exposure can age sealants, loosen materials, and reveal weak spots during rain.',
-    localSignals: ['Ridge cap or edge damage after wind', 'Cracked tiles or displaced shingles', 'Leaks near valleys or wall transitions', 'Sun damage on south-facing slopes', 'Older roofs needing repeated patch repairs'],
-    services: [
-      { title: 'Roof Repair in Rocklin', href: '/roof-repair', desc: 'Repair for roof leaks, wind-lifted materials, cracked tile or shingles, and flashing problems around roof transitions.' },
-      { title: 'Roof Replacement in Rocklin', href: '/roof-replacement/rocklin', desc: 'Asphalt shingle roof replacement for Rocklin homes with aging systems, recurring leaks, or materials no longer worth patching.' },
-      { title: 'Roof Inspections in Rocklin', href: '/roof-inspection', desc: 'Free inspections focused on roof condition, leak risks, ventilation, valleys, penetrations, and storm-related concerns.' },
-      { title: 'Emergency Roof Repair in Rocklin', href: '/emergency-roof-repair', desc: 'Urgent leak assessment and temporary stabilization when rain or wind damage creates an active roof problem.' },
-      { title: 'Metal Roofing in Rocklin', href: '/metal-roofing', desc: 'Metal roofing options for Rocklin homeowners who want durability, clean lines, and strong long-term weather resistance.' },
-    ],
-    faqs: [
-      { question: 'What roof damage is common in Rocklin?', answer: 'Wind-lifted edges, cracked tiles, sun-aged shingles, flashing leaks, and valley wear are common issues we look for in Rocklin.' },
-      { question: 'Can you compare repair and replacement for my Rocklin roof?', answer: 'Yes. We review the roof age, extent of wear, leak history, and decking concerns before recommending repair or replacement.' },
-      { question: 'Do Rocklin homes need special attention after wind events?', answer: 'It is smart to check ridge caps, roof edges, vents, and visible missing or shifted materials after strong wind.' },
-      { question: 'Do you offer free inspections in Rocklin?', answer: 'Yes. PRC 13 Roofing provides free roof inspections for Rocklin homeowners with clear written next steps.' },
-    ],
-    cta: 'Schedule a free roof inspection in Rocklin, CA.',
-  },
-  {
-    name: 'Folsom',
-    slug: 'folsom',
-    blurb: 'Folsom residential roofing for repair, replacement, inspections, and metal roofing options on homes exposed to heat, wind, and seasonal rain.',
-    metaTitle: 'Folsom Roofing Company | Repair & Replacement | PRC 13',
-    metaDescription: 'Roof repair, leak detection, inspections, and roof replacement in Folsom, CA. Get a free inspection and written recommendations from PRC 13 Roofing.',
-    heroIntro: 'Folsom roofs face intense summer heat, occasional wind, and neighborhoods with a mix of tile, shingle, and newer roof systems that still need careful inspection as they age.',
-    quickAnswer: 'We help Folsom homeowners find leak sources, assess heat-related wear, and plan repairs or replacements with clear written recommendations.',
-    quickPoints: ['Tile and shingle roof evaluations', 'Heat exposure and ventilation checks', 'Emergency leak support after storms', 'Replacement planning for long-term value'],
-    localHeading: 'Folsom Roofing Factors',
-    localContent: 'Folsom roof systems can look fine from the street while underlayment, flashing, or ventilation details are starting to fail. Summer heat accelerates aging, and winter rain exposes small problems around valleys and roof penetrations.',
-    localSignals: ['Heat-cracked sealant around vents', 'Leaks where roof planes meet walls', 'Broken tiles or worn shingles', 'Attic heat and ventilation concerns', 'Staining after heavy winter rain'],
-    services: [
-      { title: 'Roof Repair in Folsom', href: '/roof-repair', desc: 'Focused repairs for leaks, damaged materials, flashing issues, and localized roof wear caused by heat or storms.' },
-      { title: 'Roof Replacement in Folsom', href: '/roof-replacement', desc: 'Full replacement guidance for Folsom homeowners comparing shingle, tile, and metal roof options.' },
-      { title: 'Roof Inspections in Folsom', href: '/roof-inspection', desc: 'Free inspections with written findings for roof age, leak risks, ventilation, drainage, and material condition.' },
-      { title: 'Emergency Roof Repair in Folsom', href: '/emergency-roof-repair/folsom', desc: 'Priority help for active leaks, storm openings, temporary protection, and repair planning in Folsom, CA.' },
-      { title: 'Metal Roofing in Folsom', href: '/metal-roofing', desc: 'Metal roofing systems for Folsom homeowners seeking durability, energy performance, and long service life.' },
-    ],
-    faqs: [
-      { question: 'How does Folsom heat affect roofing?', answer: 'Long heat exposure can dry shingles, age sealants, stress underlayment, and make attic ventilation more important.' },
-      { question: 'Do you inspect both tile and shingle roofs in Folsom?', answer: 'Yes. We inspect tile, shingle, and metal systems and explain the specific risks we see for each material.' },
-      { question: 'Can you help with an active leak in Folsom?', answer: 'Yes. We prioritize active leaks and can help identify the source, limit damage, and plan the permanent repair.' },
-      { question: 'When should a Folsom roof be replaced instead of repaired?', answer: 'Replacement may make more sense when wear is widespread, leaks repeat, materials are near end of life, or decking issues are found.' },
-    ],
-    cta: 'Schedule a free roof inspection in Folsom, CA.',
-  },
-  {
-    name: 'Elk Grove',
-    slug: 'elk-grove',
-    blurb: 'Elk Grove homeowners can schedule free roof inspections quickly for leaks, storm damage, aging shingles, and full replacement estimates.',
-    metaTitle: 'Elk Grove Roofing Company | Repair & Replacement | PRC 13',
-    metaDescription: 'Elk Grove roof repair, replacement, and inspections for large suburban roof planes, gutter drainage issues, and storm leaks in newer tracts. PRC 13 Roofing.',
-    heroIntro: 'Elk Grove homes often have broad roof planes, subdivision roof systems, and gutters that need to move winter rain quickly after months of heat and dry weather.',
-    quickAnswer: 'PRC 13 Roofing helps Elk Grove homeowners catch leaks early, repair storm damage, and plan roof replacement before repeated patching gets expensive.',
-    quickPoints: ['Large roof planes and gutter drainage reviewed', 'Storm leak and flashing checks', 'Aging shingle replacement planning', 'Free inspection with clear photos and notes'],
-    localHeading: 'Elk Grove Roofing Conditions',
-    localContent: 'In Elk Grove, long dry stretches can hide roof wear until the first storm. Gutters, valleys, pipe boots, and roof-to-wall flashing need special attention because water moves fast across larger roof surfaces.',
-    localSignals: ['Overflowing gutters during rain', 'Leaks near roof-to-wall transitions', 'Missing or creased shingles after wind', 'Granule loss on older shingle roofs', 'Water marks near ceiling corners'],
-    services: [
-      { title: 'Roof Repair in Elk Grove', href: '/roof-repair', desc: 'Leak repair, shingle repair, flashing repair, and targeted fixes for Elk Grove homes after wind or rain.' },
-      { title: 'Roof Replacement in Elk Grove', href: '/roof-replacement', desc: 'Roof replacement planning for aging shingle and tile systems, including material options and written estimates.' },
-      { title: 'Roof Inspections in Elk Grove', href: '/roof-inspection', desc: 'Free inspections covering visible wear, drainage, attic concerns, storm damage, and whether repair is enough.' },
-      { title: 'Emergency Roof Repair in Elk Grove', href: '/emergency-roof-repair', desc: 'Urgent help for active leaks, storm damage, temporary dry-in, and next-step repairs.' },
-      { title: 'Metal Roofing in Elk Grove', href: '/metal-roofing', desc: 'Metal roofing options for Elk Grove homeowners looking for a durable roof with strong weather performance.' },
-    ],
-    faqs: [
-      { question: 'What should Elk Grove homeowners check after heavy rain?', answer: 'Look for ceiling stains, wet insulation smells, gutter overflow, missing shingles, and debris in valleys or downspouts.' },
-      { question: 'Do you provide roof replacement estimates in Elk Grove?', answer: 'Yes. We inspect first, explain material options, and provide a written estimate for replacement when it is the right path.' },
-      { question: 'Can clogged gutters cause roof leaks in Elk Grove?', answer: 'Yes. Poor drainage can push water into roof edges, fascia, and vulnerable valley areas, especially during hard rain.' },
-      { question: 'Do you repair wind-damaged shingles in Elk Grove?', answer: 'Yes. We check for lifted, creased, or missing shingles and determine whether a localized repair will perform well.' },
-    ],
-    cta: 'Schedule a free roof inspection in Elk Grove, CA.',
-  },
-  {
-    name: 'Woodland',
-    slug: 'woodland',
-    blurb: 'Woodland area roof repair and full replacements, including practical help for older homes, storm damage documentation, and maintenance concerns.',
-    metaTitle: 'Woodland Roofing | Repair & Replacement | PRC 13',
-    metaDescription: 'Woodland roof repair, replacement, and inspections for older homes, valley tree debris, and winter rain leaks on aging shingles. Emergency help from PRC 13.',
-    heroIntro: 'Woodland has a mix of older homes, mature trees, and agricultural dust that can leave roofs dealing with debris, clogged drainage, and age-related leaks during winter rain.',
-    quickAnswer: 'We help Woodland homeowners inspect older roofs, document storm damage, and choose practical repairs or replacement when roof age becomes the main issue.',
-    quickPoints: ['Older home roof assessments', 'Tree debris and gutter concerns', 'Storm damage documentation', 'Repair and replacement options explained'],
-    localHeading: 'Woodland Roof Age and Drainage Issues',
-    localContent: 'Many Woodland roofs need attention around gutters, roof edges, and penetrations where debris or aging materials can trap water. Older decking and repeated patch areas are important to inspect before recommending a repair.',
-    localSignals: ['Leaves or debris sitting in valleys', 'Soft spots near eaves or roof edges', 'Older shingles with heavy granule loss', 'Leaks near chimneys or plumbing vents', 'Past patch areas that keep leaking'],
-    services: [
-      { title: 'Roof Repair in Woodland', href: '/roof-repair', desc: 'Repair for leaks, flashing failures, shingle damage, and problem areas around mature trees or older roof sections.' },
-      { title: 'Roof Replacement in Woodland', href: '/roof-replacement', desc: 'Replacement planning for older Woodland homes, including decking review and a clear scope before work begins.' },
-      { title: 'Roof Inspections in Woodland', href: '/roof-inspection', desc: 'Free inspections focused on roof age, drainage, tree debris, leak risks, and whether repair is realistic.' },
-      { title: 'Emergency Roof Repair in Woodland', href: '/emergency-roof-repair', desc: 'Urgent leak response after storms, including temporary measures and repair documentation.' },
-      { title: 'Metal Roofing in Woodland', href: '/metal-roofing', desc: 'Metal roofing options for Woodland homeowners seeking a durable roof with lower long-term maintenance.' },
-    ],
-    faqs: [
-      { question: 'Do older Woodland homes need special roof inspections?', answer: 'Yes. Older roofs may have decking concerns, past patch areas, drainage issues, and materials that need careful repair planning.' },
-      { question: 'Can tree debris lead to Woodland roof leaks?', answer: 'Yes. Leaves and branches can hold moisture in valleys and gutters, increasing the risk of leaks around edges and transitions.' },
-      { question: 'Do you help document storm damage in Woodland?', answer: 'Yes. We document visible roof damage and provide written findings that help homeowners understand repair needs.' },
-      { question: 'Is roof replacement better for repeated leaks?', answer: 'If leaks keep returning in different areas or the roof is near end of life, replacement may be more cost-effective than repeated patching.' },
-    ],
-    cta: 'Schedule a free roof inspection in Woodland, CA.',
-  },
-  {
-    name: 'Davis',
-    slug: 'davis',
-    blurb: 'Davis homes benefit from inspections, repairs, and reroofs with a focus on honest assessments, roof ventilation, and long-term material performance.',
-    metaTitle: 'Davis Roofing | Repair & Replacement | PRC 13',
-    metaDescription: 'Davis roof repair, replacement, and inspections for tree-shaded roofs, poor attic ventilation, and storm leaks on older university-area homes. PRC 13.',
-    heroIntro: 'Davis roofs often sit under mature tree canopies, bike-friendly neighborhoods with older homes, and hot valley summers that make ventilation and drainage especially important.',
-    quickAnswer: 'PRC 13 Roofing helps Davis homeowners identify leaks, improve roof performance, and decide when an older roof needs replacement instead of another patch.',
-    quickPoints: ['Tree canopy and debris checks', 'Ventilation and attic heat reviewed', 'Leak tracing after winter storms', 'Metal and shingle replacement options'],
-    localHeading: 'Davis Roof Ventilation and Tree Coverage',
-    localContent: 'Davis homes can have shaded roof sections that hold debris and moisture longer than exposed slopes. At the same time, summer heat makes attic ventilation, underlayment condition, and material choice important for long-term performance.',
-    localSignals: ['Debris buildup under mature trees', 'Moss or staining on shaded roof areas', 'Attic heat or poor ventilation signs', 'Leaks near skylights or roof penetrations', 'Older roofs with repeated small repairs'],
-    services: [
-      { title: 'Roof Repair in Davis', href: '/roof-repair', desc: 'Leak repair, flashing repair, shingle replacement, and roof maintenance guidance for Davis homes with trees or older materials.' },
-      { title: 'Roof Replacement in Davis', href: '/roof-replacement', desc: 'Full roof replacement planning with attention to ventilation, material lifespan, and heat performance.' },
-      { title: 'Roof Inspections in Davis', href: '/roof-inspection', desc: 'Free inspections that review roof wear, attic ventilation, drainage, tree debris, and leak sources.' },
-      { title: 'Emergency Roof Repair in Davis', href: '/emergency-roof-repair', desc: 'Urgent support for active storm leaks, temporary stabilization, and clear repair recommendations.' },
-      { title: 'Metal Roofing in Davis', href: '/metal-roofing', desc: 'Metal roofing options for Davis homeowners who want long life, efficient heat performance, and a durable exterior upgrade.' },
-    ],
-    faqs: [
-      { question: 'How does tree coverage affect Davis roofs?', answer: 'Tree coverage can hold debris and moisture on shaded areas, clog gutters, and hide small issues until rain exposes a leak.' },
-      { question: 'Do you check roof ventilation in Davis?', answer: 'Yes. We look for ventilation concerns because hot attics can shorten roof life and contribute to comfort problems.' },
-      { question: 'Can you repair leaks around skylights in Davis?', answer: 'Yes. We inspect skylight flashing, nearby roof materials, and underlayment clues to find the actual leak source.' },
-      { question: 'Is metal roofing practical for Davis homes?', answer: 'Yes. Metal roofing can work well for Davis homeowners who want durability, heat performance, and long service life.' },
-    ],
-    cta: 'Schedule a free roof inspection in Davis, CA.',
-  },
-  {
-    name: 'Orangevale',
-    slug: 'orangevale',
-    blurb: 'Orangevale roofing projects with clear written quotes for leak repairs, aging shingle roofs, gutter concerns, and replacement planning.',
-    metaTitle: 'Orangevale Roofing Company | Repair & Replacement | PRC 13',
-    metaDescription: 'Orangevale roof repair, replacement, and inspections for tree-debris valleys, gutter backups, and storm leaks along the creek corridor. PRC 13 Roofing.',
-    heroIntro: 'Orangevale homes often have mature trees, larger lots, and older roof systems where gutter flow, debris, and aging shingles can create leaks during winter storms.',
-    quickAnswer: 'We inspect Orangevale roofs for tree debris, gutter-related damage, storm leaks, and signs that an older roof is ready for replacement.',
-    quickPoints: ['Gutter and valley drainage reviewed', 'Tree debris and roof edge checks', 'Shingle repair or replacement guidance', 'Emergency leak help during storms'],
-    localHeading: 'Orangevale Roof and Gutter Concerns',
-    localContent: 'In Orangevale, leaves and branches can sit in valleys or gutters long enough to trap moisture. Older shingles and roof edges should be checked before storm season so small drainage problems do not become interior leaks.',
-    localSignals: ['Gutters backing up during storms', 'Debris in valleys or roof corners', 'Damaged shingles near tree limbs', 'Leaks at eaves or fascia areas', 'Aging roofs with brittle materials'],
-    services: [
-      { title: 'Roof Repair in Orangevale', href: '/roof-repair', desc: 'Repair for leaks, damaged shingles, flashing issues, and roof areas affected by debris or gutter problems.' },
-      { title: 'Roof Replacement in Orangevale', href: '/roof-replacement', desc: 'Replacement estimates for aging Orangevale roofs, including material guidance and decking review.' },
-      { title: 'Roof Inspections in Orangevale', href: '/roof-inspection', desc: 'Free inspections for storm readiness, roof age, drainage, tree debris, and leak warning signs.' },
-      { title: 'Emergency Roof Repair in Orangevale', href: '/emergency-roof-repair/orangevale', desc: 'Urgent support for active leaks, storm damage, temporary protection, and repair planning in Orangevale, CA.' },
-      { title: 'Metal Roofing in Orangevale', href: '/metal-roofing', desc: 'Metal roofing options for Orangevale homeowners seeking durability and reduced long-term maintenance.' },
-    ],
-    faqs: [
-      { question: 'Can gutter issues cause roof leaks in Orangevale?', answer: 'Yes. Backed-up gutters and debris-filled valleys can push water into roof edges, fascia, and vulnerable transitions.' },
-      { question: 'Do you inspect roofs before storm season in Orangevale?', answer: 'Yes. A free inspection can identify loose materials, clogged drainage areas, and leak risks before heavy rain arrives.' },
-      { question: 'Should tree-damaged shingles be repaired quickly?', answer: 'Yes. Missing or cracked shingles near tree impact areas can allow water under the roof covering during rain.' },
-      { question: 'Do you replace older shingle roofs in Orangevale?', answer: 'Yes. We provide replacement estimates when wear is widespread or the roof is no longer a good repair candidate.' },
-    ],
-    cta: 'Schedule a free roof inspection in Orangevale, CA.',
-  },
-  {
-    name: 'Granite Bay',
-    slug: 'granite-bay',
-    blurb: 'Granite Bay roof replacement and storm damage help, including premium material options, metal roofing, and detailed project walkthroughs.',
-    metaTitle: 'Granite Bay Roofing Company | Tile & Roof Repair | PRC 13',
-    metaDescription: 'Roofing services in Granite Bay, CA for tile roofs, roof repair, inspections, flashing issues, and complete replacement. Schedule a free roof inspection.',
-    heroIntro: 'Granite Bay homes often include larger custom roofs, tile systems, complex valleys, and premium exterior materials that need careful inspection and detailed installation planning.',
-    quickAnswer: 'PRC 13 Roofing helps Granite Bay homeowners protect complex roof systems with detailed inspections, repair planning, and premium replacement options.',
-    quickPoints: ['Complex roof and valley inspections', 'Tile, shingle, and metal options', 'Storm leak documentation', 'Detailed project walkthroughs'],
-    localHeading: 'Granite Bay Roof Complexity',
-    localContent: 'Larger Granite Bay homes can have multiple roof planes, valleys, skylights, and tile sections where small flashing or underlayment issues are easy to miss. Detailed inspection matters before choosing repair or replacement.',
-    localSignals: ['Leaks near skylights or valleys', 'Cracked or slipped tile sections', 'Flashing wear on complex roof lines', 'Underlayment concerns on older tile roofs', 'Premium material decisions for replacement'],
-    services: [
-      { title: 'Roof Repair in Granite Bay', href: '/roof-repair/granite-bay', desc: 'Careful repair for leaks, tile damage, flashing failures, and complex roof intersections in Granite Bay, CA.' },
-      { title: 'Roof Replacement in Granite Bay', href: '/roof-replacement', desc: 'Replacement planning with material options, project sequencing, and walkthroughs for larger or more complex roofs.' },
-      { title: 'Roof Inspections in Granite Bay', href: '/roof-inspection', desc: 'Free inspections that review roof complexity, valleys, skylights, visible tile issues, and leak risks.' },
-      { title: 'Emergency Roof Repair in Granite Bay', href: '/emergency-roof-repair/granite-bay', desc: 'Priority leak support when storms expose weak points around roof transitions or damaged materials in Granite Bay, CA.' },
-      { title: 'Metal Roofing in Granite Bay', href: '/metal-roofing', desc: 'Premium metal roofing options for homeowners considering standing seam or long-life systems.' },
-    ],
-    faqs: [
-      { question: 'Do Granite Bay tile roofs need underlayment checks?', answer: 'Yes. Tile can look intact while underlayment ages beneath it, so leak clues and roof details need careful review.' },
-      { question: 'Can you inspect complex roofs with many valleys?', answer: 'Yes. We pay close attention to valleys, skylights, wall transitions, and drainage paths on larger roof systems.' },
-      { question: 'Do you offer premium replacement options in Granite Bay?', answer: 'Yes. We can discuss shingle, tile, and metal options depending on the home, budget, and desired lifespan.' },
-      { question: 'How do you handle storm leaks in Granite Bay?', answer: 'We identify the source, document visible damage, and explain temporary and permanent repair options.' },
-    ],
-    cta: 'Schedule a free roof inspection in Granite Bay, CA.',
-  },
-  {
-    name: 'El Dorado Hills',
-    slug: 'el-dorado-hills',
-    blurb: 'El Dorado Hills roofing with financing available on qualifying projects, including inspections for wind exposure, heat wear, and storm-related damage.',
-    metaTitle: 'El Dorado Hills Roofing Company | Repair & Tile Roofing | PRC 13',
-    metaDescription: 'Roof repair, inspections, insurance-related damage documentation, tile roofing, and replacement in El Dorado Hills, CA. Request a free inspection.',
-    heroIntro: 'El Dorado Hills roofs can face hillside wind, intense sun, and storm exposure that put extra stress on roof edges, ridge caps, flashing, and aging materials.',
-    quickAnswer: 'We help El Dorado Hills homeowners evaluate wind and heat damage, plan durable repairs, and compare replacement options for exposed roof systems.',
-    quickPoints: ['Hillside wind exposure reviewed', 'Heat-aged roof materials checked', 'Emergency leak and storm support', 'Financing available on qualifying projects'],
-    localHeading: 'El Dorado Hills Wind and Heat Exposure',
-    localContent: 'Homes in El Dorado Hills often sit on exposed lots where wind can lift vulnerable materials and sun can age roof surfaces quickly. Ridge details, roof edges, and flashing deserve close attention after storms.',
-    localSignals: ['Lifted ridge caps or roof edges', 'Sun-baked shingles on exposed slopes', 'Leaks after wind-driven rain', 'Flashing concerns around roof transitions', 'Aging roofs needing durable replacement options'],
-    services: [
-      { title: 'Roof Repair in El Dorado Hills', href: '/roof-repair', desc: 'Repairs for wind-lifted materials, flashing leaks, shingle damage, and storm-related roof problems.' },
-      { title: 'Roof Replacement in El Dorado Hills', href: '/roof-replacement', desc: 'Replacement planning with durable material options for exposed lots and long-term performance.' },
-      { title: 'Roof Inspections in El Dorado Hills', href: '/roof-inspection', desc: 'Free inspections focused on wind exposure, heat wear, leak risks, and roof age.' },
-      { title: 'Emergency Roof Repair in El Dorado Hills', href: '/emergency-roof-repair', desc: 'Urgent help for active leaks and storm openings, including temporary protection and documentation.' },
-      { title: 'Metal Roofing in El Dorado Hills', href: '/metal-roofing', desc: 'Standing seam and metal roof systems for homeowners seeking durable performance in exposed conditions.' },
-    ],
-    faqs: [
-      { question: 'How does wind affect roofs in El Dorado Hills?', answer: 'Wind can lift shingles, loosen ridge caps, stress roof edges, and drive rain into weak flashing details.' },
-      { question: 'Do you inspect roofs after storms in El Dorado Hills?', answer: 'Yes. We check visible storm damage, leak risks, and whether temporary or permanent repair is needed.' },
-      { question: 'Is metal roofing a strong option for exposed lots?', answer: 'Yes. A properly installed metal roof can offer strong durability and long service life in exposed conditions.' },
-      { question: 'Can you provide financing options for replacement?', answer: 'Financing may be available on qualifying projects, and we can discuss options during the inspection and estimate process.' },
-    ],
-    cta: 'Schedule a free roof inspection in El Dorado Hills, CA.',
-  },
-  {
-    name: 'Lincoln',
-    slug: 'lincoln',
-    blurb: 'Lincoln area homeowners can call for same-week inspections, roof repair estimates, replacement planning, and maintenance guidance.',
-    metaTitle: 'Lincoln Roofing | Repair & Replacement | PRC 13',
-    metaDescription: 'Lincoln roof repair, replacement, and inspections for sun-exposed subdivision roofs, valley wind wear, and seasonal storm leaks. Emergency help from PRC 13.',
-    heroIntro: 'Lincoln homes often experience open-sky sun exposure, wind across newer developments, and winter storms that test roof edges, vents, gutters, and valleys.',
-    quickAnswer: 'PRC 13 Roofing provides Lincoln homeowners with clear inspections, practical repair estimates, and replacement planning for roofs exposed to heat and wind.',
-    quickPoints: ['Same-week inspection availability when possible', 'Wind and sun exposure checked', 'Repair estimates with clear scope', 'Replacement planning for aging roofs'],
-    localHeading: 'Lincoln Roof Exposure',
-    localContent: 'Many Lincoln neighborhoods have roofs with limited shade and direct exposure to summer sun. Wind and rain can then reveal weak spots around ridge caps, penetrations, and drainage paths.',
-    localSignals: ['Sun-aged shingles on broad slopes', 'Ridge or edge wear after wind', 'Leaks near vents or pipe boots', 'Gutter or valley drainage concerns', 'Roof age approaching replacement timing'],
-    services: [
-      { title: 'Roof Repair in Lincoln', href: '/roof-repair', desc: 'Repair for leaks, lifted shingles, flashing issues, and roof details affected by wind and sun.' },
-      { title: 'Roof Replacement in Lincoln', href: '/roof-replacement', desc: 'Replacement estimates for Lincoln homes with aging roofs, repeated leaks, or widespread material wear.' },
-      { title: 'Roof Inspections in Lincoln', href: '/roof-inspection', desc: 'Free roof inspections that review heat wear, storm damage, drainage, ventilation, and repair options.' },
-      { title: 'Emergency Roof Repair in Lincoln', href: '/emergency-roof-repair', desc: 'Emergency leak response and temporary protection when storms create active water intrusion.' },
-      { title: 'Metal Roofing in Lincoln', href: '/metal-roofing', desc: 'Metal roofing options for Lincoln homeowners looking for strong heat performance and long-term durability.' },
-    ],
-    faqs: [
-      { question: 'Do Lincoln roofs wear faster with direct sun exposure?', answer: 'Direct sun can speed up shingle aging, dry sealants, and make ventilation more important for long roof life.' },
-      { question: 'Can you inspect a Lincoln roof before listing a home?', answer: 'Yes. We can inspect visible roof condition and provide clear findings before a sale or major decision.' },
-      { question: 'What should I do if my Lincoln roof leaks during rain?', answer: 'Contain water indoors, avoid climbing on the roof, and call for an inspection so the leak source can be traced safely.' },
-      { question: 'Do you offer metal roof options in Lincoln?', answer: 'Yes. We can explain metal roof profiles, expected lifespan, and whether the system fits your home and budget.' },
-    ],
-    cta: 'Schedule a free roof inspection in Lincoln, CA.',
-  },
-  {
-    name: 'Florin',
-    slug: 'florin',
-    blurb: 'Florin and nearby communities served by PRC 13 for roof leaks, free inspections, repairs, replacements, gutters, and exterior protection.',
-    metaTitle: 'Florin Roofing | Repair & Replacement | PRC 13',
-    metaDescription: 'Florin roof repair, replacement, and inspections for aging ranch-style roofs, brittle shingles, and gutter-related leaks on older Sacramento-area homes.',
-    heroIntro: 'Florin homes and nearby neighborhoods often include older roof systems, mature trees, and roof drainage issues that need practical repair guidance before storm season.',
-    quickAnswer: 'PRC 13 Roofing helps Florin homeowners inspect leaks, repair aging roof sections, and plan replacement when patching is no longer the best investment.',
-    quickPoints: ['Older roof and gutter checks', 'Leak repair after storms', 'Replacement estimates with clear scope', 'Exterior protection guidance'],
-    localHeading: 'Florin Roof Leaks and Older Materials',
-    localContent: 'In Florin, older shingles, tree debris, and gutter issues can combine to create leaks around roof edges and valleys. A careful inspection helps separate simple repairs from roofs that need replacement planning.',
-    localSignals: ['Ceiling stains near exterior walls', 'Debris or standing water near gutters', 'Brittle shingles or missing tabs', 'Past repairs that no longer hold', 'Leaks after fast-moving winter storms'],
-    services: [
-      { title: 'Roof Repair in Florin', href: '/roof-repair', desc: 'Practical leak repairs, shingle replacement, flashing fixes, and guidance for older roof sections.' },
-      { title: 'Roof Replacement in Florin', href: '/roof-replacement', desc: 'Roof replacement planning for Florin homes with aging materials, repeated leaks, or widespread storm wear.' },
-      { title: 'Roof Inspections in Florin', href: '/roof-inspection', desc: 'Free inspections for roof leaks, gutter-related concerns, visible wear, and repair-vs-replacement decisions.' },
-      { title: 'Emergency Roof Repair in Florin', href: '/emergency-roof-repair', desc: 'Urgent help for active leaks, storm openings, temporary protection, and next-step repair recommendations.' },
-      { title: 'Metal Roofing in Florin', href: '/metal-roofing', desc: 'Metal roofing options for Florin homeowners who want a durable roof and lower long-term maintenance.' },
-    ],
-    faqs: [
-      { question: 'Do you inspect older roofs in Florin?', answer: 'Yes. We check aging shingles, past repairs, decking clues, drainage, and leak risks before recommending work.' },
-      { question: 'Can gutter problems cause leaks around Florin homes?', answer: 'Yes. Overflowing gutters and blocked valleys can push water toward roof edges, fascia, and interior walls.' },
-      { question: 'Do you handle emergency leaks in Florin?', answer: 'Yes. We prioritize active leaks and help stabilize the issue before planning the permanent repair.' },
-      { question: 'When should a Florin homeowner consider replacement?', answer: 'Replacement should be considered when the roof has widespread wear, recurring leaks, or materials that are too brittle for reliable repair.' },
-    ],
-    cta: 'Schedule a free roof inspection in Florin, CA.',
-  },
-  {
-    name: 'Colfax',
-    slug: 'colfax',
-    blurb:
- 'Roofing services for Colfax, CA homeowners, including inspections, repair, replacement, and wildfire-minded Class A roofing guidance tied to local home-hardening planning.',
-    metaTitle: 'Roofing Contractor Colfax CA | Home Hardening Roofing | PRC 13',
-    metaDescription:
-      'Colfax homeowners may qualify for assistance with eligible wildfire home-hardening improvements. Explore Class A roofing options and PRC 13 Roofing’s additional 5% Colfax offer.',
-    heroLead: 'Roofing Contractor in',
-    heroIntro:
- 'PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California, a Placer County foothill community where wildfire readiness and durable roofing details matter as much as leak prevention.',
-    quickAnswer:
- 'PRC 13 Roofing serves Colfax homeowners with free roof inspections, repair and replacement guidance, and fire-resistant roofing options. Colfax also has a City Home Hardening and Defensible Space Program that may help with eligible improvements, confirm details with the City’s official program resource.',
-    quickPoints: [
-      'Roof inspections for Colfax and nearby Placer County foothill homes',
-      'Roof repair and replacement planning for aging or storm-worn roofs',
-      'Class A and fire-resistant roofing guidance for wildfire-prone settings',
-      'Clear separation between City program assistance and PRC 13’s Colfax offer',
-    ],
-    localHeading: 'Roofing Considerations for Colfax, CA Homes',
-    localContent:
- 'Colfax sits along the I-80 corridor in the Sierra Nevada foothills of Placer County. Homes here face a mix of summer heat, winter storms, wind exposure on hillside lots, and wildfire ember risk that makes roof condition part of broader home hardening, not just curb appeal.',
-    localSignals: [
-      'Aging shingles or worn underlayment on foothill and hillside roofs',
-      'Debris buildup in valleys and gutters that can hold embers or trap moisture',
-      'Wind-lifted edges and ridge wear after Sierra foothill storm events',
-      'Older flashing details around vents, chimneys, and roof-to-wall transitions',
-      'Homeowners evaluating Class A or fire-resistant roofing as part of hardening plans',
-    ],
-    services: [
-      {
-        title: 'Roof Repair in Colfax',
-        href: '/roof-repair',
-        desc: 'Leak repair, storm damage fixes, flashing work, and practical repair-vs-replacement guidance for Colfax homes.',
-      },
-      {
-        title: 'Roof Replacement in Colfax',
-        href: '/roof-replacement',
-        desc: 'Full roof replacement planning with material options suited to Placer County foothill weather and wildfire considerations.',
-      },
-      {
-        title: 'Roof Inspections in Colfax',
-        href: '/roof-inspection',
-        desc: 'Free Colfax roof inspections with written findings for leaks, aging materials, drainage, and fire-hardening readiness discussions.',
-      },
-      {
-        title: 'Emergency Roof Repair in Colfax',
-        href: '/emergency-roof-repair',
-        desc: 'Priority help for active leaks, storm openings, temporary protection, and next-step repair planning.',
-      },
-      {
-        title: 'Metal Roofing in Colfax',
-        href: '/metal-roofing',
-        desc: 'Metal roofing options for Colfax homeowners comparing durable, low-maintenance systems and fire-performance characteristics.',
-      },
-      {
-        title: 'Gutters & Siding in Colfax',
-        href: '/gutters-siding',
-        desc: 'Gutter and siding support that can reduce debris buildup and improve exterior readiness. PRC 13 does not offer fascia or soffit repair.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Does PRC 13 Roofing serve Colfax?',
-        answer:
-          'Yes. PRC 13 Roofing provides roof inspections, roof repair, and roof replacement services to homeowners in Colfax, California.',
-      },
-      {
-        question: 'Does Colfax have a home hardening program?',
-        answer:
-          'Yes. The City of Colfax operates a Home Hardening and Defensible Space Program. Confirm current eligibility and covered improvements on the City’s official Home Hardening page.',
-      },
-      {
-        question: 'How much of the cost can the Colfax program cover?',
-        answer:
-          'Colfax homeowners may be eligible for assistance covering up to 90% of qualifying home-hardening and defensible-space improvements through the City’s program. Exact coverage depends on eligibility and approved measures.',
-      },
-      {
-        question: 'Is there an income limit for the Colfax program?',
-        answer:
-          'The City of Colfax states the program is open to Colfax homeowners without an income limit. Verify current rules with the official City program resource.',
-      },
-    ],
-    cta: 'Request a Colfax roof inspection with PRC 13 Roofing.',
-  },
+const rawServiceAreas: { name: string; slug: string }[] = [
+  { name: 'Sacramento', slug: 'sacramento' },
+  { name: 'Rancho Cordova', slug: 'rancho-cordova' },
+  { name: 'Roseville', slug: 'roseville' },
+  { name: 'Rocklin', slug: 'rocklin' },
+  { name: 'Folsom', slug: 'folsom' },
+  { name: 'Elk Grove', slug: 'elk-grove' },
+  { name: 'Woodland', slug: 'woodland' },
+  { name: 'Davis', slug: 'davis' },
+  { name: 'Orangevale', slug: 'orangevale' },
+  { name: 'Granite Bay', slug: 'granite-bay' },
+  { name: 'El Dorado Hills', slug: 'el-dorado-hills' },
+  { name: 'Lincoln', slug: 'lincoln' },
+  { name: 'Florin', slug: 'florin' },
+  { name: 'Colfax', slug: 'colfax' },
 ];
 
 function metalizeAuthority(authority: ServiceAreaLocalAuthority): ServiceAreaLocalAuthority {
@@ -514,34 +89,18 @@ function metalizeConversion(conversion: ServiceAreaConversion): ServiceAreaConve
 
 export const serviceAreas: ServiceArea[] = rawServiceAreas.map(area => {
   const overlay = metalCityOverlays[area.slug];
+  if (!overlay) {
+    throw new Error(`Missing metal city overlay for ${area.slug}`);
+  }
   const merged: ServiceArea = {
-    ...area,
-    ...serviceAreaDetails[area.slug],
-    ...(overlay
-      ? {
-          blurb: overlay.blurb,
-          metaTitle: overlay.metaTitle,
-          metaDescription: overlay.metaDescription,
-          heroLead: overlay.heroLead,
-          heroIntro: overlay.heroIntro,
-          quickAnswer: overlay.quickAnswer,
-          quickPoints: overlay.quickPoints,
-          localHeading: overlay.localHeading,
-          localContent: overlay.localContent,
-          localSignals: overlay.localSignals,
-          faqs: overlay.faqs,
-          cta: overlay.cta,
-        }
-      : {}),
+    name: area.name,
+    slug: area.slug,
+    ...overlay,
     services: metalCityServices(area.name),
     ...metalExtraSections(area.name, area.slug),
     ...metalizeAuthority(serviceAreaLocalAuthority[area.slug]),
     ...metalizeConversion(serviceAreaConversion[area.slug]),
-    ...(metalEducationalSections[area.slug]
-      ? { educationalSection: metalEducationalSections[area.slug] }
-      : serviceAreaEducationalSections[area.slug]
-        ? { educationalSection: serviceAreaEducationalSections[area.slug] }
-        : {}),
+    educationalSection: metalEducationalSections[area.slug],
     ...(serviceAreaFeaturedPrograms[area.slug]
       ? { featuredProgram: serviceAreaFeaturedPrograms[area.slug] }
       : {}),

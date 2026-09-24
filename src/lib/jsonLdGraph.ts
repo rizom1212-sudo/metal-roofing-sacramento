@@ -52,12 +52,6 @@ const DAY_OF_WEEK_URL: Record<string, string> = {
  */
 const BLOG_CATEGORY_TO_SERVICE_ID: Record<string, string> = {
   'Metal Roofing': 'metal-roofing',
-  'Roof Inspection': 'metal-roof-inspection',
-  'Sacramento Roof Replacement': 'metal-roof-replacement',
-  'Sacramento Roof Repair': 'metal-roof-repair',
-  'Commercial Roofing': 'commercial-metal-roofing',
-  'Emergency Roof Repair': 'metal-roof-repair',
-  'Folsom Roofing': 'metal-roofing',
   'El Dorado Hills Roofing': 'metal-roofing',
   'Colfax Roofing': 'metal-roofing',
 };

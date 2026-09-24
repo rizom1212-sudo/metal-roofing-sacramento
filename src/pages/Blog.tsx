@@ -2,15 +2,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, Tag } from 'lucide-react';
 import JsonLd from '../components/JsonLd';
 import { blogPosts, displayBlogCategory, type BlogPost } from '../data/blog';
-import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
 import { COLFAX_CLUSTER_CATEGORY } from '../data/blogColfaxHomeHardening';
-import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
-import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
-import { ROOF_REPAIR_CLUSTER_CATEGORY } from '../data/blogRoofRepairCluster';
 
-const INSPECTION_CATEGORY = 'Roof Inspection';
 const FEATURED_SLUGS = [
   'metal-roofing-cost-sacramento',
   'standing-seam-metal-roofing-sacramento',
@@ -68,20 +63,10 @@ function Cluster({
 
 export default function Blog() {
   const metalGuides = blogPosts.filter(post => post.category === METAL_CLUSTER_CATEGORY);
-  const inspectionGuides = blogPosts.filter(post => post.category === INSPECTION_CATEGORY);
-  const replacementGuides = blogPosts.filter(post => post.category === REPLACEMENT_CLUSTER_CATEGORY);
-  const repairGuides = blogPosts.filter(post => post.category === ROOF_REPAIR_CLUSTER_CATEGORY);
-  const commercialGuides = blogPosts.filter(post => post.category === COMMERCIAL_CLUSTER_CATEGORY);
-  const folsomGuides = blogPosts.filter(post => post.category === FOLSOM_CLUSTER_CATEGORY);
   const elDoradoHillsGuides = blogPosts.filter(post => post.category === EL_DORADO_HILLS_CLUSTER_CATEGORY);
   const colfaxGuides = blogPosts.filter(post => post.category === COLFAX_CLUSTER_CATEGORY);
   const clustered = new Set([
     ...metalGuides,
-    ...inspectionGuides,
-    ...replacementGuides,
-    ...repairGuides,
-    ...commercialGuides,
-    ...folsomGuides,
     ...elDoradoHillsGuides,
     ...colfaxGuides,
   ].map(post => post.slug));
@@ -150,36 +135,6 @@ export default function Blog() {
             heading="Sacramento Metal Roofing Guides"
             intro="Standing seam, cost, climate, overlay vs tear-off, cleaning, and metal vs shingles — the core specialist cluster."
             posts={metalGuides.filter(post => post.slug !== featured?.slug)}
-          />
-          <Cluster
-            eyebrow="Inspection"
-            heading="Metal Roof Inspection Resources"
-            intro="What a metal roof inspection covers, how often to inspect, checklists, and insurance visits — written for Sacramento-area owners."
-            posts={inspectionGuides}
-          />
-          <Cluster
-            eyebrow="Replacement"
-            heading="Metal Replacement Context"
-            intro="Replacement cost, process, and materials guides retargeted to metal-roof replacement decisions."
-            posts={replacementGuides}
-          />
-          <Cluster
-            eyebrow="Repair"
-            heading="Metal Roof Repair Context"
-            intro="Leaks, flashing, storm damage, and repair-versus-replacement — useful when the covering is or will be metal."
-            posts={repairGuides}
-          />
-          <Cluster
-            eyebrow="Commercial"
-            heading="Commercial Metal Roofing Guides"
-            intro="Commercial metal systems and reroofing context. TPO vs EPDM comparison was retired from this specialist site."
-            posts={commercialGuides}
-          />
-          <Cluster
-            eyebrow="Folsom"
-            heading="Metal Roofing in Folsom"
-            intro="Local Folsom guides that support metal-roofing decisions for heat, HOAs, and materials."
-            posts={folsomGuides}
           />
           <Cluster
             eyebrow="El Dorado Hills"

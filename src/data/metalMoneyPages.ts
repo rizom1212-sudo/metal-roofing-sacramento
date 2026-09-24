@@ -870,7 +870,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
     ],
     decisionTitle: 'Commercial metal vs other pages',
     decision:
-      'Use this page for metal on a commercial or light-commercial building. Use residential metal for houses. Use inspection when you need findings. Historical /commercial-roofing remains published for membrane systems and is not this page.',
+      'Use this page for metal on a commercial or light-commercial building. Use residential metal for houses. Use inspection when you need findings. Generic commercial roofing and membrane (TPO/EPDM) hire pages are not published on this specialist site.',
     sacramentoTitle: 'Commercial metal in the Sacramento area',
     sacramento:
       'Heat, wind, and rain still test flashings and penetrations on metal-panel commercial roofs. PRC 13 operates as a service-area contractor. There is no public storefront address on this website. Metal Roofing Sacramento is the specialist brand; PRC 13 Roofing Inc. holds the license and performs the work.',
@@ -1050,7 +1050,7 @@ export const METAL_MONEY_PAGES: Record<string, MetalMoneyPageContent> = {
       {
         question: 'Is a metal roof inspection different from a generic roof inspection URL on this site?',
         answer:
-          'Yes. This page is the specialist metal inspection. A historical generic roof-inspection URL remains published but is not the primary metal hire path.',
+          'Yes. This page is the metal roof inspection hire path. The old generic /roof-inspection URL redirects here and is not a separate page.',
       },
     ],
     finalCtaTitle: 'Request a metal roof inspection',

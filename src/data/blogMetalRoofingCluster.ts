@@ -107,7 +107,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
         content: 'Compare options:',
         links: [
           article('metal-roofing-vs-shingles-sacramento', 'Metal vs shingles in Sacramento'),
-          article('roofing-materials-replacement-sacramento', 'Shingle vs tile vs metal replacement'),
+          article('metal-roof-over-shingles-sacramento', 'Metal roof over shingles'),
         ],
       },
       {
@@ -551,7 +551,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
     relatedArticles: [
       article('metal-roofing-cost-sacramento', 'Metal roofing cost Sacramento'),
       article('metal-roofing-sacramento-climate', 'Metal roofing and Sacramento climate'),
-      article('roofing-materials-replacement-sacramento', 'Shingle vs tile vs metal replacement'),
+      article('metal-roofing-vs-shingles-sacramento', 'Metal vs shingles comparison'),
     ],
     faqs: [
       {

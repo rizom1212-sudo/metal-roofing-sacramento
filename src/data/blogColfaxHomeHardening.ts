@@ -54,8 +54,8 @@ export const colfaxRoofingClusterPosts: BlogPost[] = [
       'Roofing on a California foothill home, used to illustrate Colfax home hardening and wildfire-minded roof planning',
     relatedServices: coreServices(),
     relatedArticles: [
-      { label: 'Signs you may need roof replacement', href: '/blog/signs-you-need-roof-replacement-sacramento' },
-      { label: 'Roof repair vs roof replacement', href: '/blog/roof-repair-vs-roof-replacement' },
+      { label: 'Metal roof repair vs replacement', href: '/blog/metal-roof-repair-vs-replacement' },
+      { label: 'Metal roofing cost Sacramento', href: '/blog/metal-roofing-cost-sacramento' },
     ],
     faqs: [
       {

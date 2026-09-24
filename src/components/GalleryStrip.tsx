@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { galleryImages, type GalleryCategory } from '../data/gallery';
+import { publicGalleryImages, type GalleryCategory } from '../data/gallery';
 import OptimizedImage from './OptimizedImage';
 
 interface GalleryStripProps {
@@ -34,21 +34,21 @@ export default function GalleryStrip({
 }: GalleryStripProps) {
   const byId = imageIds
     ? imageIds
-        .map(id => galleryImages.find(img => img.id === id))
-        .filter((img): img is (typeof galleryImages)[number] => Boolean(img))
+        .map(id => publicGalleryImages.find(img => img.id === id))
+        .filter((img): img is (typeof publicGalleryImages)[number] => Boolean(img))
         .slice(0, limit)
     : null;
 
   const cityNeedle = city?.replace(/,\s*CA$/i, '').trim().toLowerCase();
-  const inCity = (img: (typeof galleryImages)[number]) => {
+  const inCity = (img: (typeof publicGalleryImages)[number]) => {
     if (!cityNeedle) return true;
     const tagged = img.city?.replace(/,\s*CA$/i, '').trim().toLowerCase();
     return tagged === cityNeedle;
   };
 
   const pool = (category === 'All'
-    ? galleryImages
-    : galleryImages.filter(img => img.category === category)
+    ? publicGalleryImages
+    : publicGalleryImages.filter(img => img.category === category)
   ).filter(inCity);
 
   const items = byId ?? pool.slice(0, limit);

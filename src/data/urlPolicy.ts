@@ -72,7 +72,96 @@ export const CONSOLIDATED_REDIRECTS: { source: string; destination: string; reas
     destination: '/blog/metal-roof-repair-vs-replacement',
     reason: 'Same decision intent; metal-specific article already exists.',
   },
+  {
+    source: '/blog/free-roof-inspection-sacramento',
+    destination: '/metal-roof-inspection',
+    reason: 'Same hire: free residential metal inspection.',
+  },
+  {
+    source: '/blog/roof-inspection-cost-sacramento',
+    destination: '/metal-roof-inspection',
+    reason: 'Inspection cost is answered on the metal inspection hire page.',
+  },
+  {
+    source: '/blog/what-happens-during-roof-inspection',
+    destination: '/metal-roof-inspection',
+    reason: 'Same job: what a professional metal inspection includes.',
+  },
+  {
+    source: '/blog/signs-you-need-roof-inspection',
+    destination: '/metal-roof-inspection',
+    reason: 'Inspection-need intent maps to the metal inspection hire page.',
+  },
+  {
+    source: '/blog/roof-inspection-after-storm',
+    destination: '/metal-roof-inspection',
+    reason: 'Post-storm inspection is still an inspection hire, not leak first-aid.',
+  },
+  {
+    source: '/blog/how-often-should-you-inspect-your-roof',
+    destination: '/blog/sacramento-roof-maintenance-checklist',
+    reason: 'Owner inspection cadence belongs on the metal maintenance checklist.',
+  },
+  {
+    source: '/blog/insurance-roof-inspection-sacramento',
+    destination: '/blog/how-insurance-claims-work-for-roof-damage',
+    reason: 'Insurance-framed inspection is a step in the metal claim article.',
+  },
+  {
+    source: '/blog/roof-replacement-insurance-sacramento',
+    destination: '/blog/how-insurance-claims-work-for-roof-damage',
+    reason: 'Insurance-funded replacement is the same claim process.',
+  },
+  {
+    source: '/blog/roof-insurance-claims-storm-damage',
+    destination: '/blog/how-insurance-claims-work-for-roof-damage',
+    reason: 'Same metal roof claim-process query.',
+  },
+  {
+    source: '/blog/roof-insurance-claims-el-dorado-hills',
+    destination: '/blog/how-insurance-claims-work-for-roof-damage',
+    reason: 'Same claim process; city is a modifier.',
+  },
+  {
+    source: '/blog/roof-replacement-cost-sacramento',
+    destination: '/blog/metal-roofing-cost-sacramento',
+    reason: 'Replacement cost on this specialist site is metal roofing cost.',
+  },
+  {
+    source: '/blog/roof-replacement-process-sacramento',
+    destination: '/metal-roof-replacement',
+    reason: 'Replacement process maps to the metal replacement hire page.',
+  },
+  {
+    source: '/blog/signs-you-need-roof-replacement-sacramento',
+    destination: '/blog/metal-roof-repair-vs-replacement',
+    reason: 'Same repair-versus-replacement decision.',
+  },
+  {
+    source: '/blog/roof-leak-repair-sacramento',
+    destination: '/metal-roof-repair',
+    reason: 'Same hire: metal leak repair.',
+  },
+  {
+    source: '/blog/storm-damage-roof-repair-sacramento',
+    destination: '/metal-roof-repair',
+    reason: 'Storm-damaged metal maps to metal roof repair.',
+  },
+  {
+    source: '/blog/wind-damage-roof-repair',
+    destination: '/metal-roof-repair',
+    reason: 'Wind-failed metal edges and flashings map to metal roof repair.',
+  },
+  {
+    source: '/blog/roof-flashing-repair-sacramento',
+    destination: '/metal-roof-repair',
+    reason: 'Flashing is a primary metal-repair offering.',
+  },
 ];
+
+export const CONSOLIDATED_BLOG_SLUGS = CONSOLIDATED_REDIRECTS
+  .filter(rule => rule.source.startsWith('/blog/'))
+  .map(rule => rule.source.replace('/blog/', ''));
 
 /**
  * Retired from the specialist architecture. No redirect: these are cloned PRC
@@ -118,6 +207,52 @@ export const RETIRED_BLOG_SLUGS = [
 
 export const RETIRED_BLOG_PATHS = RETIRED_BLOG_SLUGS.map(slug => `/blog/${slug}`);
 
+/** P1 blogs whose intent does not safely 301. Served as HTTP 410. */
+export const GONE_BLOG_SLUGS = [
+  'roof-inspection-checklist',
+  'roofing-materials-replacement-sacramento',
+  'how-long-does-roof-replacement-take',
+  'best-time-to-replace-roof-sacramento',
+  'roof-replacement-for-older-homes',
+  'roof-repair-cost-sacramento',
+  'chimney-flashing-repair-sacramento',
+  'skylight-leak-repair-sacramento',
+  'common-causes-of-roof-leaks',
+  'what-causes-roof-flashing-to-fail',
+  'roof-repair-folsom-ca',
+  'roof-replacement-folsom-ca',
+  'roof-inspection-folsom-ca',
+  'roof-leak-repair-folsom-ca',
+  'storm-damage-roof-repair-folsom',
+  'best-roofing-materials-folsom',
+  'roofing-costs-folsom-ca',
+  'roof-repair-el-dorado-hills-ca',
+  'roof-replacement-el-dorado-hills-ca',
+  'roof-inspection-el-dorado-hills-ca',
+  'commercial-roof-inspection-sacramento',
+  'commercial-roof-replacement-sacramento',
+  'commercial-roof-repair-sacramento',
+  'commercial-roof-maintenance-sacramento',
+  'commercial-roof-leak-repair-sacramento',
+  'roof-replacement-financing-sacramento',
+  'who-to-call-when-roof-is-leaking',
+] as const;
+
+export const GONE_BLOG_PATHS = GONE_BLOG_SLUGS.map(slug => `/blog/${slug}`);
+
+/** Extra legacy file URL that previously 301ed onto a now-410 checklist. */
+export const GONE_LEGACY_PATHS = ['/roof-inspection-checklist.html'] as const;
+
+export const GONE_PUBLIC_PATHS = [...GONE_BLOG_PATHS, ...GONE_LEGACY_PATHS] as const;
+
+export function isUnpublishedBlogSlug(slug: string): boolean {
+  return (
+    (RETIRED_BLOG_SLUGS as readonly string[]).includes(slug) ||
+    (GONE_BLOG_SLUGS as readonly string[]).includes(slug) ||
+    CONSOLIDATED_BLOG_SLUGS.includes(slug)
+  );
+}
+
 /** Inherited PRC redirects that must 404 instead of landing on metal pages. */
 export const REMOVED_INHERITED_REDIRECT_SOURCES = [
   '/emergency-roof-repair-sacramento',
@@ -135,33 +270,22 @@ export const REMOVED_INHERITED_REDIRECT_SOURCES = [
   '/siding-contractor/vinyl-siding-installation',
 ] as const;
 
-export const PATH_REWRITES: Record<string, string> = {
-  '/roof-replacement': '/metal-roof-replacement',
-  '/roof-repair': '/metal-roof-repair',
-  '/roof-inspection': '/metal-roof-inspection',
-  '/commercial-roofing': '/commercial-metal-roofing',
-  '/roof-replacement/rocklin': '/service-areas/rocklin',
-  '/roof-repair/granite-bay': '/service-areas/granite-bay',
-  '/emergency-roof-repair/granite-bay': '/service-areas/granite-bay',
-  '/emergency-roof-repair/orangevale': '/service-areas/orangevale',
-  '/emergency-roof-repair/folsom': '/service-areas/folsom',
-  '/blog/roof-repair-vs-roof-replacement': '/blog/metal-roof-repair-vs-replacement',
-  '/blog/tile-roof-repair-sacramento': '/blog/metal-roof-repair-vs-replacement',
-  '/blog/missing-shingle-repair-sacramento': '/blog/metal-roof-repair-vs-replacement',
-  '/blog/tpo-vs-epdm-commercial-roofing': '/blog/commercial-roof-replacement-sacramento',
-  '/blog/gutters-and-roof-leaks-sacramento': '/blog/roof-leak-repair-sacramento',
-  '/blog/tile-vs-asphalt-shingles-folsom': '/blog/best-roofing-materials-folsom',
-  '/blog/tile-roofing-el-dorado-hills-ca': '/blog/metal-roofing-el-dorado-hills-ca',
-  '/blog/fascia-repair-el-dorado-hills-ca': '/blog/metal-roofing-el-dorado-hills-ca',
-  '/blog/emergency-roof-tarp-guide': '/blog/what-to-do-roof-leak-sacramento-storm',
-  '/blog/emergency-roof-repair-cost': '/blog/roof-leak-repair-sacramento',
-  '/blog/when-to-call-emergency-roofer': '/blog/who-to-call-when-roof-is-leaking',
-  '/blog/emergency-roof-repair-sacramento-guide': '/blog/what-to-do-roof-leak-sacramento-storm',
-  '/blog/does-insurance-cover-emergency-roof-repairs': '/blog/how-insurance-claims-work-for-roof-damage',
-  '/blog/emergency-roof-repair-el-dorado-hills-ca': '/blog/roof-repair-el-dorado-hills-ca',
-};
+/**
+ * Internal-link rewrites. Only the same specialist mappings that already 301
+ * in CONSOLIDATED_REDIRECTS / vercel.json. Retired commercial, emergency,
+ * city×service, gutter, tile, TPO, and shingle URLs are not rewritten to metal
+ * pages — rewritePublicLinks strips those hrefs instead.
+ */
+export const PATH_REWRITES: Record<string, string> = Object.fromEntries(
+  CONSOLIDATED_REDIRECTS.map(({ source, destination }) => [source, destination]),
+);
 
-const RETIRED_HREF_SET = new Set<string>([...RETIRED_PATHS, ...RETIRED_BLOG_PATHS]);
+const RETIRED_HREF_SET = new Set<string>([
+  ...RETIRED_PATHS,
+  ...RETIRED_BLOG_PATHS,
+  ...GONE_BLOG_PATHS,
+  ...GONE_LEGACY_PATHS,
+]);
 
 export function isRetiredPublicPath(href: string): boolean {
   const normalized = (href.split('#')[0] || '').replace(/\/+$/, '') || '/';

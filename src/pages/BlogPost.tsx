@@ -13,18 +13,12 @@ import {
 } from '../data/site';
 import { PRIMARY_CTA } from '../data/cta';
 import TelLink from '../components/TelLink';
-import { EMERGENCY_CLUSTER_CATEGORY } from '../data/blogEmergencyRoofRepairCluster';
-import { FOLSOM_CLUSTER_CATEGORY } from '../data/blogFolsomRoofingCluster';
 import { EL_DORADO_HILLS_CLUSTER_CATEGORY } from '../data/blogElDoradoHillsRoofingCluster';
 import {
   COLFAX_HOME_HARDENING_SLUG,
 } from '../data/blogColfaxHomeHardening';
 import { serviceAreaFeaturedPrograms } from '../data/serviceAreaFeaturedPrograms';
-import { REPLACEMENT_CLUSTER_CATEGORY } from '../data/blogRoofReplacementCluster';
 import { METAL_CLUSTER_CATEGORY } from '../data/blogMetalRoofingCluster';
-import { GUTTERS_FASCIA_CLUSTER_CATEGORY } from '../data/blogGuttersFasciaCluster';
-import { COMMERCIAL_CLUSTER_CATEGORY } from '../data/blogCommercialRoofingCluster';
-import { ROOF_REPAIR_CLUSTER_CATEGORY } from '../data/blogRoofRepairCluster';
 import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 import {
   ColfaxArticleCta,
@@ -53,15 +47,8 @@ export default function BlogPost() {
         .filter((p): p is (typeof blogPosts)[number] => Boolean(p))
     : blogPosts.filter(p => p.slug !== post.slug).slice(0, 2);
 
-  const isEmergencyGuide = post.category === EMERGENCY_CLUSTER_CATEGORY;
-  const isFolsomGuide = post.category === FOLSOM_CLUSTER_CATEGORY;
   const isElDoradoHillsGuide = post.category === EL_DORADO_HILLS_CLUSTER_CATEGORY;
-  const isReplacementGuide = post.category === REPLACEMENT_CLUSTER_CATEGORY;
   const isMetalGuide = post.category === METAL_CLUSTER_CATEGORY;
-  const isGuttersFasciaGuide = post.category === GUTTERS_FASCIA_CLUSTER_CATEGORY;
-  const isCommercialGuide = post.category === COMMERCIAL_CLUSTER_CATEGORY;
-  const isRepairGuide = post.category === ROOF_REPAIR_CLUSTER_CATEGORY;
-  const isInspectionGuide = post.category === 'Roof Inspection';
   const isColfaxGuide = post.slug === COLFAX_HOME_HARDENING_SLUG;
   const colfaxProgram = isColfaxGuide ? serviceAreaFeaturedPrograms.colfax : undefined;
 
@@ -264,148 +251,53 @@ export default function BlogPost() {
               ) : (
               <div className="mt-12 card-brand bg-charcoal-dark border border-gold/20 p-6 md:p-8">
                 <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-2">
-                  {isEmergencyGuide
-                    ? 'Metal Roof Leak Help'
-                    : isCommercialGuide
-                      ? 'Commercial Metal Roofing'
-                      : isRepairGuide
-                        ? 'Metal Roof Repair'
-                        : isGuttersFasciaGuide
-                        ? 'Metal Roofing'
-                        : isMetalGuide
-                        ? 'Metal Roofing'
-                        : isReplacementGuide
-                          ? 'Metal Roof Replacement'
-                          : isInspectionGuide
-                            ? 'Metal Roof Inspection'
-                          : isElDoradoHillsGuide
-                            ? 'El Dorado Hills Metal Roofing'
-                            : isFolsomGuide
-                              ? 'Folsom Metal Roofing'
-                              : 'Metal Roof Estimate'}
+                  {isMetalGuide
+                    ? 'Metal Roofing'
+                    : isElDoradoHillsGuide
+                      ? 'El Dorado Hills Metal Roofing'
+                      : 'Metal Roof Estimate'}
                 </p>
                 <h2 className="text-2xl font-bold text-white mb-3 leading-snug">
-                  {isEmergencyGuide
-                    ? 'Need Metal Roof Repair After a Storm?'
-                    : isCommercialGuide
-                      ? 'Need Commercial Metal Roofing in Sacramento?'
-                      : isRepairGuide
-                        ? 'Need Metal Roof Repair in Sacramento?'
-                        : isGuttersFasciaGuide
-                        ? 'Looking for Metal Roofing in Sacramento?'
-                        : isMetalGuide
-                        ? 'Considering Metal Roofing in Sacramento?'
-                        : isReplacementGuide
-                          ? 'Planning a Metal Roof Replacement in Sacramento?'
-                          : isInspectionGuide
-                            ? 'Need a Metal Roof Inspection in Sacramento?'
-                          : isElDoradoHillsGuide
-                            ? 'Schedule Metal Roofing in El Dorado Hills'
-                            : isFolsomGuide
-                              ? 'Schedule Metal Roofing in Folsom'
-                              : 'Get a Metal Roof Estimate'}
+                  {isMetalGuide
+                    ? 'Considering Metal Roofing in Sacramento?'
+                    : isElDoradoHillsGuide
+                      ? 'Schedule Metal Roofing in El Dorado Hills'
+                      : 'Get a Metal Roof Estimate'}
                 </h2>
                 <p className="text-gray-300 text-base leading-[1.7] mb-5">
-                  {isEmergencyGuide
-                    ? 'If a metal roof is leaking, contain water indoors and call PRC 13 Roofing during Monday through Friday business hours. We do not claim 24/7 emergency service.'
-                    : isCommercialGuide
-                      ? 'PRC 13 Roofing installs and repairs metal systems on commercial and light-commercial buildings where metal is the right covering — not TPO or EPDM membranes.'
-                      : isRepairGuide
-                        ? 'PRC 13 Roofing repairs metal roofs when the failure is localized — seams, flashing, panels, fasteners, and penetrations — after an honest inspection.'
-                        : isGuttersFasciaGuide
-                        ? 'This specialist site focuses on metal roofing. PRC 13 does not offer fascia or soffit repair.'
-                        : isMetalGuide
-                        ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a metal roof inspection.'
-                        : isReplacementGuide
-                          ? 'PRC 13 Roofing replaces aging coverings with metal after inspection. Tear-off is the usual approach so the deck can be reviewed.'
-                          : isInspectionGuide
-                            ? 'Standard residential metal roof inspections are free with written findings. Commercial metal inspections are scheduled when you contact us.'
-                          : isElDoradoHillsGuide
-                            ? 'PRC 13 Roofing serves El Dorado Hills with metal roofing, inspection, repair, and replacement on exposed foothill properties. PRC 13 does not offer fascia or soffit repair.'
-                            : isFolsomGuide
-                              ? 'PRC 13 Roofing serves Folsom homeowners with metal roofing, inspection, repair, and replacement. HOA rules vary and are not a PRC 13 catalog.'
-                              : 'PRC 13 Roofing serves Sacramento and nearby communities with metal roof inspections and clear written findings.'}
+                  {isMetalGuide
+                    ? 'PRC 13 Roofing installs standing seam, corrugated, and ribbed metal systems for Sacramento homeowners. Start with a metal roof inspection.'
+                    : isElDoradoHillsGuide
+                      ? 'PRC 13 Roofing serves El Dorado Hills with metal roofing, inspection, repair, and replacement on exposed foothill properties. PRC 13 does not offer fascia or soffit repair.'
+                      : 'PRC 13 Roofing serves Sacramento and nearby communities with metal roof inspections and clear written findings.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  {isEmergencyGuide ? (
-                    <TelLink
-                      location="blog-emergency-cta"
-                      className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold"
-                    >
-                      Call {PHONE_DISPLAY}
-                    </TelLink>
-                  ) : (
-                    <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
-                      {PRIMARY_CTA}{' '}
-                      <ArrowRight size={15} />
-                    </Link>
-                  )}
+                  <Link to="/contact" className="inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-sm font-semibold">
+                    {PRIMARY_CTA}{' '}
+                    <ArrowRight size={15} />
+                  </Link>
                   <Link
                     to={
-                      isEmergencyGuide
-                        ? '/metal-roof-repair'
-                        : isCommercialGuide
-                          ? '/commercial-metal-roofing'
-                          : isRepairGuide
-                            ? '/metal-roof-repair'
-                            : isGuttersFasciaGuide
-                            ? '/metal-roofing'
-                            : isMetalGuide
-                            ? '/metal-roofing'
-                            : isReplacementGuide
-                              ? '/metal-roof-replacement'
-                              : isInspectionGuide
-                                ? '/metal-roof-inspection'
-                              : isElDoradoHillsGuide
-                                ? '/service-areas/el-dorado-hills'
-                                : isFolsomGuide
-                                  ? '/service-areas/folsom'
-                                  : '/metal-roof-inspection'
+                      isMetalGuide
+                        ? '/metal-roofing'
+                        : isElDoradoHillsGuide
+                          ? '/service-areas/el-dorado-hills'
+                          : '/metal-roof-inspection'
                     }
                     className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                   >
-                    {isEmergencyGuide
-                      ? 'Metal roof repair'
-                      : isCommercialGuide
-                        ? 'Commercial metal roofing'
-                        : isRepairGuide
-                          ? 'Metal roof repair'
-                          : isGuttersFasciaGuide
-                          ? 'Metal roofing services'
-                          : isMetalGuide
-                          ? 'Metal roofing services'
-                          : isReplacementGuide
-                            ? 'Metal roof replacement'
-                            : isInspectionGuide
-                              ? 'Metal roof inspection'
-                            : isElDoradoHillsGuide
-                              ? 'El Dorado Hills metal roofing'
-                              : isFolsomGuide
-                                ? 'Folsom metal roofing'
-                                : 'Metal roof inspection'}
+                    {isMetalGuide
+                      ? 'Metal roofing services'
+                      : isElDoradoHillsGuide
+                        ? 'El Dorado Hills metal roofing'
+                        : 'Metal roof inspection'}
                   </Link>
-                  {isCommercialGuide && (
-                    <Link
-                      to="/metal-roof-inspection"
-                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
-                    >
-                      Metal roof inspection <ArrowRight size={15} />
-                    </Link>
-                  )}
                   {isMetalGuide && (
                     <Link
                       to="/metal-roof-inspection"
                       className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand"
                     >
                       Metal roof inspection <ArrowRight size={15} />
-                    </Link>
-                  )}
-                  {isEmergencyGuide && (
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 text-sm hover:border-gold hover:text-gold transition-colors rounded-brand sm:col-span-2"
-                    >
-                      Request help online <ArrowRight size={15} />
                     </Link>
                   )}
                 </div>

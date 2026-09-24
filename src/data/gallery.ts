@@ -230,7 +230,7 @@ export function normalizeGalleryCity(city?: string): string | undefined {
 
 export function filterGalleryByCity(
   cityName: string,
-  images: GalleryImage[] = galleryImages,
+  images: GalleryImage[] = publicGalleryImages,
 ): GalleryImage[] {
   const wanted = normalizeGalleryCity(cityName);
   if (!wanted) return [];

@@ -24,7 +24,8 @@ import {
 } from './site';
 import { absoluteUrl, SITE_URL } from './domain';
 import { getOfferedServices, SERVICES_NOT_OFFERED } from './services';
-import { serviceAreaNames } from './serviceAreas';
+import { serviceAreas, serviceAreaNames } from './serviceAreas';
+import { blogSummaries } from './blogSummaries';
 
 function formatHourLabel(opens: string, closes: string): string {
   const toDisplay = (value: string) => {
@@ -73,26 +74,14 @@ export function buildLlmsTxt(): string {
     ...serviceAreaNames.map(name => `- ${name}`),
     '',
     'Important pages:',
+    `- Home: ${absoluteUrl('/')}`,
+    `- About: ${absoluteUrl('/about')}`,
     `- Contact: ${absoluteUrl('/contact')}`,
     `- Areas served: ${absoluteUrl('/service-areas')}`,
     `- Project gallery: ${absoluteUrl('/gallery')}`,
     `- Roofing blog: ${absoluteUrl('/blog')}`,
-    `- Metal roofing: ${absoluteUrl('/metal-roofing')}`,
-    `- Metal roof installation: ${absoluteUrl('/metal-roof-installation')}`,
-    `- Metal roof replacement: ${absoluteUrl('/metal-roof-replacement')}`,
-    `- Metal roof repair: ${absoluteUrl('/metal-roof-repair')}`,
-    `- Standing seam metal roofing: ${absoluteUrl('/standing-seam-metal-roofing')}`,
-    `- Residential metal roofing: ${absoluteUrl('/residential-metal-roofing')}`,
-    `- Commercial metal roofing: ${absoluteUrl('/commercial-metal-roofing')}`,
-    `- Metal roof inspection: ${absoluteUrl('/metal-roof-inspection')}`,
-    `- Sacramento service-area page: ${absoluteUrl('/service-areas/sacramento')}`,
-    `- Roseville service-area page: ${absoluteUrl('/service-areas/roseville')}`,
-    `- Rocklin service-area page: ${absoluteUrl('/service-areas/rocklin')}`,
-    `- Folsom service-area page: ${absoluteUrl('/service-areas/folsom')}`,
-    `- Elk Grove service-area page: ${absoluteUrl('/service-areas/elk-grove')}`,
-    `- El Dorado Hills service-area page: ${absoluteUrl('/service-areas/el-dorado-hills')}`,
-    `- Colfax service-area page: ${absoluteUrl('/service-areas/colfax')}`,
-    `- Colfax home hardening roofing guide: ${absoluteUrl('/blog/colfax-home-hardening-program-2026-roofing-wildfire-protection')}`,
+    ...services.map(service => `- ${service.schemaName}: ${absoluteUrl(service.canonicalUrl)}`),
+    ...serviceAreas.map(area => `- ${area.name} service-area page: ${absoluteUrl(`/service-areas/${area.slug}`)}`),
     '',
     'Colfax entity notes:',
     '- Colfax is a city in Placer County, California.',
@@ -102,10 +91,7 @@ export function buildLlmsTxt(): string {
     `- ${BUSINESS_ENTITY_NAME} independently offers Colfax homeowners an additional 5% off qualifying roofing work. That offer is separate from the City program.`,
     '',
     'Useful metal roofing answers:',
-    `- Standing seam metal roofing: ${absoluteUrl('/blog/standing-seam-metal-roofing-sacramento')}`,
-    `- Metal roofing cost: ${absoluteUrl('/blog/metal-roofing-cost-sacramento')}`,
-    `- Metal vs shingles: ${absoluteUrl('/blog/metal-roofing-vs-shingles-sacramento')}`,
-    `- Metal roof installation process: ${absoluteUrl('/blog/metal-roof-installation-process-sacramento')}`,
+    ...blogSummaries.map(post => `- ${post.title}: ${absoluteUrl(`/blog/${post.slug}`)}`),
     '',
     `Social and citation profiles (belong to ${BUSINESS_ENTITY_NAME}, not a separate Metal Roofing Sacramento Google Business Profile):`,
     `- Google Business Profile reviews: ${GOOGLE_BUSINESS_PROFILE_URL}`,

@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { isAllowedLeadOrigin, MAX_LEAD_JSON_BYTES, validateLeadPayload } from './api/leadValidation.js';
+import { GONE_PUBLIC_PATHS } from './src/data/urlPolicy';
 
 const AIRTABLE_API_BASE = 'https://api.airtable.com/v0';
 
@@ -36,6 +37,34 @@ async function notifyLeadWebhook(webhookUrl: string | undefined, lead: Record<st
   } finally {
     clearTimeout(timeout);
   }
+}
+
+const GONE_PATH_SET = new Set<string>(GONE_PUBLIC_PATHS);
+
+function goneStatusMiddleware(request, response, next) {
+  const path = (request.url || '').split('?')[0];
+  if (!GONE_PATH_SET.has(path)) {
+    next();
+    return;
+  }
+  response.statusCode = 410;
+  response.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+  response.setHeader('Content-Type', 'text/html; charset=utf-8');
+  response.end(
+    '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Gone</title></head><body><h1>Gone</h1><p>This page has been permanently removed from this website.</p></body></html>',
+  );
+}
+
+function goneDevApi() {
+  return {
+    name: 'gone-dev-api',
+    configureServer(server) {
+      server.middlewares.use(goneStatusMiddleware);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(goneStatusMiddleware);
+    },
+  };
 }
 
 function airtableDevApi(env: Record<string, string>) {
@@ -179,7 +208,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    plugins: [react(), airtableDevApi(env)],
+    plugins: [react(), goneDevApi(), airtableDevApi(env)],
     optimizeDeps: {
       exclude: ['lucide-react'],
     },
