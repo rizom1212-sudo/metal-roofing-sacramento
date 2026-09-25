@@ -3,6 +3,7 @@ import { BRAND_NAME } from '../data/site';
 import { homeFaqs } from '../components/home/homeFaqs';
 import HomeHero from '../components/home/HomeHero';
 import HomeTrustStrip from '../components/home/HomeTrustStrip';
+import HomeCompanySummary from '../components/home/HomeCompanySummary';
 import HomeSpecialistServices from '../components/home/HomeSpecialistServices';
 import HomeProjectMosaic from '../components/home/HomeProjectMosaic';
 import HomeContractorTrust from '../components/home/HomeContractorTrust';
@@ -24,6 +25,7 @@ export default function Home() {
       />
       <HomeHero />
       <HomeTrustStrip />
+      <HomeCompanySummary />
       <HomeSpecialistServices />
       <HomeProjectMosaic />
       <HomeContractorTrust />

@@ -39,8 +39,8 @@ export const blogSummaries: BlogSummary[] = [
   },
   {
     "slug": "standing-seam-metal-roofing-sacramento",
-    "title": "Standing Seam Metal Roofing in Sacramento: What Homeowners Should Know",
-    "seoTitle": "Standing Seam Metal Roofing Sacramento | Metal Roofing Sacramento",
+    "title": "What Is Standing Seam Metal Roofing? A Homeowner Guide",
+    "seoTitle": "What Is Standing Seam Metal Roofing? | Sacramento Guide",
     "excerpt": "Standing seam metal uses concealed fasteners and clean lines for Sacramento homes wanting premium durability. PRC 13 installs systems across the region.",
     "date": "July 5, 2026",
     "readTime": "6 min read",
@@ -69,8 +69,8 @@ export const blogSummaries: BlogSummary[] = [
   },
   {
     "slug": "metal-roof-installation-process-sacramento",
-    "title": "Metal Roof Installation Process: What Sacramento Homeowners Should Expect",
-    "seoTitle": "Metal Roof Installation Process Sacramento | Metal Roofing Sacramento",
+    "title": "What to Expect During a Metal Roof Installation",
+    "seoTitle": "What to Expect During Metal Roof Installation | Sacramento",
     "excerpt": "From free inspection to final walkthrough, here is how PRC 13 installs standing seam and metal panel systems on Sacramento homes, typically in 2 to 3 days.",
     "date": "July 5, 2026",
     "readTime": "6 min read",

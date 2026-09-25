@@ -6,7 +6,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'How much does a metal roof cost in Sacramento?',
     answer:
-      'Cost depends on roof size, pitch, tear-off, flashing complexity, and the metal system — standing seam usually costs more than exposed-fastener panels. PRC 13 quotes after inspection rather than publishing a price list. The metal roofing cost guide on this site explains what drives the number.',
+      'Cost depends on roof size, pitch, tear-off, flashing complexity, and the metal system — standing seam usually costs more than exposed-fastener panels. PRC 13 quotes after inspection rather than publishing a price list. The [metal roofing cost guide](/blog/metal-roofing-cost-sacramento) explains what drives the number.',
   },
   {
     question: 'Is standing seam worth the additional cost?',
@@ -40,12 +40,12 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'What metal roofing services are available in Sacramento?',
     answer:
-      'Metal Roofing Sacramento covers metal roof installation, replacement, repair, standing seam systems, residential and commercial metal roofs, and metal roof inspections. Each service has its own page.',
+      'Metal Roofing Sacramento covers metal roof installation, replacement, repair, standing seam systems, residential and commercial metal roofs, and metal roof inspections. Compare them on the [metal roofing services](/metal-roofing) page.',
   },
   {
     question: 'What areas around Sacramento are served?',
     answer:
-      'The greater Sacramento region, including Roseville, Rocklin, Folsom, Rancho Cordova, Elk Grove, Granite Bay, El Dorado Hills, Orangevale, Lincoln, Woodland, Davis, Florin, and Colfax. Each city hub explains local metal-roofing context. PRC 13 is a service-area contractor with no public storefront on this site.',
+      'The greater Sacramento region, including Roseville, Rocklin, Folsom, Rancho Cordova, Elk Grove, Granite Bay, El Dorado Hills, Orangevale, Lincoln, Woodland, Davis, Florin, and Colfax. See [Sacramento neighborhoods](/service-areas/sacramento) for city-level context. PRC 13 is a service-area contractor with no public storefront on this site.',
   },
   {
     question: 'Are metal roof inspections free?',

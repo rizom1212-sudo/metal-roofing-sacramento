@@ -26,7 +26,7 @@ const secondary = [
   { href: '/residential-metal-roofing', label: 'Residential' },
   { href: '/commercial-metal-roofing', label: 'Commercial' },
   { href: '/metal-roof-inspection', label: 'Inspection' },
-  { href: '/metal-roofing', label: 'Metal Roofing Hub' },
+  { href: '/metal-roofing', label: 'All metal roofing services' },
 ] as const;
 
 export default function HomeSpecialistServices() {

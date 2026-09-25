@@ -33,9 +33,9 @@ export const DEFAULT_SITE_META: PageMetaConfig = {
 export const PAGE_META: Record<string, PageMetaConfig> = {
   '/': DEFAULT_SITE_META,
   '/metal-roofing': {
-    title: 'Metal Roofing Services Sacramento | Installation, Repair & More',
+    title: 'Metal Roofing Services & Systems in Sacramento | Compare Options',
     description:
-      'Metal roofing services in Sacramento: installation, replacement, repair, standing seam, residential and commercial metal roofs, and inspections. Operated by PRC 13 Roofing Inc., CA CSLB #1087153.',
+      'Compare metal roofing services and systems in Sacramento: installation, replacement, repair, standing seam, residential and commercial metal, and inspections. Operated by PRC 13 Roofing Inc., CA CSLB #1087153.',
     path: '/metal-roofing',
   },
   '/metal-roof-installation': {

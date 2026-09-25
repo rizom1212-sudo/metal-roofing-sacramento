@@ -17,7 +17,7 @@ import { blogSummaries } from '../data/blogSummaries';
 import { LOCAL_ROOFING_HUBS } from '../data/localRoofingHubs';
 import { cityHubServiceCtaLabel, resolveCityHubServices } from '../data/cityHubServices';
 import { SERVICE_HUB_RESOURCE_LIMIT } from '../data/internalLinking';
-import { renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
+import { plainTextFromInlineLinks, renderBlogInlineLinks } from '../lib/renderBlogInlineLinks';
 import CityHubLocalProof from '../components/CityHubLocalProof';
 import NotFound from './NotFound';
 
@@ -30,7 +30,8 @@ export default function ServiceAreaCity() {
   }
 
   const faqs: FaqItem[] = area.faqs;
-  const pageName = `${area.name} Metal Roofing`;
+  const pageName =
+    area.slug === 'sacramento' ? 'Sacramento Metal Roofing Service Area' : `${area.name} Metal Roofing`;
   const hubServices = resolveCityHubServices(area.name, area.services);
   const localHub = LOCAL_ROOFING_HUBS[area.slug];
   const localResources = localHub
@@ -46,8 +47,12 @@ export default function ServiceAreaCity() {
         faqs={faqs}
         pageName={pageName}
         schemaType="Service"
-        serviceName={`Metal Roofing in ${area.name}, CA`}
-        serviceDescription={area.heroIntro}
+        serviceName={
+          area.slug === 'sacramento'
+            ? 'Metal roofing in Sacramento neighborhoods'
+            : `Metal Roofing in ${area.name}, CA`
+        }
+        serviceDescription={plainTextFromInlineLinks(area.heroIntro)}
         servedAreas={[area.name]}
         breadcrumbs={[
           { label: 'Service Areas', href: '/service-areas' },
@@ -76,7 +81,9 @@ export default function ServiceAreaCity() {
             <br />
             <span className="text-gold">{area.name}, CA</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-4">{area.heroIntro}</p>
+          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-4">
+            {renderBlogInlineLinks(area.heroIntro)}
+          </p>
           {featured ? (
             <p className="text-sm text-gray-400 mb-8">
               Last Updated: <span className="text-gray-200">{featured.lastUpdatedLabel}</span>
@@ -177,10 +184,14 @@ export default function ServiceAreaCity() {
       <section className="bg-cream py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnswerSummary
-            title={`${area.name} roofing: quick answer`}
+            title={
+              area.slug === 'sacramento'
+                ? 'Sacramento neighborhoods: quick answer'
+                : `${area.name} roofing: quick answer`
+            }
             points={area.quickPoints}
           >
-            {area.quickAnswer}
+            {renderBlogInlineLinks(area.quickAnswer)}
           </AnswerSummary>
 
           <div className="grid md:grid-cols-2 gap-5">

@@ -35,8 +35,14 @@ export default function HomeWhyMetal() {
           <h2 className="home-display home-display-on-dark mb-4">
             Why metal roofing makes sense in Sacramento.
           </h2>
+          <p className="text-sm text-[#e8e4db] leading-relaxed mb-4 max-w-[36rem]">
+            Sacramento summers accelerate granule loss and curling on aging asphalt. Metal
+            reflects solar energy instead of absorbing it the way dark, worn shingles often do.
+            That only holds when the assembly includes underlayment, flashing, and ventilation.
+            Winter rain still finds weak edges and penetrations.
+          </p>
           <Link to="/blog/metal-roofing-sacramento-climate" className="home-cta home-cta-on-dark min-h-11">
-            See whether metal makes sense for your roof{' '}
+            Read the Sacramento climate guide{' '}
             <span className="home-cta-arrow" aria-hidden>
               →
             </span>

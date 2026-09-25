@@ -73,7 +73,7 @@ export default function MetalRoofing() {
     <>
       <JsonLd
         faqs={hubFaqs}
-        pageName="Metal Roofing Services in Sacramento"
+        pageName="Compare Metal Roofing Services"
         schemaType="Service"
         serviceName="Metal Roofing"
         primaryImage={ASSETS.metalRoofing('Screenshot_2026-05-20_at_09.30.58.png')}
@@ -95,11 +95,15 @@ export default function MetalRoofing() {
             <div className="max-w-2xl">
               <p className="brand-kicker brand-kicker-light mb-5">Metal roofing services</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                Metal Roofing Services<br />
-                <span className="text-gold">in Sacramento</span>
+                Compare Metal Roofing Services<br />
+                <span className="text-gold">Systems and hire paths</span>
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-xl">
-                Installation, replacement, repair, standing seam, residential and commercial metal roofs, and metal inspections—choose the service that matches the job, then go to that page for the details.
+                Choose installation, replacement, repair, standing seam, residential or commercial metal, or inspection — then open that page. This is the services and systems catalog, not the{' '}
+                <Link to="/" className="text-gold font-semibold hover:text-gold-light transition-colors">
+                  company homepage
+                </Link>
+                .
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-xl">{OPERATOR_DISCLOSURE}</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -127,13 +131,17 @@ export default function MetalRoofing() {
           <AnswerSummary
             title="What this metal roofing hub is for"
             points={[
-              'One place to see the full metal offering',
+              'One place to compare the full metal offering',
               'Specialized pages for install, replace, repair, and more',
-              'Sacramento climate context and the metal systems we actually install',
+              'Standing seam and other metal systems we actually install',
               'Licensed work performed by PRC 13 Roofing Inc.',
             ]}
           >
-            This page is the parent for Sacramento metal roofing services. It explains the offering and sends you to the specialized page for installation, replacement, repair, standing seam, residential metal, commercial metal, or inspection. It is not a duplicate of those pages.
+            This page compares metal roofing services and systems, then sends you to installation, replacement, repair, standing seam, residential metal, commercial metal, or inspection. Who we are lives on the{' '}
+            <Link to="/" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              company homepage
+            </Link>
+            .
           </AnswerSummary>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>

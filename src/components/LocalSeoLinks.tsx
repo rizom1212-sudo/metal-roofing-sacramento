@@ -70,7 +70,7 @@ export default function LocalSeoLinks({
                   className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-gold transition-colors"
                 >
                   <MapPin size={13} className="text-gold" />
-                  Metal roofing in {area.name}
+                  {area.slug === 'sacramento' ? 'Sacramento neighborhoods' : `Metal roofing in ${area.name}`}
                 </Link>
               ))}
             </div>

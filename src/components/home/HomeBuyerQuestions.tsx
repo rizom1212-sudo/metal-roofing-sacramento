@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { renderBlogInlineLinks } from '../../lib/renderBlogInlineLinks';
 import { homeFaqs } from './homeFaqs';
 
 const FEATURED_COUNT = 3;
@@ -25,7 +26,7 @@ export default function HomeBuyerQuestions() {
               <h3 className="text-[1.1rem] md:text-[1.2rem] font-bold text-headline tracking-tight mb-2 leading-snug">
                 {item.question}
               </h3>
-              <p className="text-sm leading-relaxed text-body">{item.answer}</p>
+              <p className="text-sm leading-relaxed text-body">{renderBlogInlineLinks(item.answer)}</p>
             </article>
           ))}
 
@@ -37,7 +38,7 @@ export default function HomeBuyerQuestions() {
                     <h3 className="text-[1.1rem] md:text-[1.2rem] font-bold text-headline tracking-tight mb-2 leading-snug">
                       {item.question}
                     </h3>
-                    <p className="text-sm leading-relaxed text-body">{item.answer}</p>
+                    <p className="text-sm leading-relaxed text-body">{renderBlogInlineLinks(item.answer)}</p>
                   </article>
                 ))}
               </div>

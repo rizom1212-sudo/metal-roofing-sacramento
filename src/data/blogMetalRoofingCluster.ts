@@ -10,6 +10,7 @@ const COVER_C = ASSETS.blog('22dc3636-c588-43bd-a30f-c855b3fcce4f.webp');
 const COVER_D = ASSETS.blog('Screenshot_2026-05-20_at_10.49.35.png');
 
 const coreServices = (): BlogRelatedService[] => [
+  { label: 'Company homepage', href: '/' },
   { label: 'Metal Roofing', href: '/metal-roofing' },
   { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
   { label: 'Metal Roof Replacement', href: '/metal-roof-replacement' },
@@ -123,8 +124,8 @@ export const metalRoofingClusterPosts: BlogPost[] = [
   },
   {
     slug: 'standing-seam-metal-roofing-sacramento',
-    title: 'Standing Seam Metal Roofing in Sacramento: What Homeowners Should Know',
-    seoTitle: 'Standing Seam Metal Roofing Sacramento | PRC 13',
+    title: 'What Is Standing Seam Metal Roofing? A Homeowner Guide',
+    seoTitle: 'What Is Standing Seam Metal Roofing? | Sacramento Guide',
     excerpt:
       'Standing seam metal uses concealed fasteners and clean lines for Sacramento homes wanting premium durability. PRC 13 installs systems across the region.',
     date: 'July 5, 2026',
@@ -135,6 +136,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       { label: 'Standing Seam Metal Roofing', href: '/standing-seam-metal-roofing' },
       { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
       { label: 'Metal Roofing', href: '/metal-roofing' },
+      { label: 'Company homepage', href: '/' },
       { label: 'Contact', href: '/contact' },
     ],
     relatedArticles: [
@@ -334,6 +336,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       { label: 'Metal Roof Replacement', href: '/metal-roof-replacement' },
       { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
       { label: 'Metal Roofing', href: '/metal-roofing' },
+      { label: 'Company homepage', href: '/' },
       { label: 'Contact', href: '/contact' },
     ],
     relatedArticles: [
@@ -423,8 +426,8 @@ export const metalRoofingClusterPosts: BlogPost[] = [
   },
   {
     slug: 'metal-roof-installation-process-sacramento',
-    title: 'Metal Roof Installation Process: What Sacramento Homeowners Should Expect',
-    seoTitle: 'Metal Roof Installation Process Sacramento | PRC 13',
+    title: 'What to Expect During a Metal Roof Installation',
+    seoTitle: 'What to Expect During Metal Roof Installation | Sacramento',
     excerpt:
  'From free inspection to final walkthrough, here is how PRC 13 installs standing seam and metal panel systems on Sacramento homes, typically in 2 to 3 days.',
     date: 'July 5, 2026',
@@ -435,6 +438,7 @@ export const metalRoofingClusterPosts: BlogPost[] = [
       { label: 'Metal Roof Installation', href: '/metal-roof-installation' },
       { label: 'Standing Seam Metal Roofing', href: '/standing-seam-metal-roofing' },
       { label: 'Metal Roofing', href: '/metal-roofing' },
+      { label: 'Company homepage', href: '/' },
       { label: 'Contact', href: '/contact' },
     ],
     relatedArticles: [

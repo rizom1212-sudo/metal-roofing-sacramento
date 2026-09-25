@@ -1,12 +1,21 @@
 import type { CityHubServiceCard } from './cityHubServices';
 
 export function metalCityServices(cityName: string): CityHubServiceCard[] {
+  const catalogCard: CityHubServiceCard =
+    cityName === 'Sacramento'
+      ? {
+          title: 'Metal roofing services',
+          href: '/metal-roofing',
+          desc: 'Compare metal roofing services for Sacramento homes and buildings, then open the hire page that matches the job.',
+        }
+      : {
+          title: `Metal Roofing in ${cityName}`,
+          href: '/metal-roofing',
+          desc: `Overview of metal roofing services for ${cityName} homes and buildings, then the specialized page that matches the job.`,
+        };
+
   return [
-    {
-      title: `Metal Roofing in ${cityName}`,
-      href: '/metal-roofing',
-      desc: `Overview of metal roofing services for ${cityName} homes and buildings, then the specialized page that matches the job.`,
-    },
+    catalogCard,
     {
       title: `Metal Roof Installation in ${cityName}`,
       href: '/metal-roof-installation',
@@ -64,14 +73,14 @@ export const metalCityOverlays: Record<string, MetalCityOverlay> = {
   sacramento: {
     blurb:
       'Metal roofing for Sacramento neighborhoods where summer heat, older mixed roof lines, and winter rain make standing seam, replacement, and metal repair practical options.',
-    metaTitle: 'Metal Roofing in Sacramento, CA | Installation, Repair & Replacement',
+    metaTitle: 'Sacramento Neighborhoods | Metal Roofing Service Area',
     metaDescription:
-      'Metal roofing in Sacramento, CA: installation, replacement, repair, standing seam, and inspections. Operated by PRC 13 Roofing Inc., CA CSLB #1087153.',
-    heroLead: 'Metal Roofing in',
+      'Metal roofing context for Sacramento neighborhoods — East Sacramento, Land Park, Natomas, heat, housing stock, and winter rain. Operated by PRC 13 Roofing Inc., CA CSLB #1087153.',
+    heroLead: 'Metal Roofing by Neighborhood',
     heroIntro:
-      'From older East Sacramento bungalows to suburban homes near Natomas, Sacramento roofs deal with heat, dry attic spaces, tree debris, and sudden winter rain. This hub is for metal roofing in the city: installation, replacement, repair, standing seam, and inspections. Hire details live on each metal service page.',
+      'From older East Sacramento bungalows to suburban homes near Natomas, Sacramento roofs deal with heat, dry attic spaces, tree debris, and sudden winter rain. This page is the Sacramento neighborhood and climate hub. Hire paths live on each metal service page. The [Sacramento metal roofing company](/) homepage covers who we are.',
     quickAnswer:
-      'Metal Roofing Sacramento, operated by PRC 13 Roofing Inc., serves Sacramento with metal roof installation, replacement, repair, standing seam, residential and commercial metal systems, and metal inspections. Use this hub for local context, then open the specialized metal page that matches the job.',
+      'PRC 13 Roofing Inc. serves Sacramento neighborhoods with metal roof installation, replacement, repair, standing seam, and inspections. Use this page for local context — housing stock, heat, and rain. The [company homepage](/) explains who operates Metal Roofing Sacramento. Compare [metal roofing services](/metal-roofing) when you know the job type.',
     quickPoints: [
       'Sacramento neighborhood metal-roofing context',
       'Free residential metal inspections with written findings',
